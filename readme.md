@@ -1,13 +1,12 @@
 # Getting Started
 
 ###Download all the ingridients
-Blynk App for iOS or Android:
-
+Blynk App for iOS or Android: <br>
 [App Store >](https://itunes.apple.com/us/app/blynk-control-arduino-raspberry/id808760481?ls=1&mt=8)[Google Play >](https://play.google.com/store/apps/details?id=cc.blynk) 
 
 
-Download and install Blynk Library
-[Blynk Library >] (https://github.com/blynkkk/blynk-library/archive/v0.2.1.zip)
+Download and install Blynk Library: <br>
+[Blynk Library >](https://github.com/blynkkk/blynk-library/archive/v0.2.1.zip)
 
 In case you forgot how to install Arduino libraries: check [here] (http://www.arduino.cc/en/guide/libraries).  We are also good friends of **[codebender](https://codebender.cc/example/BlynkSimpleEthernet/GettingStarted:BlynkBlink)** - you can upload Blynk sketches directly from your browser
 
