@@ -1,4 +1,5 @@
-# Getting Started
+#Getting Started
+
 
 ###Download all the ingridients
 **Blynk App for iOS or Android:** <br> <br>
@@ -8,40 +9,93 @@
 **Install Blynk Library:** <br><br>
 [Download Blynk Library >](https://github.com/blynkkk/blynk-library/archive/v0.2.1.zip)
 
-In case you forgot how to install Arduino libraries: check [here] (http://www.arduino.cc/en/guide/libraries).  We are also good friends of **[codebender](https://codebender.cc/example/BlynkSimpleEthernet/GettingStarted:BlynkBlink)** - you can upload Blynk sketches directly from your browser
+In case you forgot how to install Arduino libraries: check [here](http://www.arduino.cc/en/guide/libraries).  We are also good friends of **[codebender](https://codebender.cc/example/BlynkSimpleEthernet/GettingStarted:BlynkBlink)** - you can upload Blynk sketches directly from your browser
+
+###Wire everything 
+Use this wiring scheme to connect LED to your Hardware.
+
+
+<img src="http://faberfun.com/wp-content/uploads/2013/08/Blink-LED-using-Arduino-uno.jpg" alt="Drawing" style="width: 250px;"/>
 
 ### Create Blynk Account 
 >Screenshot
 
-<br>
 
 ### Get Auth Token
-**Auth Token** is used to connect your Arduino or other board to **Blynk Cloud** and then to your smartphone. Every new project you create will have an Auth Token. 
+**Auth Token** is used to connect your Arduino or other board to your smartphone. Every new project you create will have an Auth Token. 
 
 >Screenshot
 
-It's very convenient to send it over E-mail. If you press E-mail button – token will be sent to the e-mail address you used when creating new account.
+It's very convenient to send it over E-mail. If you press E-mail button – token will be sent to the e-mail address you used for registration. If you have a good memory - you can memorize it ;) or tap the number and it will be copied to the clipboard.
+
+### Choose your hardware
+Select the hardware that will be used for your project. Yes, this list is long.
+
+
+>Screenshot
 
 
 
-
-# Let's get you online
+#Let's get online
 You know that **Blynk works over the Internet**, right? (BTW, Bluetooth LE is on the way) 
+
+Blynk works with almost anything, check the [full list of supported hardware]()
 
 Before you start Blynking, you need to understand how you will connect to the Internet. May be it's an Ethernet Shield for Arduino, or may be your hardware is already internet-enabled (e.g. Spark Core). 
 
-Blynk works with almost anything, please check the [full list of supported hardware]()
+We've prepared sketches that will get your microcomputer online. Open the example sketch according to your device or shield. If you are using **codebender** - find the example in the list
 
-We've prepared lot's of example sketches. Choose your connection type and open the example sketch you need.
+> Screenshot
 
->Screenshot
+Find next line in the code:
 
-You can also connect directly over USB. It's a bit more tricky, but if you follow these [USB instructions](link) you'll succeed for sure!
+``` 
+char auth[] = "YourAuthToken";
+
+```
+
+Change it by putting your Auth Token inside curly brackets:
+
+``` 
+char auth[] = "123456789abcdefghijk0987654321";
+
+```
+
+Upload sketch to the board and open Serial Terminal. Wait until you see something like this: 
+
+``` 
+Your IP is 192.168.0.11
+Connecting...
+Blynk connected!
+
+```
+**Congratulations! You are all set to Blynk!**
+
+###Connect over USB,  and others
+
+* You can play with Blynk directly over USB. It's a bit tricky for newbies, but if you follow these [USB instructions](link) you'll succeed for sure.
+
+###Raspberry Pi, Spark Core
+* **Spark Core** owners: check [here]()
+* **Raspberry Pi** eaters: [here]() 
 
 
-# Running Blynk
+# Setting up your first Blynk project
+
+Open your project in the app. It's empty now, so let's add a Button. Just tap anywhere on empty space - Widget Box will open. Choose the Button Widget.
+
+> Screenshot
+
+Hold and drag it to reposition
+
+> Screenshot
+
+Tap on the widget to get to it's settings  
+
+> Screenshot
 
 
+___
 
 ### Quickstart: Arduino + Ethernet shield
 
