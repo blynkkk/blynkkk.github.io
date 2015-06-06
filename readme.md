@@ -2,9 +2,8 @@
 
 
 ###Download all the ingridients
-**Blynk App for iOS or Android:** <br> <br>
-[App Store >](https://itunes.apple.com/us/app/blynk-control-arduino-raspberry/id808760481?ls=1&mt=8)[Google Play >](https://play.google.com/store/apps/details?id=cc.blynk) 
-
+**Blynk App for iOS or Android:** <br> <br> 
+[<img src="http://static1.squarespace.com/static/54765ba7e4b0d055ee0b47a6/t/55515fd0e4b08237a78598e2/1431396305454/?format=500w" alt="Drawing" style=" width: 150px;"/>](https://itunes.apple.com/us/app/blynk-control-arduino-raspberry/id808760481?ls=1&mt=8)  &nbsp; &nbsp; &nbsp; &nbsp;     [<img src="http://static1.squarespace.com/static/54765ba7e4b0d055ee0b47a6/t/55515fe8e4b08237a785995e/1431396357648/?format=750w" alt="Drawing" style=" width: 200px;"/>](https://play.google.com/store/apps/details?id=cc.blynk)
 
 **Install Blynk Library:** <br><br>
 [Download Blynk Library >](https://github.com/blynkkk/blynk-library/archive/v0.2.1.zip)
@@ -80,7 +79,7 @@ Blynk connected!
 * **Raspberry Pi** eaters: [here]() 
 
 
-# Setting up your first Blynk project
+# Set up Blynk project
 
 Open your project in the app. It's empty now, so let's add a Button. Just tap anywhere on empty space - Widget Box will open. Choose the Button Widget.
 
@@ -94,7 +93,21 @@ Tap on the widget to get to it's settings
 
 > Screenshot
 
+The most important parameter to set up is PIN. If your LED is on Digital Pin 7 - then select **D7** (**D** - stands for **D**igital).   
 
+> Illustration showing how Physical PIN is connected to Pin in the APP
+
+When you are done with the Settings - press **PLAY** button. This will switch you from EDIT mode to PLAY mode where you can interact with widgets. You can always get back to EDIT mode by pressing STOP
+
+> Screenshot
+
+Press Button to turn the LED On and Off
+
+> Screenshot
+
+Always feel free to experiment more! For example, attach an LED to [PWM](http://www.arduino.cc/en/Tutorial/Fading) Pin on your Arduino. Set the Slider Widget to control brightness of an LED. Just use the same steps described above.
+
+**Happy Blynking!**
 ___
 
 ### Quickstart: Arduino + Ethernet shield
