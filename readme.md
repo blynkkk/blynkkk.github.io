@@ -13,8 +13,11 @@
 
 In case you forgot how to install Arduino libraries: check [here](http://www.arduino.cc/en/guide/libraries).  We are also good friends of **[codebender](https://codebender.cc/example/BlynkSimpleEthernet/GettingStarted:BlynkBlink)** - you can upload Blynk sketches directly from your browser.
 
-###Blynk Blink 
-To see the first results from Blynk let's use the easiest example: press the button on your smartphone and turn an LED connected to your board On and Off. Use this wiring scheme to connect LED to your Hardware.
+###Blink With Blynk 
+
+Let's start with something easy: turn LED connected to your hardware ON and OFF with the Blynk App
+
+Use this wiring scheme to connect LED to your Hardware:
 
 <img src="http://faberfun.com/wp-content/uploads/2013/08/Blink-LED-using-Arduino-uno.jpg" alt="Drawing" style="width: 250px;"/>
 
@@ -30,13 +33,13 @@ To see the first results from Blynk let's use the easiest example: press the but
 It's very convenient to send it over E-mail. If you press E-mail button – token will be sent to the e-mail address you used for registration. If you have a good memory - you can memorize it ;) or tap the number and it will be copied to the clipboard.
 
 ### Choose your hardware
-Select the hardware you are building project on be used for your project.
+Select the hardware you are building project on.
 >Screenshot
 
 
 
 #Let's get online
-You know that **Blynk works over the Internet**, right? (BTW, Bluetooth LE is on the way) 
+You know that **Blynk works over the Internet**, right? (Bluetooth LE is on the way) 
 
 Blynk works with almost anything, check the [full list of supported hardware]()
 
@@ -110,7 +113,9 @@ Always feel free to experiment more! For example, attach an LED to [PWM](http://
 **Happy Blynking!**
 ___
 
-#Getting Started With Raspberry Pi and Spark Core 
+#Blynk on Raspberry Pi and Spark Core
+Specific steps for Raspberry Pi
+Specific steps for Spark Core 
 
 #List Of Supported Hardware
 List of devices goes here
