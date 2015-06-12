@@ -1,3 +1,6 @@
+#How Blynk Works
+>Scheme
+
 #Getting Started
 
 
@@ -8,29 +11,26 @@
 **Install Blynk Library:** <br><br>
 [Download Blynk Library >](https://github.com/blynkkk/blynk-library/archive/v0.2.1.zip)
 
-In case you forgot how to install Arduino libraries: check [here](http://www.arduino.cc/en/guide/libraries).  We are also good friends of **[codebender](https://codebender.cc/example/BlynkSimpleEthernet/GettingStarted:BlynkBlink)** - you can upload Blynk sketches directly from your browser
+In case you forgot how to install Arduino libraries: check [here](http://www.arduino.cc/en/guide/libraries).  We are also good friends of **[codebender](https://codebender.cc/example/BlynkSimpleEthernet/GettingStarted:BlynkBlink)** - you can upload Blynk sketches directly from your browser.
 
-###Wire everything 
-Use this wiring scheme to connect LED to your Hardware.
-
+###Blynk Blink 
+To see the first results from Blynk let's use the easiest example: press the button on your smartphone and turn an LED connected to your board On and Off. Use this wiring scheme to connect LED to your Hardware.
 
 <img src="http://faberfun.com/wp-content/uploads/2013/08/Blink-LED-using-Arduino-uno.jpg" alt="Drawing" style="width: 250px;"/>
 
-### Create Blynk Account 
+### Create Blynk Account In The App
 >Screenshot
 
 
 ### Get Auth Token
 **Auth Token** is used to connect your Arduino or other board to your smartphone. Every new project you create will have an Auth Token. 
 
->Screenshot
+>Screenshot / animation
 
 It's very convenient to send it over E-mail. If you press E-mail button – token will be sent to the e-mail address you used for registration. If you have a good memory - you can memorize it ;) or tap the number and it will be copied to the clipboard.
 
 ### Choose your hardware
-Select the hardware that will be used for your project. Yes, this list is long.
-
-
+Select the hardware you are building project on be used for your project.
 >Screenshot
 
 
@@ -93,9 +93,9 @@ Tap on the widget to get to it's settings
 
 > Screenshot
 
-The most important parameter to set up is PIN. If your LED is on Digital Pin 7 - then select **D7** (**D** - stands for **D**igital).   
+The most important parameter to set is **PIN** . List of pins reflects physical pins defined by your hardware. If your LED is connected to Digital Pin 10 - then select **D10** (**D** - stands for **D**igital). Virtual pins are described [here]().    
 
-> Illustration showing how Physical PIN is connected to Pin in the APP
+> Illustration showing how Physical PIN is connected to Pin in the APP.
 
 When you are done with the Settings - press **PLAY** button. This will switch you from EDIT mode to PLAY mode where you can interact with widgets. You can always get back to EDIT mode by pressing STOP
 
@@ -109,6 +109,23 @@ Always feel free to experiment more! For example, attach an LED to [PWM](http://
 
 **Happy Blynking!**
 ___
+
+#Getting Started With Raspberry Pi and Spark Core 
+
+#List Of Supported Hardware
+List of devices goes here
+
+#Blynk Commands
+All the commands you can use in code
+VirtualWrite
+
+#Widgets
+Always feel free to experiment more!
+
+#Adding Support for your Hardware 
+Always feel free to experiment more!
+
+
 
 ### Quickstart: Arduino + Ethernet shield
 
