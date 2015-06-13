@@ -1,10 +1,8 @@
 #How Blynk Works
->Scheme
+<img src="https://ksr-ugc.imgix.net/assets/003/046/877/1c622f9beb988b1619213b345e5b8639_original.png?v=1418594107&w=680&h=&fit=max&auto=format&lossless=true&s=a7e09be913cdc24a7e7e62939c988c90" style="width: 640px;"/>
 
 #Getting Started
-
-
-###Download all the ingridients
+###Download all the ingridients:
 **Blynk App for iOS or Android:** <br> <br> 
 [<img src="http://static1.squarespace.com/static/54765ba7e4b0d055ee0b47a6/t/55515fd0e4b08237a78598e2/1431396305454/?format=500w" alt="Drawing" style=" width: 150px;"/>](https://itunes.apple.com/us/app/blynk-control-arduino-raspberry/id808760481?ls=1&mt=8)  &nbsp; &nbsp; &nbsp; &nbsp;     [<img src="http://static1.squarespace.com/static/54765ba7e4b0d055ee0b47a6/t/55515fe8e4b08237a785995e/1431396357648/?format=750w" alt="Drawing" style=" width: 200px;"/>](https://play.google.com/store/apps/details?id=cc.blynk)
 
@@ -108,24 +106,106 @@ Press Button to turn the LED On and Off
 
 > Screenshot
 
-Always feel free to experiment more! For example, attach an LED to [PWM](http://www.arduino.cc/en/Tutorial/Fading) Pin on your Arduino. Set the Slider Widget to control brightness of an LED. Just use the same steps described above.
+Always feel free to experiment! For example, attach an LED to [PWM](http://www.arduino.cc/en/Tutorial/Fading)-enabled Pin on your Arduino. Set the Slider Widget to control brightness of an LED. Just use the same steps described above.
 
 **Happy Blynking!**
+
+#Blynk Basics
+
+We prepared example sketches to show main Blynk Features. All the sketches are designed so that it's easy to combine them one with each other. 
+
+
+####Virtual Pins
+We designed Virtual Pins to send **any data** from microcontroller to the Blynk app and back. 
+Think about Virtual Pins as channels for variables that can contain any value. They are different to physical pins on your Arduino. There are 32 Virtual Pins at your disposal (V0 - V31)
+> screenshot of pin picker 
+
+
+
+>Illustration showing Virtual Pin
+
+``` 
+Blynk.virtualWrite(PIN, VALUE)
+
+```
+
+
+####How to send data from Arduino to smartphone
+
+>example use case
+
+Open the sketch accordingly to your hardware. For example Ethernet Shield
+
+````
+SimpleTimer timer;
+
+void setup()
+{
+  Blynk.begin(auth);
+  timer.setInterval(1000, sendUptime);
+}
+````
+
+This function sends Arduino's up time every second to Virtual Pin (5).
+In the app, Widget's reading frequency should be set to PUSH. This means that you define how often to send data to Blynk App.
+You can send any value at any 
+
+<span style="color:red;">**Don't send more that 10 values per second** - otherwise you'll get FLOOD ERROR and your messages will be banned</span>
+
+
+
+````
+void sendUptime()
+{
+
+  Blynk.virtualWrite(5, millis()/1000);
+}
+
+void loop()
+{
+  Blynk.run(); // Initiates Blynk
+  timer.run(); // Initiates SimpleTimer
+}
+````
+
+####How to process data from Blynk App on Arduino
+
+``` 
+// This function will be called every time
+// when App writes value to Virtual Pin 1
+
+BLYNK_WRITE(1)
+{
+  BLYNK_LOG("Got a value: %s", param.asStr());
+  // You can also use: asInt() and asDouble()
+}
+```
+
+
+
 ___
 
-#Blynk on Raspberry Pi and Spark Core
+#Running Blynk on Raspberry Pi and Spark Core
 Specific steps for Raspberry Pi
+
 Specific steps for Spark Core 
 
 #List Of Supported Hardware
 List of devices goes here
 
-#Blynk Commands
-All the commands you can use in code
-VirtualWrite
 
 #Widgets
 Always feel free to experiment more!
+
+Data mapping explained
+>Screenshot
+
+#Blynk Commands
+All the commands you can use in code
+### Virtual Write
+### Virtual Read
+### Serial Print
+### Debugging
 
 #Adding Support for your Hardware 
 Always feel free to experiment more!
