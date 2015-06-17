@@ -1,6 +1,9 @@
 #Intro
 A few words about Blynk. Contents?
 
+<img src="https://ksr-ugc.imgix.net/assets/003/046/877/1c622f9beb988b1619213b345e5b8639_original.png?v=1418594107&w=680&h=&fit=max&auto=format&lossless=true&s=a7e09be913cdc24a7e7e62939c988c90" style="width: 500px;"/>
+
+
 
 #Getting Started
 ###Download all the ingridients:
@@ -92,7 +95,10 @@ Connecting...
 Blynk connected!
 
 ```
-**Congratulations! It was the hardest part and it's over!**
+
+### <span style="color:#24C48C" >**Congratulations! It was the hardest part and it's over!**</span>
+
+
 
 ###Connect over USB,  and others
 
@@ -103,7 +109,7 @@ If you don't have any shield and your hardware doen's have any connectivity, you
 * **Raspberry Pi** eaters: [here]() 
 
 
-# Set up Blynk project
+# Set Up Your Project
 
 Open your project in the app. It's empty now, so let's add a Button. Just tap anywhere on empty space - Widget Box will open. Choose the Button Widget.
 
@@ -135,17 +141,18 @@ Always feel free to experiment! For example, attach an LED to [PWM](http://www.a
 
 #Blynk Basics
 
-We prepared example sketches to show main Blynk Features. All the sketches are designed so that it's easy to combine them one with each other. 
+We prepared example sketches to show main Blynk Features. All the sketches are designed so that it's easy to combine one example with another. 
 
 
 ###Virtual Pins
-We designed Virtual Pins to send **any data** from microcontroller to the Blynk app and back. 
-Think about Virtual Pins as channels for variables that can contain any value. They are different to physical pins on your Arduino. There are 32 Virtual Pins at your disposal (V0 - V31)
+Virtual Pins are designed to send **any data** from microcontroller to the Blynk app and back. 
+Think about Virtual Pins as channels for any variables. They are different to physical pins on your Arduino. 
+>Illustration showing Virtual Pin
+
+There are 32 Virtual pins at your disposal (V0 - V31)
 > screenshot of pin picker 
 
 
-
->Illustration showing Virtual Pin
 
 ``` 
 Blynk.virtualWrite(PIN, VALUE)
@@ -153,86 +160,65 @@ Blynk.virtualWrite(PIN, VALUE)
 ```
 
 
-###Send data from Arduino to smartphone
+###Send data from Arduino to Smartphone with Virtual Pin
 
->example use case
+>Let's say you want to send convert data from temperature sensor from ºC to ºF and send it to Blynk every 1 second.
 
-Open the sketch accordingly to your hardware. For example Ethernet Shield
+Open the sketch accordingly to your hardware. This example is for [Ethernet Shield]()
 
-````
-SimpleTimer timer;
+To avoid using ```delay();``` function, which may cause connection interruptions, we recommend using **[SimpleTimer]()** library for events that need intervals. Check this [example sketch]() for more details.
 
-void setup()
-{
-  Blynk.begin(auth);
-  timer.setInterval(1000, sendUptime);
-}
-````
-
-This function sends Arduino's up time every second to Virtual Pin (5).
-In the app, Widget's reading frequency should be set to PUSH. This means that you define how often to send data to Blynk App.
-You can send any value at any 
 
 <span style="color:red;">**Don't send more that 10 values per second** - otherwise you'll get **FLOOD** warning and your messages will be banned</span>
 
 
 
-````
-void sendUptime()
+```
+void yourTimedEvent()
 {
-
-  Blynk.virtualWrite(5, millis()/1000);
+  Blynk.virtualWrite(5, something;)
 }
 
 void loop()
 {
-  Blynk.run(); // Initiates Blynk
-  timer.run(); // Initiates SimpleTimer
+  Blynk.run(); 
+  timer.run(); 
 }
-````
+```
 
 #### How to process data from Blynk App on Arduino
-You can use any data from Blynk in your project by using Virtual Pins. 
-
-This command means that Arduino is listening to the Widget, attached to Virtual Pin 1 in the Blynk app.
+You can use any data from Blynk in your project by using Virtual Pins
 
 
 ```
-
 BLYNK_WRITE(1)
 {
   BLYNK_LOG("Got a value: %s", param.asStr());
 }
-
-
 ```
-You can get data as INTs, Floats, Doubles, Strings. 
+
+This command means that hardware is listening to the Widget, that WRITEs data to Virtual Pin 1 in the app.
+
+You can get data as INTs, Floats, Doubles and Strings 
 
 ```
   param.asInt());
   param.asFloat());
   param.asDouble());
   param.asStr());
+```
+ 
+Some Widgets may send an array of values (e.g Joystick, zeRGBa). You can get any parameter of the array by using: 
 
 ```
-  
-
-Some Widgets may send an array of values (e.g zeRGBa Widget). You can extract any parameter by using: 
-
-```
-
 BLYNK_WRITE(1)
-{
+{   
   BLYNK_LOG("Got a value: %s", param(2).asInt());
 }
-
-
 ```
 
 
-___
-
-#Running Blynk on Raspberry Pi and Spark Core
+# Running Blynk on Raspberry Pi and Spark Core
 Specific steps for Raspberry Pi
 
 Specific steps for Spark Core 
@@ -281,7 +267,21 @@ Displays:
 
 Notifications:
 ### Twitter
->Image
+
+Twitter Widget connects your Twitter account to Blynk and allows you to send Tweets from your hardware. 
+
+<img src="http://static1.squarespace.com/static/54765ba7e4b0d055ee0b47a6/54e92d39e4b0c31341b33a9a/55813d09e4b0ba8aa77ab230/1434533129525/TwitterON.png"/>
+
+
+Example code:
+
+```
+if (something) 
+{
+   Blynk.tweet("Hey, Blynkers! My Arduino can tweet now!");
+}
+
+```
 
 ### Email
 >Image
@@ -290,47 +290,18 @@ Notifications:
 >Image
 
 
-
 #Blynk Commands
 All the commands you can use in code
-### Virtual Write
-### Virtual Read
-### Serial Print
-### Debugging
-
-#Adding Support for your Hardware 
-Always feel free to experiment more!
-
+### Virtual_Write
+### Virtual_Read
+### BLYNK_Print
+### BLYNK_LOG
+### BLYNK_CONNECT
+### 
 
 
-### Quickstart: Arduino + Ethernet shield
-
-* Download the Blynk app ([App Store](https://itunes.apple.com/us/app/blynk-control-arduino-raspberry/id808760481?ls=1&mt=8), [Google Play](https://play.google.com/store/apps/details?id=cc.blynk)) 
-* Get the Auth Token from the app
-* Import this library to Arduino IDE. Guide [here](http://arduino.cc/en/guide/libraries)
-* In Arduino IDE, select File -> Examples -> Blynk -> BoardsAndShields -> Arduino_Ethernet
-* Update Auth Token in the sketch and upload it to Arduino
-* Connect your Arduino with Ethernet shield to the internet
-
-### Supported boards, WiFi, Serial, USB...
-
-[See examples](examples/BoardsAndShields) with different connection types.
-
-Full list of supported hardware is [here](http://community.blynk.cc/t/hardware-supported-by-blynk).
-
-### Docs
-
-* [Basics](./docs/Basics.md)
-* [Widgets](./docs/Widgets.md)
-* [Security](./docs/Security.md)
-* [Platforms/Connection types](./docs/Platforms.md)
-* [Troubleshooting](./docs/Troubleshooting.md)
-* [Implementing your own library](./docs/Implementing.md)
-
-### License
-
-This project is released under The MIT License (MIT)
-
+#Blynk API. Writing your own library
+Instructions on how to add support for new hardware 
 
 #Links
 
@@ -340,5 +311,17 @@ This project is released under The MIT License (MIT)
 * [Facebook](http://www.fb.com/blynkapp)
 * [Twitter](http://twitter.com/blynk_app)
 
-#How Blynk Works
-<img src="https://ksr-ugc.imgix.net/assets/003/046/877/1c622f9beb988b1619213b345e5b8639_original.png?v=1418594107&w=680&h=&fit=max&auto=format&lossless=true&s=a7e09be913cdc24a7e7e62939c988c90" style="width: 500px;"/>
+# License
+
+This project is released under The MIT License (MIT)
+
+
+
+# Other Docs
+
+* [Basics](./docs/Basics.md)
+* [Widgets](./docs/Widgets.md)
+* [Security](./docs/Security.md)
+* [Platforms/Connection types](./docs/Platforms.md)
+* [Troubleshooting](./docs/Troubleshooting.md)
+* [Implementing your own library](./docs/Implementing.md)
