@@ -1,14 +1,14 @@
 #Intro
 A few words about Blynk. Contents?
 
-<img src="https://ksr-ugc.imgix.net/assets/003/046/877/1c622f9beb988b1619213b345e5b8639_original.png?v=1418594107&w=680&h=&fit=max&auto=format&lossless=true&s=a7e09be913cdc24a7e7e62939c988c90" style="width: 500px;"/>
+<img src="https://ksr-ugc.imgix.net/assets/003/046/877/1c622f9beb988b1619213b345e5b8639_original.png?v=1418594107&w=680&h=&fit=max&auto=format&lossless=true&s=a7e09be913cdc24a7e7e62939c988c90" style="width: 450px;"/>
 
 
 
 #Getting Started
 ###Download all the ingridients:
 **Blynk App for iOS or Android:** <br> <br> 
-[<img src="http://static1.squarespace.com/static/54765ba7e4b0d055ee0b47a6/t/55515fd0e4b08237a78598e2/1431396305454/?format=500w" alt="Drawing" style=" width: 150px;"/>](https://itunes.apple.com/us/app/blynk-control-arduino-raspberry/id808760481?ls=1&mt=8)  &nbsp; &nbsp; &nbsp; &nbsp;     [<img src="http://static1.squarespace.com/static/54765ba7e4b0d055ee0b47a6/t/55515fe8e4b08237a785995e/1431396357648/?format=750w" alt="Drawing" style=" width: 200px;"/>](https://play.google.com/store/apps/details?id=cc.blynk)
+[<img src="http://static1.squarespace.com/static/54765ba7e4b0d055ee0b47a6/t/55515fd0e4b08237a78598e2/1431396305454/?format=500w" alt="Drawing" style=" width: 150px;"/>](https://itunes.apple.com/us/app/blynk-control-arduino-raspberry/id808760481?ls=1&mt=8)  &nbsp; &nbsp; &nbsp; &nbsp;[<img src="http://static1.squarespace.com/static/54765ba7e4b0d055ee0b47a6/t/55515fe8e4b08237a785995e/1431396357648/?format=750w" alt="Drawing" style=" width: 200px;"/>](https://play.google.com/store/apps/details?id=cc.blynk)
 
 **Install Blynk Library:** <br><br>
 [Download Blynk Library >](https://github.com/blynkkk/blynk-library/archive/v0.2.1.zip)
@@ -270,7 +270,7 @@ Notifications:
 
 Twitter Widget connects your Twitter account to Blynk and allows you to send Tweets from your hardware. 
 
-<img src="http://static1.squarespace.com/static/54765ba7e4b0d055ee0b47a6/54e92d39e4b0c31341b33a9a/55813d09e4b0ba8aa77ab230/1434533129525/TwitterON.png"/>
+<img src="http://static1.squarespace.com/static/54765ba7e4b0d055ee0b47a6/54e92d39e4b0c31341b33a9a/55813d09e4b0ba8aa77ab230/1434533129525/TwitterON.png" style="width: 77px;"/>
 
 
 Example code:
@@ -297,7 +297,6 @@ All the commands you can use in code
 ### BLYNK_Print
 ### BLYNK_LOG
 ### BLYNK_CONNECT
-### 
 
 
 #Blynk API. Writing your own library
