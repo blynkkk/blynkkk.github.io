@@ -16,6 +16,8 @@ In case you forgot how to install Arduino libraries: check [here](http://www.ard
 
 Let's start with something easy: turn LED connected to your hardware ON and OFF with the Blynk App
 
+>animated gif
+
 Use this wiring scheme to connect LED to your Hardware:
 
 <img src="http://faberfun.com/wp-content/uploads/2013/08/Blink-LED-using-Arduino-uno.jpg" alt="Drawing" style="width: 250px;"/>
@@ -189,19 +191,43 @@ void loop()
 }
 ````
 
-####How to process data from Blynk App on Arduino
+#### How to process data from Blynk App on Arduino
+You can use any data from Blynk in your project by using Virtual Pins. 
 
-``` 
-// This function will be called every time
-// when App writes value to Virtual Pin 1
+This command means that Arduino is listening to the Widget, attached to Virtual Pin 1 in the Blynk app.
+
+
+```
 
 BLYNK_WRITE(1)
 {
   BLYNK_LOG("Got a value: %s", param.asStr());
-  // You can also use: asInt() and asDouble()
 }
+
+
+```
+You can get data as INTs, Floats, Doubles, Strings. 
+
+```
+  param.asInt());
+  param.asFloat());
+  param.asDouble());
+  param.asStr());
+
+```
+  
+
+Some Widgets may send an array of values (e.g zeRGBa Widget). You can extract any parameter by using: 
+
 ```
 
+BLYNK_WRITE(1)
+{
+  BLYNK_LOG("Got a value: %s", param(2).asInt());
+}
+
+
+```
 
 
 ___
@@ -216,10 +242,54 @@ List of devices goes here
 
 
 #Widgets
-Always feel free to experiment more!
+### Common Widget Settings
+Most of the settings are self-explainable, but there are some hidden features that you can use 
 
-Data mapping explained
+### Pin Selection
+This is one of the main parameters you need to set
 >Screenshot
+
+Read more about Virtual Pins Here
+
+### Data Mapping
+>Screenshot
+
+### Splitting/Merging Outputs
+>Screenshot
+
+
+Controls:
+### Button
+>Image
+
+### Slider
+>Image
+
+### Timer
+>Image
+
+### Joystick
+>Image
+
+Displays:
+### Value Display
+>Image
+
+### Graph
+>Image
+
+
+Notifications:
+### Twitter
+>Image
+
+### Email
+>Image
+
+### Push Notifications
+>Image
+
+
 
 #Blynk Commands
 All the commands you can use in code
