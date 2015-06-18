@@ -160,9 +160,9 @@ Blynk.virtualWrite(PIN, VALUE)
 ```
 
 
-###Send data from Arduino to Smartphone with Virtual Pin
+### Getting and Sending Data
 
->Let's say you want to send convert data from temperature sensor from ºC to ºF and send it to Blynk every 1 second.
+>Let's say you want to send converted data from temperature sensor from ºC to ºF and send it to Blynk every 1 second.
 
 Open the sketch accordingly to your hardware. This example is for [Ethernet Shield]()
 
@@ -219,10 +219,12 @@ BLYNK_WRITE(1)
 ```
 
 
-# Running Blynk on Raspberry Pi and Spark Core
+# Raspberry Pi
 Specific steps for Raspberry Pi
 
-Specific steps for Spark Core 
+# Spark Core
+Specific steps for Spark Core
+
 
 #List Of Supported Hardware
 List of devices goes here
