@@ -169,7 +169,7 @@ Open the sketch accordingly to your hardware. This example is for [Ethernet Shie
 To avoid using ```delay();``` function, which may cause connection interruptions, we recommend using **[SimpleTimer]()** library for events that need intervals. Check this [example sketch]() for more details.
 
 
-<span style="color:red;">**Don't send more that 10 values per second** - otherwise you'll get **FLOOD** warning and your messages will be banned</span>
+<span style="color:#D3435C;">**Warning:** Don't send more that 10 values per second** - otherwise you'll get **FLOOD** error and your messages will be banned.</span>
 
 
 
@@ -198,6 +198,7 @@ BLYNK_WRITE(1)
 ```
 
 This command means that hardware is listening to the Widget, that WRITEs data to Virtual Pin 1 in the app.
+
 
 You can get data as INTs, Floats, Doubles and Strings 
 
@@ -264,6 +265,8 @@ Displays:
 ### Graph
 >Image
 
+### LCD Display
+>Image
 
 Notifications:
 ### Twitter
@@ -291,16 +294,187 @@ if (something)
 
 
 #Blynk Commands
-All the commands you can use in code
-### Virtual_Write
-### Virtual_Read
-### BLYNK_Print
+The library can perform basic pin IO (input-output) operations out-of-the-box:
+
+```
+digitalRead
+digitalWrite
+analogRead
+analogWrite //PWM or Analog signal depending on the platform
+```
+
+### BLYNK_WRITE(vPIN)
+### BLYNK_READ(vPIN)
+### Blynk.virtualWrite();
+
+You can send all the formats of data to Virtual Pins
+
+```
+Blynk.virtualWrite(pin, "abc");
+Blynk.virtualWrite(pin, 123);
+Blynk.virtualWrite(pin, 12.34);
+```
+
+### BLYNK_PRINT
 ### BLYNK_LOG
-### BLYNK_CONNECT
+### BLYNK_CONNECT();
+### BLYNK_DEBUG
+To enable debug prints on the default Serial, add on the top of your sketch **(should be the first line
+)**:
+
+```cpp
+#define BLYNK_DEBUG // Optional, this enables lots of prints
+#define BLYNK_PRINT Serial
+```
+And enable Serial Output in setup():
+
+```cpp
+Serial.begin(9600);
+```
+
+You can also use spare Hardware serial ports or SoftwareSerial for debug output (you will need an adapter to connect to it with your PC).
+
+
+<span style="color:#D3435C;">**WARNING:** Enabling Debug mode will slowdown your hardware processing speed up to 10 times!</span>
+
+### Blynk.notification("message");
+### Blynk.email();
+In order to use this command, you need to add Email Widget in the App
+
+Send a pre-defined email message
+
+```Blynk.email();```
+
+Send an email message with custom body:
+
+```Blynk.email("Message");```
+
+Send an email message with custom body, subject and recipient:
+
+```Blynk.email("email@example.com", "Subject", "Message");```
+
+
+
 
 
 #Blynk API. Writing your own library
 Instructions on how to add support for new hardware 
+
+
+#Security
+
+Blynk server has 3 ports open for different security levels.
+* 8441 - SSL/TLS connection for hardware
+* 8442 - plain TCP connection for hardware (no security)
+* 8443 - mutual authentication (mutual SSL) connection for Mobile Apps
+
+Hardware may select to connect to 8441 or 8442, depending on it's capabilities.
+
+### SSL gateway
+
+Most platforms are not capable to handle SSL, so they connect to 8442.
+However, our [gateway script](https://github.com/blynkkk/blynk-library/blob/master/scripts/blynk-ser.sh) can be used to add SSL security layer to communication.
+
+```bash
+./blynk-ser.sh -f SSL
+```
+This will forward all hardware connections from 8441 port to the server via SSL gateway.
+You can run this script on your Raspberry Pi, desktop computer, or even directly on your router!
+
+**Note:** when using your own server, you should overwrite the bundled server.crt certificate, or specify it to the script using --cert switch:
+
+```bash
+./blynk-ser.sh -f SSL -s <server ip> -p 8441 --cert=<certificate>.crt
+```
+
+Flag "-f SSL" is enabled by default for USB communication so you don't have to explicit declare it.
+**Note:** SSL is supported by the gateway only on Linux/OSX for now
+ 
+If you want to skip SSL, and connect to TCP, you can also do that:
+
+```bash
+./blynk-ser.sh -t TCP
+```
+
+### Local Blynk Server
+
+In order to gain maximum security you could install Blynk server locally and restrict access to your network, so nobody except you could access it.
+See how to install Blynk server locally [here](https://github.com/blynkkk/blynk-server#blynk-server).
+
+
+# Troubleshooting
+
+### Connection
+
+If you experience connection problems, follow these steps:
+
+1. Check your wiring using the examples (TCP/HTTP Client or similar) **provided with selected shield and hardware**.     Once you have some understanding how to configure connection, it's much easier to use Blynk.
+2. Try running Blynk default examples for your platform **without modifications** to see if it is working.
+   * Read carefully the example comments and explanations
+   * Check that your token is valid (copied from the App and **doesn't contain spaces, etc.**)
+   * If it doesn't work, try looking into [serial debug prints](./Troubleshooting.md#enable-debug).
+3. Done! Add your modifications and functionality. Enjoy Blynk!
+
+### Delay
+
+Your application might be calling a delay() function or sleeps/cycles for a long time inside of the loop(), like this:
+
+```cpp
+void loop()
+{
+  ...
+  delay(1000);
+  other_long_operation();
+  ...
+  Blynk.run();
+}
+```
+    
+You should be aware that this can degrade performance of Blynk, or cause connection drops.
+
+**Note:** This also applies to the BLYNK_READ & BLYNK_WRITE handlers!
+
+If you need periodic actions, consider using some timer library, like shown [in this example](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino).
+
+### Flood
+
+Your application may cause an enormous load on our server, please try avoiding sending data too fast.
+
+For example, in this situation Blynk.run() will quickly finish processing incoming messages, and then new value is sent to the server immediately, causing high traffic:
+
+```cpp
+void loop()
+{
+  Blynk.virtualWrite(1, value);
+  Blynk.run();
+}
+```
+
+You might be thinking about adding a delay(), but this creates [another trouble](./Troubleshooting.md#delay).
+
+If you need periodic actions, consider using some timer library, like shown [in this example](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino).
+
+### Enable debug
+
+To enable debug prints on the default Serial, add on the top of your sketch **(should be the first line
+)**:
+
+```cpp
+#define BLYNK_DEBUG // Optional, this enables lots of prints
+#define BLYNK_PRINT Serial
+```
+And enable serial in setup():
+
+```cpp
+Serial.begin(9600);
+```
+
+You can also use spare Hardware serial ports or SoftwareSerial for debug output (you will need an adapter to connect to it with your PC).
+
+**Note:** enabling debug mode will slowdown your hardware processing speed up to 10 times.
+
+
+
 
 #Links
 
@@ -313,7 +487,6 @@ Instructions on how to add support for new hardware
 # License
 
 This project is released under The MIT License (MIT)
-
 
 
 # Other Docs
