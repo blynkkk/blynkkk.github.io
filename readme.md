@@ -13,15 +13,15 @@ A few words about Blynk. Contents?
 **Install Blynk Library:** <br><br>
 [Download Blynk Library >](https://github.com/blynkkk/blynk-library/archive/v0.2.1.zip)
 
-In case you forgot how to install Arduino libraries: check [here](http://www.arduino.cc/en/guide/libraries).  We are also good friends of **[codebender](https://codebender.cc/example/BlynkSimpleEthernet/GettingStarted:BlynkBlink)** - you can code and upload Blynk sketches to your gardware directly from your browser.
+In case you forgot how to install Arduino libraries: check [here](http://www.arduino.cc/en/guide/libraries).  We are also good friends of **[codebender](https://codebender.cc/example/BlynkSimpleEthernet/GettingStarted:BlynkBlink)** - you can code and upload Blynk sketches to your hardware directly from your browser.
 
 ###Blink With Blynk 
 
-Let's start with something easy: turn LED connected to your hardware ON and OFF with the Blynk App
+Let's turn LED connected to your hardware ON and OFF with the Blynk App
 
->animated gif
+>result animated gif/instagram
 
-Use this wiring scheme to connect LED to your Hardware:
+Use this wiring scheme to connect LED to your board:
 
 <img src="http://faberfun.com/wp-content/uploads/2013/08/Blink-LED-using-Arduino-uno.jpg" alt="Drawing" style="width: 250px;"/>
 
@@ -29,7 +29,7 @@ Use this wiring scheme to connect LED to your Hardware:
 >Screenshot / Animation
 
 
-###Auth Token
+### IAuth Token
 **Auth Token** is used to connect your Arduino or other board to your smartphone. Every new project you create will have an Auth Token. 
 
 >Screenshot / animation
@@ -40,7 +40,7 @@ It's very convenient to send it over E-mail. If you press E-mail button – toke
 ### Choose your hardware
 Select the hardware you are building project on.
 
-#Let's Get Online
+# Let's Get Online
 You know that **Blynk works over the Internet**, right? (Bluetooth LE is on the way) 
 
 Blynk works with almost anything, check the [full list of supported hardware]()
@@ -49,7 +49,7 @@ Blynk works with almost anything, check the [full list of supported hardware]()
 Before you start Blynking, you need to understand how you will connect to the Internet. It can be an Ethernet Shield for Arduino, or may be your hardware is already internet-enabled (e.g. Spark Core). 
 
 
-###How To Use Example Sketches
+### How To Use Example Sketches
 > Illustration 
 > Building Blocks:
 > 
@@ -57,7 +57,7 @@ Before you start Blynking, you need to understand how you will connect to the In
 > * Auth Token
 > * Processing Layer
 
-###Choosing Your Connection Type 
+### Choosing Your Connection Type 
 We've prepared example sketches which will get your microcomputer online. Open the example sketch according to your device or shield. If you are using **codebender** - find the example you need in the [list]()
 
 
@@ -69,7 +69,8 @@ As it was said prevously, Auth Token is used to identify your hardware and conne
 
 In the example sketch find this line in code:
 
-``` 
+
+```
 char auth[] = "Your AuthToken";
 
 ```
@@ -100,7 +101,7 @@ Blynk connected!
 
 
 
-###Connect over USB,  and others
+### Connect over USB,  and others
 
 If you don't have any shield and your hardware doen's have any connectivity, you can still use Blynk – directly over USB. It's a bit tricky for newbies, but if you follow these [USB instructions](link) you'll succeed for sure. We also work on enhancing this process.
 
@@ -139,68 +140,42 @@ Always feel free to experiment! For example, attach an LED to [PWM](http://www.a
 
 **Happy Blynking!**
 
-#Blynk Basics
+# Blynk Basics
 
-We prepared example sketches to show main Blynk Features. All the sketches are designed so that it's easy to combine one example with another. 
+You can find example sketches covering basic Blynk Features. They are included in the libary. All the sketches are designed to be easily combined with each other. 
 
 
-###Virtual Pins
-Virtual Pins are designed to send **any data** from microcontroller to the Blynk app and back. 
-Think about Virtual Pins as channels for any variables. They are different to physical pins on your Arduino. 
+### Virtual Pins
+Virtual Pins are designed to send **any data** from your microcontroller to the Blynk App and vice versa. 
+Think about Virtual Pins as channels for any variables. Don't 
+
+Make sure you differentiate Virtual Pins from physical pins on your Arduino. Virtual Pins have no physical representation, they exist only in code. 
+
+Virtual Pin 5 in the App will write to Virtual Pin 5 on the hardware
+
 >Illustration showing Virtual Pin
 
 There are 32 Virtual pins at your disposal (V0 - V31)
 > screenshot of pin picker 
 
+Virtual Pins is a powerful feature. Learn what you can do with them:
 
+### Reading Blynk App Data
+All Output Widgets can write data to Virtual Pins. Just tell Arduino which pin to READ, using this code: 
 
-``` 
-Blynk.virtualWrite(PIN, VALUE)
-
-```
-
-
-### Getting and Sending Data
-
->Let's say you want to send converted data from temperature sensor from ºC to ºF and send it to Blynk every 1 second.
-
-Open the sketch accordingly to your hardware. This example is for [Ethernet Shield]()
-
-To avoid using ```delay();``` function, which may cause connection interruptions, we recommend using **[SimpleTimer]()** library for events that need intervals. Check this [example sketch]() for more details.
-
-
-<span style="color:#D3435C;">**Warning:** Don't send more that 10 values per second** - otherwise you'll get **FLOOD** error and your messages will be banned.</span>
-
-
+<span style="color:#D3435C;"> ---------CHANGE CHANGE CHANGE: 
+WRITE CHANGED to READ because it's way easier to explain ------------</span> 
 
 ```
-void yourTimedEvent()
+BLYNK_READ(pinNumber)
 {
-  Blynk.virtualWrite(5, something;)
-}
-
-void loop()
-{
-  Blynk.run(); 
-  timer.run(); 
+  pinData = param.asInt()); 
 }
 ```
 
-#### How to process data from Blynk App on Arduino
-You can use any data from Blynk in your project by using Virtual Pins
+<span style="color:#D3435C;">**NOTE:** This construction should be always placed **outside** of any loop</span> 
 
-
-```
-BLYNK_WRITE(1)
-{
-  BLYNK_LOG("Got a value: %s", param.asStr());
-}
-```
-
-This command means that hardware is listening to the Widget, that WRITEs data to Virtual Pin 1 in the app.
-
-
-You can get data as INTs, Floats, Doubles and Strings 
+You can interpret incoming data as INTs, Floats, Doubles and Strings:
 
 ```
   param.asInt());
@@ -209,14 +184,43 @@ You can get data as INTs, Floats, Doubles and Strings
   param.asStr());
 ```
  
-Some Widgets may send an array of values (e.g Joystick, zeRGBa). You can get any parameter of the array by using: 
+Some Widgets (e.g Joystick, zeRGBa) have more than one output. This output is an array of values. You can get any parameter of the array [0,1,2...] by using: 
 
 ```
-BLYNK_WRITE(1)
+BLYNK_READ(pinNumber)
 {   
-  BLYNK_LOG("Got a value: %s", param(2).asInt());
+  pinData = param(1).asInt());
 }
 ```
+Using Virtual Pins for Widgets with multiple outputs will improve performance.
+
+### Pushing Data to the Blynk App
+
+There are two ways of pushing data from your hardware to the Widgets in the app over Virtual Pins. 
+
+1. **Using Blynk built-in reading frequency**
+2. **Writing your own logic of pushing data**
+
+
+
+Most flexible way to push data to the app is using:
+
+Optinally: *If you need to push processed data from your hardware to the Blynk App, use Virtual Pins to do it.*
+
+```
+Blynk.virtualWrite(pinNumber, value);
+```
+In the Widget, choose the **same** Virtual Pin and set Reading Frequency parameter to PUSH
+
+>Screenshot of the Frequency
+
+There are some requirements when using this command. Please read carefully through them:
+
+We suggest you to use **[SimpleTimer]()** library for events that are executed in intervals. Read instructions inside this [example sketch]() for more details.
+
+1. Don't put ```Blynk.virtualWrite``` inside ```void loop()```. This will cause lot's of outgoing messages to our server and your connection will be terminated.
+2. Avoid using long delays with ```delay()``` – it may cause connection breaks
+3. <span style="color:#000000;">Don't send more that 10 values per second** - otherwise you'll get **FLOOD** error and your connection will be terminated.</span>
 
 
 # Raspberry Pi
@@ -232,7 +236,7 @@ List of devices goes here
 
 #Widgets
 ### Common Widget Settings
-Most of the settings are self-explainable, but there are some hidden features that you can use 
+Most of the settings are self-explanatory, but there are some hidden features that you can use.
 
 ### Pin Selection
 This is one of the main parameters you need to set
