@@ -1,7 +1,7 @@
 #Intro
 A few words about Blynk. Contents?
 
-<img src="https://github.com/blynkkk/blynkkk.github.io/blob/master/images/blynk_architecture.png" style="width: 450px;"/>
+<img src="images/blynk_architecture.png" style="width: 450px;"/>
 
 
 
@@ -26,7 +26,7 @@ Use this wiring scheme to connect LED to your board:
 <img src="http://faberfun.com/wp-content/uploads/2013/08/Blink-LED-using-Arduino-uno.jpg" alt="Drawing" style="width: 250px;"/>
 
 ### Create Blynk Account In The App
-<img src="https://github.com/blynkkk/blynkkk.github.io/blob/master/images/sign_up.png"/>
+<img src="images/sign_up.png"/>
 
 
 ### IAuth Token
