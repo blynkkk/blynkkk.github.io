@@ -1,7 +1,7 @@
 #Intro
 A few words about Blynk. Contents?
 
-<img src="images/blynk_architecture.png" style="width: 450px;"/>
+<img src="images/architecture.png" style="width: 450px;"/>
 
 
 
@@ -32,7 +32,7 @@ Use this wiring scheme to connect LED to your board:
 ### IAuth Token
 **Auth Token** is used to connect your Arduino or other board to your smartphone. Every new project you create will have an Auth Token. 
 
->Screenshot / animation
+<img src="images/token.png"/>
 
 It's very convenient to send it over E-mail. If you press E-mail button – token will be sent to the e-mail address you used for registration. If you have a good memory - you can memorize it ;) or tap the number and it will be copied to the clipboard.
 
@@ -40,10 +40,12 @@ It's very convenient to send it over E-mail. If you press E-mail button – toke
 ### Choose your hardware
 Select the hardware you are building project on.
 
+<img src="images/select_hardware.png"/>
+
 # Let's Get Online
 You know that **Blynk works over the Internet**, right? (Bluetooth LE is on the way) 
 
-Blynk works with almost anything, check the [full list of supported hardware]()
+Blynk works with almost anything, check the [full list of supported hardware] (http://community.blynk.cc/t/hardware-supported-by-blynk/16)
 
 
 Before you start Blynking, you need to understand how you will connect to the Internet. It can be an Ethernet Shield for Arduino, or may be your hardware is already internet-enabled (e.g. Spark Core). 
@@ -61,7 +63,7 @@ Before you start Blynking, you need to understand how you will connect to the In
 We've prepared example sketches which will get your microcomputer online. Open the example sketch according to your device or shield. If you are using **codebender** - find the example you need in the [list]()
 
 
-<img src="http://static1.squarespace.com/static/54765ba7e4b0d055ee0b47a6/54e92d39e4b0c31341b33a9a/557c3b82e4b0ff7f4a641ca4/1434205059233/Screen+Shot+2015-06-13+at+4.11.33+PM.png?format=500w" style="width: 500px;"/>
+<img src="images/connection_type_sketch.png" style="width: 500px;"/>
 
 ###Insert Auth Token
 
@@ -83,7 +85,7 @@ char auth[] = "123456789abcdefghijk0987654321";
 ```
 If you don't know what is your [Auth Token](https://github.com/blynkkk/blynkkk.github.io#auth-token) for the project - check the Project Settings in the app. You can send it over the E-mail. 
 
->Screenshot from the app
+<img src="images/token.png"/>
 
 
 Never post your Auth Token publically, unless you want other people to be able to connect to your project. 
