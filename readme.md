@@ -1,7 +1,7 @@
 #Intro
 A few words about Blynk. Contents?
 
-<img src="https://ksr-ugc.imgix.net/assets/003/046/877/1c622f9beb988b1619213b345e5b8639_original.png?v=1418594107&w=680&h=&fit=max&auto=format&lossless=true&s=a7e09be913cdc24a7e7e62939c988c90" style="width: 450px;"/>
+<img src="https://github.com/blynkkk/blynkkk.github.io/blob/master/images/blynk_architecture.png" style="width: 450px;"/>
 
 
 
@@ -11,7 +11,7 @@ A few words about Blynk. Contents?
 [<img src="http://static1.squarespace.com/static/54765ba7e4b0d055ee0b47a6/t/55515fd0e4b08237a78598e2/1431396305454/?format=500w" alt="Drawing" style=" width: 150px;"/>](https://itunes.apple.com/us/app/blynk-control-arduino-raspberry/id808760481?ls=1&mt=8)  &nbsp; &nbsp; &nbsp; &nbsp;[<img src="http://static1.squarespace.com/static/54765ba7e4b0d055ee0b47a6/t/55515fe8e4b08237a785995e/1431396357648/?format=750w" alt="Drawing" style=" width: 200px;"/>](https://play.google.com/store/apps/details?id=cc.blynk)
 
 **Install Blynk Library:** <br><br>
-[Download Blynk Library >](https://github.com/blynkkk/blynk-library/archive/v0.2.1.zip)
+[Download Blynk Library >](https://github.com/blynkkk/blynk-library/archive/v0.2.4.zip)
 
 In case you forgot how to install Arduino libraries: check [here](http://www.arduino.cc/en/guide/libraries).  We are also good friends of **[codebender](https://codebender.cc/example/BlynkSimpleEthernet/GettingStarted:BlynkBlink)** - you can code and upload Blynk sketches to your hardware directly from your browser.
 
@@ -26,7 +26,7 @@ Use this wiring scheme to connect LED to your board:
 <img src="http://faberfun.com/wp-content/uploads/2013/08/Blink-LED-using-Arduino-uno.jpg" alt="Drawing" style="width: 250px;"/>
 
 ### Create Blynk Account In The App
->Screenshot / Animation
+<img src="https://github.com/blynkkk/blynkkk.github.io/blob/master/images/sign_up.png"/>
 
 
 ### IAuth Token
