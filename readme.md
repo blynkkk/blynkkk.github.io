@@ -33,7 +33,7 @@ It's very convenient to send it over E-mail. If you press E-mail button – toke
 ### Choose your hardware
 Select the hardware you are building project on.
 
-<img src="images/select_hardware.png" style="width: 250px;"/>
+<img src="images/select_hardware.png" style="width: 300px;"/>
 
 # Let's Get Online
 You know that **Blynk works over the Internet**, right? (Bluetooth LE is on the way) 
@@ -78,7 +78,7 @@ char auth[] = "123456789abcdefghijk0987654321";
 ```
 If you don't know what is your [Auth Token](https://github.com/blynkkk/blynkkk.github.io#auth-token) for the project - check the Project Settings in the app. You can send it over the E-mail. 
 
-<img src="images/token.png"/>
+<img src="images/token.png" style="width: 300px;" />
 
 
 Never post your Auth Token publically, unless you want other people to be able to connect to your project. 
@@ -109,29 +109,29 @@ If you don't have any shield and your hardware doen's have any connectivity, you
 
 Open your project in the app. It's empty now.
 
-<img src="images/empty_project.png"/>
+<img src="images/empty_project.png" style="width: 300px;"/>
 
 So let's add a Button. Just tap anywhere on empty space - Widget Box will open. 
 
-<img src="images/widgets_box.png"/>
+<img src="images/widgets_box.png" style="width: 300px;"/>
 
 Choose the Button Widget.
 
-<img src="images/project_with_button.png"/>
+<img src="images/project_with_button.png" style="width: 300px;"/>
 
 Tap on the widget to get to it's settings  
 
-<img src="images/button_settings.png"/>
+<img src="images/button_settings.png" style="width: 300px;"/>
 
 The most important parameter to set is **PIN** . List of pins reflects physical pins defined by your hardware. If your LED is connected to Digital Pin 10 - then select **D10** (**D** - stands for **D**igital).    
 
-<img src="images/pin_selection.png"/>
+<img src="images/pin_selection.png" style="width: 300px;"/>
 
 > Illustration showing how Physical PIN is connected to Pin in the APP.
 
 When you are done with the Settings - press **PLAY** button. This will switch you from EDIT mode to PLAY mode where you can interact with widgets. You can always get back to EDIT mode by pressing STOP
 
-<img src="images/play_button.png"/>
+<img src="images/play_button.png" style="width: 300px;"/>
 
 Press Button to turn the LED On and Off
 
