@@ -8,18 +8,18 @@
 
 In case you forgot how to install Arduino libraries: check [here](http://www.arduino.cc/en/guide/libraries).  We are also good friends of **[codebender](https://codebender.cc/example/BlynkSimpleEthernet/GettingStarted:BlynkBlink)** - you can code and upload Blynk sketches to your hardware directly from your browser.
 
-### Create Blynk Account
+### Create Blynk account
 <img src="images/sign_up.png" style="width: 300px;"/>
 
 ### Create project
 <img src="images/new_project.png" style="width: 300px;"/>
 
 ### Auth Token
-**Auth Token** is used to connect your hardware to your smartphone. Every new project you create will have an Auth Token. 
+**Auth Token** is used to connect your hardware to your smartphone.
 
 <img src="images/token.png" style="width: 300px;"/>
 
-It's very convenient to send it over E-mail. If you press E-mail button – token will be sent to the e-mail address you used for registration. If you have a good memory - you can memorize it ;) or tap on token and it will be copied to the clipboard.
+It's very convenient to send it over E-mail. Press E-mail button – token will be sent to the e-mail address you used for registration.
 
 
 ### Choose your hardware
@@ -27,13 +27,13 @@ Select the hardware you are building project on.
 
 <img src="images/select_hardware.png" style="width: 300px;"/>
 
-###  Let's Get Online
+###  Let's get online
 You know that **Blynk works over the Internet**, right? (Bluetooth LE is on the way) 
 
 Before you start Blynking, you need to understand how you will connect to the Internet. It can be an Ethernet Shield for Arduino, or may be your hardware is already internet-enabled (e.g. Spark Core). 
 
 
-### Choosing Your Connection Type 
+### Choosing your connection type 
 We've prepared example sketches which will get your microcomputer online. Open the example sketch according to your device or shield. If you are using **codebender** - find the example you need in the [list]()
 
 
@@ -63,7 +63,7 @@ void loop()
 }
 ```
 
-###Insert Auth Token
+###Insert auth token
 
 In the example sketch find this line in code:
 
@@ -72,7 +72,7 @@ In the example sketch find this line in code:
 char auth[] = "YourAuthToken";
 ```
 
-Change it by putting your Auth Token inside curly brackets. 
+Change it by putting your [Auth Token](http://blynkkk.github.io/#getting-started-auth-token) inside curly brackets. 
 
 ``` 
 char auth[] = "f45626c103a94983b469637978b0c78a";
@@ -88,7 +88,7 @@ Connecting...
 Blynk connected!
 ```
 
-# Set Up Your Project
+###Setup your project
 
 Open your project in the app. It's empty now.
 
@@ -106,13 +106,13 @@ Tap on the widget to get to it's settings
 
 <img src="images/button_settings.png" style="width: 300px;"/>
 
-The most important parameter to set is **PIN** . List of pins reflects physical pins defined by your hardware. If your LED is connected to Digital Pin 10 - then select **D10** (**D** - stands for **D**igital).    
+The most important parameter to set is **PIN** . List of pins reflects physical pins defined by your hardware. If your LED is connected to Digital Pin 13 - then select **D13** (**D** - stands for **D**igital).    
 
 <img src="images/pin_selection.png" style="width: 300px;"/>
 
 > Illustration showing how Physical PIN is connected to Pin in the APP.
 
-When you are done with the Settings - press **PLAY** button. This will switch you from EDIT mode to PLAY mode where you can interact with widgets. You can always get back to EDIT mode by pressing STOP
+When you are done with the Settings - press **PLAY** button. This will switch you from EDIT mode to PLAY mode where you can interact with widgets.
 
 <img src="images/play_button.png" style="width: 300px;"/>
 
@@ -122,7 +122,7 @@ Press Button to turn the LED On and Off
 
 Always feel free to experiment! For example, attach an LED to [PWM](http://www.arduino.cc/en/Tutorial/Fading)-enabled Pin on your Arduino. Set the Slider Widget to control brightness of an LED. Just use the same steps described above.
 
-**Happy Blynking!**
+### <span style="color:#24C48C" >**Congratulations, that's it! Happy Blynking!**</span>
 
 ### Connect over USB and others
 
