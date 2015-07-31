@@ -68,13 +68,13 @@ void loop()
 In the example sketch find this line in code:
 
 
-```
+```cpp
 char auth[] = "YourAuthToken";
 ```
 
 Change it by putting your [Auth Token](http://blynkkk.github.io/#getting-started-auth-token) inside curly brackets. 
 
-``` 
+```cpp 
 char auth[] = "f45626c103a94983b469637978b0c78a";
 ``` 
 
@@ -144,7 +144,8 @@ Virtual Pins are designed to send any data from your microcontroller to the Blyn
 
 Virtual Pins can be used to interface with libraries (Servo, LCD and others), and implement custom functionality.
 The device may send data to the Widget to the Virtual Pin like this:
-```
+
+```cpp
 Blynk.virtualWrite(pin, "abc");
 Blynk.virtualWrite(pin, 123);
 Blynk.virtualWrite(pin, 12.34);
@@ -153,7 +154,7 @@ Blynk.virtualWrite(pin, 12.34);
 ###Sending data to hardware
 All [Controller Widgets](http://blynkkk.github.io/#widgets-controllers) can send data to Virtual Pins on your hardware. 
 For instance, below code shows how to send 1 and 0 int value via button to virtual pin 1 : 
-```
+```cpp
 BLYNK_WRITE(1)
 {
   int pinData = param.asInt(); 
@@ -166,7 +167,7 @@ and this widget setup
 In above example when you press button you'll get 1 and on second click 0 within pinData variable. [Full example](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/GetData/GetData.ino).
 
 You can interpret incoming data as INTs, Floats, Doubles and Strings:
-```
+```cpp
   param.asInt());
   param.asFloat());
   param.asDouble());
@@ -174,7 +175,7 @@ You can interpret incoming data as INTs, Floats, Doubles and Strings:
 ```
  
 Some Widgets (e.g Joystick, zeRGBa) have more than one output. This output is an array of values. You can get any parameter of the array [0,1,2...] by using: 
-```
+```cpp
 BLYNK_READ(pinNumber)
 {   
   int x = param[0].asInt();
@@ -195,7 +196,7 @@ Most flexible way to push data to the app is using:
 
 Optinally: *If you need to push processed data from your hardware to the Blynk App, use Virtual Pins to do it.*
 
-```
+```cpp
 Blynk.virtualWrite(pinNumber, value);
 ```
 In the Widget, choose the **same** Virtual Pin and set Reading Frequency parameter to PUSH
@@ -313,7 +314,7 @@ Twitter widget connects your Twitter account to Blynk and allows you to send Twe
 
 
 Example code:
-```
+```cpp
 Blynk.tweet("Hey, Blynkers! My Arduino can tweet now!");
 ```
 
@@ -328,7 +329,7 @@ Email widget allows you to send email from your hardware to any address.
 >Image
 
 Example code:
-```
+```cpp
 Blynk.email("my_email@example.com", "Title", "Body");
 ```
 
@@ -342,7 +343,7 @@ Push Notification widget allows you to send push notification from your hardware
 >Image
 
 Example code:
-```
+```cpp
 Blynk.notify("Hey, Blynkers! My hardware can push now!");
 ```
 
@@ -358,7 +359,7 @@ Bridge widget allows you to send messages to another hardware connected to Blynk
 >Image
 
 Example code:
-```
+```cpp
 WidgetBridge bridge1(1); //Bridge widget on virtual pin 1
 void setup() {
     bridge1.setAuthToken("OtherAuthToken");
@@ -388,7 +389,7 @@ analogWrite //PWM or Analog signal depending on the platform
 
 You can send all the formats of data to Virtual Pins
 
-```
+```cpp
 Blynk.virtualWrite(pin, "abc");
 Blynk.virtualWrite(pin, 123);
 Blynk.virtualWrite(pin, 12.34);
@@ -415,26 +416,6 @@ You can also use spare Hardware serial ports or SoftwareSerial for debug output 
 
 
 <span style="color:#D3435C;">**WARNING:** Enabling Debug mode will slowdown your hardware processing speed up to 10 times!</span>
-
-### Blynk.notification("message");
-### Blynk.email();
-In order to use this command, you need to add Email Widget in the App
-
-Send a pre-defined email message
-
-```Blynk.email();```
-
-Send an email message with custom body:
-
-```Blynk.email("Message");```
-
-Send an email message with custom body, subject and recipient:
-
-```Blynk.email("email@example.com", "Subject", "Message");```
-
-
-
-
 
 #Blynk API. Writing your own library
 Instructions on how to add support for new hardware 
