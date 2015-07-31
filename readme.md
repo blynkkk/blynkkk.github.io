@@ -90,6 +90,19 @@ Blynk connected!
 
 ```
 
+### <span style="color:#24C48C" >**Congratulations! It was the hardest part and it's over!**</span>
+
+
+
+### Connect over USB,  and others
+
+If you don't have any shield and your hardware doen's have any connectivity, you can still use Blynk – directly over USB. It's a bit tricky for newbies, but if you follow these [USB instructions](link) you'll succeed for sure. We also work on enhancing this process.
+
+###Raspberry Pi, Spark Core
+* **Spark Core** owners: check [here]()
+* **Raspberry Pi** eaters: [here]() 
+
+
 # Set Up Your Project
 
 Open your project in the app. It's empty now.
@@ -125,14 +138,6 @@ Press Button to turn the LED On and Off
 Always feel free to experiment! For example, attach an LED to [PWM](http://www.arduino.cc/en/Tutorial/Fading)-enabled Pin on your Arduino. Set the Slider Widget to control brightness of an LED. Just use the same steps described above.
 
 **Happy Blynking!**
-
-### Connect over USB,  and others
-
-If you don't have any shield and your hardware doen's have any connectivity, you can still use Blynk – directly over USB. It's a bit tricky for newbies, but if you follow these [USB instructions](link) you'll succeed for sure. We also work on enhancing this process.
-
-###Raspberry Pi, Spark Core
-* **Spark Core** owners: check [here]()
-* **Raspberry Pi** eaters: [here]() 
 
 # Blynk Basics
 
