@@ -324,6 +324,7 @@ Blynk.tweet("Hey, Blynkers! My Arduino can tweet now!");
 ```
 
 Limitations :
+
 - you cant' send 2 tweets in a row with same message
 - only 1 tweet allowed within 1 minute interval
 
@@ -336,6 +337,7 @@ Blynk.email("my_email@example.com", "Title", "Body");
 ```
 
 Limitations :
+
 - only 1 email allowed within 1 minute interval
 
 ### Push Notifications
@@ -347,6 +349,7 @@ Blynk.notify("Hey, Blynkers! My hardware can push now!");
 ```
 
 Limitations :
+
 - maximum allowed body length is 255 chars.
 - only 1 push notification allowed within 1 minute interval
 
