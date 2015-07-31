@@ -66,8 +66,6 @@ void loop()
 
 ###Insert Auth Token
 
-As it was said previously, Auth Token is used to identify your hardware and connect it with the smartphone. 
-
 In the example sketch find this line in code:
 
 
@@ -79,15 +77,9 @@ char auth[] = "YourAuthToken";
 Change it by putting your Auth Token inside curly brackets. 
 
 ``` 
-char auth[] = "123456789abcdefghijk0987654321";
+char auth[] = "f45626c103a94983b469637978b0c78a";
 
-```
-If you don't know what is your [Auth Token](https://github.com/blynkkk/blynkkk.github.io#auth-token) for the project - check the Project Settings in the app. You can send it over the E-mail. 
-
-<img src="images/token.png" style="width: 300px;" />
-
-
-Never post your Auth Token publically, unless you want other people to be able to connect to your project. 
+Never post your Auth Token in public, unless you want other people to be able to connect to your project. 
 
 Upload sketch to the board and open Serial Terminal. Wait until you see something like this: 
 
@@ -97,19 +89,6 @@ Connecting...
 Blynk connected!
 
 ```
-
-### <span style="color:#24C48C" >**Congratulations! It was the hardest part and it's over!**</span>
-
-
-
-### Connect over USB,  and others
-
-If you don't have any shield and your hardware doen's have any connectivity, you can still use Blynk – directly over USB. It's a bit tricky for newbies, but if you follow these [USB instructions](link) you'll succeed for sure. We also work on enhancing this process.
-
-###Raspberry Pi, Spark Core
-* **Spark Core** owners: check [here]()
-* **Raspberry Pi** eaters: [here]() 
-
 
 # Set Up Your Project
 
@@ -146,6 +125,14 @@ Press Button to turn the LED On and Off
 Always feel free to experiment! For example, attach an LED to [PWM](http://www.arduino.cc/en/Tutorial/Fading)-enabled Pin on your Arduino. Set the Slider Widget to control brightness of an LED. Just use the same steps described above.
 
 **Happy Blynking!**
+
+### Connect over USB,  and others
+
+If you don't have any shield and your hardware doen's have any connectivity, you can still use Blynk – directly over USB. It's a bit tricky for newbies, but if you follow these [USB instructions](link) you'll succeed for sure. We also work on enhancing this process.
+
+###Raspberry Pi, Spark Core
+* **Spark Core** owners: check [here]()
+* **Raspberry Pi** eaters: [here]() 
 
 # Blynk Basics
 
