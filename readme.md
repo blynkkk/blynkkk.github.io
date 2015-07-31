@@ -31,7 +31,6 @@ Select the hardware you are building project on.
 
 ##Getting started with hardware
 
-###  Let's get online
 You know that **Blynk works over the Internet**, right? (Bluetooth LE is on the way) 
 
 Before you start Blynking, you need to understand how you will connect to the Internet. It can be an Ethernet Shield for Arduino, or may be your hardware is already internet-enabled (e.g. Spark Core). 
@@ -123,7 +122,9 @@ Press Button to turn the LED On and Off
 
 Always feel free to experiment! For example, attach an LED to [PWM](http://www.arduino.cc/en/Tutorial/Fading)-enabled Pin on your Arduino. Set the Slider Widget to control brightness of an LED. Just use the same steps described above.
 
-### <span style="color:#24C48C" >**Congratulations, that's it! Happy Blynking!**</span>
+<span style="color:#24C48C" >**Congratulations, that's it! Happy Blynking!**</span>
+
+# Other hardware and connection type
 
 ### Connect over USB and others
 
