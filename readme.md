@@ -19,13 +19,13 @@ Use this wiring scheme to connect LED to your board:
 <img src="http://faberfun.com/wp-content/uploads/2013/08/Blink-LED-using-Arduino-uno.jpg" alt="Drawing" style="width: 250px;"/>
 
 ### Create Blynk Account In The App
-<img src="images/sign_up.png"/>
+<img src="images/sign_up.png" style="width: 300px;"/>
 
 
 ### IAuth Token
 **Auth Token** is used to connect your Arduino or other board to your smartphone. Every new project you create will have an Auth Token. 
 
-<img src="images/token.png"/>
+<img src="images/token.png" style="width: 300px;"/>
 
 It's very convenient to send it over E-mail. If you press E-mail button – token will be sent to the e-mail address you used for registration. If you have a good memory - you can memorize it ;) or tap the number and it will be copied to the clipboard.
 
