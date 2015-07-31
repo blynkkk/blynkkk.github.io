@@ -118,7 +118,7 @@ When you are done with the Settings - press **PLAY** button. This will switch yo
 
 Press Button to turn the LED On and Off
 
-> Screenshot
+<img src="images/button_pressed.png" style="width: 300px;"/>
 
 Always feel free to experiment! For example, attach an LED to [PWM](http://www.arduino.cc/en/Tutorial/Fading)-enabled Pin on your Arduino. Set the Slider Widget to control brightness of an LED. Just use the same steps described above.
 
@@ -140,37 +140,32 @@ You can find example sketches covering basic Blynk Features. They are included i
 
 
 ### Virtual Pins
-Virtual Pins are designed to send **any data** from your microcontroller to the Blynk App and vice versa. 
-Think about Virtual Pins as channels for any variables. Don't 
+Virtual Pins are designed to send any data from your microcontroller to the Blynk App and back. Think about Virtual Pins as channels for sending any variables. Make sure you differentiate Virtual Pins from physical pins on your hardware. Virtual Pins have no physical representation.
 
-Make sure you differentiate Virtual Pins from physical pins on your Arduino. Virtual Pins have no physical representation, they exist only in code. 
-
-Virtual Pin 5 in the App will write to Virtual Pin 5 on the hardware
-
->Illustration showing Virtual Pin
-
-There are 32 Virtual pins at your disposal (V0 - V31)
-> screenshot of pin picker 
-
-Virtual Pins is a powerful feature. Learn what you can do with them:
-
-### Reading Blynk App Data
-All Output Widgets can write data to Virtual Pins. Just tell Arduino which pin to READ, using this code: 
-
-<span style="color:#D3435C;"> ---------CHANGE CHANGE CHANGE: 
-WRITE CHANGED to READ because it's way easier to explain ------------</span> 
-
+Virtual Pins can be used to interface with libraries (Servo, LCD and others), and implement custom functionality.
+The device may send data to the Widget to the Virtual Pin like this:
 ```
-BLYNK_READ(pinNumber)
+Blynk.virtualWrite(pin, "abc");
+Blynk.virtualWrite(pin, 123);
+Blynk.virtualWrite(pin, 12.34);
+```
+
+###Sending data to hardware
+All [Controller Widgets](http://blynkkk.github.io/#widgets-controllers) can send data to Virtual Pins on your hardware. 
+For instance, below code shows how to send 1 and 0 int value via button to virtual pin 1 : 
+```
+BLYNK_WRITE(1)
 {
-  pinData = param.asInt()); 
+  int pinData = param.asInt(); 
 }
 ```
+and this widget setup
 
-<span style="color:#D3435C;">**NOTE:** This construction should be always placed **outside** of any loop</span> 
+<img src="images/button_virtual_1.png" style="width: 300px;"/>
+
+In above example when you press button you'll get 1 and on second click 0 within pinData variable. [Full example](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/GetData/GetData.ino).
 
 You can interpret incoming data as INTs, Floats, Doubles and Strings:
-
 ```
   param.asInt());
   param.asFloat());
@@ -179,21 +174,20 @@ You can interpret incoming data as INTs, Floats, Doubles and Strings:
 ```
  
 Some Widgets (e.g Joystick, zeRGBa) have more than one output. This output is an array of values. You can get any parameter of the array [0,1,2...] by using: 
-
 ```
 BLYNK_READ(pinNumber)
 {   
-  pinData = param(1).asInt());
+  int x = param[0].asInt();
+  int y = param[1].asInt();
 }
 ```
-Using Virtual Pins for Widgets with multiple outputs will improve performance.
+[Full joystick example](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/JoystickTwoAxis/JoystickTwoAxis.ino).
 
-### Pushing Data to the Blynk App
+###Sending data to smartphone
 
-There are two ways of pushing data from your hardware to the Widgets in the app over Virtual Pins. 
-
-1. **Using Blynk built-in reading frequency**
-2. **Writing your own logic of pushing data**
+There are two ways of pushing data from your hardware to the Widgets in the app over Virtual Pins : 
+- Using Blynk built-in reading frequency
+- Writing your own logic of pushing data
 
 
 
@@ -287,7 +281,7 @@ Read more about Virtual Pins Here
 >Screenshot
 
 
-##Controls:
+##Controllers
 ### Button
 >Image
 
@@ -300,7 +294,7 @@ Read more about Virtual Pins Here
 ### Joystick
 >Image
 
-##Displays:
+##Displays
 ### Value Display
 >Image
 
@@ -310,7 +304,7 @@ Read more about Virtual Pins Here
 ### LCD Display
 >Image
 
-##Notifications:
+##Notifications
 ###Twitter
 
 Twitter widget connects your Twitter account to Blynk and allows you to send Tweets from your hardware.
@@ -357,7 +351,7 @@ Limitations :
 - maximum allowed body length is 255 chars.
 - only 1 push notification allowed within 1 minute interval
 
-##Other:
+##Other
 ###Bridge
 
 Bridge widget allows you to send messages to another hardware connected to Blynk Cloud.
