@@ -319,21 +319,33 @@ Twitter Widget connects your Twitter account to Blynk and allows you to send Twe
 
 
 Example code:
-
 ```
-if (something) 
-{
-   Blynk.tweet("Hey, Blynkers! My Arduino can tweet now!");
-}
-
+Blynk.tweet("Hey, Blynkers! My Arduino can tweet now!");
 ```
+
+- you cant' send 2 tweets in a row with same message
+- only 1 tweet allowed within 1 minute interval
 
 ### Email
 >Image
 
+Example code:
+```
+Blynk.email("my_email@example.com", "Title", "Body");
+```
+
+- only 1 email allowed within 1 minute interval
+
 ### Push Notifications
 >Image
 
+Example code:
+```
+Blynk.notify("Hey, Blynkers! My hardware can push now!");
+```
+
+- maximum allowed body length is 255 chars.
+- only 1 push notification allowed within 1 minute interval
 
 #How it works?
 A few words about Blynk. Contents?
