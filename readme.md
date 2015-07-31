@@ -10,13 +10,13 @@ In case you forgot how to install Arduino libraries: check [here](http://www.ard
 
 ##Getting started with application
 
-### Create Blynk account
+###Create Blynk account
 <img src="images/sign_up.png" style="width: 300px;"/>
 
-### Create project
+###Create project
 <img src="images/new_project.png" style="width: 300px;"/>
 
-### Auth Token
+###Auth Token
 **Auth Token** is used to connect your hardware to your smartphone.
 
 <img src="images/token.png" style="width: 300px;"/>
@@ -24,7 +24,7 @@ In case you forgot how to install Arduino libraries: check [here](http://www.ard
 It's very convenient to send it over E-mail. Press E-mail button – token will be sent to the e-mail address you used for registration.
 
 
-### Choose your hardware
+###Choose your hardware
 Select the hardware you are building project on.
 
 <img src="images/select_hardware.png" style="width: 300px;"/>
@@ -39,7 +39,7 @@ We've prepared example sketches which will get your microcomputer online. Open t
 
 <img src="images/connection_type_sketch.png" style="width: 500px;"/>
 
-### Simplest sketch
+###Simplest sketch
 
 Simplest possible sketch would be for Arduino UNO with Ethernet shield
 
@@ -126,7 +126,7 @@ Always feel free to experiment! For example, attach an LED to [PWM](http://www.a
 
 # Other hardware and connection type
 
-### Connect over USB and others
+###Connect over USB and others
 
 If you don't have any shield and your hardware doen's have any connectivity, you can still use Blynk – directly over USB. It's a bit tricky for newbies, but if you follow these [USB instructions](link) you'll succeed for sure. We also work on enhancing this process.
 
@@ -134,12 +134,12 @@ If you don't have any shield and your hardware doen's have any connectivity, you
 * **Spark Core** owners: check [here]()
 * **Raspberry Pi** eaters: [here]() 
 
-# Blynk Basics
+#Blynk Basics
 
 You can find example sketches covering basic Blynk Features. They are included in the libary. All the sketches are designed to be easily combined with each other. 
 
 
-### Virtual Pins
+###Virtual Pins
 Virtual Pins are designed to send any data from your microcontroller to the Blynk App and back. Think about Virtual Pins as channels for sending any variables. Make sure you differentiate Virtual Pins from physical pins on your hardware. Virtual Pins have no physical representation.
 
 Virtual Pins can be used to interface with libraries (Servo, LCD and others), and implement custom functionality.The device may send data to the Widget to the Virtual Pin like this:
