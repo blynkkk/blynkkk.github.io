@@ -1,10 +1,3 @@
-#Intro
-A few words about Blynk. Contents?
-
-<img src="images/architecture.png" style="width: 450px;"/>
-
-
-
 #Getting Started
 ###Download all the ingridients:
 **Blynk App for iOS or Android:** <br> <br> 
@@ -40,12 +33,12 @@ It's very convenient to send it over E-mail. If you press E-mail button – toke
 ### Choose your hardware
 Select the hardware you are building project on.
 
-<img src="images/select_hardware.png"/>
+<img src="images/select_hardware.png" style="width: 250px;"/>
 
 # Let's Get Online
 You know that **Blynk works over the Internet**, right? (Bluetooth LE is on the way) 
 
-Blynk works with almost anything, check the [full list of supported hardware] (http://community.blynk.cc/t/hardware-supported-by-blynk/16)
+Blynk works with almost anything, check the [full list of supported hardware](http://community.blynk.cc/t/hardware-supported-by-blynk/16)
 
 
 Before you start Blynking, you need to understand how you will connect to the Internet. It can be an Ethernet Shield for Arduino, or may be your hardware is already internet-enabled (e.g. Spark Core). 
@@ -114,25 +107,31 @@ If you don't have any shield and your hardware doen's have any connectivity, you
 
 # Set Up Your Project
 
-Open your project in the app. It's empty now, so let's add a Button. Just tap anywhere on empty space - Widget Box will open. Choose the Button Widget.
+Open your project in the app. It's empty now.
 
-> Screenshot
+<img src="images/empty_project.png"/>
 
-Hold and drag it to reposition
+So let's add a Button. Just tap anywhere on empty space - Widget Box will open. 
 
-> Screenshot
+<img src="images/widgets_box.png"/>
+
+Choose the Button Widget.
+
+<img src="images/project_with_button.png"/>
 
 Tap on the widget to get to it's settings  
 
-> Screenshot
+<img src="images/button_settings.png"/>
 
-The most important parameter to set is **PIN** . List of pins reflects physical pins defined by your hardware. If your LED is connected to Digital Pin 10 - then select **D10** (**D** - stands for **D**igital). Virtual pins are described [here]().    
+The most important parameter to set is **PIN** . List of pins reflects physical pins defined by your hardware. If your LED is connected to Digital Pin 10 - then select **D10** (**D** - stands for **D**igital).    
+
+<img src="images/pin_selection.png"/>
 
 > Illustration showing how Physical PIN is connected to Pin in the APP.
 
 When you are done with the Settings - press **PLAY** button. This will switch you from EDIT mode to PLAY mode where you can interact with widgets. You can always get back to EDIT mode by pressing STOP
 
-> Screenshot
+<img src="images/play_button.png"/>
 
 Press Button to turn the LED On and Off
 
@@ -300,6 +299,11 @@ if (something)
 ### Push Notifications
 >Image
 
+
+#How it works?
+A few words about Blynk. Contents?
+
+<img src="images/architecture.png" style="width: 450px;"/>
 
 #Blynk Commands
 The library can perform basic pin IO (input-output) operations out-of-the-box:
