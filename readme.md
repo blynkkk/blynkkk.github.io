@@ -1,5 +1,5 @@
 #Getting Started
-###Download all the ingridients
+##Download all the ingridients
 **Blynk App for iOS or Android:** <br> <br> 
 [<img src="http://static1.squarespace.com/static/54765ba7e4b0d055ee0b47a6/t/55515fd0e4b08237a78598e2/1431396305454/?format=500w" alt="Drawing" style=" width: 150px;"/>](https://itunes.apple.com/us/app/blynk-control-arduino-raspberry/id808760481?ls=1&mt=8)  &nbsp; &nbsp; &nbsp; &nbsp;[<img src="http://static1.squarespace.com/static/54765ba7e4b0d055ee0b47a6/t/55515fe8e4b08237a785995e/1431396357648/?format=750w" alt="Drawing" style=" width: 200px;"/>](https://play.google.com/store/apps/details?id=cc.blynk)
 
@@ -7,6 +7,8 @@
 [Download Blynk Library >](https://github.com/blynkkk/blynk-library/archive/v0.2.4.zip)
 
 In case you forgot how to install Arduino libraries: check [here](http://www.arduino.cc/en/guide/libraries).  We are also good friends of **[codebender](https://codebender.cc/example/BlynkSimpleEthernet/GettingStarted:BlynkBlink)** - you can code and upload Blynk sketches to your hardware directly from your browser.
+
+##Getting started with application
 
 ### Create Blynk account
 <img src="images/sign_up.png" style="width: 300px;"/>
@@ -27,15 +29,14 @@ Select the hardware you are building project on.
 
 <img src="images/select_hardware.png" style="width: 300px;"/>
 
+##Getting started with hardware
+
 ###  Let's get online
 You know that **Blynk works over the Internet**, right? (Bluetooth LE is on the way) 
 
 Before you start Blynking, you need to understand how you will connect to the Internet. It can be an Ethernet Shield for Arduino, or may be your hardware is already internet-enabled (e.g. Spark Core). 
 
-
-### Choosing your connection type 
 We've prepared example sketches which will get your microcomputer online. Open the example sketch according to your device or shield. If you are using **codebender** - find the example you need in the [list]()
-
 
 <img src="images/connection_type_sketch.png" style="width: 500px;"/>
 
@@ -88,7 +89,7 @@ Connecting...
 Blynk connected!
 ```
 
-###Setup your project
+##Setup your project
 
 Open your project in the app. It's empty now.
 
