@@ -287,7 +287,7 @@ Read more about Virtual Pins Here
 >Screenshot
 
 
-Controls:
+##Controls:
 ### Button
 >Image
 
@@ -300,7 +300,7 @@ Controls:
 ### Joystick
 >Image
 
-Displays:
+##Displays:
 ### Value Display
 >Image
 
@@ -310,10 +310,10 @@ Displays:
 ### LCD Display
 >Image
 
-Notifications:
-### Twitter
+##Notifications:
+###Twitter
 
-Twitter Widget connects your Twitter account to Blynk and allows you to send Tweets from your hardware. 
+Twitter widget connects your Twitter account to Blynk and allows you to send Tweets from your hardware.
 
 <img src="http://static1.squarespace.com/static/54765ba7e4b0d055ee0b47a6/54e92d39e4b0c31341b33a9a/55813d09e4b0ba8aa77ab230/1434533129525/TwitterON.png" style="width: 77px;"/>
 
@@ -328,7 +328,9 @@ Limitations :
 - you cant' send 2 tweets in a row with same message
 - only 1 tweet allowed within 1 minute interval
 
-### Email
+###Email
+
+Email widget allows you to send email from your hardware to any address.
 >Image
 
 Example code:
@@ -340,7 +342,9 @@ Limitations :
 
 - only 1 email allowed within 1 minute interval
 
-### Push Notifications
+###Push Notifications
+
+Push Notification widget allows you to send push notification from your hardware to your device.
 >Image
 
 Example code:
@@ -352,6 +356,22 @@ Limitations :
 
 - maximum allowed body length is 255 chars.
 - only 1 push notification allowed within 1 minute interval
+
+##Other:
+###Bridge
+
+Bridge widget allows you to send messages to another hardware connected to Blynk Cloud.
+>Image
+
+Example code:
+```
+WidgetBridge bridge1(1); //Bridge widget on virtual pin 1
+void setup() {
+    bridge1.setAuthToken("OtherAuthToken");
+    bridge1.digitalWrite(9, HIGH);
+}
+```
+
 
 #How it works?
 A few words about Blynk. Contents?
