@@ -267,7 +267,7 @@ Specific steps for Spark Core
 
 ## Community-reported
 
-- WIZnet-W5500-EVB (www.instructables.com/id/WIZnet-W5500-EVB-and-Blynk-App-communication)
+- WIZnet-W5500-EVB (http://instructables.com/id/WIZnet-W5500-EVB-and-Blynk-App-communication)
 - TI Tiva C Connected Launchpad (EK-TM4C1294XL1) + Energia 15 (http://community.blynk.cc/t/hardware-supported-by-blynk/16/36)
 
 #Widgets
