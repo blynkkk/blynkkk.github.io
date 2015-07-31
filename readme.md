@@ -1,5 +1,5 @@
 #Getting Started
-###Download all the ingridients:
+###Download all the ingridients
 **Blynk App for iOS or Android:** <br> <br> 
 [<img src="http://static1.squarespace.com/static/54765ba7e4b0d055ee0b47a6/t/55515fd0e4b08237a78598e2/1431396305454/?format=500w" alt="Drawing" style=" width: 150px;"/>](https://itunes.apple.com/us/app/blynk-control-arduino-raspberry/id808760481?ls=1&mt=8)  &nbsp; &nbsp; &nbsp; &nbsp;[<img src="http://static1.squarespace.com/static/54765ba7e4b0d055ee0b47a6/t/55515fe8e4b08237a785995e/1431396357648/?format=750w" alt="Drawing" style=" width: 200px;"/>](https://play.google.com/store/apps/details?id=cc.blynk)
 
@@ -8,26 +8,18 @@
 
 In case you forgot how to install Arduino libraries: check [here](http://www.arduino.cc/en/guide/libraries).  We are also good friends of **[codebender](https://codebender.cc/example/BlynkSimpleEthernet/GettingStarted:BlynkBlink)** - you can code and upload Blynk sketches to your hardware directly from your browser.
 
-###Blink With Blynk 
-
-Let's turn LED connected to your hardware ON and OFF with the Blynk App
-
->result animated gif/instagram
-
-Use this wiring scheme to connect LED to your board:
-
-<img src="http://faberfun.com/wp-content/uploads/2013/08/Blink-LED-using-Arduino-uno.jpg" alt="Drawing" style="width: 250px;"/>
-
-### Create Blynk Account In The App
+### Create Blynk Account
 <img src="images/sign_up.png" style="width: 300px;"/>
 
+### Create project
+<img src="images/new_project.png" style="width: 300px;"/>
 
-### IAuth Token
-**Auth Token** is used to connect your Arduino or other board to your smartphone. Every new project you create will have an Auth Token. 
+### Auth Token
+**Auth Token** is used to connect your hardware to your smartphone. Every new project you create will have an Auth Token. 
 
 <img src="images/token.png" style="width: 300px;"/>
 
-It's very convenient to send it over E-mail. If you press E-mail button – token will be sent to the e-mail address you used for registration. If you have a good memory - you can memorize it ;) or tap the number and it will be copied to the clipboard.
+It's very convenient to send it over E-mail. If you press E-mail button – token will be sent to the e-mail address you used for registration. If you have a good memory - you can memorize it ;) or tap on token and it will be copied to the clipboard.
 
 
 ### Choose your hardware
@@ -35,22 +27,11 @@ Select the hardware you are building project on.
 
 <img src="images/select_hardware.png" style="width: 300px;"/>
 
-# Let's Get Online
+###  Let's Get Online
 You know that **Blynk works over the Internet**, right? (Bluetooth LE is on the way) 
-
-Blynk works with almost anything, check the [full list of supported hardware](http://community.blynk.cc/t/hardware-supported-by-blynk/16)
-
 
 Before you start Blynking, you need to understand how you will connect to the Internet. It can be an Ethernet Shield for Arduino, or may be your hardware is already internet-enabled (e.g. Spark Core). 
 
-
-### How To Use Example Sketches
-> Illustration 
-> Building Blocks:
-> 
-> * Connection Layer
-> * Auth Token
-> * Processing Layer
 
 ### Choosing Your Connection Type 
 We've prepared example sketches which will get your microcomputer online. Open the example sketch according to your device or shield. If you are using **codebender** - find the example you need in the [list]()
@@ -58,15 +39,40 @@ We've prepared example sketches which will get your microcomputer online. Open t
 
 <img src="images/connection_type_sketch.png" style="width: 500px;"/>
 
+### Simplest sketch
+
+Simplest possible sketch would be for Arduino UNO with Ethernet shield
+
+```cpp
+#define BLYNK_PRINT Serial
+#include <SPI.h>
+#include <Ethernet.h>
+#include <BlynkSimpleEthernet.h>
+
+char auth[] = "YourAuthToken";
+
+void setup()
+{
+  Serial.begin(9600); // See the connection status in Serial Monitor
+  Blynk.begin(auth);  // Here your Arduino connects to the Blynk Cloud.
+}
+
+void loop()
+{
+  Blynk.run(); // All the Blynk Magic happens here...
+}
+
+```
+
 ###Insert Auth Token
 
-As it was said prevously, Auth Token is used to identify your hardware and connect it with the smartphone. 
+As it was said previously, Auth Token is used to identify your hardware and connect it with the smartphone. 
 
 In the example sketch find this line in code:
 
 
 ```
-char auth[] = "Your AuthToken";
+char auth[] = "YourAuthToken";
 
 ```
 
