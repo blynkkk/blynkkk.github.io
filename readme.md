@@ -129,8 +129,8 @@ Always feel free to experiment! For example, attach an LED to [PWM](http://www.a
 If you don't have any shield and your hardware doesn't have any connectivity, you can still use Blynk – directly over USB :
 
 - Upload [below sketch](https://github.com/blynkkk/blynk-library/blob/master/examples/BoardsAndShields/Arduino_Serial_USB/Arduino_Serial_USB.ino) and change [Auth Token](http://blynkkk.github.io/#getting-started-getting-started-with-application-auth-token)
+
 ```cpp
-// You could use a spare Hardware Serial on boards that have it (like Mega)
 #include <SoftwareSerial.h>
 SoftwareSerial SwSerial(2, 3); // RX, TX
 #define BLYNK_PRINT SwSerial
@@ -152,8 +152,8 @@ void loop()
 {
   Blynk.run();
 }
-
 ```
+
 - Run the script (script located in "scripts" folder of library root, e.g. 'blynk-library/scripts') for redirecting traffic to server:
   - for Windows: blynk-ser.bat
   - for Linux and OSX: ./blynk-ser.sh (may need to run with sudo)
