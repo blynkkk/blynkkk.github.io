@@ -124,7 +124,7 @@ Always feel free to experiment! For example, attach an LED to [PWM](http://www.a
 
 # Other hardware and connection type
 
-###Connect over USB and others
+###Connect over USB
 
 If you don't have any shield and your hardware doesn't have any connectivity, you can still use Blynk – directly over USB :
 
@@ -165,15 +165,15 @@ Arduino IDE may complain with "programmer is not responding".
 You need to terminate script before uploading new sketch.**
 
 ### Raspberry Pi
-0. Connect your Raspberry Pi to the internet and open it's console.
-1. Install WiringPi: http://wiringpi.com/download-and-install/
-2. Download and build Blynk:
+1. Connect your Raspberry Pi to the internet and open it's console.
+2. Install WiringPi: http://wiringpi.com/download-and-install/
+3. Download and build Blynk:
 ```bash
 $ git clone https://github.com/blynkkk/blynk-library.git
 $ cd blynk-library/linux
 $ make clean all target=raspberry
 ```
-3. Run Blynk:
+4. Run Blynk:
 ```bash
 $ sudo ./blynk --token=YourAuthToken
 ```
@@ -188,10 +188,9 @@ $ ./build.sh raspberry
 
 You can run Blynk directly on the ESP8266!
 
-Install the latest ESP8266 for Arduino using this guide:
-https://github.com/esp8266/Arduino#installing-with-boards-manager13
+Install the latest ESP8266 for Arduino using [this guide](https://github.com/esp8266/Arduino#installing-with-boards-manager)
 
-**Example:** [ESP8266_Standalone](https://github.com/blynkkk/blynk-library/blob/master/examples/BoardsAndShields/ESP8266_Standalone/ESP8266_Standalone.ino)
+**Sketch:** [ESP8266_Standalone](https://github.com/blynkkk/blynk-library/blob/master/examples/BoardsAndShields/ESP8266_Standalone/ESP8266_Standalone.ino)
 
 ### Spark Core
 Specific steps for Spark Core
@@ -202,9 +201,9 @@ You can find example sketches covering basic Blynk Features. They are included i
 
 
 ###Virtual Pins
-Virtual Pins are designed to send any data from your microcontroller to the Blynk App and back. Think about Virtual Pins as channels for sending any variables. Make sure you differentiate Virtual Pins from physical pins on your hardware. Virtual Pins have no physical representation.
+Virtual Pins are designed to send any data from your microcontroller to the Blynk App and back. Think about Virtual Pins as channels for sending any data. Make sure you differentiate Virtual Pins from physical pins on your hardware. Virtual Pins have no physical representation.
 
-Virtual Pins can be used to interface with libraries (Servo, LCD and others), and implement custom functionality.The device may send data to the Widget to the Virtual Pin like this:
+Virtual Pins can be used to interface with libraries (Servo, LCD and others) and implement custom functionality.The device may send data to the Widget to the Virtual Pin like this:
 
 ```cpp
 Blynk.virtualWrite(pin, "abc");
@@ -213,14 +212,17 @@ Blynk.virtualWrite(pin, 12.34);
 ```
 
 ###Sending data to hardware
-All [Controller Widgets](http://blynkkk.github.io/#widgets-controllers) can send data to Virtual Pins on your hardware. For instance, below code shows how to send 1 and 0 int value via button to virtual pin 1 : 
+All [Controller Widgets](http://blynkkk.github.io/#widgets-controllers) can send data to Virtual Pins on your hardware. For instance, below code shows how to send 1 and 0 int value via button to virtual pin 1 :
+ 
+ 
 ```cpp
 BLYNK_WRITE(1)
 {
   int pinData = param.asInt(); 
 }
 ```
-and this widget setup
+
+and this widget setup:
 
 <img src="images/button_virtual_1.png" style="width: 300px;"/>
 
@@ -235,6 +237,7 @@ You can interpret incoming data as INTs, Floats, Doubles and Strings:
 ```
  
 Some Widgets (e.g Joystick, zeRGBa) have more than one output. This output is an array of values. You can get any parameter of the array [0,1,2...] by using: 
+
 ```cpp
 BLYNK_READ(pinNumber)
 {   
@@ -242,6 +245,7 @@ BLYNK_READ(pinNumber)
   int y = param[1].asInt();
 }
 ```
+
 [Full joystick example](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/JoystickTwoAxis/JoystickTwoAxis.ino).
 
 ###Sending data to smartphone
