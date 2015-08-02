@@ -197,7 +197,12 @@ Specific steps for Spark Core
 
 #Blynk Basics
 
-You can find example sketches covering basic Blynk Features. They are included in the libary. All the sketches are designed to be easily combined with each other. 
+You can find example sketches covering basic Blynk Features. They are included in the libary. All the sketches are designed to be easily combined with each other.
+ 
+##How it works?
+A few words about Blynk. Contents?
+ 
+<img src="images/architecture.png" style="width: 450px;"/>
 
 
 ##Virtual Pins
@@ -296,6 +301,54 @@ void sendUptime()
 - Don't put ```Blynk.virtualWrite``` inside ```void loop()```. This will cause lot's of outgoing messages to our server and your connection will be terminated. We suggest you to use [SimpleTimer](http://playground.arduino.cc/Code/SimpleTimer) library for events that are executed in intervals. Read instructions inside this [sketch](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino#L30) for more details.
 - Avoid using long delays with ```delay()``` – it may cause connection breaks
 - Don't send more that 10 values per second - otherwise you'll get FLOOD error and your connection will be terminated.
+
+
+##Blynk Commands
+The library can perform basic pin IO (input-output) operations out-of-the-box:
+
+```
+digitalRead
+digitalWrite
+analogRead
+analogWrite //PWM or Analog signal depending on the platform
+```
+
+### BLYNK_WRITE(vPIN)
+### BLYNK_READ(vPIN)
+### Blynk.virtualWrite();
+
+You can send all the formats of data to Virtual Pins
+
+```cpp
+Blynk.virtualWrite(pin, "abc");
+Blynk.virtualWrite(pin, 123);
+Blynk.virtualWrite(pin, 12.34);
+```
+
+### BLYNK_PRINT
+### BLYNK_LOG
+### BLYNK_CONNECT();
+### BLYNK_DEBUG
+To enable debug prints on the default Serial, add on the top of your sketch **(should be the first line
+)**:
+
+```cpp
+#define BLYNK_DEBUG // Optional, this enables lots of prints
+#define BLYNK_PRINT Serial
+```
+And enable Serial Output in setup():
+
+```cpp
+Serial.begin(9600);
+```
+
+You can also use spare Hardware serial ports or SoftwareSerial for debug output (you will need an adapter to connect to it with your PC).
+
+
+<span style="color:#D3435C;">**WARNING:** Enabling Debug mode will slowdown your hardware processing speed up to 10 times!</span>
+
+##Blynk API. Writing your own library
+Instructions on how to add support for new hardware 
 
 
 #List Of Supported Hardware
@@ -450,66 +503,13 @@ void setup() {
 ```
 
 
-#How it works?
-A few words about Blynk. Contents?
-
-<img src="images/architecture.png" style="width: 450px;"/>
-
-#Blynk Commands
-The library can perform basic pin IO (input-output) operations out-of-the-box:
-
-```
-digitalRead
-digitalWrite
-analogRead
-analogWrite //PWM or Analog signal depending on the platform
-```
-
-### BLYNK_WRITE(vPIN)
-### BLYNK_READ(vPIN)
-### Blynk.virtualWrite();
-
-You can send all the formats of data to Virtual Pins
-
-```cpp
-Blynk.virtualWrite(pin, "abc");
-Blynk.virtualWrite(pin, 123);
-Blynk.virtualWrite(pin, 12.34);
-```
-
-### BLYNK_PRINT
-### BLYNK_LOG
-### BLYNK_CONNECT();
-### BLYNK_DEBUG
-To enable debug prints on the default Serial, add on the top of your sketch **(should be the first line
-)**:
-
-```cpp
-#define BLYNK_DEBUG // Optional, this enables lots of prints
-#define BLYNK_PRINT Serial
-```
-And enable Serial Output in setup():
-
-```cpp
-Serial.begin(9600);
-```
-
-You can also use spare Hardware serial ports or SoftwareSerial for debug output (you will need an adapter to connect to it with your PC).
-
-
-<span style="color:#D3435C;">**WARNING:** Enabling Debug mode will slowdown your hardware processing speed up to 10 times!</span>
-
-#Blynk API. Writing your own library
-Instructions on how to add support for new hardware 
-
-
 #Security
 
 Blynk server has 3 ports open for different security levels.
 
-* 8441 - SSL/TLS connection for hardware
-* 8442 - plain TCP connection for hardware (no security)
-* 8443 - mutual authentication (mutual SSL) connection for Mobile Apps
+* **8441** - SSL/TLS connection for hardware
+* **8442** - plain TCP connection for hardware (no security)
+* **8443** - mutual authentication (mutual SSL) connection for Mobile Apps
 
 Hardware may select to connect to 8441 or 8442, depending on it's capabilities.
 
@@ -524,13 +524,14 @@ However, our [gateway script](https://github.com/blynkkk/blynk-library/blob/mast
 This will forward all hardware connections from 8441 port to the server via SSL gateway.
 You can run this script on your Raspberry Pi, desktop computer, or even directly on your router!
 
-**Note:** when using your own server, you should overwrite the bundled server.crt certificate, or specify it to the script using --cert switch:
+**Note:** when using your own server, you should overwrite the bundled server.crt certificate, or specify it to the script using ```--cert``` switch:
 
 ```bash
 ./blynk-ser.sh -f SSL -s <server ip> -p 8441 --cert=<certificate>.crt
 ```
 
-Flag "-f SSL" is enabled by default for USB communication so you don't have to explicit declare it.
+Flag ```-f SSL``` is enabled by default for USB communication so you don't have to explicit declare it.
+
 **Note:** SSL is supported by the gateway only on Linux/OSX for now
  
 If you want to skip SSL, and connect to TCP, you can also do that:
@@ -541,8 +542,7 @@ If you want to skip SSL, and connect to TCP, you can also do that:
 
 ### Local Blynk Server
 
-In order to gain maximum security you could install Blynk server locally and restrict access to your network, so nobody except you could access it.
-See how to install Blynk server locally [here](https://github.com/blynkkk/blynk-server#blynk-server).
+In order to gain maximum security you could [install Blynk server locally](https://github.com/blynkkk/blynk-server#blynk-server) and restrict access to your network, so nobody except you could access it.
 
 
 # Troubleshooting
