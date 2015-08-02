@@ -252,7 +252,7 @@ BLYNK_READ(pinNumber)
 
 There are two ways of pushing data from your hardware to the Widgets in the app over Virtual Pins :
 
-- Using Blynk built-in reading frequency while app active by setting Reading Frequency parameter to required frequency reading interval:
+- Using Blynk built-in reading frequency while app active by setting Reading Frequency parameter to required interval:
 
 <img src="images/frequency_reading_pull.png" style="width: 300px;"/>
 
@@ -283,11 +283,12 @@ void sendUptime()
 
 **Sketch:** [PushData](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino#L30)
 
-**ATTENTION. We suggest you to use [SimpleTimer](http://playground.arduino.cc/Code/SimpleTimer) library for events that are executed in intervals. Read instructions inside this [sketch](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino#L30) for more details.
-1. Don't put ```Blynk.virtualWrite``` inside ```void loop()```. This will cause lot's of outgoing messages to our server and your connection will be terminated.
-2. Avoid using long delays with ```delay()``` – it may cause connection breaks
-3. Don't send more that 10 values per second - otherwise you'll get FLOOD error and your connection will be terminated.
-**
+
+###Limitations and recommendations
+
+- Don't put ```Blynk.virtualWrite``` inside ```void loop()```. This will cause lot's of outgoing messages to our server and your connection will be terminated. We suggest you to use [SimpleTimer](http://playground.arduino.cc/Code/SimpleTimer) library for events that are executed in intervals. Read instructions inside this [sketch](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino#L30) for more details.
+- Avoid using long delays with ```delay()``` – it may cause connection breaks
+- Don't send more that 10 values per second - otherwise you'll get FLOOD error and your connection will be terminated.
 
 
 #List Of Supported Hardware
