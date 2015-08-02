@@ -227,7 +227,8 @@ and this widget setup:
 <img src="images/button_virtual_1.png" style="width: 300px;"/>
 
 In above example when you press button you'll get 1 and on second click 0 within pinData variable.
- **Sketch:** [GetData](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/GetData/GetData.ino#L24)
+
+**Sketch:** [GetData](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/GetData/GetData.ino#L24)
 
 You can interpret incoming data as Integers, Floats, Doubles and Strings:
 ```cpp
@@ -237,7 +238,12 @@ You can interpret incoming data as Integers, Floats, Doubles and Strings:
   param.asStr());
 ```
  
-Some Widgets (e.g Joystick, zeRGBa) have more than one output. This output is an array of values. You can get any parameter of the array [0,1,2...] by using: 
+###Sending data array to hardware 
+Some Widgets (e.g Joystick, zeRGBa) have more than one output. 
+
+<img src="images/joystick_merge_settings.png" style="width: 300px;"/>
+
+This output is an array of values. You can get any parameter of the array [0,1,2...] by using: 
 
 ```cpp
 BLYNK_READ(pinNumber)
