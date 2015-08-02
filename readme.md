@@ -41,7 +41,7 @@ We've prepared example sketches which will get your microcomputer online. Open t
 
 ###Simplest sketch
 
-Simplest possible sketch would be for Arduino UNO with Ethernet shield
+[Simplest possible sketch](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino) would be for Arduino UNO with Ethernet shield:
 
 ```cpp
 #define BLYNK_PRINT Serial
@@ -77,8 +77,6 @@ Change it by putting your [Auth Token](http://blynkkk.github.io/#getting-started
 ```cpp 
 char auth[] = "f45626c103a94983b469637978b0c78a";
 ``` 
-
-Never post your Auth Token in public, unless you want other people to be able to connect to your project. 
 
 Upload sketch to the board and open Serial Terminal. Wait until you see something like this: 
 
@@ -128,11 +126,47 @@ Always feel free to experiment! For example, attach an LED to [PWM](http://www.a
 
 ###Connect over USB and others
 
-If you don't have any shield and your hardware doen's have any connectivity, you can still use Blynk – directly over USB. It's a bit tricky for newbies, but if you follow these [USB instructions](link) you'll succeed for sure. We also work on enhancing this process.
+If you don't have any shield and your hardware doesn't have any connectivity, you can still use Blynk – directly over USB :
+
+- Upload [below sketch](https://github.com/blynkkk/blynk-library/blob/master/examples/BoardsAndShields/Arduino_Serial_USB/Arduino_Serial_USB.ino) and change [Auth Token](http://blynkkk.github.io/#getting-started-getting-started-with-application-auth-token)
+```cpp
+// You could use a spare Hardware Serial on boards that have it (like Mega)
+#include <SoftwareSerial.h>
+SoftwareSerial SwSerial(2, 3); // RX, TX
+#define BLYNK_PRINT SwSerial
+#include <BlynkSimpleSerial.h>
+
+// You should get Auth Token in the Blynk App.
+// Go to the Project Settings (nut icon).
+char auth[] = "YourAuthToken";
+
+void setup()
+{
+  SwSerial.begin(9600);
+  Blynk.begin(auth);
+  // Default baud rate is 9600. You could specify it like this:
+  //Blynk.begin(auth, 57600);
+}
+
+void loop()
+{
+  Blynk.run();
+}
+
+```
+- Run the script (script located in "scripts" folder of library root, e.g. 'blynk-library/scripts') for redirecting traffic to server:
+  - for Windows: blynk-ser.bat
+  - for Linux and OSX: ./blynk-ser.sh (may need to run with sudo)
+
+**Attention!
+Arduino IDE may complain with "programmer is not responding".
+You need to terminate script before uploading new sketch.**
 
 ###Raspberry Pi, Spark Core
 * **Spark Core** owners: check [here]()
 * **Raspberry Pi** eaters: [here]() 
+
+-Start blynking! :)
 
 #Blynk Basics
 
@@ -211,7 +245,33 @@ We suggest you to use **[SimpleTimer]()** library for events that are executed i
 
 
 # Raspberry Pi
-Specific steps for Raspberry Pi
+0. Connect your Raspberry Pi to the internet and open it's console.
+1. Install WiringPi: http://wiringpi.com/download-and-install/
+2. Download and build Blynk:
+```bash
+$ git clone https://github.com/blynkkk/blynk-library.git
+$ cd blynk-library/linux
+$ make clean all target=raspberry
+```
+3. Run Blynk:
+```bash
+$ sudo ./blynk --token=YourAuthToken
+```
+
+We have also provided a build script, you can try just running (inside of the "linux" directory):
+
+```bash
+$ ./build.sh raspberry
+```
+
+# ESP8266 (standalone)
+
+You can run Blynk directly on the ESP8266!
+
+Install the latest ESP8266 for Arduino using this guide:
+https://github.com/esp8266/Arduino#installing-with-boards-manager13
+
+**Example:** [ESP8266_Standalone](https://github.com/blynkkk/blynk-library/blob/master/examples/BoardsAndShields/ESP8266_Standalone/ESP8266_Standalone.ino)
 
 # Spark Core
 Specific steps for Spark Core
@@ -353,15 +413,18 @@ Limitations :
 ##Other
 ###Bridge
 
-Bridge widget allows you to send messages to another hardware connected to Blynk Cloud.
+Bridge can be used for Device-to-Device communication. You can send digital/analog/virtual write commands from one device to another, knowing it's auth token.
 >Image
 
 Example code:
 ```cpp
 WidgetBridge bridge1(1); //Bridge widget on virtual pin 1
+...
 void setup() {
-    bridge1.setAuthToken("OtherAuthToken");
+    bridge1.setAuthToken("OtherDeviceAuthToken");
     bridge1.digitalWrite(9, HIGH);
+    bridge1.analogWrite(10, 123);
+    bridge1.virtualWrite(1, "hello");
 }
 ```
 
@@ -536,22 +599,12 @@ You can also use spare Hardware serial ports or SoftwareSerial for debug output 
 
 #Links
 
-* [Kickstarter campaign](https://www.kickstarter.com/projects/167134865/blynk-build-an-app-for-your-arduino-project-in-5-m/description)
-* [Blynk downloads, docs, tutorials](http://www.blynk.cc)
+* [Blynk site](http://www.blynk.cc)
 * [Blynk community](http://community.blynk.cc)
 * [Facebook](http://www.fb.com/blynkapp)
 * [Twitter](http://twitter.com/blynk_app)
+* [Kickstarter campaign](https://www.kickstarter.com/projects/167134865/blynk-build-an-app-for-your-arduino-project-in-5-m/description)
+
 
 # License
-
 This project is released under The MIT License (MIT)
-
-
-# Other Docs
-
-* [Basics](./docs/Basics.md)
-* [Widgets](./docs/Widgets.md)
-* [Security](./docs/Security.md)
-* [Platforms/Connection types](./docs/Platforms.md)
-* [Troubleshooting](./docs/Troubleshooting.md)
-* [Implementing your own library](./docs/Implementing.md)
