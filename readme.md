@@ -158,15 +158,43 @@ void loop()
   - for Windows: blynk-ser.bat
   - for Linux and OSX: ./blynk-ser.sh (may need to run with sudo)
 
+- Start blynking! :)
+
 **Attention!
 Arduino IDE may complain with "programmer is not responding".
 You need to terminate script before uploading new sketch.**
 
-- Start blynking! :)
+### Raspberry Pi
+0. Connect your Raspberry Pi to the internet and open it's console.
+1. Install WiringPi: http://wiringpi.com/download-and-install/
+2. Download and build Blynk:
+```bash
+$ git clone https://github.com/blynkkk/blynk-library.git
+$ cd blynk-library/linux
+$ make clean all target=raspberry
+```
+3. Run Blynk:
+```bash
+$ sudo ./blynk --token=YourAuthToken
+```
 
-###Raspberry Pi, Spark Core
-* **Spark Core** owners: check [here]()
-* **Raspberry Pi** eaters: [here]() 
+We have also provided a build script, you can try just running (inside of the "linux" directory):
+
+```bash
+$ ./build.sh raspberry
+```
+
+### ESP8266 (standalone)
+
+You can run Blynk directly on the ESP8266!
+
+Install the latest ESP8266 for Arduino using this guide:
+https://github.com/esp8266/Arduino#installing-with-boards-manager13
+
+**Example:** [ESP8266_Standalone](https://github.com/blynkkk/blynk-library/blob/master/examples/BoardsAndShields/ESP8266_Standalone/ESP8266_Standalone.ino)
+
+### Spark Core
+Specific steps for Spark Core
 
 #Blynk Basics
 
@@ -242,39 +270,6 @@ We suggest you to use **[SimpleTimer]()** library for events that are executed i
 1. Don't put ```Blynk.virtualWrite``` inside ```void loop()```. This will cause lot's of outgoing messages to our server and your connection will be terminated.
 2. Avoid using long delays with ```delay()``` – it may cause connection breaks
 3. <span style="color:#000000;">Don't send more that 10 values per second** - otherwise you'll get **FLOOD** error and your connection will be terminated.</span>
-
-
-# Raspberry Pi
-0. Connect your Raspberry Pi to the internet and open it's console.
-1. Install WiringPi: http://wiringpi.com/download-and-install/
-2. Download and build Blynk:
-```bash
-$ git clone https://github.com/blynkkk/blynk-library.git
-$ cd blynk-library/linux
-$ make clean all target=raspberry
-```
-3. Run Blynk:
-```bash
-$ sudo ./blynk --token=YourAuthToken
-```
-
-We have also provided a build script, you can try just running (inside of the "linux" directory):
-
-```bash
-$ ./build.sh raspberry
-```
-
-# ESP8266 (standalone)
-
-You can run Blynk directly on the ESP8266!
-
-Install the latest ESP8266 for Arduino using this guide:
-https://github.com/esp8266/Arduino#installing-with-boards-manager13
-
-**Example:** [ESP8266_Standalone](https://github.com/blynkkk/blynk-library/blob/master/examples/BoardsAndShields/ESP8266_Standalone/ESP8266_Standalone.ino)
-
-# Spark Core
-Specific steps for Spark Core
 
 
 #List Of Supported Hardware
