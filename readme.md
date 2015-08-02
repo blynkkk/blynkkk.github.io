@@ -506,6 +506,7 @@ Instructions on how to add support for new hardware
 #Security
 
 Blynk server has 3 ports open for different security levels.
+
 * 8441 - SSL/TLS connection for hardware
 * 8442 - plain TCP connection for hardware (no security)
 * 8443 - mutual authentication (mutual SSL) connection for Mobile Apps
