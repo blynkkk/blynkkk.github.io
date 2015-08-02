@@ -200,7 +200,7 @@ Specific steps for Spark Core
 You can find example sketches covering basic Blynk Features. They are included in the libary. All the sketches are designed to be easily combined with each other. 
 
 
-###Virtual Pins
+##Virtual Pins
 Virtual Pins are designed to send any data from your microcontroller to the Blynk App and back. Think about Virtual Pins as channels for sending any data. Make sure you differentiate Virtual Pins from physical pins on your hardware. Virtual Pins have no physical representation.
 
 Virtual Pins can be used to interface with libraries (Servo, LCD and others) and implement custom functionality.The device may send data to the Widget to the Virtual Pin like this:
@@ -264,20 +264,24 @@ BLYNK_READ(5)
   // This command writes Arduino's uptime in seconds to Virtual Pin (5)
   Blynk.virtualWrite(5, millis() / 1000);
 }
-
-void loop() 
-{
-...
-}
 ```
+
+**Sketch:** [PushDataOnRequest](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushDataOnRequest/PushDataOnRequest.ino#L26)
 
 - Writing your own logic of pushing data at any time by setting Reading Frequency parameter to PUSH:
 
 <img src="images/frequency_reading_push.png" style="width: 300px;"/>
 
 ```cpp
-Blynk.virtualWrite(pinNumber, value);
+void sendUptime()
+{
+  // You can send any value at any time.
+  // Please don't send more that 10 values per second.
+  Blynk.virtualWrite(5, millis() / 1000);
+}
 ```
+
+**Sketch:** [PushData](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino#L30)
 
 **ATTENTION. We suggest you to use [SimpleTimer](http://playground.arduino.cc/Code/SimpleTimer) library for events that are executed in intervals. Read instructions inside this [sketch](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino#L30) for more details.
 1. Don't put ```Blynk.virtualWrite``` inside ```void loop()```. This will cause lot's of outgoing messages to our server and your connection will be terminated.
