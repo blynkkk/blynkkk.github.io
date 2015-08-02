@@ -1,3 +1,8 @@
+#What is Blynk?
+Imagine a prototyping board on your smartphone where you drag and drop buttons, sliders, displays, graphs and other functional widgets. And in a matter of minutes these widgets can control Arduino and get data from it.
+Blynk is not an app that works only with a particular shield. Instead, it's been designed to support the boards and shields you are already using. And it works on iOs and Android.
+Blynk also works over USB. This means you can tinker with the app by connecting it to your laptop or desktop while waiting for some internet shield to arrive. 
+
 #Getting Started
 ##Download all the ingridients
 **Blynk App for iOS or Android:** <br> <br> 
@@ -200,10 +205,13 @@ Specific steps for Spark Core
 You can find [example sketches](https://github.com/blynkkk/blynk-library/tree/master/examples) covering basic Blynk Features. They are included in the libary. All the sketches are designed to be easily combined with each other.
  
 ##How it works?
-A few words about Blynk. Contents?
+**Blynk works over the Internet.** So the one and only requirement is that your hardware can talk to the Internet.
+
+No matter what type of connection you choose - Ethernet, Wi-Fi or maybe this new ESP8266 everyone is talking about – Blynk libraries and example sketches will get you online, connect to Blynk Server and pair up with your smartphone.
  
 <img src="images/architecture.png" style="width: 450px;"/>
 
+It's not that easy to take Arduino out of your home network, so we've built a [Blynk server](https://github.com/blynkkk/blynk-server). It handles all the authentication and communication, and also keeps an eye on your board while the smartphone is offline. Blynk server runs on Java and is open-source. You will be able to run it locally if you really need to. Messaging between mobile apps , Blynk Server and Arduino is based on a simple, lightweight and fast binary protocol over TCP/IP sockets. 
 
 ##Virtual Pins
 Virtual Pins are designed to send any data from your microcontroller to the Blynk App and back. Think about Virtual Pins as channels for sending any data. Make sure you differentiate Virtual Pins from physical pins on your hardware. Virtual Pins have no physical representation.
