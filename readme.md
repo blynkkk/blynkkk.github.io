@@ -228,7 +228,7 @@ and this widget setup:
 
 In above example when you press button you'll get 1 and on second click 0 within pinData variable. [Full example](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/GetData/GetData.ino).
 
-You can interpret incoming data as INTs, Floats, Doubles and Strings:
+You can interpret incoming data as Integers, Floats, Doubles and Strings:
 ```cpp
   param.asInt());
   param.asFloat());
@@ -250,30 +250,40 @@ BLYNK_READ(pinNumber)
 
 ###Sending data to smartphone
 
-There are two ways of pushing data from your hardware to the Widgets in the app over Virtual Pins : 
-- Using Blynk built-in reading frequency
-- Writing your own logic of pushing data
+There are two ways of pushing data from your hardware to the Widgets in the app over Virtual Pins :
 
+- Using Blynk built-in reading frequency while app active by setting Reading Frequency parameter to required frequency reading interval:
 
+<img src="images/frequency_reading_pull.png" style="width: 300px;"/>
 
-Most flexible way to push data to the app is using:
+```cpp
+// This function tells Arduino what to do if there is a Widget
+// which is requesting data for Virtual Pin (5)
+BLYNK_READ(5)
+{
+  // This command writes Arduino's uptime in seconds to Virtual Pin (5)
+  Blynk.virtualWrite(5, millis() / 1000);
+}
 
-Optinally: *If you need to push processed data from your hardware to the Blynk App, use Virtual Pins to do it.*
+void loop() 
+{
+...
+}
+```
+
+- Writing your own logic of pushing data at any time by setting Reading Frequency parameter to PUSH:
+
+<img src="images/frequency_reading_push.png" style="width: 300px;"/>
 
 ```cpp
 Blynk.virtualWrite(pinNumber, value);
 ```
-In the Widget, choose the **same** Virtual Pin and set Reading Frequency parameter to PUSH
 
->Screenshot of the Frequency
-
-There are some requirements when using this command. Please read carefully through them:
-
-We suggest you to use **[SimpleTimer]()** library for events that are executed in intervals. Read instructions inside this [example sketch]() for more details.
-
+**ATTENTION. We suggest you to use [SimpleTimer](http://playground.arduino.cc/Code/SimpleTimer) library for events that are executed in intervals. Read instructions inside this [sketch](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino#L30) for more details.
 1. Don't put ```Blynk.virtualWrite``` inside ```void loop()```. This will cause lot's of outgoing messages to our server and your connection will be terminated.
 2. Avoid using long delays with ```delay()``` – it may cause connection breaks
-3. <span style="color:#000000;">Don't send more that 10 values per second** - otherwise you'll get **FLOOD** error and your connection will be terminated.</span>
+3. Don't send more that 10 values per second - otherwise you'll get FLOOD error and your connection will be terminated.
+**
 
 
 #List Of Supported Hardware
