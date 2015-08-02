@@ -128,7 +128,7 @@ Always feel free to experiment! For example, attach an LED to [PWM](http://www.a
 
 If you don't have any shield and your hardware doesn't have any connectivity, you can still use Blynk – directly over USB :
 
-- Upload [below sketch](https://github.com/blynkkk/blynk-library/blob/master/examples/BoardsAndShields/Arduino_Serial_USB/Arduino_Serial_USB.ino) and change [Auth Token](http://blynkkk.github.io/#getting-started-getting-started-with-application-auth-token)
+1. Upload [below sketch](https://github.com/blynkkk/blynk-library/blob/master/examples/BoardsAndShields/Arduino_Serial_USB/Arduino_Serial_USB.ino) and change [Auth Token](http://blynkkk.github.io/#getting-started-getting-started-with-application-auth-token)
 
 ```cpp
 #include <SoftwareSerial.h>
@@ -154,7 +154,7 @@ void loop()
 }
 ```
 
-- Run the script (script located in "scripts" folder of library root, e.g. 'blynk-library/scripts') for redirecting traffic to server:
+2. Run the script (script located in "scripts" folder of library root, e.g. 'blynk-library/scripts') for redirecting traffic to server:
   - for Windows: blynk-ser.bat
   - for Linux and OSX: ./blynk-ser.sh (may need to run with sudo)
 
@@ -162,11 +162,11 @@ void loop()
 Arduino IDE may complain with "programmer is not responding".
 You need to terminate script before uploading new sketch.**
 
+3. Start blynking! :)
+
 ###Raspberry Pi, Spark Core
 * **Spark Core** owners: check [here]()
 * **Raspberry Pi** eaters: [here]() 
-
--Start blynking! :)
 
 #Blynk Basics
 
