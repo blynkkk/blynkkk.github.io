@@ -226,7 +226,8 @@ and this widget setup:
 
 <img src="images/button_virtual_1.png" style="width: 300px;"/>
 
-In above example when you press button you'll get 1 and on second click 0 within pinData variable. [Full example](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/GetData/GetData.ino).
+In above example when you press button you'll get 1 and on second click 0 within pinData variable.
+ **Sketch:** [GetData](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/GetData/GetData.ino#L24)
 
 You can interpret incoming data as Integers, Floats, Doubles and Strings:
 ```cpp
@@ -246,7 +247,7 @@ BLYNK_READ(pinNumber)
 }
 ```
 
-[Full joystick example](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/JoystickTwoAxis/JoystickTwoAxis.ino).
+ **Sketch:** [JoystickTwoAxis](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/JoystickTwoAxis/JoystickTwoAxis.ino#L24)
 
 ###Sending data to smartphone
 
