@@ -615,12 +615,13 @@ You can also use spare Hardware serial ports or SoftwareSerial for debug output 
 
 # Implementing a Blynk HW client (library)
 Currently we provide Arduino/C++ implementation of the library.
-It is very extensible and modular, look at [the list of supported hardware](http://community.blynk.cc/t/hardware-supported-by-blynk/16).
+It is very extensible and modular, look at [the list of supported hardware](http://blynkkk.github.io/#list-of-supported-hardware).
 Adding new connection types and Arduino-compatible boards is easy.
 
 TODO: Porting guide.
 
 But some devices are programmed in other languages, like:
+
 * Espruino, JavaScript, Node.JS
 * MicroPython, Python
 * NodeMCU, eLua
@@ -637,11 +638,46 @@ This document hints how to write a custom library.
 * Serialize/deserialize Blynk protocol
 * Handle direct pin operations
 * Should be portable across similar devices (or same technology/programming language), if possible
-* Should detect and notify the user about [troubles](./Troubleshooting.md) where possible (especially Flood)
+* Should detect and notify the user about [troubles](http://blynkkk.github.io/#troubleshooting) where possible (especially Flood)
 
 ### Adding new HW board to the Blynk mobile app
 
 Different boards can be added by creating JSON board description file.
+
+```json
+{
+    "name": "Arduino UNO",
+    "map": {
+        "digital": {
+            "pins": {
+                "D0":  0,  "D1":  1,  "D2":  2,  "D3":  3, "D4": 4,
+                "D5":  5,  "D6":  6,  "D7":  7,  "D8":  8, "D9": 9,
+                "D10": 10, "D11": 11, "D12": 12, "D13": 13
+            },
+            "ops": [ "dr", "dw" ]
+        },
+        "analog": {
+            "pins": {
+                "A0": 14, "A1": 15, "A2": 16, "A3": 17, "A4": 18, "A5": 19
+            },
+            "ops": [ "dr", "dw", "ar" ],
+            "arRange":[0, 1023]
+        },
+        "pwm": {
+            "pins": [
+                "D3", "D5", "D6", "D9", "D10", "D11"
+            ],
+            "ops": [ "aw" ],
+            "awRange":[0, 255]
+        },
+        "virtual":  {
+            "pinsRange": [ 0, 31 ],
+            "ops": [ "vr", "vw" ]
+        }
+    }
+}
+```
+
 Look at the examples [here](https://github.com/blynkkk/blynk-library/tree/master/boards_json).
 You can send us your own board description file for review and App integration.
 
@@ -681,7 +717,7 @@ Typical Blynk library knows how to send(S)/process(P):
 
 ## HARDWARE/BRIDGE command body
 
-The body of these commands are encoded as a sequence of strings, separated by '\0' ([Null character](http://en.wikipedia.org/wiki/Null_character)).
+The body of these commands are encoded as a sequence of strings, separated by ```'\0'``` ([Null character](http://en.wikipedia.org/wiki/Null_character)).
 Please note that the last value may be not Null-terminated.
 In the following command examples \0 chars are replaced with spaces.
 
@@ -693,6 +729,7 @@ PinMode command is received by library after connection, or when a mobile applic
     pm <pin> <mode> <pin> <mode> <pin> <mode> ...
 
 Mode:
+
 * in - INPUT
 * out - OUTPUT
 * pu - INPUT_PULLUP
@@ -727,6 +764,7 @@ Digital read:
 TODO
 
 ## Developer notes
+
 * Values in HW commands are plain text.
 * In response to dr/ar command, library should send dw/aw command on the same pin and with the same message id.
 * These situations should cause a connection drop, or reconnection attempt:
