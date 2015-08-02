@@ -678,7 +678,7 @@ Different boards can be added by creating JSON board description file.
 }
 ```
 
-Look at the examples [here](https://github.com/blynkkk/blynk-library/tree/master/boards_json).
+Look at the [full boards list](https://github.com/blynkkk/blynk-library/tree/master/boards_json).
 You can send us your own board description file for review and App integration.
 
 There may be a problem that you want to start testing your implementation, but your board is not listed int the Blynk App.
@@ -719,7 +719,7 @@ Typical Blynk library knows how to send(S)/process(P):
 
 The body of these commands are encoded as a sequence of strings, separated by ```'\0'``` ([Null character](http://en.wikipedia.org/wiki/Null_character)).
 Please note that the last value may be not Null-terminated.
-In the following command examples \0 chars are replaced with spaces.
+In the following command examples ```\0``` chars are replaced with spaces.
 
 ### Pin mode
 
@@ -766,9 +766,9 @@ TODO
 ## Developer notes
 
 * Values in HW commands are plain text.
-* In response to dr/ar command, library should send dw/aw command on the same pin and with the same message id.
+* In response to ```dr/ar``` command, library should send ```dw/aw``` command on the same pin and with the same message id.
 * These situations should cause a connection drop, or reconnection attempt:
- * Message with ID=0 is received
+ * Message with ```ID=0``` is received
  * Message with unknown type is received
 
 
