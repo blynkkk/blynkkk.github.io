@@ -1,6 +1,8 @@
 #What is Blynk?
 Imagine a prototyping board on your smartphone where you drag and drop buttons, sliders, displays, graphs and other functional widgets. And in a matter of minutes these widgets can control Arduino and get data from it.
+
 Blynk is not an app that works only with a particular shield. Instead, it's been designed to support the boards and shields you are already using. And it works on iOs and Android.
+
 Blynk also works over USB. This means you can tinker with the app by connecting it to your laptop or desktop while waiting for some internet shield to arrive. 
 
 #Getting Started
@@ -797,6 +799,43 @@ Use these to play with the protocol and understand the basics:
 * [Node.js + Espruino](https://github.com/vshymanskyy/blynk-library-js)
 * [Arduino](https://github.com/blynkkk/blynk-library)
 * [Particle Core](https://github.com/vshymanskyy/blynk-library-spark)
+
+
+#FAQ
+
+- I backed Blynk on Kickstarter. Where are my widgets and why the app is free?
+> App is free becasuse otherwise you would have to pay to download it. This is how AppStore and Google Play works.
+> Current Blynk release has a limited amount of widgets. We decided to make them free for everyone until we implement store. After that, every widget will be paid. However every backer will get them for free (according to their pledge).
+  
+- What is Blynk Cloud?
+> Blynk Cloud is a software written on Java using plain TCP/IP sockets and running on our server. Blynk iOS and Android apps connect to Blynk Cloud by default. Access is free for every Blynk user. We also provide a Custom Server distribution for those who want to install it locally. All the instructions and files are on [our Github page](https://github.com/blynkkk/blynk-server).
+
+- How much access to Cloud Blynk Server cost?
+> It is free for every Blynk user.
+
+- Can I run Blynk server locally?
+> Yes. Those of you, who want extra security or don’t have internet connection, can install Local Blynk Server and run it in your own local network. Blynk Server is Open-Source and it takes less than few seconds to deploy. All the instructions and files are on [our Github page](https://github.com/blynkkk/blynk-server#blynk-server).
+
+- What are the requirements to run Custom Blynk Server?
+> To run Custom Blynk Server, all you need is Java Runtime Environment.
+
+- Can I run Blynk server on Raspberry Pi?
+> Yes, surely!
+
+- Does Blynk app work over Bluetooth?
+> No. But it's planned for next releases.
+
+- Does Blynk support Ethernet / Wi-FI / UART?
+> Yes, all of them. See full list of [supported hardware](http://blynkkk.github.io/#list-of-supported-hardware) and shields.
+
+- I don't have any shield. Can I use Blynk with my computer?
+> Yes, you can use Blynk just with a USB cable. There is a step-by-step [instruction](http://blynkkk.github.io/#other-hardware-and-connection-type-connect-over-usb) on how to do it.
+
+- Can Blynk handle multiple Arduinos?
+> Yes, you can do it using Bridge functionality which allows you to do that.
+
+- Does Blynk server store sensor data when app goes offline?
+> Yes, for all push widgets. We also plan to implement Data Log Widget, which will show you historical data on an app.
 
 
 #Links
