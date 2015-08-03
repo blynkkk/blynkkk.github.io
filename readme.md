@@ -507,62 +507,62 @@ Read more about Virtual Pins Here
 ##Controllers
 ### Button
 Works in push or switch modes.
->Image
+<img src="images/button.png"/>
 
 **Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino#L48)
 
 ### Slider
 Similar to potentiometer. Can be horizontal or vertical.
->Image
+<img src="images/slider.png"/>
 
 **Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino#L48)
 
 ### Timer
 Trigger actions at a specific time. Even if smartphone is offline.
->Image
+<img src="images/timer.png"/>
 
 **Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino#L48)
 
 ### Joystick
 Control servo movements in 4 directions.
->Image
+<img src="images/joystick.png"/>
 
 **Sketch:** [JoystickTwoAxis](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/JoystickTwoAxis/JoystickTwoAxis.ino#L24)
 
 ##Displays
 ### Value Display
 Display incoming data from your sensors or virtual pins.
->Image
+<img src="images/value_display.png"/>
 
 **Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino#L48)
 
 ### LED
 A simple LED for indication. Choose any color.
->Image
+<img src="images/led.png"/>
 
 **Sketch:** [LED](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/LED/LED.ino#L31)
 
 ### Gauge
 A great visual way to display numeric values.
->Image
+<img src="images/gauge.png"/>
 
 **Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino#L48)
 
 ### LCD
 Works as regular LCD. Display any data or messages on the smartphone.
->Image
+<img src="images/lcd.png"/>
 
 **Sketch:** [LCD](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/LCD/LCD.ino#L22)
 
 ### Graph
 Easily plot incoming data from your project in various designs.
->Image
+<img src="images/graph.png"/>
 
 **Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino#L48)
 
 ### Terminal
 Display data from your hardware. Writing is also available.
->Image
+<img src="images/terminal.png"/>
 
 **Sketch:** [Terminal](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Terminal/Terminal.ino#L23)
 
@@ -589,7 +589,7 @@ Limitations :
 ###Email
 
 Email widget allows you to send email from your hardware to any address.
->Image
+<img src="images/mail.png"/>
 
 Example code:
 ```cpp
@@ -605,7 +605,7 @@ Limitations :
 ###Push Notifications
 
 Push Notification widget allows you to send push notification from your hardware to your device.
->Image
+<img src="images/push.png"/>
 
 Example code:
 ```cpp
@@ -623,7 +623,7 @@ Limitations :
 ###Bridge
 
 Bridge can be used for Device-to-Device communication. You can send digital/analog/virtual write commands from one device to another, knowing it's auth token.
->Image
+<img src="images/bridge.png"/>
 
 Example code:
 ```cpp
