@@ -242,14 +242,6 @@ In above example when you press button you'll get 1 and on second click 0 within
 
 **Sketch:** [GetData](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/GetData/GetData.ino#L24)
 
-You can interpret incoming data as Integers, Floats, Doubles and Strings:
-```cpp
-  param.asInt());
-  param.asFloat());
-  param.asDouble());
-  param.asStr());
-```
- 
 ###Sending data array to hardware 
 Some Widgets (e.g Joystick, zeRGBa) have more than one output. 
 
@@ -302,10 +294,18 @@ void sendUptime()
 
 **Sketch:** [PushData](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino#L30)
 
+###Data types
+You can interpret incoming data as Integers, Floats, Doubles and Strings:
+```cpp
+  param.asInt());
+  param.asFloat());
+  param.asDouble());
+  param.asStr());
+```
 
 ###Limitations and recommendations
 
-- Don't put ```Blynk.virtualWrite``` inside ```void loop()```. This will cause lot's of outgoing messages to our server and your connection will be terminated. We suggest you to use [SimpleTimer](http://playground.arduino.cc/Code/SimpleTimer) library for events that are executed in intervals. Read instructions inside this [sketch](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino#L30) for more details.
+- Don't put ```Blynk.virtualWrite``` and any other ```Blynk.*``` command inside ```void loop()```. This will cause lot's of outgoing messages to our server and your connection will be terminated. We suggest you to use [SimpleTimer](http://playground.arduino.cc/Code/SimpleTimer) library for events that are executed in intervals. Read instructions inside this [sketch](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino#L30) for more details.
 - Avoid using long delays with ```delay()``` – it may cause connection breaks
 - Don't send more that 10 values per second - otherwise you'll get FLOOD error and your connection will be terminated.
 
