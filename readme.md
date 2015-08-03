@@ -213,7 +213,84 @@ No matter what type of connection you choose - Ethernet, Wi-Fi or maybe this new
  
 <img src="images/architecture.png" style="width: 450px;"/>
 
-It's not that easy to take Arduino out of your home network, so we've built a [Blynk server](https://github.com/blynkkk/blynk-server). It handles all the authentication and communication, and also keeps an eye on your board while the smartphone is offline. Blynk server runs on Java and is open-source. You will be able to run it locally if you really need to. Messaging between mobile apps , Blynk Server and Arduino is based on a simple, lightweight and fast binary protocol over TCP/IP sockets. 
+It's not that easy to take Arduino out of your home network, so we've built a [Blynk server](https://github.com/blynkkk/blynk-server). It handles all the authentication and communication, and also keeps an eye on your board while the smartphone is offline. Blynk server runs on Java and is open-source. You will be able to run it locally if you really need to. Messaging between mobile apps , Blynk Server and Arduino is based on a simple, lightweight and fast binary protocol over TCP/IP sockets.
+ 
+##Features
+* Similar API & UI for all supported hardware & devices
+* Connection to the cloud using:
+  * Ethernet
+  * WiFi
+  * USB (Serial)
+  * ...
+* Set of easy-to-use Widgets
+* Direct pin manipulation with no code writing
+* Easy to integrate and add new functionality using virtual pins
+* Device-to-Device communication using Bridge Widget
+* Sending emails, tweets, push notifications, etc.
+* ... more features are constantly added!
+
+### Configuration
+
+The simplest way to configure Blynk is to call Blynk.begin():
+```cpp
+Blynk.begin(auth, ...);
+```
+begin() can have different parameters for different boards, so follow the example for your board/type of connection.
+
+A more advanced way is to setup the shield (WiFi, Ethernet) manually, and then call ``` blynk.config(...)```:
+
+```cpp
+Blynk.config(auth);
+```
+```cpp
+Blynk.config(auth, server, port);
+```
+
+For WiFi connections, you can use a ``` connectWiFi ``` (just for convenience).
+```cpp
+Blynk.connectWiFi(ssid, pass)
+```
+To connect to Open WiFi networks, set pass to an empty string ("").
+
+### Connection management
+
+There are several functions to help with connection management:
+```cpp
+# This will try connecting to Blynk server. Default timeout is 30 seconds
+bool result = Blynk.connect();
+bool result = Blynk.connect(timeout);
+```
+```cpp
+# This will disconnect from Blynk server
+Blynk.disconnect();
+```
+```cpp
+# This returns if we're currently connected
+bool result = Blynk.connected();
+```
+**Note:** Just after ``` Blynk.begin(...) ``` or ``` Blynk.config(...) ```, Blynk is not yet connected to the server.
+It will try to connect when it hits first ``` Blynk.run() ``` or ``` Blynk.connect() ``` call.
+
+If you want to skip connecting to the server, just call ``` disconnect() ``` right after configuration.
+
+If your shield/connection type is not supported yet - you can craft it yourself easily! [Here is an example](https://github.com/blynkkk/blynk-library/blob/master/examples/BoardsAndShields/User_Defined_Connection/User_Defined_Connection.ino).
+
+### Blynk.run()
+This function should be called frequently to process incoming commands and perform housekeeping of Blynk connection.
+It is usually called in ``` void loop() {} ```.
+You can call it in other places, unless you run out of heap memory (in the cascaded functions with local memory).
+For example, it is not recommended to call ``` Blynk.run() ``` inside of the  ```BLYNK_READ ``` and ``` BLYNK_WRITE ``` functions on low-RAM devices.
+
+### Digital & Analog pins
+
+The library can perform basic pin IO (input-output) operations out-of-the-box:
+
+    digitalRead
+    digitalWrite
+    analogRead
+    analogWrite (PWM or Analog signal depending on the platform)
+
+So, there is no need to write code for simple things like LED, Relay control, and analog sensors.
 
 ##Virtual Pins
 Virtual Pins are designed to send any data from your microcontroller to the Blynk App and back. Think about Virtual Pins as channels for sending any data. Make sure you differentiate Virtual Pins from physical pins on your hardware. Virtual Pins have no physical representation.
@@ -295,12 +372,21 @@ void sendUptime()
 **Sketch:** [PushData](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino#L30)
 
 ###Data types
+The actual values are sent as strings, so there is no practical limits on the data that can be sent.  
+However, remember the limitations of the platform when dealing with numbers. For example the integer on Arduino is 16-bit, allowing range -32768 to 32767.
 You can interpret incoming data as Integers, Floats, Doubles and Strings:
 ```cpp
   param.asInt());
   param.asFloat());
   param.asDouble());
   param.asStr());
+```
+
+You can also get the RAW data from the param buffer:
+
+```cpp
+param.getBuffer()
+param.getLength()
 ```
 
 ###Limitations and recommendations
@@ -777,7 +863,35 @@ TODO
 * These situations should cause a connection drop, or reconnection attempt:
  * Message with ```ID=0``` is received
  * Message with unknown type is received
-
+ 
+## Adding network interface 
+4 entities should be created to add a new network interface to Blynk:
+ 
+1. Select connection interface that will be used for Blynk operation.  
+   This should be something like http://www.arduino.cc/en/Tutorial/WebClient  
+   Based on the API of the connection, create the **Transport**.  
+   Some examples may be found in the Adapters folder:
+   * BlynkTransportSerial
+   * BlynkTransportCC3000
+   * BlynkArduinoClient - *can be reused, if possible*
+   
+2. Create **Blynk representative class**, which contains connection-specific helper functions (like begin).
+   Examples:
+   * BlynkEthernet
+   * BlynkSerial
+   * BlynkCC3000
+   * BlynkWildFire
+   * BlynkYun
+   
+3. Create **BlynkSimple*** header for your connection.  
+   This constructs main **Blynk instance**, so the user (mostly) doesn't need to get into such details.  
+   Examples:
+   * BlynkSimpleEthernet.h
+   * BlynkSimpleCC3000.h
+   * BlynkSimpleWifi.h
+   * BlynkSimpleUIPEthernet.h
+   
+4. Create a **simple example** for your platform ;)
 
 ## Wrappers for widgets
 
