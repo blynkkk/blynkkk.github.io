@@ -111,7 +111,7 @@ Tap on the widget to get to it's settings
 
 <img src="images/button_settings.png" style="width: 300px;"/>
 
-The most important parameter to set is **PIN** . List of pins reflects physical pins defined by your hardware. If your LED is connected to Digital Pin 13 - then select **D13** (**D** - stands for **D**igital).    
+The most important parameter to set is **PIN** . List of pins reflects physical pins defined by your hardware. If your LED is connected to Digital Pin 8 - then select **D8** (**D** - stands for **D**igital).    
 
 <img src="images/pin_selection.png" style="width: 300px;"/>
 
@@ -322,7 +322,7 @@ In above example when you press button you'll get 1 and on second click 0 within
 ###Sending data array to hardware 
 Some Widgets (e.g Joystick, zeRGBa) have more than one output. 
 
-<img src="images/joystick_merge_settings.png" style="width: 300px;"/>
+<img src="images/joystick_merge_mode.png" style="width: 300px;"/>
 
 This output is an array of values. You can get any parameter of the array [0,1,2...] by using: 
 
