@@ -175,7 +175,6 @@ You need to terminate script before uploading new sketch.**
 1. Connect your Raspberry Pi to the internet and open it's console.
 2. Install WiringPi: http://wiringpi.com/download-and-install/
 3. Download and build Blynk:
-
 ```bash
 $ git clone https://github.com/blynkkk/blynk-library.git
 $ cd blynk-library/linux
@@ -183,13 +182,11 @@ $ make clean all target=raspberry
 ```
 
 4. Run Blynk:
-
 ```bash
 $ sudo ./blynk --token=YourAuthToken
 ```
 
 We have also provided a build script, you can try just running (inside of the "linux" directory):
-
 ```bash
 $ ./build.sh raspberry
 ```
