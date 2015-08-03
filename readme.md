@@ -175,12 +175,15 @@ You need to terminate script before uploading new sketch.**
 1. Connect your Raspberry Pi to the internet and open it's console.
 2. Install WiringPi: http://wiringpi.com/download-and-install/
 3. Download and build Blynk:
+
 ```bash
 $ git clone https://github.com/blynkkk/blynk-library.git
 $ cd blynk-library/linux
 $ make clean all target=raspberry
 ```
+
 4. Run Blynk:
+
 ```bash
 $ sudo ./blynk --token=YourAuthToken
 ```
@@ -832,7 +835,9 @@ Use these to play with the protocol and understand the basics:
 > Yes, you can use Blynk just with a USB cable. There is a step-by-step [instruction](http://blynkkk.github.io/#other-hardware-and-connection-type-connect-over-usb) on how to do it.
 
 - Can Blynk handle multiple Arduinos?
-> Yes, you can do it using Bridge functionality which allows you to do that.
+> Yes. There 2 ways right now :
+> - you may use same [Auth Token](http://blynkkk.github.io/#getting-started-getting-started-with-application-auth-token) for different hardware. In that case you can control few hardwares from 1 dashboard.
+> - you can do it using [Bridge functionality](http://blynkkk.github.io/#widgets-other-bridge) which allows you to send messages from one hardware to another.
 
 - Does Blynk server store sensor data when app goes offline?
 > Yes, for all push widgets. We also plan to implement Data Log Widget, which will show you historical data on an app.
