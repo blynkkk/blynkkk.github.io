@@ -115,8 +115,6 @@ The most important parameter to set is **PIN** . List of pins reflects physical 
 
 <img src="images/pin_selection.png" style="width: 300px;"/>
 
-> Illustration showing how Physical PIN is connected to Pin in the APP.
-
 When you are done with the Settings - press **PLAY** button. This will switch you from EDIT mode to PLAY mode where you can interact with widgets.
 
 <img src="images/play_button.png" style="width: 300px;"/>
