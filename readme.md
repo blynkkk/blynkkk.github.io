@@ -488,19 +488,19 @@ You can also use spare Hardware serial ports or SoftwareSerial for debug output 
 - TI Tiva C Connected Launchpad (EK-TM4C1294XL1) + Energia 15 (http://community.blynk.cc/t/hardware-supported-by-blynk/16/36)
 
 #Widgets
-### Common Widget Settings
+## Common Widget Settings
 Most of the settings are self-explanatory, but there are some hidden features that you can use.
 
-### Pin Selection
+## Pin Selection
 This is one of the main parameters you need to set
 >Screenshot
 
 Read more about Virtual Pins Here
 
-### Data Mapping
+## Data Mapping
 >Screenshot
 
-### Splitting/Merging Outputs
+## Splitting/Merging Outputs
 >Screenshot
 
 
@@ -545,6 +545,8 @@ Limitations :
 - you cant' send 2 tweets in a row with same message
 - only 1 tweet allowed within 1 minute interval
 
+**Sketch:** [Twitter](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Twitter/Twitter.ino#L26)
+
 ###Email
 
 Email widget allows you to send email from your hardware to any address.
@@ -558,6 +560,8 @@ Blynk.email("my_email@example.com", "Title", "Body");
 Limitations :
 
 - only 1 email allowed within 1 minute interval
+
+**Sketch:** [Email](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Email/Email.ino#L26)
 
 ###Push Notifications
 
@@ -573,6 +577,8 @@ Limitations :
 
 - maximum allowed body length is 255 chars.
 - only 1 push notification allowed within 1 minute interval
+
+**Sketch:** [PushNotification](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/PushNotification/PushNotification.ino#L26)
 
 ##Other
 ###Bridge
@@ -592,6 +598,7 @@ void setup() {
 }
 ```
 
+**Sketch:** [Bridge](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Bridge/Bridge.ino#L33)
 
 #Security
 
