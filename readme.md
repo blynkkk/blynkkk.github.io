@@ -218,8 +218,7 @@ It's not that easy to take Arduino out of your home network, so we've built a [B
 ##Virtual Pins
 Virtual Pins are designed to send any data from your microcontroller to the Blynk App and back. Think about Virtual Pins as channels for sending any data. Make sure you differentiate Virtual Pins from physical pins on your hardware. Virtual Pins have no physical representation.
 
-Virtual Pins can be used to interface with libraries (Servo, LCD and others) and implement custom functionality.The device may send data to the Widget to the Virtual Pin like this:
-
+Virtual Pins can be used to interface with libraries (Servo, LCD and others) and implement custom functionality. The device may send data to the Widget to the Virtual Pin like this:
 ```cpp
 Blynk.virtualWrite(pin, "abc");
 Blynk.virtualWrite(pin, 123);
@@ -227,9 +226,7 @@ Blynk.virtualWrite(pin, 12.34);
 ```
 
 ###Sending data to hardware
-All [Controller Widgets](http://blynkkk.github.io/#widgets-controllers) can send data to Virtual Pins on your hardware. For instance, below code shows how to send 1 and 0 int value via button to virtual pin 1 :
- 
- 
+All [Controller Widgets](http://blynkkk.github.io/#widgets-controllers) can send data to Virtual Pins on your hardware. For instance, below code shows how to retrieve 1 and 0 int value on hardware via pressing button on virtual pin 1 within Application:
 ```cpp
 BLYNK_WRITE(1)
 {
