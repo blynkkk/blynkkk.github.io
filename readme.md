@@ -506,52 +506,62 @@ Read more about Virtual Pins Here
 
 ##Controllers
 ### Button
+Works in push or switch modes.
 >Image
 
 **Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino#L48)
 
 ### Slider
+Similar to potentiometer. Can be horizontal or vertical.
 >Image
 
 **Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino#L48)
 
 ### Timer
+Trigger actions at a specific time. Even if smartphone is offline.
 >Image
 
 **Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino#L48)
 
 ### Joystick
+Control servo movements in 4 directions.
 >Image
 
 **Sketch:** [JoystickTwoAxis](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/JoystickTwoAxis/JoystickTwoAxis.ino#L24)
 
 ##Displays
 ### Value Display
+Display incoming data from your sensors or virtual pins.
 >Image
 
 **Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino#L48)
 
 ### LED
+A simple LED for indication. Choose any color.
 >Image
 
 **Sketch:** [LED](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/LED/LED.ino#L31)
 
 ### Gauge
+A great visual way to display numeric values.
 >Image
 
 **Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino#L48)
 
 ### LCD
+Works as regular LCD. Display any data or messages on the smartphone.
 >Image
 
 **Sketch:** [LCD](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/LCD/LCD.ino#L22)
 
 ### Graph
+Easily plot incoming data from your project in various designs.
 >Image
 
 **Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino#L48)
 
 ### Terminal
+Display data from your hardware. Writing is also available.
 >Image
 
 **Sketch:** [Terminal](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Terminal/Terminal.ino#L23)
