@@ -374,10 +374,10 @@ The actual values are sent as strings, so there is no practical limits on the da
 However, remember the limitations of the platform when dealing with numbers. For example the integer on Arduino is 16-bit, allowing range -32768 to 32767.
 You can interpret incoming data as Integers, Floats, Doubles and Strings:
 ```cpp
-  param.asInt());
-  param.asFloat());
-  param.asDouble());
-  param.asStr());
+param.asInt();
+param.asFloat();
+param.asDouble();
+param.asStr();
 ```
 
 You can also get the RAW data from the param buffer:
@@ -504,7 +504,7 @@ Read more about Virtual Pins Here
 
 ##Controllers
 ### Button
-Works in push or switch modes.
+Works in push or switch modes. Allows to send 0/1 (LOW/HIGH) values.
 
 <img src="images/button.png" style="width: 77px;"/>
 
@@ -513,7 +513,7 @@ Works in push or switch modes.
 **Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino#L48)
 
 ### Slider
-Similar to potentiometer. Can be horizontal or vertical.
+Similar to potentiometer. Can be horizontal or vertical. Allows to send values between MIN and MAX.
 
 <img src="images/slider.png" style="width: 77px;"/>
 
@@ -522,7 +522,7 @@ Similar to potentiometer. Can be horizontal or vertical.
 **Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino#L48)
 
 ### Timer
-Trigger actions at a specific time. Even if smartphone is offline.
+Trigger actions at a specific time. Even if smartphone is offline. Start time sends 1 (HIGH). Stop time sends 0 (LOW).
 
 <img src="images/timer.png" style="width: 77px;"/>
 
@@ -586,7 +586,7 @@ Easily plot incoming data from your project in various designs.
 **Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino#L48)
 
 ### Terminal
-Display data from your hardware. Writing is also available.
+Display data from your hardware. Allows also to send any string to your hardware.
 
 <img src="images/terminal.png" style="width: 77px;"/>
 
