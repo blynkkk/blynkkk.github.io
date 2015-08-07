@@ -198,11 +198,17 @@ Install the latest ESP8266 for Arduino using [this guide](https://github.com/esp
 **Sketch:** [ESP8266_Standalone](https://github.com/blynkkk/blynk-library/blob/master/examples/BoardsAndShields/ESP8266_Standalone/ESP8266_Standalone.ino)
 
 ### Particle Core (formely Spark Core)
+
 Open [Particle Web IDE](https://build.particle.io/build).
+
 Go to the libraries.
+
 Search for **Blynk** in the Community Libraries and click on it.
+
 Open SparkCore.ino example.
+
 Click "use this example".
+
 Update your auth token, and upload!
 
 
