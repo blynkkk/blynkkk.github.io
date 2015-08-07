@@ -11,7 +11,7 @@ Blynk also works over USB. This means you can tinker with the app by connecting 
 [<img src="http://static1.squarespace.com/static/54765ba7e4b0d055ee0b47a6/t/55515fd0e4b08237a78598e2/1431396305454/?format=500w" alt="Drawing" style=" width: 150px;"/>](https://itunes.apple.com/us/app/blynk-control-arduino-raspberry/id808760481?ls=1&mt=8)  &nbsp; &nbsp; &nbsp; &nbsp;[<img src="http://static1.squarespace.com/static/54765ba7e4b0d055ee0b47a6/t/55515fe8e4b08237a785995e/1431396357648/?format=750w" alt="Drawing" style=" width: 200px;"/>](https://play.google.com/store/apps/details?id=cc.blynk)
 
 **Install Blynk Library:** <br><br>
-[Download Blynk Library >](https://github.com/blynkkk/blynk-library/archive/v0.2.4.zip)
+[Download Blynk Library >](https://github.com/blynkkk/blynk-library/releases/latest)
 
 In case you forgot how to install Arduino libraries: check [here](http://www.arduino.cc/en/guide/libraries).  We are also good friends of **[codebender](https://codebender.cc/example/BlynkSimpleEthernet/GettingStarted:BlynkBlink)** - you can code and upload Blynk sketches to your hardware directly from your browser.
 
@@ -197,8 +197,14 @@ Install the latest ESP8266 for Arduino using [this guide](https://github.com/esp
 
 **Sketch:** [ESP8266_Standalone](https://github.com/blynkkk/blynk-library/blob/master/examples/BoardsAndShields/ESP8266_Standalone/ESP8266_Standalone.ino)
 
-### Spark Core
-Specific steps for Spark Core
+### Particle Core (formely Spark Core)
+Open [Particle Web IDE](https://build.particle.io/build).
+Go to the libraries.
+Search for **Blynk** in the Community Libraries and click on it.
+Open SparkCore.ino example.
+Click "use this example".
+Update your auth token, and upload!
+
 
 #Blynk Basics
 
@@ -218,6 +224,7 @@ It's not that easy to take Arduino out of your home network, so we've built a [B
 * Connection to the cloud using:
   * Ethernet
   * WiFi
+  * Bluetooth LE
   * USB (Serial)
   * ...
 * Set of easy-to-use Widgets
@@ -406,6 +413,8 @@ analogWrite //PWM or Analog signal depending on the platform
 
 ### BLYNK_WRITE(vPIN)
 ### BLYNK_READ(vPIN)
+### BLYNK_WRITE_DEFAULT()
+### BLYNK_READ_DEFAULT()
 ### Blynk.virtualWrite();
 
 You can send all the formats of data to Virtual Pins
@@ -416,10 +425,9 @@ Blynk.virtualWrite(pin, 123);
 Blynk.virtualWrite(pin, 12.34);
 ```
 
-### BLYNK_PRINT
-### BLYNK_LOG
-### BLYNK_CONNECT();
-### BLYNK_DEBUG
+### #define BLYNK_PRINT
+### #define BLYNK_DEBUG
+### BLYNK_LOG()
 To enable debug prints on the default Serial, add on the top of your sketch **(should be the first line
 )**:
 
