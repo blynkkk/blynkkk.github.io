@@ -189,6 +189,10 @@ We have also provided a build script, you can try just running (inside of the "l
 $ ./build.sh raspberry
 ```
 
+Here some additional materials :
+- Forum [discussion](http://community.blynk.cc/t/howto-for-raspberry-pi/332);
+- Video [tutorial](https://www.youtube.com/watch?v=iSG_8g6KyGE);
+
 ### ESP8266 (standalone)
 
 You can run Blynk directly on the ESP8266!
