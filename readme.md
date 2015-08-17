@@ -342,7 +342,7 @@ Some Widgets (e.g Joystick, zeRGBa) have more than one output.
 This output is an array of values. You can get any parameter of the array [0,1,2...] by using: 
 
 ```cpp
-BLYNK_READ(pinNumber)
+BLYNK_WRITE(pinNumber)
 {   
   int x = param[0].asInt();
   int y = param[1].asInt();
