@@ -184,6 +184,13 @@ $ make clean all target=raspberry
 $ sudo ./blynk --token=YourAuthToken
 ```
 
+5. To enable Blynk auto restart for Pi find */etc/init.d/rc.local* file and add
+```
+/FULL_PATH_TO_LIB/blynk-library/linux/blynk --token=<my token> &
+for instance 
+/home/pi/blynk-library/linux/blynk --token=<my token> &
+```
+
 We have also provided a build script, you can try just running (inside of the "linux" directory):
 ```bash
 $ ./build.sh raspberry
