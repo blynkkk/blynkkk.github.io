@@ -23,8 +23,13 @@ In case you forgot how to install Arduino libraries: check [here](http://www.ard
 ###Create project
 <img src="images/new_project.png" style="width: 300px;"/>
 
+<<<<<<< Updated upstream
 ###Auth Token
 **Auth Token** is used to connect your hardware to your smartphone.
+=======
+### Auth Token
+**Auth Token** is used to connect your Arduino or other board to your smartphone. Every new project you create will have an Auth Token. 
+>>>>>>> Stashed changes
 
 <img src="images/token.png" style="width: 300px;"/>
 
