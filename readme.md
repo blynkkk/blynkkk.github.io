@@ -6,7 +6,7 @@ Blynk is not an app that works only with a particular shield. Instead, it's been
 Blynk also works over USB. This means you can tinker with the app by connecting it to your laptop or desktop while waiting for some internet shield to arrive. 
 
 #Getting Started
-##Download all the ingridients
+##Downloads
 **Blynk App for iOS or Android:** <br> <br> 
 [<img src="http://static1.squarespace.com/static/54765ba7e4b0d055ee0b47a6/t/55515fd0e4b08237a78598e2/1431396305454/?format=500w" alt="Drawing" style=" width: 150px;"/>](https://itunes.apple.com/us/app/blynk-control-arduino-raspberry/id808760481?ls=1&mt=8)  &nbsp; &nbsp; &nbsp; &nbsp;[<img src="http://static1.squarespace.com/static/54765ba7e4b0d055ee0b47a6/t/55515fe8e4b08237a785995e/1431396357648/?format=750w" alt="Drawing" style=" width: 200px;"/>](https://play.google.com/store/apps/details?id=cc.blynk)
 
@@ -17,29 +17,40 @@ In case you forgot how to install Arduino libraries: check [here](http://www.ard
 
 ##Getting started with application
 
-###Create Blynk account
+###1. Create new Blynk cccount
+Account is needed to store your Projects and to have access from multiple devices.   
+
+<video src="images/CreateAcc_1.mov" style="width: 300px;"/>
+
 <img src="images/sign_up.png" style="width: 300px;"/>
 
-###Create project
+###2. Create new project
+After you successfully logged in to your account, start by creating a new Project. Give it a name.
+
 <img src="images/new_project.png" style="width: 300px;"/>
 
-<<<<<<< Updated upstream
-###Auth Token
-**Auth Token** is used to connect your hardware to your smartphone.
-=======
-### Auth Token
-**Auth Token** is used to connect your Arduino or other board to your smartphone. Every new project you create will have an Auth Token. 
->>>>>>> Stashed changes
-
-<img src="images/token.png" style="width: 300px;"/>
-
-It's very convenient to send it over E-mail. Press E-mail button – token will be sent to the e-mail address you used for registration.
-
-
-###Choose your hardware
-Select the hardware you are building project on.
+###3. Choose your hardware
+Select the hardware you are building project with.
 
 <img src="images/select_hardware.png" style="width: 300px;"/>
+
+###4. Send Auth Token
+
+**Auth Token** is a uniqie identifier which is used to connect your Arduino or other board to your smartphone. Every new project you create will have an Auth Token.
+
+It's very convenient to send it over E-mail. Press E-mail button – token will be sent to the e-mail address you used for registration. You can also tap on it and it will be copied to the clipboard
+
+<span style="color:#D3435C;">**NOTE:** Don't share your Auth Token with anyone, unless you want them to have access to your hardware. </span>
+
+Press **"Create"** button.  
+
+
+<img src="images/new_project.png" style="width: 300px;"/>
+
+
+
+
+
 
 ##Getting started with hardware
 
