@@ -20,8 +20,6 @@ In case you forgot how to install Arduino libraries: check [here](http://www.ard
 ###1. Create new Blynk cccount
 Account is needed to store your Projects and to have access from multiple devices.   
 
-<video src="images/CreateAcc_1.mov" style="width: 300px;"/>
-
 <img src="images/sign_up.png" style="width: 300px;"/>
 
 ###2. Create new project
