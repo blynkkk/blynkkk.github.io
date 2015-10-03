@@ -173,15 +173,42 @@ void loop()
 }
 ```
 
-- Run the script (script located in "scripts" folder of library root, e.g. 'blynk-library/scripts') for redirecting traffic to server:
-  - for Windows: blynk-ser.bat
-  - for Linux and OSX: ./blynk-ser.sh (may need to run with sudo)
+- Run the script in Terminal (script is located in "scripts" folder of library root, 
+e.g. 'blynk-library/scripts')
+  - for Windows use: ```blynk-ser.bat```
+  
+  **TODO:** add Windows output
+  
+  - for Linux and OSX use: ```./blynk-ser.sh``` (may need to run with sudo)
 
-- Start blynking! :)
+On Mac OSX you'll see in Terminal (usbmodem address can be differens):
 
-**Attention!
-Arduino IDE may complain with "programmer is not responding".
-You need to terminate script before uploading new sketch.**
+```
+[ Press Ctrl+C to exit ]
+/dev/tty.usbmodem not found.
+Select serial port [ /dev/tty.usbmodem1451 ]: 
+```
+Copy this serial port address(```/dev/tty.usbmodem1451```) and paste it back:
+
+```
+Select serial port [ /dev/tty.usbmodem1451 ]: /dev/tty.usbmodem1451
+```
+
+You should see something similar:
+
+```
+Resetting device /dev/tty.usbmodem1451...
+Connecting: GOPEN:/dev/tty.usbmodem1451,raw,echo=0,clocal=1,cs8,nonblock=1,ixoff=0,ixon=0,ispeed=9600,ospeed=9600,crtscts=0 <-> openssl-connect:cloud.blynk.cc:8441,cafile=/Users/.../server.crt,nodelay
+2015/10/03 00:29:45 socat[30438.2046857984] N opening character device "/dev/tty.usbmodem1451" for reading and writing
+2015/10/03 00:29:45 socat[30438.2046857984] N opening connection to LEN=16 AF=2 45.55.195.102:8441
+2015/10/03 00:29:45 socat[30438.2046857984] N successfully connected from local address LEN=16 AF=2 192.168.0.2:56821
+2015/10/03 00:29:45 socat[30438.2046857984] N SSL connection using AES128-SHA
+2015/10/03 00:29:45 socat[30438.2046857984] N starting data transfer loop with FDs [3,3] and [4,4]
+```
+
+<span style="color:#D3435C;">**NOTE:** Arduino IDE may complain with "programmer is not responding". You need to terminate script before uploading new sketch.. </span>
+
+
 
 ### Raspberry Pi
 1. Connect your Raspberry Pi to the internet and open it's console.
@@ -224,17 +251,12 @@ Install the latest ESP8266 for Arduino using [this guide](https://github.com/esp
 
 ### Particle Core (formely Spark Core)
 
-Open [Particle Web IDE](https://build.particle.io/build).
-
-Go to the libraries.
-
-Search for **Blynk** in the Community Libraries and click on it.
-
-Open SparkCore.ino example.
-
-Click "use this example".
-
-Update your auth token, and upload!
+1. Open [Particle Web IDE](https://build.particle.io/build).
+2. Go to the libraries.
+3. Search for **Blynk** in the Community Libraries and click on it.
+4. Open SparkCore.ino example.
+5. Click "use this example".
+6. Update your auth token, and upload!
 
 
 #Blynk Basics
