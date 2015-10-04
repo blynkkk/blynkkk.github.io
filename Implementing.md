@@ -25,7 +25,7 @@ This document hints how to write a custom library.
 * Should be portable across similar devices (or same technology/programming language), if possible
 * Should detect and notify the user about [troubles](http://blynkkk.github.io/#troubleshooting) where possible (especially Flood)
 
-### Adding new HW board to the Blynk mobile app
+### Adding new HW board
 
 Different boards can be added by creating JSON board description file.
 
