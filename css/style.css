@@ -217,6 +217,7 @@ a:hover {
 }
 .content code {
   font-family: Menlo, monospace; color: #1D1E22;
+  word-wrap: break-word;
   border-radius: 2px;
   background: #D8D8D8;
   padding: 3px 10px;
@@ -833,6 +834,8 @@ a.big.button:hover:visited {
 }
 .menubar {
   font-size: 1em;
+  background-color: #1D1E22;
+
 }
 .menu ul.level-1 > li + li {
   margin-top: 20px;
@@ -877,6 +880,9 @@ a.big.button:hover:visited {
   color: #7F7F7F;
 } 
 
+.menu a.level-2:hover {
+  color: #23C890;
+}
 
 .menu a.level-3 {
   font-weight: normal;

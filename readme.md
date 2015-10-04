@@ -1,3 +1,5 @@
+<span style="color:#D3435C;">**NOTE:** This page is a Work In Progress. So there might be mistakes, misprints and some TODO items listed. You are welcome to use it, just but be aware of that.</span>
+
 #What is Blynk?
 Imagine a prototyping board on your smartphone where you drag and drop buttons, sliders, displays, graphs and other functional widgets. And in a matter of minutes these widgets can control Arduino and get data from it.
 
@@ -179,22 +181,22 @@ e.g. 'blynk-library/scripts')
   
   **TODO:** add Windows output
   
-  - for Linux and OSX use: ```./blynk-ser.sh``` (may need to run with sudo)
+  - for Linux and Mac use: ```./blynk-ser.sh``` (may need to run with sudo)
 
-On Mac OSX you'll see in Terminal (usbmodem address can be differens):
+This is what you'll see in Terminal on Mac (usbmodem address can be different):
 
 ```
 [ Press Ctrl+C to exit ]
 /dev/tty.usbmodem not found.
 Select serial port [ /dev/tty.usbmodem1451 ]: 
 ```
-Copy this serial port address(```/dev/tty.usbmodem1451```) and paste it back:
+Select and copy this serial port address(```/dev/tty.usbmodem1451```) and paste it back:
 
 ```
 Select serial port [ /dev/tty.usbmodem1451 ]: /dev/tty.usbmodem1451
 ```
 
-You should see something similar:
+After you press Enter, you should see something similar:
 
 ```
 Resetting device /dev/tty.usbmodem1451...
