@@ -9,7 +9,10 @@ No matter what type of connection you choose - Ethernet, Wi-Fi or maybe this new
  
 <img src="images/architecture.png" style="width: 450px;"/>
 
-It's not that easy to take Arduino out of your home network, so we've built a [Blynk server](https://github.com/blynkkk/blynk-server). It handles all the authentication and communication, and also keeps an eye on your board while the smartphone is offline. Blynk server runs on Java and is open-source. You will be able to run it locally if you really need to. Messaging between mobile apps , Blynk Server and Arduino is based on a simple, lightweight and fast binary protocol over TCP/IP sockets.
+It's not that easy to take Arduino out of your home network, so we've built a [Blynk server](https://github.com/blynkkk/blynk-server). 
+It handles all the authentication and communication, and also keeps an eye on your board while the smartphone is offline. 
+Blynk server runs on Java and is open-source. You will be able to [run it locally](https://github.com/blynkkk/blynk-server#blynk-server) if you really need to. 
+Messaging between mobile apps , Blynk Server and Arduino is based on a simple, lightweight and fast binary protocol over TCP/IP sockets.
  
 ##Features
 * Similar API & UI for all supported hardware & devices
@@ -22,6 +25,7 @@ It's not that easy to take Arduino out of your home network, so we've built a [B
 * Set of easy-to-use Widgets
 * Direct pin manipulation with no code writing
 * Easy to integrate and add new functionality using virtual pins
+* History data monitoring via History Graph widget
 * Device-to-Device communication using Bridge Widget
 * Sending emails, tweets, push notifications, etc.
 * ... more features are constantly added!

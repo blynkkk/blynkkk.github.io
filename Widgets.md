@@ -98,6 +98,15 @@ Easily plot incoming data from your project in various designs.
 
 **Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino#L48)
 
+### History Graph
+Allows you to see any data your hardware had sent to server previously. Graph updated once in a hour.
+
+<img src="images/history_graph.png" style="width: 77px;"/>
+
+<img src="images/history_graph_edit.png" style="width: 300px;"/>
+
+**Sketch:** [PushData](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino#L58)
+
 ### Terminal
 Display data from your hardware. Allows also to send any string to your hardware.
 
