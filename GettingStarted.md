@@ -47,9 +47,9 @@ Press **"Create"** button.
 
 You know that **Blynk works over the Internet**, right? (Bluetooth LE is on the way) 
 
-Before you start Blynking, you need to understand how you will connect to the Internet. It can be an Ethernet Shield for Arduino, or may be your hardware is already internet-enabled (e.g. Spark Core). 
+Before you start Blynking, you need to understand how you will connect to the Internet. It can be an Ethernet Shield for Arduino, Wi-Fi or may be your hardware is already internet-enabled (e.g. Spark Core). 
 
-We've prepared example sketches which will get your microcomputer online. Open the example sketch according to your device or shield. If you are using **codebender** - find the example you need in the [list]()
+We've prepared [example sketches](https://github.com/blynkkk/blynk-library/tree/master/examples/BoardsAndShields) which will get your microcomputer online. Open the example sketch according to your device or shield. If you are using **codebender** - find the example you need in the [list]().
 
 <img src="images/connection_type_sketch.png" style="width: 500px;"/>
 
@@ -58,12 +58,12 @@ We've prepared example sketches which will get your microcomputer online. Open t
 [Simplest possible sketch](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino) would be for Arduino UNO with Ethernet shield:
 
 ```cpp
-#define BLYNK_PRINT Serial
+#define BLYNK_PRINT Serial // Enables Serial Monitor
 #include <SPI.h>
 #include <Ethernet.h>
-#include <BlynkSimpleEthernet.h>
+#include <BlynkSimpleEthernet.h> // This part is for Ethernet stuff
 
-char auth[] = "YourAuthToken";
+char auth[] = "YourAuthToken"; // Put your Auth Token here. (see Step 3 above)
 
 void setup()
 {
@@ -74,6 +74,10 @@ void setup()
 void loop()
 {
   Blynk.run(); // All the Blynk Magic happens here...
+
+  // You can inject your own code or combine it with other sketches.
+  // Check other examples on how to communicate with Blynk. Remember
+  // to avoid delay() function!
 }
 ```
 
@@ -86,7 +90,7 @@ In the example sketch find this line in code:
 char auth[] = "YourAuthToken";
 ```
 
-Change it by putting your [Auth Token](http://blynkkk.github.io/#getting-started-auth-token) inside curly brackets. 
+Change it by putting your [Auth Token](http://blynkkk.github.io/#getting-started-getting-started-with-application-4-send-auth-token) inside curly brackets. 
 
 ```cpp 
 char auth[] = "f45626c103a94983b469637978b0c78a";

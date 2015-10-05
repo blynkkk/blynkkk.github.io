@@ -4,7 +4,7 @@
 
 If you don't have any shield and your hardware doesn't have any connectivity, you can still use Blynk – directly over USB :
 
-- Upload [sketch below](https://github.com/blynkkk/blynk-library/blob/master/examples/BoardsAndShields/Arduino_Serial_USB/Arduino_Serial_USB.ino) and change [Auth Token](http://blynkkk.github.io/#getting-started-getting-started-with-application-auth-token)
+- Upload [sketch below](https://github.com/blynkkk/blynk-library/blob/master/examples/BoardsAndShields/Arduino_Serial_USB/Arduino_Serial_USB.ino) and change [Auth Token](http://blynkkk.github.io/#getting-started-getting-started-with-hardware-insert-auth-token)
 
 ```cpp
 #include <SoftwareSerial.h>
@@ -30,9 +30,12 @@ void loop()
 }
 ```
 
-- Run the script in Terminal (script is located in "scripts" folder of library root, 
-e.g. 'blynk-library/scripts')
-  - for Windows use: ```blynk-ser.bat```
+- Run the script in Terminal (script is located in "scripts" folder of library root, e.g. 'blynk-library/scripts')
+  - for Windows :
+    1. Open cmd.exe
+    2. write your way to blynk-ser.bat folder. For instance : ```cd C:\blynk-library-0.3.1\blynk-library-0.3.1\scripts```
+    3. run bat file. For instance : ```blynk-ser.bat -c COM4``` (where COM4 is port with your Arduino)
+    4. And press "Enter", press "Enter" and press "Enter"
   
   **TODO:** add Windows output
   
@@ -65,6 +68,8 @@ Connecting: GOPEN:/dev/tty.usbmodem1451,raw,echo=0,clocal=1,cs8,nonblock=1,ixoff
 
 <span style="color:#D3435C;">**NOTE:** Arduino IDE may complain with "programmer is not responding". You need to terminate script before uploading new sketch.. </span>
 
+Here some additional materials :
+ - [Instructables](http://www.instructables.com/id/Control-arduino-using-Blynk-over-usb/)
 
 
 ### Raspberry Pi
@@ -95,8 +100,9 @@ $ ./build.sh raspberry
 ```
 
 Here some additional materials :
-- Forum [discussion](http://community.blynk.cc/t/howto-for-raspberry-pi/332);
-- Video [tutorial](https://www.youtube.com/watch?v=iSG_8g6KyGE);
+ - [Instructables](http://www.instructables.com/id/Blynk-JavaScript-in-20-minutes-Raspberry-Pi-Edison)
+ - [Forum discussion](http://community.blynk.cc/t/howto-for-raspberry-pi/332)
+ - [Video tutorial](https://www.youtube.com/watch?v=iSG_8g6KyGE)
 
 ### ESP8266 (standalone)
 
