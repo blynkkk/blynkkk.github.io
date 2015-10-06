@@ -55,7 +55,7 @@ Connect an LED as shown here:
 ##Blynk App
 Download and launch Blynk App.
 
-###1.Create Blynk Account
+###1. Create Blynk Account
 After you download Blynk app, you'll need to create a new Blynk account. It's not connected to our Forum or Kickstarter - just create a New Account. 
 
 Use a **real** e-mail address - it will be used later and you'll appreciate that.
@@ -946,8 +946,7 @@ That's it! You will see no output cause all logging is done within same folder i
 
 + Specify custom server path in Blynk app when logging in.
 
-![Custom server icon](https://github.com/blynkkk/blynk-server/blob/master/docs/login.png)
-![Server properties menu](https://github.com/blynkkk/blynk-server/blob/master/docs/custom.png)
+<img src="images/login.png" style="width: 200px;"/>  <img src="images/custom.png" style="width: 200px;"/>
 
 + Change your ethernet sketch from
 
@@ -1260,7 +1259,7 @@ In order to gain maximum security you could [install Blynk server locally](https
 
 # Troubleshooting
 
-### Connection
+## Connection
 
 If you experience connection problems, follow these steps:
 
@@ -1271,7 +1270,7 @@ If you experience connection problems, follow these steps:
    * If it doesn't work, try looking into [serial debug prints](./Troubleshooting.md#enable-debug).
 3. Done! Add your modifications and functionality. Enjoy Blynk!
 
-### Delay
+## Delay
 
 Your application might be calling a delay() function or sleeps/cycles for a long time inside of the loop(), like this:
 
@@ -1292,7 +1291,7 @@ You should be aware that this can degrade performance of Blynk, or cause connect
 
 If you need periodic actions, consider using some timer library, like shown [in this example](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino).
 
-### Flood
+## Flood Error
 
 Your application may cause an enormous load on our server, please try avoiding sending data too fast.
 
@@ -1330,6 +1329,8 @@ You can also use spare Hardware serial ports or SoftwareSerial for debug output 
 **Note:** enabling debug mode will slowdown your hardware processing speed up to 10 times.
 
 # Implementing a Blynk HW client (library)
+Here is an information on how to write a custom library.
+
 Currently we provide Arduino/C++ implementation of the library.
 It is very extensible and modular, look at [the list of supported hardware](http://blynkkk.github.io/#list-of-supported-hardware).
 Adding new connection types and Arduino-compatible boards is easy.
@@ -1342,11 +1343,9 @@ But some devices are programmed in other languages, like:
 * MicroPython, Python
 * NodeMCU, eLua
 
-This document hints how to write a custom library.
-
 ## Blynk library main functions
 
-* Provide easy-to use API
+- Provide easy-to use API
  * Virtual pin handlers registration
  * Provide comfortable wrappers for some widgets
 * Manage connection
@@ -1356,9 +1355,9 @@ This document hints how to write a custom library.
 * Should be portable across similar devices (or same technology/programming language), if possible
 * Should detect and notify the user about [troubles](http://blynkkk.github.io/#troubleshooting) where possible (especially Flood)
 
-### Adding new HW board to the Blynk mobile app
+### Adding new Hardware Description JSON
+Blynk app uses this file to correctly work with all the variaety of hardware.  It's like a pinout diagram. 
 
-Different boards can be added by creating JSON board description file.
 
 ```json
 {
@@ -1405,7 +1404,7 @@ Basically you can select UNO board and check how it works using just virtual pin
 Most digital pins will also work.
 Analog IO/PWM will not work in general, until we add your board to the App.
 
-## Blynk protocol
+# Blynk protocol
 
 Blynk transfers binary messages with the following structure:
 
