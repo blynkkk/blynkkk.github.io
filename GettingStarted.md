@@ -18,7 +18,7 @@ Use a **real** e-mail address - it will be used later and you'll appreciate that
 
 Account is needed to store your Projects and for you to have access to them from multiple devices. It's also a security measure. 
 
-You can always install your Private Blynk Server and have full control.   
+You can always install your [Private Blynk Server](http://blynkkk.github.io/#blynk-server-requirements) and have full control.   
 
 ###2. Create new project
 After you successfully logged into your account, start by creating a new Project. Give it a name.
@@ -26,13 +26,15 @@ After you successfully logged into your account, start by creating a new Project
 <img src="images/new_project.png" style="width: 200px;"/>
 
 ###3. Choose your hardware
-Select the hardware you will use. Check out how big is the list of supported hardware! BTW, the full list is here: LINK
+Select the hardware you will use. Check out how big is the [list of supported hardware](http://blynkkk.github.io/#list-of-supported-hardware)!
 
 <img src="images/select_hardware.png" style="width: 200px;"/>
 
 ###4. Auth Token
 
 **Auth Token** is a uniqie identifier which is needed to connect your Arduino or other board to your smartphone. Every new project you create will have an Auth Token.
+
+<img src="images/token.png" style="width: 200px;"/>
 
 <span style="color:#D3435C;">**NOTE:** Don't share your Auth Token with anyone, unless you want them to have access to your hardware. </span>
 
