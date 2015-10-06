@@ -6,7 +6,7 @@ This guide will help you to understand how to get started using Blynk and give y
 If you want to jump straight into playing with Blynk, check out Getting Started.
 <br>
 
-[Getting Started >](http://localhost:63342/blynkkk.github.io/index.html#getting-started)
+[Getting Started >](http://blynkkk.github.io/#getting-started)
 
 ##How Blynk Works
 Blynk was designed for the Internet of Things. It can control hardware remotely, it can display sensor data and do lot's of other cool things with electronics. 
