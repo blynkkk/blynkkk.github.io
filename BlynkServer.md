@@ -15,23 +15,24 @@ How to install Java: [here](https://github.com/blynkkk/blynk-server#install-java
 ## How to run local Blynk Server
 By default, mobile application uses 8443 port and is based on SSL/TLS sockets. Default hardware port is 8442 and is based on plain TCP/IP sockets.
 
-### Quick local server setup
+### Quick Local Server launch
 
-+ Make sure you are using Java 8
+1. Make sure you are using Java 8
 
         java -version
         Output: java version "1.8.0_40"
 
-+ Run the server on default 'hardware port 8442' and default 'application port 8443' (SSL port)
+2. Run the server on default 'hardware port 8442' and default 'application port 8443' (SSL port)
 
         java -jar server-0.8.2.jar -dataFolder /path
         
-That's it! You will see no output cause all logging is done within same folder in ./logs/blynk.log file.
+That's it! 
+You won't see any output, because all the logging is done within same folder in ```./logs/blynk.log file.```
 
-### Launhc local server on Raspberry Pi
+### Launch Blynk Server on Raspberry Pi
 
 1. Login to Raspberry Pi via ssh;
-2. Install java 8WiFi 
+2. Install Java 8: 
         
 		sudo apt-get install oracle-java8-jdk
         
@@ -44,7 +45,7 @@ That's it! You will see no output cause all logging is done within same folder i
    
         wget "https://github.com/blynkkk/blynk-server/releases/download/v0.8.2/server-0.8.2.jar"
 
-5. Run the server on default 'hardware port 8442' and default 'application port 8443' (SSL port)
+5. Run the server on default ```hardware port 8442``` and default ```application port 8443``` (SSL port)
 
         java -jar server-0.8.2.jar -dataFolder /home/pi/Blynk        
         
@@ -61,7 +62,7 @@ To connect Blynk App to your local server you need to set up a custom server dur
 
 <img src="images/login.png" style="width: 200px;"/>  <img src="images/custom.png" style="width: 200px;"/>
 
-+ If you are using Ethernet connection, in the sketch change
++ If you are using Ethernet connection, in the Ethernet example sketch change:
 
 	```
 	Blynk.begin(auth);
@@ -77,7 +78,7 @@ To connect Blynk App to your local server you need to set up a custom server dur
 
 
         
-+ If you are connecting over WiFi, make edits in the sketch. Change
++ If you are connecting over WiFi, make edits in the WiFi example sketch. Change
 
    ```     
 	Blynk.begin(auth, SSID, pass));
@@ -98,7 +99,8 @@ To connect Blynk App to your local server you need to set up a custom server dur
 	```     
 
 ### Advanced local server setup
-If you need more flexibility, you can extend server with more options by creating server.properties file in same folder as server.jar. Example could be found [here](https://github.com/blynkkk/blynk-server/blob/master/server/tcp-server/src/main/resources/server.properties).
+If you need more flexibility, you can extend server with more options by creating server.properties file in same folder as server.jar. 
+Example could be found [here](https://github.com/blynkkk/blynk-server/blob/master/server/tcp-server/src/main/resources/server.properties).
 server.properties options:
 
 + Application port
