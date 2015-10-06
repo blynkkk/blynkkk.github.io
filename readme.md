@@ -49,16 +49,18 @@ Let's try to get you started in 5 minutes (reading doesn't counts!).
 We will try to switch an LED connected to your Arduino with the Smartphone.
 
 Connect an LED as shown here:
-<img src="images/Arduino_LED.jpg" style="width: 300px;"/>
+
+<img src="images/Arduino_LED.jpg" style="width: 250px;"/>
 
 ##Blynk App
-Download and launch Blynk App
+Download and launch Blynk App.
+
 ###1.Create Blynk Account
 After you download Blynk app, you'll need to create a new Blynk account. It's not connected to our Forum or Kickstarter - just create a New Account. 
 
 Use a **real** e-mail address - it will be used later and you'll appreciate that.
 
-<img src="images/sign_up.png" style="width: 300px;"/>
+<img src="images/sign_up.png" style="width: 200px;"/>
 
 ####Why do I need to create account?
 
@@ -69,12 +71,12 @@ You can always install your Private Blynk Server and have full control.
 ###2. Create new project
 After you successfully logged into your account, start by creating a new Project. Give it a name.
 
-<img src="images/new_project.png" style="width: 300px;"/>
+<img src="images/new_project.png" style="width: 200px;"/>
 
 ###3. Choose your hardware
 Select the hardware you will use. Check out how big is the list of supported hardware! BTW, the full list is here: LINK
 
-<img src="images/select_hardware.png" style="width: 300px;"/>
+<img src="images/select_hardware.png" style="width: 200px;"/>
 
 ###4. Auth Token
 
@@ -87,7 +89,7 @@ It's very convenient to send it over E-mail. Press E-mail button and token will 
 
 Now press **"Create"** button.  
 
-<img src="images/new_project.png" style="width: 300px;"/>
+<img src="images/new_project.png" style="width: 200px;"/>
 
 ###5. Add a Widget
 
@@ -97,9 +99,9 @@ Tap anywhere on empty space - Whoa! you got inside a Widget Box! All the widgets
 
 ####Widget Box
 
-<img src="images/widgets_box.png" style="width: 300px;"/>
+<img src="images/widgets_box.png" style="width: 200px;"/>
 
-<img src="images/project_with_button.png" style="width: 300px;"/>
+<img src="images/project_with_button.png" style="width: 200px;"/>
 
 ####Drag-n-Drop
 Tap and hold the Widget to drag it to teh new position.
@@ -107,16 +109,16 @@ Tap and hold the Widget to drag it to teh new position.
 ####Widget Settings
 Each Widget has it's own settings. Tap on the widget to get to them
 
-<img src="images/button_settings.png" style="width: 300px;"/>
+<img src="images/button_settings.png" style="width: 200px;"/>
 
 The most important parameter to set is **PIN** . List of pins reflects physical pins defined by your hardware. If your LED is connected to Digital Pin 8 - then select **D8** (**D** - stands for **D**igital).    
 
-<img src="images/pin_selection.png" style="width: 300px;"/>
+<img src="images/pin_selection.png" style="width: 200px;"/>
 
 ###6. Run the project
 When you are done with the Settings - press **PLAY** button. This will switch you from EDIT mode to PLAY mode where you can interact with the hardware. Now you can't drag or set up Widgets, but if you need it: press **STOP** and get back to Edit Mode.
 
-<img src="images/play_button.png" style="width: 300px;"/>
+<img src="images/play_button.png" style="width: 200px;"/>
 
 You may get a message "Arduino UNO is offline". Don't worry now. We'll get to that in a minute.
 
@@ -179,7 +181,7 @@ Blynk connected!
 Go back to the Blynk app.
 Push the Button and turn the LED On and Off!
 
-<img src="images/button_pressed.png" style="width: 300px;"/>
+<img src="images/button_pressed.png" style="width: 200px;"/>
 
 Check out other example sketches! Always feel free to experiment and combine different examples together! 
 
@@ -425,7 +427,7 @@ When you press Button, Blynk App sends ```1``` On second click - it sends ```0``
 
 This is how Button Widget is set up:
 
-<img src="images/button_virtual_1.png" style="width: 300px;"/>
+<img src="images/button_virtual_1.png" style="width: 200px;"/>
 
 
 Full example sketch: [Get Data](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/GetData/GetData.ino#L24)
@@ -433,7 +435,7 @@ Full example sketch: [Get Data](https://github.com/blynkkk/blynk-library/blob/ma
 ###Sending array to hardware 
 Some Widgets (e.g Joystick, zeRGBa) have more than one output. 
 
-<img src="images/joystick_merge_mode.png" style="width: 300px;"/>
+<img src="images/joystick_merge_mode.png" style="width: 200px;"/>
 
 This output is an array of values. You can get any parameter of the array [0,1,2...] by using: 
 
@@ -454,7 +456,7 @@ There are two ways of pushing data from your hardware to the Widgets in the app 
 ###Call requests by widget
 - Using Blynk built-in reading frequency while app is active by setting Reading Frequency parameter to some interval:
 
-<img src="images/frequency_reading_pull.png" style="width: 300px;"/>
+<img src="images/frequency_reading_pull.png" style="width: 200px;"/>
 
 ```cpp
 BLYNK_READ(V5) // Widget in the app READs Virtal Pin V5
@@ -470,7 +472,7 @@ BLYNK_READ(V5) // Widget in the app READs Virtal Pin V5
 ###Pushing data from hardware
 If you need to PUSH sensor or other data from your hardware to Widget in the app you can write any logic you want. Set the widget to PUSH mode
 
-<img src="images/frequency_reading_push.png" style="width: 300px;"/>
+<img src="images/frequency_reading_push.png" style="width: 200px;"/>
 
 We recommend sending data in intervals and avoiiding FLOOD ERROR
 For example, this [SimpleTimer Library](http://playground.arduino.cc/Code/SimpleTimer) is an Arduino library for timed events. Please read instructions inside this [example sketch](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino#L30) for more details.
@@ -616,42 +618,55 @@ You can also use spare Hardware serial ports or SoftwareSerial for debug output 
 - RN-XV WiFly
 - You can implement your own connection type easily (see User_Defined_Connection example)!
 
-## Community-reported
+## Made by Community
 
 - WIZnet-W5500-EVB (http://instructables.com/id/WIZnet-W5500-EVB-and-Blynk-App-communication)
 - TI Tiva C Connected Launchpad (EK-TM4C1294XL1) + Energia 15 (http://community.blynk.cc/t/hardware-supported-by-blynk/16/36)
 
+
+
+
+
 #Widgets
+There are 4 types of Widgets: 
+
+- **Controllers** - they send commands to hardware. Use them to control your stuff
+- **Displays** - used for various vizualizations of data that comes from hardware to the smartphone
+- **Notifications** - are various widgets to send messages and notifications. 
+- **Others** - widgets that don't belong to any category
+ 
 ## Common Widget Settings
 Most of the settings are self-explanatory, but there are some hidden features that you can use.
 
-## Pin Selection
+### Pin Selection
 This is one of the main parameters you need to set
 >Screenshot
 
 Read more about Virtual Pins Here
 
-## Data Mapping
+### Data Mapping
 >Screenshot
 
-## Splitting/Merging Outputs
+### SPLIT/MERGE
 Some of the Widgets can send more than one value. And with this switch you can control how to send them.
 >Screenshot
 
-### SPLIT:
-Each of the parameters can be sent directly to the dedicated Pin on your hardware (e.g D7). It's very convenient because you don't need to write any code. It just works.
-Please note, that in this mode - you send multiple commands, which can reduce performance of your hardware because of increased traffic.
+- SPLIT:
+Each of the parameters is sent directly to the Pin on your hardware (e.g D7). You don't need to write any code.
 
-Example: If you have a Joystick Widget and it's set to D3 and D4, it will send 2 commands:
+**NOTE:** In this mode you send multiple commands from one widget, which can reduce performance of your hardware.
+
+Example: If you have a Joystick Widget and it's set to D3 and D4, it will send 2 commands over the Internet:
 
 ```cpp
 digitalWrite(3, value);
 digitalWrite(4, value);
 ```
 
-### MERGE:
-When MERGE mode is selected, you send an array of values with just one command. This mode can be used with Virtual Pins only.
-It reduces the amount of traffic, because it's just one command but you have to parse these values on the hardware side:
+- MERGE:
+When MERGE mode is selected, you are sending just 1 message, consisiting of array of values. But you'll need to parse it on the hardware. 
+
+This mode can be used with Virtual Pins only.
 
 Example: Add a zeRGBa Widget and set it to MERGE mode. Choose Virtual Pin V1
 
@@ -664,15 +679,8 @@ BLYNK_WRITE(V1) // There is a Widget that WRITEs data to V1
 }
 ```
 
+Some of the widgets are used just to unlock functionality (e.g. Email Widget) and they don't have any settings at all.
 
-#Widgets
-There are 4 types of Widgets: 
-- Controllers - they send commands to hardware. Use them to control your stuff
-- Displays - used for various vizualizations of data that comes from hardware to the smartphone
-- Notifications - are various widgets to send messages and notifications. 
-- Others - widgets that don't belong to any category
-- 
-Some of the widgets are used just to unlock some functionality 
 
 ##Controllers
 ### Button
@@ -680,7 +688,7 @@ Works in push or switch modes. Allows to send 0/1 (LOW/HIGH) values.
 
 <img src="images/button.png" style="width: 77px;"/>
 
-<img src="images/button_edit.png" style="width: 300px;"/>
+<img src="images/button_edit.png" style="width: 200px;"/>
 
 **Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino#L48)
 
@@ -689,7 +697,7 @@ Similar to potentiometer. Can be horizontal or vertical. Allows to send values b
 
 <img src="images/slider.png" style="width: 77px;"/>
 
-<img src="images/slider_edit.png" style="width: 300px;"/>
+<img src="images/slider_edit.png" style="width: 200px;"/>
 
 **Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino#L48)
 
@@ -698,7 +706,7 @@ Timer triggers actions at a specific time. Even if smartphone is offline. Start 
 
 <img src="images/timer.png" style="width: 77px;"/>
 
-<img src="images/timer_edit.png" style="width: 300px;"/>
+<img src="images/timer_edit.png" style="width: 200px;"/>
 
 **Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino#L48)
 
@@ -716,7 +724,7 @@ When it's OFF, Joystick handle will not return back to center position. It will 
 
 <img src="images/joystick.png" style="width: 77px;"/>
 
-<img src="images/joystick_edit.png" style="width: 300px;"/>
+<img src="images/joystick_edit.png" style="width: 200px;"/>
 
 **Sketch:** [JoystickTwoAxis](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/JoystickTwoAxis/JoystickTwoAxis.ino#L24)
 
@@ -726,7 +734,7 @@ Displays incoming data from your sensors or Virtual Pins.
 
 <img src="images/display.png" style="width: 77px;"/>
 
-<img src="images/display_edit.png" style="width: 300px;"/>
+<img src="images/display_edit.png" style="width: 200px;"/>
 
 **Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino#L48)
 
@@ -736,7 +744,7 @@ TODO: describe 0-255 / 0-1 and fix in apps (make consistent)
 
 <img src="images/led.png" style="width: 77px;"/>
 
-<img src="images/led_edit.png" style="width: 300px;"/>
+<img src="images/led_edit.png" style="width: 200px;"/>
 
 **Sketch:** [LED](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/LED/LED.ino#L31)
 
@@ -745,7 +753,7 @@ A great visual way to display incoming numeric values.
 
 <img src="images/gauge.png" style="width: 77px;"/>
 
-<img src="images/gauge_edit.png" style="width: 300px;"/>
+<img src="images/gauge_edit.png" style="width: 200px;"/>
 
 **Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino#L48)
 
@@ -767,7 +775,7 @@ lcd.clear();
 
 <img src="images/lcd.png" style="width: 77px;"/>
 
-<img src="images/lcd_edit.png" style="width: 300px;"/>
+<img src="images/lcd_edit.png" style="width: 200px;"/>
 
 **Sketch:** [LCD](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/LCD/LCD.ino#L22)
 
@@ -776,7 +784,7 @@ Easily plot incoming data from your project in various designs.
 
 <img src="images/graph.png" style="width: 77px;"/>
 
-<img src="images/graph_edit.png" style="width: 300px;"/>
+<img src="images/graph_edit.png" style="width: 200px;"/>
 
 **Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino#L48)
 
@@ -794,7 +802,7 @@ terminal.flush
 
 <img src="images/terminal.png" style="width: 77px;"/>
 
-<img src="images/terminal_edit.png" style="width: 300px;"/>
+<img src="images/terminal_edit.png" style="width: 200px;"/>
 
 **Sketch:** [Terminal](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Terminal/Terminal.ino#L23)
 
@@ -805,7 +813,7 @@ Twitter widget connects your Twitter account to Blynk and allows you to send Twe
 
 <img src="http://static1.squarespace.com/static/54765ba7e4b0d055ee0b47a6/54e92d39e4b0c31341b33a9a/55813d09e4b0ba8aa77ab230/1434533129525/TwitterON.png" style="width: 77px;"/>
 
-<img src="images/twitter_edit.png" style="width: 300px;"/>
+<img src="images/twitter_edit.png" style="width: 200px;"/>
 
 Example code:
 ```cpp
@@ -825,7 +833,7 @@ Email widget allows you to send email from your hardware to any address.
 
 <img src="images/mail.png" style="width: 77px;"/>
 
-<img src="images/mail_edit.png" style="width: 300px;"/>
+<img src="images/mail_edit.png" style="width: 200px;"/>
 
 Example code:
 ```cpp
@@ -844,7 +852,7 @@ Push Notification widget allows you to send push notification from your hardware
 
 <img src="images/push.png" style="width: 77px;"/>
 
-<img src="images/push_edit.png" style="width: 300px;"/>
+<img src="images/push_edit.png" style="width: 200px;"/>
 
 Example code:
 ```cpp
@@ -865,7 +873,7 @@ Bridge can be used for Device-to-Device communication. You can send digital/anal
 
 <img src="images/bridge.png" style="width: 77px;"/>
 
-<img src="images/bridge_edit.png" style="width: 300px;"/>
+<img src="images/bridge_edit.png" style="width: 200px;"/>
 
 Example code:
 ```cpp
