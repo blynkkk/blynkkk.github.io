@@ -899,75 +899,87 @@ Blynk Server is an Open-Source [Netty](https://github.com/netty/netty) based Jav
 ## Requirements
 Java 8 required. (OpenJDK, Oracle). Installation instructions [here](https://github.com/blynkkk/blynk-server#install-java-for-ubuntu).
 
-## GETTING STARTED
+## Getting Started
 By default, mobile application uses 8443 port and is based on SSL/TLS sockets. Default hardware port is 8442 and is based on plain TCP/IP sockets.
 
 ### Quick local server setup
 
-+ Make sure you are using Java 8
+1. Make sure you are using Java 8
 
         java -version
         Output: java version "1.8.0_40"
 
-+ Run the server on default 'hardware port 8442' and default 'application port 8443' (SSL port)
+2. Run the server on default 'hardware port 8442' and default 'application port 8443' (SSL port)
 
         java -jar server-0.8.2.jar -dataFolder /path
         
-That's it! You will see no output cause all logging is done within same folder in ./logs/blynk.log file.
+	That's it! You won't see any output because all the logging is done within same folder in ```./logs/blynk.log file```.
 
 ### Quick local server setup on Raspberry PI
 
-+ Login to Raspberry Pi via ssh;
-+ Install java 8 : 
+1. Login to Raspberry Pi via ssh;
+2. Install java 8 : 
         
         sudo apt-get install oracle-java8-jdk
         
-+ Make sure you are using Java 8
+3. Make sure you are using Java 8
 
         java -version
         Output: java version "1.8.0_40"
         
-+ Download Blynk server jar file (or manually copy it to raspberry via ssh and scp command) : 
+4. Download Blynk server jar file (or manually copy it to raspberry via ssh and scp command) : 
    
         wget "https://github.com/blynkkk/blynk-server/releases/download/v0.8.2/server-0.8.2.jar"
 
-+ Run the server on default 'hardware port 8442' and default 'application port 8443' (SSL port)
+5. Run the server on default 'hardware port 8442' and default 'application port 8443' (SSL port)
 
         java -jar server-0.8.2.jar -dataFolder /home/pi/Blynk        
         
-That's it! You will see no output cause all logging is done within same folder in ./logs/blynk.log file.
+You won't see any output because all logging is done within same folder in: ```./logs/blynk.log file```.
         
-+ To enable server auto restart find /etc/init.d/rc.local file and add :
+To enable server auto restart find /etc/init.d/rc.local file and add:
 
-        java -jar /home/pi/server-0.8.2.jar -dataFolder /home/pi/Blynk &
-
+```
+java -jar /home/pi/server-0.8.2.jar -dataFolder /home/pi/Blynk &
+```
                 
 ### App settings and sketch changes
 
-+ Specify custom server path in Blynk app when logging in.
+1. Specify custom server path in Blynk app when logging in.
 
 <img src="images/login.png" style="width: 200px;"/>  <img src="images/custom.png" style="width: 200px;"/>
 
-+ Change your ethernet sketch from
+2. Change your Ethernet sketch from
 
-        Blynk.begin(auth);
-        to
-        Blynk.begin(auth, "your_host");
-        or to 
-        Blynk.begin(auth, IPAddress(xxx,xxx,xxx,xxx));
-        
-+ Change your WIFI sketch from
-        
-        Blynk.begin(auth, SSID, pass));
-        to
-        Blynk.begin(auth, SSID, pass, "your_host");
-        or to
-        Blynk.begin(auth, SSID, pass, IPAddress(XXX,XXX,XXX,XXX));
-        
-+ or in case of USB when running blynk-ser.sh provide '-s' option with address of your local server
+```
+Blynk.begin(auth);
+```
 
-        ./blynk-ser.sh -s you_host_or_IP
+to
+
+```
+Blynk.begin(auth, "your_host");
+```
+or ```Blynk.begin(auth, IPAddress(xxx,xxx,xxx,xxx));```    
+
+Change your WIFI sketch from
+
+```        
+Blynk.begin(auth, SSID, pass));
+```
+
+to
+
+```
+Blynk.begin(auth, SSID, pass, "your_host");
+```
+or to```Blynk.begin(auth, SSID, pass, IPAddress(XXX,XXX,XXX,XXX));```
         
+	In case of USB connection, when running blynk-ser.sh provide '-s' option with address of your local server: 
+
+```bash
+./blynk-ser.sh -s you_host_or_IP
+```        
 
 ## Advanced local server setup
 If you need more flexibility, you can extend server with more options by creating server.properties file in same folder as server.jar. Example could be found [here](https://github.com/blynkkk/blynk-server/blob/master/server/tcp-server/src/main/resources/server.properties).
@@ -977,7 +989,10 @@ server.properties options:
 
         app.ssl.port=8443
         
-+ For simplicity Blynk already provides server jar with build-in SSL certificates, so you have working server out of the box via SSL/TLS sockets. But as certificate and it's private key are in public this is totally not secure. So in order to fix that you need to provide your own certificates. And change below properties with path to your cert. and private key and it's password. See how to generate self-signed certificates [here](https://github.com/blynkkk/blynk-server#generate-ssl-certificates)
++ For simplicity, Blynk provides server jar with already built-in SSL certificates, so you have working server out-of-the box via SSL/TLS sockets. But since certificate and it's private keys are in public, it makes it completely unsecure. 
+
+	In order to fix that you need to provide your own certificates. And change properties below with a path to your certificates, private key and it's password. 
+	See how to generate self-signed certificates [here](https://github.com/blynkkk/blynk-server#generate-ssl-certificates)
 
         #points to cert and key that placed in same folder as running jar.
         
@@ -1041,16 +1056,16 @@ server.properties options:
         
         allowed.users.list=allowed1@gmail.com,allowed2@gmail.com
         
-### Enabling mail on Local server
+### Enabling e-mail on Local server
 In order to enable mail notifications on Local server you need to provide own mail credentials. To do that you need to create file "mail.properties" within same folder where server.jar is.
 Mail properties :
 
-        mail.smtp.auth=true
-        mail.smtp.starttls.enable=true
-        mail.smtp.host=smtp.gmail.com
-        mail.smtp.port=587
-        mail.smtp.username=YOUR_EMAIL_HERE
-        mail.smtp.password=YOUR_EMAIL_PASS_HERE
+	mail.smtp.auth=true
+	mail.smtp.starttls.enable=true
+	mail.smtp.host=smtp.gmail.com
+	mail.smtp.port=587
+	mail.smtp.username=YOUR_EMAIL_HERE
+	mail.smtp.password=YOUR_EMAIL_PASS_HERE
         
 See example [here](https://github.com/blynkkk/blynk-server/blob/master/server/notifications/mail-notifications/src/main/resources/mail.properties).
 
@@ -1063,21 +1078,21 @@ The default path is "data" folder within [data.folder] (https://github.com/blynk
 
 File name format is 
         
-        dashBoardId_pin.csv
+	dashBoardId_pin.csv
 
 For instance
  
-        data/1_v5.csv
+	data/1_v5.csv
         
 Which means in 1_v5.csv file stored raw data for virtual pin 5 of dashboard with id 1.
 
 Data format is
 
-        value,timestamp
+	value,timestamp
         
 For instance
 
-        10,1438022081332
+	10,1438022081332
         
 Where 10 - value of pin, and 1438022081332 - the difference, measured in milliseconds, between the current time and midnight, January 1, 1970 UTC.
 
@@ -1087,21 +1102,21 @@ WARNING : this will changed in near future.
 
 ## Generate SSL certificates
 
-+ Create key
-        
-        openssl genrsa -out server.key 2048
-        
-+ Create new cert request
-        
-        openssl req -new -out server.csr -key server.key
+1. Create key
 
-+ Generate self-signed request
-
-        openssl x509 -req -days 1825 -in server.csr -signkey server.key -out server.crt
+		openssl genrsa -out server.key 2048
         
-+ Convert server.key to PKCS#8 private key file in PEM format
+2. Create new cert request
+        
+		openssl req -new -out server.csr -key server.key
 
-        openssl pkcs8 -topk8 -inform PEM -outform PEM -in server.key -out server.pem
+3. Generate self-signed request
+
+		openssl x509 -req -days 1825 -in server.csr -signkey server.key -out server.crt
+        
+4. Convert server.key to PKCS#8 private key file in PEM format
+
+		openssl pkcs8 -topk8 -inform PEM -outform PEM -in server.key -out server.pem
         
 WARNING : in case you connect hardware via [USB script](https://github.com/blynkkk/blynk-library/tree/master/scripts) you have to provide an option '-s' pointing to "common name" (hostname) you did specified during certificate generation.
         
@@ -1109,9 +1124,9 @@ As output you'll retrieve server.crt and server.pem files that you need to provi
 
 ### Install java for Ubuntu
 
-        sudo apt-add-repository ppa:webupd8team/java
-        sudo apt-get update
-        sudo apt-get install oracle-java8-installer
+    sudo apt-add-repository ppa:webupd8team/java
+    sudo apt-get update
+    sudo apt-get install oracle-java8-installer
 
 ## Behind wifi router
 If you want to run Blynk server behind WiFi-router and want it to be accessible from the Internet, you have to add port-forwarding rule on your router. This is required in order to forward all of the requests that come to the router within the local network to Blynk server.
@@ -1121,41 +1136,41 @@ Currently server handles 20k req/sec with SSL and 40k req/sec without SSL hardwa
 
 ## App Client (emulates Smartphone App)
 
-+ To emulate the Smartphone App client:
+1. Start simulator of Smartphone App client:
 
         java -jar client-${PUT_LATEST_VERSION_HERE}.jar -mode app -host localhost -port 8443
 
 
-+ In this client: register new user and/or login with the same credentials
+2. When client started, register new user and/or login using this credentials:
 
         register username@example.com UserPassword
         login username@example.com UserPassword
 
 
-+ Save profile with simple dashboard
+3. Save profile with simple dashboard
 
         saveProfile {"dashBoards":[{"id":1, "name":"My Dashboard", "boardType":"UNO"}]}
 
 
-+ Get the Auth Token for hardware (e.g Arduino)
+4. Get the Auth Token for hardware (e.g Arduino):
 
         getToken 1
 
-+ Activate dashboard
+5. Activate dashboard (equals to PLAY button in the app)
 
         activate 1
 
-+ You will get server response similar to this:
+You will get server response similar to this:
 
-    	00:05:18.100 TRACE  - Incomming : GetTokenMessage{id=30825, command=GET_TOKEN, length=32, body='33bcbe756b994a6768494d55d1543c74'}
+	00:05:18.100 TRACE  - Incomming : GetTokenMessage{id=30825, command=GET_TOKEN, length=32, body='33bcbe756b994a6768494d55d1543c74'}
 
 Where `33bcbe756b994a6768494d55d1543c74` is your Auth Token.
 
 ## Hardware Client (emulates Hardware)
 
-+ Start new client and use received Auth Token to login
+Start new client and use Auth Token from previous step to login:
 
-    	java -jar client-${PUT_LATEST_VERSION_HERE}.jar -mode hardware -host localhost -port 8442
+	java -jar client-${PUT_LATEST_VERSION_HERE}.jar -mode hardware -host localhost -port 8442
     	login 33bcbe756b994a6768494d55d1543c74
    
 
@@ -1169,7 +1184,7 @@ All client’s commands are human-friendly, so you don't have to remember the co
 Before sending any read/write commands to hardware, application must first send “init” command.
 "Init" command is a 'hardware' command which sets all the Pin Modes(pm). Here is an example of "init" command:
 
-    	hardware pm 1 in 13 out 9 out 8 in
+    hardware pm 1 in 13 out 9 out 8 in
 
 // TODO: take description about pin modes from Blynk Arduino library readme
 // TODO Describe separation with Zeroes in pinmode command
@@ -1181,7 +1196,7 @@ List of hardware commands:
 
 + Digital write:
 
-    	hardware dw 9 1
+		hardware dw 9 1
     	hardware dw 9 0
 
 
