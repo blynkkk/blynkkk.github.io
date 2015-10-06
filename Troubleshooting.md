@@ -50,7 +50,7 @@ You might be thinking about adding a delay(), but this creates [another trouble]
 
 If you need periodic actions, consider using some timer library, like shown [in this example](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino).
 
-### Enable debug
+## Enable debug
 
 To enable debug prints on the default Serial, add on the top of your sketch **(should be the first line
 )**:
