@@ -673,8 +673,12 @@ body.no-literate .content pre > code:hover::-webkit-scrollbar-thumb {
   font-family: montserrat, sans-serif;
   font-size: 13px;
 }
+
+.header h1 a{
+  text-decoration: none;
+}
+
 .header h1,
-.header h1 a,
 .header h1 a:visited {
   color: #9090aa;
   font-family: "Montserrat";
@@ -686,7 +690,7 @@ body.no-literate .content pre > code:hover::-webkit-scrollbar-thumb {
     color: #1fd699;
 }
 .header h1 a:hover {
-  color: #505050;
+  color: #fff;
 }
 .header li a {
   font-family: "Montserrat";

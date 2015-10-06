@@ -3,7 +3,7 @@ This guide will help you to understand how to get started using Blynk and give y
 
 <span style="color:#D3435C;">**NOTE:** This page is a Work In Progress. So there might be mistakes, misprints and some TODO items listed. You are welcome to use it, just be aware of that.</span>
  
-If you want to jump straight into playing with Blynk, check out how it works with various hardware set ups: 
+If you want to jump straight into playing with Blynk, check out how it works with various hardware set ups: <br>
 [Tutorials >](https://github.com/blynkkk/blynkkk.github.io#hardware-set-ups)
 
 ##How Blynk Works
@@ -309,7 +309,7 @@ TODO:
 6. Update your auth token, and upload!
 
 
-#Blynk operations
+#Blynk main operations
 
 ##Virtual Pins
 Virtual Pins are designed to send any data from your microcontroller to the Blynk App and back. Think about Virtual Pins as channels for sending any data. Make sure you differentiate Virtual Pins from physical pins on your hardware. Virtual Pins have no physical representation.
@@ -322,7 +322,7 @@ Blynk.virtualWrite(pin, 123);
 Blynk.virtualWrite(pin, 12.34);
 ```
 
-##Sending data to hardware
+##Send data from app to hardware
 You can send any data from Widgets in the app to your hardware.
 
 All [Controller Widgets](http://blynkkk.github.io/#widgets-controllers) can send data to Virtual Pins on your hardware. For instance, code below shows how to get values from the Button Widget in the App
@@ -342,7 +342,7 @@ This is how Button Widget is set up:
 
 Full example sketch: [Get Data](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/GetData/GetData.ino#L24)
 
-###Sending array to hardware 
+###Sending array from Widget 
 Some Widgets (e.g Joystick, zeRGBa) have more than one output. 
 
 <img src="images/joystick_merge_mode.png" style="width: 200px;"/>
@@ -359,11 +359,10 @@ BLYNK_WRITE(V1) // Widget WRITEs to Virtual Pin V1
 
  **Sketch:** [JoystickTwoAxis](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/JoystickTwoAxis/JoystickTwoAxis.ino#L24)
 
-##Sending data to smartphone
-
+##Get data from hardware
 There are two ways of pushing data from your hardware to the Widgets in the app over Virtual Pins :
 
-###Call requests by widget
+###Perform requests by Widget
 - Using Blynk built-in reading frequency while app is active by setting Reading Frequency parameter to some interval:
 
 <img src="images/frequency_reading_pull.png" style="width: 200px;"/>
@@ -427,10 +426,68 @@ param.getLength()
 - If you send more than 10 values per second - you'll cause **FLOOD ERROR** and connection to your hardware will be terminated
 
 
-##Blynk Firmware
+#Blynk Firmware
+## Configuration
+The simplest way to configure Blynk is to call ```Blynk.begin()```:
 
-### Digital & Analog pins
+```cpp
+Blynk.begin(auth, ...);
+```
+It has various parameters for different hardware, depending on the type of connection you use. Follow the example sketches for your board.
 
+You can also set up shields (WiFi, Ethernet) manually, and then call:
+
+```cpp
+Blynk.config(auth);
+```
+or
+
+```cpp
+Blynk.config(auth, server, port);
+```
+
+For WiFi connections, you can use a ```connectWiFi``` (just for convenience).
+
+```cpp
+Blynk.connectWiFi(ssid, pass)
+```
+To connect to open WiFi networks, set pass to an empty string ("").
+
+## Connection management
+There are several functions to help with connection management:
+
+```cpp
+# This functions will keep connecting to Blynk server. Default timeout is 30 seconds
+bool result = Blynk.connect();
+bool result = Blynk.connect(timeout);
+```
+To disconnect from Blynk server, use:
+
+```cpp
+Blynk.disconnect();
+```
+
+To get the status of connection to Blynk Server use:
+
+```cpp
+bool result = Blynk.connected();
+```
+
+**Note:** Just after ``` Blynk.begin(...) ``` or ``` Blynk.config(...) ```, Blynk is not yet connected to the server.
+It will try to connect when it reaches first ``` Blynk.run() ``` or ``` Blynk.connect() ```call.
+
+If you want to skip connecting to the server, just call ``` Blynk.disconnect() ``` right after configuration.
+
+If your shield/connection type is not supported yet - you can craft it yourself easily! [Here is an example](https://github.com/blynkkk/blynk-library/blob/master/examples/BoardsAndShields/User_Defined_Connection/User_Defined_Connection.ino).
+
+### Blynk.run()
+This function should be called frequently to process incoming commands and perform housekeeping of Blynk connection.
+It is usually called in ``` void loop() {} ```.
+
+You can initiate it in other places, unless you run out of heap memory (in the cascaded functions with local memory).
+For example, it is not recommended to call ``` Blynk.run() ``` inside of the  ```BLYNK_READ ``` and ``` BLYNK_WRITE ``` functions on low-RAM devices.
+
+## Digital & Analog pins control
 The library can perform basic pin IO (input-output) operations out-of-the-box:
 
     digitalRead
@@ -438,8 +495,9 @@ The library can perform basic pin IO (input-output) operations out-of-the-box:
     analogRead
     analogWrite (PWM or Analog signal depending on the platform)
 
-So, there is no need to write code for simple things like LED, Relay control, and analog sensors.
+So need to write code for simple things like LED, Relay control and analog sensors.
 
+## Virtual pins control
 ### BLYNK_WRITE(vPIN)
 ### BLYNK_READ(vPIN)
 ### BLYNK_WRITE_DEFAULT()
@@ -453,7 +511,7 @@ Blynk.virtualWrite(pin, "abc");
 Blynk.virtualWrite(pin, 123);
 Blynk.virtualWrite(pin, 12.34);
 ```
-
+##Debugging
 ### BLYNK_PRINT
 TODO:Description how to use
 
@@ -488,67 +546,6 @@ You can also use spare Hardware serial ports or SoftwareSerial for debug output 
 
 <span style="color:#D3435C;">**WARNING:** Enabling Debug mode will slow down your hardware processing speed up to 10 times!</span>
 
-## Configuration
-The simplest way to configure Blynk is to call ```Blynk.begin()```:
-
-```cpp
-Blynk.begin(auth, ...);
-```
-It can have various parameters for different hardware, depending on the type of connection you use. Follow the example skecthes for your board.
-
-TODO: List all the parameters
-
-You can also set up some shields (WiFi, Ethernet) manually, and then call:
-
-```cpp
-Blynk.config(auth);
-```
-or
-
-```cpp
-Blynk.config(auth, server, port);
-```
-
-For WiFi connections, you can use a ```connectWiFi``` (just for convenience).
-
-```cpp
-Blynk.connectWiFi(ssid, pass)
-```
-To connect to Open WiFi networks, set pass to an empty string ("").
-
-## Connection management
-There are several functions to help with connection management:
-
-```cpp
-# This functions will keep connecting to Blynk server. Default timeout is 30 seconds
-bool result = Blynk.connect();
-bool result = Blynk.connect(timeout);
-```
-To disconnect from Blynk server, use:
-
-```cpp
-Blynk.disconnect();
-```
-
-To know if you are currently connected to Blynk Server, use:
-
-```cpp
-bool result = Blynk.connected();
-```
-
-**Note:** Just after ``` Blynk.begin(...) ``` or ``` Blynk.config(...) ```, Blynk is not yet connected to the server.
-It will try to connect when it reaches first ``` Blynk.run() ``` or ``` Blynk.connect() ```call.
-
-If you want to skip connecting to the server, just call ``` Blynk.disconnect() ``` right after configuration.
-
-If your shield/connection type is not supported yet - you can craft it yourself easily! [Here is an example](https://github.com/blynkkk/blynk-library/blob/master/examples/BoardsAndShields/User_Defined_Connection/User_Defined_Connection.ino).
-
-### Blynk.run()
-This function should be called frequently to process incoming commands and perform housekeeping of Blynk connection.
-It is usually called in ``` void loop() {} ```.
-
-You can initiate it in other places, unless you run out of heap memory (in the cascaded functions with local memory).
-For example, it is not recommended to call ``` Blynk.run() ``` inside of the  ```BLYNK_READ ``` and ``` BLYNK_WRITE ``` functions on low-RAM devices.
 
 #List Of Supported Hardware
 
@@ -601,21 +598,29 @@ For example, it is not recommended to call ``` Blynk.run() ``` inside of the  ``
 
 
 #Widgets
+Widgets are interface modules. Each of them performs a specific input/ output function when communicating with the hardware.
+
 There are 4 types of Widgets: 
 
 - **Controllers** - they send commands to hardware. Use them to control your stuff
 - **Displays** - used for various vizualizations of data that comes from hardware to the smartphone
 - **Notifications** - are various widgets to send messages and notifications. 
 - **Others** - widgets that don't belong to any category
+
+Each Widget has it's own settings. 
+
+Some of the Widgets(e.g. E-mail Widget) are used to enable some functionality and they don't have any settings.
  
 ## Common Widget Settings
-Most of the settings are self-explanatory, but there are some hidden features that you can use.
+### Pin Selector
+This is one of the main parameters you need to set. It defines which pin to control or to read from. 
 
-### Pin Selection
-This is one of the main parameters you need to set
->Screenshot
+**Digital Pins** - represent physical Digital IO pins on your hardware. PWM-enabled pins are marked with the ```~``` symbol
 
-Read more about Virtual Pins Here
+**Digital Pins** - represent physical Analog IO pins on your hardware
+
+**Virtual Pins** - have no physical representation. They are used for any data transfer between Blynk App and your hardware.
+Read more about Virtual Pins Here.
 
 ### Data Mapping
 >Screenshot
@@ -651,8 +656,6 @@ BLYNK_WRITE(V1) // There is a Widget that WRITEs data to V1
   int b = param[1].asInt(); // get a BLUE channel value
 }
 ```
-
-Some of the widgets are used just to unlock functionality (e.g. Email Widget) and they don't have any settings at all.
 
 
 ##Controllers
@@ -705,7 +708,7 @@ When it's OFF, Joystick handle will not return back to center position. It will 
 ### Value Display
 Displays incoming data from your sensors or Virtual Pins.
 
-<img src="images/display.png" style="width: 77px;"/>
+<img src="images/display.png" style="width: 77px;"/> 
 
 <img src="images/display_edit.png" style="width: 200px;"/>
 
@@ -935,7 +938,7 @@ Blynk.begin(auth, "your_host");
 ```
 or ```Blynk.begin(auth, IPAddress(xxx,xxx,xxx,xxx));```    
 
-Change your WIFI sketch from
+Change your WIFI sketch from:
 
 ```        
 Blynk.begin(auth, SSID, pass));
@@ -946,9 +949,11 @@ to
 ```
 Blynk.begin(auth, SSID, pass, "your_host");
 ```
-or to```Blynk.begin(auth, SSID, pass, IPAddress(XXX,XXX,XXX,XXX));```
-        
-	In case of USB connection, when running blynk-ser.sh provide '-s' option with address of your local server: 
+or to
+
+```Blynk.begin(auth, SSID, pass, IPAddress(XXX,XXX,XXX,XXX));```
+
+If you are connected via USB, when running ```blynk-ser.sh``` provide ```'-s'``` option with address of your local server: 
 
 ```bash
 ./blynk-ser.sh -s you_host_or_IP
