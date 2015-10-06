@@ -1,4 +1,4 @@
-#Hardware set ups:
+#Hardware set ups
 ##Arduino over USB (no shield)
 If you don't have any shield and your hardware doesn't have any connectivity, you can still use Blynk – directly over USB :
 

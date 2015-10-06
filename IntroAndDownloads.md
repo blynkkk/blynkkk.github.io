@@ -36,10 +36,10 @@ What's cool, is that the list of hardware that works with Blynk is really huge. 
 - **A Smartphone**. Blynk App is a well-designed interface builder. It works on both iOS and Android, so no holywars here, ok? 
 
 #Downloads
-###**Blynk Apps for iOS or Android:** <br> 
+###**Blynk Apps for iOS or Android** <br> 
 [<img src="http://static1.squarespace.com/static/54765ba7e4b0d055ee0b47a6/t/55515fd0e4b08237a78598e2/1431396305454/?format=500w" alt="Drawing" style=" width: 150px;"/>](https://itunes.apple.com/us/app/blynk-control-arduino-raspberry/id808760481?ls=1&mt=8)  &nbsp; &nbsp; &nbsp; &nbsp;[<img src="http://static1.squarespace.com/static/54765ba7e4b0d055ee0b47a6/t/55515fe8e4b08237a785995e/1431396357648/?format=750w" alt="Drawing" style=" width: 200px;"/>](https://play.google.com/store/apps/details?id=cc.blynk)
 
-###**Blynk Library:** <br>
+###**Blynk Library** <br>
 [Download Blynk Library >](https://github.com/blynkkk/blynk-library/releases/latest)
 
 In case you don't know, or forgot how to install Arduino libraries: check [here](http://www.arduino.cc/en/guide/libraries).
