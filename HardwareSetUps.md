@@ -29,12 +29,14 @@ void loop()
 }
 ```
 
-- Run the script in Terminal (script is located in "scripts" folder of library root, e.g. 'blynk-library/scripts')
+2. Run the script in Terminal (script is located in "scripts" folder of library root, e.g. 'blynk-library/scripts')
   - for Windows :
     1. Open cmd.exe
-    2. write your path to blynk-ser.bat folder. For example: 
-    ```cd C:\blynk-library-0.3.1\blynk-library-0.3.1\scripts```
-    3. run ```blynk-ser.bat``` file. For example : ```blynk-ser.bat -c COM4``` (where COM4 is port with your Arduino)
+    2. Write your path to blynk-ser.bat folder. For example: 
+    ```
+  cd C:\blynk-library-0.3.1\blynk-library-0.3.1\scripts
+  ```
+    3. Run ```blynk-ser.bat``` file. For example : ```blynk-ser.bat -c COM4``` (where COM4 is port with your Arduino)
     4. And press "Enter", press "Enter" and press "Enter"
   
   - for Linux and Mac use: ```./blynk-ser.sh``` (may need to run with sudo)
@@ -66,7 +68,7 @@ Connecting: GOPEN:/dev/tty.usbmodem1451,raw,echo=0,clocal=1,cs8,nonblock=1,ixoff
 
 <span style="color:#D3435C;">**NOTE:** Arduino IDE may complain with "programmer is not responding". You need to terminate script before uploading new sketch.. </span>
 
-Here some additional materials :
+Here are some additional materials :
 
 - [Instructables](http://www.instructables.com/id/Control-arduino-using-Blynk-over-usb/)
 
