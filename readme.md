@@ -3,18 +3,19 @@ This guide will help you to understand how to get started using Blynk and give y
 
 <span style="color:#D3435C;">**NOTE:** This page is a Work In Progress. So there might be mistakes, misprints and some TODO items listed. You are welcome to use it, just be aware of that.</span>
  
-If you want to jump straight into playing with Blynk, check out how it works with various hardware set ups: [Tutorials >](http://www.blynk.cc/getting-started)
+If you want to jump straight into playing with Blynk, check out how it works with various hardware set ups: 
+[Tutorials >](https://github.com/blynkkk/blynkkk.github.io#hardware-set-ups)
 
 ##How Blynk Works
 Blynk was designed for the Internet of Things. It can control hardware remotely, it can display sensor data and do lot's of other cool things with electronics. 
 
 There are three major components in the platform: 
 
-- **Blynk Apps** – allow to you create amazing interfaces for the projects from various Widgets we provide.
+- **Blynk Apps** – allow to you create amazing interfaces for the projects from various Widgets we provide.
 - **Blynk Server** is responsible for all the communications between the smartphone and hardware. You can use our Blynk Cloud or run your private Blynk server locally. It's open-source and can be launched even on Raspberry Pi
-- **Blynk Libraries** enable communication with the server and process all the incoming and outcoming commands 
+- **Blynk Libraries** for all the popular hardware platforms - enable communication with the server and process all the incoming and outcoming commands 
 
-Imagine: every time you press a Button in the Blynk app, the message travels to ~~space~~ Blynk Server, where it magically finds the way to your hardware. It works the same in the opposite direction and everything happens in a blynk of an eye.
+Now imagine: every time you press a Button in the Blynk app, the message travels to ~~space~~ Blynk Cloud, where it magically finds the way to your hardware. It works the same in the opposite direction and everything happens in a blynk of an eye.
 
 <img src="images/architecture.png" style="width: 640px;"/>
 
@@ -24,7 +25,8 @@ At this point you might be thinking: **"Ok, I want it. What do I need to start?"
 ####Hardware
 We hope you already have an Arduino or someting similar. If not - come on, get one ASAP!
 
-**Blynk works over the Internet.** It means that the hardware you choose should be able to connect to Internet. Some of the boards, like Arduino Uno will need an Ethernet or Wi-Fi Shield to communicate, others are already Internet-enabled: like ESP8266, Particle Photon or SparkFun ESP Thing. But even if you don't have a shield, you can connect over the USB to your laptop or desktop (it's a bit more complicated for newbie, but we got you covered) 
+**Blynk works over the Internet.** 
+It means that the hardware you choose should be able to connect to Internet. Some of the boards, like Arduino Uno will need an Ethernet or Wi-Fi Shield to communicate, others are already Internet-enabled: like ESP8266, Particle Photon or SparkFun ESP Thing. But even if you don't have a shield, you can connect over the USB to your laptop or desktop (it's a bit more complicated for newbie, but we got you covered) 
 
 What's cool, is that the list of hardware that works with Blynk is really huge. If you are looking into buying some - check out our list of recommended hardware. 
   
@@ -37,32 +39,32 @@ Before you start tinkering with Blynk, you'll need to install some stuff:
 ##**Blynk Apps for iOS or Android:** <br> 
 [<img src="http://static1.squarespace.com/static/54765ba7e4b0d055ee0b47a6/t/55515fd0e4b08237a78598e2/1431396305454/?format=500w" alt="Drawing" style=" width: 150px;"/>](https://itunes.apple.com/us/app/blynk-control-arduino-raspberry/id808760481?ls=1&mt=8)  &nbsp; &nbsp; &nbsp; &nbsp;[<img src="http://static1.squarespace.com/static/54765ba7e4b0d055ee0b47a6/t/55515fe8e4b08237a785995e/1431396357648/?format=750w" alt="Drawing" style=" width: 200px;"/>](https://play.google.com/store/apps/details?id=cc.blynk)
 
-##**Blynk Library:** <br><br>
+##**Blynk Library** <br>
 [Download Blynk Library >](https://github.com/blynkkk/blynk-library/releases/latest)
 
-In case you don't know or forgot how to install Arduino libraries: check [here](http://www.arduino.cc/en/guide/libraries).
+In case you don't know, or forgot how to install Arduino libraries: check [here](http://www.arduino.cc/en/guide/libraries).
 
 #Getting Started  
 Let's try to get you started in 5 minutes (reading doesn't counts!). 
-We will try switch an LED connected to your Arduino with the Smartphone.
+We will try to switch an LED connected to your Arduino with the Smartphone.
 
 Connect an LED as shown here:
->image of Arduino and LED
+<img src="images/Arduino_LED.jpg" style="width: 300px;"/>
 
 ##Blynk App
-Let's start with an App
+Download and launch Blynk App
 ###1.Create Blynk Account
 After you download Blynk app, you'll need to create a new Blynk account. It's not connected to our Forum or Kickstarter - just create a New Account. 
 
-Use a real e-mail address - it will be used later and you'll appreciate that.
+Use a **real** e-mail address - it will be used later and you'll appreciate that.
 
 <img src="images/sign_up.png" style="width: 300px;"/>
 
 ####Why do I need to create account?
-TODO: Explain details
+
 Account is needed to store your Projects and for you to have access to them from multiple devices. It's also a security measure. 
 
-//You can install your Private Blynk Server and have full control.   
+You can always install your Private Blynk Server and have full control.   
 
 ###2. Create new project
 After you successfully logged into your account, start by creating a new Project. Give it a name.
@@ -114,12 +116,9 @@ The most important parameter to set is **PIN** . List of pins reflects physical 
 ###6. Run the project
 When you are done with the Settings - press **PLAY** button. This will switch you from EDIT mode to PLAY mode where you can interact with the hardware. Now you can't drag or set up Widgets, but if you need it: press **STOP** and get back to Edit Mode.
 
-<span style="color:#24C48C" >**Congrats, We are almost set!**</span>
-
 <img src="images/play_button.png" style="width: 300px;"/>
 
-You may see a message "Arduino UNO is offline". Don't worry now. We'll fix it in a minute.
-
+You may get a message "Arduino UNO is offline". Don't worry now. We'll get to that in a minute.
 
 ##Getting started with hardware
 Hope you have Blynk Library installed. If not - check here: 
@@ -178,7 +177,7 @@ Blynk connected!
 
 ##Blynking
 Go back to the Blynk app.
-Press Button and turn the LED On and Off with the Button
+Push the Button and turn the LED On and Off!
 
 <img src="images/button_pressed.png" style="width: 300px;"/>
 
@@ -882,6 +881,333 @@ void setup() {
 
 **Sketch:** [Bridge](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Bridge/Bridge.ino#L33)
 
+
+# Blynk server
+Blynk Server is an Open-Source [Netty](https://github.com/netty/netty) based Java server, responsible for forwarding messages between Blynk mobile application and various microcontroller boards (i.e. Arduino, Raspberry Pi. etc).
+**Download latest server build [here](https://github.com/blynkkk/blynk-server/releases).**
+
+[ ![Build Status](https://travis-ci.org/blynkkk/blynk-server.svg?branch=master)](https://travis-ci.org/blynkkk/blynk-server)
+
+## Requirements
+Java 8 required. (OpenJDK, Oracle). Installation instructions [here](https://github.com/blynkkk/blynk-server#install-java-for-ubuntu).
+
+## GETTING STARTED
+By default, mobile application uses 8443 port and is based on SSL/TLS sockets. Default hardware port is 8442 and is based on plain TCP/IP sockets.
+
+### Quick local server setup
+
++ Make sure you are using Java 8
+
+        java -version
+        Output: java version "1.8.0_40"
+
++ Run the server on default 'hardware port 8442' and default 'application port 8443' (SSL port)
+
+        java -jar server-0.8.2.jar -dataFolder /path
+        
+That's it! You will see no output cause all logging is done within same folder in ./logs/blynk.log file.
+
+### Quick local server setup on Raspberry PI
+
++ Login to Raspberry Pi via ssh;
++ Install java 8 : 
+        
+        sudo apt-get install oracle-java8-jdk
+        
++ Make sure you are using Java 8
+
+        java -version
+        Output: java version "1.8.0_40"
+        
++ Download Blynk server jar file (or manually copy it to raspberry via ssh and scp command) : 
+   
+        wget "https://github.com/blynkkk/blynk-server/releases/download/v0.8.2/server-0.8.2.jar"
+
++ Run the server on default 'hardware port 8442' and default 'application port 8443' (SSL port)
+
+        java -jar server-0.8.2.jar -dataFolder /home/pi/Blynk        
+        
+That's it! You will see no output cause all logging is done within same folder in ./logs/blynk.log file.
+        
++ To enable server auto restart find /etc/init.d/rc.local file and add :
+
+        java -jar /home/pi/server-0.8.2.jar -dataFolder /home/pi/Blynk &
+
+                
+### App settings and sketch changes
+
++ Specify custom server path in Blynk app when logging in.
+
+![Custom server icon](https://github.com/blynkkk/blynk-server/blob/master/docs/login.png)
+![Server properties menu](https://github.com/blynkkk/blynk-server/blob/master/docs/custom.png)
+
++ Change your ethernet sketch from
+
+        Blynk.begin(auth);
+        to
+        Blynk.begin(auth, "your_host");
+        or to 
+        Blynk.begin(auth, IPAddress(xxx,xxx,xxx,xxx));
+        
++ Change your WIFI sketch from
+        
+        Blynk.begin(auth, SSID, pass));
+        to
+        Blynk.begin(auth, SSID, pass, "your_host");
+        or to
+        Blynk.begin(auth, SSID, pass, IPAddress(XXX,XXX,XXX,XXX));
+        
++ or in case of USB when running blynk-ser.sh provide '-s' option with address of your local server
+
+        ./blynk-ser.sh -s you_host_or_IP
+        
+
+## Advanced local server setup
+If you need more flexibility, you can extend server with more options by creating server.properties file in same folder as server.jar. Example could be found [here](https://github.com/blynkkk/blynk-server/blob/master/server/tcp-server/src/main/resources/server.properties).
+server.properties options:
+
++ Application port
+
+        app.ssl.port=8443
+        
++ For simplicity Blynk already provides server jar with build-in SSL certificates, so you have working server out of the box via SSL/TLS sockets. But as certificate and it's private key are in public this is totally not secure. So in order to fix that you need to provide your own certificates. And change below properties with path to your cert. and private key and it's password. See how to generate self-signed certificates [here](https://github.com/blynkkk/blynk-server#generate-ssl-certificates)
+
+        #points to cert and key that placed in same folder as running jar.
+        
+        server.ssl.cert=./server_embedded.crt
+        server.ssl.key=./server_embedded.pem
+        server.ssl.key.pass=pupkin123
+
++ Hardware port
+
+        hardware.default.port=8442
+
++ User profiles folder. Folder in which all users profiles will be stored. By default System.getProperty("java.io.tmpdir")/blynk used. Will be created if not exists
+
+        data.folder=/tmp/blynk
+
++ Folder for all application logs. Will be created if it doesn't exist
+
+        logs.folder=./logs
+
++ Log debug level. Possible values: trace|debug|info|error. Defines how precise logging will be. From left to right -> maximum logging to minimum
+
+        log.level=trace
+
++ Maximum allowed number of user dashboards.
+
+        user.dashboard.max.limit=10
+
++ 100 Req/sec rate limit per user.
+
+        user.message.quota.limit=100
+
++ In case user exceeds quota limit - response error returned only once in specified period (in Millis).
+
+        user.message.quota.limit.exceeded.warning.period=60000
+
++ Maximum allowed user profile size. In Kb's.
+
+        user.profile.max.size=128
+
++ Maximum allowed number of notification queue. Queue responsible for processing email, pushes, twits sending. Because of performance issue - those queue is processed in separate thread, this is required due to blocking nature of all above operations. Usually limit shouldn't be reached
+        
+        notifications.queue.limit=10000
+
++ Period for flushing all user DB to disk. In millis
+
+        profile.save.worker.period=60000
+
++ Specifies maximum period of time when application socket could be idle. After which socket will be closed due to non activity. In seconds. Leave it empty for infinity timeout
+
+        app.socket.idle.timeout=600
+
++ Specifies maximum period of time when hardware socket could be idle. After which socket will be closed due to non activity. In seconds. Leave it empty for infinity timeout
+
+        hard.socket.idle.timeout=15
+        
++ Mostly required for local servers setup in case user want to log raw data in CSV format. See [raw data] (https://github.com/blynkkk/blynk-server#raw-data-storage) section for more info.
+        
+        enable.raw.data.store=true
+        
++ Comma separated list of users allowed to create accounts. Leave it empty if no restriction required.
+        
+        allowed.users.list=allowed1@gmail.com,allowed2@gmail.com
+        
+### Enabling mail on Local server
+In order to enable mail notifications on Local server you need to provide own mail credentials. To do that you need to create file "mail.properties" within same folder where server.jar is.
+Mail properties :
+
+        mail.smtp.auth=true
+        mail.smtp.starttls.enable=true
+        mail.smtp.host=smtp.gmail.com
+        mail.smtp.port=587
+        mail.smtp.username=YOUR_EMAIL_HERE
+        mail.smtp.password=YOUR_EMAIL_PASS_HERE
+        
+See example [here](https://github.com/blynkkk/blynk-server/blob/master/server/notifications/mail-notifications/src/main/resources/mail.properties).
+
+NOTE : you'll need to setup Gmail to allow less secured applications. Go [here](https://www.google.com/settings/security/lesssecureapps) and then click "Allow less secure apps".
+
+
+## Raw data storage
+By default raw data storage is enabled. So any write (Blynk.virtualWrite) command will stored on disk. 
+The default path is "data" folder within [data.folder] (https://github.com/blynkkk/blynk-server#advanced-local-server-setup) property of server properties.
+
+File name format is 
+        
+        dashBoardId_pin.csv
+
+For instance
+ 
+        data/1_v5.csv
+        
+Which means in 1_v5.csv file stored raw data for virtual pin 5 of dashboard with id 1.
+
+Data format is
+
+        value,timestamp
+        
+For instance
+
+        10,1438022081332
+        
+Where 10 - value of pin, and 1438022081332 - the difference, measured in milliseconds, between the current time and midnight, January 1, 1970 UTC.
+
+Raw data files are rotated every day and gzipped.
+
+WARNING : this will changed in near future. 
+
+## Generate SSL certificates
+
++ Create key
+        
+        openssl genrsa -out server.key 2048
+        
++ Create new cert request
+        
+        openssl req -new -out server.csr -key server.key
+
++ Generate self-signed request
+
+        openssl x509 -req -days 1825 -in server.csr -signkey server.key -out server.crt
+        
++ Convert server.key to PKCS#8 private key file in PEM format
+
+        openssl pkcs8 -topk8 -inform PEM -outform PEM -in server.key -out server.pem
+        
+WARNING : in case you connect hardware via [USB script](https://github.com/blynkkk/blynk-library/tree/master/scripts) you have to provide an option '-s' pointing to "common name" (hostname) you did specified during certificate generation.
+        
+As output you'll retrieve server.crt and server.pem files that you need to provide for server.ssl properties.
+
+### Install java for Ubuntu
+
+        sudo apt-add-repository ppa:webupd8team/java
+        sudo apt-get update
+        sudo apt-get install oracle-java8-installer
+
+## Behind wifi router
+If you want to run Blynk server behind WiFi-router and want it to be accessible from the Internet, you have to add port-forwarding rule on your router. This is required in order to forward all of the requests that come to the router within the local network to Blynk server.
+
+## Performance
+Currently server handles 20k req/sec with SSL and 40k req/sec without SSL hardware messages on VM with 2-cores of Intel(R) Xeon(R) CPU E5-2660 @ 2.20GHz. With high load - memory consumption could be up to 1 GB of RAM.
+
+## App Client (emulates Smartphone App)
+
++ To emulate the Smartphone App client:
+
+        java -jar client-${PUT_LATEST_VERSION_HERE}.jar -mode app -host localhost -port 8443
+
+
++ In this client: register new user and/or login with the same credentials
+
+        register username@example.com UserPassword
+        login username@example.com UserPassword
+
+
++ Save profile with simple dashboard
+
+        saveProfile {"dashBoards":[{"id":1, "name":"My Dashboard", "boardType":"UNO"}]}
+
+
++ Get the Auth Token for hardware (e.g Arduino)
+
+        getToken 1
+
++ Activate dashboard
+
+        activate 1
+
++ You will get server response similar to this:
+
+    	00:05:18.100 TRACE  - Incomming : GetTokenMessage{id=30825, command=GET_TOKEN, length=32, body='33bcbe756b994a6768494d55d1543c74'}
+
+Where `33bcbe756b994a6768494d55d1543c74` is your Auth Token.
+
+## Hardware Client (emulates Hardware)
+
++ Start new client and use received Auth Token to login
+
+    	java -jar client-${PUT_LATEST_VERSION_HERE}.jar -mode hardware -host localhost -port 8442
+    	login 33bcbe756b994a6768494d55d1543c74
+   
+
+You can run as many clients as you want.
+
+Clients with the same credentials and Auth Token are grouped into one Session and can send messages to each other.
+All client’s commands are human-friendly, so you don't have to remember the codes.
+
+## Hardware Commands
+
+Before sending any read/write commands to hardware, application must first send “init” command.
+"Init" command is a 'hardware' command which sets all the Pin Modes(pm). Here is an example of "init" command:
+
+    	hardware pm 1 in 13 out 9 out 8 in
+
+// TODO: take description about pin modes from Blynk Arduino library readme
+// TODO Describe separation with Zeroes in pinmode command
+
+In this example you set pin 1 and pin 8 to 'input’ PIN_MODE. This means this pins will read values from hardware (graph, display, etc).
+Pins 13 and 9 have 'output’ PIN_MODE. This means that these pins will we writable (button, slider).
+
+List of hardware commands:
+
++ Digital write:
+
+    	hardware dw 9 1
+    	hardware dw 9 0
+
+
++ Digital read:
+
+    	hardware dr 9
+    	You should receive response: dw 9 <val>
+
+
++ Analog write:
+
+    	hardware aw 14 123
+
+
++ Analog read:
+
+    	hardware ar 14
+        You should receive response: aw 14 <val>
+
+
++ Virtual write:
+
+    	hardware vw 9 1234
+        hardware vw 9 string
+        hardware vw 9 item1 item2 item3
+        hardware vw 9 key1 val1 key2 val2
+
+ 
++ Virtual read:
+
+    	hardware vr 9
+    	You should receive response: vw 9 <values>
+
 #Security
 
 Blynk server has 3 ports open for different security levels.
@@ -892,7 +1218,7 @@ Blynk server has 3 ports open for different security levels.
 
 Hardware may select to connect to 8441 or 8442, depending on it's capabilities.
 
-### SSL gateway
+## SSL gateway
 
 Most platforms are not capable to handle SSL, so they connect to 8442.
 However, our [gateway script](https://github.com/blynkkk/blynk-library/blob/master/scripts/blynk-ser.sh) can be used to add SSL security layer to communication.
@@ -1181,16 +1507,6 @@ TODO
    * BlynkSimpleUIPEthernet.h
    
 4. Create a **simple example** for your platform ;)
-
-## Wrappers for widgets
-
-### LCD
-
-TODO
-
-### SD card
-
-TODO
 
 ### Example implementations
 Use these to play with the protocol and understand the basics:
