@@ -31,7 +31,8 @@ By default, mobile application uses 8443 port and is based on SSL/TLS sockets. D
 	```
         
 That's it! 
-You won't see any output, because all the logging is done within same folder in ```./logs/blynk.log file.```
+You won't see any output, because all the logging is done within same folder in:
+```./logs/blynk.log file.```
 
 ### Launch Blynk Server on Raspberry Pi
 
