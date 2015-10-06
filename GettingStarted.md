@@ -6,7 +6,7 @@ Connect an LED as shown here:
 
 <img src="images/Arduino_LED.jpg" style="width: 250px;"/>
 
-
+##Getting started with application
 ###1. Create Blynk Account
 After you download Blynk app, you'll need to create a new Blynk account. It's not connected to our Forum or Kickstarter - just create a New Account. 
 
@@ -49,16 +49,16 @@ Your project is empty, so let's add a Button to control our LED.
 
 Tap anywhere on empty space - Whoa! you got inside a Widget Box! All the widgets are here. Now pick a Button.
 
-####Widget Box
+**Widget Box**
 
 <img src="images/widgets_box.png" style="width: 200px;"/>
 
 <img src="images/project_with_button.png" style="width: 200px;"/>
 
-####Drag-n-Drop
+**Drag-n-Drop**
 Tap and hold the Widget to drag it to teh new position.
 
-####Widget Settings
+**Widget Settings**
 Each Widget has it's own settings. Tap on the widget to get to them
 
 <img src="images/button_settings.png" style="width: 200px;"/>

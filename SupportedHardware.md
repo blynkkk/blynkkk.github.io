@@ -39,7 +39,7 @@
 - RN-XV WiFly
 - You can implement your own connection type easily (see User_Defined_Connection example)!
 
-## Community-reported
+## Made by Community
 
 - WIZnet-W5500-EVB (http://instructables.com/id/WIZnet-W5500-EVB-and-Blynk-App-communication)
 - TI Tiva C Connected Launchpad (EK-TM4C1294XL1) + Energia 15 (http://community.blynk.cc/t/hardware-supported-by-blynk/16/36)

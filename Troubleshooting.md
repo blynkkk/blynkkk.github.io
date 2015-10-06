@@ -1,6 +1,6 @@
 # Troubleshooting
 
-### Connection
+## Connection
 
 If you experience connection problems, follow these steps:
 
@@ -11,7 +11,7 @@ If you experience connection problems, follow these steps:
    * If it doesn't work, try looking into [serial debug prints](./Troubleshooting.md#enable-debug).
 3. Done! Add your modifications and functionality. Enjoy Blynk!
 
-### Delay
+## Delay
 
 Your application might be calling a delay() function or sleeps/cycles for a long time inside of the loop(), like this:
 
@@ -32,7 +32,7 @@ You should be aware that this can degrade performance of Blynk, or cause connect
 
 If you need periodic actions, consider using some timer library, like shown [in this example](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino).
 
-### Flood
+## Flood Error
 
 Your application may cause an enormous load on our server, please try avoiding sending data too fast.
 
