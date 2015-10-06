@@ -130,7 +130,7 @@ server.properties options:
 
 + User profiles folder. Folder in which all users profiles will be stored. By default System.getProperty("java.io.tmpdir")/blynk used. Will be created if not exists
 
-		data.folder=/tmp/blynk
+	data.folder=/tmp/blynk
 
 + Folder for all application logs. Will be created if it doesn't exist
 
@@ -199,7 +199,7 @@ NOTE: you'll need to setup Gmail to allow less secured applications. Go [here](h
 
 
 ### Raw data storage
-By default raw data storage is enabled. So any write (Blynk.virtualWrite) command will stored on disk. 
+By default, raw data storage is enabled. Every 'write' ```Blynk.virtualWrite()``` command will be stored on disk. 
 The default path is "data" folder within [data.folder] (https://github.com/blynkkk/blynk-server#advanced-local-server-setup) property of server properties.
 
 File name format is: 
