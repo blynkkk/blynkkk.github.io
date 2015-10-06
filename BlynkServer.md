@@ -19,12 +19,16 @@ By default, mobile application uses 8443 port and is based on SSL/TLS sockets. D
 
 1. Make sure you are using Java 8
 
-        java -version
-        Output: java version "1.8.0_40"
+	```
+	java -version
+	Output: java version "1.8.0_40"
+	```
 
 2. Run the server on default 'hardware port 8442' and default 'application port 8443' (SSL port)
 
-        java -jar server-0.8.2.jar -dataFolder /path
+	```
+	java -jar server-0.8.2.jar -dataFolder /path
+	```
         
 That's it! 
 You won't see any output, because all the logging is done within same folder in ```./logs/blynk.log file.```
