@@ -1,10 +1,8 @@
-# Other hardware
-
-###Connect over USB
-
+#Hardware set ups
+##Arduino over USB (no shield)
 If you don't have any shield and your hardware doesn't have any connectivity, you can still use Blynk – directly over USB :
 
-- Upload [sketch below](https://github.com/blynkkk/blynk-library/blob/master/examples/BoardsAndShields/Arduino_Serial_USB/Arduino_Serial_USB.ino) and change [Auth Token](http://blynkkk.github.io/#getting-started-getting-started-with-hardware-insert-auth-token)
+1. Upload [sketch below](https://github.com/blynkkk/blynk-library/blob/master/examples/BoardsAndShields/Arduino_Serial_USB/Arduino_Serial_USB.ino) and change [Auth Token](http://blynkkk.github.io/#getting-started-getting-started-with-application-auth-token)
 
 ```cpp
 #include <SoftwareSerial.h>
@@ -73,7 +71,7 @@ Here some additional materials :
 - [Instructables](http://www.instructables.com/id/Control-arduino-using-Blynk-over-usb/)
 
 
-### Raspberry Pi
+## Raspberry Pi
 1. Connect your Raspberry Pi to the internet and open it's console.
 2. Install WiringPi: http://wiringpi.com/download-and-install/
 3. Download and build Blynk:
@@ -82,16 +80,16 @@ $ git clone https://github.com/blynkkk/blynk-library.git
 $ cd blynk-library/linux
 $ make clean all target=raspberry
 ```
-
 4. Run Blynk:
 ```bash
 $ sudo ./blynk --token=YourAuthToken
 ```
-
 5. To enable Blynk auto restart for Pi find */etc/init.d/rc.local* file and add
 ```
-/FULL_PATH_TO_LIB/blynk-library/linux/blynk --token=<my token> &
-for instance 
+/FULL_PATH_TO_LIB/blynk-library/linux/blynk --token=<Auth Token> 
+```
+For example:
+``` 
 /home/pi/blynk-library/linux/blynk --token=<my token> &
 ```
 
@@ -114,7 +112,11 @@ Install the latest ESP8266 for Arduino using [this guide](https://github.com/esp
 
 **Sketch:** [ESP8266_Standalone](https://github.com/blynkkk/blynk-library/blob/master/examples/BoardsAndShields/ESP8266_Standalone/ESP8266_Standalone.ino)
 
-### Particle Core (formely Spark Core)
+##Particle (formely Spark)
+Blynk works with the whole family of Particle products: Core, Photon and Electron (soon)
+
+TODO:
+>Add screenshots for steps
 
 1. Open [Particle Web IDE](https://build.particle.io/build).
 2. Go to the libraries.
