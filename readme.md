@@ -161,7 +161,7 @@ char auth[] = "YourAuthToken";
 This is the [Auth Token](http://blynkkk.github.io/#getting-started-auth-token) that you've sent over e-mail recently. Please check your email - it should be there already. 
 Copy it from e-mail and put inside curly brackets. 
 
-```cpp 
+``` 
 char auth[] = "f45626c103a94983b469637978b0c78a";
 ``` 
 
