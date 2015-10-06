@@ -8,15 +8,21 @@
   - Mega
   - YÚN (onboard WiFi, Ethernet via Bridge)
   - Due - limited support
+- Intel
+  - Edison (Galileo not tested, but should work as well)
 - Arduino-like
   - ESP8266 (running standalone, using https://github.com/esp8266/Arduino)
   - Wicked WildFire (CC3000)
   - TinyCircuits TinyDuino (CC3000)
   - LightBlue Bean (Bluetooth 4.0 LE). This is only for experts, we're working to simplifying things now...
 - Energia
+  - Texas Instruments
+    - CC3200-LaunchXL
+    - Tiva C Connected Launchpad (EK-TM4C1294XL1)
   - RedBearLab (CC3200, WiFi Mini)
 - Particle (formerly Spark: https://github.com/vshymanskyy/blynk-library-spark)
   - Core
+  - Photon
 - LinkIt ONE
 - Linux
   - Raspberry Pi
@@ -42,4 +48,3 @@
 ## Made by Community
 
 - WIZnet-W5500-EVB (http://instructables.com/id/WIZnet-W5500-EVB-and-Blynk-App-communication)
-- TI Tiva C Connected Launchpad (EK-TM4C1294XL1) + Energia 15 (http://community.blynk.cc/t/hardware-supported-by-blynk/16/36)
