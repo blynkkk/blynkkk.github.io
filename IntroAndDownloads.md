@@ -15,7 +15,7 @@ There are three major components in the platform:
 
 - **Blynk Apps** – allow to you create amazing interfaces for the projects from various Widgets we provide.
 
-- **Blynk Server** is responsible for all the communications between the smartphone and hardware. You can use our Blynk Cloud or run your private Blynk server locally. It's open-source and can be launched even on Raspberry Pi.
+- **Blynk Server** is responsible for all the communications between the smartphone and hardware. You can use our Blynk Cloud or run your [private Blynk server](http://blynkkk.github.io/#blynk-server-requirements) locally. It's open-source and can be launched even on Raspberry Pi.
 
 - **Blynk Libraries** for all the popular hardware platforms - enable communication with the server and process all the incoming and outcoming commands.
 
@@ -31,7 +31,7 @@ At this point you might be thinking: **"Ok, I want it. What do I need to start?"
 It means that the hardware you choose should be able to connect to Internet. Some of the boards, like Arduino Uno will need an Ethernet or Wi-Fi Shield to communicate, 
 others are already Internet-enabled: like ESP8266, Particle Photon or SparkFun ESP Thing. But even if you don't have a shield, 
 you can connect over the USB to your laptop or desktop (it's a bit more complicated for newbie, but we got you covered). 
-What's cool, is that the list of hardware that works with Blynk is really huge. If you are looking into buying some - check out our list of recommended hardware. 
+What's cool, is that the [list of hardware](http://blynkkk.github.io/#list-of-supported-hardware) that works with Blynk is really huge. 
   
 - **A Smartphone**. Blynk App is a well-designed interface builder. It works on both iOS and Android, so no holywars here, ok? 
 
@@ -42,4 +42,4 @@ What's cool, is that the list of hardware that works with Blynk is really huge. 
 ##**Blynk Library** <br>
 [Download Blynk Library >](https://github.com/blynkkk/blynk-library/releases/latest)
 
-In case you don't know, or forgot how to install Arduino libraries: check [here](http://www.arduino.cc/en/guide/libraries).
+In case you don't know, or forgot how to install Arduino libraries [check here](http://www.arduino.cc/en/guide/libraries).
