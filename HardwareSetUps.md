@@ -31,7 +31,8 @@ void loop()
 - Run the script in Terminal (script is located in "scripts" folder of library root, e.g. 'blynk-library/scripts')
   - for Windows :
     1. Open cmd.exe
-    2. write your path to blynk-ser.bat folder. For instance : ```cd C:\blynk-library-0.3.1\blynk-library-0.3.1\scripts```
+    2. write your path to blynk-ser.bat folder. For example: 
+    ```cd C:\blynk-library-0.3.1\blynk-library-0.3.1\scripts```
     3. run ```blynk-ser.bat``` file. For instance : ```blynk-ser.bat -c COM4``` (where COM4 is port with your Arduino)
     4. And press "Enter", press "Enter" and press "Enter"
   
