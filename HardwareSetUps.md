@@ -1,5 +1,5 @@
 #Hardware set ups
-##Arduino over USB (no shield)
+## Arduino over USB (no shield)
 If you don't have any shield and your hardware doesn't have any connectivity, you can still use Blynk – directly over USB :
 
 1. Upload [sketch below](https://github.com/blynkkk/blynk-library/blob/master/examples/BoardsAndShields/Arduino_Serial_USB/Arduino_Serial_USB.ino) and change [Auth Token](http://blynkkk.github.io/#getting-started-getting-started-with-application-auth-token)
@@ -104,7 +104,7 @@ Here some additional materials :
 - [Forum discussion](http://community.blynk.cc/t/howto-for-raspberry-pi/332)
 - [Video tutorial](https://www.youtube.com/watch?v=iSG_8g6KyGE)
 
-### ESP8266 (standalone)
+## ESP8266 (standalone)
 
 You can run Blynk directly on the ESP8266!
 
@@ -112,7 +112,7 @@ Install the latest ESP8266 for Arduino using [this guide](https://github.com/esp
 
 **Sketch:** [ESP8266_Standalone](https://github.com/blynkkk/blynk-library/blob/master/examples/BoardsAndShields/ESP8266_Standalone/ESP8266_Standalone.ino)
 
-##Particle (formely Spark)
+## Particle (formely Spark)
 Blynk works with the whole family of Particle products: Core, Photon and Electron (soon)
 
 TODO:
