@@ -309,96 +309,6 @@ TODO:
 6. Update your auth token, and upload!
 
 
-#Blynk Amendments
-###Tell every maker about Blynk
-No pressure. Just do it. Now.
-###Make your idea work without Blynk
-Blynk can be easily integrated in almost any project. But before that - make it work **without** it. After you are sure that you can get all the sensor data or can control things from the code – integrate Blynk and make it even more awesome.
-###Use search
-We are always happy to chat and help, but remember - every time you ask the question that was answered many many times before that, Blynk Team is not building a new widget or new cool feature. So:
-- google before asking
-- use search on our forum, it works really well
-- check Instructables
-###Always wrap your code
-Though shalt not post code without ```wrapping it``` 
-
- 
-
-## Configuration
-The simplest way to configure Blynk is to call ```Blynk.begin()```:
-
-```cpp
-Blynk.begin(auth, ...);
-```
-It can have various parameters for different hardware, depending on the type of connection you use. Follow the example skecthes for your board.
-
-TODO: List all the parameters
-
-You can also set up some shields (WiFi, Ethernet) manually, and then call:
-
-```cpp
-Blynk.config(auth);
-```
-or
-
-```cpp
-Blynk.config(auth, server, port);
-```
-
-For WiFi connections, you can use a ```connectWiFi``` (just for convenience).
-
-```cpp
-Blynk.connectWiFi(ssid, pass)
-```
-To connect to Open WiFi networks, set pass to an empty string ("").
-
-## Connection management
-There are several functions to help with connection management:
-
-```cpp
-# This functions will keep connecting to Blynk server. Default timeout is 30 seconds
-bool result = Blynk.connect();
-bool result = Blynk.connect(timeout);
-```
-To disconnect from Blynk server, use:
-
-```cpp
-Blynk.disconnect();
-```
-
-To know if you are currently connected to Blynk Server, use:
-
-```cpp
-bool result = Blynk.connected();
-```
-
-
-
-**Note:** Just after ``` Blynk.begin(...) ``` or ``` Blynk.config(...) ```, Blynk is not yet connected to the server.
-It will try to connect when it reaches first ``` Blynk.run() ``` or ``` Blynk.connect() ```call.
-
-If you want to skip connecting to the server, just call ``` Blynk.disconnect() ``` right after configuration.
-
-If your shield/connection type is not supported yet - you can craft it yourself easily! [Here is an example](https://github.com/blynkkk/blynk-library/blob/master/examples/BoardsAndShields/User_Defined_Connection/User_Defined_Connection.ino).
-
-### Blynk.run()
-This function should be called frequently to process incoming commands and perform housekeeping of Blynk connection.
-It is usually called in ``` void loop() {} ```.
-
-You can initiate it in other places, unless you run out of heap memory (in the cascaded functions with local memory).
-For example, it is not recommended to call ``` Blynk.run() ``` inside of the  ```BLYNK_READ ``` and ``` BLYNK_WRITE ``` functions on low-RAM devices.
-
-### Digital & Analog pins
-
-The library can perform basic pin IO (input-output) operations out-of-the-box:
-
-    digitalRead
-    digitalWrite
-    analogRead
-    analogWrite (PWM or Analog signal depending on the platform)
-
-So, there is no need to write code for simple things like LED, Relay control, and analog sensors.
-
 #Blynk operations
 
 ##Virtual Pins
@@ -517,15 +427,18 @@ param.getLength()
 - If you send more than 10 values per second - you'll cause **FLOOD ERROR** and connection to your hardware will be terminated
 
 
-##All Blynk Commands
+##Blynk Firmware
+
+### Digital & Analog pins
+
 The library can perform basic pin IO (input-output) operations out-of-the-box:
 
-```
-digitalRead
-digitalWrite
-analogRead
-analogWrite //PWM or Analog signal depending on the platform
-```
+    digitalRead
+    digitalWrite
+    analogRead
+    analogWrite (PWM or Analog signal depending on the platform)
+
+So, there is no need to write code for simple things like LED, Relay control, and analog sensors.
 
 ### BLYNK_WRITE(vPIN)
 ### BLYNK_READ(vPIN)
@@ -573,9 +486,69 @@ TODO: Output example
 
 You can also use spare Hardware serial ports or SoftwareSerial for debug output (you will need an adapter to connect to it with your PC).
 
-
 <span style="color:#D3435C;">**WARNING:** Enabling Debug mode will slow down your hardware processing speed up to 10 times!</span>
 
+## Configuration
+The simplest way to configure Blynk is to call ```Blynk.begin()```:
+
+```cpp
+Blynk.begin(auth, ...);
+```
+It can have various parameters for different hardware, depending on the type of connection you use. Follow the example skecthes for your board.
+
+TODO: List all the parameters
+
+You can also set up some shields (WiFi, Ethernet) manually, and then call:
+
+```cpp
+Blynk.config(auth);
+```
+or
+
+```cpp
+Blynk.config(auth, server, port);
+```
+
+For WiFi connections, you can use a ```connectWiFi``` (just for convenience).
+
+```cpp
+Blynk.connectWiFi(ssid, pass)
+```
+To connect to Open WiFi networks, set pass to an empty string ("").
+
+## Connection management
+There are several functions to help with connection management:
+
+```cpp
+# This functions will keep connecting to Blynk server. Default timeout is 30 seconds
+bool result = Blynk.connect();
+bool result = Blynk.connect(timeout);
+```
+To disconnect from Blynk server, use:
+
+```cpp
+Blynk.disconnect();
+```
+
+To know if you are currently connected to Blynk Server, use:
+
+```cpp
+bool result = Blynk.connected();
+```
+
+**Note:** Just after ``` Blynk.begin(...) ``` or ``` Blynk.config(...) ```, Blynk is not yet connected to the server.
+It will try to connect when it reaches first ``` Blynk.run() ``` or ``` Blynk.connect() ```call.
+
+If you want to skip connecting to the server, just call ``` Blynk.disconnect() ``` right after configuration.
+
+If your shield/connection type is not supported yet - you can craft it yourself easily! [Here is an example](https://github.com/blynkkk/blynk-library/blob/master/examples/BoardsAndShields/User_Defined_Connection/User_Defined_Connection.ino).
+
+### Blynk.run()
+This function should be called frequently to process incoming commands and perform housekeeping of Blynk connection.
+It is usually called in ``` void loop() {} ```.
+
+You can initiate it in other places, unless you run out of heap memory (in the cascaded functions with local memory).
+For example, it is not recommended to call ``` Blynk.run() ``` inside of the  ```BLYNK_READ ``` and ``` BLYNK_WRITE ``` functions on low-RAM devices.
 
 #List Of Supported Hardware
 
@@ -1576,6 +1549,20 @@ Use these to play with the protocol and understand the basics:
 
 - Does Blynk server store sensor data when app goes offline?
 > Yes, for all push widgets. We also plan to implement Data Log Widget, which will show you historical data on an app.
+
+
+#Blynk Amendments
+###Tell every maker about Blynk
+No pressure. Just do it. Now.
+###Make your idea work without Blynk
+Blynk can be easily integrated in almost any project. But before that - make it work **without** it. After you are sure that you can get all the sensor data or can control things from the code – integrate Blynk and make it even more awesome.
+###Use search
+We are always happy to chat and help, but remember - every time you ask the question that was answered many many times before that, Blynk Team is not building a new widget or new cool feature. So:
+- google before asking
+- use search on our forum, it works really well
+- check Instructables
+###Always wrap your code
+Though shalt not post code without ```wrapping it``` 
 
 
 #Links
