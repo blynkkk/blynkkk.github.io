@@ -2,7 +2,8 @@
 ## Arduino over USB (no shield)
 If you don't have any shield and your hardware doesn't have any connectivity, you can still use Blynk – directly over USB :
 
-1. Upload [sketch below](https://github.com/blynkkk/blynk-library/blob/master/examples/BoardsAndShields/Arduino_Serial_USB/Arduino_Serial_USB.ino) and change [Auth Token](http://blynkkk.github.io/#getting-started-getting-started-with-application-auth-token)
+1. Upload [sketch below](https://github.com/blynkkk/blynk-library/blob/master/examples/BoardsAndShields/Arduino_Serial_USB/Arduino_Serial_USB.ino) 
+and change [Auth Token](http://blynkkk.github.io/#getting-started-getting-started-with-application-4-auth-token)
 
 ```cpp
 #include <SoftwareSerial.h>
@@ -33,10 +34,8 @@ void loop()
     1. Open cmd.exe
     2. write your path to blynk-ser.bat folder. For example: 
     ```cd C:\blynk-library-0.3.1\blynk-library-0.3.1\scripts```
-    3. run ```blynk-ser.bat``` file. For instance : ```blynk-ser.bat -c COM4``` (where COM4 is port with your Arduino)
+    3. run ```blynk-ser.bat``` file. For example : ```blynk-ser.bat -c COM4``` (where COM4 is port with your Arduino)
     4. And press "Enter", press "Enter" and press "Enter"
-  
-  **TODO:** add Windows output
   
   - for Linux and Mac use: ```./blynk-ser.sh``` (may need to run with sudo)
 
