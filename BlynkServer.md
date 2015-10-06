@@ -54,8 +54,7 @@ That's it! You will see no output cause all logging is done within same folder i
 
 + Specify custom server path in your application
 
-<img src="https://github.com/blynkkk/blynk-server/blob/master/docs/login.png" style="width: 200px;"/>
-<img src="https://github.com/blynkkk/blynk-server/blob/master/docs/custom.png" style="width: 200px;"/>
+<img src="images/login.png" style="width: 200px;"/>  <img src="images/custom.png" style="width: 200px;"/>
 
 + Change your ethernet sketch from
 
