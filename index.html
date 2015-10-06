@@ -41,22 +41,14 @@
 
   <!-- Initializer -->
   <script>
-    Flatdoc.run({
-      fetcher: Flatdoc.file([
-        '1_Intro.md',
-        'GettingStarted.md',
-        'OtherHardware.md',
-        'BlynkBasics.md',
-        'SupportedHardware.md',
-        'Widgets.md',
-        'Security.md',
-        'Troubleshooting.md',
-        'Implementing.md',
-        'FAQ.md',
-        'Links.md',
-        'License.md'
-      ])
+
+  Flatdoc.run({
+    fetcher: Flatdoc.github('blynkkk/blynkkk.github.io', 
+      'readme_new.md')
     });
+
+  
+
   </script>
 </head>
 <body role='flatdoc'>
