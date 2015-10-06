@@ -49,7 +49,7 @@ BLYNK_WRITE(V1) // Widget WRITEs to Virtual Pin V1
  **Sketch:** [JoystickTwoAxis](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/JoystickTwoAxis/JoystickTwoAxis.ino#L24)
 
 ##Get data from hardware
-There are two ways of pushing data from your hardware to the Widgets in the app over Virtual Pins :
+There are two ways of pushing data from your hardware to the Widgets in the app over Virtual Pins.
 
 ###Perform requests by Widget
 - Using Blynk built-in reading frequency while app is active by setting Reading Frequency parameter to some interval:

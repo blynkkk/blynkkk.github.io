@@ -3,18 +3,20 @@ Widgets are interface modules. Each of them performs a specific input/ output fu
 
 There are 4 types of Widgets: 
 
-- **Controllers** - they send commands to hardware. Use them to control your stuff
-- **Displays** - used for various vizualizations of data that comes from hardware to the smartphone
-- **Notifications** - are various widgets to send messages and notifications. 
-- **Others** - widgets that don't belong to any category
+- **Controllers** - they send commands to hardware. Use them to control your stuff;
+- **Displays** - used for various vizualizations of data that comes from hardware to the smartphone;
+- **Notifications** - are various widgets to send messages and notifications;
+- **Others** - widgets that don't belong to any category;
 
 Each Widget has it's own settings. 
 
-Some of the Widgets(e.g. E-mail Widget) are used to enable some functionality and they don't have any settings.
+Some of the Widgets (e.g. E-mail Widget) are used to enable some functionality and they don't have any settings.
  
 ## Common Widget Settings
 ### Pin Selector
 This is one of the main parameters you need to set. It defines which pin to control or to read from. 
+
+<img src="images/pin_selection.png" style="width: 200px;"/>
 
 **Digital Pins** - represent physical Digital IO pins on your hardware. PWM-enabled pins are marked with the ```~``` symbol
 
