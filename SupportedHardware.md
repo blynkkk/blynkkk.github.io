@@ -43,8 +43,8 @@
 - ESP8266 as WiFi modem (running original firmware)
 - SeeedStudio Ethernet Shield V2.0 (W5200)
 - RN-XV WiFly
-- You can implement your own connection type easily (see User_Defined_Connection example)!
+- You can implement your own connection type easily (see [this](https://github.com/blynkkk/blynk-library/blob/master/examples/BoardsAndShields/User_Defined_Connection/User_Defined_Connection.ino) example)!
 
 ## Made by Community
 
-- WIZnet-W5500-EVB (http://instructables.com/id/WIZnet-W5500-EVB-and-Blynk-App-communication)
+- [WIZnet-W5500-EVB](http://instructables.com/id/WIZnet-W5500-EVB-and-Blynk-App-communication)
