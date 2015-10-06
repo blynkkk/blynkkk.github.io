@@ -23,7 +23,7 @@ You can always install your [Private Blynk Server](http://blynkkk.github.io/#bly
 ###2. Create new project
 After you successfully logged into your account, start by creating a new Project. Give it a name.
 
-<img src="images/new_project.png" style="width: 200px;"/>
+<img src="images/create_new_project.png" style="width: 200px;"/>
 
 ###3. Choose your hardware
 Select the hardware you will use. Check out how big is the [list of supported hardware](http://blynkkk.github.io/#list-of-supported-hardware)!
@@ -38,8 +38,8 @@ Select the hardware you will use. Check out how big is the [list of supported ha
 
 <span style="color:#D3435C;">**NOTE:** Don't share your Auth Token with anyone, unless you want them to have access to your hardware. </span>
 
-It's very convenient to send it over E-mail. Press E-mail button and token will be sent to the e-mail address you used for registration. You can also tap on the Token itself and it will be copied to the clipboard
-
+It's very convenient to send it over E-mail. Press E-mail button and token will be sent to the e-mail address you used for registration. 
+You can also tap on the Token itself and it will be copied to the clipboard.
 
 Now press **"Create"** button.  
 
