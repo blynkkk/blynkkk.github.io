@@ -77,8 +77,7 @@ When you are done with the Settings - press **PLAY** button. This will switch yo
 You may get a message "Arduino UNO is offline". Don't worry now. We'll get to that in a minute.
 
 ##Getting started with hardware
-Hope you have Blynk Library installed. If not - check here: 
-TODO: link to downloads
+Hope you have Blynk Library installed. If not - [check here](http://blynkkk.github.io/#downloads-blynk-library).
 
 We've prepared example sketches that will get your microcomputer online. Open the example sketch according to the device or shield you are using.
 
@@ -113,7 +112,8 @@ In this sketch find this line:
 ```cpp
 char auth[] = "YourAuthToken";
 ```
-This is the [Auth Token](http://blynkkk.github.io/#getting-started-auth-token) that you've sent over e-mail recently. Please check your email - it should be there already. 
+This is the [Auth Token](http://blynkkk.github.io/#getting-started-getting-started-with-application-4-auth-token) that you've sent over e-mail recently. 
+Please check your email - it should be there already. 
 Copy it from e-mail and put inside curly brackets. 
 
 ``` 
@@ -137,6 +137,6 @@ Push the Button and turn the LED On and Off!
 
 <img src="images/button_pressed.png" style="width: 200px;"/>
 
-Check out other example sketches! Always feel free to experiment and combine different examples together! 
+Check out [other example sketches](https://github.com/blynkkk/blynk-library/tree/master/examples)! Always feel free to experiment and combine different examples together! 
 
 For example, attach an LED to [PWM](http://www.arduino.cc/en/Tutorial/Fading)-enabled Pin on your Arduino. Set the Slider Widget to control brightness of an LED. Just use the same steps described above.
