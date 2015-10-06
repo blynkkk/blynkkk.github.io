@@ -1,13 +1,18 @@
 # Blynk server
-Blynk Server is an Open-Source [Netty](https://github.com/netty/netty) based Java server, responsible for forwarding messages between Blynk mobile application and various microcontroller boards (i.e. Arduino, Raspberry Pi. etc).
-**Download latest server build [here](https://github.com/blynkkk/blynk-server/releases).**
+Blynk Server is an Open Source [Netty](https://github.com/netty/netty)-based Java server, responsible for forwarding messages between Blynk mobile application and various microcontroller boards (i.e. Arduino, Raspberry Pi. etc).
+
+Download latest server build:
+
+[Download Blynk Server >](https://github.com/blynkkk/blynk-server/releases)
 
 [ ![Build Status](https://travis-ci.org/blynkkk/blynk-server.svg?branch=master)](https://travis-ci.org/blynkkk/blynk-server)
 
 ## Requirements
-Java 8 required. (OpenJDK, Oracle). Installation instructions [here](https://github.com/blynkkk/blynk-server#install-java-for-ubuntu).
+Java 8 required. (OpenJDK, Oracle). 
 
-## GETTING STARTED
+How to install Java: [here](https://github.com/blynkkk/blynk-server#install-java-on-ubuntu).
+
+## How to run local Blynk Server
 By default, mobile application uses 8443 port and is based on SSL/TLS sockets. Default hardware port is 8442 and is based on plain TCP/IP sockets.
 
 ### Quick local server setup
@@ -23,59 +28,74 @@ By default, mobile application uses 8443 port and is based on SSL/TLS sockets. D
         
 That's it! You will see no output cause all logging is done within same folder in ./logs/blynk.log file.
 
-### Quick local server setup on Raspberry PI
+### Launhc local server on Raspberry Pi
 
-+ Login to Raspberry Pi via ssh;
-+ Install java 8 : 
+1. Login to Raspberry Pi via ssh;
+2. Install java 8WiFi 
         
-        sudo apt-get install oracle-java8-jdk
+		sudo apt-get install oracle-java8-jdk
         
-+ Make sure you are using Java 8
+3. Make sure you are using Java 8:
 
         java -version
         Output: java version "1.8.0_40"
         
-+ Download Blynk server jar file (or manually copy it to raspberry via ssh and scp command) : 
+4. Download Blynk server .jar file (or manually copy it to raspberry via ssh and scp command): 
    
         wget "https://github.com/blynkkk/blynk-server/releases/download/v0.8.2/server-0.8.2.jar"
 
-+ Run the server on default 'hardware port 8442' and default 'application port 8443' (SSL port)
+5. Run the server on default 'hardware port 8442' and default 'application port 8443' (SSL port)
 
         java -jar server-0.8.2.jar -dataFolder /home/pi/Blynk        
         
-That's it! You will see no output cause all logging is done within same folder in ./logs/blynk.log file.
+That's it! You won't see any output because all the logging is done within same folder in ```./logs/blynk.log file.```
         
-+ To enable server auto restart find /etc/init.d/rc.local file and add :
++ To enable server auto-restart, find /etc/init.d/rc.local file and add a line:
 
         java -jar /home/pi/server-0.8.2.jar -dataFolder /home/pi/Blynk &
 
                 
 ### App and sketch changes
 
-+ Specify custom server path in your application
+To connect Blynk App to your local server you need to set up a custom server during login. Set up IP address and PORT (should be 8443 by default)
 
 <img src="images/login.png" style="width: 200px;"/>  <img src="images/custom.png" style="width: 200px;"/>
 
-+ Change your ethernet sketch from
++ If you are using Ethernet connection, in the sketch change
 
-        Blynk.begin(auth);
-        to
-        Blynk.begin(auth, "your_host");
-        or to 
-        Blynk.begin(auth, IPAddress(xxx,xxx,xxx,xxx));
-        
-+ Change your WIFI sketch from
-        
-        Blynk.begin(auth, SSID, pass));
-        to
-        Blynk.begin(auth, SSID, pass, "your_host");
-        or to
-        Blynk.begin(auth, SSID, pass, IPAddress(XXX,XXX,XXX,XXX));
-        
-+ or in case of USB when running blynk-ser.sh provide '-s' option with address of your local server
+	```
+	Blynk.begin(auth);
+	```
+ 
+	to
+	
+	```
+	Blynk.begin(auth, "your_host"); //or
+	Blynk.begin(auth, IPAddress(xxx,xxx,xxx,xxx));
+	```
+	
 
-        ./blynk-ser.sh -s you_host_or_IP
+
         
++ If you are connecting over WiFi, make edits in the sketch. Change
+
+   ```     
+	Blynk.begin(auth, SSID, pass));
+	```
+	to
+	
+	```
+	Blynk.begin(auth, SSID, pass, "your_host"); //or
+	Blynk.begin(auth, SSID, pass, IPAddress(XXX,XXX,XXX,XXX));
+	```
+	
+	
+        
++ If you are connected over USB when running ```blynk-ser.sh``` provide ```-s``` option with address of your local server:
+
+	```
+	./blynk-ser.sh -s you_host_or_IP
+	```     
 
 ### Advanced local server setup
 If you need more flexibility, you can extend server with more options by creating server.properties file in same folder as server.jar. Example could be found [here](https://github.com/blynkkk/blynk-server/blob/master/server/tcp-server/src/main/resources/server.properties).
@@ -85,13 +105,17 @@ server.properties options:
 
         app.ssl.port=8443
         
-+ For simplicity Blynk already provides server jar with build-in SSL certificates, so you have working server out of the box via SSL/TLS sockets. But as certificate and it's private key are in public this is totally not secure. So in order to fix that you need to provide your own certificates. And change below properties with path to your cert. and private key and it's password. See how to generate self-signed certificates [here](https://github.com/blynkkk/blynk-server#generate-ssl-certificates)
++ For simplicity Blynk already provides server jar with build-in SSL certificates, so you have working server out of the box via SSL/TLS sockets. But as certificate and it's private key is in public, this is very unsecure. In order to fix that, you will need to provide your own certificates and change properties with path to your certificates, private key and it's password. 
 
-        #points to cert and key that placed in same folder as running jar.
-        
-        server.ssl.cert=./server_embedded.crt
-        server.ssl.key=./server_embedded.pem
-        server.ssl.key.pass=pupkin123
+	See how to generate self-signed certificates [here](https://github.com/blynkkk/blynk-server#generate-ssl-certificates)
+
+	Points to certificate and key that placed in same folder as running jar:
+	
+    ```    
+    server.ssl.cert=./server_embedded.crt
+    server.ssl.key=./server_embedded.pem
+    server.ssl.key.pass=pupkin123
+    ```
 
 + Hardware port
 
@@ -99,7 +123,7 @@ server.properties options:
 
 + User profiles folder. Folder in which all users profiles will be stored. By default System.getProperty("java.io.tmpdir")/blynk used. Will be created if not exists
 
-        data.folder=/tmp/blynk
+		data.folder=/tmp/blynk
 
 + Folder for all application logs. Will be created if it doesn't exist
 
@@ -151,47 +175,50 @@ server.properties options:
         
 ### Enabling mail on Local server
 In order to enable mail notifications on Local server you need to provide own mail credentials. To do that you need to create file "mail.properties" within same folder where server.jar is.
-Mail properties :
+Mail properties:
 
-        mail.smtp.auth=true
-        mail.smtp.starttls.enable=true
-        mail.smtp.host=smtp.gmail.com
-        mail.smtp.port=587
-        mail.smtp.username=YOUR_EMAIL_HERE
-        mail.smtp.password=YOUR_EMAIL_PASS_HERE
+```
+mail.smtp.auth=true
+mail.smtp.starttls.enable=true
+mail.smtp.host=smtp.gmail.com
+mail.smtp.port=587
+mail.smtp.username=YOUR_EMAIL_HERE
+mail.smtp.password=YOUR_EMAIL_PASS_HERE
+```
         
 See example [here](https://github.com/blynkkk/blynk-server/blob/master/server/notifications/mail-notifications/src/main/resources/mail.properties).
 
-NOTE : you'll need to setup Gmail to allow less secured applications. Go [here](https://www.google.com/settings/security/lesssecureapps) and then click "Allow less secure apps".
+NOTE: you'll need to setup Gmail to allow less secured applications. Go [here](https://www.google.com/settings/security/lesssecureapps) and then click "Allow less secure apps".
 
 
 ### Raw data storage
 By default raw data storage is enabled. So any write (Blynk.virtualWrite) command will stored on disk. 
 The default path is "data" folder within [data.folder] (https://github.com/blynkkk/blynk-server#advanced-local-server-setup) property of server properties.
 
-File name format is 
+File name format is: 
         
-        dashBoardId_pin.csv
+    dashBoardId_pin.csv
 
-For instance
+Example:
  
-        data/1_v5.csv
+    data/1_v5.csv
         
-Which means in 1_v5.csv file stored raw data for virtual pin 5 of dashboard with id 1.
+It means that raw data from Virtual Pin 5 of dashboard with ID 1 is stored
+in 1_v5.csv
 
-Data format is
+Data format is:
 
-        value,timestamp
+    value,timestamp
         
-For instance
+Example:
 
-        10,1438022081332
+    10,1438022081332
         
-Where 10 - value of pin, and 1438022081332 - the difference, measured in milliseconds, between the current time and midnight, January 1, 1970 UTC.
+Where 10 - pin value, and 1438022081332 - difference(in milliseconds) between current time and midnight, January 1, 1970 UTC 
 
 Raw data files are rotated every day and gzipped.
 
-WARNING : this will changed in near future. 
+**WARNING**: It will be changed soon. 
 
 ### Generate SSL certificates
 
@@ -211,15 +238,15 @@ WARNING : this will changed in near future.
 
         openssl pkcs8 -topk8 -inform PEM -outform PEM -in server.key -out server.pem
         
-WARNING : in case you connect hardware via [USB script](https://github.com/blynkkk/blynk-library/tree/master/scripts) you have to provide an option '-s' pointing to "common name" (hostname) you did specified during certificate generation.
+WARNING: in case you connect hardware via [USB script](https://github.com/blynkkk/blynk-library/tree/master/scripts) you have to provide an option '-s' pointing to "common name" (hostname) you did specified during certificate generation.
         
 As output you'll retrieve server.crt and server.pem files that you need to provide for server.ssl properties.
 
-### Install java for Ubuntu
+### Install Java on Ubuntu
 
-        sudo apt-add-repository ppa:webupd8team/java
-        sudo apt-get update
-        sudo apt-get install oracle-java8-installer
+    sudo apt-add-repository ppa:webupd8team/java
+    sudo apt-get update
+    sudo apt-get install oracle-java8-installer
 
-### Behind wifi router
+### Behind WiFi router
 If you want to run Blynk server behind WiFi-router and want it to be accessible from the Internet, you have to add port-forwarding rule on your router. This is required in order to forward all of the requests that come to the router within the local network to Blynk server.
