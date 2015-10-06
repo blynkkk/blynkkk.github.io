@@ -10,6 +10,7 @@ Instead, edit the stylus (.styl) files and compile it to CSS on your machine.
 @import url("//fonts.googleapis.com/css?family=Montserrat:700|Open+Sans:400");
 @import url("//fonts.googleapis.com/css?family=ProximaNova:300|proxima+nova:300");
 @import url(https://fonts.googleapis.com/css?family=Oxygen);
+
 /*@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700); */
 
 /* ----------------------------------------------------------------------------
@@ -205,6 +206,7 @@ a:hover {
 }
 .content li > :first-child {
   padding-top: 0;
+  font-family: oxygen;
 }
 .content strong,
 .content b {
@@ -243,6 +245,7 @@ a:hover {
 }
 .content table {
   margin-top: 10px;
+  font-family: oxygen;
   margin-bottom: 10px;
   padding: 0;
   border-collapse: collapse;
@@ -307,7 +310,7 @@ a:hover {
 }
 .content h1{
   font-family: oxygen;
-  font-size: 1.8em;
+  font-size: 1.9em;
   letter-spacing: 1px;
 }
 
@@ -341,17 +344,7 @@ a:hover {
 .content h3 ol {
   padding-top: 10px;
 }
-.content h1,
-{font-family: montserrat;
-  font-size: 1.0em;
-  color: 
-}
-.content h2 
-.content h3 {
-  font-family: oxygen;
-  font-size: 1.2em;
-  color: #fff;
-}
+
 
 .content h1,
 .content h2,
@@ -359,6 +352,12 @@ a:hover {
 /*.content .big-heading,*/
 body.big-h3 .content h3 {
   padding-top: 80px;
+}
+
+.content h4{
+  font-family: oxygen;
+  font-size: 1.2em;
+
 }
 
 .content h1:before,
@@ -399,15 +398,26 @@ body.big-h3 .content h3:before {
     width: 120%;
   }
 }
-.content h4,
-.content h5,
+
+.content h1,
+.content .small-heading,
+body:not(.big-h3) .content h3 {
+  border-bottom: solid 5px rgba(0,0,0,0.07);
+  color: #1E1F23;
+  padding-top: 80px;
+  padding-bottom: 0px;
+}
+
+.content h2,
 .content .small-heading,
 body:not(.big-h3) .content h3 {
   border-bottom: solid 1px rgba(0,0,0,0.07);
   color: #1E1F23;
   padding-top: 80px;
-  padding-bottom: 10px;
+  margin-top: -40px;
+  
 }
+
 
 .content h1:first-child {
   padding-top: 80;
@@ -509,6 +519,7 @@ body.no-literate .content pre > code:hover::-webkit-scrollbar-thumb {
   text-transform: uppercase;
   display: inline-block;
   padding: 15px 30px;
+  margin-top: 20px;
   border-radius: 4px;
   margin-right: 15px;
   letter-spacing: 1px; 
@@ -886,6 +897,7 @@ a.big.button:hover:visited {
   font-weight: normal;
   font-family: oxygen;
   color: #7F7F7F;
+
 } 
 
 .menu a.level-2:hover {
@@ -897,7 +909,7 @@ a.big.button:hover:visited {
   font-family: oxygen;
   font-size: 0.9em;
   color: #7F7F7F;
-  padding-left: 5px;
+  padding-left: 15px;
   
 }
 .menu a.level-3:hover {
