@@ -5,32 +5,32 @@ If you don't have any shield and your hardware doesn't have any connectivity, yo
 1. Upload [sketch below](https://github.com/blynkkk/blynk-library/blob/master/examples/BoardsAndShields/Arduino_Serial_USB/Arduino_Serial_USB.ino) 
 and change [Auth Token](http://blynkkk.github.io/#getting-started-getting-started-with-application-4-auth-token)
 
-```cpp
-#include <SoftwareSerial.h>
-SoftwareSerial SwSerial(2, 3); // RX, TX
-#define BLYNK_PRINT SwSerial
-#include <BlynkSimpleSerial.h>
-
-// You should get Auth Token in the Blynk App.
-// Go to the Project Settings (nut icon).
-char auth[] = "YourAuthToken";
-
-void setup()
-{
-  SwSerial.begin(9600);
-  Blynk.begin(auth);
-  // Default baud rate is 9600. You could specify it like this:
-  //Blynk.begin(auth, 57600);
-}
-
-void loop()
-{
-  Blynk.run();
-}
-```
-
-2. Run the script in Terminal (script is located in "scripts" folder of library root, e.g. 'blynk-library/scripts')
-  - for Windows :
+	```cpp
+	#include <SoftwareSerial.h>
+	SoftwareSerial SwSerial(2, 3); // RX, TX
+	#define BLYNK_PRINT SwSerial
+	#include <BlynkSimpleSerial.h>
+	
+	// You should get Auth Token in the Blynk App.
+	// Go to the Project Settings (nut icon).
+	char auth[] = "YourAuthToken";
+	
+	void setup()
+	{
+	  SwSerial.begin(9600);
+	  Blynk.begin(auth);
+	  // Default baud rate is 9600. You could specify it like this:
+	  //Blynk.begin(auth, 57600);
+	}
+	
+	void loop()
+	{
+	  Blynk.run();
+	}
+	```
+2. Run the script  which is located in "scripts" folder of library root, e.g. 'blynk-library/scripts`
+  
+  **On Windows:**
     1. Open cmd.exe
     2. Write your path to blynk-ser.bat folder. For example: 
     ```
@@ -39,9 +39,14 @@ void loop()
     3. Run ```blynk-ser.bat``` file. For example : ```blynk-ser.bat -c COM4``` (where COM4 is port with your Arduino)
     4. And press "Enter", press "Enter" and press "Enter"
   
-  - for Linux and Mac use: ```./blynk-ser.sh``` (may need to run with sudo)
+  **On Linux and Mac** use: 
+  
+  ```
+  ./blynk-ser.sh
+  ``` 
+  You may need to run it with ```sudo```
 
-This is what you'll see in Terminal on Mac (usbmodem address can be different):
+This is what you'll see in Terminal app on Mac (usbmodem address can be different):
 
 ```
 [ Press Ctrl+C to exit ]
