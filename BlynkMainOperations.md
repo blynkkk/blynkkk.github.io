@@ -72,7 +72,7 @@ If you need to PUSH sensor or other data from your hardware to Widget in the app
 
 <img src="images/frequency_reading_push.png" style="width: 200px;"/>
 
-We recommend sending data in intervals and avoiiding FLOOD ERROR
+We recommend sending data in intervals and avoiding [Flood Error](http://blynkkk.github.io/#troubleshooting-flood-error).
 For example, this [SimpleTimer Library](http://playground.arduino.cc/Code/SimpleTimer) is an Arduino library for timed events. Please read instructions inside this [example sketch](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino#L30) for more details.
 
 ```cpp
