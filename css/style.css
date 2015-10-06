@@ -934,11 +934,11 @@ a.big.button:hover:visited {
   position: absolute;
   top: 10px;
   right: 30px;
-  width: 9px;
+  width: 3px;
   height: 3px;
   -webkit-border-radius: 2px;
   border-radius: 2px;
-  background: #2badad;
+  background: #24C48C;
 }
 code .string,
 
