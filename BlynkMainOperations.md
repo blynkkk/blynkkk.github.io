@@ -106,10 +106,10 @@ param.getLength()
 ```
 
 ##Limitations and Recommendations
-- Don't put ```Blynk.virtualWrite``` and any other ```Blynk.*``` command inside ```void loop()```- it will cause lot's of outgoing messages to our server and your connection will be terminated. 
+- Don't put ```Blynk.virtualWrite``` and any other ```Blynk.*``` command inside ```void loop()```- it will cause lot's of outgoing messages to our server and your connection will be terminated; 
 
-- We recommend calling functions with intervals. For example, this [SimpleTimer Library](http://playground.arduino.cc/Code/SimpleTimer) is a simple library for timed events. Please read instructions inside this [example sketch](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino#L30) for more details.
+- We recommend calling functions with intervals. For example, this [SimpleTimer Library](http://playground.arduino.cc/Code/SimpleTimer) is a simple library for timed events. Please read instructions inside this [example sketch](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino#L30) for more details;
 
 - Avoid using long delays with ```delay()``` – it may cause connection breaks;
 
-- If you send more than 10 values per second - you'll cause **FLOOD ERROR** and connection to your hardware will be terminated
+- If you send more than 10-100 (depends on hardware) values per second - you'll cause [Flood Error](http://blynkkk.github.io/#troubleshooting-flood-error)* and connection to your hardware will be terminated;
