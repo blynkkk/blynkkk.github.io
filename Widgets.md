@@ -96,9 +96,11 @@ Control servo movements in 4 directions
 ####Settings:
 - SPLIT/MERGE modes - read [here](http://blynkkk.github.io/#widgets-common-widget-settings-splitmerge)
 
-- Rotate on Tilt
+- **Rotate on Tilt**
+
 When it's ON, Joystck will automatically rotate if you use your smartphone in landscape orientation  
-- Auto-Return
+- **Auto-Return**
+- 
 When it's OFF, Joystick handle will not return back to center position. It will stay where you left it. 
 
 <img src="images/joystick.png" style="width: 77px;"/>
