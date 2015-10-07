@@ -84,8 +84,6 @@ When MERGE mode is selected, you are sending just 1 message, consisiting of arra
    int b = param[1].asInt(); // get a BLUE channel value
  }
  ```
->>>>>>> origin/master
-
 
 ##Controllers
 ### Button
