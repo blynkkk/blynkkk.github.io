@@ -6,32 +6,34 @@
   - Uno, Duemilanove (select "UNO" in the list, not the "Due")
   - Nano, Mini, Pro Mini, Pro Micro
   - Mega
-  - YÚN (onboard WiFi, Ethernet via Bridge)
+  - YÚN (onboard WiFi and Ethernet, via Bridge)
   - Due - limited support
-- Intel
-  - Edison (Galileo not tested, but should work as well)
 - Arduino-like
   - ESP8266 (running standalone, using https://github.com/esp8266/Arduino)
+  - Intel Edison
+  - Intel Galileo
+  - LinkIt ONE
   - Wicked WildFire (CC3000)
   - TinyCircuits TinyDuino (CC3000)
   - LightBlue Bean (Bluetooth 4.0 LE). This is only for experts, we're working to simplifying things now...
 - Energia
   - Texas Instruments
     - CC3200-LaunchXL
-    - Tiva C Connected Launchpad (EK-TM4C1294XL1)
+    - Tiva C Connected LaunchPad
+    - Stellaris LM4F120 LaunchPad
   - RedBearLab (CC3200, WiFi Mini)
 - Particle (formerly Spark: https://github.com/vshymanskyy/blynk-library-spark)
   - Core
   - Photon
-- LinkIt ONE
-- Linux
+- JavaScript library (https://www.npmjs.com/package/blynk-library)
+  - Regular PC with Linux / Windows / OS X
   - Raspberry Pi
-  - PC (Ubuntu, etc)
-- Python (scripts only, library on the way!)
-  - WiPy
-- JavaScript (https://www.npmjs.com/package/blynk-library)
-  - Node.js
-  - Espruino
+  - Intel Edison
+  - Intel Galileo
+  - VoCore (OpenWRT + [Espruino package](https://github.com/vshymanskyy/OpenWRT-Espruino-packages))
+  - Espruino Pico
+  - ...
+- MicroPython: WiPy
 
 ## Arduino connection types
 

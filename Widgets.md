@@ -33,11 +33,17 @@ Some of the Widgets can send more than one value. And with this switch you can c
 
 <img src="images/split_merge.gif" style="width: 300px;"/>
 
+<<<<<<< HEAD
 - **SPLIT**:
 Each of the parameters is sent directly to the Pin on your hardware (e.g D7). You don't need to write any code.
+=======
+- SPLIT:
+ Each of the parameters is sent directly to the Pin on your hardware (e.g D7). You don't need to write any code.
+>>>>>>> origin/master
 
 	**NOTE:** In this mode you send multiple commands from one widget, which can reduce performance of your hardware.
 
+<<<<<<< HEAD
 	Example: If you have a Joystick Widget and it's set to D3 and D4, it will send 2 commands over the Internet:
 
 	```cpp
@@ -60,6 +66,30 @@ When MERGE mode is selected, you are sending just 1 message, consisiting of arra
 	  int b = param[1].asInt(); // get a BLUE channel value
 	}
 ```
+=======
+ Example: If you have a Joystick Widget and it's set to D3 and D4, it will send 2 commands over the Internet:
+
+ ```cpp
+ digitalWrite(3, x);
+ digitalWrite(4, y);
+ ```
+
+- MERGE:
+ When MERGE mode is selected, you are sending just 1 message, consisiting of array of values. But you'll need to parse it on the hardware. 
+
+ This mode can be used with Virtual Pins only.
+
+ Example: Add a zeRGBa Widget and set it to MERGE mode. Choose Virtual Pin V1
+
+ ```cpp
+ BLYNK_WRITE(V1) // There is a Widget that WRITEs data to V1 
+ {
+   int r = param[0].asInt(); // get a RED channel value
+   int g = param[1].asInt(); // get a GREEN channel value
+   int b = param[1].asInt(); // get a BLUE channel value
+ }
+ ```
+>>>>>>> origin/master
 
 
 ##Controllers
@@ -94,12 +124,13 @@ Timer triggers actions at a specific time. Even if smartphone is offline. Start 
 Control servo movements in 4 directions
 
 ####Settings:
-#####SPLIT/MERGE modes
-Read Here - Link
+- SPLIT/MERGE modes - read [here](http://blynkkk.github.io/#widgets-common-widget-settings-splitmerge)
 
-#####Rotate on Tilt
+- **Rotate on Tilt**
+
 When it's ON, Joystck will automatically rotate if you use your smartphone in landscape orientation  
-#####Auto-Return
+- **Auto-Return**
+- 
 When it's OFF, Joystick handle will not return back to center position. It will stay where you left it. 
 
 <img src="images/joystick.png" style="width: 77px;"/>
