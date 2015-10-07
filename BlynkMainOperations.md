@@ -14,7 +14,7 @@ Blynk.virtualWrite(pin, 12.34);
 ##Send data from app to hardware
 You can send any data from Widgets in the app to your hardware.
 
-All [Controller Widgets](http://blynkkk.github.io/#widgets-controllers) can send data to Virtual Pins on your hardware. For instance, code below shows how to get values from the Button Widget in the App
+All [Controller Widgets](http://blynkkk.github.io/#widgets-controllers) can send data to Virtual Pins on your hardware. For example, code below shows how to get values from the Button Widget in the App
 
 ```cpp
 BLYNK_WRITE(V1) //Button Widget is writing to pin V1
@@ -36,13 +36,15 @@ Some Widgets (e.g Joystick, zeRGBa) have more than one output.
 
 <img src="images/joystick_merge_mode.png" style="width: 200px;"/>
 
-This output is an array of values. You can get any parameter of the array [0,1,2...] by using: 
+This output can be written to Virtual Pin as an array of values. 
+On the hardware side - you can get any element of the array [0,1,2...] by using: 
 
 ```cpp
 BLYNK_WRITE(V1) // Widget WRITEs to Virtual Pin V1
 {   
   int x = param[0].asInt(); // getting first value
   int y = param[1].asInt(); // getting second value
+  int z = param[N].asInt(); // getting N value
 }
 ```
 
@@ -52,12 +54,12 @@ BLYNK_WRITE(V1) // Widget WRITEs to Virtual Pin V1
 There are two ways of pushing data from your hardware to the Widgets in the app over Virtual Pins.
 
 ###Perform requests by Widget
-- Using Blynk built-in reading frequency while app is active by setting Reading Frequency parameter to some interval:
+- Using Blynk built-in reading frequency while App is active by setting 'Reading Frequency' parameter to some interval:
 
 <img src="images/frequency_reading_pull.png" style="width: 200px;"/>
 
 ```cpp
-BLYNK_READ(V5) // Widget in the app READs Virtal Pin V5
+BLYNK_READ(V5) // Widget in the app READs Virtal Pin V5 with the certain frequency
 {
   // This command writes Arduino's uptime in seconds to Virtual Pin V5
   Blynk.virtualWrite(5, millis() / 1000);
@@ -68,19 +70,47 @@ BLYNK_READ(V5) // Widget in the app READs Virtal Pin V5
 
 
 ###Pushing data from hardware
-If you need to PUSH sensor or other data from your hardware to Widget in the app you can write any logic you want. Set the widget to PUSH mode
+If you need to PUSH sensor or other data from your hardware to Widget, you can write any logic you want. Just set the frequency to PUSH mode
 
 <img src="images/frequency_reading_push.png" style="width: 200px;"/>
 
 We recommend sending data in intervals and avoiding [Flood Error](http://blynkkk.github.io/#troubleshooting-flood-error).
 For example, this [SimpleTimer Library](http://playground.arduino.cc/Code/SimpleTimer) is an Arduino library for timed events. Please read instructions inside this [example sketch](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino#L30) for more details.
 
+SimpleTimer is included in Blynk's library. Here is how timed event are handled with it:
+
 ```cpp
-void sendUptime() // This function should be called based on timer
+#include <SPI.h>
+#include <Ethernet.h>
+#include <BlynkSimpleEthernet.h>
+#include <SimpleTimer.h> // here is the SimpleTimer library
+
+char auth[] = "YourAuthToken"; // Put your token here
+
+SimpleTimer timer; // Create a Timer object called...timer! 
+
+void setup()
 {
-  // You can send any value at any time.
-  // Please don't send more that 10 values per second.
-  Blynk.virtualWrite(5, millis() / 1000);
+  Serial.begin(9600);
+  Blynk.begin(auth);
+  
+  timer.setInterval(1000L, sendUptime); //  Here you set interval (1sec) and which function to call 
+}
+
+void sendUptime()
+{
+  // This function sends Arduino's up time every 1 second to Virtual Pin (5).
+  // In the app, Widget's reading frequency should be set to PUSH. 
+  // You can send anything with any interval using this construction
+  // Don't send more that 10 values per second.
+  
+  Blynk.virtualWrite(V5, millis() / 1000);
+}
+
+void loop()
+{
+  Blynk.run(); // all the Blynk magic happens here
+  timer.run(); // SimpleTimer is working
 }
 ```
 
@@ -89,7 +119,7 @@ void sendUptime() // This function should be called based on timer
 ##Data types
 The actual values are sent as Strings, so there is no practical limits on the data that can be sent.  
 However, remember the limitations of the platform when dealing with numbers. For example, integer values on Arduino are 16-bit, allowing range -32768 to 32767.
-You can interpret incoming data as Integers, Floats, Doubles and Strings. Use this commands: 
+You can interpret incoming data as Integers, Floats, Doubles and Strings. Use these commands: 
 
 ```cpp
 param.asInt(); 		// get an integer value
