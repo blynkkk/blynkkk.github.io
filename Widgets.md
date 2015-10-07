@@ -23,14 +23,14 @@ This is one of the main parameters you need to set. It defines which pin to cont
 **Digital Pins** - represent physical Analog IO pins on your hardware
 
 **Virtual Pins** - have no physical representation. They are used for any data transfer between Blynk App and your hardware.
-Read more about Virtual Pins Here.
+Read more about Virtual Pins [here](http://blynkkk.github.io/#blynk-main-operations-virtual-pins).
 
 ### Data Mapping
 >Screenshot
 
 ### SPLIT/MERGE
 Some of the Widgets can send more than one value. And with this switch you can control how to send them.
->Screenshot
+<img src="images/split_merge.gif" style="width: 300px;"/>
 
 - SPLIT:
 Each of the parameters is sent directly to the Pin on your hardware (e.g D7). You don't need to write any code.
