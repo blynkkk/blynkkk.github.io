@@ -83,7 +83,7 @@ If you need to PUSH sensor or other data from your hardware to Widget, you can w
 We recommend sending data in intervals and avoiding [Flood Error](http://blynkkk.github.io/#troubleshooting-flood-error).
 For example, this [SimpleTimer Library](http://playground.arduino.cc/Code/SimpleTimer) is an Arduino library for timed events. Please read instructions inside this [example sketch](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino#L30) for more details.
 
-SimpleTimer is included in Blynk's library. Here is how timed event are handled with it:
+SimpleTimer is included in Blynk's library. Here is how it can work:
 
 ```cpp
 #include <SPI.h>
