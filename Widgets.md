@@ -33,17 +33,16 @@ Some of the Widgets can send more than one value. And with this switch you can c
 
 <img src="images/split_merge.gif" style="width: 300px;"/>
 
-<<<<<<< HEAD
+
 - **SPLIT**:
 Each of the parameters is sent directly to the Pin on your hardware (e.g D7). You don't need to write any code.
 =======
 - SPLIT:
  Each of the parameters is sent directly to the Pin on your hardware (e.g D7). You don't need to write any code.
->>>>>>> origin/master
+
 
 	**NOTE:** In this mode you send multiple commands from one widget, which can reduce performance of your hardware.
 
-<<<<<<< HEAD
 	Example: If you have a Joystick Widget and it's set to D3 and D4, it will send 2 commands over the Internet:
 
 	```cpp
