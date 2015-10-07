@@ -9,7 +9,7 @@ We designed Virtual Pins to send **any** data from your microcontroller to the B
 It opens huge opportunities for you, because anything you plug in to your hardware will be able to talk to Blynk.
 With Virtual Pins you can send something from the App, process it on Arduino and then send it back to the smartphone based on any logic you want. You can trigger functions, read I2C devices, convert values, control any servo motor and so on.
 
-Virtual Pins can be used to interface with libraries (Servo, LCD and others) and implement custom functionality. The device may send data to the Widgets to the Virtual Pin like this:
+Virtual Pins can be used to interface with external libraries (Servo, LCD and others) and implement custom functionality. The device may send data to the Widgets to the Virtual Pin like this:
 
 ```cpp
 Blynk.virtualWrite(pin, "abc");
