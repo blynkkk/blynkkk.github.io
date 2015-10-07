@@ -26,14 +26,17 @@ Now imagine: every time you press a Button in the Blynk app, the message travels
 ##What do I need to Blynk?
 At this point you might be thinking: **"Ok, I want it. What do I need to start?"** – Just a couple of things, really:
 
-- **Hardware**. We hope you already have an Arduino or someting similar. If not - come on, get one ASAP!
+####**Hardware**. 
+We hope you already have an Arduino or someting similar. If not - come on, get one ASAP!
+
 **Blynk works over the Internet.** 
 It means that the hardware you choose should be able to connect to Internet. Some of the boards, like Arduino Uno will need an Ethernet or Wi-Fi Shield to communicate, 
 others are already Internet-enabled: like ESP8266, Particle Photon or SparkFun ESP Thing. But even if you don't have a shield, 
 you can connect over the USB to your laptop or desktop (it's a bit more complicated for newbie, but we got you covered). 
 What's cool, is that the [list of hardware](http://blynkkk.github.io/#list-of-supported-hardware) that works with Blynk is really huge. 
   
-- **A Smartphone**. Blynk App is a well-designed interface builder. It works on both iOS and Android, so no holywars here, ok? 
+####**A Smartphone**. 
+Blynk App is a well-designed interface builder. It works on both iOS and Android, so no holywars here, ok? 
 
 #Downloads
 ##**Blynk Apps for iOS or Android** <br> 
