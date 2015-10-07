@@ -36,10 +36,6 @@ Some of the Widgets can send more than one value. And with this switch you can c
 
 - **SPLIT**:
 Each of the parameters is sent directly to the Pin on your hardware (e.g D7). You don't need to write any code.
-=======
-- SPLIT:
- Each of the parameters is sent directly to the Pin on your hardware (e.g D7). You don't need to write any code.
-
 
 	**NOTE:** In this mode you send multiple commands from one widget, which can reduce performance of your hardware.
 
