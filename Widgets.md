@@ -30,34 +30,35 @@ Read more about Virtual Pins [here](http://blynkkk.github.io/#blynk-main-operati
 
 ### SPLIT/MERGE
 Some of the Widgets can send more than one value. And with this switch you can control how to send them.
+
 <img src="images/split_merge.gif" style="width: 300px;"/>
 
-- SPLIT:
+- **SPLIT**:
 Each of the parameters is sent directly to the Pin on your hardware (e.g D7). You don't need to write any code.
 
-**NOTE:** In this mode you send multiple commands from one widget, which can reduce performance of your hardware.
+	**NOTE:** In this mode you send multiple commands from one widget, which can reduce performance of your hardware.
 
-Example: If you have a Joystick Widget and it's set to D3 and D4, it will send 2 commands over the Internet:
+	Example: If you have a Joystick Widget and it's set to D3 and D4, it will send 2 commands over the Internet:
 
-```cpp
-digitalWrite(3, value);
-digitalWrite(4, value);
+	```cpp
+	digitalWrite(3, value);
+	digitalWrite(4, value);
 ```
 
-- MERGE:
+- **MERGE**:
 When MERGE mode is selected, you are sending just 1 message, consisiting of array of values. But you'll need to parse it on the hardware. 
 
-This mode can be used with Virtual Pins only.
-
-Example: Add a zeRGBa Widget and set it to MERGE mode. Choose Virtual Pin V1
-
-```cpp
-BLYNK_WRITE(V1) // There is a Widget that WRITEs data to V1 
-{
-  int r = param[0].asInt(); // get a RED channel value
-  int g = param[1].asInt(); // get a GREEN channel value
-  int b = param[1].asInt(); // get a BLUE channel value
-}
+	This mode can be used with Virtual Pins only.
+	
+	Example: Add a zeRGBa Widget and set it to MERGE mode. Choose Virtual Pin V1
+	
+	```cpp
+	BLYNK_WRITE(V1) // There is a Widget that WRITEs data to V1 
+	{
+	  int r = param[0].asInt(); // get a RED channel value
+	  int g = param[1].asInt(); // get a GREEN channel value
+	  int b = param[1].asInt(); // get a BLUE channel value
+	}
 ```
 
 
