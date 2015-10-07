@@ -72,7 +72,7 @@ Works in push or switch modes. Allows to send 0/1 (LOW/HIGH) values.
 **Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino#L48)
 
 ### Slider
-Similar to potentiometer. Can be horizontal or vertical. Allows to send values between MIN and MAX.
+Similar to potentiometer. Allows to send values between MIN and MAX.
 
 <img src="images/slider.png" style="width: 77px;"/>
 

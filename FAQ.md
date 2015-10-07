@@ -1,7 +1,7 @@
 #FAQ
 
 - I backed Blynk on Kickstarter. Where are my widgets and why the app is free?
-> App is free becasuse otherwise you would have to pay to download it. This is how AppStore and Google Play works.
+> App is free because otherwise you would have to pay to download it. This is how AppStore and Google Play works.
 > Current Blynk release has a limited amount of widgets. We decided to make them free for everyone until we implement store. After that, every widget will be paid. However every backer will get them for free (according to their pledge).
   
 - What is Blynk Cloud?
@@ -34,4 +34,4 @@
 > - you can do it using [Bridge functionality](http://blynkkk.github.io/#widgets-other-bridge) which allows you to send messages from one hardware to another.
 
 - Does Blynk server store sensor data when app goes offline?
-> Yes, for all push widgets. We also plan to implement Data Log Widget, which will show you historical data on an app.
+> Yes, every command that hardware sends to server is stored. You could use [History Graph](http://blynkkk.github.io/#widgets-displays-history-graph) widget in order to view it.
