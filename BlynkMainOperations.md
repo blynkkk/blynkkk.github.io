@@ -1,9 +1,15 @@
 #Blynk main operations
 
 ##Virtual Pins
-Virtual Pins are designed to send any data from your microcontroller to the Blynk App and back. Think about Virtual Pins as channels for sending any data. Make sure you differentiate Virtual Pins from physical pins on your hardware. Virtual Pins have no physical representation.
+Blynk can control Digital and Analog IO Pins on you hardware directly. You don't even need to write code for it. 
+It's great for blinking LEDs, but often it's just not enough...
 
-Virtual Pins can be used to interface with libraries (Servo, LCD and others) and implement custom functionality. The device may send data to the Widget to the Virtual Pin like this:
+We designed Virtual Pins to send **any** data from your microcontroller to the Blynk App and back. 
+
+It opens huge opportunities for you, because anything you plug in to your hardware will be able to talk to Blynk.
+With Virtual Pins you can send something from the App, process it on Arduino and then send it back to the smartphone based on any logic you want. You can trigger functions, read I2C devices, convert values, control any servo motor and so on.
+
+Virtual Pins can be used to interface with libraries (Servo, LCD and others) and implement custom functionality. The device may send data to the Widgets to the Virtual Pin like this:
 
 ```cpp
 Blynk.virtualWrite(pin, "abc");
