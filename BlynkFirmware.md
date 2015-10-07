@@ -50,7 +50,8 @@ It will try to connect when it reaches first ``` Blynk.run() ``` or ``` Blynk.co
 
 If you want to skip connecting to the server, just call ``` Blynk.disconnect() ``` right after configuration.
 
-If your shield/connection type is not supported yet - you can craft it yourself easily! [Here is an example](https://github.com/blynkkk/blynk-library/blob/master/examples/BoardsAndShields/User_Defined_Connection/User_Defined_Connection.ino).
+If your shield/connection type is not supported yet - you can craft it yourself easily! 
+[Here is an example](https://github.com/blynkkk/blynk-library/blob/master/examples/BoardsAndShields/User_Defined_Connection/User_Defined_Connection.ino).
 
 ### Blynk.run()
 This function should be called frequently to process incoming commands and perform housekeeping of Blynk connection.

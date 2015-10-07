@@ -1,5 +1,6 @@
 # Blynk server
-Blynk Server is an Open Source [Netty](https://github.com/netty/netty)-based Java server, responsible for forwarding messages between Blynk mobile application and various microcontroller boards (i.e. Arduino, Raspberry Pi. etc).
+Blynk Server is an Open Source [Netty](https://github.com/netty/netty)-based Java server, responsible for forwarding 
+messages between Blynk mobile application and various microcontroller boards (i.e. Arduino, Raspberry Pi. etc).
 
 Download latest server build:
 
@@ -13,7 +14,8 @@ Java 8 required. (OpenJDK, Oracle).
 [How to install Java](http://blynkkk.github.io/#blynk-server-how-to-run-local-blynk-server-install-java-on-ubuntu).
 
 ## How to run local Blynk Server
-By default, mobile application uses 8443 port and is based on SSL/TLS sockets. Default hardware port is 8442 and is based on plain TCP/IP sockets.
+By default, mobile application uses 8443 port and is based on SSL/TLS sockets. Default hardware port is 8442 and 
+is based on plain TCP/IP sockets.
 
 ### Quick Local Server launch
 
@@ -112,7 +114,10 @@ server.properties options:
 
         app.ssl.port=8443
         
-+ For simplicity Blynk already provides server jar with build-in SSL certificates, so you have working server out of the box via SSL/TLS sockets. But as certificate and it's private key is in public, this is very unsecure. In order to fix that, you will need to provide your own certificates and change properties with path to your certificates, private key and it's password. 
++ For simplicity Blynk already provides server jar with build-in SSL certificates, so you have working server 
+out of the box via SSL/TLS sockets. But as certificate and it's private key is in public, this is very unsecure. 
+In order to fix that, you will need to provide your own certificates and change properties with path to your 
+certificates, private key and it's password. 
 
 	See how to generate self-signed certificates [here](http://blynkkk.github.io/#blynk-server-how-to-run-local-blynk-server-generate-ssl-certificates)
 

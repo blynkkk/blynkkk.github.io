@@ -7,9 +7,11 @@ It's great for blinking LEDs, but often it's just not enough...
 We designed Virtual Pins to send **any** data from your microcontroller to the Blynk App and back. 
 
 It opens huge opportunities for you, because anything you plug in to your hardware will be able to talk to Blynk.
-With Virtual Pins you can send something from the App, process it on Arduino and then send it back to the smartphone based on any logic you want. You can trigger functions, read I2C devices, convert values, control any servo motor and so on.
+With Virtual Pins you can send something from the App, process it on Arduino and then send it back to the smartphone 
+based on any logic you want. You can trigger functions, read I2C devices, convert values, control any servo motor and so on.
 
-Virtual Pins can be used to interface with external libraries (Servo, LCD and others) and implement custom functionality. The device may send data to the Widgets to the Virtual Pin like this:
+Virtual Pins can be used to interface with external libraries (Servo, LCD and others) and implement custom functionality. 
+The device may send data to the Widgets to the Virtual Pin like this:
 
 ```cpp
 Blynk.virtualWrite(pin, "abc");
@@ -20,7 +22,8 @@ Blynk.virtualWrite(pin, 12.34);
 ##Send data from app to hardware
 You can send any data from Widgets in the app to your hardware.
 
-All [Controller Widgets](http://blynkkk.github.io/#widgets-controllers) can send data to Virtual Pins on your hardware. For example, code below shows how to get values from the Button Widget in the App
+All [Controller Widgets](http://blynkkk.github.io/#widgets-controllers) can send data to Virtual Pins on your hardware. 
+For example, code below shows how to get values from the Button Widget in the App
 
 ```cpp
 BLYNK_WRITE(V1) //Button Widget is writing to pin V1
@@ -76,12 +79,14 @@ BLYNK_READ(V5) // Widget in the app READs Virtal Pin V5 with the certain frequen
 
 
 ###Pushing data from hardware
-If you need to PUSH sensor or other data from your hardware to Widget, you can write any logic you want. Just set the frequency to PUSH mode
+If you need to PUSH sensor or other data from your hardware to Widget, you can write any logic you want. 
+Just set the frequency to PUSH mode
 
 <img src="images/frequency_reading_push.png" style="width: 200px;"/>
 
 We recommend sending data in intervals and avoiding [Flood Error](http://blynkkk.github.io/#troubleshooting-flood-error).
-For example, this [SimpleTimer Library](http://playground.arduino.cc/Code/SimpleTimer) is an Arduino library for timed events. Please read instructions inside this [example sketch](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino#L30) for more details.
+For example, this [SimpleTimer Library](http://playground.arduino.cc/Code/SimpleTimer) is an Arduino library for timed events. 
+Please read instructions inside this [example sketch](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino#L30) for more details.
 
 SimpleTimer is included in Blynk's library. Here is how it can work:
 
@@ -124,7 +129,8 @@ void loop()
 
 ##Data types
 The actual values are sent as Strings, so there is no practical limits on the data that can be sent.  
-However, remember the limitations of the platform when dealing with numbers. For example, integer values on Arduino are 16-bit, allowing range -32768 to 32767.
+However, remember the limitations of the platform when dealing with numbers. For example, integer values on 
+Arduino are 16-bit, allowing range -32768 to 32767.
 You can interpret incoming data as Integers, Floats, Doubles and Strings. Use these commands: 
 
 ```cpp
@@ -142,10 +148,14 @@ param.getLength()
 ```
 
 ##Limitations and Recommendations
-- Don't put ```Blynk.virtualWrite``` and any other ```Blynk.*``` command inside ```void loop()```- it will cause lot's of outgoing messages to our server and your connection will be terminated; 
+- Don't put ```Blynk.virtualWrite``` and any other ```Blynk.*``` command inside ```void loop()```- it will cause 
+lot's of outgoing messages to our server and your connection will be terminated; 
 
-- We recommend calling functions with intervals. For example, this [SimpleTimer Library](http://playground.arduino.cc/Code/SimpleTimer) is a simple library for timed events. Please read instructions inside this [example sketch](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino#L30) for more details;
+- We recommend calling functions with intervals. For example, this 
+[SimpleTimer Library](http://playground.arduino.cc/Code/SimpleTimer) is a simple library for timed events. 
+Please read instructions inside this [example sketch](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino#L30) for more details;
 
 - Avoid using long delays with ```delay()``` – it may cause connection breaks;
 
-- If you send more than 10-100 (depends on hardware) values per second - you'll cause [Flood Error](http://blynkkk.github.io/#troubleshooting-flood-error)* and connection to your hardware will be terminated;
+- If you send more than 10-100 (depends on hardware) values per second - you'll cause 
+[Flood Error](http://blynkkk.github.io/#troubleshooting-flood-error)* and connection to your hardware will be terminated;

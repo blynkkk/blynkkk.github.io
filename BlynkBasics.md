@@ -1,11 +1,13 @@
 #Blynk Basics
 
-You can find [example sketches](https://github.com/blynkkk/blynk-library/tree/master/examples) covering basic Blynk Features. They are included in the libary. All the sketches are designed to be easily combined with each other.
+You can find [example sketches](https://github.com/blynkkk/blynk-library/tree/master/examples) covering basic Blynk Features. 
+They are included in the library. All the sketches are designed to be easily combined with each other.
  
 ##How it works?
 **Blynk works over the Internet.** So the one and only requirement is that your hardware can talk to the Internet.
 
-No matter what type of connection you choose - Ethernet, Wi-Fi or maybe this new ESP8266 everyone is talking about – Blynk libraries and example sketches will get you online, connect to Blynk Server and pair up with your smartphone.
+No matter what type of connection you choose - Ethernet, Wi-Fi or maybe this new ESP8266 everyone is talking about – 
+Blynk libraries and example sketches will get you online, connect to Blynk Server and pair up with your smartphone.
  
 <img src="images/architecture.png" style="width: 450px;"/>
 
@@ -74,7 +76,8 @@ It will try to connect when it hits first ``` Blynk.run() ``` or ``` Blynk.conne
 
 If you want to skip connecting to the server, just call ``` disconnect() ``` right after configuration.
 
-If your shield/connection type is not supported yet - you can craft it yourself easily! [Here is an example](https://github.com/blynkkk/blynk-library/blob/master/examples/BoardsAndShields/User_Defined_Connection/User_Defined_Connection.ino).
+If your shield/connection type is not supported yet - you can craft it yourself easily! 
+[Here is an example](https://github.com/blynkkk/blynk-library/blob/master/examples/BoardsAndShields/User_Defined_Connection/User_Defined_Connection.ino).
 
 ### Blynk.run()
 This function should be called frequently to process incoming commands and perform housekeeping of Blynk connection.
@@ -94,9 +97,12 @@ The library can perform basic pin IO (input-output) operations out-of-the-box:
 So, there is no need to write code for simple things like LED, Relay control, and analog sensors.
 
 ##Virtual Pins
-Virtual Pins are designed to send any data from your microcontroller to the Blynk App and back. Think about Virtual Pins as channels for sending any data. Make sure you differentiate Virtual Pins from physical pins on your hardware. Virtual Pins have no physical representation.
+Virtual Pins are designed to send any data from your microcontroller to the Blynk App and back. 
+Think about Virtual Pins as channels for sending any data. Make sure you differentiate Virtual Pins from physical 
+pins on your hardware. Virtual Pins have no physical representation.
 
-Virtual Pins can be used to interface with libraries (Servo, LCD and others) and implement custom functionality. The device may send data to the Widget to the Virtual Pin like this:
+Virtual Pins can be used to interface with libraries (Servo, LCD and others) and implement custom functionality. 
+The device may send data to the Widget to the Virtual Pin like this:
 ```cpp
 Blynk.virtualWrite(pin, "abc");
 Blynk.virtualWrite(pin, 123);
@@ -104,7 +110,9 @@ Blynk.virtualWrite(pin, 12.34);
 ```
 
 ###Sending data to hardware
-All [Controller Widgets](http://blynkkk.github.io/#widgets-controllers) can send data to Virtual Pins on your hardware. For instance, below code shows how to retrieve 1 and 0 int value on hardware via pressing button on virtual pin 1 within Application:
+All [Controller Widgets](http://blynkkk.github.io/#widgets-controllers) can send data to Virtual Pins on your hardware. 
+For instance, below code shows how to retrieve 1 and 0 int value on hardware via pressing button on virtual pin 1 
+within Application:
 ```cpp
 BLYNK_WRITE(1)
 {
@@ -174,7 +182,8 @@ void sendUptime()
 
 ###Data types
 The actual values are sent as strings, so there is no practical limits on the data that can be sent.  
-However, remember the limitations of the platform when dealing with numbers. For example the integer on Arduino is 16-bit, allowing range -32768 to 32767.
+However, remember the limitations of the platform when dealing with numbers. For example the integer on Arduino 
+is 16-bit, allowing range -32768 to 32767.
 You can interpret incoming data as Integers, Floats, Doubles and Strings:
 ```cpp
 param.asInt();
@@ -192,7 +201,10 @@ param.getLength()
 
 ###Limitations and recommendations
 
-- Don't put ```Blynk.virtualWrite``` and any other ```Blynk.*``` command inside ```void loop()```. This will cause lot's of outgoing messages to our server and your connection will be terminated. We suggest you to use [SimpleTimer](http://playground.arduino.cc/Code/SimpleTimer) library for events that are executed in intervals. Read instructions inside this [sketch](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino#L30) for more details.
+- Don't put ```Blynk.virtualWrite``` and any other ```Blynk.*``` command inside ```void loop()```. 
+This will cause lot's of outgoing messages to our server and your connection will be terminated. 
+We suggest you to use [SimpleTimer](http://playground.arduino.cc/Code/SimpleTimer) library for events that are executed in intervals. 
+Read instructions inside this [sketch](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino#L30) for more details.
 - Avoid using long delays with ```delay()``` – it may cause connection breaks
 - Don't send more that 10 values per second - otherwise you'll get FLOOD error and your connection will be terminated.
 
