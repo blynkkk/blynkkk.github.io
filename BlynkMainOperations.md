@@ -93,7 +93,7 @@ SimpleTimer is included in Blynk's library. Here is how it can work:
 
 char auth[] = "YourAuthToken"; // Put your token here
 
-SimpleTimer timer; // Create a Timer object called...timer! 
+SimpleTimer timer; // Create a Timer object called "timer"! 
 
 void setup()
 {
@@ -105,10 +105,10 @@ void setup()
 
 void sendUptime()
 {
-  // This function sends Arduino's up time every 1 second to Virtual Pin (5).
-  // In the app, Widget's reading frequency should be set to PUSH. 
+  // This function sends Arduino up time every 1 second to Virtual Pin (V5)
+  // In the app, Widget's reading frequency should be set to PUSH
   // You can send anything with any interval using this construction
-  // Don't send more that 10 values per second.
+  // Don't send more that 10 values per second
   
   Blynk.virtualWrite(V5, millis() / 1000);
 }
