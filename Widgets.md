@@ -94,13 +94,11 @@ Timer triggers actions at a specific time. Even if smartphone is offline. Start 
 Control servo movements in 4 directions
 
 ####Settings:
-#####SPLIT/MERGE modes
-Read Here - Link
-
-#####Rotate on Tilt
-When it's ON, Joystck will automatically rotate if you use your smartphone in landscape orientation  
-#####Auto-Return
-When it's OFF, Joystick handle will not return back to center position. It will stay where you left it. 
+- SPLIT/MERGE modes - read [here](http://blynkkk.github.io/#widgets-common-widget-settings-splitmerge)
+- Rotate on Tilt
+ When it's ON, Joystck will automatically rotate if you use your smartphone in landscape orientation  
+- Auto-Return
+ When it's OFF, Joystick handle will not return back to center position. It will stay where you left it. 
 
 <img src="images/joystick.png" style="width: 77px;"/>
 
