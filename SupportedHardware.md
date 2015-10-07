@@ -25,15 +25,15 @@
 - Particle (formerly Spark: https://github.com/vshymanskyy/blynk-library-spark)
   - Core
   - Photon
-- JavaScript library for Linux, Windows, OS X (https://www.npmjs.com/package/blynk-library)
+- JavaScript library (https://www.npmjs.com/package/blynk-library)
+  - Regular PC with Linux / Windows / OS X
   - Raspberry Pi
   - Intel Edison
   - Intel Galileo
   - VoCore (OpenWRT + [Espruino package](https://github.com/vshymanskyy/OpenWRT-Espruino-packages))
-  - Regular PC
+  - Espruino Pico
   - ...
 - MicroPython: WiPy
-- Espruino: Pico
 
 ## Arduino connection types
 
