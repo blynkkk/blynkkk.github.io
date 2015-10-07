@@ -6,8 +6,6 @@ Download latest server build:
 
 [Download Blynk Server >](https://github.com/blynkkk/blynk-server/releases)
 
-[ ![Build Status](https://travis-ci.org/blynkkk/blynk-server.svg?branch=master)](https://travis-ci.org/blynkkk/blynk-server)
-
 ## Requirements
 Java 8 required. (OpenJDK, Oracle). 
 
