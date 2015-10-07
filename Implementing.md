@@ -1,6 +1,6 @@
 # Implementing a Blynk HW client (library)
 Currently we provide Arduino/C++ implementation of the library.
-It is very extensible and modular, look at [the list of supported hardware](http://blynkkk.github.io/#list-of-supported-hardware).
+It is very extensible and modular, look at [the list of supported hardware](http://docs.blynk.cc/#list-of-supported-hardware).
 Adding new connection types and Arduino-compatible boards is easy.
 
 TODO: Porting guide.
@@ -23,7 +23,7 @@ This document hints how to write a custom library.
 * Serialize/deserialize Blynk protocol
 * Handle direct pin operations
 * Should be portable across similar devices (or same technology/programming language), if possible
-* Should detect and notify the user about [troubles](http://blynkkk.github.io/#troubleshooting) where possible (especially Flood)
+* Should detect and notify the user about [troubles](http://docs.blynk.cc/#troubleshooting) where possible (especially Flood)
 
 ### Adding new HW board
 

@@ -9,7 +9,7 @@ Download latest server build:
 ## Requirements
 Java 8 required. (OpenJDK, Oracle). 
 
-[How to install Java](http://blynkkk.github.io/#blynk-server-how-to-run-local-blynk-server-install-java-on-ubuntu).
+[How to install Java](http://docs.blynk.cc/#blynk-server-how-to-run-local-blynk-server-install-java-on-ubuntu).
 
 ## How to run local Blynk Server
 By default, mobile application uses 8443 port and is based on SSL/TLS sockets. Default hardware port is 8442 and 
@@ -117,7 +117,7 @@ out of the box via SSL/TLS sockets. But as certificate and it's private key is i
 In order to fix that, you will need to provide your own certificates and change properties with path to your 
 certificates, private key and it's password. 
 
-	See how to generate self-signed certificates [here](http://blynkkk.github.io/#blynk-server-how-to-run-local-blynk-server-generate-ssl-certificates)
+	See how to generate self-signed certificates [here](http://docs.blynk.cc/#blynk-server-how-to-run-local-blynk-server-generate-ssl-certificates)
 
 	Points to certificate and key that placed in same folder as running jar:
 	
@@ -175,7 +175,7 @@ certificates, private key and it's password.
 
         hard.socket.idle.timeout=15
         
-+ Mostly required for local servers setup in case user want to log raw data in CSV format. See [raw data](http://blynkkk.github.io/#blynk-server-how-to-run-local-blynk-server-raw-data-storage) section for more info.
++ Mostly required for local servers setup in case user want to log raw data in CSV format. See [raw data](http://docs.blynk.cc/#blynk-server-how-to-run-local-blynk-server-raw-data-storage) section for more info.
         
         enable.raw.data.store=true
         
@@ -203,7 +203,7 @@ NOTE: you'll need to setup Gmail to allow less secured applications. Go [here](h
 
 ### Raw data storage
 By default, raw data storage is enabled. Every 'write' ```Blynk.virtualWrite()``` command will be stored on disk. 
-The default path is "data" folder within [data.folder](http://blynkkk.github.io/#blynk-server-how-to-run-local-blynk-server-advanced-local-server-setup) property of server properties.
+The default path is "data" folder within [data.folder](http://docs.blynk.cc/#blynk-server-how-to-run-local-blynk-server-advanced-local-server-setup) property of server properties.
 
 File name format is: 
         

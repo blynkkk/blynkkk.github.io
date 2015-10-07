@@ -22,7 +22,7 @@ Blynk.virtualWrite(pin, 12.34);
 ##Send data from app to hardware
 You can send any data from Widgets in the app to your hardware.
 
-All [Controller Widgets](http://blynkkk.github.io/#widgets-controllers) can send data to Virtual Pins on your hardware. 
+All [Controller Widgets](http://docs.blynk.cc/#widgets-controllers) can send data to Virtual Pins on your hardware. 
 For example, code below shows how to get values from the Button Widget in the App
 
 ```cpp
@@ -84,7 +84,7 @@ Just set the frequency to PUSH mode
 
 <img src="images/frequency_reading_push.png" style="width: 200px;"/>
 
-We recommend sending data in intervals and avoiding [Flood Error](http://blynkkk.github.io/#troubleshooting-flood-error).
+We recommend sending data in intervals and avoiding [Flood Error](http://docs.blynk.cc/#troubleshooting-flood-error).
 For example, this [SimpleTimer Library](http://playground.arduino.cc/Code/SimpleTimer) is an Arduino library for timed events. 
 Please read instructions inside this [example sketch](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino#L30) for more details.
 
@@ -158,4 +158,4 @@ Please read instructions inside this [example sketch](https://github.com/blynkkk
 - Avoid using long delays with ```delay()``` – it may cause connection breaks;
 
 - If you send more than 10-100 (depends on hardware) values per second - you'll cause 
-[Flood Error](http://blynkkk.github.io/#troubleshooting-flood-error)* and connection to your hardware will be terminated;
+[Flood Error](http://docs.blynk.cc/#troubleshooting-flood-error)* and connection to your hardware will be terminated;

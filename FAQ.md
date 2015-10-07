@@ -23,15 +23,15 @@
 > No. But it's planned for next releases.
 
 - Does Blynk support Ethernet / Wi-FI / UART?
-> Yes, all of them. See full list of [supported hardware](http://blynkkk.github.io/#list-of-supported-hardware) and shields.
+> Yes, all of them. See full list of [supported hardware](http://docs.blynk.cc/#list-of-supported-hardware) and shields.
 
 - I don't have any shield. Can I use Blynk with my computer?
-> Yes, you can use Blynk just with a USB cable. There is a step-by-step [instruction](http://blynkkk.github.io/#other-hardware-connect-over-usb) on how to do it.
+> Yes, you can use Blynk just with a USB cable. There is a step-by-step [instruction](http://docs.blynk.cc/#other-hardware-connect-over-usb) on how to do it.
 
 - Can Blynk handle multiple Arduinos?
 > Yes. There 2 ways right now :
-> - you may use same [Auth Token](http://blynkkk.github.io/#getting-started-getting-started-with-application-auth-token) for different hardware. In that case you can control few hardwares from 1 dashboard.
-> - you can do it using [Bridge functionality](http://blynkkk.github.io/#widgets-other-bridge) which allows you to send messages from one hardware to another.
+> - you may use same [Auth Token](http://docs.blynk.cc/#getting-started-getting-started-with-application-auth-token) for different hardware. In that case you can control few hardwares from 1 dashboard.
+> - you can do it using [Bridge functionality](http://docs.blynk.cc/#widgets-other-bridge) which allows you to send messages from one hardware to another.
 
 - Does Blynk server store sensor data when app goes offline?
-> Yes, every command that hardware sends to server is stored. You could use [History Graph](http://blynkkk.github.io/#widgets-displays-history-graph) widget in order to view it.
+> Yes, every command that hardware sends to server is stored. You could use [History Graph](http://docs.blynk.cc/#widgets-displays-history-graph) widget in order to view it.

@@ -37,4 +37,4 @@ If you want to skip SSL, and connect to TCP, you can also do that:
 
 #### Use Local Blynk Server
 
-In order to gain maximum security you could [install Blynk server locally](http://blynkkk.github.io/#blynk-server) and restrict access to your network, so nobody except you could access it.
+In order to gain maximum security you could [install Blynk server locally](http://docs.blynk.cc/#blynk-server) and restrict access to your network, so nobody except you could access it.

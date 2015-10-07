@@ -110,7 +110,7 @@ Blynk.virtualWrite(pin, 12.34);
 ```
 
 ###Sending data to hardware
-All [Controller Widgets](http://blynkkk.github.io/#widgets-controllers) can send data to Virtual Pins on your hardware. 
+All [Controller Widgets](http://docs.blynk.cc/#widgets-controllers) can send data to Virtual Pins on your hardware. 
 For instance, below code shows how to retrieve 1 and 0 int value on hardware via pressing button on virtual pin 1 
 within Application:
 ```cpp

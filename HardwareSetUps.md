@@ -3,7 +3,7 @@
 If you don't have any shield and your hardware doesn't have any connectivity, you can still use Blynk – directly over USB :
 
 1. Upload [sketch below](https://github.com/blynkkk/blynk-library/blob/master/examples/BoardsAndShields/Arduino_Serial_USB/Arduino_Serial_USB.ino) 
-and change [Auth Token](http://blynkkk.github.io/#getting-started-getting-started-with-application-4-auth-token)
+and change [Auth Token](http://docs.blynk.cc/#getting-started-getting-started-with-application-4-auth-token)
 
 	```cpp
 	#include <SoftwareSerial.h>

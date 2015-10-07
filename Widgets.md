@@ -23,7 +23,7 @@ This is one of the main parameters you need to set. It defines which pin to cont
 **Digital Pins** - represent physical Analog IO pins on your hardware
 
 **Virtual Pins** - have no physical representation. They are used for any data transfer between Blynk App and your hardware.
-Read more about Virtual Pins [here](http://blynkkk.github.io/#blynk-main-operations-virtual-pins).
+Read more about Virtual Pins [here](http://docs.blynk.cc/#blynk-main-operations-virtual-pins).
 
 ### Data Mapping
 >Screenshot
@@ -117,7 +117,7 @@ Timer triggers actions at a specific time. Even if smartphone is offline. Start 
 Control servo movements in 4 directions
 
 ####Settings:
-- SPLIT/MERGE modes - read [here](http://blynkkk.github.io/#widgets-common-widget-settings-splitmerge)
+- SPLIT/MERGE modes - read [here](http://docs.blynk.cc/#widgets-common-widget-settings-splitmerge)
 
 - **Rotate on Tilt**
 

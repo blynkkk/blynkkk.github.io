@@ -18,7 +18,7 @@ Use a **real** e-mail address - it will be used later and you'll appreciate that
 
 Account is needed to store your Projects and for you to have access to them from multiple devices. It's also a security measure. 
 
-You can always install your [Private Blynk Server](http://blynkkk.github.io/#blynk-server-requirements) and have full control.   
+You can always install your [Private Blynk Server](http://docs.blynk.cc/#blynk-server-requirements) and have full control.   
 
 ###2. Create new project
 After you successfully logged into your account, start by creating a new Project. Give it a name.
@@ -26,7 +26,7 @@ After you successfully logged into your account, start by creating a new Project
 <img src="images/create_new_project.png" style="width: 200px;"/>
 
 ###3. Choose your hardware
-Select the hardware you will use. Check out how big is the [list of supported hardware](http://blynkkk.github.io/#list-of-supported-hardware)!
+Select the hardware you will use. Check out how big is the [list of supported hardware](http://docs.blynk.cc/#list-of-supported-hardware)!
 
 <img src="images/select_hardware.png" style="width: 200px;"/>
 
@@ -77,7 +77,7 @@ When you are done with the Settings - press **PLAY** button. This will switch yo
 You may get a message "Arduino UNO is offline". Don't worry now. We'll get to that in a minute.
 
 ##Getting started with hardware
-Hope you have Blynk Library installed. If not - [check here](http://blynkkk.github.io/#downloads-blynk-library).
+Hope you have Blynk Library installed. If not - [check here](http://docs.blynk.cc/#downloads-blynk-library).
 
 We've prepared example sketches that will get your microcomputer online. Open the example sketch according to the device or shield you are using.
 
@@ -112,7 +112,7 @@ In this sketch find this line:
 ```cpp
 char auth[] = "YourAuthToken";
 ```
-This is the [Auth Token](http://blynkkk.github.io/#getting-started-getting-started-with-application-4-auth-token) that you've sent over e-mail recently. 
+This is the [Auth Token](http://docs.blynk.cc/#getting-started-getting-started-with-application-4-auth-token) that you've sent over e-mail recently. 
 Please check your email - it should be there already. 
 Copy it from e-mail and put inside curly brackets. 
 

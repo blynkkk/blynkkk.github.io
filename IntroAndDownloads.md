@@ -6,7 +6,7 @@ This guide will help you to understand how to get started using Blynk and give y
 If you want to jump straight into playing with Blynk, check out Getting Started.
 <br>
 
-[Getting Started >](http://blynkkk.github.io/#getting-started)
+[Getting Started >](http://docs.blynk.cc/#getting-started)
 
 ##How Blynk Works
 Blynk was designed for the Internet of Things. It can control hardware remotely, it can display sensor data and do lot's of other cool things with electronics. 
@@ -15,7 +15,7 @@ There are three major components in the platform:
 
 - **Blynk Apps** – allow to you create amazing interfaces for the projects from various Widgets we provide.
 
-- **Blynk Server** is responsible for all the communications between the smartphone and hardware. You can use our Blynk Cloud or run your [private Blynk server](http://blynkkk.github.io/#blynk-server-requirements) locally. It's open-source and can be launched even on Raspberry Pi.
+- **Blynk Server** is responsible for all the communications between the smartphone and hardware. You can use our Blynk Cloud or run your [private Blynk server](http://docs.blynk.cc/#blynk-server-requirements) locally. It's open-source and can be launched even on Raspberry Pi.
 
 - **Blynk Libraries** for all the popular hardware platforms - enable communication with the server and process all the incoming and outcoming commands.
 
@@ -33,7 +33,7 @@ We hope you already have an Arduino or someting similar. If not - come on, get o
 It means that the hardware you choose should be able to connect to Internet. Some of the boards, like Arduino Uno will need an Ethernet or Wi-Fi Shield to communicate, 
 others are already Internet-enabled: like ESP8266, Particle Photon or SparkFun ESP Thing. But even if you don't have a shield, 
 you can connect over the USB to your laptop or desktop (it's a bit more complicated for newbie, but we got you covered). 
-What's cool, is that the [list of hardware](http://blynkkk.github.io/#list-of-supported-hardware) that works with Blynk is really huge. 
+What's cool, is that the [list of hardware](http://docs.blynk.cc/#list-of-supported-hardware) that works with Blynk is really huge. 
   
 ####**A Smartphone**. 
 Blynk App is a well-designed interface builder. It works on both iOS and Android, so no holywars here, ok? 
