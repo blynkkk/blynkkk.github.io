@@ -1,4 +1,4 @@
-#List Of Supported Hardware
+#Supported Hardware
 
 ## Platforms
 
