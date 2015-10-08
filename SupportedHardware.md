@@ -2,13 +2,13 @@
 
 ## Platforms
 
-- Arduino (https://github.com/blynkkk/blynk-library)
+- **Arduino** (https://github.com/blynkkk/blynk-library)
   - Uno, Duemilanove (select "UNO" in the list, not the "Due")
   - Nano, Mini, Pro Mini, Pro Micro
   - Mega
   - YÚN (onboard WiFi and Ethernet, via Bridge)
   - Due - limited support
-- Arduino-like
+- **Arduino-like**
   - ESP8266 (running standalone, using https://github.com/esp8266/Arduino)
   - Intel Edison
   - Intel Galileo
@@ -16,16 +16,20 @@
   - Wicked WildFire (CC3000)
   - TinyCircuits TinyDuino (CC3000)
   - LightBlue Bean (Bluetooth 4.0 LE). This is only for experts, we're working to simplifying things now...
-- Energia
+- **Energia**
   - Texas Instruments
     - CC3200-LaunchXL
     - Tiva C Connected LaunchPad
     - Stellaris LM4F120 LaunchPad
   - RedBearLab (CC3200, WiFi Mini)
-- Particle (formerly Spark: https://github.com/vshymanskyy/blynk-library-spark)
+- **Particle** (formerly Spark: https://github.com/vshymanskyy/blynk-library-spark)
   - Core
   - Photon
-- JavaScript library (https://www.npmjs.com/package/blynk-library)
+- **ARM mbed** (soon)
+  - Seeed Tiny BLE
+  - RedBearLab BLE Nano
+  - BBC Micro:bit
+- **JavaScript** (Node.js, Espruino) (https://www.npmjs.com/package/blynk-library)
   - Regular PC with Linux / Windows / OS X
   - Raspberry Pi
   - Intel Edison
@@ -33,7 +37,8 @@
   - VoCore (OpenWRT + [Espruino package](https://github.com/vshymanskyy/OpenWRT-Espruino-packages))
   - Espruino Pico
   - ...
-- MicroPython: WiPy
+- **Python** (MicroPython)
+  - WiPy
 
 ## Arduino connection types
 
