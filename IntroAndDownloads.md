@@ -9,17 +9,23 @@ If you want to jump straight into playing with Blynk, check out Getting Started.
 [Getting Started >](http://docs.blynk.cc/#getting-started)
 
 ##How Blynk Works
-Blynk was designed for the Internet of Things. It can control hardware remotely, it can display sensor data and do lot's of other cool things with electronics. 
+Blynk was designed for the Internet of Things. It can control hardware remotely, it can display sensor data, 
+it can store data, analyze and do lot's of other cool things. 
 
 There are three major components in the platform: 
 
 - **Blynk Apps** – allow to you create amazing interfaces for the projects from various Widgets we provide.
 
-- **Blynk Server** is responsible for all the communications between the smartphone and hardware. You can use our Blynk Cloud or run your [private Blynk server](http://docs.blynk.cc/#blynk-server-requirements) locally. It's open-source and can be launched even on Raspberry Pi.
+- **Blynk Server** is responsible for all the communications between the smartphone and hardware. 
+You can use our Blynk Cloud or run your [private Blynk server](http://docs.blynk.cc/#blynk-server-requirements) locally. 
+It's open-source, could easily handle thousands of devices and can be launched even on Raspberry Pi.
 
-- **Blynk Libraries** for all the popular hardware platforms - enable communication with the server and process all the incoming and outcoming commands.
+- **Blynk Libraries** for all the popular hardware platforms - enable communication with the server and 
+process all the incoming and outcoming commands.
 
-Now imagine: every time you press a Button in the Blynk app, the message travels to ~~space~~ Blynk Cloud, where it magically finds the way to your hardware. It works the same in the opposite direction and everything happens in a blynk of an eye.
+Now imagine: every time you press a Button in the Blynk app, the message travels to ~~space~~ Blynk Cloud, 
+where it magically finds the way to your hardware. It works the same in the opposite direction and 
+everything happens in a blynk of an eye.
 
 <img src="images/architecture.png" style="width: 640px;"/>
 
@@ -30,9 +36,10 @@ At this point you might be thinking: **"Ok, I want it. What do I need to start?"
 We hope you already have an Arduino or someting similar. If not - come on, get one ASAP!
 
 **Blynk works over the Internet.** 
-It means that the hardware you choose should be able to connect to Internet. Some of the boards, like Arduino Uno will need an Ethernet or Wi-Fi Shield to communicate, 
-others are already Internet-enabled: like ESP8266, Particle Photon or SparkFun ESP Thing. But even if you don't have a shield, 
-you can connect over the USB to your laptop or desktop (it's a bit more complicated for newbie, but we got you covered). 
+It means that the hardware you choose should be able to connect to Internet. Some of the boards, like Arduino Uno 
+will need an Ethernet or Wi-Fi Shield to communicate, others are already Internet-enabled: like ESP8266, 
+Particle Photon or SparkFun ESP Thing. But even if you don't have a shield, you can connect over the USB to your 
+laptop or desktop (it's a bit more complicated for newbie, but we got you covered). 
 What's cool, is that the [list of hardware](http://docs.blynk.cc/#list-of-supported-hardware) that works with Blynk is really huge. 
   
 ####**A Smartphone**. 
