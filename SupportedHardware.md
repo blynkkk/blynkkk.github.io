@@ -45,6 +45,7 @@
 - USB (Serial), connected to your laptop or desktop
 - Official Ethernet shield (W5100)
 - Official Arduino WiFi shield
+- Adafruit Bluefruit LE (nRF8001 Breakout, BLE 4.0), *soon*
 - Adafruit CC3000 WiFi Breakout / Shield
 - ENC28J60 - based boards
 - ESP8266 as WiFi modem (running original firmware)
