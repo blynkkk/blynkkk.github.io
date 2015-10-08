@@ -4,7 +4,7 @@ Widgets are interface modules. Each of them performs a specific input/ output fu
 There are 4 types of Widgets: 
 
 - **Controllers** - they send commands to hardware. Use them to control your stuff;
-- **Displays** - used for various vizualizations of data that comes from hardware to the smartphone;
+- **Displays** - used for various visualizations of data that comes from hardware to the smartphone;
 - **Notifications** - are various widgets to send messages and notifications;
 - **Others** - widgets that don't belong to any category;
 
@@ -47,7 +47,7 @@ Each of the parameters is sent directly to the Pin on your hardware (e.g D7). Yo
 ```
 
 - **MERGE**:
-When MERGE mode is selected, you are sending just 1 message, consisiting of array of values. But you'll need to parse it on the hardware. 
+When MERGE mode is selected, you are sending just 1 message, consisting of array of values. But you'll need to parse it on the hardware. 
 
 	This mode can be used with Virtual Pins only.
 	
@@ -61,29 +61,6 @@ When MERGE mode is selected, you are sending just 1 message, consisiting of arra
 	  int b = param[2].asInt(); // get a BLUE channel value
 	}
 ```
-=======
- Example: If you have a Joystick Widget and it's set to D3 and D4, it will send 2 commands over the Internet:
-
- ```cpp
- digitalWrite(3, x);
- digitalWrite(4, y);
- ```
-
-- MERGE:
- When MERGE mode is selected, you are sending just 1 message, consisiting of array of values. But you'll need to parse it on the hardware. 
-
- This mode can be used with Virtual Pins only.
-
- Example: Add a zeRGBa Widget and set it to MERGE mode. Choose Virtual Pin V1
-
- ```cpp
- BLYNK_WRITE(V1) // There is a Widget that WRITEs data to V1 
- {
-   int r = param[0].asInt(); // get a RED channel value
-   int g = param[1].asInt(); // get a GREEN channel value
-   int b = param[1].asInt(); // get a BLUE channel value
- }
- ```
 
 ##Controllers
 ### Button
