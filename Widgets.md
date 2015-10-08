@@ -58,7 +58,7 @@ When MERGE mode is selected, you are sending just 1 message, consisiting of arra
 	{
 	  int r = param[0].asInt(); // get a RED channel value
 	  int g = param[1].asInt(); // get a GREEN channel value
-	  int b = param[1].asInt(); // get a BLUE channel value
+	  int b = param[2].asInt(); // get a BLUE channel value
 	}
 ```
 =======
