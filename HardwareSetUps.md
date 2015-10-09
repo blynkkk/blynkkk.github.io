@@ -100,18 +100,18 @@ Additional materials:
 3. Download and build Blynk:
 
 
-```bash
-$ git clone https://github.com/blynkkk/blynk-library.git
-$ cd blynk-library/linux
-$ make clean all target=raspberry
-```
+	```bash
+	$ git clone https://github.com/blynkkk/blynk-library.git
+	$ cd blynk-library/linux
+	$ make clean all target=raspberry
+	```
 
-5. Run Blynk:
+4. Run Blynk:
 
 	```bash
 	$ sudo ./blynk --token=YourAuthToken
 	```
-6. To enable Blynk auto restart for Pi, find ```*/etc/init.d/rc.local*``` file and add there:
+5. To enable Blynk auto restart for Pi, find ```*/etc/init.d/rc.local*``` file and add there:
 
 	```
 	/FULL_PATH_TO_LIB/blynk-library/linux/blynk --token=<Auth Token> 
