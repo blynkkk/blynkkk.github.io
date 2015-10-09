@@ -98,19 +98,20 @@ Additional materials:
 1. Connect your Raspberry Pi to the Internet and open it's console.
 2. Install [WiringPi](http://wiringpi.com/download-and-install/)
 3. Download and build Blynk:
-4. 
+
+
 ```bash
 $ git clone https://github.com/blynkkk/blynk-library.git
 $ cd blynk-library/linux
 $ make clean all target=raspberry
 ```
 
-4. Run Blynk:
+5. Run Blynk:
 
 	```bash
 	$ sudo ./blynk --token=YourAuthToken
 	```
-5. To enable Blynk auto restart for Pi, find ```*/etc/init.d/rc.local*``` file and add there:
+6. To enable Blynk auto restart for Pi, find ```*/etc/init.d/rc.local*``` file and add there:
 
 	```
 	/FULL_PATH_TO_LIB/blynk-library/linux/blynk --token=<Auth Token> 
@@ -122,7 +123,7 @@ $ make clean all target=raspberry
 	/home/pi/blynk-library/linux/blynk --token=<my token> &
 	```
 		
-	**We have also provided a build script. YOu can simply run it inside of the ```linux``` directory:**
+We have also provided a build script. You can simply run it inside of the ```linux``` directory:
 
 ```
 $ ./build.sh raspberry
