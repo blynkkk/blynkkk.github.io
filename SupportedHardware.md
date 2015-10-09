@@ -61,3 +61,5 @@
 ## Made by Community
 
 - [WIZnet-W5500-EVB](http://instructables.com/id/WIZnet-W5500-EVB-and-Blynk-App-communication)
+- [LabVIEW](http://community.blynk.cc/t/blynk-with-labview/1200)
+- [Node-RED](https://github.com/tzapu/node-red-contrib-blynk)
