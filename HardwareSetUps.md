@@ -2,7 +2,7 @@
 ## Arduino over USB (no shield)
 If you don't have any shield and your hardware doesn't have any connectivity, you can still use Blynk – directly over USB :
 
-1. Upload [sketch below](https://github.com/blynkkk/blynk-library/blob/master/examples/BoardsAndShields/Arduino_Serial_USB/Arduino_Serial_USB.ino) 
+1. Open [Arduino Serial USB example](https://github.com/blynkkk/blynk-library/blob/master/examples/BoardsAndShields/Arduino_Serial_USB/Arduino_Serial_USB.ino) 
 and change [Auth Token](http://docs.blynk.cc/#getting-started-getting-started-with-application-4-auth-token)
 
 	```cpp
@@ -28,7 +28,11 @@ and change [Auth Token](http://docs.blynk.cc/#getting-started-getting-started-wi
 	  Blynk.run();
 	}
 	```
-2. Run the script  which is located in "scripts" folder of library root, e.g. 'blynk-library/scripts`
+2. Run the script which is usually located in ```/scripts``` folder:
+
+- Windows:```My Documents\Arduino\libraries\Blynk\scripts```
+- Mac	```User$/Documents/Arduino/libraries/Blynk/scripts```
+
   
   **On Windows:**
     1. Open cmd.exe
@@ -39,95 +43,122 @@ and change [Auth Token](http://docs.blynk.cc/#getting-started-getting-started-wi
     3. Run ```blynk-ser.bat``` file. For example : ```blynk-ser.bat -c COM4``` (where COM4 is port with your Arduino)
     4. And press "Enter", press "Enter" and press "Enter"
   
-  **On Linux and Mac** use: 
+  **On Linux and Mac**:
+  
+  Navigate to /scripts folder. For example:
   
   ```
-  ./blynk-ser.sh
+  cd User$/Documents/Arduino/libraries/Blynk/scripts
   ``` 
+  When inside this folder, run:
+  
+  ```
+  user:scripts User$ ./blynk-ser.sh
+  ``` 
+  
   You may need to run it with ```sudo```
+  
+  ```
+  user:scripts User$ sudo ./blynk-ser.sh
+  ``` 
 
-This is what you'll see in Terminal app on Mac (usbmodem address can be different):
+	This is what you'll see in Terminal app on Mac (usbmodem address can be different):
 
-```
-[ Press Ctrl+C to exit ]
-/dev/tty.usbmodem not found.
-Select serial port [ /dev/tty.usbmodem1451 ]: 
-```
-Select and copy this serial port address(```/dev/tty.usbmodem1451```) and paste it back:
-
-```
-Select serial port [ /dev/tty.usbmodem1451 ]: /dev/tty.usbmodem1451
-```
-
-After you press Enter, you should see something similar:
-
-```
-Resetting device /dev/tty.usbmodem1451...
-Connecting: GOPEN:/dev/tty.usbmodem1451,raw,echo=0,clocal=1,cs8,nonblock=1,ixoff=0,ixon=0,ispeed=9600,ospeed=9600,crtscts=0 <-> openssl-connect:cloud.blynk.cc:8441,cafile=/Users/.../server.crt,nodelay
-2015/10/03 00:29:45 socat[30438.2046857984] N opening character device "/dev/tty.usbmodem1451" for reading and writing
-2015/10/03 00:29:45 socat[30438.2046857984] N opening connection to LEN=16 AF=2 45.55.195.102:8441
-2015/10/03 00:29:45 socat[30438.2046857984] N successfully connected from local address LEN=16 AF=2 192.168.0.2:56821
-2015/10/03 00:29:45 socat[30438.2046857984] N SSL connection using AES128-SHA
-2015/10/03 00:29:45 socat[30438.2046857984] N starting data transfer loop with FDs [3,3] and [4,4]
-```
+	```
+	[ Press Ctrl+C to exit ]
+	/dev/tty.usbmodem not found.
+	Select serial port [ /dev/tty.usbmodem1451 ]: 
+	```
+	Copy the serial port address: ```/dev/tty.usbmodem1451``` and paste it back:
+	
+	```
+	Select serial port [ /dev/tty.usbmodem1451 ]: /dev/tty.usbmodem1451
+	```
+	
+	After you press Enter, you should see something similar:
+	
+	```
+	Resetting device /dev/tty.usbmodem1451...
+	Connecting: GOPEN:/dev/tty.usbmodem1451,raw,echo=0,clocal=1,cs8,nonblock=1,ixoff=0,ixon=0,ispeed=9600,ospeed=9600,crtscts=0 <-> openssl-connect:cloud.blynk.cc:8441,cafile=/Users/.../server.crt,nodelay
+	2015/10/03 00:29:45 socat[30438.2046857984] N opening character device "/dev/tty.usbmodem1451" for reading and writing
+	2015/10/03 00:29:45 socat[30438.2046857984] N opening connection to LEN=16 AF=2 45.55.195.102:8441
+	2015/10/03 00:29:45 socat[30438.2046857984] N successfully connected from local address LEN=16 AF=2 192.168.0.2:56821
+	2015/10/03 00:29:45 socat[30438.2046857984] N SSL connection using AES128-SHA
+	2015/10/03 00:29:45 socat[30438.2046857984] N starting data transfer loop with FDs [3,3] and [4,4]
+	```
 
 <span style="color:#D3435C;">**NOTE:** Arduino IDE may complain with "programmer is not responding". You need to terminate script before uploading new sketch.. </span>
 
-Here are some additional materials :
+Additional materials:
 
-- [Instructables](http://www.instructables.com/id/Control-arduino-using-Blynk-over-usb/)
+- [Instructables: Control Arduino with Blynk over USB](http://www.instructables.com/id/Control-arduino-using-Blynk-over-usb/)
 
 
 ## Raspberry Pi
-1. Connect your Raspberry Pi to the internet and open it's console.
-2. Install WiringPi: http://wiringpi.com/download-and-install/
+1. Connect your Raspberry Pi to the Internet and open it's console.
+2. Install [WiringPi](http://wiringpi.com/download-and-install/)
 3. Download and build Blynk:
+4. 
 ```bash
 $ git clone https://github.com/blynkkk/blynk-library.git
 $ cd blynk-library/linux
 $ make clean all target=raspberry
 ```
-4. Run Blynk:
-```bash
-$ sudo ./blynk --token=YourAuthToken
-```
-5. To enable Blynk auto restart for Pi find */etc/init.d/rc.local* file and add
-```
-/FULL_PATH_TO_LIB/blynk-library/linux/blynk --token=<Auth Token> 
-```
-For example:
-``` 
-/home/pi/blynk-library/linux/blynk --token=<my token> &
-```
 
-We have also provided a build script, you can try just running (inside of the "linux" directory):
-```bash
+4. Run Blynk:
+
+	```bash
+	$ sudo ./blynk --token=YourAuthToken
+	```
+5. To enable Blynk auto restart for Pi, find ```*/etc/init.d/rc.local*``` file and add there:
+
+	```
+	/FULL_PATH_TO_LIB/blynk-library/linux/blynk --token=<Auth Token> 
+	```
+
+	For example:
+
+	``` 
+	/home/pi/blynk-library/linux/blynk --token=<my token> &
+	```
+		
+	**We have also provided a build script. YOu can simply run it inside of the ```linux``` directory:**
+
+```
 $ ./build.sh raspberry
 ```
 
 Additional materials:
 
-- [Instructables](http://www.instructables.com/id/Blynk-JavaScript-in-20-minutes-Raspberry-Pi-Edison)
-- [Forum discussion](http://community.blynk.cc/t/howto-for-raspberry-pi/332)
-- [Video tutorial](https://www.youtube.com/watch?v=iSG_8g6KyGE)
+- [Instructables: Blynk on Javascript for Raspberry Pi, Intel Edison and others](http://www.instructables.com/id/Blynk-JavaScript-in-20-minutes-Raspberry-Pi-Edison)
+- [Blynk Community Topic: How-To Raspberry Pi](http://community.blynk.cc/t/howto-for-raspberry-pi/332)
+- [Video tutorial - Setting up Blynk and Raspberry Pi:](https://www.youtube.com/watch?v=iSG_8g6KyGE)
 
-## ESP8266 (standalone)
+	<iframe width="200" height="110" src="https://www.youtube.com/embed/iSG_8g6KyGE" frameborder="0" allowfullscreen></iframe>
+
+## ESP8266 Standalone
 
 You can run Blynk directly on the ESP8266!
 
-Install the latest ESP8266 for Arduino using [this guide](https://github.com/esp8266/Arduino#installing-with-boards-manager). Also [here](http://www.instructables.com/id/ESP8266-ESP-12Standalone-Blynk-101) and [here russian](http://esp8266.ru/esp8266-blynk) is step-by-step tutorial.
+Install the latest ESP8266 library for Arduino using [this guide](https://github.com/esp8266/Arduino#installing-with-boards-manager). 
 
-**Sketch:** [ESP8266_Standalone](https://github.com/blynkkk/blynk-library/blob/master/examples/BoardsAndShields/ESP8266_Standalone/ESP8266_Standalone.ino)
+**Example Sketch:** [ESP8266_Standalone](https://github.com/blynkkk/blynk-library/blob/master/examples/BoardsAndShields/ESP8266_Standalone/ESP8266_Standalone.ino)
+
+Additional materials:
+
+[Instructables: ESP8266 ESP-12(Standalone)+ Blynk](http://www.instructables.com/id/ESP8266-ESP-12Standalone-Blynk-101)
+ 
+[Step-by-Step Tutorial in Russian language](http://esp8266.ru/esp8266-blynk)
 
 ## Particle (formely Spark)
-Blynk works with the whole family of Particle products: Core, Photon and Electron (soon)
+Blynk works with the whole family of Particle products: Core, Photon and Electron(soon)
 
 TODO:
->Add screenshots for steps
+>Add screenshots
 
 1. Open [Particle Web IDE](https://build.particle.io/build).
 2. Go to the libraries.
-3. Search for **Blynk** in the Community Libraries and click on it.
-4. Open SparkCore.ino example.
-5. Click "use this example".
-6. Update your auth token, and upload!
+3. Search for **Blynk** in the Community Libraries and click on it
+4. Open SparkCore.ino example
+5. Click "use this example"
+6. Update your auth token, and flash the Particle!
