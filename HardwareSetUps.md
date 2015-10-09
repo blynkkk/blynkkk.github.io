@@ -155,7 +155,7 @@ Additional materials:
 Blynk works with the whole family of Particle products: Core, Photon and Electron(soon)
 
 TODO:
->Add screenshots
+> Add screenshots
 
 1. Open [Particle Web IDE](https://build.particle.io/build).
 2. Go to the libraries.
