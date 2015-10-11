@@ -67,20 +67,21 @@ and change [Auth Token](http://docs.blynk.cc/#getting-started-getting-started-wi
   ``` 
 
   This is what you'll see in Terminal app on Mac (usbmodem address can be different):
-
+  
 	```
 	[ Press Ctrl+C to exit ]
 	/dev/tty.usbmodem not found.
 	Select serial port [ /dev/tty.usbmodem1451 ]: 
 	```
-	Copy the serial port address: ```/dev/tty.usbmodem1451``` and paste it back:
 	
+  Copy the serial port address: ```/dev/tty.usbmodem1451``` and paste it back:
+
 	```
 	Select serial port [ /dev/tty.usbmodem1451 ]: /dev/tty.usbmodem1451
 	```
 	
-	After you press Enter, you should see something similar:
-	
+  After you press Enter, you should see something similar:
+
 	```
 	Resetting device /dev/tty.usbmodem1451...
 	Connecting: GOPEN:/dev/tty.usbmodem1451,raw,echo=0,clocal=1,cs8,nonblock=1,ixoff=0,ixon=0,ispeed=9600,ospeed=9600,crtscts=0 <-> openssl-connect:cloud.blynk.cc:8441,cafile=/Users/.../server.crt,nodelay
