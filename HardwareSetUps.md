@@ -30,18 +30,16 @@ and change [Auth Token](http://docs.blynk.cc/#getting-started-getting-started-wi
 	```
 2. Run the script which is usually located in ```/scripts``` folder:
 
-- Windows:```My Documents\Arduino\libraries\Blynk\scripts```
-- Mac	```User$/Documents/Arduino/libraries/Blynk/scripts```
+ - Windows:```My Documents\Arduino\libraries\Blynk\scripts```
+ - Mac	```User$/Documents/Arduino/libraries/Blynk/scripts```
 
   
   **On Windows:**
-1. Open cmd.exe
-2. Write your path to blynk-ser.bat folder. For example: 
-```
-cd C:\blynk-library-0.3.1\blynk-library-0.3.1\scripts
-```
-3. Run ```blynk-ser.bat``` file. For example : ```blynk-ser.bat -c COM4``` (where COM4 is port with your Arduino)
-4. And press "Enter", press "Enter" and press "Enter"
+- Open cmd.exe
+- Write your path to blynk-ser.bat folder. For example: 
+```cd C:\blynk-library-0.3.1\blynk-library-0.3.1\scripts```
+- Run ```blynk-ser.bat``` file. For example : ```blynk-ser.bat -c COM4``` (where COM4 is port with your Arduino)
+- And press "Enter", press "Enter" and press "Enter"
   
   **On Linux and Mac**:
   
