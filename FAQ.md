@@ -5,19 +5,19 @@
 > Current Blynk release has a limited amount of widgets. We decided to make them free for everyone until we implement store. After that, every widget will be paid. However every backer will get them for free (according to their pledge).
   
 - What is Blynk Cloud?
-> Blynk Cloud is a open-source software written on Java using plain TCP/IP and secured TCP/IP (for hardware that supports it) sockets and running on our server. Blynk iOS and Android apps connect to Blynk Cloud by default. Access is free for every Blynk user. We also provide a Private Server distribution for those who want to install it locally. All the instructions and files are on [our Github page](https://github.com/blynkkk/blynk-server).
+> Blynk Cloud is a open-source software written on Java using plain TCP/IP and secured TCP/IP (for hardware that supports it) sockets and running on our server. Blynk iOS and Android apps connect to Blynk Cloud by default. Access is free for every Blynk user. We also provide a Private Server distribution for those who want to [install it locally](http://docs.blynk.cc/#blynk-server).
 
 - How much access to Cloud Blynk Server cost?
 > It is free for every Blynk user.
 
 - Can I run Blynk server locally?
-> Yes. Those of you, who want extra security or don’t have internet connection, can install Local Blynk Server and run it in your own local network. Blynk Server is Open-Source and it takes less than few seconds to deploy. All the instructions and files are on [our Github page](https://github.com/blynkkk/blynk-server#blynk-server).
+> Yes. Those of you, who want extra security or don’t have internet connection, can install Local Blynk Server and run it in your own local network. Blynk Server is Open-Source and it takes less than few seconds to deploy. All the instructions and files are [here](http://docs.blynk.cc/#blynk-server).
 
 - What are the requirements to run Private Blynk Server?
 > To run Private Blynk Server, all you need is Java Runtime Environment.
 
 - Can I run Blynk server on Raspberry Pi?
-> Yes, surely! [Here is instruction](https://github.com/blynkkk/blynk-server#quick-local-server-setup-on-raspberry-pi).
+> Yes, surely! [Here is instruction](http://docs.blynk.cc/#blynk-server-how-to-run-local-blynk-server-launch-blynk-server-on-raspberry-pi).
 
 - Does Blynk app work over Bluetooth?
 > No. But it's planned for next releases.

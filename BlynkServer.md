@@ -103,7 +103,7 @@ To connect Blynk App to your local server you need to set up a custom server dur
 	./blynk-ser.sh -s you_host_or_IP
 	```     
 
-### Advanced local server setup
+## Advanced local server setup
 If you need more flexibility, you can extend server with more options by creating server.properties file in same folder as server.jar. 
 Example could be found [here](https://github.com/blynkkk/blynk-server/blob/master/server/tcp-server/src/main/resources/server.properties).
 server.properties options:
