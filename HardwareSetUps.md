@@ -35,9 +35,12 @@ and change [Auth Token](http://docs.blynk.cc/#getting-started-getting-started-wi
 
   
   **On Windows:**
+  
 - Open cmd.exe
 - Write your path to blynk-ser.bat folder. For example: 
-```cd C:\blynk-library-0.3.1\blynk-library-0.3.1\scripts```
+```
+cd C:\blynk-library-0.3.1\blynk-library-0.3.1\scripts
+```
 - Run ```blynk-ser.bat``` file. For example : ```blynk-ser.bat -c COM4``` (where COM4 is port with your Arduino)
 - And press "Enter", press "Enter" and press "Enter"
   
