@@ -160,7 +160,6 @@ Additional materials:
 Blynk works with the whole family of Particle products: Core, Photon and Electron(soon)
 
 TODO:
-> Add screenshots
 
 1. Open [Particle Web IDE](https://build.particle.io/build).
 2. Go to the libraries.
@@ -168,3 +167,6 @@ TODO:
 4. Open SparkCore.ino example
 5. Click "use this example"
 6. Update your auth token, and flash the Particle!
+
+On Android, you can scan this QR code from Blynk App and you'll get a ready-to-test project with Particle Photon. Just put your Auth Token to the SparkCore.ino example.
+<img src="images/Particle Demo1530733075.png" style="width: 300px;"/>
