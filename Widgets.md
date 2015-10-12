@@ -170,7 +170,12 @@ Easily plot incoming data from your project in various designs.
 **Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino#L48)
 
 ### History Graph
-Allows you to see any data your hardware had sent to server previously. Graph updated once in a hour.
+Allows you to see any data your hardware had sent to server previously. History graph has 3 granularities :
+- Minute granularity - ```1h```, ```6h```;
+- Hour granularity - ```1d```, ```1w```;
+- Day granularity - ```1m```, ```3m```;
+This means that minimum graph update interval is 1 minute for ```1h``` and ```6h``` periods. 
+1 hour for ```1d``` and ```1w``` periods. 1 day for ```1m``` and ```3m``` periods. 
 
 <img src="images/history_graph.png" style="width: 77px;"/>
 
