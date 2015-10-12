@@ -62,4 +62,4 @@
 
 - [WIZnet-W5500-EVB](http://instructables.com/id/WIZnet-W5500-EVB-and-Blynk-App-communication)
 - [LabVIEW](https://github.com/juncaofish/NI-LabVIEWInterfaceforBlynk)
-- [Node-RED](https://github.com/tzapu/node-red-contrib-blynk)
+- [Node-RED](https://github.com/tzapu/node-red-contrib-blynk) (can be used as bridge to HTTP, TCP, UDP, MQTT, XMPP, IRC, OSC...)
