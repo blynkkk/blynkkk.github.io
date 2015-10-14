@@ -38,10 +38,11 @@ and change [Auth Token](http://docs.blynk.cc/#getting-started-getting-started-wi
   
   Open cmd.exe
   
-  Write your path to blynk-ser.bat folder. For example: 
-  ```
-  cd C:\blynk-library-0.3.1\blynk-library-0.3.1\scripts
-  ```
+  Write your path to blynk-ser.bat folder. For example:
+   
+```
+cd C:\blynk-library-0.3.1\blynk-library-0.3.1\scripts
+```
   
   Run ```blynk-ser.bat``` file. For example : ```blynk-ser.bat -c COM4``` (where COM4 is port with your Arduino)
   
@@ -51,46 +52,47 @@ and change [Auth Token](http://docs.blynk.cc/#getting-started-getting-started-wi
   
   Navigate to /scripts folder. For example:
   
-  ```
-  cd User$/Documents/Arduino/libraries/Blynk/scripts
-  ``` 
+```
+cd User$/Documents/Arduino/libraries/Blynk/scripts
+``` 
+
   When inside this folder, run:
   
-  ```
-  user:scripts User$ ./blynk-ser.sh
-  ``` 
+```
+user:scripts User$ ./blynk-ser.sh
+``` 
   
   You may need to run it with ```sudo```
   
-  ```
-  user:scripts User$ sudo ./blynk-ser.sh
-  ``` 
+```
+user:scripts User$ sudo ./blynk-ser.sh
+``` 
 
   This is what you'll see in Terminal app on Mac (usbmodem address can be different):
   
-	```
-	[ Press Ctrl+C to exit ]
-	/dev/tty.usbmodem not found.
-	Select serial port [ /dev/tty.usbmodem1451 ]: 
-	```
+```
+[ Press Ctrl+C to exit ]
+/dev/tty.usbmodem not found.
+Select serial port [ /dev/tty.usbmodem1451 ]: 
+```
 	
   Copy the serial port address: ```/dev/tty.usbmodem1451``` and paste it back:
 
-	```
-	Select serial port [ /dev/tty.usbmodem1451 ]: /dev/tty.usbmodem1451
-	```
+```
+Select serial port [ /dev/tty.usbmodem1451 ]: /dev/tty.usbmodem1451
+```
 	
   After you press Enter, you should see something similar:
 
-	```
-	Resetting device /dev/tty.usbmodem1451...
-	Connecting: GOPEN:/dev/tty.usbmodem1451,raw,echo=0,clocal=1,cs8,nonblock=1,ixoff=0,ixon=0,ispeed=9600,ospeed=9600,crtscts=0 <-> openssl-connect:cloud.blynk.cc:8441,cafile=/Users/.../server.crt,nodelay
-	2015/10/03 00:29:45 socat[30438.2046857984] N opening character device "/dev/tty.usbmodem1451" for reading and writing
-	2015/10/03 00:29:45 socat[30438.2046857984] N opening connection to LEN=16 AF=2 45.55.195.102:8441
-	2015/10/03 00:29:45 socat[30438.2046857984] N successfully connected from local address LEN=16 AF=2 192.168.0.2:56821
-	2015/10/03 00:29:45 socat[30438.2046857984] N SSL connection using AES128-SHA
-	2015/10/03 00:29:45 socat[30438.2046857984] N starting data transfer loop with FDs [3,3] and [4,4]
-	```
+```
+Resetting device /dev/tty.usbmodem1451...
+Connecting: GOPEN:/dev/tty.usbmodem1451,raw,echo=0,clocal=1,cs8,nonblock=1,ixoff=0,ixon=0,ispeed=9600,ospeed=9600,crtscts=0 <-> openssl-connect:cloud.blynk.cc:8441,cafile=/Users/.../server.crt,nodelay
+2015/10/03 00:29:45 socat[30438.2046857984] N opening character device "/dev/tty.usbmodem1451" for reading and writing
+2015/10/03 00:29:45 socat[30438.2046857984] N opening connection to LEN=16 AF=2 45.55.195.102:8441
+2015/10/03 00:29:45 socat[30438.2046857984] N successfully connected from local address LEN=16 AF=2 192.168.0.2:56821
+2015/10/03 00:29:45 socat[30438.2046857984] N SSL connection using AES128-SHA
+2015/10/03 00:29:45 socat[30438.2046857984] N starting data transfer loop with FDs [3,3] and [4,4]
+```
 
 <span style="color:#D3435C;">**NOTE:** Arduino IDE may complain with "programmer is not responding". You need to terminate script before uploading new sketch.. </span>
 
