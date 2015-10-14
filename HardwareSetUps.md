@@ -137,10 +137,10 @@ $ ./build.sh raspberry
 Additional materials:
 
 - [Instructables: Blynk on Javascript for Raspberry Pi, Intel Edison and others](http://www.instructables.com/id/Blynk-JavaScript-in-20-minutes-Raspberry-Pi-Edison)
+- [Instructables: Use DHT11/DHT12 sensors with Raspberry Pi and Blynk](http://www.instructables.com/id/Raspberry-Pi-Nodejs-Blynk-App-DHT11DHT22AM2302/?ALLSTEPS)
 - [Blynk Community Topic: How-To Raspberry Pi](http://community.blynk.cc/t/howto-for-raspberry-pi/332)
 - [Video tutorial - Setting up Blynk and Raspberry Pi:](https://www.youtube.com/watch?v=iSG_8g6KyGE)
 <iframe width="200" height="110" src="https://www.youtube.com/embed/iSG_8g6KyGE" frameborder="0" allowfullscreen></iframe>
-- [Instructables: Use DHT11/DHT12 sensors with Raspberry Pi and Blynk](http://www.instructables.com/id/Raspberry-Pi-Nodejs-Blynk-App-DHT11DHT22AM2302/?ALLSTEPS)
 
 ## ESP8266 Standalone
 
@@ -152,7 +152,8 @@ Install the latest ESP8266 library for Arduino using [this guide](https://github
 
 Additional materials:
 
-[Instructables: ESP8266 ESP-12(Standalone)+ Blynk](http://www.instructables.com/id/ESP8266-ESP-12Standalone-Blynk-101)
+- [Instructables: ESP8266 ESP-12(Standalone)+ Blynk](http://www.instructables.com/id/ESP8266-ESP-12Standalone-Blynk-101)
+- [Instructables: ESP8266-12 standalone Blynk lm35 temperature sensor](http://www.instructables.com/id/ESP8266-12-blynk-wireless-temperature-LM35-sensor/?ALLSTEPS)
  
 [Step-by-Step Tutorial in Russian language](http://esp8266.ru/esp8266-blynk)
 
