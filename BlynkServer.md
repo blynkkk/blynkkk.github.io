@@ -12,7 +12,7 @@ Java 8 required. (OpenJDK, Oracle).
 [How to install Java](http://docs.blynk.cc/#blynk-server-how-to-run-local-blynk-server-install-java-on-ubuntu).
 
 ## How to run local Blynk Server
-By default, mobile application uses 8443 port and is based on SSL/TLS sockets. Default hardware port is 8442 and 
+By default, mobile application use 8443 port and is based on SSL/TLS sockets. Default hardware port is 8442 and 
 is based on plain TCP/IP sockets.
 
 ### Quick Local Server launch
@@ -23,12 +23,22 @@ is based on plain TCP/IP sockets.
 	java -version
 	Output: java version "1.8.0_40"
 	```
+2. Navigate to the folder where ```.jar``` file is. For example:
+	
+	```
+	cd Users/User/Blynk/Server 
+	```
 
-2. Run the server on default 'hardware port 8442' and default 'application port 8443' (SSL port)
+
+3. Launch Blynk server.
 
 	```
 	java -jar server-0.9.1.jar -dataFolder /path
 	```
+	
+	By default server uses these ports:
+	- Hardware: 8442 
+	- Blynk App: 8443 (SSL port)
         
 <span style="color:#24C48C" >**That's it!**</span>
  
