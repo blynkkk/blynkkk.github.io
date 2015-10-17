@@ -47,7 +47,7 @@ You won't see any output, because all the logging is done within same folder in 
 1. Login to Raspberry Pi via ssh;
 2. Install Java 8: 
         
-	sudo apt-get install oracle-java8-jdk
+		sudo apt-get install oracle-java8-jdk
         
 3. Make sure you are using Java 8:
 
