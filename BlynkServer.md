@@ -28,8 +28,6 @@ is based on plain TCP/IP sockets.
 	```
 	cd Users/User/Blynk/Server 
 	```
-
-
 3. Launch Blynk server.
 
 	```
@@ -40,7 +38,7 @@ is based on plain TCP/IP sockets.
 	- Hardware: 8442 
 	- Blynk App: 8443 (SSL port)
         
-<span style="color:#24C48C" >**That's it!**</span>
+<span style="color:#24C48C" >**That's it! Your Blynk Server is up and running**</span>
  
 You won't see any output, because all the logging is done within same folder in ```./logs/blynk.log``` file.
 
@@ -49,7 +47,7 @@ You won't see any output, because all the logging is done within same folder in 
 1. Login to Raspberry Pi via ssh;
 2. Install Java 8: 
         
-		sudo apt-get install oracle-java8-jdk
+	sudo apt-get install oracle-java8-jdk
         
 3. Make sure you are using Java 8:
 
