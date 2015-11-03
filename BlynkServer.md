@@ -73,7 +73,7 @@ That's it! You won't see any output because all the logging is done within same 
 
 To connect Blynk App to your local server you need to set up a custom server during login. Set up IP address and PORT (should be 8443 by default)
 
-<img src="images/login.png" style="width: 200px;"/>  <img src="images/custom.png" style="width: 200px;"/>
+<img src="images/login.png" style="width: 200px; height:360px"/>  <img src="images/custom.png" style="width: 200px; height:360px"/>
 
 + If you are using Ethernet connection, in the Ethernet example sketch change:
 

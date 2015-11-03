@@ -35,7 +35,7 @@ When you press Button, Blynk App sends ```1``` On second click - it sends ```0``
 
 This is how Button Widget is set up:
 
-<img src="images/button_virtual_1.png" style="width: 200px;"/>
+<img src="images/button_virtual_1.png" style="width: 200px; height:360px"/>
 
 
 Full example sketch: [Get Data](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/GetData/GetData.ino#L24)
@@ -43,7 +43,7 @@ Full example sketch: [Get Data](https://github.com/blynkkk/blynk-library/blob/ma
 ###Sending array from Widget 
 Some Widgets (e.g Joystick, zeRGBa) have more than one output. 
 
-<img src="images/joystick_merge_mode.png" style="width: 200px;"/>
+<img src="images/joystick_merge_mode.png" style="width: 200px; height:360px"/>
 
 This output can be written to Virtual Pin as an array of values. 
 On the hardware side - you can get any element of the array [0,1,2...] by using: 
@@ -65,7 +65,7 @@ There are two ways of pushing data from your hardware to the Widgets in the app 
 ###Perform requests by Widget
 - Using Blynk built-in reading frequency while App is active by setting 'Reading Frequency' parameter to some interval:
 
-<img src="images/frequency_reading_pull.png" style="width: 200px;"/>
+<img src="images/frequency_reading_pull.png" style="width: 200px; height:360px"/>
 
 ```cpp
 BLYNK_READ(V5) // Widget in the app READs Virtal Pin V5 with the certain frequency
@@ -82,7 +82,7 @@ BLYNK_READ(V5) // Widget in the app READs Virtal Pin V5 with the certain frequen
 If you need to PUSH sensor or other data from your hardware to Widget, you can write any logic you want. 
 Just set the frequency to PUSH mode
 
-<img src="images/frequency_reading_push.png" style="width: 200px;"/>
+<img src="images/frequency_reading_push.png" style="width: 200px; height:360px"/>
 
 We recommend sending data in intervals and avoiding [Flood Error](http://docs.blynk.cc/#troubleshooting-flood-error).
 For example, this [SimpleTimer Library](http://playground.arduino.cc/Code/SimpleTimer) is an Arduino library for timed events. 

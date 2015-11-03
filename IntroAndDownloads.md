@@ -27,7 +27,7 @@ Now imagine: every time you press a Button in the Blynk app, the message travels
 where it magically finds the way to your hardware. It works the same in the opposite direction and 
 everything happens in a blynk of an eye.
 
-<img src="images/architecture.png" style="width: 640px;"/>
+<img src="images/architecture.png" style="width: 640px; height:478px"/>
 
 ##What do I need to Blynk?
 At this point you might be thinking: **"Ok, I want it. What do I need to start?"** – Just a couple of things, really:
@@ -47,7 +47,7 @@ Blynk App is a well-designed interface builder. It works on both iOS and Android
 
 #Downloads
 ##**Blynk Apps for iOS or Android** <br> 
-[<img src="http://static1.squarespace.com/static/54765ba7e4b0d055ee0b47a6/t/55515fd0e4b08237a78598e2/1431396305454/?format=500w" alt="Drawing" style=" width: 150px;"/>](https://itunes.apple.com/us/app/blynk-control-arduino-raspberry/id808760481?ls=1&mt=8)  &nbsp; &nbsp; &nbsp; &nbsp;[<img src="http://static1.squarespace.com/static/54765ba7e4b0d055ee0b47a6/t/55515fe8e4b08237a785995e/1431396357648/?format=750w" alt="Drawing" style=" width: 200px;"/>](https://play.google.com/store/apps/details?id=cc.blynk)
+[<img src="http://static1.squarespace.com/static/54765ba7e4b0d055ee0b47a6/t/55515fd0e4b08237a78598e2/1431396305454/?format=500w" alt="Drawing" style=" width: 150px; height:53px"/>](https://itunes.apple.com/us/app/blynk-control-arduino-raspberry/id808760481?ls=1&mt=8)  &nbsp; &nbsp; &nbsp; &nbsp;[<img src="http://static1.squarespace.com/static/54765ba7e4b0d055ee0b47a6/t/55515fe8e4b08237a785995e/1431396357648/?format=750w" alt="Drawing" style=" width: 200px; height:53px"/>](https://play.google.com/store/apps/details?id=cc.blynk)
 
 ##**Blynk Library** <br>
 [Download Blynk Library >](https://github.com/blynkkk/blynk-library/releases/latest)

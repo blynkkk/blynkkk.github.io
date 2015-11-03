@@ -16,7 +16,7 @@ Some of the Widgets (e.g. E-mail Widget) are used to enable some functionality a
 ### Pin Selector
 This is one of the main parameters you need to set. It defines which pin to control or to read from. 
 
-<img src="images/pin_selection.png" style="width: 200px;"/>
+<img src="images/pin_selection.png" style="width: 200px; height:360px"/>
 
 **Digital Pins** - represent physical Digital IO pins on your hardware. PWM-enabled pins are marked with the ```~``` symbol
 
@@ -31,7 +31,7 @@ Read more about Virtual Pins [here](http://docs.blynk.cc/#blynk-main-operations-
 ### SPLIT/MERGE
 Some of the Widgets can send more than one value. And with this switch you can control how to send them.
 
-<img src="images/split_merge.gif" style="width: 300px;"/>
+<img src="images/split_merge.gif" style="width: 300px; height:467px"/>
 
 
 - **SPLIT**:
@@ -66,27 +66,27 @@ When MERGE mode is selected, you are sending just 1 message, consisting of array
 ### Button
 Works in push or switch modes. Allows to send 0/1 (LOW/HIGH) values.
 
-<img src="images/button.png" style="width: 77px;"/>
+<img src="images/button.png" style="width: 77px; height:116px"/>
 
-<img src="images/button_edit.png" style="width: 200px;"/>
+<img src="images/button_edit.png" style="width: 200px; height:360px"/>
 
 **Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino#L48)
 
 ### Slider
 Similar to potentiometer. Allows to send values between MIN and MAX.
 
-<img src="images/slider.png" style="width: 77px;"/>
+<img src="images/slider.png" style="width: 77px; height:116px"/>
 
-<img src="images/slider_edit.png" style="width: 200px;"/>
+<img src="images/slider_edit.png" style="width: 200px; height:360px"/>
 
 **Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino#L48)
 
 ### Timer
 Timer triggers actions at a specific time. Even if smartphone is offline. Start time sends 1 (HIGH). Stop time sends 0 (LOW).
 
-<img src="images/timer.png" style="width: 77px;"/>
+<img src="images/timer.png" style="width: 77px; height:116px"/>
 
-<img src="images/timer_edit.png" style="width: 200px;"/>
+<img src="images/timer_edit.png" style="width: 200px; height:360px"/>
 
 **Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino#L48)
 
@@ -103,9 +103,9 @@ When it's ON, Joystck will automatically rotate if you use your smartphone in la
 - 
 When it's OFF, Joystick handle will not return back to center position. It will stay where you left it. 
 
-<img src="images/joystick.png" style="width: 77px;"/>
+<img src="images/joystick.png" style="width: 77px; height:116px"/>
 
-<img src="images/joystick_edit.png" style="width: 200px;"/>
+<img src="images/joystick_edit.png" style="width: 200px; height:360px"/>
 
 **Sketch:** [JoystickTwoAxis](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/JoystickTwoAxis/JoystickTwoAxis.ino#L24)
 
@@ -113,9 +113,9 @@ When it's OFF, Joystick handle will not return back to center position. It will 
 ### Value Display
 Displays incoming data from your sensors or Virtual Pins.
 
-<img src="images/display.png" style="width: 77px;"/> 
+<img src="images/display.png" style="width: 77px; height:116px"/> 
 
-<img src="images/display_edit.png" style="width: 200px;"/>
+<img src="images/display_edit.png" style="width: 200px; height:360px"/>
 
 **Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino#L48)
 
@@ -123,18 +123,18 @@ Displays incoming data from your sensors or Virtual Pins.
 A simple LED for indication.
 TODO: describe 0-255 / 0-1 and fix in apps (make consistent)
 
-<img src="images/led.png" style="width: 77px;"/>
+<img src="images/led.png" style="width: 77px; height:116px"/>
 
-<img src="images/led_edit.png" style="width: 200px;"/>
+<img src="images/led_edit.png" style="width: 200px; height:360px"/>
 
 **Sketch:** [LED](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/LED/LED.ino#L31)
 
 ### Gauge
 A great visual way to display incoming numeric values.
 
-<img src="images/gauge.png" style="width: 77px;"/>
+<img src="images/gauge.png" style="width: 77px; height:116px"/>
 
-<img src="images/gauge_edit.png" style="width: 200px;"/>
+<img src="images/gauge_edit.png" style="width: 200px; height:360px"/>
 
 **Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino#L48)
 
@@ -154,18 +154,18 @@ Where x is a symbol position (0-15), y is a line number (0 or 1),
 lcd.clear();
 ```
 
-<img src="images/lcd.png" style="width: 77px;"/>
+<img src="images/lcd.png" style="width: 77px; height:116px"/>
 
-<img src="images/lcd_edit.png" style="width: 200px;"/>
+<img src="images/lcd_edit.png" style="width: 200px; height:360px"/>
 
 **Sketch:** [LCD](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/LCD/LCD.ino#L22)
 
 ### Graph
 Easily plot incoming data from your project in various designs.
 
-<img src="images/graph.png" style="width: 77px;"/>
+<img src="images/graph.png" style="width: 77px; height:116px"/>
 
-<img src="images/graph_edit.png" style="width: 200px;"/>
+<img src="images/graph_edit.png" style="width: 200px; height:360px"/>
 
 **Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino#L48)
 
@@ -179,9 +179,9 @@ Allows you to see any data your hardware had sent to server previously. History 
 This means that minimum graph update interval is 1 minute for ```1h``` and ```6h``` periods. 
 1 hour for ```1d``` and ```1w``` periods. 1 day for ```1m``` and ```3m``` periods. 
 
-<img src="images/history_graph.png" style="width: 77px;"/>
+<img src="images/history_graph.png" style="width: 77px; height:116px"/>
 
-<img src="images/history_graph_edit.png" style="width: 200px;"/>
+<img src="images/history_graph_edit.png" style="width: 200px; height:360px"/>
 
 **Sketch:** [PushData](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino#L58)
 
@@ -195,9 +195,9 @@ terminal.print();
 terminal.flush();
 ```
 
-<img src="images/terminal.png" style="width: 77px;"/>
+<img src="images/terminal.png" style="width: 77px; height:116px"/>
 
-<img src="images/terminal_edit.png" style="width: 200px;"/>
+<img src="images/terminal_edit.png" style="width: 200px; height:360px"/>
 
 **Sketch:** [Terminal](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Terminal/Terminal.ino#L23)
 
@@ -206,9 +206,9 @@ terminal.flush();
 
 Twitter widget connects your Twitter account to Blynk and allows you to send Tweets from your hardware.
 
-<img src="http://static1.squarespace.com/static/54765ba7e4b0d055ee0b47a6/54e92d39e4b0c31341b33a9a/55813d09e4b0ba8aa77ab230/1434533129525/TwitterON.png" style="width: 77px;"/>
+<img src="http://static1.squarespace.com/static/54765ba7e4b0d055ee0b47a6/54e92d39e4b0c31341b33a9a/55813d09e4b0ba8aa77ab230/1434533129525/TwitterON.png" style="width: 77px; height:116px"/>
 
-<img src="images/twitter_edit.png" style="width: 200px;"/>
+<img src="images/twitter_edit.png" style="width: 200px; height:360px"/>
 
 Example code:
 ```cpp
@@ -226,9 +226,9 @@ Limitations :
 
 Email widget allows you to send email from your hardware to any address.
 
-<img src="images/mail.png" style="width: 77px;"/>
+<img src="images/mail.png" style="width: 77px; height:116px"/>
 
-<img src="images/mail_edit.png" style="width: 200px;"/>
+<img src="images/mail_edit.png" style="width: 200px; height:360px"/>
 
 Example code:
 ```cpp
@@ -245,9 +245,9 @@ Limitations :
 
 Push Notification widget allows you to send push notification from your hardware to your device.
 
-<img src="images/push.png" style="width: 77px;"/>
+<img src="images/push.png" style="width: 77px; height:116px"/>
 
-<img src="images/push_edit.png" style="width: 200px;"/>
+<img src="images/push_edit.png" style="width: 200px; height:360px"/>
 
 Example code:
 ```cpp
@@ -266,9 +266,9 @@ Limitations :
 
 Bridge can be used for Device-to-Device communication. You can send digital/analog/virtual write commands from one device to another, knowing it's auth token.
 
-<img src="images/bridge.png" style="width: 77px;"/>
+<img src="images/bridge.png" style="width: 77px; height:116px"/>
 
-<img src="images/bridge_edit.png" style="width: 200px;"/>
+<img src="images/bridge_edit.png" style="width: 200px; height:360px"/>
 
 Example code:
 ```cpp
