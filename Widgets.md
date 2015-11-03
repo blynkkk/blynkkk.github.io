@@ -66,7 +66,7 @@ When MERGE mode is selected, you are sending just 1 message, consisting of array
 ### Button
 Works in push or switch modes. Allows to send 0/1 (LOW/HIGH) values.
 
-<img src="images/button.png" style="width: 77px; height:116px"/>
+<img src="images/button.png" style="width: 77px; height:96"/>
 
 <img src="images/button_edit.png" style="width: 200px; height:360px"/>
 
@@ -75,7 +75,7 @@ Works in push or switch modes. Allows to send 0/1 (LOW/HIGH) values.
 ### Slider
 Similar to potentiometer. Allows to send values between MIN and MAX.
 
-<img src="images/slider.png" style="width: 77px; height:116px"/>
+<img src="images/slider.png" style="width: 77px; height:96"/>
 
 <img src="images/slider_edit.png" style="width: 200px; height:360px"/>
 
@@ -84,7 +84,7 @@ Similar to potentiometer. Allows to send values between MIN and MAX.
 ### Timer
 Timer triggers actions at a specific time. Even if smartphone is offline. Start time sends 1 (HIGH). Stop time sends 0 (LOW).
 
-<img src="images/timer.png" style="width: 77px; height:116px"/>
+<img src="images/timer.png" style="width: 77px; height:96"/>
 
 <img src="images/timer_edit.png" style="width: 200px; height:360px"/>
 
@@ -103,7 +103,7 @@ When it's ON, Joystck will automatically rotate if you use your smartphone in la
 - 
 When it's OFF, Joystick handle will not return back to center position. It will stay where you left it. 
 
-<img src="images/joystick.png" style="width: 77px; height:116px"/>
+<img src="images/joystick.png" style="width: 77px; height:96"/>
 
 <img src="images/joystick_edit.png" style="width: 200px; height:360px"/>
 
@@ -113,7 +113,7 @@ When it's OFF, Joystick handle will not return back to center position. It will 
 ### Value Display
 Displays incoming data from your sensors or Virtual Pins.
 
-<img src="images/display.png" style="width: 77px; height:116px"/> 
+<img src="images/display.png" style="width: 77px; height:96"/> 
 
 <img src="images/display_edit.png" style="width: 200px; height:360px"/>
 
@@ -123,7 +123,7 @@ Displays incoming data from your sensors or Virtual Pins.
 A simple LED for indication.
 TODO: describe 0-255 / 0-1 and fix in apps (make consistent)
 
-<img src="images/led.png" style="width: 77px; height:116px"/>
+<img src="images/led.png" style="width: 77px; height:96"/>
 
 <img src="images/led_edit.png" style="width: 200px; height:360px"/>
 
@@ -132,7 +132,7 @@ TODO: describe 0-255 / 0-1 and fix in apps (make consistent)
 ### Gauge
 A great visual way to display incoming numeric values.
 
-<img src="images/gauge.png" style="width: 77px; height:116px"/>
+<img src="images/gauge.png" style="width: 77px; height:96"/>
 
 <img src="images/gauge_edit.png" style="width: 200px; height:360px"/>
 
@@ -154,7 +154,7 @@ Where x is a symbol position (0-15), y is a line number (0 or 1),
 lcd.clear();
 ```
 
-<img src="images/lcd.png" style="width: 77px; height:116px"/>
+<img src="images/lcd.png" style="width: 77px; height:96"/>
 
 <img src="images/lcd_edit.png" style="width: 200px; height:360px"/>
 
@@ -163,7 +163,7 @@ lcd.clear();
 ### Graph
 Easily plot incoming data from your project in various designs.
 
-<img src="images/graph.png" style="width: 77px; height:116px"/>
+<img src="images/graph.png" style="width: 77px; height:96"/>
 
 <img src="images/graph_edit.png" style="width: 200px; height:360px"/>
 
@@ -179,7 +179,7 @@ Allows you to see any data your hardware had sent to server previously. History 
 This means that minimum graph update interval is 1 minute for ```1h``` and ```6h``` periods. 
 1 hour for ```1d``` and ```1w``` periods. 1 day for ```1m``` and ```3m``` periods. 
 
-<img src="images/history_graph.png" style="width: 77px; height:116px"/>
+<img src="images/history_graph.png" style="width: 77px; height:96"/>
 
 <img src="images/history_graph_edit.png" style="width: 200px; height:360px"/>
 
@@ -195,7 +195,7 @@ terminal.print();
 terminal.flush();
 ```
 
-<img src="images/terminal.png" style="width: 77px; height:116px"/>
+<img src="images/terminal.png" style="width: 77px; height:96"/>
 
 <img src="images/terminal_edit.png" style="width: 200px; height:360px"/>
 
@@ -206,7 +206,7 @@ terminal.flush();
 
 Twitter widget connects your Twitter account to Blynk and allows you to send Tweets from your hardware.
 
-<img src="http://static1.squarespace.com/static/54765ba7e4b0d055ee0b47a6/54e92d39e4b0c31341b33a9a/55813d09e4b0ba8aa77ab230/1434533129525/TwitterON.png" style="width: 77px; height:116px"/>
+<img src="http://static1.squarespace.com/static/54765ba7e4b0d055ee0b47a6/54e92d39e4b0c31341b33a9a/55813d09e4b0ba8aa77ab230/1434533129525/TwitterON.png" style="width: 77px; height:96"/>
 
 <img src="images/twitter_edit.png" style="width: 200px; height:360px"/>
 
@@ -226,7 +226,7 @@ Limitations :
 
 Email widget allows you to send email from your hardware to any address.
 
-<img src="images/mail.png" style="width: 77px; height:116px"/>
+<img src="images/mail.png" style="width: 77px; height:96"/>
 
 <img src="images/mail_edit.png" style="width: 200px; height:360px"/>
 
@@ -245,7 +245,7 @@ Limitations :
 
 Push Notification widget allows you to send push notification from your hardware to your device.
 
-<img src="images/push.png" style="width: 77px; height:116px"/>
+<img src="images/push.png" style="width: 77px; height:96"/>
 
 <img src="images/push_edit.png" style="width: 200px; height:360px"/>
 
@@ -266,7 +266,7 @@ Limitations :
 
 Bridge can be used for Device-to-Device communication. You can send digital/analog/virtual write commands from one device to another, knowing it's auth token.
 
-<img src="images/bridge.png" style="width: 77px; height:116px"/>
+<img src="images/bridge.png" style="width: 77px; height:96"/>
 
 <img src="images/bridge_edit.png" style="width: 200px; height:360px"/>
 
