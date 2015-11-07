@@ -31,7 +31,7 @@ Read more about Virtual Pins [here](http://docs.blynk.cc/#blynk-main-operations-
 ### SPLIT/MERGE
 Some of the Widgets can send more than one value. And with this switch you can control how to send them.
 
-<img src="images/split_merge.gif" style="width: 300px; height:467px"/>
+<img src="images/split_merge.gif" style="width: 300px; height:280px"/>
 
 
 - **SPLIT**:
