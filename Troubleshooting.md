@@ -15,6 +15,9 @@ If you experience connection problems, follow these steps:
    * If it doesn't work, try looking into [serial debug prints](./Troubleshooting.md#enable-debug).
 5. Done! Add your modifications and functionality. Enjoy Blynk!
 
+***Note:*** when you have multiple devices connected to your network, they should all have different MAC and IP addresses. For example, when using 2 Arduino UNO with Ethernet shields, flashing default example to both of them will cause connection problems. You should use [manual ethernet configuration](https://github.com/blynkkk/blynk-library/blob/master/examples/BoardsAndShields/Arduino_Ethernet_Manual/Arduino_Ethernet_Manual.ino) example.
+
+
 ## Delay
 
 Your application might be calling a delay() function or sleeps/cycles for a long time inside of the loop(), like this:
@@ -32,7 +35,7 @@ void loop()
     
 You should be aware that this can degrade performance of Blynk, or cause connection drops.
 
-**Note:** This also applies to the BLYNK_READ & BLYNK_WRITE handlers!
+***Note:*** This also applies to the BLYNK_READ & BLYNK_WRITE handlers!
 
 If you need periodic actions, consider using some timer library, like shown [in this example](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino).
 
@@ -71,4 +74,4 @@ Serial.begin(9600);
 
 You can also use spare Hardware serial ports or SoftwareSerial for debug output (you will need an adapter to connect to it with your PC).
 
-**Note:** enabling debug mode will slowdown your hardware processing speed up to 10 times.
+***Note:*** enabling debug mode will slowdown your hardware processing speed up to 10 times.
