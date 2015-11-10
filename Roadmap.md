@@ -2,14 +2,18 @@
 
 We build Blynk based on Blynkers feedback but with limited resources we have to prioritize our features. At the moment list look like that:
 
-- Public profile sharing (project sharing with Auth Token so any user can control your hardware);
-- BLE support;
+- App Sharing (project sharing when other people can control your hardware, but can't modify your project); Free Beta
+- App Sharing (project sharing when other people can control your hardware, but can't modify your project); Subscription based
+- Bluetooth Low Energy support;
 - Hardware state handling (changing physical button state changes Blynk application state);
 - Hardware online/offlane state improvements (better indication for "is hardware online?", "is hardware offline?");
 - RTC widget;
-- Customization for widgets (button with icons, color changes, etc);
+- Design options for widgets (size, button with icons, etc);
+- Project space increase
 - Phone sensors widgets (GPS, accelerometer);
 - IP camera support;
+- Customizable look and feel of the project
+
+Under consideration:
 - Home screen widget (to avoid opening App when you need only 1 button click);
 - Haptic feedback (vibration) when touching widgets
-- Visual cleanup (more streamlined and consistent design)
