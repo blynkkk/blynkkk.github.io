@@ -5,6 +5,7 @@ We build Blynk based on Blynkers feedback but with limited resources we have to 
 - App Sharing (project sharing when other people can control your hardware, but can't modify your project); Free Beta
 - App Sharing (project sharing when other people can control your hardware, but can't modify your project); Subscription based
 - Bluetooth Low Energy support;
+- Direct Connect support (for WiFi);
 - Hardware state handling (changing physical button state changes Blynk application state);
 - Hardware online/offlane state improvements (better indication for "is hardware online?", "is hardware offline?");
 - Project space increase
