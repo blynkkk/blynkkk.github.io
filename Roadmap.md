@@ -7,9 +7,9 @@ We build Blynk based on Blynkers feedback but with limited resources we have to 
 - Bluetooth Low Energy support;
 - Hardware state handling (changing physical button state changes Blynk application state);
 - Hardware online/offlane state improvements (better indication for "is hardware online?", "is hardware offline?");
+- Project space increase
 - RTC widget;
 - Design options for widgets (size, button with icons, etc);
-- Project space increase
 - Phone sensors widgets (GPS, accelerometer);
 - IP camera support;
 - Customizable look and feel of the project
