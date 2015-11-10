@@ -11,4 +11,5 @@ We build Blynk based on Blynkers feedback but with limited resources we have to 
 - Phone sensors widgets (GPS, accelerometer);
 - IP camera support;
 - Home screen widget (to avoid opening App when you need only 1 button click);
-
+- Haptic feedback (vibration) when touching widgets
+- Visual cleanup (more streamlined and consistent design)
