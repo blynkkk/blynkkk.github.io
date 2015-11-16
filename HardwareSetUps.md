@@ -171,7 +171,7 @@ TODO:
 5. Click "use this example"
 6. Put your Auth Token here: ``` char auth[] = "YourAuthToken";``` and flash the Particle!
 
-On Android, you can scan this QR code from Blynk App and you'll get a ready-to-test project for **Particle Photon**. Just put your Auth Token to the SparkCore.ino example.
+On Android, you can scan this QR code from Blynk App and you'll get a ready-to-test project for **Particle Photon**. Just put your Auth Token to the ```01_PARTICLE.INO``` example.
 <img src="images/Particle Demo1530733075.png" style="width: 300px; height:300px"/>
 
 Additional materials:
