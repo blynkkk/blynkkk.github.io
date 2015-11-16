@@ -167,7 +167,7 @@ TODO:
 1. Open [Particle Web IDE](https://build.particle.io/build).
 2. Go to the libraries.
 3. Search for **Blynk** in the Community Libraries and click on it
-4. Open SparkCore.ino example
+4. Open ```01_PARTICLE.INO``` example
 5. Click "use this example"
 6. Update your auth token, and flash the Particle!
 
