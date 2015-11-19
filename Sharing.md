@@ -6,15 +6,16 @@ Blynk offers two types of sharing your amazing projects with other people:
 ## Shared access to your hardware
 Imagine giving someone an App to control your Project.
 
-• people you’ve shared your project with can’t modify anything. They can only use it.
-• you can update your app, change the layout, add widgets and it’s immediately synced to everyone. When you turn the app off -
+• people you’ve shared your project with can’t modify anything. They can only use it
+• you can update your app, change the layout, add widgets and it’s immediately synced to everyone
 • you can revoke access at any moment
 
 How it works:
 - you distribute the QR code to your users (you can email, print, post to social media, do whatever you want)
 - your users download Blynk app, scan the code and your app opens for them ready to use. They don’t even need to login or create an account.
 
-Go to your Project's Settings
+Go to your Project's Settings:
+
 <img src="images/dash_setttings_sharing.png" style="width: 200px; height:360px"/>
 
 Click on "Generate Link" button :
