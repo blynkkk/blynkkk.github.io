@@ -1,6 +1,8 @@
 #Sharing
 Blynk offers two types of sharing your amazing projects with other people:
+
 - **Share access to your hardware.** Think about giving someone an App for your Project. They can't modify, but can control and see what's there
+
 - **Share your Project configuration.** Others will get a clone of your project by scanning a given QR link, but they won't be able to control your hardware. It's great for tutorials, instructables, etc.
 
 ## Shared access to your hardware
