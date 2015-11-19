@@ -103,43 +103,38 @@ Additional materials:
 
 ## Raspberry Pi
 1. Connect your Raspberry Pi to the Internet and open it's console.
-2. Install [WiringPi](http://wiringpi.com/download-and-install/)
-3. Download and build Blynk:
+2. Follow the [tutorial to install Node.js](https://learn.adafruit.com/node-embedded-development/installing-node-dot-js)
+3. Download and build Blynk JS library using npm:
 
 
 	```bash
-	$ git clone https://github.com/blynkkk/blynk-library.git
-	$ cd blynk-library/linux
-	$ make clean all target=raspberry
+	sudo apt-get update && sudo apt-get upgrade
+	sudo apt-get install build-essential
+	sudo npm install -g npm
+	sudo npm install -g onoff
+	sudo npm install -g blynk-library
 	```
 
-4. Run Blynk:
+4. Run Blynk test script (put your auth token):
 
 	```bash
-	$ sudo ./blynk --token=YourAuthToken
+	blynk.js 715f8cafe95f4a91bae319d0376caa8c
 	```
-5. To enable Blynk auto restart for Pi, find ```*/etc/init.d/rc.local*``` file and add there:
+5. You can write our own script based on [examples](https://github.com/vshymanskyy/blynk-library-js/tree/master/examples)
+
+6. To enable Blynk auto restart for Pi, find ```/etc/rc.local``` file and add there:
 
 	```
-	/FULL_PATH_TO_LIB/blynk-library/linux/blynk --token=<Auth Token> 
+	node full_path_to_your_script.js <Auth Token> 
 	```
-
-	For example:
-
-	``` 
-	/home/pi/blynk-library/linux/blynk --token=<my token> &
-	```
-		
-We have also provided a build script. You can simply run it inside of the ```linux``` directory:
-
-```
-$ ./build.sh raspberry
-```
 
 Additional materials:
 
 - [Instructables: Blynk on Javascript for Raspberry Pi, Intel Edison and others](http://www.instructables.com/id/Blynk-JavaScript-in-20-minutes-Raspberry-Pi-Edison)
 - [Instructables: Use DHT11/DHT12 sensors with Raspberry Pi and Blynk](http://www.instructables.com/id/Raspberry-Pi-Nodejs-Blynk-App-DHT11DHT22AM2302/?ALLSTEPS)
+
+For C++ (WiringPi-based) installation:
+
 - [Blynk Community Topic: How-To Raspberry Pi](http://community.blynk.cc/t/howto-for-raspberry-pi/332)
 - [Video tutorial - Setting up Blynk and Raspberry Pi:](https://www.youtube.com/watch?v=iSG_8g6KyGE)
 <iframe width="200" height="110" src="https://www.youtube.com/embed/iSG_8g6KyGE" frameborder="0" allowfullscreen></iframe>
