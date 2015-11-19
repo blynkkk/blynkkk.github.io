@@ -18,6 +18,8 @@ That's it! Now person you shared project with should scan it from login screen (
 
 <img src="images/scan_qr.png" style="width: 200px; height:360px"/>
 
+Don't forget to activate your project in order to enable sharing!
+
 
 ## Dashboard sharing without Auth Token
 In case you want to share your dashboard without Auth token and thus without access to your device 
