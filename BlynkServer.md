@@ -16,7 +16,7 @@ Download latest server build:
 ## Requirements
 Java 8 required. (OpenJDK, Oracle). 
 
-[How to install Java](http://docs.blynk.cc/#blynk-server-how-to-run-local-blynk-server-install-java-on-ubuntu).
+[How to install Java on Ubuntu](http://docs.blynk.cc/#blynk-server-advanced-local-server-setup-install-java-on-ubuntu).
 
 ## How to run local Blynk Server
 By default, mobile application use 8443 port and is based on SSL/TLS sockets. Default hardware port is 8442 and 
