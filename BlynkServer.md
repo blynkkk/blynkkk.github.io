@@ -6,6 +6,13 @@ Download latest server build:
 
 [Download Blynk Server >](https://github.com/blynkkk/blynk-server/releases)
 
+## Why do I need Local Blynk Server?
+
+- Better security. Only you aware of your server. You may setup security policies as you want (MAC, IPs, login names, etc). Or you could make it accessible only within your private network.
+- Better stability. No need to rely on 3-d party Clouds. You are responsible for full control.
+- Better latency. Server as close to you as it could be. 
+- Maximum privacy. All data belongs only to you.
+
 ## Requirements
 Java 8 required. (OpenJDK, Oracle). 
 
