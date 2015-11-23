@@ -74,7 +74,16 @@ That's it! You won't see any output because all the logging is done within same 
 + To enable server auto-restart, find /etc/init.d/rc.local file and add a line:
 
         java -jar /home/pi/server-0.11.4.jar -dataFolder /home/pi/Blynk &
+        
++ Or in case above approach doesn't work for you, execute 
+       
+        crontab -e
 
+add the following line
+
+        @reboot java -jar /home/pi/server-0.11.4.jar -dataFolder /home/pi/Blynk &
+        
+save and exit.
                 
 ### App and sketch changes
 
