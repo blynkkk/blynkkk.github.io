@@ -243,7 +243,12 @@ Limitations :
 
 ###Push Notifications
 
-Push Notification widget allows you to send push notification from your hardware to your device.
+Push Notification widget allows you to send push notification from your hardware to your device. Currently it also
+ contains 2 additional options :
+
+- "Notify when hardware offline" - you will get push notification in case your hardware went offline
+- "Priority" - see detailed explanation [here](https://developers.google.com/cloud-messaging/concept-options#setting-the-priority-of-a-message). 
+Beware that setting your messages to high priority contributes more to battery drain compared to normal priority messages
 
 <img src="images/push.png" style="width: 77px; height:80px"/>
 
