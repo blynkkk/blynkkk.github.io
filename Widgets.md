@@ -249,6 +249,7 @@ Push Notification widget allows you to send push notification from your hardware
 - "Notify when hardware offline" - you will get push notification in case your hardware went offline.
 - "Priority" - high priority gives more chances that your message will be delivered without any delays. 
 See detailed explanation [here](https://developers.google.com/cloud-messaging/concept-options#setting-the-priority-of-a-message). 
+
 WARNING : high priority contributes more to battery drain compared to normal priority messages.
 
 <img src="images/push.png" style="width: 77px; height:80px"/>
