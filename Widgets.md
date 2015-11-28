@@ -31,8 +31,7 @@ In case you want to map incoming values to specific range you may use mapping bu
 
 <img src="images/display_edit_mapping.png" style="width: 200px; height:360px"/>
 
-Let's say your sensor send values from 0 to 1000. But you want to see values from 0 to 100 in the application. With 
-mapping enabled income value 100 will be mapped to 10.
+Let's say your sensor sends values from 0 to 1023. But you want to display values in a range 0 to 100 in the application. With data mapping enabled, incoming value 1023 will be mapped to 100.
 
 ### SPLIT/MERGE
 Some of the Widgets can send more than one value. And with this switch you can control how to send them.
