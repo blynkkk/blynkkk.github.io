@@ -29,7 +29,7 @@ Read more about Virtual Pins [here](http://docs.blynk.cc/#blynk-main-operations-
 
 In case you want to map incoming values to specific range you may use mapping button : 
 
-<img src="images/display_edit_mapping.png" style="width: 300px; height:280px"/>
+<img src="images/display_edit_mapping.png" style="width: 200px; height:360px"/>
 
 Let's say your sensor send values from 0 to 1000. But you want to see values from 0 to 100 in the application. With 
 mapping enabled income value 100 will be mapped to 10.
