@@ -147,6 +147,20 @@ param.getBuffer()
 param.getLength()
 ```
 
+##State syncing
+Blynk allows you easily restore hardware state from widget values in case your hardware was reset or disconnected. 
+We call this feature state syncing. Here is simple code snippet :
+
+```cpp
+BLYNK_CONNECTED() {
+  if (isFirstConnect) {
+    Blynk.syncAll();
+  }
+}
+```
+
+[Full Sketch](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/Sync/Sync.ino)
+
 ##Limitations and Recommendations
 - Don't put ```Blynk.virtualWrite``` and any other ```Blynk.*``` command inside ```void loop()```- it will cause 
 lot's of outgoing messages to our server and your connection will be terminated; 

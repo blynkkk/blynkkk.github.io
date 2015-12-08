@@ -295,3 +295,9 @@ void setup() {
 ```
 
 **Sketch:** [Bridge](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Bridge/Bridge.ino#L33)
+
+###RTC
+
+Realtime clock allows you to get time from server.
+
+**Sketch:** [RTC](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/RTC/RTC.ino)
