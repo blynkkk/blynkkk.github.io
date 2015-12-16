@@ -221,7 +221,7 @@ certificates, private key and it's password.
                 
 ## Administration UI
 
-Blynk server also has administration panel where you could monitor your server. It could be accessible with URL.
+Blynk server also has administration panel where you could monitor your server. It could be accessible with next URL:
 
         https://your_ip:7443/admin
         
@@ -229,9 +229,17 @@ Blynk server also has administration panel where you could monitor your server. 
         
 You can change it with next options :
         
-        enable.administration.ui
-        allowed.administrator.ips
-        https.port
++ Enable or disable administration UI
+        
+        enable.administration.ui=true
+        
++ Comma separated list of administrator IPs. Allow access to admin UI only for those IPs. Leave empty in order to allow for all. By default allow access from local host.
+        
+        allowed.administrator.ips=127.0.0.1
+        
++ Administration https port
+
+        https.port=7443
         
 ### Enabling mail on Local server
 In order to enable mail notifications on Local server you need to provide own mail credentials. To do that you need to create file "mail.properties" within same folder where server.jar is.
