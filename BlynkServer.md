@@ -225,7 +225,7 @@ Blynk server also has administration panel where you could monitor your server. 
 
         https://your_ip:7443/admin
         
-![Administration UI](https://github.com/blynkkk/blynk-server/blob/master/docs/admin_panel.png)
+<img src="images/admin_panel.png" style="width: 600px; height:500px"/>
         
 You can change it with next options :
         
