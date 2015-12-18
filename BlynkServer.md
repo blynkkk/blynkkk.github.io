@@ -203,7 +203,7 @@ certificates, private key and it's password.
         
         enable.raw.data.store=true
         
-+ Enable or disable administration UI
++ Enable or disable Admin Panel UI
         
         enable.administration.ui=true
         
@@ -225,7 +225,7 @@ Blynk server also has administration panel where you could monitor your server. 
 
         https://your_ip:7443/admin
         
-<img src="images/admin_panel.png" style="width: 640px; height:260px"/>
+<img src="images/admin_panel.png" style="width: 640px; height:202px"/>
         
 You can change it with next options :
         
