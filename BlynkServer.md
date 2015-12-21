@@ -219,7 +219,7 @@ certificates, private key and it's password.
         
         allowed.users.list=allowed1@gmail.com,allowed2@gmail.com
                 
-## Administration UI
+### Administration UI
 
 Blynk server also has administration panel where you could monitor your server. It could be accessible with next URL:
 
