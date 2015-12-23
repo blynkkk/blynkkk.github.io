@@ -237,7 +237,7 @@ Email widget allows you to send email from your hardware to any address.
 
 Example code:
 ```cpp
-Blynk.email("my_email@example.com", "Title", "Body");
+Blynk.email("my_email@example.com", "Subject", "Your message goes here");
 ```
 
 Limitations :
