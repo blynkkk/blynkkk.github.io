@@ -18,7 +18,7 @@ Use a **real** email address - it will be used later.
 
 An account is needed to store your projects and for you to have access to them from multiple devices. It's also a security measure. 
 
-You can always set up your own [Private Blynk Server](http://docs.blynk.cc/#blynk-server-requirements) and have full control.   
+You can always set up your own [Private Blynk Server](http://docs.blynk.cc/#blynk-server) and have full control.   
 
 ###2. Create a New Project
 After you've successfully logged into your account, start by creating a new project. Give it a name.
