@@ -32,11 +32,11 @@ Select the hardware you will use. Check out how the [list of supported hardware]
 
 ###4. Auth Token
 
-**Auth Token** is a uniqie identifier which is needed to connect your hardware to your smartphone. Every new project you create will have its own Auth Token.
+**Auth Token** is a unique identifier which is needed to connect your hardware to your smartphone. Every new project you create will have its own Auth Token.
 
 <img src="images/token.png" style="width: 200px; height:360px"/>
 
-<span style="color:#D3435C;">**NOTE:** Don't share your Auth Token with anyone, unless you want them to have access to your hardware. </span>
+<span style="color:#D3435C;">**NOTE:** Don't share your Auth Token with anyone, unless you want someone to have access to your hardware. </span>
 
 It's very convenient to send it over email. Press the email button and the token will be sent to the email address you used for registration. 
 You can also tap on the Token itself and it will be copied to the clipboard.
@@ -76,7 +76,7 @@ You may get a message saying "Arduino UNO is offline". We'll fix that in the nex
 
 ##Getting Started With Hardware
 ###How To Use an Example Sketch
-You should by now have the Blynk Library installed on your hardware. If not - [click here](http://docs.blynk.cc/#downloads-blynk-library).
+You should by now have the Blynk Library installed on your computer. If not - [click here](http://docs.blynk.cc/#downloads-blynk-library).
 
 Example sketches will help you get your hardware online quickly, we've prepared some for you to use.
 
