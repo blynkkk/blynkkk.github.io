@@ -82,7 +82,7 @@ Select serial port [ /dev/tty.usbmodem1451 ]:
 Select serial port [ /dev/tty.usbmodem1451 ]: /dev/tty.usbmodem1451
 ```
 	
-  After you press Enter, you should see something similar:
+  After you press Enter, you should see an output similar to this:
 
 ```
 Resetting device /dev/tty.usbmodem1451...
@@ -94,7 +94,7 @@ Connecting: GOPEN:/dev/tty.usbmodem1451,raw,echo=0,clocal=1,cs8,nonblock=1,ixoff
 2015/10/03 00:29:45 socat[30438.2046857984] N starting data transfer loop with FDs [3,3] and [4,4]
 ```
 
-<span style="color:#D3435C;">**NOTE:** Arduino IDE may complain with "programmer is not responding". You need to terminate script before uploading new sketch.. </span>
+<span style="color:#D3435C;">**NOTE:** Arduino IDE may complain with "programmer is not responding". You need to terminate script before uploading new sketch. </span>
 
 Additional materials:
 
