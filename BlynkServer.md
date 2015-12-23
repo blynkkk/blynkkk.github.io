@@ -8,10 +8,10 @@ Download latest server build:
 
 ## Why do I need Local Blynk Server?
 
-- Better security. Only you aware of your server. You may setup security policies as you want (MAC, IPs, login names, etc). Or you could make it accessible only within your private network.
-- Better stability. No need to rely on 3-d party Clouds. You are responsible for full control.
-- Better latency. Server as close to you as it could be. 
-- Maximum privacy. All data belongs only to you.
+- Better security. You are the only one who knows about the server. You can setup security policies tied to your specific needs (MAC, IPs, login names, etc). You can also make it accessible only within your private network.
+- Better stability. No need to rely on 3rd party Cloud solution. You have the full control.
+- Lower latency. Server is as close to you as it could be. 
+- Maximum privacy. All data is stored locally and is not shared with anyone.
 
 ## Requirements
 Java 8 required. (OpenJDK, Oracle). 
@@ -19,12 +19,12 @@ Java 8 required. (OpenJDK, Oracle).
 [How to install Java on Ubuntu](http://docs.blynk.cc/#blynk-server-advanced-local-server-setup-install-java-on-ubuntu).
 
 ## How to run local Blynk Server
-By default, mobile application use 8443 port and is based on SSL/TLS sockets. Default hardware port is 8442 and 
+By default, mobile applications use 8443 port and connection is based on SSL/TLS sockets. Default hardware port is 8442 and connection 
 is based on plain TCP/IP sockets.
 
 ### Quick Local Server launch
 
-1. Make sure you are using Java 8
+1. Make sure you have Java 8 installed
 
 	```
 	java -version
@@ -49,14 +49,14 @@ is based on plain TCP/IP sockets.
  
 You won't see any output, because all the logging is done within same folder in ```./logs/blynk.log``` file.
 
-### Launch Blynk Server on Raspberry Pi
+### How to launch Blynk Server on Raspberry Pi
 
 1. Login to Raspberry Pi via ssh;
 2. Install Java 8: 
         
 		sudo apt-get install oracle-java8-jdk
         
-3. Make sure you are using Java 8:
+3. Check if you are using Java 8:
 
         java -version
         Output: java version "1.8.0_40"
@@ -71,11 +71,11 @@ You won't see any output, because all the logging is done within same folder in 
         
 That's it! You won't see any output because all the logging is done within same folder in ```./logs/blynk.log file.```
         
-+ To enable server auto-restart, find /etc/init.d/rc.local file and add a line:
++ To make server launch automatically every time Raspberry boots up or resets, find /etc/init.d/rc.local file and add a line:
 
         java -jar /home/pi/server-0.12.0.jar -dataFolder /home/pi/Blynk &
         
-+ Or in case above approach doesn't work for you, execute 
++ Or if this doesn't work for you, execute 
        
         crontab -e
 
@@ -87,7 +87,7 @@ save and exit.
                 
 ### App and sketch changes
 
-To connect Blynk App to your local server you need to set up a custom server during login. Set up IP address and PORT (should be 8443 by default)
+To connect Blynk App to your local server you need to tell the app which server to connect to. On the Log In screen set up an IP address and PORT (should be 8443 by default)
 
 <img src="images/login.png" style="width: 200px; height:360px"/>  <img src="images/custom.png" style="width: 200px; height:360px"/>
 
@@ -128,7 +128,7 @@ To connect Blynk App to your local server you need to set up a custom server dur
 	```     
 
 ## Advanced local server setup
-If you need more flexibility, you can extend server with more options by creating server.properties file in same folder as server.jar. 
+If you need more flexibility, you can extend server functionality with more options by creating server.properties file in same folder as server.jar. 
 Example could be found [here](https://github.com/blynkkk/blynk-server/blob/master/server/tcp-server/src/main/resources/server.properties).
 server.properties options:
 
@@ -137,9 +137,9 @@ server.properties options:
         app.ssl.port=8443
         
 + For simplicity Blynk already provides server jar with build-in SSL certificates, so you have working server 
-out of the box via SSL/TLS sockets. But as certificate and it's private key is in public, this is very unsecure. 
-In order to fix that, you will need to provide your own certificates and change properties with path to your 
-certificates, private key and it's password. 
+out of the box via SSL/TLS sockets. But since certificate's private key is in public access, this is unsecure. 
+In order to change it, you will need to provide your own certificates and change the properties with path to your 
+certificates, private keys and passwords. 
 
 	See how to generate self-signed certificates [here](http://docs.blynk.cc/#blynk-server-how-to-run-local-blynk-server-generate-ssl-certificates)
 
@@ -155,11 +155,11 @@ certificates, private key and it's password.
 
         hardware.default.port=8442
 
-+ User profiles folder. Folder in which all users profiles will be stored. By default System.getProperty("java.io.tmpdir")/blynk used. Will be created if not exists
++ User profiles folder. All users profiles are stored here. By default System.getProperty("java.io.tmpdir")/blynk used. The folder will be created automatically if it doesn't exist
 
 	data.folder=/tmp/blynk
 
-+ Folder for all application logs. Will be created if it doesn't exist
++ Folder for all application logs. The folder will be created automatically if it doesn't exist
 
         logs.folder=./logs
 
@@ -167,7 +167,7 @@ certificates, private key and it's password.
 
         log.level=trace
 
-+ Maximum allowed number of user dashboards.
++ Maximum allowed number of user Projects.
 
         user.dashboard.max.limit=10
 
@@ -175,65 +175,49 @@ certificates, private key and it's password.
 
         user.message.quota.limit=100
 
-+ In case user exceeds quota limit - response error returned only once in specified period (in Millis).
++ In case when user exceeds quota limit - an error response will be returned only once in specified period (in millis).
 
         user.message.quota.limit.exceeded.warning.period=60000
 
-+ Maximum allowed user profile size. In Kb's.
++ Maximum allowed user profile size. In kilobytes.
 
         user.profile.max.size=128
 
-+ Maximum allowed number of notification queue. Queue responsible for processing email, pushes, twits sending. Because of performance issue - those queue is processed in separate thread, this is required due to blocking nature of all above operations. Usually limit shouldn't be reached
++ Maximum allowed length of notifications queue. Queue is responsible for sending e-mails, push notifications and tweets. Due to performance issues - this queue is processed in a separate thread. It's required due to blocking nature of all the operations listed above. Usually, limit shouldn't be reached
         
         notifications.queue.limit=10000
 
-+ Period for flushing all user DB to disk. In millis
++ Period for flushing all user databases to disk. In millis
 
         profile.save.worker.period=60000
 
-+ Specifies maximum period of time when application socket could be idle. After which socket will be closed due to non activity. In seconds. Leave it empty for infinity timeout
++ Specifies maximum period when application socket stays idle. After this period the socket will be closed due to no activity. Time period is measured in seconds. Leave this parameter empty if you want socket to be open indefinitely
 
         app.socket.idle.timeout=600
 
-+ Specifies maximum period of time when hardware socket could be idle. After which socket will be closed due to non activity. In seconds. Leave it empty for infinity timeout
++ Specifies maximum period when hardware socket stays idle. After this period the socket will be closed due to no activity. Time period is measured in seconds. Leave this parameter empty if you want socket to be open indefinitely
 
         hard.socket.idle.timeout=15
         
 + Mostly required for local servers setup in case user want to log raw data in CSV format. See [raw data](http://docs.blynk.cc/#blynk-server-how-to-run-local-blynk-server-raw-data-storage) section for more info.
         
         enable.raw.data.store=true
-        
-+ Enable or disable Admin Panel UI
-        
-        enable.administration.ui=true
-        
-+ Comma separated list of administrator IPs. Allow access to admin UI only for those IPs. Leave empty in order to allow for all. By default allow access from local host.
-        
-        allowed.administrator.ips=127.0.0.1
-        
-+ Administration https port
 
-        https.port=7443
-        
-+ Comma separated list of users allowed to create accounts. Leave it empty if no restriction required.
-        
-        allowed.users.list=allowed1@gmail.com,allowed2@gmail.com
-                
-### Administration UI
+### Administration Panel UI
 
-Blynk server also has administration panel where you could monitor your server. It could be accessible with next URL:
+Blynk server has Administration Panel where you can monitor your server. It can be accessible with this URL:
 
         https://your_ip:7443/admin
         
 <img src="images/admin_panel.png" style="width: 640px; height:202px"/>
+
+Here are the available settings:
         
-You can change it with next options :
-        
-+ Enable or disable administration UI
++ Enable or disable Admin Panel visual interface:
         
         enable.administration.ui=true
         
-+ Comma separated list of administrator IPs. Allow access to admin UI only for those IPs. Leave empty in order to allow for all. By default allow access from local host.
++ Comma separated list of administrator's IPs. This list defines which IP addresses will have access to the Admin Panel. Leave empty in order to allow access for anyone. By default, access is allowed from local host.
         
         allowed.administrator.ips=127.0.0.1
         
@@ -241,8 +225,14 @@ You can change it with next options :
 
         https.port=7443
         
-### Enabling mail on Local server
-In order to enable mail notifications on Local server you need to provide own mail credentials. To do that you need to create file "mail.properties" within same folder where server.jar is.
++ Comma separated list of users allowed to create new accounts. Leave it empty if no restrictions are required.
+        
+        allowed.users.list=allowed1@gmail.com,allowed2@gmail.com
+
+        
+        
+### Enabling sending e-mails from Local server
+In order to enable e-mail notifications on Local server you need to provide your  e-mail credentials. To do that you need to create file "mail.properties" within same folder where server.jar is.
 Mail properties:
 
 ```
@@ -306,9 +296,9 @@ Raw data files are rotated every day and gzipped.
 
         openssl pkcs8 -topk8 -inform PEM -outform PEM -in server.key -out server.pem
         
-WARNING: in case you connect hardware via [USB script](https://github.com/blynkkk/blynk-library/tree/master/scripts) you have to provide an option '-s' pointing to "common name" (hostname) you did specified during certificate generation.
+WARNING: in case when you connect hardware via [USB script](https://github.com/blynkkk/blynk-library/tree/master/scripts) you have to provide an option '-s' pointing to "common name" (hostname) you have specified during certificate generation.
         
-As output you'll retrieve server.crt and server.pem files that you need to provide for server.ssl properties.
+As output, you'll retrieve server.crt and server.pem files that you would need to provide for server.ssl properties.
 
 ### Install Java on Ubuntu
 
