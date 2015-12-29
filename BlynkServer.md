@@ -38,7 +38,7 @@ is based on plain TCP/IP sockets.
 3. Launch Blynk server.
 
 	```
-	java -jar server-0.12.0.jar -dataFolder /path
+	java -jar server-0.12.2.jar -dataFolder /path
 	```
 	
 	By default server uses these ports:
@@ -63,17 +63,17 @@ You won't see any output, because all the logging is done within same folder in 
         
 4. Download Blynk server .jar file (or manually copy it to raspberry via ssh and scp command): 
    
-        wget "https://github.com/blynkkk/blynk-server/releases/download/v0.12.0/server-0.12.0.jar"
+        wget "https://github.com/blynkkk/blynk-server/releases/download/v0.12.2/server-0.12.2.jar"
 
 5. Run the server on default ```hardware port 8442``` and default ```application port 8443``` (SSL port)
 
-        java -jar server-0.12.0.jar -dataFolder /home/pi/Blynk        
+        java -jar server-0.12.2.jar -dataFolder /home/pi/Blynk        
         
 That's it! You won't see any output because all the logging is done within same folder in ```./logs/blynk.log file.```
         
 + To make server launch automatically every time Raspberry boots up or resets, find /etc/init.d/rc.local file and add a line:
 
-        java -jar /home/pi/server-0.12.0.jar -dataFolder /home/pi/Blynk &
+        java -jar /home/pi/server-0.12.2.jar -dataFolder /home/pi/Blynk &
         
 + Or if this doesn't work for you, execute 
        
@@ -81,7 +81,7 @@ That's it! You won't see any output because all the logging is done within same 
 
 add the following line
 
-        @reboot java -jar /home/pi/server-0.12.0.jar -dataFolder /home/pi/Blynk &
+        @reboot java -jar /home/pi/server-0.12.2.jar -dataFolder /home/pi/Blynk &
         
 save and exit.
                 
@@ -154,10 +154,18 @@ certificates, private keys and passwords.
 + Hardware port
 
         hardware.default.port=8442
+        
++ Https port
+        
+        https.port=7443
+        
++ Http port
+        
+        http.port=8080
 
 + User profiles folder. All users profiles are stored here. By default System.getProperty("java.io.tmpdir")/blynk used. The folder will be created automatically if it doesn't exist
 
-	data.folder=/tmp/blynk
+	    data.folder=/tmp/blynk
 
 + Folder for all application logs. The folder will be created automatically if it doesn't exist
 
@@ -213,17 +221,13 @@ Blynk server has Administration Panel where you can monitor your server. It can 
 
 Here are the available settings:
         
-+ Enable or disable Admin Panel visual interface:
-        
-        enable.administration.ui=true
++ Url for opening admin page. Must start from "/". For "/admin" url path will look like that "https://localhost:7443/admin". 
+
+        admin.rootPath=/admin
         
 + Comma separated list of administrator's IPs. This list defines which IP addresses will have access to the Admin Panel. Leave empty in order to allow access for anyone. By default, access is allowed from local host.
         
         allowed.administrator.ips=127.0.0.1
-        
-+ Administration https port
-
-        https.port=7443
         
 + Comma separated list of users allowed to create new accounts. Leave it empty if no restrictions are required.
         
