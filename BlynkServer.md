@@ -103,23 +103,29 @@ To connect Blynk App to your local server you need to tell the app which server 
 	Blynk.begin(auth, "your_host"); //or
 	Blynk.begin(auth, IPAddress(xxx,xxx,xxx,xxx));
 	```
-	
-
-
-        
+	       
 + If you are connecting over WiFi, make edits in the WiFi example sketch. Change
 
-   ```     
-	Blynk.begin(auth, SSID, pass));
+    ```     
+    Blynk.begin(auth, SSID, pass));
 	```
 	to
-	
+
 	```
 	Blynk.begin(auth, SSID, pass, "your_host"); //or
 	Blynk.begin(auth, SSID, pass, IPAddress(XXX,XXX,XXX,XXX));
 	```
 	
-	
++ Change your rasp PI javascript from
+
+    ```  
+    var blynk = new Blynk.Blynk(AUTH, options = {connector : new Blynk.TcpClient()});
+    ```  
+    to
+    
+    ```  
+    var blynk = new Blynk.Blynk(AUTH, options= {addr:"xxx.xxx.xxx.xxx"});
+    ```  
         
 + If you are connected over USB when running ```blynk-ser.sh``` provide ```-s``` option with address of your local server:
 
