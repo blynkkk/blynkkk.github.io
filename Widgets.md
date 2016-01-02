@@ -277,6 +277,7 @@ Limitations :
 ###Bridge
 
 Bridge can be used for Device-to-Device communication. You can send digital/analog/virtual write commands from one device to another, knowing it's auth token.
+At the moment Bridge widget is not required on application side (it is mostly used for indication that we have such feature).
 
 <img src="images/bridge.png" style="width: 77px; height:80px"/>
 
@@ -293,6 +294,9 @@ void setup() {
     bridge1.virtualWrite(1, "hello");
 }
 ```
+
+WARNING : one bridge variable can work only with 1 virtual pin it was assigned to. ```WidgetBridge bridge1(1)``` means you can
+send ```virtualWrite``` only for V1 ```bridge1.virtualWrite(V1, "hello")```.
 
 **Sketch:** [Bridge](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Bridge/Bridge.ino#L33)
 
