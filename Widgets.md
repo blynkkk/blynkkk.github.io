@@ -293,11 +293,14 @@ void setup() {
     while (Blynk.connect() == false) {
         // Wait until Blynk is connected
     }
-    bridge1.setAuthToken("OtherDeviceAuthToken");
     bridge1.digitalWrite(9, HIGH);
     bridge1.analogWrite(10, 123);
     bridge1.virtualWrite(V1, "hello");
     bridge1.virtualWrite(V2, "value1", "value2", "value3");
+}
+
+BLYNK_CONNECTED() {
+  bridge1.setAuthToken("OtherAuthToken");
 }
 ```
 
