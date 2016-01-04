@@ -17,7 +17,10 @@ The device may send data to the Widgets to the Virtual Pin like this:
 Blynk.virtualWrite(pin, "abc");
 Blynk.virtualWrite(pin, 123);
 Blynk.virtualWrite(pin, 12.34);
+Blynk.virtualWrite(pin, "hello", 123, 12.34);
 ```
+
+For more information about virtual pins, [read this](http://docs.blynk.cc/#blynk-firmware-virtual-pins-control)
 
 ##Send data from app to hardware
 You can send any data from Widgets in the app to your hardware.
@@ -126,26 +129,6 @@ void loop()
 ```
 
 **Sketch:** [PushData](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino#L30)
-
-##Data types
-The actual values are sent as Strings, so there is no practical limits on the data that can be sent.  
-However, remember the limitations of the platform when dealing with numbers. For example, integer values on 
-Arduino are 16-bit, allowing range -32768 to 32767.
-You can interpret incoming data as Integers, Floats, Doubles and Strings. Use these commands: 
-
-```cpp
-param.asInt(); 		// get an integer value
-param.asFloat(); 	// get a float value
-param.asDouble();	// get a double value
-param.asStr();		// get a string value
-```
-
-You can also get the RAW data from the param buffer:
-
-```cpp
-param.getBuffer()
-param.getLength()
-```
 
 ##State syncing
 Blynk allows you easily restore hardware state from widget values in case your hardware was reset or disconnected. 
