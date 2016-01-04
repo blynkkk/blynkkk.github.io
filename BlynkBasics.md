@@ -180,25 +180,6 @@ void sendUptime()
 
 **Sketch:** [PushData](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino#L30)
 
-###Data types
-The actual values are sent as strings, so there is no practical limits on the data that can be sent.  
-However, remember the limitations of the platform when dealing with numbers. For example the integer on Arduino 
-is 16-bit, allowing range -32768 to 32767.
-You can interpret incoming data as Integers, Floats, Doubles and Strings:
-```cpp
-param.asInt();
-param.asFloat();
-param.asDouble();
-param.asStr();
-```
-
-You can also get the RAW data from the param buffer:
-
-```cpp
-param.getBuffer()
-param.getLength()
-```
-
 ###Limitations and recommendations
 
 - Don't put ```Blynk.virtualWrite``` and any other ```Blynk.*``` command inside ```void loop()```. 
