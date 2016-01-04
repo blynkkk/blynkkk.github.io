@@ -71,50 +71,132 @@ The library can perform basic pin IO (input-output) operations out-of-the-box:
 So need to write code for simple things like LED, Relay control and analog sensors.
 
 ## Virtual pins control
-### BLYNK_WRITE(vPIN)
-### BLYNK_READ(vPIN)
-### BLYNK_WRITE_DEFAULT()
-### BLYNK_READ_DEFAULT()
-### Blynk.virtualWrite();
+Virtual Pins are designed to send any data from your microcontroller to the Blynk App and back. 
+Think about Virtual Pins as channels for sending any data. Make sure you differentiate Virtual Pins from physical 
+pins on your hardware. Virtual Pins have no physical representation.
+
+Virtual Pins can be used to interface with libraries (Servo, LCD and others) and implement custom functionality. 
+The device may send data to the App using  ```Blynk.virtualWrite(pin, value)``` and receive data from the App using ```BLYNK_WRITE(vPIN)```.
+
+#### Virtual Pin data types
+The actual values are sent as strings, so there is no practical limits on the data that can be sent.  
+However, remember the limitations of the platform when dealing with numbers. For example the integer on Arduino 
+is 16-bit, allowing range -32768 to 32767.
+You can interpret incoming data as Integers, Floats, Doubles and Strings:
+```cpp
+param.asInt();
+param.asFloat();
+param.asDouble();
+param.asStr();
+```
+
+You can also get the RAW data from the param buffer:
+
+```cpp
+param.getBuffer()
+param.getLength()
+```
+
+### Blynk.virtualWrite(vPin, value)
 
 You can send all the formats of data to Virtual Pins
 
 ```cpp
+// Send string
 Blynk.virtualWrite(pin, "abc");
+
+// Send integer
 Blynk.virtualWrite(pin, 123);
+
+// Send float
 Blynk.virtualWrite(pin, 12.34);
+
+// Send multiple values (up to 4) as an array
+Blynk.virtualWrite(pin, "hello", 123, 12.34);
+
+// Send RAW data
+Blynk.virtualWriteBinary(pin, buffer, length);
 ```
-##Debugging
-### BLYNK_PRINT
-TODO:Description how to use
 
-```#define BLYNK_PRINT```
+**Note:** Calling ```virtualWrite``` attempts to sent the value to the network immediately.
 
-TODO: Output example
+### BLYNK_WRITE(vPIN)
 
-### BLYNK_DEBUG
-TODO: Description how to use
+```BLYNK_WRITE``` defines a function that is called when device receives an update of Virtual Pin value from the server:
 
-```#define BLYNK_DEBUG```
+```cpp
+BLYNK_WRITE(V0)
+{   
+  int value = param.asInt(); // Get value as integer
+  
+  // The param can contain multiple values, in such case:
+  int x = param[0].asInt();
+  int y = param[1].asInt();
+}
+```
 
-TODO: Output example
+### BLYNK_READ(vPIN)
 
-### BLYNK_LOG()
+```BLYNK_READ``` defines a function that is called when device is requested to send it's current value of Virtual Pin to the server. Normally, this function should contain some ```Blynk.virtualWrite``` calls.
+
+```cpp
+BLYNK_READ(V0)
+{
+  Blynk.virtualWrite(v0, newValue);
+}
+```
+
+### BLYNK_WRITE_DEFAULT()
+
+This redefines the handler for all pins that are not covered by custom ```BLYNK_WRITE``` functions.
+
+```cpp
+BLYNK_WRITE_DEFAULT()
+{
+  int pin = request.pin;      // Which exactly pin is handled?
+  int value = param.asInt();  // Use param as usual.
+}
+```
+
+### BLYNK_READ_DEFAULT()
+
+This redefines the handler for all pins that are not covered by custom ```BLYNK_WRITE``` functions.
+
+```cpp
+BLYNK_READ_DEFAULT()
+{
+  int pin = request.pin;      // Which exactly pin is handled?
+  Blynk.virtualWrite(pin, newValue);
+}
+```
+
+## Debugging
+
+### #define BLYNK_PRINT
+### #define BLYNK_DEBUG
+
 To enable debug prints on the default Serial, add on the top of your sketch **(should be the first line)**:
 
 ```cpp
-#define BLYNK_DEBUG // Optional, this enables lots of prints
-#define BLYNK_PRINT Serial
+#define BLYNK_PRINT Serial // Defines the object that is used for printing
+#define BLYNK_DEBUG        // Optional, this enables more detailed prints
 ```
+
 And enable Serial Output in setup():
 
 ```cpp
 Serial.begin(9600);
 ```
-
-Open Serial Monitor and you'll see:
-TODO: Output example
+Open Serial Monitor and you'll see the debug prints.
 
 You can also use spare Hardware serial ports or SoftwareSerial for debug output (you will need an adapter to connect to it with your PC).
 
-<span style="color:#D3435C;">**WARNING:** Enabling Debug mode will slow down your hardware processing speed up to 10 times!</span>
+<span style="color:#D3435C;">**WARNING:** Enabling ```BLYNK_DEBUG``` will slowdown your hardware processing speed up to 10 times!</span>
+
+### BLYNK_LOG()
+
+When ```BLYNK_PRINT``` is defined, you can use ```BLYNK_LOG``` to print your logs. The usage is similar to ```printf```:
+
+```cpp
+BLYNK_LOG("This is my value: %d", 10);
+```
