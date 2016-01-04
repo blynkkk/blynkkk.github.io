@@ -107,7 +107,7 @@ Additional materials:
 3. Download and build Blynk JS library using npm:
 
 
-	```bash
+	```
 	sudo apt-get update && sudo apt-get upgrade
 	sudo apt-get install build-essential
 	sudo npm install -g npm
@@ -117,9 +117,10 @@ Additional materials:
 
 4. Run Blynk test script (put your auth token):
 
-	```bash
+	```
 	blynk.js 715f8cafe95f4a91bae319d0376caa8c
 	```
+	
 5. You can write our own script based on [examples](https://github.com/vshymanskyy/blynk-library-js/tree/master/examples)
 
 6. To enable Blynk auto restart for Pi, find ```/etc/rc.local``` file and add there:
