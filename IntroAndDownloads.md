@@ -29,6 +29,22 @@ everything happens in a *blynk* of an eye.
 
 <img src="images/architecture.png" style="width: 640px; height:478px"/>
 
+##Features
+* Similar API & UI for all supported hardware & devices
+* Connection to the cloud using:
+  * Ethernet
+  * WiFi
+  * Bluetooth LE
+  * USB (Serial)
+  * ...
+* Set of easy-to-use Widgets
+* Direct pin manipulation with no code writing
+* Easy to integrate and add new functionality using virtual pins
+* History data monitoring via History Graph widget
+* Device-to-Device communication using Bridge Widget
+* Sending emails, tweets, push notifications, etc.
+* ... new features are constantly added!
+
 ##What do I need to Blynk?
 At this point you might be thinking: **"Ok, I want it. What do I need to get started?"** – Just a couple of things, really:
 
