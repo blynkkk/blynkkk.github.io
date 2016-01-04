@@ -151,7 +151,7 @@ This is a regular 16x2 LCD display made in our secret facility in China.
 You need to use special commands with this widget:
 
 ```
-lcd.print(x,y, "Your Message");
+lcd.print(x, y, "Your Message");
 ```
 Where x is a symbol position (0-15), y is a line number (0 or 1), 
 
@@ -277,7 +277,8 @@ Limitations :
 ###Bridge
 
 Bridge can be used for Device-to-Device communication (no app. involved). You can send digital/analog/virtual write commands from one device to another, knowing it's auth token.
-At the moment Bridge widget is not required on application side (it is mostly used for indication that we have such feature).
+At the moment Bridge widget is not required on application side (it is mostly used for indication that we have such feature).  
+**And yes, you can use multiple bridges to control multiple devices.**
 
 <img src="images/bridge.png" style="width: 77px; height:80px"/>
 
@@ -285,19 +286,24 @@ At the moment Bridge widget is not required on application side (it is mostly us
 
 Example code:
 ```cpp
-WidgetBridge bridge1(1); //Bridge widget on virtual pin 1
+WidgetBridge bridge1(V1); //Bridge widget on virtual pin 1
 ...
 void setup() {
+    Blynk.setup(...);
+    while (Blynk.connect() != true) {
+        // Ensure the Blynk is connected
+    }
     bridge1.setAuthToken("OtherDeviceAuthToken");
     bridge1.digitalWrite(9, HIGH);
     bridge1.analogWrite(10, 123);
-    bridge1.virtualWrite(1, "hello");
+    bridge1.virtualWrite(V1, "hello");
+    bridge1.virtualWrite(V2, "value1", "value2", "value3");
 }
 ```
 
-WARNING : one bridge variable can work only with 1 virtual pin it was assigned to. ```WidgetBridge bridge(1)``` means you can
-send ```virtualWrite``` only for V1 ```bridge.virtualWrite(V1, "hello")```. Also have in mind ```bridge.virtualWrite```
-doesn't send any value to mobile application, in order to do that you need call ```Blynk.virtualWrite```.
+WARNING: Bridge widget takes a virtual pin, and turns it into a channel to control another device. It means you can control any virtual, digital or analog pins of the target device.
+Be careful not to use pins like ```A0, A1, A2 ...``` when communicating between different device types, as Ardiono Core may refer to wrong pins in such cases.
+Also have in mind ```bridge.virtualWrite``` doesn't send any value to mobile application, in order to do that you need call ```Blynk.virtualWrite```.
 
 **Sketch:** [Bridge](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Bridge/Bridge.ino#L33)
 
