@@ -273,8 +273,8 @@ Limitations :
 
 **Sketch:** [PushNotification](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/PushNotification/PushNotification.ino#L26)
 
-##Other
-###Bridge
+## Other
+### Bridge
 
 Bridge can be used for Device-to-Device communication (no app. involved). You can send digital/analog/virtual write commands from one device to another, knowing it's auth token.
 At the moment Bridge widget is not required on application side (it is mostly used for indication that we have such feature).  
@@ -289,9 +289,9 @@ Example code:
 WidgetBridge bridge1(V1); //Bridge widget on virtual pin 1
 ...
 void setup() {
-    Blynk.setup(...);
-    while (Blynk.connect() != true) {
-        // Ensure the Blynk is connected
+    Blynk.begin(...);
+    while (Blynk.connect() == false) {
+        // Wait until Blynk is connected
     }
     bridge1.setAuthToken("OtherDeviceAuthToken");
     bridge1.digitalWrite(9, HIGH);
@@ -307,7 +307,7 @@ Also have in mind ```bridge.virtualWrite``` doesn't send any value to mobile app
 
 **Sketch:** [Bridge](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Bridge/Bridge.ino#L33)
 
-###RTC
+### RTC
 
 Realtime clock allows you to get time from server.
 
