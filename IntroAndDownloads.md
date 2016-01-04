@@ -45,6 +45,9 @@ everything happens in a *blynk* of an eye.
 * Sending emails, tweets, push notifications, etc.
 * ... new features are constantly added!
 
+You can find [example sketches](https://github.com/blynkkk/blynk-library/tree/master/examples) covering basic Blynk Features. 
+They are included in the library. All the sketches are designed to be easily combined with each other.
+
 ##What do I need to Blynk?
 At this point you might be thinking: **"Ok, I want it. What do I need to get started?"** – Just a couple of things, really:
 
