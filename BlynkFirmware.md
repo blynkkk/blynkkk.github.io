@@ -170,6 +170,13 @@ BLYNK_READ_DEFAULT()
 }
 ```
 
+### Blynk.syncAll()
+TODO
+
+### Blynk.syncVirtual(vPin)
+TODO
+
+
 ## Debugging
 
 ### #define BLYNK_PRINT
