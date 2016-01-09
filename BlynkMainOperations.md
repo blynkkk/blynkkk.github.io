@@ -142,7 +142,7 @@ BLYNK_CONNECTED() {
 }
 ```
 
-[Full Sketch](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/Sync/Sync.ino)
+[Full Sketch](https://github.com/blynkkk/blynk-library/blob/master/examples/More/Sync/Sync.ino)
 
 ##Limitations and Recommendations
 - Don't put ```Blynk.virtualWrite``` and any other ```Blynk.*``` command inside ```void loop()```- it will cause 
