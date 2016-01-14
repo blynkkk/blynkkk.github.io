@@ -37,4 +37,12 @@ If you want to skip SSL, and connect to TCP, you can also do that:
 
 #### Use Local Blynk Server
 
-In order to gain maximum security you could [install Blynk server locally](http://docs.blynk.cc/#blynk-server) and restrict access to your network, so nobody except you could access it.
+In order to gain maximum security you could [install Blynk server locally](http://docs.blynk.cc/#blynk-server) and 
+restrict access to your network, so nobody except you could access it. In this case all data is stored locally within
+your network and not send via Internet.
+In case of Local Blynk Server there is also no need to protect connection between your hardware and Local Blynk Server.
+This is true for Ethernet connection and partially true for Wi-Fi connection. In case of Wi-Fi you have to use at least 
+WPA, WPA2 (Wi-Fi Protected Access) Wi-Fi type in order to protect wireless traffic. 
+WPA and WPA2 offer a very robust encryption that is likely to protect all data travelling over the air—given that 
+a strong enough password is used. Even if your data is plain TCP/IP, another user won't be able to decipher captured 
+packets. Still, make sure that your password is strong enough, otherwise the only limiting factor for an attacker is time.
