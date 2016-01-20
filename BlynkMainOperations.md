@@ -142,6 +142,9 @@ BLYNK_CONNECTED() {
 }
 ```
 
+The ```syncAll``` command set all virtual pin values based on what is currently set on the app. In other words every virtual widget 
+will generate BLYNK_WRITE event on hardware side.
+
 [Full Sketch](https://github.com/blynkkk/blynk-library/blob/master/examples/More/Sync/Sync.ino)
 
 ##Limitations and Recommendations
