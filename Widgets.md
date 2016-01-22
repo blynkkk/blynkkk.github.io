@@ -93,7 +93,7 @@ Timer triggers actions at a specific time. Even if smartphone is offline. Start 
 
 <img src="images/timer_edit.png" style="width: 200px; height:360px"/>
 
-**Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino#L48)
+**Sketch:** [Timer](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Timer/Timer.ino#L16)
 
 ### Joystick
 Control servo movements in 4 directions
