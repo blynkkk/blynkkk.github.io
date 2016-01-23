@@ -84,6 +84,26 @@ add the following line
         @reboot java -jar /home/pi/server-0.12.4.jar -dataFolder /home/pi/Blynk &
         
 save and exit.
+
+## Update instruction
+
+In order to update your server with new version you need to kill old process and start new one.
+
++ Find process id of Blynk server
+
+        ps -aux | grep java
+        
++ You will see something like that
+ 
+        username   10539  1.0 12.1 3325808 428948 pts/76 Sl   Jan22   9:11 java -jar server-0.12.4.jar   
+        
++ Kill old process
+
+        kill 10539
+        
+10539 - blynk server process id from command output above.
+ 
++ Start new server [as usual](http://docs.blynk.cc/#blynk-server-how-to-run-local-blynk-server-quick-local-server-launch)
                 
 ### App and sketch changes
 
