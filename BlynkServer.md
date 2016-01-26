@@ -155,7 +155,7 @@ To connect Blynk App to your local server you need to tell the app which server 
 
 ## Advanced local server setup
 If you need more flexibility, you can extend server functionality with more options by creating server.properties file in same folder as server.jar. 
-Example could be found [here](https://github.com/blynkkk/blynk-server/blob/master/server/tcp-server/src/main/resources/server.properties).
+Example could be found [here](https://github.com/blynkkk/blynk-server/blob/master/server/core/src/main/resources/server.properties).
 server.properties options:
 
 + Application port
