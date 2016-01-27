@@ -131,6 +131,8 @@ void loop()
 **Sketch:** [PushData](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino#L30)
 
 ##State syncing
+
+###For hardware
 Blynk allows you easily restore hardware state from widget values in case your hardware was reset or disconnected. 
 We call this feature state syncing. Here is simple code snippet :
 
@@ -144,6 +146,15 @@ BLYNK_CONNECTED() {
 
 The ```syncAll``` command set all virtual pin values based on what is currently set on the app. In other words every virtual widget 
 will generate BLYNK_WRITE event on hardware side.
+
+###For app
+In real world your Blynk application will be turned off for a long periods while in pocket. But in case you still need 
+to hold your hardware in sync with widgets state even app is offline - you need to call ```Blynk.virtualWrite```.
+Let's assume you have a switch button on virtual pin 1 in app and physical button on hardware. You turn off your app. Press a physical
+button and expect to see button turned on when your app goes online. So in order to make this assumption true you need
+to send ```Blynk.virtualWrite(V1, HIGH)``` on physical button press.
+
+//todo add sketch example.
 
 [Full Sketch](https://github.com/blynkkk/blynk-library/blob/master/examples/More/Sync/Sync.ino)
 
