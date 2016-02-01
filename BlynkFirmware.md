@@ -176,9 +176,7 @@ This function is called every time Blynk gets connected to the server. It's conv
 
 ```cpp
 BLYNK_CONNECTED() {
-  if (isFirstConnect) {
-    Blynk.syncAll();
-  }
+// Your code here
 }
 ```
 
