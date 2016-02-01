@@ -170,12 +170,37 @@ BLYNK_READ_DEFAULT()
 }
 ```
 
+### BLYNK_CONNECTED()
+
+This function is called every time Blynk gets connected to the server. It's convenient to call sync functions here.
+
+```cpp
+BLYNK_CONNECTED() {
+  if (isFirstConnect) {
+    Blynk.syncAll();
+  }
+}
+```
+
 ### Blynk.syncAll()
-TODO
+
+Request server to send the most recent values for all widgets. In other words, all analog/digital pin states will be restored and every virtual pin will generate BLYNK_WRITE event.
+
+```cpp
+BLYNK_CONNECTED() {
+  if (isFirstConnect) {
+    Blynk.syncAll();
+  }
+}
+```
 
 ### Blynk.syncVirtual(vPin)
-TODO
 
+Requests single virtual pin value update. The corresponding ```BLYNK_WRITE``` handler is called as the result.
+
+```cpp
+Blynk.syncVirtual(V0);
+```
 
 ## Debugging
 
