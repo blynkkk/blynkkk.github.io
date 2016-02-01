@@ -134,7 +134,7 @@ void loop()
 
 ###For hardware
 Blynk allows you easily restore hardware state from widget values in case your hardware was reset or disconnected. 
-We call this feature state syncing. Here is simple code snippet :
+We call this feature state syncing. Here is simple code snippet:
 
 ```cpp
 BLYNK_CONNECTED() {
@@ -144,10 +144,11 @@ BLYNK_CONNECTED() {
 }
 ```
 
-The ```syncAll``` command set all virtual pin values based on what is currently set on the app. In other words every virtual widget 
-will generate BLYNK_WRITE event on hardware side.
+The ```Blynk.syncAll()``` command set all widget values based on the last state, stored on the server. In other words, all analog/digital pin states will be restored and every virtual pin will generate BLYNK_WRITE event.
 
 [Full Sketch](https://github.com/blynkkk/blynk-library/blob/master/examples/More/Sync/Sync.ino)
+
+You can also request a single virtual pin value update by calling ```Blynk.syncVirtual(pin)```. The corresponging BLYNK_WRITE will be called with the new value.
 
 ###For app
 In real world your Blynk application will be turned off for a long periods while in pocket. But in case you still need 
