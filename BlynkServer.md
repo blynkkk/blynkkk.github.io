@@ -38,7 +38,7 @@ is based on plain TCP/IP sockets.
 3. Launch Blynk server.
 
 	```
-	java -jar server-0.12.4.jar -dataFolder /path
+	java -jar server-0.12.6.jar -dataFolder /path
 	```
 	
 	By default server uses these ports:
@@ -63,17 +63,17 @@ You won't see any output, because all the logging is done within same folder in 
         
 4. Download Blynk server .jar file (or manually copy it to raspberry via ssh and scp command): 
    
-        wget "https://github.com/blynkkk/blynk-server/releases/download/v0.12.4/server-0.12.4.jar"
+        wget "https://github.com/blynkkk/blynk-server/releases/download/v0.12.6/server-0.12.6.jar"
 
 5. Run the server on default ```hardware port 8442``` and default ```application port 8443``` (SSL port)
 
-        java -jar server-0.12.4.jar -dataFolder /home/pi/Blynk        
+        java -jar server-0.12.6.jar -dataFolder /home/pi/Blynk        
         
 That's it! You won't see any output because all the logging is done within same folder in ```./logs/blynk.log file.```
         
 + To make server launch automatically every time Raspberry boots up or resets, find /etc/init.d/rc.local file and add a line:
 
-        java -jar /home/pi/server-0.12.4.jar -dataFolder /home/pi/Blynk &
+        java -jar /home/pi/server-0.12.6.jar -dataFolder /home/pi/Blynk &
         
 + Or if this doesn't work for you, execute 
        
@@ -81,7 +81,7 @@ That's it! You won't see any output because all the logging is done within same 
 
 add the following line
 
-        @reboot java -jar /home/pi/server-0.12.4.jar -dataFolder /home/pi/Blynk &
+        @reboot java -jar /home/pi/server-0.12.6.jar -dataFolder /home/pi/Blynk &
         
 save and exit.
 
@@ -95,7 +95,7 @@ In order to update your server with new version you need to kill old process and
         
 + You will see something like that
  
-        username   10539  1.0 12.1 3325808 428948 pts/76 Sl   Jan22   9:11 java -jar server-0.12.4.jar   
+        username   10539  1.0 12.1 3325808 428948 pts/76 Sl   Jan22   9:11 java -jar server-0.12.6.jar   
         
 + Kill old process
 
