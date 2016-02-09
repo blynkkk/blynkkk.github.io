@@ -17,6 +17,12 @@ If you experience connection problems, follow these steps:
 
 ***Note:*** when you have multiple devices connected to your network, they should all have different MAC and IP addresses. For example, when using 2 Arduino UNO with Ethernet shields, flashing default example to both of them will cause connection problems. You should use [manual ethernet configuration](https://github.com/blynkkk/blynk-library/blob/master/examples/BoardsAndShields/Arduino_Ethernet_Manual/Arduino_Ethernet_Manual.ino) example.
 
+## WiFi network connection
+If you encounter WiFi connection problems, please check these pitfalls:
+
+* You're trying to connect to "WPA & WPA2 Enterprise" network (often used in offices), and your shield does not support this security method
+* Your WiFi network has a login page that requests entering an access token (often used in restaurants)
+* Your WiFi network security disallows connecting alien devices completely (MAC filtering, etc)
 
 ## Delay
 
