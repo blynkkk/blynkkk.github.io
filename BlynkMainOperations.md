@@ -1,17 +1,17 @@
 #Blynk main operations
 
 ##Virtual Pins
-Blynk can control Digital and Analog IO Pins on you hardware directly. You don't even need to write code for it. 
+Blynk can control Digital and Analog I/O Pins on you hardware directly. You don't even need to write code for it. 
 It's great for blinking LEDs, but often it's just not enough...
 
 We designed Virtual Pins to send **any** data from your microcontroller to the Blynk App and back. 
 
-It opens huge opportunities for you, because anything you plug in to your hardware will be able to talk to Blynk.
-With Virtual Pins you can send something from the App, process it on Arduino and then send it back to the smartphone 
-based on any logic you want. You can trigger functions, read I2C devices, convert values, control any servo motor and so on.
+Anything you connect to your hardware will be able to talk to Blynk.
+With Virtual Pins you can send something from the App, process it on microcontroller and then send it back to the smartphone. You can trigger functions, read I2C devices, convert values, control servo and DC motors etc.
 
 Virtual Pins can be used to interface with external libraries (Servo, LCD and others) and implement custom functionality. 
-The device may send data to the Widgets to the Virtual Pin like this:
+
+Hardware may send data to the Widgets over the Virtual Pin like this:
 
 ```cpp
 Blynk.virtualWrite(pin, "abc");
@@ -34,7 +34,7 @@ BLYNK_WRITE(V1) //Button Widget is writing to pin V1
   int pinData = param.asInt(); 
 }
 ```
-When you press Button, Blynk App sends ```1``` On second click - it sends ```0``` 
+When you press a Button, Blynk App sends ```1``` On the second click - it sends ```0``` 
 
 This is how Button Widget is set up:
 
@@ -83,7 +83,7 @@ BLYNK_READ(V5) // Widget in the app READs Virtal Pin V5 with the certain frequen
 
 ###Pushing data from hardware
 If you need to PUSH sensor or other data from your hardware to Widget, you can write any logic you want. 
-Just set the frequency to PUSH mode
+Just set the frequency to PUSH mode.
 
 <img src="images/frequency_reading_push.png" style="width: 200px; height:360px"/>
 
@@ -133,8 +133,7 @@ void loop()
 ##State syncing
 
 ###For hardware
-Blynk allows you easily restore hardware state from widget values in case your hardware was reset or disconnected. 
-We call this feature state syncing. Here is simple code snippet:
+If your hardware looses Internet connection or resets, you can restore all the values from Widgets in the Blynk app.
 
 ```cpp
 BLYNK_CONNECTED() {
@@ -144,20 +143,18 @@ BLYNK_CONNECTED() {
 }
 ```
 
-The ```Blynk.syncAll()``` command set all widget values based on the last state, stored on the server. In other words, all analog/digital pin states will be restored and every virtual pin will generate BLYNK_WRITE event.
+The ```Blynk.syncAll()``` command restores all the Widgets' values based on the last saved values on the server. All analog and digital pin states will be restored. Every Virtual Pin will perform BLYNK_WRITE event.
 
 [Full Sketch](https://github.com/blynkkk/blynk-library/blob/master/examples/More/Sync/Sync.ino)
 
-You can also request a single virtual pin value update by calling ```Blynk.syncVirtual(pin)```. The corresponging BLYNK_WRITE will be called with the new value.
+You can also update a single Virtual Pin value by calling ```Blynk.syncVirtual(pin)```
 
 ###For app
-In real world your Blynk application will be turned off for a long periods while in pocket. But in case you still need 
-to hold your hardware in sync with widgets state even app is offline - you need to call ```Blynk.virtualWrite```.
-Let's assume you have a switch button on virtual pin 1 in app and physical button on hardware. You turn off your app. Press a physical
-button and expect to see button turned on when your app goes online. So in order to make this assumption true you need
-to send ```Blynk.virtualWrite(V1, HIGH)``` on physical button press.
+In real world your Blynk application will be running in background most of the time. But if you need to keep your hardware in sync with Widgets' state even if app is offline use ```Blynk.virtualWrite```.
 
-//todo add sketch example.
+Imagine you have a Button Widget connected to the Virtual Pin V1 in the app, and a physical button attached to your hardware. When you press a physical button, you would expect to see updated state of the Button Widget in the app. To achieve that you need to send ```Blynk.virtualWrite(V1, HIGH)``` when a physical button gets pressed.
+
+//todo: add sketch example.
 
 ##Limitations and Recommendations
 - Don't put ```Blynk.virtualWrite``` and any other ```Blynk.*``` command inside ```void loop()```- it will cause 
@@ -169,5 +166,5 @@ Please read instructions inside this [example sketch](https://github.com/blynkkk
 
 - Avoid using long delays with ```delay()``` – it may cause connection breaks;
 
-- If you send more than 10-100 (depends on hardware) values per second - you'll cause 
-[Flood Error](http://docs.blynk.cc/#troubleshooting-flood-error)* and connection to your hardware will be terminated;
+- If you send more than 10-100 (depending on hardware) values per second - you may cause 
+[Flood Error](http://docs.blynk.cc/#troubleshooting-flood-error)* and your hardware will be automatically diconnected from the server;
