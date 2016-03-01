@@ -195,7 +195,9 @@ Allows you to see any data your hardware had sent to server previously. History 
 - Day granularity - ```1m```, ```3m```;
 
 This means that minimum graph update interval is 1 minute for ```1h``` and ```6h``` periods. 
-1 hour for ```1d``` and ```1w``` periods. 1 day for ```1m``` and ```3m``` periods. 
+1 hour for ```1d``` and ```1w``` periods. 1 day for ```1m``` and ```3m``` periods.
+
+You can also easily clear data for selected pins - just swipe left history graph and click "Erase data".
 
 <img src="images/history_graph.png" style="width: 77px; height:80px"/>
 
