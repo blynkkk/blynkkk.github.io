@@ -251,7 +251,7 @@ Here are the available settings:
 
         admin.rootPath=/admin
         
-+ Comma separated list of administrator's IPs. This list defines which IP addresses will have access to the Admin Panel. Leave empty in order to allow access for anyone. By default, access is allowed from local host.
++ Comma separated list of administrator IPs. Allow access to admin UI only for those IPs. You may set it for 0.0.0.0/0 to allow access for all. You may use CIDR notation. For instance, 192.168.0.53/24.
         
         allowed.administrator.ips=127.0.0.1
         
