@@ -4,10 +4,10 @@
 
 - **Arduino** (https://github.com/blynkkk/blynk-library)
   - Uno, Duemilanove (select "UNO" in the list, not the "Due")
-  - Nano, Mini, Pro Mini, Pro Micro
-  - Mega
-  - YÚN (onboard WiFi and Ethernet, via Bridge)
-  - Due - limited support
+  - Nano, Mini, Pro Mini, Pro Micro, Due, Mega
+  - Arduino 101
+  - Arduino MKR1000
+  - Arduino Yún (onboard WiFi and Ethernet, via Bridge)
 - **Arduino-like**
   - ESP8266 (running standalone, using https://github.com/esp8266/Arduino)
   - Intel Edison
@@ -25,6 +25,7 @@
 - **Particle** (formerly Spark: https://github.com/vshymanskyy/blynk-library-spark)
   - Core
   - Photon
+  - RedBear Duo
 - **ARM mbed** (soon)
   - Seeed Tiny BLE
   - RedBearLab BLE Nano
@@ -50,7 +51,7 @@
 - USB (Serial), connected to your laptop or desktop
 - Arduino Ethernet Shield 2 (W5500)
 - Arduino Ethernet Shield (W5100)
-- Arduino WiFi101 Shield
+- Arduino WiFi 101 Shield
 - Arduino WiFi Shield
 - Adafruit Bluefruit LE (nRF8001 Breakout, BLE 4.0) *, soon*
 - Adafruit CC3000 WiFi Breakout / Shield
