@@ -199,6 +199,8 @@ This means that minimum graph update interval is 1 minute for ```1h``` and ```6h
 
 You can also easily clear data for selected pins - just swipe left history graph and click "Erase data".
 
+<img src="images/erase_history_graph.png" style="width: 77px; height:80px"/>
+
 <img src="images/history_graph.png" style="width: 77px; height:80px"/>
 
 <img src="images/history_graph_edit.png" style="width: 200px; height:360px"/>
