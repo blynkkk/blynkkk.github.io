@@ -7,8 +7,8 @@ If you experience connection problems, follow these steps:
 1. Check that your hardware, wires, cables and power supply are good quality, not harmed or damaged, etc.  
    Use high power USB cables and USB ports.
 2. Check your wiring using the examples (TCP/HTTP Client or similar) **provided with selected shield and hardware**.     Once you have some understanding how to configure connection, it's much easier to use Blynk.
-3. Try running command ```telnet cloud.blynk.cc 8442``` from your PC, connected to the same network as your board.
-   You should see something like ```Connected to cloud.blynk.cc.```.
+3. Try running command ```telnet blynk-cloud.com 8442``` from your PC, connected to the same network as your board.
+   You should see something like ```Connected to blynk-cloud.com.```.
 4. Try running Blynk default examples for your platform **without modifications** to see if it is working.
    * Read carefully the example comments and explanations
    * Check that your token is valid (copied from the App and **doesn't contain spaces, etc.**)
