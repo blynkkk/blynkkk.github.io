@@ -333,4 +333,6 @@ Also have in mind ```bridge.virtualWrite``` doesn't send any value to mobile app
 
 Realtime clock allows you to get time from server.
 
+<img src="images/rtc_edit.png" style="width: 200px; height:360px"/>
+
 **Sketch:** [RTC](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/RTC/RTC.ino)
