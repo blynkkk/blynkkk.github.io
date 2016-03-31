@@ -225,6 +225,30 @@ terminal.flush();
 
 **Sketch:** [Terminal](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Terminal/Terminal.ino#L23)
 
+### Menu
+Menu widget allows you to send command to your hardware based on selection you made on UI. Menu
+sends index of element you selected and not label string. Sending index is starts from 1.
+It works same way as usual ComboBox element. 
+
+<img src="images/menu_edit.png" style="width: 200px; height:360px"/>
+
+Example code:
+```
+switch (param.asInt())
+  {
+    case 1: { // Item 1
+      Serial.println("Item 1 selected");
+      break;
+    }
+    case 2: { // Item 2
+      Serial.println("Item 2 selected");
+      break;
+    }    
+  }
+```
+
+**Sketch:** [Menu](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Menu/Menu.ino)
+
 ##Notifications
 ###Twitter
 
