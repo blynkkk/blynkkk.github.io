@@ -114,30 +114,6 @@ When it's OFF, Joystick handle will not return back to center position. It will 
 
 **Sketch:** [JoystickTwoAxis](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/JoystickTwoAxis/JoystickTwoAxis.ino#L24)
 
-### Menu
-Menu widget allows you to send command to your hardware based on selection you made on UI. Menu
-sends index of element you selected and not label string. Sending index is starts from 1.
-It works same way as usual ComboBox element. 
-
-<img src="images/menu_edit.png" style="width: 200px; height:360px"/>
-
-Example code:
-```
-switch (param.asInt())
-  {
-    case 1: { // Item 1
-      Serial.println("Item 1 selected");
-      break;
-    }
-    case 2: { // Item 2
-      Serial.println("Item 2 selected");
-      break;
-    }    
-  }
-```
-
-**Sketch:** [Menu](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Menu/Menu.ino)
-
 ##Displays
 ### Value Display
 Displays incoming data from your sensors or Virtual Pins.
@@ -145,6 +121,16 @@ Displays incoming data from your sensors or Virtual Pins.
 <img src="images/display.png" style="width: 77px; height:80px"/> 
 
 <img src="images/display_edit.png" style="width: 200px; height:360px"/>
+
+**Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino#L48)
+
+### Labeled Value
+Displays incoming data from your sensors or Virtual Pins. It is better version of Value Display as it has a formatting 
+string, so you could format incoming value to any string you want.
+
+<img src="images/display.png" style="width: 77px; height:80px"/> 
+
+<img src="images/labeled_value_edit.png" style="width: 200px; height:360px"/>
 
 **Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino#L48)
 
@@ -317,6 +303,30 @@ Limitations :
 **Sketch:** [PushNotification](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/PushNotification/PushNotification.ino#L26)
 
 ## Other
+### Menu
+Menu widget allows you to send command to your hardware based on selection you made on UI. Menu
+sends index of element you selected and not label string. Sending index is starts from 1.
+It works same way as usual ComboBox element. 
+
+<img src="images/menu_edit.png" style="width: 200px; height:360px"/>
+
+Example code:
+```
+switch (param.asInt())
+  {
+    case 1: { // Item 1
+      Serial.println("Item 1 selected");
+      break;
+    }
+    case 2: { // Item 2
+      Serial.println("Item 2 selected");
+      break;
+    }    
+  }
+```
+
+**Sketch:** [Menu](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Menu/Menu.ino)
+
 ### Bridge
 
 Bridge can be used for Device-to-Device communication (no app. involved). You can send digital/analog/virtual write commands from one device to another, knowing it's auth token.
@@ -355,7 +365,7 @@ Also have in mind ```bridge.virtualWrite``` doesn't send any value to mobile app
 
 ### RTC
 
-Realtime clock allows you to get time from server.
+Realtime clock allows you to get time from server. You can preselect any timezone on UI to get time on hardware in required locale.
 
 <img src="images/rtc_edit.png" style="width: 200px; height:360px"/>
 
