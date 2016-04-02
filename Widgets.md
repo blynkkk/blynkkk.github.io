@@ -20,7 +20,7 @@ This is one of the main parameters you need to set. It defines which pin to cont
 
 **Digital Pins** - represent physical Digital IO pins on your hardware. PWM-enabled pins are marked with the ```~``` symbol
 
-**Digital Pins** - represent physical Analog IO pins on your hardware
+**Analog Pins** - represent physical Analog IO pins on your hardware
 
 **Virtual Pins** - have no physical representation. They are used for any data transfer between Blynk App and your hardware.
 Read more about Virtual Pins [here](http://docs.blynk.cc/#blynk-main-operations-virtual-pins).
