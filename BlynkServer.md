@@ -150,7 +150,7 @@ To connect Blynk App to your local server you need to tell the app which server 
 + If you are connected over USB when running ```blynk-ser.sh``` provide ```-s``` option with address of your local server:
 
 	```
-	./blynk-ser.sh -s you_host_or_IP
+	./blynk-ser.bat -s you_host_or_IP
 	```     
 
 ## Advanced local server setup
