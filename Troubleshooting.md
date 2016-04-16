@@ -59,7 +59,7 @@ When ```Blynk.virtualWrite``` is in the ```void loop```, it generates hundreds o
 ```cpp
 void loop()
 {
-  Blynk.virtualWrite(1, value);
+  Blynk.virtualWrite(1, value); // This line sends hundreds of messages to Blynk server
   Blynk.run();
 }
 ```
