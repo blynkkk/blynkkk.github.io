@@ -49,7 +49,7 @@ They are included in the library. All the sketches are designed to be easily com
 ##What do I need to Blynk?
 At this point you might be thinking: **"Ok, I want it. What do I need to get started?"** – Just a couple of things, really:
 
-####**Hardware**. 
+####**1. Hardware**. 
 An Arduino, Raspberry Pi, or a similar development kit.
 
 **Blynk works over the Internet.** 
@@ -58,7 +58,7 @@ will need an Ethernet or Wi-Fi Shield to communicate, others are already Interne
 laptop or desktop (it's a bit more complicated for newbies, but we got you covered). 
 What's cool, is that the [list of hardware](http://docs.blynk.cc/#list-of-supported-hardware) that works with Blynk is huge and will keep on growing. 
   
-####**A Smartphone**. 
+####**2. A Smartphone**. 
 The Blynk App is a well designed interface builder. It works on both iOS and Android, so no holywars here, ok? 
 
 #Downloads
