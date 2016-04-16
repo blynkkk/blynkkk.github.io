@@ -63,7 +63,7 @@ The Blynk App is a well designed interface builder. It works on both iOS and And
 
 #Downloads
 ##**Blynk Apps for iOS or Android** <br> 
-[<img src="http://linkmaker.itunes.apple.com/images/badges/en-us/badge_appstore-lrg.svg" alt="Drawing" style=" width: 150px; height:53px"/>](https://itunes.apple.com/us/app/blynk-control-arduino-raspberry/id808760481?ls=1&mt=8)  &nbsp; &nbsp; &nbsp; &nbsp;[<img src="https://play.google.com/intl/en_us/badges/images/apps/en-play-badge.png" alt="Drawing" style=" width: 200px; height:53px"/>](https://play.google.com/store/apps/details?id=cc.blynk)
+[<img src="http://linkmaker.itunes.apple.com/images/badges/en-us/badge_appstore-lrg.svg" alt="Drawing" style=" width: 170px; height:60px"/>](https://itunes.apple.com/us/app/blynk-control-arduino-raspberry/id808760481?ls=1&mt=8)  &nbsp; &nbsp; &nbsp; &nbsp;[<img src="https://play.google.com/intl/en_us/badges/images/apps/en-play-badge.png" alt="Drawing" style=" width: 200px; height:53px"/>](https://play.google.com/store/apps/details?id=cc.blynk)
 
 ##**Blynk Library** <br>
 [Download The Blynk Library >](https://github.com/blynkkk/blynk-library/releases/latest)
