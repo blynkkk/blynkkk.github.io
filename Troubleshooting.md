@@ -49,9 +49,10 @@ If you need periodic actions, consider using some timer library, like shown [in 
 
 ## Flood Error
 
-Your application may cause an enormous load on our server, please try avoiding sending data too fast.
+If your code frequently sends a lot of requests to our server, your hardware will be disconnected. Blynk App may show "Your hardware is offline"
 
-For example, in this situation Blynk.run() will quickly finish processing incoming messages, and then new value is sent to the server immediately, causing high traffic:
+Here is an example of what may cause flood: ***DON'T DO THAT:***
+When ```Blynk.virtualWrite``` is in the ```void loop```, it generates hundreds of "writes" per second 
 
 ```cpp
 void loop()
@@ -61,9 +62,12 @@ void loop()
 }
 ```
 
-You might be thinking about adding a delay(), but this creates [another trouble](./Troubleshooting.md#delay).
+***SOLUTION:***
+Send data in intervals. For example use SimpleTimer library, it's included in Blynk Library
+Check [this example](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino) to see how it can be done.
 
-If you need periodic actions, consider using some timer library, like shown [in this example](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino).
+Using ```delay()``` will not solve the problem. It will create [another trouble](./Troubleshooting.md#delay). Use timers!
+
 
 ## Enable debug
 
