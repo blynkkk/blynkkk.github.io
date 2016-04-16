@@ -1,7 +1,5 @@
-<span style="color:#D3435C;">**NOTE:** This guide is a **Work In Progress**. You're welcome to use it, but please be aware that there might be mistakes, misspellings, broken links and some TODO items listed.</span>
-
 #Intro
-This guide will help you to understand how to get started using Blynk and give you the most comprehensive overview of all the features.
+This guide will help you to understand how to get started using Blynk and give a comprehensive overview of all the features.
  
 If you want to jump straight into playing with Blynk, check out Getting Started.
 <br>
@@ -10,7 +8,7 @@ If you want to jump straight into playing with Blynk, check out Getting Started.
 
 ##How Blynk Works
 Blynk was designed for the Internet of Things. It can control hardware remotely, it can display sensor data, 
-it can store data, analyze and do many other cool things. 
+it can store data, vizualize it and do many other cool things. 
 
 There are three major components in the platform: 
 
@@ -25,7 +23,7 @@ process all the incoming and outcoming commands.
 
 Now imagine: every time you press a Button in the Blynk app, the message travels to ~~space~~ the Blynk Cloud, 
 where it magically finds its way to your hardware. It works the same in the opposite direction and 
-everything happens in a *blynk* of an eye.
+everything happens in a blynk of an eye.
 
 <img src="images/architecture.png" style="width: 640px; height:478px"/>
 
@@ -55,9 +53,8 @@ At this point you might be thinking: **"Ok, I want it. What do I need to get sta
 An Arduino, Raspberry Pi, or a similar development kit.
 
 **Blynk works over the Internet.** 
-This means that the hardware you choose should be able to connect to over the internet. Some of the boards, like Arduino Uno 
-will need an Ethernet or Wi-Fi Shield to communicate, others are already Internet-enabled: like the ESP8266, Raspberri Pi, 
-Particle Photon or SparkFun ESP Thing. But even if you don't have a shield, you can connect over USB to your 
+This means that the hardware you choose should be able to connect to the internet. Some of the boards, like Arduino Uno 
+will need an Ethernet or Wi-Fi Shield to communicate, others are already Internet-enabled: like the ESP8266, Raspberri Pi with WiFi dongle, Particle Photon or SparkFun Blynk Board. But even if you don't have a shield, you can connect it over USB to your 
 laptop or desktop (it's a bit more complicated for newbies, but we got you covered). 
 What's cool, is that the [list of hardware](http://docs.blynk.cc/#list-of-supported-hardware) that works with Blynk is huge and will keep on growing. 
   
@@ -71,4 +68,4 @@ The Blynk App is a well designed interface builder. It works on both iOS and And
 ##**Blynk Library** <br>
 [Download The Blynk Library >](https://github.com/blynkkk/blynk-library/releases/latest)
 
-In case you forgot how to or don't know how to install Arduino libraries [click here](http://www.arduino.cc/en/guide/libraries).
+In case you forgot, or don't know how to install Arduino libraries [click here](http://www.arduino.cc/en/guide/libraries).
