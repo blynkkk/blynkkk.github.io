@@ -155,7 +155,7 @@ led2.setValue(127); //set brightness of LED to 50%.
 
 <img src="images/led_edit.png" style="width: 200px; height:360px"/>
 
-**Sketch:** [LED](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/LED/LED.ino#L31)
+**Sketch:** [LED](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/LED/LED_Blink/LED_Blink.ino)
 
 ### Gauge
 A great visual way to display incoming numeric values.
