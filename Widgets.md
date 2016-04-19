@@ -147,7 +147,7 @@ Next formatting options supported:
 
 /pin.##/ - it displays a number with two decimal places (result:12,345.68)
 
-![device-2016-04-20-002303](https://cloud.githubusercontent.com/assets/16590099/14656101/43838abe-068e-11e6-8606-dd6a999a7af2.png)
+<img src="images/labeled_value_format_edit.png" style="width: 200px; height:360px"/>
 
 **NOTE:** Сhange of format is only available for virtual pins keep this in mind when designing.
 
@@ -217,7 +217,7 @@ Next formatting options supported:
 
 /pin.##/ - it displays a number with two decimal places (result:12,345.68)
 
-![device-2016-04-20-005817](https://cloud.githubusercontent.com/assets/16590099/14656925/20f86d7a-0693-11e6-843e-610878d6c4db.png)
+<img src="images/lcd_format_edit.png" style="width: 200px; height:360px"/>
 
 **NOTE:** Сhange of format is only available for virtual pins keep this in mind when designing.
 
