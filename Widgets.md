@@ -141,11 +141,11 @@ Next formatting options supported:
 
 ```/pin/``` - displays the value without formatting (12.6789)
 
-```/pin./``` - displays the value without decimal part (result:13)
+```/pin./``` - displays the value without decimal part (13)
 
-```/pin.#/``` - displays the value with 1 decimal digit (result:12.7)
+```/pin.#/``` - displays the value with 1 decimal digit (12.7)
 
-```/pin.##/``` - displays the value with two decimal places (result:12.68)
+```/pin.##/``` - displays the value with two decimal places (12.68)
 
 <img src="images/labeled_value_format_edit.png" style="width: 200px; height:360px"/>
 
@@ -212,11 +212,11 @@ Next formatting options supported:
 
 ```/pin/``` - displays the value without formatting (12.6789)
 
-```/pin./``` - displays the value without decimal part (result:13)
+```/pin./``` - displays the value without decimal part (13)
 
-```/pin.#/``` - displays the value with 1 decimal digit (result:12.7)
+```/pin.#/``` - displays the value with 1 decimal digit (12.7)
 
-```/pin.##/``` - displays the value with two decimal places (result:12.68)
+```/pin.##/``` - displays the value with two decimal places (12.68)
 
 <img src="images/lcd_format_edit.png" style="width: 200px; height:360px"/>
 
