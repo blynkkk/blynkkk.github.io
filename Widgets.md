@@ -134,22 +134,20 @@ string, so you could format incoming value to any string you want.
 
 **Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino#L48)
 
-#### Labeled Valued data format
+#### Formatting options
 
-Use number 12345,6789.
+Let's assume, your sensor sends number 12.6789 to Blynk application.
 Next formatting options supported:
 
-/pin/ - displays the values without formatting (result:12345.679)
+```/pin/``` - displays the value without formatting (12.6789)
 
-/pin./ - displays the number without decimal (result:12346)
+```/pin./``` - displays the value without decimal part (result:13)
 
-/pin.#/ - displays up to decimal (result:12,345.7)
+```/pin.#/``` - displays the value with 1 decimal digit (result:12.7)
 
-/pin.##/ - it displays a number with two decimal places (result:12,345.68)
+```/pin.##/``` - displays the value with two decimal places (result:12.68)
 
 <img src="images/labeled_value_format_edit.png" style="width: 200px; height:360px"/>
-
-**NOTE:** Сhange of format is only available for virtual pins keep this in mind when designing.
 
 ### LED
 A simple LED for indication. You need to send 0 in order to turn LED off. And 255 in order to turn LED on. Or just use
@@ -203,27 +201,24 @@ lcd.clear();
 
 <img src="images/lcd_edit.png" style="width: 200px; height:360px"/>
 
-#### LCD data format
-
-Use number 12345,6789.
-
-Next formatting options supported:
-
-/pin/ - displays the values without formatting (result:12345.679)
-
-/pin./ - displays the number without decimal (result:12346)
-
-/pin.#/ - displays up to decimal (result:12,345.7)
-
-/pin.##/ - it displays a number with two decimal places (result:12,345.68)
-
-<img src="images/lcd_format_edit.png" style="width: 200px; height:360px"/>
-
-**NOTE:** Сhange of format is only available for virtual pins keep this in mind when designing.
-
 **Sketch:** [LCD Advanced Mode](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/LCD/LCD_AdvancedMode/LCD_AdvancedMode.ino)
 **Sketch:** [LCD Simple Mode Pushing](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/LCD/LCD_SimpleModePushing/LCD_SimpleModePushing.ino)
 **Sketch:** [LCD Simple Mode Reading](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/LCD/LCD_SimpleModeReading/LCD_SimpleModeReading.ino)
+
+#### Formatting options
+
+Let's assume, your sensor sends number 12.6789 to Blynk application.
+Next formatting options supported:
+
+```/pin/``` - displays the value without formatting (12.6789)
+
+```/pin./``` - displays the value without decimal part (result:13)
+
+```/pin.#/``` - displays the value with 1 decimal digit (result:12.7)
+
+```/pin.##/``` - displays the value with two decimal places (result:12.68)
+
+<img src="images/lcd_format_edit.png" style="width: 200px; height:360px"/>
 
 ### Graph
 Easily plot incoming data from your project in various designs.
