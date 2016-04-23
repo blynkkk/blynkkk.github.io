@@ -336,7 +336,7 @@ Limitations :
 ### Tabs
 For easy grouping of controls using Tabs. Place the necessary elements in the first tabs and switch to another tabs, repeat. Now your project is structured and easy to understand.
 
-<img src="images/project_with_tabs.png" style="width: 200px; height:360px"/>
+<img src="images/tabs_settings.png" style="width: 200px; height:360px"/>
 ### Menu
 Menu widget allows you to send command to your hardware based on selection you made on UI. Menu
 sends index of element you selected and not label string. Sending index is starts from 1.
