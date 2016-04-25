@@ -233,4 +233,4 @@ BLYNK_LOG("This is my value: %d", 10);
 
 ## Porting, hacking
 
-If you want to dive into crafting/hacking/porting Blynk library implementation, please also check [this documemtation](https://github.com/blynkkk/blynk-library/tree/master/docs).
+If you want to dive into crafting/hacking/porting Blynk library implementation, please also check [this documemtation](https://github.com/blynkkk/blynk-library/tree/master/extras/docs).
