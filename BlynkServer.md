@@ -274,7 +274,7 @@ mail.smtp.username=YOUR_EMAIL_HERE
 mail.smtp.password=YOUR_EMAIL_PASS_HERE
 ```
         
-See example [here](https://github.com/blynkkk/blynk-server/blob/master/server/notifications/mail-notifications/src/main/resources/mail.properties).
+See example [here](https://github.com/blynkkk/blynk-server/blob/master/server/notifications/email/src/main/resources/mail.properties).
 
 NOTE: you'll need to setup Gmail to allow less secured applications. Go [here](https://www.google.com/settings/security/lesssecureapps) and then click "Allow less secure apps".
 
