@@ -334,7 +334,7 @@ Limitations :
 
 ## Other
 ### Tabs
-For easy grouping of controls using Tabs. Place the necessary elements in the first tabs and switch to another tabs, repeat. Now your project is structured and easy to understand.
+The only purpose of Tabs widget is to extend your project space. You can have up to 4 tabs. 
 
 <img src="images/tabs_settings.png" style="width: 200px; height:360px"/>
 ### Menu
