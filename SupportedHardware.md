@@ -3,18 +3,20 @@
 ## Platforms
 
 - **Arduino** (https://github.com/blynkkk/blynk-library)
-  - Uno, Duemilanove (select "UNO" in the list, not the "Due")
-  - Nano, Mini, Pro Mini, Pro Micro, Due, Mega
-  - Arduino 101
+  - Arduino Uno, Duemilanove
+  - Arduino Nano, Mini, Pro Mini, Pro Micro, Due, Mega
+  - Arduino 101 (Intel Curie)
   - Arduino MKR1000
+  - Arduino Zero
   - Arduino Yún (onboard WiFi and Ethernet, via Bridge)
 - **Arduino-like**
-  - ESP8266 (running standalone, using https://github.com/esp8266/Arduino)
+  - Generic ESP8266, NodeMCU, Huzzah, WeMos D1, Seeed Wio Link, etc.
   - Intel Edison
   - Intel Galileo
   - LinkIt ONE
-  - Wicked WildFire (CC3000)
+  - Wicked WildFire V3 (CC3000)
   - TinyCircuits TinyDuino (CC3000)
+  - Microduino/mCookie Core, Core+, CoreUSB
   - LightBlue Bean *, soon*
 - **Energia**
   - Texas Instruments
@@ -25,6 +27,7 @@
 - **Particle** (formerly Spark: https://github.com/vshymanskyy/blynk-library-spark)
   - Core
   - Photon
+  - Electron
   - RedBear Duo
 - **ARM mbed** (soon)
   - Seeed Tiny BLE
