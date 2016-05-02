@@ -150,11 +150,12 @@ The ```Blynk.syncAll()``` command restores all the Widgets' values based on the 
 You can also update a single Virtual Pin value by calling ```Blynk.syncVirtual(pin)```
 
 ###For app
-In real world your Blynk application will be running in background most of the time. But if you need to keep your hardware in sync with Widgets' state even if app is offline use ```Blynk.virtualWrite```.
+If you need to keep your hardware in sync with Widgets' state even if app is offline use ```Blynk.virtualWrite```.
 
-Imagine you have a Button Widget connected to the Virtual Pin V1 in the app, and a physical button attached to your hardware. When you press a physical button, you would expect to see updated state of the Button Widget in the app. To achieve that you need to send ```Blynk.virtualWrite(V1, HIGH)``` when a physical button gets pressed.
+Imagine you have a LED Widget connected to the Virtual Pin V1 in the app, and a physical button attached to your hardware. When you press a physical button, you would expect to see updated state of the LED Widget in the app. To achieve that you need to send ```Blynk.virtualWrite(V1, HIGH)``` when a physical button gets pressed.
 
-//todo: add sketch example.
+[Represent physical button state via LED widget sketch with interrupts](https://github.com/blynkkk/blynk-library/blob/master/examples/More/ButtonInterrupt/ButtonInterrupt.ino)
+[Represent physical button state via LED widget sketch with polling](https://github.com/blynkkk/blynk-library/blob/master/examples/More/ButtonPoll/ButtonPoll.ino)
 
 ##Limitations and Recommendations
 - Don't put ```Blynk.virtualWrite``` and any other ```Blynk.*``` command inside ```void loop()```- it will cause 
