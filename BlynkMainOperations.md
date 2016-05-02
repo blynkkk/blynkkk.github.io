@@ -154,9 +154,9 @@ If you need to keep your hardware in sync with Widgets' state even if app is off
 
 Imagine you have a LED Widget connected to the Virtual Pin V1 in the app, and a physical button attached to your hardware. When you press a physical button, you would expect to see updated state of the LED Widget in the app. To achieve that you need to send ```Blynk.virtualWrite(V1, HIGH)``` when a physical button gets pressed.
 
-[Represent physical button state via LED widget sketch with interrupts](https://github.com/blynkkk/blynk-library/blob/master/examples/More/ButtonInterrupt/ButtonInterrupt.ino)
+[Represent physical button state via LED widget with interrupts](https://github.com/blynkkk/blynk-library/blob/master/examples/More/ButtonInterrupt/ButtonInterrupt.ino)
 
-[Represent physical button state via LED widget sketch with polling](https://github.com/blynkkk/blynk-library/blob/master/examples/More/ButtonPoll/ButtonPoll.ino)
+[Represent physical button state via LED widget with polling](https://github.com/blynkkk/blynk-library/blob/master/examples/More/ButtonPoll/ButtonPoll.ino)
 
 ##Limitations and Recommendations
 - Don't put ```Blynk.virtualWrite``` and any other ```Blynk.*``` command inside ```void loop()```- it will cause 
