@@ -168,5 +168,8 @@ Please read instructions inside this [example sketch](https://github.com/blynkkk
 
 - Avoid using long delays with ```delay()``` – it may cause connection breaks;
 
-- If you send more than 10-100 (depending on hardware) values per second - you may cause 
-[Flood Error](http://docs.blynk.cc/#troubleshooting-flood-error)* and your hardware will be automatically diconnected from the server;
+- If you send more than 100 values per second - you may cause 
+[Flood Error](http://docs.blynk.cc/#troubleshooting-flood-error) and your hardware will be automatically disconnected from the server;
+
+- Be careful sending a lot of ```Blynk.virtualWrite``` commands as most hardware is not very powerful (like ESP8266) 
+so it may not handle many requests. 
