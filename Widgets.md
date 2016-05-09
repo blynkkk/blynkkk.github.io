@@ -125,7 +125,7 @@ Displays incoming data from your sensors or Virtual Pins.
 **Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino#L48)
 
 ### Labeled Value
-Displays incoming data from your sensors or Virtual Pins. It is better version of Value Display as it has a formatting 
+Displays incoming data from your sensors or Virtual Pins. It is a better version of 'Value Display' as it has a formatting 
 string, so you could format incoming value to any string you want.
 
 <img src="images/display.png" style="width: 77px; height:80px"/> 
@@ -137,7 +137,7 @@ string, so you could format incoming value to any string you want.
 #### Formatting options
 
 Let's assume, your sensor sends number 12.6789 to Blynk application.
-Next formatting options supported:
+Next formatting options are supported:
 
 ```/pin/``` - displays the value without formatting (12.6789)
 
@@ -250,7 +250,7 @@ You can also easily clear data for selected pins - just swipe left history graph
 **Sketch:** [PushData](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino#L58)
 
 ### Terminal
-Display data from your hardware. Allows also to send any string to your hardware.
+Display data from your hardware. Also allows to send any string to your hardware.
 
 You need to use special commands with this widget:
 
@@ -392,7 +392,7 @@ BLYNK_CONNECTED() {
 ```
 
 WARNING: Bridge widget takes a virtual pin, and turns it into a channel to control another device. It means you can control any virtual, digital or analog pins of the target device.
-Be careful not to use pins like ```A0, A1, A2 ...``` when communicating between different device types, as Ardiono Core may refer to wrong pins in such cases.
+Be careful not to use pins like ```A0, A1, A2 ...``` when communicating between different device types, as Arduino Core may refer to wrong pins in such cases.
 Also have in mind ```bridge.virtualWrite``` doesn't send any value to mobile application, in order to do that you need call ```Blynk.virtualWrite```.
 
 **Sketch:** [Bridge](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Bridge/Bridge.ino#L33)

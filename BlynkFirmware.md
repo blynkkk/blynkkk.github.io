@@ -68,7 +68,7 @@ The library can perform basic pin IO (input-output) operations out-of-the-box:
     analogRead
     analogWrite (PWM or Analog signal depending on the platform)
 
-So need to write code for simple things like LED, Relay control and analog sensors.
+No need to write code for simple things like LED, Relay control and analog sensors.
 
 ## Virtual pins control
 Virtual Pins are designed to send any data from your microcontroller to the Blynk App and back. 
@@ -79,7 +79,7 @@ Virtual Pins can be used to interface with libraries (Servo, LCD and others) and
 The device may send data to the App using  ```Blynk.virtualWrite(pin, value)``` and receive data from the App using ```BLYNK_WRITE(vPIN)```.
 
 #### Virtual Pin data types
-The actual values are sent as strings, so there is no practical limits on the data that can be sent.  
+The actual values are sent as strings, so there are no practical limits on the data that can be sent.  
 However, remember the limitations of the platform when dealing with numbers. For example the integer on Arduino 
 is 16-bit, allowing range -32768 to 32767.
 You can interpret incoming data as Integers, Floats, Doubles and Strings:
@@ -118,7 +118,7 @@ Blynk.virtualWrite(pin, "hello", 123, 12.34);
 Blynk.virtualWriteBinary(pin, buffer, length);
 ```
 
-**Note:** Calling ```virtualWrite``` attempts to sent the value to the network immediately.
+**Note:** Calling ```virtualWrite``` attempts to send the value to the network immediately.
 
 ### BLYNK_WRITE(vPIN)
 
@@ -160,7 +160,7 @@ BLYNK_WRITE_DEFAULT()
 
 ### BLYNK_READ_DEFAULT()
 
-This redefines the handler for all pins that are not covered by custom ```BLYNK_WRITE``` functions.
+This redefines the handler for all pins that are not covered by custom ```BLYNK_READ``` functions.
 
 ```cpp
 BLYNK_READ_DEFAULT()
