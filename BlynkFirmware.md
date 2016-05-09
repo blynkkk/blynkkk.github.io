@@ -142,7 +142,7 @@ BLYNK_WRITE(V0)
 ```cpp
 BLYNK_READ(V0)
 {
-  Blynk.virtualWrite(v0, newValue);
+  Blynk.virtualWrite(V0, newValue);
 }
 ```
 
