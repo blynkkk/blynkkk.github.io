@@ -37,7 +37,7 @@
   - Seeed Tiny BLE
   - RedBearLab BLE Nano
   - BBC Micro:bit
-- **JavaScript** (Node.js, Espruino) (https://www.npmjs.com/package/blynk-library)
+- **JavaScript** (Node.js, Espruino, Browser) (https://www.npmjs.com/package/blynk-library)
   - Regular PC with Linux / Windows / OS X
   - Raspberry Pi (Banana Pi, Orange Pi, ...)
   - BeagleBone Black
