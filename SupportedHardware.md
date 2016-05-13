@@ -13,11 +13,15 @@
   - Generic ESP8266, NodeMCU, Huzzah, WeMos D1, Seeed Wio Link, etc.
   - Intel Edison
   - Intel Galileo
+  - Teensy 3.2/3.1
+  - LightBlue Bean *, soon*
+  - Simblee BLE *, soon*
   - LinkIt ONE
-  - Wicked WildFire V3 (CC3000)
   - TinyCircuits TinyDuino (CC3000)
   - Microduino/mCookie Core, Core+, CoreUSB
-  - LightBlue Bean *, soon*
+  - Wicked WildFire V3 (CC3000)
+  - Oak by Digistump
+  - chipKIT Uno32
 - **Energia**
   - Texas Instruments
     - CC3200-LaunchXL
@@ -57,6 +61,7 @@
 - Arduino WiFi 101 Shield
 - Arduino WiFi Shield
 - Adafruit Bluefruit LE (nRF8001 Breakout, BLE 4.0) *, soon*
+- HM-10 Bluetooth module *, soon*
 - Adafruit CC3000 WiFi Breakout / Shield
 - ENC28J60 - based boards
 - ESP8266 as WiFi modem (running original firmware)
