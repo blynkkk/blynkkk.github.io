@@ -20,17 +20,22 @@ An account is needed to save your projects and have access to them from multiple
 
 You can always set up your own [Private Blynk Server](http://docs.blynk.cc/#blynk-server) and have full control.   
 
-###2. Create a New Project
+###2. Login with Facebook
+If you have Facebook account, you'll may use it to login in Blynk. If you first time in Blynk, account create automatically.
+
+<img src="images/sign_fb.png" style="width: 200px; height:360px"/>
+
+###3. Create a New Project
 After you've successfully logged into your account, start by creating a new project. Give it a name.
 
 <img src="images/create_new_project.png" style="width: 200px; height:360px"/>
 
-###3. Choose Your Hardware
+###4. Choose Your Hardware
 Select the hardware model you will use. Check out the [list of supported hardware](http://docs.blynk.cc/#list-of-supported-hardware)!
 
 <img src="images/select_hardware.png" style="width: 200px; height:360px"/>
 
-###4. Auth Token
+###5. Auth Token
 
 **Auth Token** is a unique identifier which is needed to connect your hardware to your smartphone. Every new project you create will have its own Auth Token.
 
@@ -45,7 +50,7 @@ Now press the **"Create"** button.
 
 <img src="images/new_project.png" style="width: 200px; height:360px"/>
 
-###5. Add a Widget
+###6. Add a Widget
 
 Your project canvas is empty, let's add a button to control our LED.
 
@@ -67,7 +72,7 @@ The most important parameter to set is **PIN** . The list of pins reflects physi
 
 <img src="images/pin_selection.png" style="width: 200px; height:360px"/>
 
-###6. Run The Project
+###7. Run The Project
 When you are done with the Settings - press the **PLAY** button. This will switch you from EDIT mode to PLAY mode where you can interact with the hardware. While in PLAY mode, you won't be able to drag or set up new widgets, press **STOP** and get back to EDIT mode.
 
 You will get a message saying "Arduino UNO is offline". We'll deal with that in the next section.
