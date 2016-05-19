@@ -239,6 +239,10 @@ Allows you to see any data your hardware had sent to server previously. History 
 This means that minimum graph update interval is 1 minute for ```1h``` and ```6h``` periods. 
 1 hour for ```1d``` and ```1w``` periods. 1 day for ```1m``` and ```3m``` periods.
 
+In order to see data in history graph you need to use either widgets with "Frequency reading" interval (in 
+that case your app should be open and running) or you can use ```Blynk.virtualWrite``` on hardware side. Every 
+```Blynk.virtualWrite``` command is stored on server automatically. In that case you don't need application to be up and running.
+
 You can also easily clear data for selected pins - just swipe left history graph and click "Erase data".
 
 <img src="images/erase_history_graph.png" style="width: 200px; height:360px"/>
