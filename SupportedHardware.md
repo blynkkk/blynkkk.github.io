@@ -14,6 +14,7 @@
   - Intel Edison
   - Intel Galileo
   - Teensy 3.2/3.1
+  - RedBearLab Blend Micro
   - LightBlue Bean *, soon*
   - Simblee BLE *, soon*
   - LinkIt ONE
@@ -60,8 +61,8 @@
 - Arduino Ethernet Shield (W5100)
 - Arduino WiFi 101 Shield
 - Arduino WiFi Shield
-- Adafruit Bluefruit LE (nRF8001 Breakout, BLE 4.0) *, soon*
-- HM-10 Bluetooth module *, soon*
+- Adafruit Bluefruit LE (nRF8001 Breakout, BLE 4.0)
+- HM-10, HC-08 Bluetooth Low Energy modules
 - Adafruit CC3000 WiFi Breakout / Shield
 - ENC28J60 - based boards
 - ESP8266 as WiFi modem (running original firmware)
