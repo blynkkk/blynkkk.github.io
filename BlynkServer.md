@@ -167,7 +167,7 @@ out of the box via SSL/TLS sockets. But since certificate's private key is in pu
 In order to change it, you will need to provide your own certificates and change the properties with path to your 
 certificates, private keys and passwords. 
 
-	See how to generate self-signed certificates [here](http://docs.blynk.cc/#blynk-server-how-to-run-local-blynk-server-generate-ssl-certificates)
+	See how to generate self-signed certificates [here](https://github.com/blynkkk/blynk-server#generate-own-ssl-certificates)
 
 	Points to certificate and key that placed in same folder as running jar:
 	
