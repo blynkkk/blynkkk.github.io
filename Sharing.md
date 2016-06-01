@@ -35,6 +35,7 @@ Another person would need to install Blynk app and scan QR code from the login s
 <img src="images/scan_qr.png" style="width: 200px; height:360px"/>
 
 **NOTE:** Your Project should be active, don't forget to press Play button.
+
 **WARNING:** Sharing costs 1000 energy and this energy is not recoverable even you didn't use sharing at all.
 
 
