@@ -369,35 +369,46 @@ switch (param.asInt())
 
 Bridge can be used for Device-to-Device communication (no app. involved). You can send digital/analog/virtual write commands from one device to another, knowing it's auth token.
 At the moment Bridge widget is not required on application side (it is mostly used for indication that we have such feature).  
-**And yes, you can use multiple bridges to control multiple devices.**
+**You can use multiple bridges to control multiple devices.**
 
 <img src="images/bridge.png" style="width: 77px; height:80px"/>
 
 <img src="images/bridge_edit.png" style="width: 200px; height:360px"/>
 
-Example code:
+Bridge widget takes a virtual pin, and turns it into a channel to control another device. It means you can control any virtual, digital or analog pins of the target device.
+Be careful not to use pins like ```A0, A1, A2 ...``` when communicating between different device types, as Arduino Core may refer to wrong pins in such cases.
+
+
+Example code for device A which will send values to device B :
 ```cpp
-WidgetBridge bridge1(V1); //Bridge widget on virtual pin 1
+WidgetBridge bridge1(V1); //Initiating Bridge Widget on V1 of Device A
 ...
 void setup() {
     Blynk.begin(...);
     while (Blynk.connect() == false) {
         // Wait until Blynk is connected
     }
-    bridge1.digitalWrite(9, HIGH);
+    bridge1.digitalWrite(9, HIGH); // will trigger D9 HIGH on Device B. No code on Device B required
     bridge1.analogWrite(10, 123);
-    bridge1.virtualWrite(V1, "hello");
+    bridge1.virtualWrite(V1, "hello"); // you need to write code on Device B in order to receive this value. See below
     bridge1.virtualWrite(V2, "value1", "value2", "value3");
 }
 
 BLYNK_CONNECTED() {
-  bridge1.setAuthToken("OtherAuthToken");
+  bridge1.setAuthToken("OtherAuthToken"); // Token of the hardware B
 }
 ```
 
-WARNING: Bridge widget takes a virtual pin, and turns it into a channel to control another device. It means you can control any virtual, digital or analog pins of the target device.
-Be careful not to use pins like ```A0, A1, A2 ...``` when communicating between different device types, as Arduino Core may refer to wrong pins in such cases.
-Also have in mind ```bridge.virtualWrite``` doesn't send any value to mobile application, in order to do that you need call ```Blynk.virtualWrite```.
+IMPORTANT: when performing virtualWrite with Bridge, Device B will need to process the incoming command. 
+For example: you are sending value from Device A to Device B using ```bridge.virtualWrite(V5)```
+
+```
+BLYNK_WRITE(V5){
+    int pinData = param.asInt(); // pinData variable will store value that came via Bridge
+}
+```
+
+Keep in mind that ```bridge.virtualWrite``` doesn't send any value to mobile app. You need to call ```Blynk.virtualWrite``` for that.
 
 **Sketch:** [Bridge](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Bridge/Bridge.ino#L33)
 
