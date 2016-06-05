@@ -402,9 +402,9 @@ BLYNK_CONNECTED() {
 IMPORTANT: when performing ```virtualWrite()``` with Bridge Widget, Device B will need to process the incoming data from Device A. 
 For example, if you are sending value from Device A to Device B using ```bridge.virtualWrite(V5)``` you would need to use this handler on Device B:
 
-```
+```cpp
 BLYNK_WRITE(V5){
-    int pinData = param.asInt(); // pinData variable will store value that came via Bridge
+    int pinData = param.asInt(); //pinData variable will store value that came via Bridge
 }
 ```
 
