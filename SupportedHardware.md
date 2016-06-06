@@ -55,8 +55,10 @@
   - VoCore (OpenWRT + [Espruino package](https://github.com/vshymanskyy/OpenWRT-Espruino-packages))
   - Espruino Pico
   - ...
-- **Python** (MicroPython)
+- **Python** (MicroPython) (https://github.com/wipy/wipy/tree/master/lib/blynk)
   - WiPy
+- **Lua** (https://github.com/blezek/blynk-esp)
+  - NodeMCU
 
 ## Arduino connection types
 - USB (Serial), connected to your laptop or desktop
