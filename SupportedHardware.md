@@ -15,8 +15,10 @@
   - Intel Edison
   - Intel Galileo
   - Teensy 3.2/3.1
-  - RedBearLab Blend Micro
   - LightBlue Bean *, soon*
+  - RedBear Duo (WiFi, BLE)
+  - RedBearLab Blend Micro
+  - RedBearLab BLE Nano
   - Simblee BLE
   - LinkIt ONE (WiFi only)
   - TinyCircuits TinyDuino (CC3000)
