@@ -52,10 +52,9 @@ If you need to perform actions in time intervals - use timers, for example Simpl
 
 If your code frequently sends a lot of requests to our server, your hardware will be disconnected. Blynk App may show "Your hardware is offline"
 
-Here is an example of what may cause flood: ***DON'T DO THAT:***
-
 When ```Blynk.virtualWrite``` is in the ```void loop```, it generates hundreds of "writes" per second 
 
+Here is an example of what may cause flood. ***DON'T DO THAT:***
 ```cpp
 void loop()
 {
