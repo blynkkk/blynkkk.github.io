@@ -29,7 +29,9 @@ To connect to open WiFi networks, set pass to an empty string ("").
 There are several functions to help with connection management:
 
 ```cpp
-# This functions will keep connecting to Blynk server. Default timeout is 30 seconds
+# This functions will try connecting to Blynk server.
+# Returns true when connected, false if timeout reached.
+# Default timeout is 30 seconds.
 bool result = Blynk.connect();
 bool result = Blynk.connect(timeout);
 ```
