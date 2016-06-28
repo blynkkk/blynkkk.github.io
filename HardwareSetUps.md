@@ -2,14 +2,16 @@
 ## Arduino over USB (no shield)
 If you don't have any shield and your hardware doesn't have any connectivity, you can still use Blynk – directly over USB :
 
-1. Open [Arduino Serial USB example](https://github.com/blynkkk/blynk-library/blob/master/examples/BoardsAndShields/Arduino_Serial_USB/Arduino_Serial_USB.ino) 
+1. Open [Arduino Serial USB example](https://github.com/blynkkk/blynk-library/blob/master/examples/Boards_USB_Serial/Arduino_Serial_USB/Arduino_Serial_USB.ino) 
 and change [Auth Token](http://docs.blynk.cc/#getting-started-getting-started-with-application-4-auth-token)
 
 	```cpp
+	// You could use a spare Hardware Serial on boards that have it (like Mega)
 	#include <SoftwareSerial.h>
-	SoftwareSerial SwSerial(2, 3); // RX, TX
-	#define BLYNK_PRINT SwSerial
-	#include <BlynkSimpleSerial.h>
+	SoftwareSerial DebugSerial(2, 3); // RX, TX
+	
+	#define BLYNK_PRINT DebugSerial
+	#include <BlynkSimpleStream.h>
 	
 	// You should get Auth Token in the Blynk App.
 	// Go to the Project Settings (nut icon).
@@ -17,10 +19,12 @@ and change [Auth Token](http://docs.blynk.cc/#getting-started-getting-started-wi
 	
 	void setup()
 	{
-	  SwSerial.begin(9600);
-	  Blynk.begin(auth);
-	  // Default baud rate is 9600. You could specify it like this:
-	  //Blynk.begin(auth, 57600);
+	  // Debug console
+	  DebugSerial.begin(9600);
+	
+	  // Blynk will work through Serial
+	  Serial.begin(9600);
+	  Blynk.begin(auth, Serial);
 	}
 	
 	void loop()
@@ -146,7 +150,7 @@ You can run Blynk directly on the ESP8266!
 
 Install the latest ESP8266 library for Arduino using [this guide](https://github.com/esp8266/Arduino#installing-with-boards-manager). 
 
-**Example Sketch:** [ESP8266_Standalone](https://github.com/blynkkk/blynk-library/blob/master/examples/BoardsAndShields/ESP8266_Standalone/ESP8266_Standalone.ino)
+**Example Sketch:** [ESP8266_Standalone](https://github.com/blynkkk/blynk-library/blob/master/examples/Boards_WiFi/ESP8266_Standalone/ESP8266_Standalone.ino)
 
 Additional materials:
 
