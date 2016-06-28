@@ -17,7 +17,7 @@ If you experience connection problems, follow these steps:
    * If it doesn't work, try looking into [serial debug prints](./Troubleshooting.md#enable-debug).
 5. Done! Add your modifications and functionality. Enjoy Blynk!
 
-***Note:*** when you have multiple devices connected to your network, they should all have different MAC and IP addresses. For example, when using 2 Arduino UNO with Ethernet shields, flashing default example to both of them will cause connection problems. You should use [manual ethernet configuration](https://github.com/blynkkk/blynk-library/blob/master/examples/BoardsAndShields/Arduino_Ethernet_Manual/Arduino_Ethernet_Manual.ino) example.
+***Note:*** when you have multiple devices connected to your network, they should all have different MAC and IP addresses. For example, when using 2 Arduino UNO with Ethernet shields, flashing default example to both of them will cause connection problems. You should use [manual ethernet configuration](https://github.com/blynkkk/blynk-library/blob/master/examples/Boards_Ethernet/Arduino_Ethernet_Manual/Arduino_Ethernet_Manual.ino) example.
 
 ## WiFi network connection
 If you encounter WiFi connection problems, please check these pitfalls:
