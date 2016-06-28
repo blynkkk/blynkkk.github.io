@@ -305,7 +305,8 @@ Blynk.email("my_email@example.com", "Subject", "Your message goes here");
 
 Limitations :
 
-- only 1 email per minute is allowed
+- Maximum allowed email + subject + message length is 120 symbols.
+- Only 1 email per minute is allowed
 
 **Sketch:** [Email](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Email/Email.ino#L26)
 
@@ -331,10 +332,22 @@ Blynk.notify("Hey, Blynkers! My hardware can push now!");
 
 Limitations :
 
-- maximum allowed body length is 255 symbols.
-- only 1 notification per minute is allowed
+- Maximum allowed body length is 120 symbols.
+- Only 1 notification per minute is allowed
 
 **Sketch:** [PushNotification](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/PushNotification/PushNotification.ino#L26)
+
+###Unicode in notify, email, push, ...
+
+The library handles all strings as UTF8 Unicode. If you're facing problems, try to print your message to the Serial and see if it works (the terminal should be set to UTF-8 encoding). If it doesn't work, probably you should read about unicode support of your compiler.  
+If it works, but your message is truncated - you need to increase message length limit (all Unicode symbols consume at least twice the size of Latin symbols).
+
+###Increasing message length limit
+
+You can increase maximum message length by putting on the top of your sketch (before Blynk includes):
+```cpp
+#define BLYNK_MAX_SENDBYTES 256 // Default is 128
+```
 
 ## Other
 ### Tabs
