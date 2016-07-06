@@ -335,7 +335,7 @@ Limitations :
 - Maximum allowed body length is 120 symbols.
 - Only 1 notification per minute is allowed
 
-**Sketch:** [PushNotification](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/PushNotification/PushNotification.ino#L26)
+**Sketch:** [PushNotification](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/PushNotification/PushNotification_Button/PushNotification_Button.ino)
 
 ###Unicode in notify, email, push, ...
 
