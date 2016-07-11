@@ -15,11 +15,13 @@
   - Intel Edison
   - Intel Galileo
   - Teensy 3.2/3.1
+  - Fishino Guppy, Uno, Mega
   - LightBlue Bean *, soon*
   - RedBear Duo (WiFi, BLE)
   - RedBearLab Blend Micro
   - RedBearLab BLE Nano
   - Simblee BLE
+  - RFDuino BLE
   - LinkIt ONE (WiFi only)
   - TinyCircuits TinyDuino (CC3000)
   - Microduino/mCookie Core, Core+, CoreUSB
@@ -39,7 +41,7 @@
   - Electron
   - SparkFun RedBoard
   - RedBear Duo (WiFi & BLE)
-- **ARM mbed** *soon*
+- **ARM mbed** (https://developer.mbed.org/users/vshymanskyy/code/Blynk/)
   - Seeed Tiny BLE
   - RedBearLab BLE Nano
   - BBC Micro:bit
