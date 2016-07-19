@@ -243,9 +243,11 @@ In order to see data in history graph you need to use either widgets with "Frequ
 that case your app should be open and running) or you can use ```Blynk.virtualWrite``` on hardware side. Every 
 ```Blynk.virtualWrite``` command is stored on server automatically. In that case you don't need application to be up and running.
 
-You can also easily clear data for selected pins - just swipe left history graph and click "Erase data".
+You can also easily clear data for selected pins or get all data for pins via email - just swipe left history graph and click "Erase data".
 
-<img src="images/erase_history_graph.png" style="width: 200px; height:360px"/>
+<img src="images/erase_history_graph.png" style="width: 525px; height:263px"/>
+
+You can also get pin data via [HTTP API](http://docs.blynkapi.apiary.io/#reference/0/pin-history-data/get-all-history-data-for-specific-pin).
 
 <img src="images/history_graph.png" style="width: 77px; height:80px"/>
 
