@@ -310,7 +310,8 @@ Limitations :
 
 - Maximum allowed email + subject + message length is 120 symbols. However you can increase this limit if necessary 
 by adding ```#define BLYNK_MAX_SENDBYTES XXX``` to you sketch. Where ```XXX``` is desired max length of your email. 
-For example for ESP you can set this to 1200 max length ```#define BLYNK_MAX_SENDBYTES 1200```. 
+For example for ESP you can set this to 1200 max length ```#define BLYNK_MAX_SENDBYTES 1200```. The 
+```#define BLYNK_MAX_SENDBYTES 1200``` must be included before any of the Blynk includes.
 - Only 1 email per minute is allowed
 
 **Sketch:** [Email](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Email/Email.ino#L26)
