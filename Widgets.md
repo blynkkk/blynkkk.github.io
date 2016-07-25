@@ -238,6 +238,10 @@ Allows you to see any data your hardware had sent to server previously. History 
 
 This means that minimum graph update interval is 1 minute for ```1h``` and ```6h``` periods. 
 1 hour for ```1d``` and ```1w``` periods. 1 day for ```1m``` and ```3m``` periods.
+As Blynk Cloud is free to use we have a limit on how many data you can store. At the moment Blynk Cloud accepts 
+1 message per minute per pin. In case you send your data more frequently your values will be averaged. For example, 
+in case you send value ```10``` at 12:12:05 and than again ```12``` at  12:12:45 as result in history graph you'll see
+value ```11``` for 12:12.
 
 In order to see data in history graph you need to use either widgets with "Frequency reading" interval (in 
 that case your app should be open and running) or you can use ```Blynk.virtualWrite``` on hardware side. Every 
