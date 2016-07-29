@@ -71,12 +71,12 @@ Using ```delay()``` will not solve the problem either. It may cause [another iss
 
 If sending hundreds of requests is what you need for your product you may increase flood limit on local server 
 and within Blynk library.
-For local server you need to change 
+For local server you need to change ```user.message.quota.limit``` property within ```server.properties``` file :
 
         #100 Req/sec rate limit per user.
         user.message.quota.limit=100
         
-For library you need to change
+For library you need to change ```BLYNK_MSG_LIMIT``` property within ```BlynkConfig.h``` file :
  
         //Limit the amount of outgoing commands.
         #define BLYNK_MSG_LIMIT 20
