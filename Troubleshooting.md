@@ -69,6 +69,17 @@ Check [this example](https://github.com/blynkkk/blynk-library/blob/master/exampl
 
 Using ```delay()``` will not solve the problem either. It may cause [another issue](./Troubleshooting.md#delay). Use timers!
 
+If sending hundreds of requests is what you need for your product you may increase flood limit on local server 
+and within Blynk library.
+For local server you need to change 
+
+        #100 Req/sec rate limit per user.
+        user.message.quota.limit=100
+        
+For library you need to change
+ 
+        //Limit the amount of outgoing commands.
+        #define BLYNK_MSG_LIMIT 20
 
 ## Enable debug
 
