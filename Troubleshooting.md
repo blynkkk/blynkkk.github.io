@@ -109,7 +109,7 @@ that hardware and application will be connected to separate servers. You'll see 
 There are 2 ways to resolve issue:
 
 - Use Local Blynk Server;
-- Ping ```blynk-cloud.com``` from network where your hardware is. Take IP and put it in mobile app. 
+- ```ping blynk-cloud.com``` from network where your hardware is. Take IP that you'll see during ping and put it in mobile app. 
 
  <img src="images/login.png" style="width: 200px; height:360px"/>  <img src="images/custom.png" style="width: 200px; height:360px"/>
 
