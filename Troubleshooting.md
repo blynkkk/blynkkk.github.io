@@ -110,5 +110,6 @@ There are 2 ways to resolve issue:
 
 - Use Local Blynk Server;
 - Ping ```blynk-cloud.com``` from network where your hardware is. Take IP and put it in mobile app. 
+
  <img src="images/login.png" style="width: 200px; height:360px"/>  <img src="images/custom.png" style="width: 200px; height:360px"/>
 
