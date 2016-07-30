@@ -99,3 +99,16 @@ Serial.begin(9600);
 You can also use spare Hardware serial ports or SoftwareSerial for debug output (you will need an adapter to connect to it with your PC).
 
 ***Note:*** enabling debug mode will slow down your hardware processing speed up to 10 times.
+
+## Geo DNS problem
+
+Blynk Cloud using Geo DNS for non business solutions in order to minimize maintenance cost of servers infrastructure. 
+That's means when you connecting to ```blynk-cloud.com``` DNS service based on your IP redirects you to closest server.
+The problem here is that in many cases hardware and application are not in same network and thus there is a small chance 
+that hardware and application will be connected to separate servers. You'll see ```User not registered``` message in that case. 
+There are 2 ways to resolve issue:
+
+- Use Local Blynk Server;
+- Ping ```blynk-cloud.com``` from network where your hardware is. Take IP and put it in mobile app. 
+ <img src="images/login.png" style="width: 200px; height:360px"/>  <img src="images/custom.png" style="width: 200px; height:360px"/>
+
