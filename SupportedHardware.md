@@ -50,12 +50,9 @@
   - Regular PC with Linux / Windows / OS X
   - Raspberry Pi (Banana Pi, Orange Pi, ...)
   - BeagleBone Black
-  - PandaBoard
-  - CubieBoard
-  - pcDuino
-  - Tessel 2
-  - Intel Edison
-  - Intel Galileo
+  - Onion Omega
+  - Intel Edison, Intel Galileo
+  - PandaBoard, CubieBoard, pcDuino, Tessel 2
   - VoCore (OpenWRT + [Espruino package](https://github.com/vshymanskyy/OpenWRT-Espruino-packages))
   - Espruino Pico
   - ...
