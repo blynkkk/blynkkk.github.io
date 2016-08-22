@@ -159,7 +159,7 @@ Additional materials:
  
 [Step-by-Step Tutorial in Russian language](http://esp8266.ru/esp8266-blynk)
 
-## Particle (formely Spark)
+## Particle
 Blynk works with the whole family of Particle products: Core, Photon and Electron
 
 1. Open [Particle Web IDE](https://build.particle.io/build).
