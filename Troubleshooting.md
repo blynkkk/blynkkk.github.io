@@ -102,14 +102,14 @@ You can also use spare Hardware serial ports or SoftwareSerial for debug output 
 
 ## Geo DNS problem
 
-Blynk Cloud using [Geo DNS](https://en.wikipedia.org/wiki/Geodns) for non business solutions in order to minimize maintenance cost of servers infrastructure. 
-That's means when you connecting to ```blynk-cloud.com``` DNS service based on your IP redirects you to closest server.
-The problem here is that in many cases hardware and application are not in same network and thus there is a small chance 
-that hardware and application will be connected to separate servers. You'll see ```User not registered``` message in that case. 
-There are 2 ways to resolve issue:
+Blynk Cloud utilizes [Geo DNS](https://en.wikipedia.org/wiki/Geodns) for non-commercial solutions in order to minimize servers maintenance costs. 
+It means that when you connect to ```blynk-cloud.com```, DNS service redirects you to the closest server based on your IP address.
+The issue is that the hardware and application sometimes are not in the same network. And there is a chance that hardware and smartphone are connected to different servers. You will get ```User is not registered``` message in that case. 
+
+There are 2 ways to resolve this issue:
 
 - Use [Local Blynk Server](http://docs.blynk.cc/#blynk-server)
-- ```ping blynk-cloud.com``` from network where your hardware is. Take IP that you'll see during ping and put it in mobile app
+- ```ping blynk-cloud.com``` from the network your hardware is connected to. Use the IP address that you get during this ping and put it in mobile app like that:
 
  <img src="images/login.png" style="width: 200px; height:360px"/>  <img src="images/custom.png" style="width: 200px; height:360px"/>
 
