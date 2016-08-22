@@ -265,9 +265,11 @@ your hardware had send to Blynk Cloud. This limit may be increased on Local Serv
 
 You need to use special commands with this widget:
 
-```
-terminal.print();
-terminal.flush();
+```cpp
+terminal.print();   // Print values, like Serial.print
+terminal.println(); // Print values, like Serial.println()
+terminal.write();   // Write a raw data buffer
+terminal.flush();   // Ensure that data was sent out of device
 ```
 
 <img src="images/terminal.png" style="width: 77px; height:80px"/>
