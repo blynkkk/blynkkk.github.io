@@ -160,9 +160,7 @@ Additional materials:
 [Step-by-Step Tutorial in Russian language](http://esp8266.ru/esp8266-blynk)
 
 ## Particle (formely Spark)
-Blynk works with the whole family of Particle products: Core, Photon and Electron(soon)
-
-TODO:
+Blynk works with the whole family of Particle products: Core, Photon and Electron
 
 1. Open [Particle Web IDE](https://build.particle.io/build).
 2. Go to the libraries.
@@ -171,7 +169,7 @@ TODO:
 5. Click "use this example"
 6. Put your Auth Token here: ``` char auth[] = "YourAuthToken";``` and flash the Particle!
 
-On Android, you can scan this QR code from Blynk App and you'll get a ready-to-test project for **Particle Photon**. Just put your Auth Token to the ```01_PARTICLE.INO``` example.
+You can scan this QR code from Blynk App and you'll get a ready-to-test project for **Particle Photon**. Just put your Auth Token into the ```01_PARTICLE.INO``` example.
 <img src="images/Particle Demo1530733075.png" style="width: 300px; height:300px"/>
 
 Additional materials:
