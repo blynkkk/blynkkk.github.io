@@ -160,6 +160,33 @@ Imagine you have a LED Widget connected to the Virtual Pin V1 in the app, and a 
 
 [Represent physical button state via LED widget with polling](https://github.com/blynkkk/blynk-library/blob/master/examples/More/ButtonPoll/ButtonPoll.ino)
 
+## Change widget property
+Latest Blynk library also supports ability to change widget property from hardware side (implemented for Android only). 
+You can for instance change color of LED widget when necessary. For example :
+
+```
+//change color
+Blynk.setProperty(V0, "color", "#D3435C");
+
+//change label
+Blynk.setProperty(V0, "label", "My New Widget Label");
+```
+
+[Full Sketch](https://github.com/blynkkk/blynk-library/blob/master/examples/More/SetPropery/SetPropery.ino#L34)
+
+For now 2 widget properties supported - ```color``` and ```label``` and only for widgets assigned to Virtual pins.
+```label``` is string for label.
+```color``` is string in [HEX](http://www.w3schools.com/html/html_colors.asp) format. String in the form: #RRGGBB, 
+where RR (red), GG (green) and BB (blue) are hexadecimal values between 00 and FF (same as decimal 0-255). For example : 
+
+``` 
+#define BLYNK_GREEN     "#23C48E"
+#define BLYNK_BLUE      "#04C0F8"
+#define BLYNK_YELLOW    "#ED9D00"
+#define BLYNK_RED       "#D3435C"
+#define BLYNK_DARK_BLUE "#5F7CD8"
+``` 
+
 ##Limitations and Recommendations
 - Don't put ```Blynk.virtualWrite``` and any other ```Blynk.*``` command inside ```void loop()```- it will cause 
 lot's of outgoing messages to our server and your connection will be terminated; 
