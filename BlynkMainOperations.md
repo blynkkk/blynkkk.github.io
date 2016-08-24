@@ -175,9 +175,13 @@ Blynk.setProperty(V0, "label", "My New Widget Label");
 [Full Sketch](https://github.com/blynkkk/blynk-library/blob/master/examples/More/SetPropery/SetPropery.ino#L34)
 
 For now 2 widget properties supported - ```color``` and ```label``` and only for widgets assigned to Virtual pins.
+
 ```label``` is string for label.
-```color``` is string in [HEX](http://www.w3schools.com/html/html_colors.asp) format. String in the form: #RRGGBB, 
-where RR (red), GG (green) and BB (blue) are hexadecimal values between 00 and FF (same as decimal 0-255). For example : 
+
+```color``` is string in [HEX](http://www.w3schools.com/html/html_colors.asp) format (in the form: #RRGGBB, 
+where RR (red), GG (green) and BB (blue) are hexadecimal values between 00 and FF). 
+
+For example : 
 
 ``` 
 #define BLYNK_GREEN     "#23C48E"
