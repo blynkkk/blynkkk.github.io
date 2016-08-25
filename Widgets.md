@@ -362,33 +362,6 @@ You can increase maximum message length by putting on the top of your sketch (be
 ```
 
 ## Other
-### Tabs
-The only purpose of Tabs widget is to extend your project space. You can have up to 4 tabs. 
-
-<img src="images/tabs_settings.png" style="width: 200px; height:360px"/>
-### Menu
-Menu widget allows you to send command to your hardware based on selection you made on UI. Menu
-sends index of element you selected and not label string. Sending index is starts from 1.
-It works same way as usual ComboBox element. 
-
-<img src="images/menu_edit.png" style="width: 200px; height:360px"/>
-
-Example code:
-```
-switch (param.asInt())
-  {
-    case 1: { // Item 1
-      Serial.println("Item 1 selected");
-      break;
-    }
-    case 2: { // Item 2
-      Serial.println("Item 2 selected");
-      break;
-    }    
-  }
-```
-
-**Sketch:** [Menu](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Menu/Menu.ino)
 
 ### Bridge
 
@@ -436,6 +409,35 @@ BLYNK_WRITE(V5){
 Keep in mind that ```bridge.virtualWrite``` doesn't send any value to mobile app. You need to call ```Blynk.virtualWrite``` for that.
 
 **Sketch:** [Bridge](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Bridge/Bridge.ino#L33)
+
+### Menu
+Menu widget allows you to send command to your hardware based on selection you made on UI. Menu
+sends index of element you selected and not label string. Sending index is starts from 1.
+It works same way as usual ComboBox element. 
+
+<img src="images/menu_edit.png" style="width: 200px; height:360px"/>
+
+Example code:
+```
+switch (param.asInt())
+  {
+    case 1: { // Item 1
+      Serial.println("Item 1 selected");
+      break;
+    }
+    case 2: { // Item 2
+      Serial.println("Item 2 selected");
+      break;
+    }    
+  }
+```
+
+**Sketch:** [Menu](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Menu/Menu.ino)
+
+### Tabs
+The only purpose of Tabs widget is to extend your project space. You can have up to 4 tabs. 
+
+<img src="images/tabs_settings.png" style="width: 200px; height:360px"/>
 
 ### RTC
 
