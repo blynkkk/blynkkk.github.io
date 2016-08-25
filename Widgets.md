@@ -331,7 +331,7 @@ Push Notification widget allows you to send push notification from your hardware
 - "Priority" - high priority gives more chances that your message will be delivered without any delays. 
 See detailed explanation [here](https://developers.google.com/cloud-messaging/concept-options#setting-the-priority-of-a-message). 
 
-WARNING : high priority contributes more to battery drain compared to normal priority messages.
+**WARNING** : high priority contributes more to battery drain compared to normal priority messages.
 
 <img src="images/push.png" style="width: 77px; height:80px"/>
 
@@ -409,6 +409,43 @@ BLYNK_WRITE(V5){
 Keep in mind that ```bridge.virtualWrite``` doesn't send any value to mobile app. You need to call ```Blynk.virtualWrite``` for that.
 
 **Sketch:** [Bridge](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Bridge/Bridge.ino#L33)
+
+### Eventor
+Eventor widget allows you easily create simple behaviour rules (for Android only for now) called **events**. 
+Let's consider typical use case of reading temperature from DHT sensor and sending push notification when temperature is too high :  
+ 
+```cpp
+  float t = dht.readTemperature();
+  if (isnan(t)) {
+    return;
+  }
+  if (t > 40) {
+    Blynk.notify(String("Temperature is too high : ") + t);
+  }
+```
+
+With eventor you don't need to code conditions like this anymore in your sketch. 
+All you need is to send value from sensor to server :
+
+```cpp
+  float t = dht.readTemperature();
+  Blynk.virtualWrite(V0, t);
+```
+
+and create **event** in eventor widget like this : 
+
+<img src="images/eventor/eventor_for_temp_example.png" style="width: 200px; height:360px"/>
+
+The all beauty of eventor comes when you need to change conditions on the fly without re-uploading new sketch on 
+your hardware. You can create as many **events** as you need.
+
+In order to remove created **event** please use swipe. Same for event editing. 
+
+<img src="images/eventor/eventor_edit.png" style="width: 200px; height:360px"/>
+
+**Sketch:** [Eventor](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Eventor/Eventor.ino#L26)
+
+**WARNING** : eventor event triggered only once when condition is met (however this behaviour may be change in future). 
 
 ### Menu
 Menu widget allows you to send command to your hardware based on selection you made on UI. Menu
