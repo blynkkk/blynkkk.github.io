@@ -436,6 +436,8 @@ and create **event** in eventor widget like this :
 
 <img src="images/eventor/eventor_for_temp_example.png" style="width: 200px; height:360px"/>
 
+Don't forget to add notification widget.
+
 The all beauty of eventor comes when you need to change conditions on the fly without re-uploading new sketch on 
 your hardware. You can create as many **events** as you need.
 
@@ -445,7 +447,12 @@ In order to remove created **event** please use swipe. Same for event editing.
 
 **Sketch:** [Eventor](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Eventor/Eventor.ino#L26)
 
-**WARNING** : eventor event triggered only once when condition is met (however this behaviour may be change in future). 
+**WARNING** : eventor event triggered only once when condition is met (This behaviour may be changed in future). 
+However there is one exclusion. 
+Let's consider simple event as above ```if (temperature > 40) notify```.
+When temperature reaches threshold - notify action is triggered. In case temperature is above threshold no 
+actions will be triggered anymore. However if ```temperature``` goes below threshold and than again above it -
+notify action will be triggered again (notify actions for eventor has no 1 minute restriction).
 
 ### Menu
 Menu widget allows you to send command to your hardware based on selection you made on UI. Menu

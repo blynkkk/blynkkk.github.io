@@ -172,7 +172,7 @@ Blynk.setProperty(V0, "color", "#D3435C");
 Blynk.setProperty(V0, "label", "My New Widget Label");
 ```
 
-[Full Sketch](https://github.com/blynkkk/blynk-library/blob/master/examples/More/SetPropery/SetPropery.ino#L34)
+[Full Sketch](https://github.com/blynkkk/blynk-library/blob/master/examples/More/SetProperty/SetProperty.ino#L34)
 
 For now 2 widget properties supported - ```color``` and ```label``` and only for widgets assigned to Virtual pins.
 
