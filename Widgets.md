@@ -295,7 +295,7 @@ Blynk.tweet("Hey, Blynkers! My Arduino can tweet now!");
 Limitations :
 
 - you cant' send 2 tweets with same message (it's Twitter policy)
-- only 1 tweet per minute is allowed
+- only 1 tweet per 15 seconds is allowed
 
 **Sketch:** [Twitter](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Twitter/Twitter.ino#L26)
 
@@ -318,7 +318,7 @@ Limitations :
 by adding ```#define BLYNK_MAX_SENDBYTES XXX``` to you sketch. Where ```XXX``` is desired max length of your email. 
 For example for ESP you can set this to 1200 max length ```#define BLYNK_MAX_SENDBYTES 1200```. The 
 ```#define BLYNK_MAX_SENDBYTES 1200``` must be included before any of the Blynk includes.
-- Only 1 email per minute is allowed
+- Only 1 email 15 seconds is allowed
 
 **Sketch:** [Email](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Email/Email.ino#L26)
 
@@ -345,7 +345,7 @@ Blynk.notify("Hey, Blynkers! My hardware can push now!");
 Limitations :
 
 - Maximum allowed body length is 120 symbols.
-- Only 1 notification per minute is allowed
+- Only 1 notification per 15 seconds is allowed
 
 **Sketch:** [PushNotification](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/PushNotification/PushNotification_Button/PushNotification_Button.ino)
 
