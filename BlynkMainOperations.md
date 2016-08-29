@@ -160,9 +160,9 @@ Imagine you have a LED Widget connected to the Virtual Pin V1 in the app, and a 
 
 [Represent physical button state via LED widget with polling](https://github.com/blynkkk/blynk-library/blob/master/examples/More/ButtonPoll/ButtonPoll.ino)
 
-## Change widget property
-Latest Blynk library (from github master) also supports ability to change widget property from hardware side (implemented for Android only). 
-You can for instance change color of LED widget when necessary. For example :
+## Change Widget properties
+Latest Blynk library (from github master)supports changing some of the widget properties from hardware side (implemented for Android only). 
+For exampple, you can change the color of LED widget based on a condition. For example :
 
 ```
 //change color
@@ -174,7 +174,9 @@ Blynk.setProperty(V0, "label", "My New Widget Label");
 
 [Full Sketch](https://github.com/blynkkk/blynk-library/blob/master/examples/More/SetProperty/SetProperty.ino#L34)
 
-For now 2 widget properties supported - ```color``` and ```label``` and only for widgets assigned to Virtual pins.
+Two widget properties are supported - ```color```  and ```label```. 
+
+Changing these parameters work **only** for widgets atatched to Virtual pins.
 
 ```label``` is string for label.
 
