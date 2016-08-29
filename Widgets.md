@@ -69,11 +69,9 @@ When MERGE mode is selected, you are sending just 1 message, consisting of array
 ```
 
 ### Send On Release
-Send on release option available for most controller widgets and allows you to decrease traffic on your hardware. 
-For example, when you moving slider widget any movement of slider triggers a command that is forwarded to your 
-hardware, during single slider move/swipe you can send dozens of commands. That is required for specific use cases, 
-however for some hardware such load could be pretty high and may cause hardware reset. If such behaviour is very unlikely
-for your use case we recommend you to enable **Send On Eelease** feature (enabled by default for all controllers).
+**Send On Release** is available for most controller widgets and allows you to decrease data traffic on your hardware. 
+For example, when you move slider widget, commands are continuously streamed to the hardware, during a single slider move you can send dozens of commands. There are use-cases where it's needed, however creating such a load may cause hardware reset. We recommend enabling **Send On Release** feature for most of the cases, unless you really need instant feedback.
+**Send On Release** is OFF by default.
 
 ##Controllers
 ### Button
