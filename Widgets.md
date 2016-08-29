@@ -10,7 +10,7 @@ There are 4 types of Widgets:
 
 Each Widget has it's own settings. 
 
-Some of the Widgets (e.g. E-mail Widget) are used to enable some functionality and they don't have any settings.
+Some of the Widgets (e.g. Bridge Widget) are used to enable some functionality and they don't have any settings.
  
 ## Common Widget Settings
 ### Pin Selector
@@ -31,7 +31,8 @@ In case you want to map incoming values to specific range you may use mapping bu
 
 <img src="images/display_edit_mapping.png" style="width: 200px; height:360px"/>
 
-Let's say your sensor sends values from 0 to 1023. But you want to display values in a range 0 to 100 in the application. With data mapping enabled, incoming value 1023 will be mapped to 100.
+Let's say your sensor sends values from 0 to 1023. But you want to display values in a range 0 to 100 in the application. 
+With data mapping enabled, incoming value 1023 will be mapped to 100.
 
 ### SPLIT/MERGE
 Some of the Widgets can send more than one value. And with this switch you can control how to send them.
@@ -66,6 +67,13 @@ When MERGE mode is selected, you are sending just 1 message, consisting of array
 	  int b = param[2].asInt(); // get a BLUE channel value
 	}
 ```
+
+### Send On Release
+Send on release option available for most controller widgets and allows you to decrease traffic on your hardware. 
+For example, when you moving slider widget any movement of slider triggers a command that is forwarded to your 
+hardware, during single slider move/swipe you can send dozens of commands. That is required for specific use cases, 
+however for some hardware such load could be pretty high and may cause hardware reset. If such behaviour is very unlikely
+for your use case we recommend you to enable **Send On Eelease** feature (enabled by default for all controllers).
 
 ##Controllers
 ### Button
