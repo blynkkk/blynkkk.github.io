@@ -417,8 +417,8 @@ Keep in mind that ```bridge.virtualWrite``` doesn't send any value to mobile app
 **Sketch:** [Bridge](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Bridge/Bridge.ino#L33)
 
 ### Eventor
-Eventor widget allows you easily create simple behaviour rules (for Android only for now) called **events**. 
-Let's consider typical use case of reading temperature from DHT sensor and sending push notification when temperature is too high :  
+Eventor widget allows you to create simple behaviour rules or **events**. 
+Let's look at a typical use case: read temperature from DHT sensor and send push notification when temperature is over a certain limit :  
  
 ```cpp
   float t = dht.readTemperature();
@@ -430,35 +430,34 @@ Let's consider typical use case of reading temperature from DHT sensor and sendi
   }
 ```
 
-With eventor you don't need to code conditions like this anymore in your sketch. 
-All you need is to send value from sensor to server :
+With Eventor you don't need to write this code. All you need is to send value from sensor to server :
 
 ```cpp
   float t = dht.readTemperature();
   Blynk.virtualWrite(V0, t);
 ```
+Don't forget that ```virtualWrite``` commands should be wrapped in the timer and can't be used the main loop.
 
-and create **event** in eventor widget like this : 
+Now configure new **Event** in Eventor widget: 
 
 <img src="images/eventor/eventor_for_temp_example.png" style="width: 200px; height:360px"/>
 
-Don't forget to add notification widget.
+**NOTE** Don't forget to add notification widget.
 
-The all beauty of eventor comes when you need to change conditions on the fly without re-uploading new sketch on 
-your hardware. You can create as many **events** as you need.
+Eventor comes handy when you need to change conditions on the fly without re-uploading new sketch on 
+the hardware. You can create as many **events** as you need.
 
-In order to remove created **event** please use swipe. Same for event editing. 
+In order to remove created **event** please use swipe. You can also swipe out last element in the Event itsef. 
 
 <img src="images/eventor/eventor_edit.png" style="width: 200px; height:360px"/>
 
 **Sketch:** [Eventor](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Eventor/Eventor.ino#L26)
 
-**WARNING** : eventor event triggered only once when condition is met (This behaviour may be changed in future). 
-However there is one exclusion. 
-Let's consider simple event as above ```if (temperature > 40) notify```.
-When temperature reaches threshold - notify action is triggered. In case temperature is above threshold no 
-actions will be triggered anymore. However if ```temperature``` goes below threshold and than again above it -
-notify action will be triggered again (notify actions for eventor has no 1 minute restriction).
+**NOTE** : Events are triggered only once when the condition is met. 
+However there is one exclusion:
+Let's consider simple event as above ```if (temperature > 40) send notification ```.
+When temperature goes beyond 40 threshold - notification action is triggered. If temperature continues to stay above the 40 threshold no actions will be triggered. But if ```temperature``` goes below threshold and then passes it again -
+notification will be sent again (there is no 1 minute limit on Eventor notifications).
 
 ### Menu
 Menu widget allows you to send command to your hardware based on selection you made on UI. Menu
