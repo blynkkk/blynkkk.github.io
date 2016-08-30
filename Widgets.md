@@ -460,7 +460,7 @@ In order to remove created **event** please use swipe. You can also swipe out la
 However there is one exclusion:
 Let's consider simple event as above ```if (temperature > 40) send notification ```.
 When temperature goes beyond 40 threshold - notification action is triggered. If temperature continues to stay above the 40 threshold no actions will be triggered. But if ```temperature``` goes below threshold and then passes it again -
-notification will be sent again (there is no 1 minute limit on Eventor notifications).
+notification will be sent again (there is no 15 sec limit on Eventor notifications).
 
 ### Menu
 Menu widget allows you to send command to your hardware based on selection you made on UI. Menu
