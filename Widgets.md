@@ -447,7 +447,7 @@ Now configure new **Event** in Eventor widget:
 Eventor comes handy when you need to change conditions on the fly without re-uploading new sketch on 
 the hardware. You can create as many **events** as you need.
 
-In order to remove created **event** please use swipe. You can also swipe out last element in the Event itsef. 
+In order to remove created **event** please use swipe. You can also swipe out last element in the Event itself. 
 
 <img src="images/eventor/eventor_edit.png" style="width: 200px; height:360px"/>
 
