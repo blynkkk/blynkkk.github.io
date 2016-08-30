@@ -156,7 +156,7 @@ You can also use server to store any value without widget. Just call ```Blynk.vi
 
 [Storing single value on server](https://github.com/blynkkk/blynk-library/blob/master/examples/More/ServerAsDataStorage/ServerAsDataStorage_SingleValue/ServerAsDataStorage_SingleValue.ino)
 
-[String multiple values on server](https://github.com/blynkkk/blynk-library/blob/master/examples/More/ServerAsDataStorage/ServerAsDataStorage_MultiValue/ServerAsDataStorage_MultiValue.ino)
+[Storing multiple values on server](https://github.com/blynkkk/blynk-library/blob/master/examples/More/ServerAsDataStorage/ServerAsDataStorage_MultiValue/ServerAsDataStorage_MultiValue.ino)
 
 ###For app
 If you need to keep your hardware in sync with Widgets' state even if app is offline use ```Blynk.virtualWrite```.
