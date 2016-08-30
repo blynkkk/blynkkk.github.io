@@ -145,11 +145,18 @@ BLYNK_CONNECTED() {
 }
 ```
 
-The ```Blynk.syncAll()``` command restores all the Widgets' values based on the last saved values on the server. All analog and digital pin states will be restored. Every Virtual Pin will perform BLYNK_WRITE event.
+The ```Blynk.syncAll()``` command restores all the Widgets' values based on the last saved values on the server. 
+All analog and digital pin states will be restored. Every Virtual Pin will perform BLYNK_WRITE event.
 
 [Sync Hardware with App state](https://github.com/blynkkk/blynk-library/blob/master/examples/More/Sync/HardwareSyncStateFromApp/HardwareSyncStateFromApp.ino)
 
 You can also update a single Virtual Pin value by calling ```Blynk.syncVirtual(pin)```
+
+You can also use server to store any value without widget. Just call ```Blynk.virtualWrite(V1, value)```.
+
+[Storing single value on server](https://github.com/blynkkk/blynk-library/blob/master/examples/More/ServerAsDataStorage/ServerAsDataStorage_SingleValue/ServerAsDataStorage_SingleValue.ino)
+
+[String multiple values on server](https://github.com/blynkkk/blynk-library/blob/master/examples/More/ServerAsDataStorage/ServerAsDataStorage_MultiValue/ServerAsDataStorage_MultiValue.ino)
 
 ###For app
 If you need to keep your hardware in sync with Widgets' state even if app is offline use ```Blynk.virtualWrite```.
