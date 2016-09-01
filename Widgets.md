@@ -372,6 +372,7 @@ You can increase maximum message length by putting on the top of your sketch (be
 
 ### Tabs
 The only purpose of Tabs widget is to extend your project space. You can have up to 4 tabs. 
+Also you can drag widgets between tabs. Just drag widget to the edge of project and wait 1 second. (For Android only)
 
 <img src="images/tabs_settings.png" style="width: 200px; height:360px"/>
 
