@@ -367,6 +367,51 @@ You can increase maximum message length by putting on the top of your sketch (be
 #define BLYNK_MAX_SENDBYTES 256 // Default is 128
 ```
 
+## Interface
+
+### Tabs
+The only purpose of Tabs widget is to extend your project space. You can have up to 4 tabs. 
+
+<img src="images/tabs_settings.png" style="width: 200px; height:360px"/>
+
+
+### Menu
+Menu widget allows you to send command to your hardware based on selection you made on UI. Menu
+sends index of element you selected and not label string. Sending index is starts from 1.
+It works same way as usual ComboBox element. 
+
+<img src="images/menu_edit.png" style="width: 200px; height:360px"/>
+
+Example code:
+```
+switch (param.asInt())
+  {
+    case 1: { // Item 1
+      Serial.println("Item 1 selected");
+      break;
+    }
+    case 2: { // Item 2
+      Serial.println("Item 2 selected");
+      break;
+    }    
+  }
+```
+
+**Sketch:** [Menu](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Menu/Menu.ino)
+
+
+###Time Input
+Time input widget allows you to select start/stop time, day of week, timezone, sunrise/sunset formatted values
+and send them to your hardware. Supported formats for time now are ```HH:MM``` and ```HH:MM AM/PM```.
+
+Hardware will get UTC seconds of day for start/stop time based on selected timezone (default user timezone 
+if it wasn't selected).
+
+<img src="images/time_input_settings.png" style="width: 200px; height:360px"/>
+
+**Sketch:** [Simple Time Input for start time](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/TimeInput/SimpleTimeInput/SimpleTimeInput.ino)
+**Sketch:** [Advanced Time Input](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/TimeInput/AdvancedTimeInput/AdvancedTimeInput.ino)
+
 ## Other
 
 ### Bridge
@@ -462,39 +507,17 @@ Let's consider simple event as above ```if (temperature > 40) send notification 
 When temperature goes beyond 40 threshold - notification action is triggered. If temperature continues to stay above the 40 threshold no actions will be triggered. But if ```temperature``` goes below threshold and then passes it again -
 notification will be sent again (there is no 15 sec limit on Eventor notifications).
 
-### Menu
-Menu widget allows you to send command to your hardware based on selection you made on UI. Menu
-sends index of element you selected and not label string. Sending index is starts from 1.
-It works same way as usual ComboBox element. 
-
-<img src="images/menu_edit.png" style="width: 200px; height:360px"/>
-
-Example code:
-```
-switch (param.asInt())
-  {
-    case 1: { // Item 1
-      Serial.println("Item 1 selected");
-      break;
-    }
-    case 2: { // Item 2
-      Serial.println("Item 2 selected");
-      break;
-    }    
-  }
-```
-
-**Sketch:** [Menu](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Menu/Menu.ino)
-
-### Tabs
-The only purpose of Tabs widget is to extend your project space. You can have up to 4 tabs. 
-
-<img src="images/tabs_settings.png" style="width: 200px; height:360px"/>
-
 ### RTC
 
-Realtime clock allows you to get time from server. You can preselect any timezone on UI to get time on hardware in required locale.
+Real-time clock allows you to get time from server. You can preselect any timezone on UI to get time on hardware in required locale.
 
 <img src="images/rtc_edit.png" style="width: 200px; height:360px"/>
 
 **Sketch:** [RTC](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/RTC/RTC.ino)
+
+### Music Player
+
+Simple UI element with 3 buttons - simulates music player interface. Every button sends it's own command to hardware : 
+```play```, ```stop```, ```prev```, ```next```.
+
+**Sketch:** [Music Player](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Player/Player.ino)
