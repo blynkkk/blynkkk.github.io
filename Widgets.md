@@ -6,6 +6,7 @@ There are 4 types of Widgets:
 - **Controllers** - they send commands to hardware. Use them to control your stuff;
 - **Displays** - used for various visualizations of data that comes from hardware to the smartphone;
 - **Notifications** - are various widgets to send messages and notifications;
+- **Interface** - are various widgets to make your UI look better;
 - **Others** - widgets that don't belong to any category;
 
 Each Widget has it's own settings. 
