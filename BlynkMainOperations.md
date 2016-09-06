@@ -170,18 +170,23 @@ Imagine you have a LED Widget connected to the Virtual Pin V1 in the app, and a 
 [Represent physical button state via Button widget with polling](https://github.com/blynkkk/blynk-library/blob/master/examples/More/Sync/SyncPhysicalButton/SyncPhysicalButton.ino)
 
 ## Change Widget properties
-Latest Blynk library (from github master)supports changing some of the widget properties from hardware side (implemented for Android only). 
-For exampple, you can change the color of LED widget based on a condition. For example :
+Latest Blynk library (from github master) supports changing some of the widget properties from hardware side (implemented for Android only). 
+For example, you can change the color of LED widget based on a condition. For example :
 
 ```
-//change color
+//change LED color
 Blynk.setProperty(V0, "color", "#D3435C");
 
-//change label
+//change LED label
 Blynk.setProperty(V0, "label", "My New Widget Label");
+
+//change MENU labels
+Blynk.setProperty(V0, "labels", "Menu Item 1", "Menu Item 2", "Menu Item 3");
+
 ```
 
-[Full Sketch](https://github.com/blynkkk/blynk-library/blob/master/examples/More/SetProperty/SetProperty.ino#L34)
+[Set Property for single value field](https://github.com/blynkkk/blynk-library/blob/master/examples/More/SetProperty/SetProperty_SingleValue/SetProperty_SingleValue.ino)
+[Set Property for multi value field](https://github.com/blynkkk/blynk-library/blob/master/examples/More/SetProperty/SetProperty_MultiValue/SetProperty_MultiValue.ino)
 
 Two widget properties are supported - ```color```, ```label``` for all widgets and ```onLabel```/```offLabel``` for button. 
 

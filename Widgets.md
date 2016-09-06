@@ -380,7 +380,8 @@ Also you can drag widgets between tabs. Just drag widget on the label of require
 ### Menu
 Menu widget allows you to send command to your hardware based on selection you made on UI. Menu
 sends index of element you selected and not label string. Sending index is starts from 1.
-It works same way as usual ComboBox element. 
+It works same way as usual ComboBox element. You can also set Menu items 
+[from hardware side](http://docs.blynk.cc/#blynk-main-operations-change-widget-properties).
 
 <img src="images/menu_edit.png" style="width: 200px; height:360px"/>
 
