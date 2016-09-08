@@ -188,20 +188,14 @@ Blynk.setProperty(V0, "labels", "Menu Item 1", "Menu Item 2", "Menu Item 3");
 [Set Property for single value field](https://github.com/blynkkk/blynk-library/blob/master/examples/More/SetProperty/SetProperty_SingleValue/SetProperty_SingleValue.ino)
 [Set Property for multi value field](https://github.com/blynkkk/blynk-library/blob/master/examples/More/SetProperty/SetProperty_MultiValue/SetProperty_MultiValue.ino)
 
-Two widget properties are supported - ```color```, ```label``` for all widgets and ```onLabel```/```offLabel``` for button. 
+**NOTE : ** Changing these parameters work **only** for widgets attached to Virtual pins.
 
-Changing these parameters work **only** for widgets atatched to Virtual pins.
-
-```onLabel``` is string for ON label of button;
-```offLabel``` is string for OFF label of button;
+Two widget properties are supported - ```color```, ```label``` for all widgets : 
 
 ```label``` is string for label of all widgets.
 
 ```color``` is string in [HEX](http://www.w3schools.com/html/html_colors.asp) format (in the form: #RRGGBB, 
-where RR (red), GG (green) and BB (blue) are hexadecimal values between 00 and FF). 
-
-For example : 
-
+where RR (red), GG (green) and BB (blue) are hexadecimal values between 00 and FF). For example :
 ``` 
 #define BLYNK_GREEN     "#23C48E"
 #define BLYNK_BLUE      "#04C0F8"
@@ -209,6 +203,15 @@ For example :
 #define BLYNK_RED       "#D3435C"
 #define BLYNK_DARK_BLUE "#5F7CD8"
 ``` 
+
+Widget specific properties: 
+
+**Button**
+```onLabel``` is string for ON label of button;
+```offLabel``` is string for OFF label of button;
+
+*Music Player**
+```isOnPlay``` is boolean accepts true/false.
 
 ##Limitations and Recommendations
 - Don't put ```Blynk.virtualWrite``` and any other ```Blynk.*``` command inside ```void loop()```- it will cause 
