@@ -186,6 +186,7 @@ Blynk.setProperty(V0, "labels", "Menu Item 1", "Menu Item 2", "Menu Item 3");
 ```
 
 [Set Property for single value field](https://github.com/blynkkk/blynk-library/blob/master/examples/More/SetProperty/SetProperty_SingleValue/SetProperty_SingleValue.ino)
+
 [Set Property for multi value field](https://github.com/blynkkk/blynk-library/blob/master/examples/More/SetProperty/SetProperty_MultiValue/SetProperty_MultiValue.ino)
 
 **NOTE : ** Changing these parameters work **only** for widgets attached to Virtual pins.
@@ -207,10 +208,13 @@ where RR (red), GG (green) and BB (blue) are hexadecimal values between 00 and F
 Widget specific properties: 
 
 **Button**
+
 ```onLabel``` is string for ON label of button;
+
 ```offLabel``` is string for OFF label of button;
 
-*Music Player**
+**Music Player**
+
 ```isOnPlay``` is boolean accepts true/false.
 
 ##Limitations and Recommendations
