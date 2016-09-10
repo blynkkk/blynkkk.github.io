@@ -415,6 +415,45 @@ if it wasn't selected).
 **Sketch:** [Simple Time Input for start time](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/TimeInput/SimpleTimeInput/SimpleTimeInput.ino)
 **Sketch:** [Advanced Time Input](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/TimeInput/AdvancedTimeInput/AdvancedTimeInput.ino)
 
+###Table
+Table widget is cool when you need to structure similar data within 1 graphical element. It works as usual table.
+You can add row to table with : 
+
+```Blynk.virtualWrite(V1, "add", id, "Name", "Value");```
+
+you can highlight any element in table by using it index in a table starting from 0 : 
+
+```Blynk.virtualWrite(V1, "pick", 0);```
+
+you can clear any data in table at any time with : 
+
+```Blynk.virtualWrite(V1, "clr");```
+
+<img src="images/table_settings.png" style="width: 200px; height:360px"/>
+
+you can also accept commands from table 
+
+```
+BLYNK_WRITE(V1) {
+   String cmd = param[0].asStr();
+   if (cmd == "select") {
+       //row in table was selected. 
+       int rowId = param[1].asInt();
+   }
+   if (cmd == "deselect") {
+       //row in table was deselected. 
+       int rowId = param[1].asInt();
+   }
+   if (cmd == "order") {
+       //rows in table where reodered
+       int oldRowIndex = param[1].asInt();
+       int newRowIndex = param[2].asInt();
+   }
+}
+```
+
+**Sketch:** [Simple Table usage](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Table/Table_Simple/Table_Simple.ino)
+
 ## Other
 
 ### Bridge
