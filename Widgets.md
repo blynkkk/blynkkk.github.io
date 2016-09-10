@@ -421,6 +421,9 @@ You can add row to table with :
 
 ```Blynk.virtualWrite(V1, "add", id, "Name", "Value");```
 
+**Note :** table size is limited with 100 rows. Whe you reach limit table will work as FIFO list.
+Could be changed with ```table.rows.pool.size``` property for local servers.
+
 you can highlight any element in table by using it index in a table starting from 0 : 
 
 ```Blynk.virtualWrite(V1, "pick", 0);```
