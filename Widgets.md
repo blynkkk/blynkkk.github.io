@@ -416,25 +416,26 @@ if it wasn't selected).
 **Sketch:** [Advanced Time Input](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/TimeInput/AdvancedTimeInput/AdvancedTimeInput.ino)
 
 ###Table
-Table widget is cool when you need to structure similar data within 1 graphical element. It works as usual table.
-You can add row to table with : 
+Table widget comes handy when you need to structure similar data within 1 graphical element. It works as a usual table.
+
+You can add a row to the table with : 
 
 ```Blynk.virtualWrite(V1, "add", id, "Name", "Value");```
 
-**Note :** table size is limited with 100 rows. Whe you reach limit table will work as FIFO list.
-Could be changed with ```table.rows.pool.size``` property for local servers.
+**Note :** Max number of rows in the table  is 100. When you reach the limit, table will work as FIFO (First In First Out)list.
+This limit can be changed by configuring ```table.rows.pool.size``` property for local servers.
 
-you can highlight any element in table by using it index in a table starting from 0 : 
+To highlight any item in a table by using its' index in a table starting from 0 : 
 
 ```Blynk.virtualWrite(V1, "pick", 0);```
 
-you can clear any data in table at any time with : 
+To clear the table at any time with: 
 
 ```Blynk.virtualWrite(V1, "clr");```
 
 <img src="images/table_settings.png" style="width: 200px; height:360px"/>
 
-you can also accept commands from table 
+You can also handle other actions coming from table. For example, use row as a switch button. 
 
 ```
 BLYNK_WRITE(V1) {
