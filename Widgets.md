@@ -623,4 +623,4 @@ or for body
 **NOTE :** Blynk cloud has limitation for webhook widget - you are allowed to send only 1 request per second. You can
  change this on local server with ```webhooks.frequency.user.quota.limit```. Please be very careful using webhooks, 
  as many resources not capable to handle even 1 req/sec, so you may be banned on some of them. For example thingspeak 
- allows to send onle 1 req per 15 seconds.
+ allows to send 1 request per 15 seconds.
