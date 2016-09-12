@@ -598,7 +598,7 @@ if (client.connect("api.thingspeak.com", 80)) {
  
 With webhook widget this is not necessary anymore. All you need just fill below fields : 
 
-<img src="images/eventor/webhook_settings.png" style="width: 200px; height:360px"/>
+<img src="images/webhook_settings.png" style="width: 200px; height:360px"/>
 
 And do usual :  
 
