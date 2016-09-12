@@ -571,3 +571,50 @@ feature with ```isOnPlay``` property.
 
 
 **Sketch:** [Music Player](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Player/Player.ino)
+
+### Webhook
+
+Webhook is a widget for 3-d party integrations. With webhook widget you can send HTTP/S requests to any 3-d party server.
+Any write operation from hardware side will trigger webhook widget (same way as for eventor). You can also trigger 
+webhook from application side in case control widget assigned to same pin as webhook (will be available from 0.18.1 server version).
+
+For example, imagine a case when you want to send data from your hardware not only to Blynk but also to Thingspeak server.
+In typical, classic use case you'll need to write code like this (this is minimal and not full sketch) : 
+
+```
+WiFiClient client;
+if (client.connect("api.thingspeak.com", 80)) {
+    client.print("POST /update HTTP/1.1\n");
+    client.print("Host: api.thingspeak.com\n");
+    client.print("Connection: close\n");
+    client.print("X-THINGSPEAKAPIKEY: " + apiKeyThingspeak1 + "\n");
+    client.print("Content-Type: application/x-www-form-urlencoded\n");
+    client.print("Content-Length: ");
+    client.print(postStr.length());
+    client.print("\n\n");
+    client.print(postStr);
+}
+```
+ 
+With webhook widget this is not necessary anymore. All you need just fill below fields : 
+
+<img src="images/eventor/webhook_settings.png" style="width: 200px; height:360px"/>
+
+And do usual :  
+
+```Blynk.virtualWrite(V0, value);```
+
+where V0 is pin assigned to webhook widget.
+
+Also you can use usual Blynk placeholders for pin value in body or url, for example : 
+
+```https://api.thingspeak.com/update?api_key=xxxxxx&field1=/pin/```
+
+or for body
+
+```["/pin/"]```
+
+**NOTE :** Blynk cloud has limitation for webhook widget - you are allowed to send only 1 request per second. You can
+ change this on local server with ```webhooks.frequency.user.quota.limit```. Please be very careful using webhooks, 
+ as many resources not capable to handle even 1 req/sec, so you may be banned on some of them. For example thingspeak 
+ allows to send onle 1 req per 15 seconds.
