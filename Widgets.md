@@ -602,21 +602,23 @@ With webhook widget this is not necessary anymore. All you need just fill below 
 
 And do usual :  
 
-```Blynk.virtualWrite(V0, value);```
+```
+Blynk.virtualWrite(V0, value);
+```
 
 where V0 is pin assigned to webhook widget.
 
 Also you can use usual Blynk placeholders for pin value in body or url, for example : 
 
-
-```https://api.thingspeak.com/update?api_key=xxxxxx&field1=/pin/```
-
+```
+https://api.thingspeak.com/update?api_key=xxxxxx&field1=/pin/
+```
 
 or for body
 
-
-```["/pin/"]```
-
+```
+["/pin/"]
+```
 
 **NOTE :** Blynk cloud has limitation for webhook widget - you are allowed to send only 1 request per second. You can
  change this on local server with ```webhooks.frequency.user.quota.limit```. Please be very careful using webhooks, 
