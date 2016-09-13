@@ -216,6 +216,9 @@ Widget specific properties:
 **Music Player**
 
 ```isOnPlay``` is boolean accepts true/false.
+``` 
+Blynk.setProperty(V0, "isOnPlay", "true");
+``` 
 
 ##Limitations and Recommendations
 - Don't put ```Blynk.virtualWrite``` and any other ```Blynk.*``` command inside ```void loop()```- it will cause 
