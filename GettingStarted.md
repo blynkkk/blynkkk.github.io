@@ -12,7 +12,7 @@ After you download the Blynk App, you'll need to create a New Blynk account. Thi
 
 We recommend using a **real** email address because it will simplify things later.
 
-<img src="images/sign_up.png" style="width: 200px; height:360px"/>
+<img src="images/register_account.png" style="width: 200px; height:360px"/>
 
 ####Why do I need to create an account?
 
