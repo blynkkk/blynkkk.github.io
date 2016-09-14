@@ -579,7 +579,8 @@ feature with ```isOnPlay``` property.
 Webhook is a widget for 3-d party integrations. With webhook widget you can send HTTP/S requests to any 3-d party server 
 or device that has HTTP/S API (Philips Hue for instance).
 Any write operation from hardware side will trigger webhook widget (same way as for eventor). You can also trigger 
-webhook from application side in case control widget assigned to same pin as webhook (will be available from 0.18.1 server version).
+webhook from application side in case control widget assigned to same pin as webhook. You can trigger 3-d party service 
+with single button click.
 
 For example, imagine a case when you want to send data from your hardware not only to Blynk but also to Thingspeak server.
 In typical, classic use case you'll need to write code like this (this is minimal and not full sketch) : 
