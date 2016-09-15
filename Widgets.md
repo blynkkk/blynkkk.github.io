@@ -310,14 +310,21 @@ Limitations :
 
 Email widget allows you to send email from your hardware to any address.
 
-<img src="images/mail.png" style="width: 77px; height:80px"/>
-
-<img src="images/mail_edit.png" style="width: 200px; height:360px"/>
-
 Example code:
 ```cpp
 Blynk.email("my_email@example.com", "Subject", "Your message goes here");
 ```
+  
+It also contains ```to``` field. With this field you may define receiver of email in the app. 
+In that case you don't need to specify receiver on hardware :
+ 
+ ```cpp
+ Blynk.email("Subject", "Your message goes here");
+ ```
+
+<img src="images/mail.png" style="width: 77px; height:80px"/>
+
+<img src="images/mail_edit.png" style="width: 200px; height:360px"/>
 
 Limitations :
 
