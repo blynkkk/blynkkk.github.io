@@ -220,6 +220,14 @@ Widget specific properties:
 Blynk.setProperty(V0, "isOnPlay", "true");
 ``` 
 
+**Menu**
+
+```labels``` is list of strings for Menu widget selections;
+``` 
+Blynk.setProperty(V0, "labels", "label 1", "label 2", "label 3");
+``` 
+
+
 ##Limitations and Recommendations
 - Don't put ```Blynk.virtualWrite``` and any other ```Blynk.*``` command inside ```void loop()```- it will cause 
 lot's of outgoing messages to our server and your connection will be terminated; 
