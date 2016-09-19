@@ -416,7 +416,7 @@ switch (param.asInt())
 Time input widget allows you to select start/stop time, day of week, timezone, sunrise/sunset formatted values
 and send them to your hardware. Supported formats for time now are ```HH:MM``` and ```HH:MM AM/PM```.
 
-Hardware will get selected on UI time as seconds of day (3600 * hours + 60 * minutes) for start/stop time.
+Hardware will get selected on UI time as seconds of day (```3600 * hours + 60 * minutes```) for start/stop time.
 
 <img src="images/time_input_settings.png" style="width: 200px; height:360px"/>
 
