@@ -421,6 +421,7 @@ Hardware will get selected on UI time as seconds of day (```3600 * hours + 60 * 
 <img src="images/time_input_settings.png" style="width: 200px; height:360px"/>
 
 **Sketch:** [Simple Time Input for start time](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/TimeInput/SimpleTimeInput/SimpleTimeInput.ino)
+
 **Sketch:** [Advanced Time Input](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/TimeInput/AdvancedTimeInput/AdvancedTimeInput.ino)
 
 ###Table
