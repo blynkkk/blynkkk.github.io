@@ -32,7 +32,7 @@ everything happens in a blynk of an eye.
 * Connection to the cloud using:
   * Ethernet
   * WiFi
-  * Bluetooth LE
+  * Bluetooth and BLE
   * USB (Serial)
   * ...
 * Set of easy-to-use Widgets
