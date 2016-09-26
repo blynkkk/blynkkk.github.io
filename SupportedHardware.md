@@ -15,7 +15,9 @@
   - Intel Edison
   - Intel Galileo
   - Teensy 3.2/3.1
+  - Blue Pill (STM32F103C)
   - Fishino Guppy, Uno, Mega
+  - BBC Micro:bit *, soon*
   - LightBlue Bean *, soon*
   - RedBear Duo (WiFi, BLE)
   - RedBearLab Blend Micro
@@ -51,7 +53,10 @@
   - Raspberry Pi (Banana Pi, Orange Pi, ...)
   - BeagleBone Black
   - Onion Omega
-  - Intel Edison, Intel Galileo
+  - Intel Galileo
+  - Intel Edison
+  - Intel Joule
+  - Samsung ARTIK 5
   - PandaBoard, CubieBoard, pcDuino, Tessel 2
   - VoCore (OpenWRT + [Espruino package](https://github.com/vshymanskyy/OpenWRT-Espruino-packages))
   - Espruino Pico
@@ -78,8 +83,10 @@
  - HM-10, HC-08
  - RedBearLab BLE Mini
  - nRF8001-based boards (Adafruit Bluefruit LE, etc.)
+- **Bluetooth 2.0 Serial Port Profile (SPP)**
+ - HC-05, HC-06, ...
 - **GSM/3G:**
- - SIM800 *, soon*
+ - SIM800L *, soon*
 - You can implement your own connection type easily (see [this](https://github.com/blynkkk/blynk-library/blob/master/examples/Boards_USB_Serial/User_Defined_Connection/User_Defined_Connection.ino) example)!
 
 ## Made by Community
