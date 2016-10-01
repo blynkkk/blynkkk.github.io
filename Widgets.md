@@ -609,6 +609,7 @@ feature with ```isOnPlay``` property.
 
 Webhook is a widget for 3-d party integrations. With webhook widget you can send HTTP/S requests to any 3-d party server 
 or device that has HTTP/S API (Philips Hue for instance).
+
 Any write operation from hardware side will trigger webhook widget (same way as for eventor). You can also trigger 
 webhook from application side in case control widget assigned to same pin as webhook. You can trigger 3-d party service 
 with single button click.
@@ -657,7 +658,26 @@ or for body
 
 You can also refer to specific index of multi value pin : 
 
-```/pin0/```,```/pin1/```, ```/pin2/```.  
+```/pin0/```,```/pin1/```, ```/pin2/```
+
+Another cool thing about webhook is that you can make GET requests from Blynk Server side and return response directly to
+your hardware. The beauty here is that you don't need to code request to 3-d party service. Imagine a case when you want to get 
+weather from some 3-d party service. For example, you have an url 
+```http://api.sunrise-sunset.org/json?lat=33.3823&lng=35.1856&date=2016-10-01```, you can put it in widget, select ```V0``` pin,
+and do usual :  
+
+```
+BLYNK_WRITE(V0){
+  String webhookdata = param.asStr();
+  Serial.println(webhookdata);
+}
+```
+
+Now, every time you'll trigger ```V0``` pin (with ```Blynk.virtualWrite(V0, 1)``` from hardware side or with control widget
+assigned to ```V0```) - ```BLYNK_WRITE(V0)``` will be triggered.
+
+**NOTE :** usually 3-d party servers returns big responses, so you have to increase hardware maximum allowed message size with 
+```#define BLYNK_MAX_READBYTES 1024```. Where ```1024``` - is maximum allowed message size.
 
 **NOTE :** Blynk cloud has limitation for webhook widget - you are allowed to send only 1 request per second. You can
  change this on local server with ```webhooks.frequency.user.quota.limit```. Please be very careful using webhooks, 
