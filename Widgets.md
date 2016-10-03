@@ -580,7 +580,7 @@ Blynk currently support bunch of different modules. Please check sketches below.
 
 <img src="images/ble_settings.png" style="width: 200px; height:360px"/>
  
-**Sketches:** [BLE](https://github.com/blynkkk/blynk-library/tree/master/examples/Boards_BLE)
+**Sketches:** [BLE](https://github.com/blynkkk/blynk-library/tree/master/examples/Boards_Bluetooth)
 
 ### Bluetooth
 
@@ -592,7 +592,7 @@ Blynk currently support bunch of different modules. Please check sketches below.
 
 <img src="images/ble_settings.png" style="width: 200px; height:360px"/>
  
-**Sketches:** [Bluetooth](https://github.com/blynkkk/blynk-library/tree/master/examples/Boards_BLE)
+**Sketches:** [Bluetooth](https://github.com/blynkkk/blynk-library/tree/master/examples/Boards_Bluetooth)
 
 ### Music Player
 
