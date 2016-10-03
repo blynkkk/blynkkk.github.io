@@ -172,7 +172,7 @@ To achieve that you need to send ```Blynk.virtualWrite(V1, 255)``` when a physic
 [Represent physical button state via Button widget with polling](https://github.com/blynkkk/blynk-library/blob/master/examples/More/Sync/SyncPhysicalButton/SyncPhysicalButton.ino)
 
 ## Change Widget properties
-Latest Blynk library (from github master) supports changing some of the widget properties from hardware side (implemented for Android only). 
+Latest Blynk library supports changing some of the widget properties from hardware side. 
 For example, you can change the color of LED widget based on a condition. For example :
 
 ```
