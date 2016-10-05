@@ -1,4 +1,4 @@
-## Other
+
 ### BLE
 
 Widget for enabling Bluetooth Low Energy support. At the moment BLE widget supported only for Android and requires 

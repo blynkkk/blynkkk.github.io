@@ -1,4 +1,4 @@
-## Other
+
 ### Webhook
 
 Webhook is a widget for 3-d party integrations. With webhook widget you can send HTTP/S requests to any 3-d party server 

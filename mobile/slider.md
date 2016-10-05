@@ -1,5 +1,6 @@
-##Controllers
+
 ### Slider
+
 Similar to potentiometer. Allows to send values between MIN and MAX.
  
 ### Send On Release

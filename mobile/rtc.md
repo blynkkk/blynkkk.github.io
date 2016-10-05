@@ -1,4 +1,4 @@
-## Other
+
 ### RTC
 
 Real-time clock allows you to get time from server. You can preselect any timezone on UI to get time on hardware in required locale.

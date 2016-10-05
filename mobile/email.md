@@ -1,4 +1,4 @@
-##Notifications
+
 ###Email
 
 Email widget allows you to send email from your hardware to any address.

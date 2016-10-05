@@ -1,4 +1,4 @@
-## Other
+
 ### Bridge
 
 Bridge can be used for Device-to-Device communication (no app. involved). You can send digital/analog/virtual write commands 

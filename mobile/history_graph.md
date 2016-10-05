@@ -1,5 +1,6 @@
-##Displays
+
 ### History Graph
+
 Allows you to see any data your hardware had sent to server previously. History graph has 3 granularities :
 
 - Minute granularity - ```1h```, ```6h```;

@@ -1,4 +1,4 @@
-##Notifications
+
 ###Twitter
 
 Twitter widget connects your Twitter account to Blynk and allows you to send Tweets from your hardware.

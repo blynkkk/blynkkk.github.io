@@ -1,5 +1,6 @@
-##Displays
+
 ### Terminal
+
 Display data from your hardware. Also allows to send any string to your hardware. Terminal always stores last 25 messages
 your hardware had send to Blynk Cloud. This limit may be increased on Local Server.
 

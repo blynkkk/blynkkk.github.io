@@ -1,4 +1,4 @@
-##Notifications
+
 ###Push Notifications
 
 Push Notification widget allows you to send push notification from your hardware to your device. Currently it also

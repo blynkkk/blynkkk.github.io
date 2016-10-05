@@ -1,4 +1,4 @@
-## Other
+
 ### Music Player
 
 Simple UI element with 3 buttons - simulates music player interface. Every button sends it's own command to hardware : 

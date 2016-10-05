@@ -1,5 +1,6 @@
-##Displays
+
 ### LED
+
 A simple LED for indication. You need to send 0 in order to turn LED off. And 255 in order to turn LED on. Or just use
 Blynk API as described below :
 

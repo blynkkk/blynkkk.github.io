@@ -1,5 +1,6 @@
-##Displays
+
 ### LCD
+
 This is a regular 16x2 LCD display made in our secret facility in China.
 #### SIMPLE / ADVANCED MODE
 

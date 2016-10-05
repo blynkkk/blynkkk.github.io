@@ -1,4 +1,4 @@
-## Other
+
 ### Bluetooth
 
 Widget for enabling Bluetooth support. At the moment Bluetooth widget supported only for Android and requires 

@@ -1,5 +1,6 @@
-##Displays
+
 ### Labeled Value
+
 Displays incoming data from your sensors or Virtual Pins. It is a better version of 'Value Display' as it has a formatting 
 string, so you could format incoming value to any string you want.
 
