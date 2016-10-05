@@ -1,5 +1,5 @@
 
-## Interface
+## Time Input
 
 Time input widget allows you to select start/stop time, day of week, timezone, sunrise/sunset formatted values
 and send them to your hardware. Supported formats for time now are ```HH:MM``` and ```HH:MM AM/PM```.

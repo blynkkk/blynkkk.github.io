@@ -1,5 +1,5 @@
 
-###Table
+### Table
 
 Table widget comes handy when you need to structure similar data within 1 graphical element. It works as a usual table.
 

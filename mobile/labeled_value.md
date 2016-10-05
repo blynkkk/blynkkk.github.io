@@ -17,6 +17,4 @@ Next formatting options are supported:
 
 ```/pin.##/``` - displays the value with two decimal places (12.68)
 
-<img src="images/labeled_value_format_edit.png" style="width: 200px; height:360px"/>
-
 **Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino)

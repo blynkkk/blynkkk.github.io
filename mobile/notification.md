@@ -1,5 +1,5 @@
 
-###Push Notifications
+### Push Notifications
 
 Push Notification widget allows you to send push notification from your hardware to your device. Currently it also
  contains 2 additional options :
@@ -20,7 +20,7 @@ Limitations :
 - Maximum allowed body length is 120 symbols.
 - Only 1 notification per 15 seconds is allowed
 
-###Unicode in push notifications
+### Unicode in push notifications
 
 The library handles all strings as UTF8 Unicode. If you're facing problems, try to print your message to the Serial 
 and see if it works (the terminal should be set to UTF-8 encoding). If it doesn't work, probably you should read 
@@ -28,7 +28,7 @@ about unicode support of your compiler.
 If it works, but your message is truncated - you need to increase message length limit 
 (all Unicode symbols consume at least twice the size of Latin symbols).
 
-###Increasing message length limit
+### Increasing message length limit
 
 You can increase maximum message length by putting on the top of your sketch (before Blynk includes):
 ```cpp

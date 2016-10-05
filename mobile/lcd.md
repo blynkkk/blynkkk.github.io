@@ -2,15 +2,26 @@
 ### LCD
 
 This is a regular 16x2 LCD display made in our secret facility in China.
-#### SIMPLE / ADVANCED MODE
 
 #### Commands
-You need to use special commands with this widget:
+You need to use special commands with this widget.
+
+Init variable : 
+
+```
+WidgetLCD lcd(V1);
+
+```
+
+Send message : 
 
 ```
 lcd.print(x, y, "Your Message");
 ```
 Where x is a symbol position (0-15), y is a line number (0 or 1), 
+
+
+Clear LCD : 
 
 ```
 lcd.clear();
@@ -30,5 +41,7 @@ Next formatting options supported:
 ```/pin.##/``` - displays the value with two decimal places (12.68)
 
 **Sketch:** [LCD Advanced Mode](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/LCD/LCD_AdvancedMode/LCD_AdvancedMode.ino)
+
 **Sketch:** [LCD Simple Mode Pushing](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/LCD/LCD_SimpleModePushing/LCD_SimpleModePushing.ino)
+
 **Sketch:** [LCD Simple Mode Reading](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/LCD/LCD_SimpleModeReading/LCD_SimpleModeReading.ino)
