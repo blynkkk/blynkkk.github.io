@@ -285,6 +285,13 @@ terminal.flush();   // Ensure that data was sent out of device
 
 **Sketch:** [Terminal](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Terminal/Terminal.ino#L23)
 
+## Video Streaming
+Simple widget that allows you to display any live stream. Widget supports RTSP (RP, SDP), HTTP/S progressive streaming, 
+HTTP/S live streaming. For more info please follow [official Android documentation](https://developer.android.com/guide/appendix/media-formats.html). 
+
+At the moment Blynk doesn't provide streaming servers. So you can either stream directly from camera, use 3-d party 
+services or host streaming server on own server (on raspberry for example).
+
 ##Notifications
 ###Twitter
 
