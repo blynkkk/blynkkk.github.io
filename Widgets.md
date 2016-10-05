@@ -82,7 +82,7 @@ Works in push or switch modes. Allows to send 0/1 (LOW/HIGH) values. Button send
 
 <img src="images/button_edit.png" style="width: 200px; height:360px"/>
 
-**Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino#L48)
+**Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino)
 
 ### Slider
 Similar to potentiometer. Allows to send values between MIN and MAX.
@@ -91,7 +91,7 @@ Similar to potentiometer. Allows to send values between MIN and MAX.
 
 <img src="images/slider_edit.png" style="width: 200px; height:360px"/>
 
-**Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino#L48)
+**Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino)
 
 ### Timer
 Timer triggers actions at a specific time. Even if smartphone is offline. Start time sends 1 (HIGH). Stop time sends 0 (LOW).
@@ -100,7 +100,7 @@ Timer triggers actions at a specific time. Even if smartphone is offline. Start 
 
 <img src="images/timer_edit.png" style="width: 200px; height:360px"/>
 
-**Sketch:** [Timer](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Timer/Timer.ino#L16)
+**Sketch:** [Timer](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Timer/Timer.ino)
 
 ### Joystick
 Control servo movements in 4 directions
@@ -119,7 +119,7 @@ When it's OFF, Joystick handle will not return back to center position. It will 
 
 <img src="images/joystick_edit.png" style="width: 200px; height:360px"/>
 
-**Sketch:** [JoystickTwoAxis](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/JoystickTwoAxis/JoystickTwoAxis.ino#L24)
+**Sketch:** [JoystickTwoAxis](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/JoystickTwoAxis/JoystickTwoAxis.ino)
 
 ##Displays
 ### Value Display
@@ -129,7 +129,7 @@ Displays incoming data from your sensors or Virtual Pins.
 
 <img src="images/display_edit.png" style="width: 200px; height:360px"/>
 
-**Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino#L48)
+**Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino)
 
 ### Labeled Value
 Displays incoming data from your sensors or Virtual Pins. It is a better version of 'Value Display' as it has a formatting 
@@ -139,7 +139,7 @@ string, so you could format incoming value to any string you want.
 
 <img src="images/labeled_value_edit.png" style="width: 200px; height:360px"/>
 
-**Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino#L48)
+**Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino)
 
 #### Formatting options
 
@@ -186,7 +186,7 @@ A great visual way to display incoming numeric values.
 
 <img src="images/gauge_edit.png" style="width: 200px; height:360px"/>
 
-**Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino#L48)
+**Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino)
 
 ### LCD
 This is a regular 16x2 LCD display made in our secret facility in China.
@@ -234,7 +234,7 @@ Easily plot incoming data from your project in various designs.
 
 <img src="images/graph_edit.png" style="width: 200px; height:360px"/>
 
-**Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino#L48)
+**Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino)
 
 ### History Graph
 Allows you to see any data your hardware had sent to server previously. History graph has 3 granularities :
@@ -264,7 +264,7 @@ You can also get pin data via [HTTP API](http://docs.blynkapi.apiary.io/#referen
 
 <img src="images/history_graph_edit.png" style="width: 200px; height:360px"/>
 
-**Sketch:** [PushData](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino#L58)
+**Sketch:** [PushData](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino)
 
 ### Terminal
 Display data from your hardware. Also allows to send any string to your hardware. Terminal always stores last 25 messages
@@ -283,7 +283,7 @@ terminal.flush();   // Ensure that data was sent out of device
 
 <img src="images/terminal_edit.png" style="width: 200px; height:360px"/>
 
-**Sketch:** [Terminal](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Terminal/Terminal.ino#L23)
+**Sketch:** [Terminal](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Terminal/Terminal.ino)
 
 ## Video Streaming
 Simple widget that allows you to display any live stream. Widget supports RTSP (RP, SDP), HTTP/S progressive streaming, 
@@ -311,7 +311,7 @@ Limitations :
 - you cant' send 2 tweets with same message (it's Twitter policy)
 - only 1 tweet per 15 seconds is allowed
 
-**Sketch:** [Twitter](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Twitter/Twitter.ino#L26)
+**Sketch:** [Twitter](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Twitter/Twitter.ino)
 
 ###Email
 
@@ -343,7 +343,7 @@ For example for ESP you can set this to 1200 max length ```#define BLYNK_MAX_SEN
 - In case you are using gmail you are limited with 500 mails per day (by google). Other providers may have similar
 limitations, so please be careful.
 
-**Sketch:** [Email](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Email/Email.ino#L26)
+**Sketch:** [Email](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Email/Email.ino)
 
 ###Push Notifications
 
@@ -521,7 +521,7 @@ BLYNK_WRITE(V5){
 
 Keep in mind that ```bridge.virtualWrite``` doesn't send any value to mobile app. You need to call ```Blynk.virtualWrite``` for that.
 
-**Sketch:** [Bridge](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Bridge/Bridge.ino#L33)
+**Sketch:** [Bridge](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Bridge/Bridge.ino)
 
 ### Eventor
 Eventor widget allows you to create simple behaviour rules or **events**. 
@@ -558,7 +558,7 @@ In order to remove created **event** please use swipe. You can also swipe out la
 
 <img src="images/eventor/eventor_edit.png" style="width: 200px; height:360px"/>
 
-**Sketch:** [Eventor](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Eventor/Eventor.ino#L26)
+**Sketch:** [Eventor](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Eventor/Eventor.ino)
 
 
 **NOTE** : Eventor is triggered only for messages that comes from hardware side, from ```Blynk.virtualWrite()```.
