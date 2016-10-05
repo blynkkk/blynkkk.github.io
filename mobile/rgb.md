@@ -4,6 +4,7 @@
 zeRGBa is usual RGB controller (color picker).
 
 ####Settings:
+
 - **SPLIT**:
 Each of the parameters is sent directly to the Pin on your hardware (e.g D7). You don't need to write any code.
 
@@ -38,3 +39,4 @@ BLYNK_WRITE(V1) // There is a Widget that WRITEs data to V1
 For example, when you move joystick widget, commands are continuously streamed to the hardware, during a single joystick move 
 you can send dozens of commands. There are use-cases where it's needed, however creating such a load may cause hardware reset. 
 We recommend enabling **Send On Release** feature for most of the cases, unless you really need instant feedback.
+This option is enabled by default.
