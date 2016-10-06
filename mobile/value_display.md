@@ -13,7 +13,7 @@ In PUSH mode you update value display from hardware side with code :
 Blynk.virtualWrite(V1, val); 
 ```
 
-In PUSH mode every message that hardware sent to server is stored automatically on server. PUSH mode doesn't require 
+In this mode every message that hardware sends to server is stored automatically on server. PUSH mode doesn't require 
 application to be online or opened.
 
 With Frequency Reading mode you need to select update interval and application will trigger events with required timing. 
