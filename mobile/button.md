@@ -5,18 +5,24 @@ Works in push or switch modes. Allows to send 0/1 (LOW/HIGH) values. Button send
 
 You can change button state from hardware side. For example, turn on button assigned to virtual pin V1 : 
 
-```Blynk.virtualWrite(V1, HIGH)```
+```
+Blynk.virtualWrite(V1, HIGH)
+```
 
 You can change button labels from hardware with : 
 
-```Blynk.virtualWrite(V1, "onLabel", "ON");```
+```
+Blynk.virtualWrite(V1, "onLabel", "ON");
+```
 
-```Blynk.virtualWrite(V1, "offLabel", "OFF");```
+```
+Blynk.virtualWrite(V1, "offLabel", "OFF");
+```
 
 or change color : 
 
 ```
-Blynk.virtualWrite(V1, "color", "#D3435C"); //#D3435C - Blynk RED 
+Blynk.virtualWrite(V1, "color", "#D3435C"); //Blynk RED 
 ```
 
 **Sketch:** [Basic Sketch](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino)

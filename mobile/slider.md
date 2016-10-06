@@ -5,16 +5,20 @@ Similar to potentiometer. Allows to send values between MIN and MAX.
  
 You can change slider state from hardware side. For example, set slider value assigned to virtual pin V1 to 55 : 
 
-```Blynk.virtualWrite(V1, 55)```
+```
+Blynk.virtualWrite(V1, 55);
+```
 
 You can change slider label from hardware with : 
 
-```Blynk.virtualWrite(V1, "label", "My Slider Label");```
+```
+Blynk.virtualWrite(V1, "label", "My Slider Label");
+```
 
 or change color : 
 
 ```
-Blynk.virtualWrite(V1, "color", "#D3435C"); //#D3435C - Blynk RED
+Blynk.virtualWrite(V1, "color", "#D3435C"); //Blynk RED
 ```
  
 ### Send On Release

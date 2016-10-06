@@ -24,7 +24,8 @@ Don't forget that ```virtualWrite``` commands should be wrapped in the timer and
 
 Now configure new **Event** in Eventor widget: 
 
-<img src="https://github.com/blynkkk/blynkkk.github.io/blob/master/images/webhook_settings.png" style="width: 200px; height:360px"/>
+
+<img src="/blynkkk/blynkkk.github.io/raw/master/images/webhook_settings.png" style="width: 200px; height:360px"/>
 
 **NOTE** Don't forget to add notification widget.
 
