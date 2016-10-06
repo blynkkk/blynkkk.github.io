@@ -22,10 +22,10 @@ digital pins in that case. However for virtual pins you need to use next code :
 
 ```cpp
 //triggered from app
-BLYNK_READ(V0)
+BLYNK_READ(V1)
 {
   //send to app
-  Blynk.virtualWrite(V0, val);
+  Blynk.virtualWrite(V1, val);
 }
 ```
 
