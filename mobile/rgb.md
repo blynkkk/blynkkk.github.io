@@ -3,7 +3,7 @@
 
 zeRGBa is usual RGB controller (color picker).
 
-####Settings:
+#### Settings:
 
 - **SPLIT**:
 Each of the parameters is sent directly to the Pin on your hardware (e.g D7). You don't need to write any code.
@@ -26,16 +26,18 @@ This mode can be used with Virtual Pins only.
 Example: Add a zeRGBa Widget and set it to MERGE mode. Choose Virtual Pin V1.
 	
 ```cpp
-BLYNK_WRITE(V1) // There is a Widget that WRITEs data to V1 
+BLYNK_WRITE(V1) // zeRGBa assigned to V1 
 {
-    int r = param[0].asInt(); // get a RED channel value
-	int g = param[1].asInt(); // get a GREEN channel value
-	int b = param[2].asInt(); // get a BLUE channel value
+    // get a RED channel value
+    int r = param[0].asInt();
+    // get a GREEN channel value
+	int g = param[1].asInt();
+	// get a BLUE channel value
+	int b = param[2].asInt();
 }
 ```
  
-- Send On Release:
-**Send On Release** is available for most controller widgets and allows you to decrease data traffic on your hardware. 
+- **Send On Release** is available for most controller widgets and allows you to decrease data traffic on your hardware. 
 For example, when you move joystick widget, commands are continuously streamed to the hardware, during a single joystick move 
 you can send dozens of commands. There are use-cases where it's needed, however creating such a load may cause hardware reset. 
 We recommend enabling **Send On Release** feature for most of the cases, unless you really need instant feedback.

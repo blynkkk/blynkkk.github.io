@@ -3,7 +3,7 @@
 
 Control servo movements in 4 directions.
 
-####Settings:
+#### Settings:
 
 - **SPLIT**:
 Each of the parameters is sent directly to the Pin on your hardware (e.g D7). You don't need to write any code.
@@ -25,10 +25,12 @@ This mode can be used with Virtual Pins only.
 Example: Add a Joystick Widget and set it to MERGE mode. Choose Virtual Pin V1
 	
 ```cpp
-BLYNK_WRITE(V1) // There is a Widget that WRITEs data to V1 
+BLYNK_WRITE(V1) // Joystick assigned to V1 
 {
-  int x = param[0].asInt(); // get x 
-  int y = param[1].asInt(); // get y
+  // get x 
+  int x = param[0].asInt(); 
+  // get y
+  int y = param[1].asInt();
 }
 ```
 
