@@ -11,7 +11,7 @@ with single button click.
 For example, imagine a case when you want to send data from your hardware not only to Blynk but also to Thingspeak server.
 In typical, classic use case you'll need to write code like this (this is minimal and not full sketch) : 
 
-```
+```cpp
 WiFiClient client;
 if (client.connect("api.thingspeak.com", 80)) {
     client.print("POST /update HTTP/1.1\n");
@@ -32,7 +32,7 @@ With webhook widget this is not necessary anymore. All you need just fill below 
 
 And do usual :  
 
-```
+```cpp
 Blynk.virtualWrite(V0, value);
 ```
 
@@ -40,13 +40,13 @@ where V0 is pin assigned to webhook widget.
 
 Also you can use usual Blynk placeholders for pin value in body or url, for example : 
 
-```
+```cpp
 https://api.thingspeak.com/update?api_key=xxxxxx&field1=/pin/
 ```
 
 or for body
 
-```
+```cpp
 ["/pin/"]
 ```
 
@@ -60,7 +60,7 @@ weather from some 3-d party service. For example, you have an url
 ```http://api.sunrise-sunset.org/json?lat=33.3823&lng=35.1856&date=2016-10-01```, you can put it in widget, select ```V0``` pin,
 and do usual :  
 
-```
+```cpp
 BLYNK_WRITE(V0){
   String webhookdata = param.asStr();
   Serial.println(webhookdata);

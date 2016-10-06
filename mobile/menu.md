@@ -7,7 +7,7 @@ It works same way as usual ComboBox element. You can also set Menu items
 [from hardware side](http://docs.blynk.cc/#blynk-main-operations-change-widget-properties).
 
 Example code:
-```
+```cpp
 switch (param.asInt())
   {
     case 1: { // Item 1

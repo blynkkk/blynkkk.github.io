@@ -21,7 +21,7 @@ led2.setValue(127);
 
 You can also change LED color with : 
 
-```
+```cpp
 //#D3435C - Blynk RED 
 Blynk.virtualWrite(V1, "color", "#D3435C"); 
 ```

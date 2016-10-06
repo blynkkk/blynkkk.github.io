@@ -8,14 +8,13 @@ You need to use special commands with this widget.
 
 Init variable : 
 
-```
+```cpp
 WidgetLCD lcd(V1);
-
 ```
 
 Send message : 
 
-```
+```cpp
 lcd.print(x, y, "Your Message");
 ```
 Where x is a symbol position (0-15), y is a line number (0 or 1), 
@@ -23,7 +22,7 @@ Where x is a symbol position (0-15), y is a line number (0 or 1),
 
 Clear LCD : 
 
-```
+```cpp
 lcd.clear();
 ```
 
