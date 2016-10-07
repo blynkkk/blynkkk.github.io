@@ -26,9 +26,7 @@ if (client.connect("api.thingspeak.com", 80)) {
 }
 ```
  
-With webhook widget this is not necessary anymore. All you need just fill below fields : 
-
-<img src="images/webhook_settings.png" style="width: 200px; height:360px"/>
+With webhook widget this is not necessary anymore. All you need just fill few fields. 
 
 And do usual :  
 
@@ -74,6 +72,6 @@ assigned to ```V0```) - ```BLYNK_WRITE(V0)``` will be triggered.
 ```#define BLYNK_MAX_READBYTES 1024```. Where ```1024``` - is maximum allowed message size.
 
 **NOTE :** Blynk cloud has limitation for webhook widget - you are allowed to send only 1 request per second. You can
- change this on local server with ```webhooks.frequency.user.quota.limit```. Please be very careful using webhooks, 
+ change this on local server with ```webhooks.frequency.user.quota.limit``` property. Please be very careful using webhooks, 
  as many resources not capable to handle even 1 req/sec, so you may be banned on some of them. For example thingspeak 
  allows to send 1 request per 15 seconds.

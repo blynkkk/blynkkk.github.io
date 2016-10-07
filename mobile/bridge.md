@@ -14,7 +14,8 @@ Arduino Core may refer to wrong pins in such cases.
 
 Example code for device A which will send values to device B :
 ```cpp
-WidgetBridge bridge1(V1); //Initiating Bridge Widget on V1 of Device A
+//Initiating Bridge Widget on V1 of Device A
+WidgetBridge bridge1(V1);
 ...
 void setup() {
     Blynk.begin(...);

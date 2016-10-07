@@ -3,7 +3,7 @@
 
 Widget for enabling Bluetooth Low Energy support. At the moment BLE widget supported only for Android and requires 
 internet connection in order to login and load your profile. However this will be fixed soon. Also some Blynk 
-widget not allowed with BLE widget.
+widgets not allowed with BLE.
 
 Blynk currently support bunch of different modules. Please check sketches below.
  
