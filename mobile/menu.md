@@ -3,13 +3,12 @@
 
 Menu widget allows you to send command to your hardware based on selection you made on UI. Menu
 sends index of element you selected and not label string. Sending index is starts from 1.
-It works same way as usual ComboBox element. You can also set Menu items 
-[from hardware side](http://docs.blynk.cc/#blynk-main-operations-change-widget-properties).
+It works same way as usual ComboBox element. 
 
 Example code:
 ```cpp
-switch (param.asInt())
-  {
+BLYNK_WRITE {
+  switch (param.asInt()) {
     case 1: { // Item 1
       Serial.println("Item 1 selected");
       break;
@@ -19,6 +18,12 @@ switch (param.asInt())
       break;
     }    
   }
+}
+```
+
+You can also set Menu items from hardware side with : 
+```cpp
+Blynk.setProperty(V1, "labels", "label 1", "label 2", "label 3");
 ```
 
 **Sketch:** [Menu](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Menu/Menu.ino)
