@@ -12,18 +12,18 @@ Blynk.virtualWrite(V1, HIGH);
 You can change button labels from hardware with : 
 
 ```cpp
-Blynk.virtualWrite(V1, "onLabel", "ON");
+Blynk.setProperty(V1, "onLabel", "ON");
 ```
 
 ```cpp
-Blynk.virtualWrite(V1, "offLabel", "OFF");
+Blynk.setProperty(V1, "offLabel", "OFF");
 ```
 
 or change color : 
 
 ```cpp
 //#D3435C - Blynk RED 
-Blynk.virtualWrite(V1, "color", "#D3435C");
+Blynk.setProperty(V1, "color", "#D3435C");
 ```
 
 You can also get button state from server in case your hardware was disconnected with Blynk Sync feature : 

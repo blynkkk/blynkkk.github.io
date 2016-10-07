@@ -23,7 +23,7 @@ You can also change LED color with :
 
 ```cpp
 //#D3435C - Blynk RED 
-Blynk.virtualWrite(V1, "color", "#D3435C"); 
+Blynk.setProperty(V1, "color", "#D3435C"); 
 ```
 
 **Sketch:** [LED](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/LED/LED_Blink/LED_Blink.ino)

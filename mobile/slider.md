@@ -12,14 +12,14 @@ Blynk.virtualWrite(V1, 55);
 You can change slider label from hardware with : 
 
 ```cpp
-Blynk.virtualWrite(V1, "label", "My Slider Label");
+Blynk.setProperty(V1, "label", "My Slider Label");
 ```
 
 or change color : 
 
 ```cpp
 //#D3435C - Blynk RED
-Blynk.virtualWrite(V1, "color", "#D3435C");
+Blynk.setProperty(V1, "color", "#D3435C");
 ```
  
 ### Send On Release
