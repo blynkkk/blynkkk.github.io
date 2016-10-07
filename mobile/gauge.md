@@ -19,7 +19,7 @@ application to be online or opened.
 
 With Frequency Reading mode you need to select update interval and application will trigger events with required timing. 
 Your application should be open and running in order to make requests to hardware. You don't need any code for Analog and 
-digital pins in that case. However for virtual pins you need to use next code : 
+Digital pins in that case. However for virtual pins you need to use next code : 
 
 ```cpp
 //triggered from app
