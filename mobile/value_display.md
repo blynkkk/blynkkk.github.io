@@ -4,7 +4,7 @@
 Displays incoming data from your sensors or Virtual Pins.
 Can work in 2 modes : 
 
-- PUSH mode (select if from Frequency Reading picker);
+- PUSH mode (select it from Frequency Reading picker);
 - Frequency Reading mode;
 
 In PUSH mode you update value display from hardware side with code : 

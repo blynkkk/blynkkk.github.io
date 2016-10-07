@@ -13,9 +13,9 @@ Each of the parameters is sent directly to the Pin on your hardware (e.g D7). Yo
 Example: If you have a zeRGBa Widget and it's set to D1, D2, D3 it will send 3 commands over the Internet:
 
 ```cpp
-digitalWrite(1, value);
-digitalWrite(2, value);
-digitalWrite(3, value);
+digitalWrite(1, r);
+digitalWrite(2, g);
+digitalWrite(3, b);
 ```
 
 - **MERGE**:

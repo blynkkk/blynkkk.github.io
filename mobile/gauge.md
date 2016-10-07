@@ -33,13 +33,14 @@ BLYNK_READ(V1)
 You can also change gauge label from hardware with : 
 
 ```cpp
-Blynk.virtualWrite(V1, "label", "My Gauge Label");
+Blynk.setProperty(V1, "label", "My Gauge Label");
 ```
 
 or change color : 
 
 ```cpp
-Blynk.virtualWrite(V1, "color", "#D3435C"); //#D3435C - Blynk RED
+//#D3435C - Blynk RED
+Blynk.setProperty(V1, "color", "#D3435C");
 ```
 
 **Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino)

@@ -13,8 +13,8 @@ Each of the parameters is sent directly to the Pin on your hardware (e.g D7). Yo
 Example: If you have a Joystick Widget and it's set to D3 and D4, it will send 2 commands over the Internet:
 
 ```cpp
-digitalWrite(3, value);
-digitalWrite(4, value);
+digitalWrite(3, x);
+digitalWrite(4, y);
 ```
 
 - **MERGE**:
