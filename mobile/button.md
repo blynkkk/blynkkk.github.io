@@ -38,6 +38,15 @@ BLYNK_WRITE(V1) {
 }
 ```
 
+#### Home Screen Button
+
+You can also add button to your Android Home Screen. Button works via HTTPS in that case. Have in mind that in "Home Screen" 
+mode button has few limitations. It may not work instantly due to Android Widget limitations. Button will update it's 
+state only once per 15 min. 
+
+**Note :** Adding home screen widget costs 200 energy. This energy not rechargeable.
+
+
 **Sketch:** [Basic Sketch](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino)
 
 **Sketch:** [Physical Button Interrupt](https://github.com/blynkkk/blynk-library/blob/master/examples/More/Sync/ButtonInterrupt/ButtonInterrupt.ino)

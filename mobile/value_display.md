@@ -29,4 +29,13 @@ BLYNK_READ(V1)
 }
 ```
 
+#### Home Screen Value Display
+
+You can also add Value Display to your Android Home Screen. Value Display works via HTTPS in that case. 
+Have in mind that in "Home Screen" mode Value Display has few limitations. Value Display will update it's state only 
+once per 15 min. However you can change this via Widget Settings. You can also resize Value Display on Home Screen - just 
+do long click on widget and resize it as you need.
+
+**Note :** Adding home screen widget costs 200 energy. This energy not rechargeable.
+
 **Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino)
