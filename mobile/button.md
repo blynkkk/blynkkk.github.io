@@ -44,7 +44,7 @@ You can also add button to your Android Home Screen. Button works via HTTPS in t
 mode button has few limitations. It may not work instantly due to Android Widget limitations. Button will update it's 
 state only once per 15 min. 
 
-**Note :** Adding home screen widget costs 200 energy. This energy not rechargeable.
+**Note :** Adding home screen widget costs 100 energy. This energy not rechargeable.
 
 
 **Sketch:** [Basic Sketch](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino)

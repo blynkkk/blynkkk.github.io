@@ -29,9 +29,9 @@ Blynk.setProperty(V1, "color", "#D3435C");
 #### Home Screen LED
 
 You can also add LED to your Android Home Screen. LED works via HTTPS in that case. Have in mind that in "Home Screen" 
-mode LED has few limitations. LED will update it's state only once per 15 min. However you can change this via Widget 
-Settings.
+mode LED has few limitations. LED will update it's state only once per 15 min. You can change this via Widget 
+Settings. However update interval less than 15 minutes is not guaranteed. 
 
-**Note :** Adding home screen widget costs 200 energy. This energy not rechargeable.
+**Note :** Adding home screen widget costs 100 energy. This energy not rechargeable.
 
 **Sketch:** [LED](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/LED/LED_Blink/LED_Blink.ino)

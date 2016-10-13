@@ -48,9 +48,9 @@ Next formatting options are supported:
 
 You can also add Labeled Value to your Android Home Screen. Labeled Value works via HTTPS in that case. 
 Have in mind that in "Home Screen" mode Labeled Value has few limitations. Labeled Value will update it's state only 
-once per 15 min. However you can change this via Widget Settings. You can also resize Labeled Value on Home Screen - just 
-do long click on widget and resize it as you need.
+once per 15 min. You can change this via Widget Settings. However update interval less than 15 minutes is not guaranteed. 
+You can also resize Labeled Value on Home Screen - just do long click on widget and resize it as you need.
 
-**Note :** Adding home screen widget costs 200 energy. This energy not rechargeable.
+**Note :** Adding home screen widget costs 100 energy. This energy not rechargeable.
 
 **Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino)
