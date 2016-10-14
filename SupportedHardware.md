@@ -6,36 +6,41 @@
   - Arduino Uno, Duemilanove
   - Arduino Nano, Mini, Pro Mini, Pro Micro, Due, Mega
   - Arduino 101 (Intel Curie, with BLE)
-  - Arduino MKR1000 (WiFi)
+  - Arduino MKR1000
   - Arduino Zero
   - Arduino Yún (onboard WiFi and Ethernet, via Bridge)
 - **Arduino-like**
   - Blynk Board
-  - Generic ESP8266, NodeMCU, Huzzah, WeMos D1, Seeed Wio Link, etc.
+  - ESP8266 (Generic, NodeMCU, Witty Cloud, Huzzah, WeMos D1, Seeed Wio Link, etc.)
+  - ESP32 Dev Board
   - Intel Edison
   - Intel Galileo
   - Teensy 3.2/3.1
   - Blue Pill (STM32F103C)
-  - Fishino Guppy, Uno, Mega
   - BBC Micro:bit *, soon*
   - LightBlue Bean *, soon*
+  - DFRobot Bluno
   - RedBear Duo (WiFi, BLE)
   - RedBearLab Blend Micro
   - RedBearLab BLE Nano
+  - Seeed Tiny BLE
   - Simblee BLE
-  - RFDuino BLE
-  - LinkIt ONE (WiFi only)
+  - RFduino BLE
+  - The AirBoard
+  - Fishino Guppy, Uno, Mega
   - TinyCircuits TinyDuino (CC3000)
   - Microduino/mCookie Core, Core+, CoreUSB
   - Wicked WildFire V2, V3, V4
   - Digistump Oak
   - chipKIT Uno32
   - Alorium XLR8 (FPGA)
+  - LinkIt ONE (WiFi only)
 - **Energia**
   - Texas Instruments
     - CC3200-LaunchXL
     - Tiva C Connected LaunchPad
     - Stellaris LM4F120 LaunchPad
+    - MSP430F5529 + CC3100
   - RedBearLab (CC3200, WiFi Mini)
 - **Particle** (formerly Spark: https://github.com/vshymanskyy/blynk-library-spark)
   - Core
@@ -43,6 +48,7 @@
   - Electron
   - SparkFun RedBoard
   - RedBear Duo (WiFi & BLE)
+  - Bluz *, soon*
 - **ARM mbed** (https://developer.mbed.org/users/vshymanskyy/code/Blynk/)
   - Seeed Tiny BLE
   - RedBearLab BLE Nano
@@ -56,6 +62,8 @@
   - Intel Galileo
   - Intel Edison
   - Intel Joule
+  - LeMaker Guitar
+  - LeMaker Banana Pro
   - Samsung ARTIK 5
   - PandaBoard, CubieBoard, pcDuino, Tessel 2
   - VoCore (OpenWRT + [Espruino package](https://github.com/vshymanskyy/OpenWRT-Espruino-packages))
@@ -81,6 +89,8 @@
  - RN-XV WiFly
 - **Bluetooth Smart (BLE 4.0):**
  - HM-10, HC-08
+ - DFRobot BLE-Link module
+ - Microduino/mCookie BLE
  - RedBearLab BLE Mini
  - nRF8001-based boards (Adafruit Bluefruit LE, etc.)
 - **Bluetooth 2.0 Serial Port Profile (SPP)**
