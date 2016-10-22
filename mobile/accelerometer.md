@@ -7,7 +7,7 @@ Useful for monitoring device movement, such as tilt, shake, rotation, or swing.
 Conceptually, an acceleration sensor determines the acceleration that is applied to a device by measuring the forces 
 that are applied to the sensor. Measured in ```m/s^2``` applied to ```x```, ```y```, ```z``` axis.
 
-In oder to accept data from it you need to : 
+In order to accept data from it you need to : 
 
 ```cpp
 BLYNK_WRITE(V1) {
