@@ -17,7 +17,7 @@
   - Intel Galileo
   - Teensy 3.2/3.1
   - Blue Pill (STM32F103C)
-  - BBC Micro:bit *, soon*
+  - BBC micro:bit
   - LightBlue Bean *, soon*
   - DFRobot Bluno
   - RedBear Duo (WiFi, BLE)
@@ -48,13 +48,12 @@
   - Electron
   - SparkFun RedBoard
   - RedBear Duo (WiFi & BLE)
-  - Bluz *, soon*
 - **ARM mbed** (https://developer.mbed.org/users/vshymanskyy/code/Blynk/)
   - Seeed Tiny BLE
   - RedBearLab BLE Nano
-  - BBC Micro:bit
+  - BBC micro:bit
   - STM32 Nucleo + Wiznet 5100 *, soon*
-- **JavaScript** (Node.js, Espruino, Browser) (https://www.npmjs.com/package/blynk-library)
+- **JavaScript** (Node.js, Espruino, Browsers) (https://www.npmjs.com/package/blynk-library)
   - Regular PC with Linux / Windows / OS X
   - Raspberry Pi (Banana Pi, Orange Pi, ...)
   - BeagleBone Black
