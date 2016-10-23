@@ -16,3 +16,5 @@ BLYNK_WRITE(V1) {
 ```
 
 GPS Streaming works in background.
+
+**Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/GPS_Stream/GPS_Stream.ino)
