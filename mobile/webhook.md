@@ -48,9 +48,9 @@ or for body
 ["/pin/"]
 ```
 
-You can also refer to specific index of multi value pin : 
+You can also refer to specific index of multi value pin (multi pin supports up to 5 values) : 
 
-```/pin0/```,```/pin1/```, ```/pin2/```
+```/pin[0]/```,```/pin[1]/```, ```/pin[2]/```
 
 Another cool thing about webhook is that you can make GET requests from Blynk Server side and return response directly to
 your hardware. The beauty here is that you don't need to code request to 3-d party service. Imagine a case when you want to get 
