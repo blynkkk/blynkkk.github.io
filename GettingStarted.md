@@ -26,7 +26,7 @@ After you've successfully logged into your account, start by creating a new proj
 <img src="images/create_new_project.png" style="width: 200px; height:360px"/>
 
 ###3. Choose Your Hardware
-Select the hardware model you will use. Check out the [list of supported hardware](http://docs.blynk.cc/#list-of-supported-hardware)!
+Select the hardware model you will use. Check out the [list of supported hardware](http://docs.blynk.cc/#supported-hardware)!
 
 <img src="images/select_hardware.png" style="width: 200px; height:360px"/>
 

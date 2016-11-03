@@ -23,7 +23,7 @@
 > No. But it's planned for next releases.
 
 - Does Blynk support Ethernet / Wi-FI / UART?
-> Yes, all of them. See full list of [supported hardware](http://docs.blynk.cc/#list-of-supported-hardware) and shields.
+> Yes, all of them. See full list of [supported hardware](http://docs.blynk.cc/#supported-hardware) and shields.
 
 - I don't have any shield. Can I use Blynk with my computer?
 > Yes, you can use Blynk just with a USB cable. There is a step-by-step [instruction](http://docs.blynk.cc/#other-hardware-connect-over-usb) on how to do it.

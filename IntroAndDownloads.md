@@ -56,7 +56,7 @@ An Arduino, Raspberry Pi, or a similar development kit.
 This means that the hardware you choose should be able to connect to the internet. Some of the boards, like Arduino Uno 
 will need an Ethernet or Wi-Fi Shield to communicate, others are already Internet-enabled: like the ESP8266, Raspberri Pi with WiFi dongle, Particle Photon or SparkFun Blynk Board. But even if you don't have a shield, you can connect it over USB to your 
 laptop or desktop (it's a bit more complicated for newbies, but we got you covered). 
-What's cool, is that the [list of hardware](http://docs.blynk.cc/#list-of-supported-hardware) that works with Blynk is huge and will keep on growing. 
+What's cool, is that the [list of hardware](http://docs.blynk.cc/#supported-hardware) that works with Blynk is huge and will keep on growing. 
   
 ####**2. A Smartphone**. 
 The Blynk App is a well designed interface builder. It works on both iOS and Android, so no holywars here, ok? 

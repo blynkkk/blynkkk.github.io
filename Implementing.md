@@ -1,6 +1,6 @@
 # Implementing a Blynk HW client (library)
 Currently we provide Arduino/C++ implementation of the library.
-It is very extensible and modular, look at [the list of supported hardware](http://docs.blynk.cc/#list-of-supported-hardware).
+It is very extensible and modular, look at [the list of supported hardware](http://docs.blynk.cc/#supported-hardware).
 Adding new connection types and Arduino-compatible boards is easy.
 
 TODO: Porting guide.
