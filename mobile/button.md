@@ -1,7 +1,8 @@
 
 ### Button
 
-Works in push or switch modes. Allows to send 0/1 (LOW/HIGH) values. Button sends 1 (HIGH) on press and sends 0 (LOW) on release.
+Works in push or switch modes. Allows to send any number value on button click and button release events. By default  
+button uses 0/1 (LOW/HIGH) values. Button sends 1 (HIGH) on press and sends 0 (LOW) on release.
 
 You can change button state from hardware side. For example, turn on button assigned to virtual pin V1 : 
 
