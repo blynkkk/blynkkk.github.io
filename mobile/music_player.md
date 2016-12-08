@@ -5,8 +5,7 @@ Simple UI element with 3 buttons - simulates music player interface. Every butto
 ```play```, ```stop```, ```prev```, ```next```.
 
 You can also change widget play/stop state with next code : 
-```cpp
-Blynk.setProperty(V1, "isOnPlay", "false"); 
- ```
+
+```Blynk.setProperty(V1, "isOnPlay", "false");```
 
 **Sketch:** [Music Player](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Player/Player.ino)
