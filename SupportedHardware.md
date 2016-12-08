@@ -95,7 +95,7 @@
 - **Bluetooth 2.0 Serial Port Profile (SPP)**
  - HC-05, HC-06, ...
 - **GSM/3G:**
- - SIM800L *, soon*
+ - SIM800, SIM800L, SIM800H, SIM900, SIM900A, etc.
 - You can implement your own connection type easily (see [this](https://github.com/blynkkk/blynk-library/blob/master/examples/Boards_USB_Serial/User_Defined_Connection/User_Defined_Connection.ino) example)!
 
 ## Made by Community
