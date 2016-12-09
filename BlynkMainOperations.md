@@ -172,7 +172,7 @@ To achieve that you need to send ```Blynk.virtualWrite(V1, 255)``` when a physic
 [Represent physical button state via Button widget with polling](https://github.com/blynkkk/blynk-library/blob/master/examples/More/Sync/SyncPhysicalButton/SyncPhysicalButton.ino)
 
 ## Control of multiple devices
-Latest Blynk app version has support of multiple devices. That means you can assign any widget to specific device with own 
+Latest Blynk Android app version has support of multiple devices. That means you can assign any widget to specific device with own 
 auth token. 
 For example - you may have button on V1 that controls wi-fi bulb A and another button on V1 that controls wi-fi bulb B. In order 
 to do this you need more than 1 device within your project. To achieve this please go to project settings and click on "Devices" section : 
