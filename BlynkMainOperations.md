@@ -171,6 +171,30 @@ To achieve that you need to send ```Blynk.virtualWrite(V1, 255)``` when a physic
 
 [Represent physical button state via Button widget with polling](https://github.com/blynkkk/blynk-library/blob/master/examples/More/Sync/SyncPhysicalButton/SyncPhysicalButton.ino)
 
+## Control of multiple devices
+Latest Blynk app version has support of multiple devices. That means you can assign any widget to specific device with own 
+auth token. 
+For example - you may have button on V1 that controls wi-fi bulb A and another button on V1 that controls wi-fi bulb B. In order 
+to do this you need more than 1 device within your project. To achieve this please go to project settings and click on "Devices" section : 
+
+<img src="images/new_project_settings.png" style="width: 200px; height:360px"/>
+
+You'll see list of devices :
+ 
+<img src="images/list_of_devices.png" style="width: 200px; height:360px"/>
+
+So you can add new device : 
+
+<img src="images/new_device.png" style="width: 200px; height:360px"/>
+
+After above steps, every widget will have one more field "Target" : 
+
+<img src="images/widget_settings_devices.png" style="width: 200px; height:360px"/>
+
+Now you need to assign widget to device and after that widget will control only this specific device.
+
+That's it! Now you need to upload sketches with correct Auth Tokens to your hardware.
+
 ## Change Widget properties
 Latest Blynk library supports changing some of the widget properties from hardware side. 
 For example, you can change the color of LED widget based on a condition. For example :
