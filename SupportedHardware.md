@@ -96,6 +96,10 @@
  - HC-05, HC-06, ...
 - **GSM/3G:**
  - SIM800, SIM800L, SIM800H, SIM900, SIM900A, etc.
+ - GPRSbee
+ - Microduino GSM
+ - Adafruit FONA (Mini Cellular GSM Breakout)
+ - Adafruit FONA 800/808 Shield
 - You can implement your own connection type easily (see [this](https://github.com/blynkkk/blynk-library/blob/master/examples/Boards_USB_Serial/User_Defined_Connection/User_Defined_Connection.ino) example)!
 
 ## Made by Community
