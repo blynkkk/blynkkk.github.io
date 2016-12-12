@@ -44,7 +44,7 @@ project creation. You can also copy it manually. Click on devices section :
 
 Click on device : 
 
-<img src="images/getting_started/list_of_device.png" style="width: 200px; height:360px"/>
+<img src="images/getting_started/list_of_devices.png" style="width: 200px; height:360px"/>
 
 And you'll see token : 
 
