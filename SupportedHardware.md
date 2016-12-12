@@ -95,7 +95,8 @@
 - **Bluetooth 2.0 Serial Port Profile (SPP)**
  - HC-05, HC-06, ...
 - **GSM/3G:**
- - SIM800, SIM800L, SIM800H, SIM900, SIM900A, etc.
+ - SIMCom SIM800 series (SIM800A, SIM800C, SIM800L, SIM800H, SIM808, SIM868)
+ - SIMCom SIM900 series (SIM900A, SIM900D, SIM908, SIM968)
  - GPRSbee
  - Microduino GSM
  - Adafruit FONA (Mini Cellular GSM Breakout)
