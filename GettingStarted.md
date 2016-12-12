@@ -21,20 +21,34 @@ An account is needed to save your projects and have access to them from multiple
 You can always set up your own [Private Blynk Server](http://docs.blynk.cc/#blynk-server) and have full control.   
 
 ###2. Create a New Project
-After you've successfully logged into your account, start by creating a new project. Give it a name.
+After you've successfully logged into your account, start by creating a new project.
 
-<img src="images/create_new_project.png" style="width: 200px; height:360px"/>
+<img src="images/getting_started/create_project_button.png" style="width: 200px; height:360px"/>
+ 
+Give it a name.
+
+<img src="images/getting_started/give_project_name.png" style="width: 200px; height:360px"/>
 
 ###3. Choose Your Hardware
 Select the hardware model you will use. Check out the [list of supported hardware](http://docs.blynk.cc/#supported-hardware)!
 
-<img src="images/select_hardware.png" style="width: 200px; height:360px"/>
+<img src="images/getting_started/select_hardware.png" style="width: 200px; height:360px"/>
 
 ###4. Auth Token
 
-**Auth Token** is a unique identifier which is needed to connect your hardware to your smartphone. Every new project you create will have its own Auth Token.
+**Auth Token** is a unique identifier which is needed to connect your hardware to your smartphone. 
+Every new project you create will have its own Auth Token. You'll get Auth Token automatically on your email after 
+project creation. You can also copy it manually. Click on devices section : 
 
-<img src="images/token.png" style="width: 200px; height:360px"/>
+<img src="images/getting_started/token_1.png" style="width: 200px; height:360px"/>
+
+Click on device : 
+
+<img src="images/getting_started/list_of_device.png" style="width: 200px; height:360px"/>
+
+And you'll see token : 
+
+<img src="images/getting_started/new_device.png" style="width: 200px; height:360px"/>
 
 <span style="color:#D3435C;">**NOTE:** Don't share your Auth Token with anyone, unless you want someone to have access to your hardware. </span>
 
