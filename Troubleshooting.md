@@ -113,3 +113,6 @@ There are 2 ways to resolve this issue:
 
  <img src="images/login.png" style="width: 200px; height:360px"/>  <img src="images/custom.png" style="width: 200px; height:360px"/>
 
+## Reset password
+
+On login screen click on "Problems signing in?" label and than "Reset Password" button. You'll get instruction on your email.
