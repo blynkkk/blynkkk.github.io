@@ -210,6 +210,10 @@ In case hardware don't send anything within 10 seconds server waits additional 5
 assumed to be broken and closed by server. So on UI you'll see connection status update only after 15 seconds when it is 
 actually happened.
 
+You can also change ```HEARTBEAT``` interval from hardware side via ```Blynk.config```. In that case 
+```newHeartbeatInterval * 2.3``` formula will be applied. So in case you you decided to set ```HEARTBEAT``` interval to 
+5 seconds. You'll get notification regarding connection with 11 sec delay in worst case.
+
 ## Change Widget properties
 Latest Blynk library supports changing some of the widget properties from hardware side. 
 For example, you can change the color of LED widget based on a condition. For example :
