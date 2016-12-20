@@ -143,17 +143,23 @@ BLYNK_CONNECTED() {
     Blynk.syncAll();
   }
 }
+
+//here handlers for sync command
+BLYNK_WRITE(V0) {
+   ....
+}
+
 ```
 
-The ```Blynk.syncAll()``` command restores all the Widgets' values based on the last saved values on the server. 
-All analog and digital pin states will be restored. Every Virtual Pin will perform BLYNK_WRITE event.
+The ```Blynk.syncAll()``` command restores all the Widget's values based on the last saved values on the server. 
+All analog and digital pin states will be restored. Every Virtual Pin will perform ```BLYNK_WRITE``` event.
 
 [Sync Hardware with App state](https://github.com/blynkkk/blynk-library/blob/master/examples/More/Sync/HardwareSyncStateFromApp/HardwareSyncStateFromApp.ino)
 
-You can also update a single Virtual Pin value by calling ```Blynk.syncVirtual(pin)``` or you can update several pins with 
-```Blynk.syncVirtual(V1, V2, V3, ...)```.
+You can also update a single Virtual Pin value by calling ```Blynk.syncVirtual(V0)``` or you can update several pins with 
+```Blynk.syncVirtual(V0, V1, V2, ...)```.
 
-You can also use server to store any value without widget. Just call ```Blynk.virtualWrite(V1, value)```.
+You can also use server to store any value without widget. Just call ```Blynk.virtualWrite(V0, value)```.
 
 [Storing single value on server](https://github.com/blynkkk/blynk-library/blob/master/examples/More/ServerAsDataStorage/ServerAsDataStorage_SingleValue/ServerAsDataStorage_SingleValue.ino)
 
