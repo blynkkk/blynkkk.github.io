@@ -195,6 +195,21 @@ Now you need to assign widget to device and after that widget will control only 
 
 That's it! Now you need to upload sketches with correct Auth Tokens to your hardware.
 
+## Devices online status
+Latest Blynk Android app version has support for online statuses for multiple devices.
+ 
+<img src="images/online_status.png" style="width: 200px; height:360px"/>
+
+In ideal world when device closes tcp connection with some ```connection.close()``` - connected server will get notification 
+regarding closed connection. So you can get instant status update on UI. However in real world this mostly exceptional situation. 
+In majority of cases there is no easy and instant way to find out that connection is not active anymore. 
+
+That's why Blynk uses ```HEARTBEAT``` mechanism. With this approach hardware periodically sends ```ping``` command with predefined 
+interval (10 seconds by default, ```BLYNK_HEARTBEAT``` [property](https://github.com/blynkkk/blynk-library/blob/master/src/Blynk/BlynkConfig.h)). 
+In case hardware don't send anything within 10 seconds server waits additional 5 seconds and after that connection 
+assumed to be broken and closed by server. So on UI you'll see connection status update only after 15 seconds when it is 
+actually happened.
+
 ## Change Widget properties
 Latest Blynk library supports changing some of the widget properties from hardware side. 
 For example, you can change the color of LED widget based on a condition. For example :
