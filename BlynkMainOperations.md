@@ -150,7 +150,8 @@ All analog and digital pin states will be restored. Every Virtual Pin will perfo
 
 [Sync Hardware with App state](https://github.com/blynkkk/blynk-library/blob/master/examples/More/Sync/HardwareSyncStateFromApp/HardwareSyncStateFromApp.ino)
 
-You can also update a single Virtual Pin value by calling ```Blynk.syncVirtual(pin)```
+You can also update a single Virtual Pin value by calling ```Blynk.syncVirtual(pin)``` or you can update several pins with 
+```Blynk.syncVirtual(V1, V2, V3, ...)```.
 
 You can also use server to store any value without widget. Just call ```Blynk.virtualWrite(V1, value)```.
 
