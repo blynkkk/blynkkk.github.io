@@ -222,8 +222,8 @@ You can also change ```HEARTBEAT``` interval from hardware side via ```Blynk.con
 5 seconds. You'll get notification regarding connection with 11 sec delay in worst case.
 
 ## Change Widget properties
-Latest Blynk library supports changing some of the widget properties from hardware side. 
-For example, you can change the color of LED widget based on a condition. For example :
+Changing some of the widget properties from hardware side is also supported.  
+For example, you can change the color of LED widget based on a condition:
 
 ```
 //change LED color
@@ -241,7 +241,7 @@ Blynk.setProperty(V0, "labels", "Menu Item 1", "Menu Item 2", "Menu Item 3");
 
 [Set Property for multi value field](https://github.com/blynkkk/blynk-library/blob/master/examples/More/SetProperty/SetProperty_MultiValue/SetProperty_MultiValue.ino)
 
-**NOTE : ** Changing these parameters work **only** for widgets attached to Virtual pins.
+**NOTE : ** Changing these parameters work **only** for widgets attached to Virtual pins (analog/digital pins won't work).
 
 Two widget properties are supported - ```color```, ```label``` for all widgets : 
 
@@ -256,6 +256,8 @@ where RR (red), GG (green) and BB (blue) are hexadecimal values between 00 and F
 #define BLYNK_RED       "#D3435C"
 #define BLYNK_DARK_BLUE "#5F7CD8"
 ``` 
+
+On firmware side, widget objects also support ```setLabel()``` and ```setColor()``` functions.
 
 Widget specific properties: 
 
