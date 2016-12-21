@@ -139,6 +139,10 @@ Blynk.virtualWriteBinary(pin, buffer, length);
 
 **Note:** Calling ```virtualWrite``` attempts to send the value to the network immediately.
 
+### Blynk.setProperty(vPin, "property", value)
+
+This allows [changing widget properties](#blynk-main-operations-change-widget-properties)
+
 ### BLYNK_WRITE(vPIN)
 
 ```BLYNK_WRITE``` defines a function that is called when device receives an update of Virtual Pin value from the server:
@@ -213,10 +217,12 @@ BLYNK_CONNECTED() {
 
 ### Blynk.syncVirtual(vPin)
 
-Requests single virtual pin value update. The corresponding ```BLYNK_WRITE``` handler is called as the result.
+Requests virtual pins value update. The corresponding ```BLYNK_WRITE``` handler is called as the result.
 
 ```cpp
 Blynk.syncVirtual(V0);
+# Requesting multiple pins is also supported:
+Blynk.syncVirtual(V0, V1, V6, V9, V16);
 ```
 
 ## Debugging
