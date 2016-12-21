@@ -1,5 +1,8 @@
 #Blynk Firmware
 ## Configuration
+
+### Blynk.begin()
+
 The simplest way to configure Blynk is to call ```Blynk.begin()```:
 
 ```cpp
@@ -7,26 +10,41 @@ Blynk.begin(auth, ...);
 ```
 It has various parameters for different hardware, depending on the type of connection you use. Follow the example sketches for your board.
 
-You can also set up shields (WiFi, Ethernet) manually, and then call:
+```begin()``` is basically doing these steps:
 
-```cpp
-Blynk.config(auth);
-```
-or
+1. Connects to network (WiFi, Ethernet, ...)
+2. Calls ```Blynk.config(...)``` - sets auth token, server address
+3. Tries to connects to the server once (can block for more than 30s)
+
+### Blynk.config()
+
+```config()``` allows you to manage network connection yourself.
+You can set up your shield (WiFi, Ethernet, ...) manually, and then call:
 
 ```cpp
 Blynk.config(auth, server, port);
 ```
+or just
+```cpp
+Blynk.config(auth);
+```
 
-For WiFi connections, you can use a ```connectWiFi``` (just for convenience).
+**Note:** Just after ``` Blynk.config(...) ```, Blynk is not yet connected to the server.  
+It will try to connect when it reaches first ``` Blynk.run() ``` or ``` Blynk.connect() ```call.  
+If you want to skip connecting to the server, just call ``` Blynk.disconnect() ``` right after configuration.
+
+For setting-up WiFi connection, you can use a ```connectWiFi``` (just for convenience):
 
 ```cpp
-Blynk.connectWiFi(ssid, pass)
+Blynk.connectWiFi(ssid, pass);
 ```
-To connect to open WiFi networks, set pass to an empty string ("").
+To connect to open WiFi networks, set pass to an empty string (```""```).
 
 ## Connection management
+
 There are several functions to help with connection management:
+
+### Blynk.connect()
 
 ```cpp
 # This functions will try connecting to Blynk server.
@@ -35,22 +53,21 @@ There are several functions to help with connection management:
 bool result = Blynk.connect();
 bool result = Blynk.connect(timeout);
 ```
+
+### Blynk.disconnect()
+
 To disconnect from Blynk server, use:
 
 ```cpp
 Blynk.disconnect();
 ```
 
+### Blynk.connected()
 To get the status of connection to Blynk Server use:
 
 ```cpp
 bool result = Blynk.connected();
 ```
-
-**Note:** Just after ``` Blynk.begin(...) ``` or ``` Blynk.config(...) ```, Blynk is not yet connected to the server.
-It will try to connect when it reaches first ``` Blynk.run() ``` or ``` Blynk.connect() ```call.
-
-If you want to skip connecting to the server, just call ``` Blynk.disconnect() ``` right after configuration.
 
 If your shield/connection type is not supported yet - you can craft it yourself easily! 
 [Here is an example](https://github.com/blynkkk/blynk-library/blob/master/examples/Boards_USB_Serial/User_Defined_Connection/User_Defined_Connection.ino).
@@ -113,7 +130,7 @@ Blynk.virtualWrite(pin, 123);
 // Send float
 Blynk.virtualWrite(pin, 12.34);
 
-// Send multiple values (up to 4) as an array
+// Send multiple values as an array
 Blynk.virtualWrite(pin, "hello", 123, 12.34);
 
 // Send RAW data
@@ -231,6 +248,17 @@ When ```BLYNK_PRINT``` is defined, you can use ```BLYNK_LOG``` to print your log
 
 ```cpp
 BLYNK_LOG("This is my value: %d", 10);
+```
+
+## Minimizing footprint
+
+To minimize the program Flash/RAM, you can disable some of the built-in functionality:
+
+1. Comment-out ```#define BLYNK_PRINT``` to remove prints
+2. Put on the top of your sketch:
+```
+#define BLYNK_NO_BUILTIN   // Disable built-in analog & digital pin operations
+#define BLYNK_NO_FLOAT     // Disable float operations
 ```
 
 ## Porting, hacking
