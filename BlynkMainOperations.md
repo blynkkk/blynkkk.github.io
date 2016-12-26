@@ -202,6 +202,12 @@ Now you need to assign widget to device and after that widget will control only 
 
 That's it! Now you need to upload sketches with correct Auth Tokens to your hardware.
 
+### Tags
+
+Tags feature allows you to group multiple devices. Tags are very useful in case you want to control few devices with 
+1 widget. For example, imagine a case when you have 3 smart bulbs and you want to turn on all those bulbs with one 
+single click. You need to assign 3 devices to 1 tag and assign tag to button. That's it.
+
 ## Devices online status
 Latest Blynk Android app version has support for online statuses for multiple devices.
  
