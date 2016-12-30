@@ -33,9 +33,11 @@ Blynk.setProperty(V1, "color", "#D3435C");
 
 ```cpp
 BLYNK_CONNECTED() {
+  //запросить информацию у сервера о состоянии пина V1
   Blynk.syncVirtual(V1);
 }
 
+//этот метод будет после овтета сервера 
 BLYNK_WRITE(V1) {
   int buttonState = param.asInt();
 }
@@ -51,10 +53,10 @@ HTTPS. Такого рода кнопки имеют определенные о
 **Замечание :** Добавление виджета кнопки на рабочий стол стоит 100 энергии. Эта энергия не возвращается после удаления виджета.
 
 
-**Sketch:** [Базовый пример](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino)
+**Пример кода:** [Базовый пример](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino)
 
-**Sketch:** [Physical Button Interrupt](https://github.com/blynkkk/blynk-library/blob/master/examples/More/Sync/ButtonInterrupt/ButtonInterrupt.ino)
+**Пример кода:** [Синхронизация состояния с физической кнопкой через прерывания](https://github.com/blynkkk/blynk-library/blob/master/examples/More/Sync/ButtonInterrupt/ButtonInterrupt.ino)
 
-**Sketch:** [Physical Button Poll](https://github.com/blynkkk/blynk-library/blob/master/examples/More/Sync/ButtonPoll/ButtonPoll.ino)
+**Пример кода:** [Синхронизация состояния с физической кнопкой через поллинг](https://github.com/blynkkk/blynk-library/blob/master/examples/More/Sync/ButtonPoll/ButtonPoll.ino)
 
-**Sketch:** [Синхронизация состояния с физической кнопкой](https://github.com/blynkkk/blynk-library/blob/master/examples/More/Sync/SyncPhysicalButton/SyncPhysicalButton.ino)
+**Пример кода:** [Синхронизация состояния с физической кнопкой](https://github.com/blynkkk/blynk-library/blob/master/examples/More/Sync/SyncPhysicalButton/SyncPhysicalButton.ino)
