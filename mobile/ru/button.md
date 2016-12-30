@@ -1,0 +1,60 @@
+
+### Кнопка
+
+Кнопка может работать в двух режимах - в режиме переключателя (нажатие и отжатие посылает 1 сообщение) и в пуш режиме 
+(нажатие посылает команду и отжатие посылает команду). Кнопка позволяет послать любое число. По умолчанию кнопка шлет 
+0/1 (LOW/HIGH). В пуш режиме кнопка шлет 1 (HIGH) на нажатие и 0 (LOW) при отжатии.
+
+Вы так же можете менять состояние кнопки с микроконтроллера. Например, включить кнопку на пине V1 можно так : 
+
+```cpp
+Blynk.virtualWrite(V1, HIGH);
+```
+
+Так же можно поменять тексты в кнопке : 
+
+```cpp
+Blynk.setProperty(V1, "onLabel", "ON");
+```
+
+```cpp
+Blynk.setProperty(V1, "offLabel", "OFF");
+```
+
+или изменить ее цвет : 
+
+```cpp
+//#D3435C - Blynk RED 
+Blynk.setProperty(V1, "color", "#D3435C");
+```
+
+В случае если микроконтроллер был перегружен, Вы всегда можете получить последнее состояние кнопки от сервера с помощью 
+фичи синхронизации состояния : 
+
+```cpp
+BLYNK_CONNECTED() {
+  Blynk.syncVirtual(V1);
+}
+
+BLYNK_WRITE(V1) {
+  int buttonState = param.asInt();
+}
+```
+
+#### Кнопка на рабочем столе
+
+Если Вы используете Андроид, то Вы можете добавить Блинк кнопку на рабочий стол. В этом случае кнопка будет работать по 
+HTTPS. Такого рода кнопки имеют определенные ограничения по функционалу в связи с ограничениями платформы Android. Например, 
+Вы не можете получить мгновенную синхронизацию состояния кнопки на рабочем столе с состоянием на микроконтроллере. Так как 
+состояние кнопки на рабочем столе апдейтится раз в 15 мин.
+
+**Замечание :** Добавление виджета кнопки на рабочий стол стоит 100 энергии. Эта энергия не возвращается после удаления виджета.
+
+
+**Sketch:** [Базовый пример](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino)
+
+**Sketch:** [Physical Button Interrupt](https://github.com/blynkkk/blynk-library/blob/master/examples/More/Sync/ButtonInterrupt/ButtonInterrupt.ino)
+
+**Sketch:** [Physical Button Poll](https://github.com/blynkkk/blynk-library/blob/master/examples/More/Sync/ButtonPoll/ButtonPoll.ino)
+
+**Sketch:** [Синхронизация состояния с физической кнопкой](https://github.com/blynkkk/blynk-library/blob/master/examples/More/Sync/SyncPhysicalButton/SyncPhysicalButton.ino)
