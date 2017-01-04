@@ -42,9 +42,9 @@ Another person would need to install Blynk app and scan QR code from the login s
 ## Share your Project configuration
 In case you want to share your Project's set up without giving access to your hardware (for example to make a tutorial or instructable)- follow the steps: 
 
-In Project's Settings go to **Generate Link** button.
+In Project's Settings go to **Clone** button.
 
-<img src="images/generate_link_edit.png" style="width: 200px; height:360px"/>
+<img src="images/clone.png" style="width: 200px; height:360px"/>
 
 It will generate QR code you can share with anyone.
 
