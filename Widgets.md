@@ -690,3 +690,7 @@ assigned to ```V0```) - ```BLYNK_WRITE(V0)``` will be triggered.
  change this on local server with ```webhooks.frequency.user.quota.limit```. Please be very careful using webhooks, 
  as many resources not capable to handle even 1 req/sec, so you may be banned on some of them. For example thingspeak 
  allows to send 1 request per 15 seconds.
+ 
+ **NOTE :** In order to avoid spamming Blynk Webhook has one more limitation - in case your webhook requests were failed 10 times 
+ in row your webhook widget will be stopped. In order to resume it you need to open widget and save it again. Failed requests 
+ are requests that return status code that are not equal to 200 or 302.

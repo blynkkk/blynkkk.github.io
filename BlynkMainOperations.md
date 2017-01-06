@@ -208,6 +208,9 @@ Tags feature allows you to group multiple devices. Tags are very useful in case 
 1 widget. For example, imagine a case when you have 3 smart bulbs and you want to turn on all those bulbs with one 
 single click. You need to assign 3 devices to 1 tag and assign tag to button. That's it.
 
+Tag widgets also support state syncing. So you can get state of widget from your hardware. However you can't update 
+state of such widgets from hardware.
+
 ## Devices online status
 Latest Blynk Android app version has support for online statuses for multiple devices.
  
