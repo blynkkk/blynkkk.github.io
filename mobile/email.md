@@ -24,6 +24,7 @@ For example for ESP you can set this to 1200 max length ```#define BLYNK_MAX_SEN
 - Only 1 email per 15 seconds is allowed;
 - In case you are using gmail you are limited with 500 mails per day (by google). Other providers may have similar
 limitations, so please be careful;
+- User is limited with 100 messages per day;
 
 ### Unicode in email
 
