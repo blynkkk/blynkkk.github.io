@@ -30,6 +30,22 @@ BLYNK_READ(V1)
 }
 ```
 
+#### Formatting options
+
+Gauge also has "Label" field which allows use to use formatting.
+Let's assume, your sensor sends number 12.6789 to Blynk application.
+Next formatting options are supported:
+
+```/pin/``` - displays the value without formatting (12.6789)
+
+```/pin./``` - displays the value without decimal part (13)
+
+```/pin.#/``` - displays the value with 1 decimal digit (12.7)
+
+```/pin.##/``` - displays the value with two decimal places (12.68)
+
+#### Other options
+
 You can also change gauge label from hardware with : 
 
 ```cpp
