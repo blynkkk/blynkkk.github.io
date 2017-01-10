@@ -2,7 +2,7 @@
 ### Step Control
 
 Step control is like 2 buttons assigned to 1 pin. One button increments your value by desired step and another 
-one decrements it. It is very useful for use cases where you need to increment your values very precisely and you can't 
+one decrements it. It is very useful for use cases where you need to change your values very precisely and you can't 
 achieve this precision with slider widget.
 
 You can change step state from hardware side. For example : 
