@@ -74,6 +74,19 @@ When MERGE mode is selected, you are sending just 1 message, consisting of array
 For example, when you move slider widget, commands are continuously streamed to the hardware, during a single slider move you can send dozens of commands. There are use-cases where it's needed, however creating such a load may cause hardware reset. We recommend enabling **Send On Release** feature for most of the cases, unless you really need instant feedback.
 **Send On Release** is OFF by default.
 
+### Color gradient
+
+Some display widgets have ability to select gradient. Gradient allows you to colorize your widgets without any coding. 
+At the moment we provide 2 types of gradients :
+
+- Warm: Green - Orange - Red;
+- Cold : Green - Blue - Violet;
+
+Gradient changes color of your widget based on min/max properties. For example, you select warm gradient for your level 
+display widget with min 0 and max 100 value. When value 10 comes to widget it will have green color, when value 50 comes you'll 
+see orange color, when value 80 comes you'll see red color.
+
+
 ##Controllers
 ### Button
 Works in push or switch modes. Allows to send 0/1 (LOW/HIGH) values. Button sends 1 (HIGH) on press and sends 0 (LOW) on release.
