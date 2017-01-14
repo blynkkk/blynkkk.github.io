@@ -12,3 +12,5 @@ create 1 value display for temperature and 1 value display for humidity and assi
 Run project. Now you can select any device in Device Selector widget and your widgets will show info 
 for device currently selected in Device Selector. You can change device in realtime and widgets will get latest values 
 from server.
+
+**NOTE : ** History graph and webhook widgets not work with device selector yet.
