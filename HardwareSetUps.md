@@ -64,9 +64,14 @@ cd User$/Documents/Arduino/libraries/Blynk/scripts
   
 ```
 user:scripts User$ ./blynk-ser.sh
-``` 
+```
+  In some cases you may also need to perform : 
+
+```
+user:scripts User$ chmod +x blynk-ser.sh
+```
   
-  You may need to run it with ```sudo```
+  You may need also to run it with ```sudo```
   
 ```
 user:scripts User$ sudo ./blynk-ser.sh
