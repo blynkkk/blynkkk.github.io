@@ -63,7 +63,7 @@ You won't see any output, because all the logging is done within same folder in 
         
 4. Download Blynk server .jar file (or manually copy it to raspberry via ssh and scp command): 
    
-        wget "https://github.com/blynkkk/blynk-server/releases/download/v0.21.5/server-0.22.0.jar"
+        wget "https://github.com/blynkkk/blynk-server/releases/download/v0.22.0/server-0.22.0.jar"
 
 5. Run the server on default ```hardware port 8442``` and default ```application port 8443``` (SSL port)
 
