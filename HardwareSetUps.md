@@ -114,8 +114,9 @@ Additional materials:
 1. Connect your Raspberry Pi to the Internet and open it's console.
 2. Run this command (it updates your OS package repository to include the required packages):
 
+
 	```
-        curl -sL "https://deb.nodesource.com/setup_6.x" | sudo -E bash -
+	curl -sL "https://deb.nodesource.com/setup_6.x" | sudo -E bash -
 	```
 
 3. Download and build Blynk JS library using npm:
@@ -131,10 +132,11 @@ Additional materials:
 
 4. Run Blynk test script (put your auth token):
 
+
 	```
 	blynk-client 715f8cafe95f4a91bae319d0376caa8c
 	```
-	
+
 5. You can write our own script based on [examples](https://github.com/vshymanskyy/blynk-library-js/tree/master/examples)
 
 6. To enable Blynk auto restart for Pi, find ```/etc/rc.local``` file and add there:
