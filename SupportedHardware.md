@@ -11,7 +11,7 @@
   - Arduino Yún (onboard WiFi and Ethernet, via Bridge)
 - **Arduino-like**
   - Blynk Board
-  - ESP8266 (Generic, NodeMCU, Witty Cloud, Huzzah, WeMos D1, Seeed Wio Link, etc.)
+  - ESP8266 (Generic, NodeMCU, Witty Cloud, Huzzah, WeMos D1, Seeed Wio Link, [SWIFITCH](http://swifitch.cz), etc.)
   - ESP32 Dev Board
   - Intel Edison
   - Intel Galileo
