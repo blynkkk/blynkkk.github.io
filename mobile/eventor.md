@@ -31,6 +31,7 @@ Now configure new **Event** in Eventor widget:
 
 Eventor comes handy when you need to change conditions on the fly without re-uploading new sketch on 
 the hardware. You can create as many **events** as you need.
+Eventor also supports Timer events. For example, you can set pin ```V1``` ON/HIGH at 21:00:00 every Friday.
 
 In order to remove created **event** please use swipe. You can also swipe out last element in the Event itself. 
 
