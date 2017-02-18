@@ -592,8 +592,6 @@ In order to remove created **event** please use swipe. You can also swipe out la
 **Sketch:** [Eventor](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Eventor/Eventor.ino)
 
 
-**NOTE** : Eventor is triggered only for messages that comes from hardware side, from ```Blynk.virtualWrite()```.
-
 **NOTE** : Events are triggered only once when the condition is met. 
 However there is one exclusion:
 Let's consider simple event as above ```if (temperature > 40) send notification ```.
