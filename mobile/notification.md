@@ -1,11 +1,14 @@
 
 ### Push Notifications
 
-Push Notification widget allows you to send push notification from your hardware to your device. Currently it also
- contains 2 additional options :
+Push Notification widget allows you to send push notification from your hardware to your device. Currently it also 
+contains 2 additional options :
 
-- "Notify when hardware offline" - you will get push notification in case your hardware went offline.
-- "Priority" - high priority gives more chances that your message will be delivered without any delays. 
+- **Notify when hardware offline** - you will get push notification in case your hardware went offline.
+- **Offline Ignore Period** - defines how long hardware could be offline (after it went offline) before sending notification. 
+In case period is exceeded - "hardware offline" notification will be send. You will get no notification in case hardware 
+was reconnected within specified period.
+- **Priority** high priority gives more chances that your message will be delivered without any delays. 
 See detailed explanation [here](https://developers.google.com/cloud-messaging/concept-options#setting-the-priority-of-a-message). 
 
 **WARNING** : high priority contributes more to battery drain compared to normal priority messages.

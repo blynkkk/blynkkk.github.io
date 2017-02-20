@@ -134,6 +134,17 @@ When it's OFF, Joystick handle will not return back to center position. It will 
 
 **Sketch:** [JoystickTwoAxis](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/JoystickTwoAxis/JoystickTwoAxis.ino)
 
+### Step Control
+
+Step control is like 2 buttons assigned to 1 pin. One button increments your value by desired step and another 
+one decrements it. It is very useful for use cases where you need to change your values very precisely and you can't 
+achieve this precision with slider widget.
+
+**Send Step** option allows you to send step to hardware instead of actual value of step widget.
+**Loop value** option allows you to reset step widget to start value when maximum value is reached.
+
+**Sketch:** [Basic Sketch](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino)
+
 ##Displays
 ### Value Display
 Displays incoming data from your sensors or Virtual Pins.
@@ -361,11 +372,14 @@ limitations, so please be careful.
 
 ###Push Notifications
 
-Push Notification widget allows you to send push notification from your hardware to your device. Currently it also
- contains 2 additional options :
+Push Notification widget allows you to send push notification from your hardware to your device. Currently it also 
+contains 2 additional options :
 
-- "Notify when hardware offline" - you will get push notification in case your hardware went offline.
-- "Priority" - high priority gives more chances that your message will be delivered without any delays. 
+- **Notify when hardware offline** - you will get push notification in case your hardware went offline.
+- **Offline Ignore Period** - defines how long hardware could be offline (after it went offline) before sending notification. 
+In case period is exceeded - "hardware offline" notification will be send. You will get no notification in case hardware 
+was reconnected within specified period.
+- **Priority** high priority gives more chances that your message will be delivered without any delays. 
 See detailed explanation [here](https://developers.google.com/cloud-messaging/concept-options#setting-the-priority-of-a-message). 
 
 **WARNING** : high priority contributes more to battery drain compared to normal priority messages.

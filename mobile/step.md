@@ -5,6 +5,9 @@ Step control is like 2 buttons assigned to 1 pin. One button increments your val
 one decrements it. It is very useful for use cases where you need to change your values very precisely and you can't 
 achieve this precision with slider widget.
 
+**Send Step** option allows you to send step to hardware instead of actual value of step widget.
+**Loop value** option allows you to reset step widget to start value when maximum value is reached.
+
 You can change step state from hardware side. For example : 
 
 ```cpp
