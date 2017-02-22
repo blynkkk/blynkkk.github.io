@@ -52,6 +52,6 @@ once per 15 min. You can change this via Widget Settings. However update interva
 You can also resize Labeled Value on Home Screen - just do long click on widget and resize it as you need.
 
 **Note :** Adding home screen widget costs 100 energy. This energy not rechargeable.
-**Note :** Home Screen Widgets not supported for Local Blynk servers.
+**Note :** Home Screen Widgets for Local Blynk servers requires port 8080 to be opened.
 
 **Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino)

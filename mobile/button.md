@@ -46,7 +46,7 @@ mode button has few limitations. It may not work instantly due to Android Widget
 state only once per 15 min. 
 
 **Note :** Adding home screen widget costs 100 energy. This energy not rechargeable.
-**Note :** Home Screen Widgets not supported for Local Blynk servers.
+**Note :** Home Screen Widgets for Local Blynk servers requires port 8080 to be opened.
 
 
 **Sketch:** [Basic Sketch](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino)

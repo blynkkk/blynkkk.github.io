@@ -33,6 +33,6 @@ mode LED has few limitations. LED will update it's state only once per 15 min. Y
 Settings. However update interval less than 15 minutes is not guaranteed. 
 
 **Note :** Adding home screen widget costs 100 energy. This energy not rechargeable.
-**Note :** Home Screen Widgets not supported for Local Blynk servers.
+**Note :** Home Screen Widgets for Local Blynk servers requires port 8080 to be opened.
 
 **Sketch:** [LED](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/LED/LED_Blink/LED_Blink.ino)
