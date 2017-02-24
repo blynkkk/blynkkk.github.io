@@ -22,11 +22,6 @@ With Eventor you don't need to write this code. All you need is to send value fr
 ```
 Don't forget that ```virtualWrite``` commands should be wrapped in the timer and can't be used the main loop.
 
-Now configure new **Event** in Eventor widget: 
-
-
-<img src="/blynkkk/blynkkk.github.io/raw/master/images/webhook_settings.png" style="width: 200px; height:360px"/>
-
 **NOTE** Don't forget to add notification widget.
 
 Eventor comes handy when you need to change conditions on the fly without re-uploading new sketch on 
