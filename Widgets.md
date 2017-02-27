@@ -614,7 +614,8 @@ notification will be sent again (there is no 15 sec limit on Eventor notificatio
 
 ### RTC
 
-Real-time clock allows you to get time from server. You can preselect any timezone on UI to get time on hardware in required locale.
+Real-time clock allows you to get time from server. You can preselect any timezone on UI to get time on hardware in required locale. 
+No pin required for RTC widget.
 
 <img src="images/rtc_edit.png" style="width: 200px; height:360px"/>
 
