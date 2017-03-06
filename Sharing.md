@@ -18,11 +18,11 @@ How it works:
 
 Go to your Project's Settings:
 
-<img src="images/dash_setttings_sharing.png" style="width: 200px; height:360px"/>
+<img src="images/dash_settings_sharing.png" style="width: 200px; height:360px"/>
 
 Click on "Generate Link" button :
 
-<img src="images/dash_setttings_sharing_generate.png" style="width: 200px; height:360px"/>
+<img src="images/dash_settings_sharing_generate.png" style="width: 200px; height:360px"/>
 
 It will generate QR code you can share with others:
 
