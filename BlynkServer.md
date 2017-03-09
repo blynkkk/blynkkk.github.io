@@ -13,4 +13,6 @@ Download latest server build:
 - Lower latency. Server is as close to you as it could be. 
 - Maximum privacy. All data is stored locally and is not shared with anyone.
 
-For more info please follow [github page](https://github.com/blynkkk/blynk-server#blynk-server).
+## Installing your own Local Blynk Server
+
+For detailed instruction please follow [github page](https://github.com/blynkkk/blynk-server#blynk-server).
