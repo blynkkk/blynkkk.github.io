@@ -168,6 +168,11 @@ Additional materials:
  
 [Step-by-Step Tutorial in Russian language](http://esp8266.ru/esp8266-blynk)
 
+## NodeMCU
+
+Please follow [this detailed instruction](https://github.com/blynkkk/blynk-library/tree/master/examples/Boards_WiFi/NodeMCU#instruction-for-nodemcu-setup).
+Or watch [this Video tutorial](https://www.youtube.com/watch?v=FhS44hGk1Lc).
+
 ## Particle
 Blynk works with the whole family of Particle products: Core, Photon and Electron
 
