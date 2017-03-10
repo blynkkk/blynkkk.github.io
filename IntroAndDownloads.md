@@ -15,7 +15,7 @@ There are three major components in the platform:
 - **Blynk App** - allows to you create amazing interfaces for your projects using various widgets we provide.
 
 - **Blynk Server** - responsible for all the communications between the smartphone and hardware. 
-You can use our Blynk Cloud or run your [private Blynk server](http://docs.blynk.cc/#blynk-server-requirements) locally. 
+You can use our Blynk Cloud or run your [private Blynk server](http://docs.blynk.cc/#blynk-server) locally. 
 It's open-source, could easily handle thousands of devices and can even be launched on a Raspberry Pi.
 
 - **Blynk Libraries** - for all the popular hardware platforms - enable communication with the server and 
