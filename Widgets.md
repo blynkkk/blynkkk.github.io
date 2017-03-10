@@ -309,12 +309,27 @@ terminal.flush();   // Ensure that data was sent out of device
 
 **Sketch:** [Terminal](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Terminal/Terminal.ino)
 
-## Video Streaming
+### Video Streaming
 Simple widget that allows you to display any live stream. Widget supports RTSP (RP, SDP), HTTP/S progressive streaming, 
 HTTP/S live streaming. For more info please follow [official Android documentation](https://developer.android.com/guide/appendix/media-formats.html). 
 
 At the moment Blynk doesn't provide streaming servers. So you can either stream directly from camera, use 3-d party 
 services or host streaming server on own server (on raspberry for example).
+
+### Level Display
+
+Displays incoming data from your sensors or Virtual Pins. Level Display is very similar to progress bar, it is very nice 
+and fancy view for indication of "filled" events, like "level of battery". 
+Works in PUSH mode only. You can update value display from hardware side with code : 
+ 
+```cpp
+Blynk.virtualWrite(V1, val); 
+```
+
+Every message that hardware sends to server is stored automatically on server. PUSH mode doesn't require 
+application to be online or opened.
+
+**Sketch:** [Push Example](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino)
 
 ##Notifications
 ###Twitter
@@ -459,6 +474,34 @@ Hardware will get selected on UI time as seconds of day (```3600 * hours + 60 * 
 
 **Sketch:** [Advanced Time Input](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/TimeInput/AdvancedTimeInput/AdvancedTimeInput.ino)
 
+### Map
+
+Map widget allows you set points/pins on map from hardware side. This is very useful widget in case you have 
+multiple devices and you want track their values on map.
+
+You can send a point to map with regular virtual wrtei command :  
+
+```cpp
+Blynk.virtualWrite(V1, pointIndex, lat, lon, "value");
+```
+
+We also created wrapper for you to make suage of map simpler : 
+
+You can change button labels from hardware with : 
+
+```cpp
+WidgetMap myMap(V1);
+...
+int index = 1;
+float lat = 51.5074;
+float lon = 0.1278;
+myMap.location(index, lat, lon, "value");
+```
+
+Using save ```index``` allows you to override existing point value.
+
+**Sketch:** [Basic Sketch](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Map/Map.ino)
+
 ###Table
 Table widget comes handy when you need to structure similar data within 1 graphical element. It works as a usual table.
 
@@ -517,6 +560,205 @@ for device currently selected in Device Selector. You can change device in realt
 from server.
 
 **NOTE : ** History graph and webhook widgets not work with device selector yet.
+
+## Sensors 
+
+### Accelerometer
+
+Accelerometer is kind of [motion sensors](https://developer.android.com/guide/topics/sensors/sensors_motion.html) 
+that allows you to detect motion of your smartphone. 
+Useful for monitoring device movement, such as tilt, shake, rotation, or swing. 
+Conceptually, an acceleration sensor determines the acceleration that is applied to a device by measuring the forces 
+that are applied to the sensor. Measured in ```m/s^2``` applied to ```x```, ```y```, ```z``` axis.
+
+In order to accept data from it you need to : 
+
+```cpp
+BLYNK_WRITE(V1) {
+  //acceleration force applied to axis x
+  int x = param[0].asFloat(); 
+  //acceleration force applied to axis y
+  int y = param[1].asFloat();
+  //acceleration force applied to axis y
+  int z = param[2].asFloat();
+}
+```
+
+Accelerometer doesn't work in background.
+
+### Barometer/pressure
+
+Barometer/pressure is kind of [environment sensors](https://developer.android.com/guide/topics/sensors/sensors_environment.html) 
+that allows you to measure the ambient air pressure.
+
+Measured in in ```hPa``` or ```mbar```.
+
+In oder to accept data from it you need to : 
+
+```cpp
+BLYNK_WRITE(V1) {
+  //pressure in mbar
+  int pressure = param[0].asInt(); 
+}
+```
+
+Barometer doesn't work in background.
+
+### Gravity
+
+Gravity is kind of [motion sensors](https://developer.android.com/guide/topics/sensors/sensors_motion.html) 
+that allows you to detect motion of your smartphone. 
+Useful for monitoring device movement, such as tilt, shake, rotation, or swing. 
+
+The gravity sensor provides a three dimensional vector indicating the direction and magnitude of gravity. 
+Measured in ```m/s^2``` of gravity force applied to ```x```, ```y```, ```z``` axis.
+
+In oder to accept data from it you need to : 
+
+```cpp
+BLYNK_WRITE(V1) {
+  //force of gravity applied to axis x
+  int x = param[0].asFloat(); 
+  //force of gravity applied to axis y
+  int y = param[1].asFloat();
+  //force of gravity applied to axis y
+  int z = param[2].asFloat();
+}
+```
+
+Gravity doesn't work in background.
+
+### Humidity
+
+Humidity is kind of [environment sensors](https://developer.android.com/guide/topics/sensors/sensors_environment.html) 
+that allows you to measure ambient relative humidity.
+
+Measured in ```%``` - actual relative humidity in percent.
+
+In oder to accept data from it you need to : 
+
+```cpp
+BLYNK_WRITE(V1) {
+  // humidity in %
+  int humidity = param.asInt();
+}
+```
+
+Humidity doesn't work in background.
+
+### Light
+
+Light is kind of [environment sensors](https://developer.android.com/guide/topics/sensors/sensors_environment.html) 
+that allows you to measure level of light (measures the ambient light level (illumination) in lx).
+In phones it is used to control screen brightness.
+
+In order to accept data from it you need to : 
+
+```cpp
+BLYNK_WRITE(V1) {
+  //light value
+  int lx = param.asInt(); 
+}
+```
+
+Light doesn't work in background.
+
+### Proximity
+
+Proximity is kind of [position sensors](https://developer.android.com/guide/topics/sensors/sensors_position.html) 
+that allows you to determine how close the face of a smartphone is to an object.
+Measured in ```cm``` - distance from phone face to object. However most of this sensors returns only FAR / NEAR information.
+So return value will be ```0/1```. Where 0/LOW  is ```FAR``` and 1/HIGH is ```NEAR```.
+
+In order to accept data from it you need to : 
+
+```cpp
+BLYNK_WRITE(V1) {
+  // distance to object
+  int proximity = param.asInt();
+  if (proximity) {
+     //NEAR
+  } else {
+     //FAR
+  }
+}
+```
+
+Proximity doesn't work in background.
+
+### Temperature
+
+Temperature is kind of [environment sensors](https://developer.android.com/guide/topics/sensors/sensors_environment.html) 
+that allows you to measure ambient air temperature.
+Measured in ```°C``` - celcius.
+
+In order to accept data from it you need to : 
+
+```cpp
+BLYNK_WRITE(V1) {
+  // temperature in celcius
+  int celcius = param.asInt();
+}
+```
+
+Temperature doesn't work in background.
+
+### GPS Trigger
+
+GPS trigger widget allows easily trigger events when you arrive to or leave from some destination. This widget 
+will work in background and periodically will check your coordinates. In case your location is within/out required 
+radius (selected on widget map) widget will send ```HIGH```/```LOW``` command to hardware. For example, let's assume you have 
+GPS Trigger widget assigned to pin ```V1``` and option ```Trigger When Enter```. In that case when you'll arrive to destination 
+point widget will trigger ```HIGH``` event.
+
+```cpp
+BLYNK_WRITE(V1) {
+  int state = param.asInt();
+  if (state) {
+      //You enter destination
+  } else {
+      //You leave destination
+  }
+}
+```
+
+More details on how GPS widget works you can read [here](https://developer.android.com/guide/topics/location/strategies.html).
+
+GPS trigger widget works in background.
+
+### GPS Streaming
+
+Useful for monitoring smartphone location data such as latitude, longitude, altitude and speed (speed could be often 0  
+in case smartphone doesn't support it).
+
+In order to accept data from this widget you need to : 
+
+```cpp
+BLYNK_WRITE(V1) {
+  float latitude = param[0].asFloat(); 
+  float longitude = param[1].asFloat();
+  float altitude = param[2].asFloat();
+  float speed = param[3].asFloat();
+}
+```
+
+or you can use prepared wrapper ```GpsParam``` :
+
+```cpp
+BLYNK_WRITE(V1) {
+  GpsParam gps(param);
+  // Print 6 decimal places for Lat
+  Serial.println(gps.getLat(), 7);
+  Serial.println(gps.getLon(), 7);
+  
+  Serial.println(gps.getAltitude(), 2);
+  Serial.println(gps.getSpeed(), 2);
+}
+```
+
+GPS Streaming works in background.
+
+**Sketch:** [GPS Stream](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/GPS_Stream/GPS_Stream.ino)
 
 ## Other
 
