@@ -15,7 +15,7 @@ BLYNK_WRITE(V1) {
   int x = param[0].asFloat(); 
   //acceleration force applied to axis y
   int y = param[1].asFloat();
-  //acceleration force applied to axis y
+  //acceleration force applied to axis z
   int z = param[2].asFloat();
 }
 ```
