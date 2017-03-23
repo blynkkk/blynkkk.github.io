@@ -107,6 +107,8 @@ Connecting: GOPEN:/dev/tty.usbmodem1451,raw,echo=0,clocal=1,cs8,nonblock=1,ixoff
 
 Additional materials:
 
+- [Tutorial: Control Arduino over USB with Blynk app. No shield required. Mac OS)](https://www.youtube.com/watch?v=fgzvoan_3_w)
+- [How to control arduino (Wirelessly) with blynk via USB. Windows](https://www.youtube.com/watch?v=I_hgIj2FdPI)
 - [Instructables: Control Arduino with Blynk over USB](http://www.instructables.com/id/Control-arduino-using-Blynk-over-usb/)
 
 
