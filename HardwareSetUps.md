@@ -65,6 +65,9 @@ cd User$/Documents/Arduino/libraries/Blynk/scripts
 ```
 user:scripts User$ ./blynk-ser.sh
 ```
+
+  **Warning:** Do no close terminal window with running script.
+  
   In some cases you may also need to perform : 
 
 ```
