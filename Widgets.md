@@ -254,6 +254,20 @@ A great visual way to display incoming numeric values.
 
 **Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino)
 
+#### Formatting options
+
+Gauge also has "Label" field which allows use to use formatting.
+Let's assume, your sensor sends number 12.6789 to Blynk application.
+Next formatting options are supported:
+
+```/pin/``` - displays the value without formatting (12.6789)
+
+```/pin./``` - displays the value without decimal part (13)
+
+```/pin.#/``` - displays the value with 1 decimal digit (12.7)
+
+```/pin.##/``` - displays the value with two decimal places (12.68)
+
 ### LCD
 This is a regular 16x2 LCD display made in our secret facility in China.
 #### SIMPLE / ADVANCED MODE
