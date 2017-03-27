@@ -27,7 +27,9 @@
   - Seeed Tiny BLE
   - Simblee BLE
   - RFduino BLE
-  - The AirBoard
+  - The AirBoard (BLE-Link, RN-XV)
+  - Feather M0 WiFi
+  - Feather 32u4 BLE
   - Fishino Guppy, Uno, Mega
   - TinyCircuits TinyDuino (CC3000)
   - Microduino/mCookie Core, Core+, CoreUSB
@@ -107,6 +109,8 @@
 - **GSM/3G:**
  - SIMCom SIM800 series (SIM800A, SIM800C, SIM800L, SIM800H, SIM808, SIM868)
  - SIMCom SIM900 series (SIM900A, SIM900D, SIM908, SIM968)
+ - M590
+ - A6/A7 *(alpha)*
  - GPRSbee
  - Microduino GSM
  - Adafruit FONA (Mini Cellular GSM Breakout)
