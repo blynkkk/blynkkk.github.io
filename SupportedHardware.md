@@ -44,6 +44,7 @@
     - Tiva C Connected LaunchPad
     - Stellaris LM4F120 LaunchPad
     - MSP430F5529 + CC3100
+    - LaunchPad MSP432
   - RedBearLab (CC3200, WiFi Mini)
 
 - **Particle** https://github.com/vshymanskyy/blynk-library-spark)
