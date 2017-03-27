@@ -1,4 +1,4 @@
-#Supported Hardware
+# Supported Hardware
 
 ## Platforms
 
@@ -82,40 +82,41 @@
   - NodeMCU
 
 ## Arduino connection types
+
 - USB (Serial), connected to your laptop or desktop
-
+ 
 - **Ethernet:**
- - Arduino Ethernet Shield (W5100)
- - Arduino Ethernet Shield 2 (W5500)
- - SeeedStudio Ethernet Shield V2.0 (W5200)
- - ENC28J60-based modules
-
+  - Arduino Ethernet Shield (W5100)
+  - Arduino Ethernet Shield 2 (W5500)
+  - SeeedStudio Ethernet Shield V2.0 (W5200)
+  - ENC28J60-based modules
+ 
 - **WiFi:**
- - ESP8266 as WiFi modem (running original firmware)
- - Arduino WiFi 101 Shield
- - Arduino WiFi Shield
- - Adafruit CC3000 WiFi Breakout / Shield
- - RN-XV WiFly
-
+  - ESP8266 as WiFi modem (running original firmware)
+  - Arduino WiFi 101 Shield
+  - Arduino WiFi Shield
+  - Adafruit CC3000 WiFi Breakout / Shield
+  - RN-XV WiFly
+ 
 - **Bluetooth Smart (BLE 4.0):**
- - HM-10, HC-08
- - DFRobot BLE-Link module
- - Microduino/mCookie BLE
- - RedBearLab BLE Mini
- - nRF8001-based boards (Adafruit Bluefruit LE, etc.)
-
+  - HM-10, HC-08
+  - DFRobot BLE-Link module
+  - Microduino/mCookie BLE
+  - RedBearLab BLE Mini
+  - nRF8001-based boards (Adafruit Bluefruit LE, etc.)
+ 
 - **Bluetooth 2.0 Serial Port Profile (SPP)**
- - HC-05, HC-06, ...
-
+  - HC-05, HC-06, ...
+ 
 - **GSM/3G:**
- - SIMCom SIM800 series (SIM800A, SIM800C, SIM800L, SIM800H, SIM808, SIM868)
- - SIMCom SIM900 series (SIM900A, SIM900D, SIM908, SIM968)
- - M590
- - A6/A7 *(alpha)*
- - GPRSbee
- - Microduino GSM
- - Adafruit FONA (Mini Cellular GSM Breakout)
- - Adafruit FONA 800/808 Shield
+  - SIMCom SIM800 series (SIM800A, SIM800C, SIM800L, SIM800H, SIM808, SIM868)
+  - SIMCom SIM900 series (SIM900A, SIM900D, SIM908, SIM968)
+  - M590
+  - A6/A7 *(alpha)*
+  - GPRSbee
+  - Microduino GSM
+  - Adafruit FONA (Mini Cellular GSM Breakout)
+  - Adafruit FONA 800/808 Shield
 - You can implement your own connection type easily (see [this](https://github.com/blynkkk/blynk-library/blob/master/examples/Boards_USB_Serial/User_Defined_Connection/User_Defined_Connection.ino) example)!
 
 ## Made by Community
