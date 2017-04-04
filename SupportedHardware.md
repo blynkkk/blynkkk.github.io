@@ -117,7 +117,7 @@
   - Microduino GSM
   - Adafruit FONA (Mini Cellular GSM Breakout)
   - Adafruit FONA 800/808 Shield
-- You can implement your own connection type easily (see [this](https://github.com/blynkkk/blynk-library/blob/master/examples/Boards_USB_Serial/User_Defined_Connection/User_Defined_Connection.ino) example)!
+- You can implement your own connection type easily (see [these](https://github.com/blynkkk/blynk-library/tree/master/examples/More/ArduinoClient) examples)!
 
 ## Made by Community
 
