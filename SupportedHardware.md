@@ -1,5 +1,7 @@
 # Supported Hardware
 
+Blynk supports more than 400 boards already, including support for Arduino, Particle, ARM mbed, TI Energia, MicroPython, Node.js, OpenWRT and many Single Board Computers. You can add your own connection types easily (see [these](https://github.com/blynkkk/blynk-library/tree/master/examples/More/ArduinoClient) examples for Arduino)!
+
 ## Platforms
 
 - **Arduino** (https://github.com/blynkkk/blynk-library)
@@ -117,7 +119,6 @@
   - Microduino GSM
   - Adafruit FONA (Mini Cellular GSM Breakout)
   - Adafruit FONA 800/808 Shield
-- You can implement your own connection type easily (see [these](https://github.com/blynkkk/blynk-library/tree/master/examples/More/ArduinoClient) examples)!
 
 ## Made by Community
 
