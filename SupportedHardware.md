@@ -53,6 +53,7 @@ Blynk supports more than 400 boards already, including support for Arduino, Part
   - Core
   - Photon
   - Electron
+  - RPi
   - SparkFun RedBoard
   - RedBear Duo (WiFi & BLE)
 
