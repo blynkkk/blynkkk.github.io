@@ -90,7 +90,7 @@ or with [HTTP API](http://docs.blynkapi.apiary.io/#reference/0/pin-history-data/
 <img src="images/frequency_reading_push.png" style="width: 200px; height:360px"/>
 
 We recommend sending data in intervals and avoiding [Flood Error](http://docs.blynk.cc/#troubleshooting-flood-error).  
-You can use timers like [BlynkTimer](./BlynkFirmware.md#blynktimer).  
+You can use timers like [BlynkTimer](http://docs.blynk.cc/#blynktimer).  
 Please read instructions inside this [example sketch](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino) for more details.
 
 Here is how it can work:
@@ -131,9 +131,9 @@ void loop()
 
 **Sketch:** [PushData](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino#L30)
 
-##State syncing
+## State syncing
 
-###For hardware
+### For hardware
 If your hardware looses Internet connection or resets, you can restore all the values from Widgets in the Blynk app.
 
 ```cpp
@@ -155,8 +155,7 @@ All analog and digital pin states will be restored. Every Virtual Pin will perfo
 
 [Sync Hardware with App state](https://github.com/blynkkk/blynk-library/blob/master/examples/More/Sync/HardwareSyncStateFromApp/HardwareSyncStateFromApp.ino)
 
-You can also update a single Virtual Pin value by calling ```Blynk.syncVirtual(V0)``` or you can update several pins with 
-```Blynk.syncVirtual(V0, V1, V2, ...)```.
+You can also update a single Virtual Pin value by calling ```Blynk.syncVirtual(V0)``` or you can update several pins with ```Blynk.syncVirtual(V0, V1, V2, ...)```.
 
 You can also use server to store any value without widget. Just call ```Blynk.virtualWrite(V0, value)```.
 
@@ -164,7 +163,7 @@ You can also use server to store any value without widget. Just call ```Blynk.vi
 
 [Storing multiple values on server](https://github.com/blynkkk/blynk-library/blob/master/examples/More/ServerAsDataStorage/ServerAsDataStorage_MultiValue/ServerAsDataStorage_MultiValue.ino)
 
-###For app
+### For app
 If you need to keep your hardware in sync with Widgets' state even if app is offline use ```Blynk.virtualWrite```.
 
 Imagine you have a LED Widget connected to the Virtual Pin V1 in the app, and a physical button attached to your hardware. 
@@ -224,8 +223,7 @@ In case hardware don't send anything within 10 seconds server waits additional 5
 assumed to be broken and closed by server. So on UI you'll see connection status update only after 15 seconds when it is 
 actually happened.
 
-You can also change ```HEARTBEAT``` interval from hardware side via ```Blynk.config```. In that case 
-```newHeartbeatInterval * 2.3``` formula will be applied. So in case you you decided to set ```HEARTBEAT``` interval to 
+You can also change ```HEARTBEAT``` interval from hardware side via ```Blynk.config```. In that case ```newHeartbeatInterval * 2.3``` formula will be applied. So in case you you decided to set ```HEARTBEAT``` interval to 
 5 seconds. You'll get notification regarding connection with 11 sec delay in worst case.
 
 ## Change Widget properties
@@ -294,7 +292,7 @@ You can also change widget properties via [HTTP API](http://docs.blynkapi.apiary
 - Don't put ```Blynk.virtualWrite``` and any other ```Blynk.*``` command inside ```void loop()```- it will cause 
 lot's of outgoing messages to our server and your connection will be terminated; 
 
-- We recommend calling functions with intervals. For example, use [BlynkTimer](./BlynkFirmware.md#blynktimer)
+- We recommend calling functions with intervals. For example, use [BlynkTimer](http://docs.blynk.cc/#blynktimer)
 
 - Avoid using long delays with ```delay()``` – it may cause connection breaks;
 
