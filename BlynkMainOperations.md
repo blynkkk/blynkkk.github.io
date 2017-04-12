@@ -90,7 +90,7 @@ or with [HTTP API](http://docs.blynkapi.apiary.io/#reference/0/pin-history-data/
 <img src="images/frequency_reading_push.png" style="width: 200px; height:360px"/>
 
 We recommend sending data in intervals and avoiding [Flood Error](http://docs.blynk.cc/#troubleshooting-flood-error).  
-You can use timers like [BlynkTimer](http://docs.blynk.cc/#blynktimer).  
+You can use timers like [BlynkTimer](http://docs.blynk.cc/#blynk-firmware-blynktimer).  
 Please read instructions inside this [example sketch](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino) for more details.
 
 Here is how it can work:
