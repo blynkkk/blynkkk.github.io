@@ -288,7 +288,7 @@ Blynk.setProperty(V0, "labels", "label 1", "label 2", "label 3");
 
 You can also change widget properties via [HTTP API](http://docs.blynkapi.apiary.io/#).
 
-##Limitations and Recommendations
+## Limitations and Recommendations
 - Don't put ```Blynk.virtualWrite``` and any other ```Blynk.*``` command inside ```void loop()```- it will cause 
 lot's of outgoing messages to our server and your connection will be terminated; 
 
