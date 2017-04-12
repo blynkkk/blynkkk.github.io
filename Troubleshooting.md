@@ -46,7 +46,7 @@ void loop()
 ***Note:*** This also applies to the BLYNK_READ & BLYNK_WRITE handlers!
 
 ***SOLUTION:***
-If you need to perform actions in time intervals - use timers, for example [BlynkTimer](http://docs.blynk.cc/#blynktimer).
+If you need to perform actions in time intervals - use timers, for example [BlynkTimer](http://docs.blynk.cc/#blynk-firmware-blynktimer).
 
 ## Flood Error
 
@@ -64,7 +64,7 @@ void loop()
 ```
 
 ***SOLUTION:***
-If you need to perform actions in time intervals - use timers, for example [BlynkTimer](http://docs.blynk.cc/#blynktimer).
+If you need to perform actions in time intervals - use timers, for example [BlynkTimer](http://docs.blynk.cc/#blynk-firmware-blynktimer).
 
 Using ```delay()``` will not solve the problem either. It may cause [another issue](http://docs.blynk.cc/#delay). Use timers!
 
