@@ -266,6 +266,17 @@ When ```BLYNK_PRINT``` is defined, you can use ```BLYNK_LOG``` to print your log
 BLYNK_LOG("This is my value: %d", 10);
 ```
 
+On some platforms (like Arduino 101) the ```BLYNK_LOG``` may be unavailable, or may just use too much resources.  
+In this case you can use a set of simpler log functions:
+
+```cpp
+BLYNK_LOG1("Heeey"); // Print a string
+BLYNK_LOG1(10);      // Print a number
+BLYNK_LOG2("This is my value: ", 10); // Print 2 values
+BLYNK_LOG4("Temperature: ", 24, " Humidity: ", 55); // Print 4 values
+...
+```
+
 ## Minimizing footprint
 
 To minimize the program Flash/RAM, you can disable some of the built-in functionality:
@@ -276,6 +287,8 @@ To minimize the program Flash/RAM, you can disable some of the built-in function
 #define BLYNK_NO_BUILTIN   // Disable built-in analog & digital pin operations
 #define BLYNK_NO_FLOAT     // Disable float operations
 ```
+
+Please also remember that a single ```BlynkTimer``` can schedule many timers, so most probably you need only one instance of BlynkTimer in your sketch.
 
 ## Porting, hacking
 
