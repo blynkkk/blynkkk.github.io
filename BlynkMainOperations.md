@@ -292,7 +292,7 @@ You can also change widget properties via [HTTP API](http://docs.blynkapi.apiary
 - Don't put ```Blynk.virtualWrite``` and any other ```Blynk.*``` command inside ```void loop()```- it will cause 
 lot's of outgoing messages to our server and your connection will be terminated; 
 
-- We recommend calling functions with intervals. For example, use [BlynkTimer](http://docs.blynk.cc/#blynktimer)
+- We recommend calling functions with intervals. For example, use [BlynkTimer](http://docs.blynk.cc/#blynk-firmware-blynktimer)
 
 - Avoid using long delays with ```delay()``` – it may cause connection breaks;
 
