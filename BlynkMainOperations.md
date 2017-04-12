@@ -125,7 +125,7 @@ void sendUptime()
 void loop()
 {
   Blynk.run(); // all the Blynk magic happens here
-  timer.run(); // SimpleTimer is working
+  timer.run(); // BlynkTimer is working...
 }
 ```
 
@@ -294,9 +294,7 @@ You can also change widget properties via [HTTP API](http://docs.blynkapi.apiary
 - Don't put ```Blynk.virtualWrite``` and any other ```Blynk.*``` command inside ```void loop()```- it will cause 
 lot's of outgoing messages to our server and your connection will be terminated; 
 
-- We recommend calling functions with intervals. For example, this 
-[SimpleTimer Library](http://playground.arduino.cc/Code/SimpleTimer) is a simple library for timed events. 
-Please read instructions inside this [example sketch](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino#L30) for more details;
+- We recommend calling functions with intervals. For example, use [BlynkTimer](./BlynkFirmware.md#blynktimer)
 
 - Avoid using long delays with ```delay()``` – it may cause connection breaks;
 
