@@ -1,6 +1,6 @@
-#Blynk main operations
+# Blynk main operations
 
-##Virtual Pins
+## Virtual Pins
 Blynk can control Digital and Analog I/O Pins on you hardware directly. You don't even need to write code for it. 
 It's great for blinking LEDs, but often it's just not enough...
 
@@ -22,7 +22,7 @@ Blynk.virtualWrite(pin, "hello", 123, 12.34);
 
 For more information about virtual pins, [read this](http://docs.blynk.cc/#blynk-firmware-virtual-pins-control)
 
-##Send data from app to hardware
+## Send data from app to hardware
 You can send any data from Widgets in the app to your hardware.
 
 All [Controller Widgets](http://docs.blynk.cc/#widgets-controllers) can send data to Virtual Pins on your hardware. 
@@ -43,7 +43,7 @@ This is how Button Widget is set up:
 
 Full example sketch: [Get Data](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/GetData/GetData.ino#L24)
 
-###Sending array from Widget 
+### Sending array from Widget 
 Some Widgets (e.g Joystick, zeRGBa) have more than one output. 
 
 <img src="images/joystick_merge_mode.png" style="width: 200px; height:360px"/>
@@ -62,10 +62,10 @@ BLYNK_WRITE(V1) // Widget WRITEs to Virtual Pin V1
 
  **Sketch:** [JoystickTwoAxis](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/JoystickTwoAxis/JoystickTwoAxis.ino#L24)
 
-##Get data from hardware
+## Get data from hardware
 There are two ways of pushing data from your hardware to the Widgets in the app over Virtual Pins.
 
-###Perform requests by Widget
+### Perform requests by Widget
 - Using Blynk built-in reading frequency while App is active by setting 'Reading Frequency' parameter to some interval:
 
 <img src="images/frequency_reading_pull.png" style="width: 200px; height:360px"/>
@@ -81,7 +81,7 @@ BLYNK_READ(V5) // Widget in the app READs Virtal Pin V5 with the certain frequen
 **Sketch:** [PushDataOnRequest](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushDataOnRequest/PushDataOnRequest.ino#L26)
 
 
-###Pushing data from hardware
+### Pushing data from hardware
 If you need to PUSH sensor or other data from your hardware to Widget, you can write any logic you want. 
 Just set the frequency to PUSH mode. Any command that hardware sends to Blynk Cloud is automatically stored on server
 and you get this info either with [History Graph](http://docs.blynk.cc/#widgets-displays-history-graph) widget 
@@ -89,21 +89,21 @@ or with [HTTP API](http://docs.blynkapi.apiary.io/#reference/0/pin-history-data/
 
 <img src="images/frequency_reading_push.png" style="width: 200px; height:360px"/>
 
-We recommend sending data in intervals and avoiding [Flood Error](http://docs.blynk.cc/#troubleshooting-flood-error).
-For example, this [SimpleTimer Library](http://playground.arduino.cc/Code/SimpleTimer) is an Arduino library for timed events. 
+We recommend sending data in intervals and avoiding [Flood Error](http://docs.blynk.cc/#troubleshooting-flood-error).  
+For this, you can use [SimpleTimer](http://playground.arduino.cc/Code/SimpleTimer) is an Arduino library for timed events.  
+SimpleTimer is included in Blynk library as ```BlynkTimer```, so no need to install SimpleTimer separately.
 Please read instructions inside this [example sketch](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino#L30) for more details.
 
-SimpleTimer is included in Blynk's library. Here is how it can work:
+Here is how it can work:
 
 ```cpp
 #include <SPI.h>
 #include <Ethernet.h>
 #include <BlynkSimpleEthernet.h>
-#include <SimpleTimer.h> // here is the SimpleTimer library
 
 char auth[] = "YourAuthToken"; // Put your token here
 
-SimpleTimer timer; // Create a Timer object called "timer"! 
+BlynkTimer timer; // Create a Timer object called "timer"! 
 
 void setup()
 {
