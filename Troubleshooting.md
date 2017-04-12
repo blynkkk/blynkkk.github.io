@@ -14,7 +14,7 @@ If you experience connection problems, follow these steps:
    * Double-check that you have selected **the right example** for your connection type and hardware model.
    * Our examples come with **comments and explanations**. **Read them carefully.**
    * Check that your Auth Token is valid (copied from the App and **doesn't contain spaces, etc.**)
-   * If it doesn't work, try looking into [serial debug prints](./Troubleshooting.md#enable-debug).
+   * If it doesn't work, try looking into [serial debug prints](#enable-debug).
 5. Done! Add your modifications and functionality. Enjoy Blynk!
 
 ***Note:*** when you have multiple devices connected to your network, they should all have different MAC and IP addresses. For example, when using 2 Arduino UNO with Ethernet shields, flashing default example to both of them will cause connection problems. You should use [manual ethernet configuration](https://github.com/blynkkk/blynk-library/blob/master/examples/Boards_Ethernet/Arduino_Ethernet_Manual/Arduino_Ethernet_Manual.ino) example.
@@ -46,7 +46,7 @@ void loop()
 ***Note:*** This also applies to the BLYNK_READ & BLYNK_WRITE handlers!
 
 ***SOLUTION:***
-If you need to perform actions in time intervals - use timers, for example [BlynkTimer](./BlynkFirmware.md#blynktimer).
+If you need to perform actions in time intervals - use timers, for example [BlynkTimer](#blynktimer).
 
 ## Flood Error
 
@@ -64,9 +64,9 @@ void loop()
 ```
 
 ***SOLUTION:***
-If you need to perform actions in time intervals - use timers, for example [BlynkTimer](./BlynkFirmware.md#blynktimer).
+If you need to perform actions in time intervals - use timers, for example [BlynkTimer](d#blynktimer).
 
-Using ```delay()``` will not solve the problem either. It may cause [another issue](./Troubleshooting.md#delay). Use timers!
+Using ```delay()``` will not solve the problem either. It may cause [another issue](#delay). Use timers!
 
 If sending hundreds of requests is what you need for your product you may increase flood limit on local server 
 and within Blynk library.
