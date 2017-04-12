@@ -228,10 +228,12 @@ Blynk.syncVirtual(V0, V1, V6, V9, V16);
 ## BlynkTimer
 
 ```BlynkTimer``` enables you to perform periodic actions in the main ```loop()``` context.  
-It is the same as widely used SimpleTimer, but fixes several issues and is included in Blynk library by default.  
+It is the same as widely used SimpleTimer, but fixes several issues.  
+```BlynkTimer``` is included in Blynk library by default, so no need to install SimpleTimer separately.  
 **Please note that a single BlynkTimer object allows to schedule up to 16 timers.**
 
-For more information on timer usage, please see: http://playground.arduino.cc/Code/SimpleTimer
+For more information on timer usage, please see: http://playground.arduino.cc/Code/SimpleTimer  
+And here is a BlynkTimer [example sketch](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino#L30).
 
 ## Debugging
 
