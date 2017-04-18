@@ -4,13 +4,13 @@
 Map widget allows you set points/pins on map from hardware side. This is very useful widget in case you have 
 multiple devices and you want track their values on map.
 
-You can send a point to map with regular virtual wrtei command :  
+You can send a point to map with regular virtual write command :  
 
 ```cpp
 Blynk.virtualWrite(V1, pointIndex, lat, lon, "value");
 ```
 
-We also created wrapper for you to make suage of map simpler : 
+We also created a wrapper for you to make usage of map simpler : 
 
 You can change button labels from hardware with : 
 
