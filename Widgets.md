@@ -376,7 +376,7 @@ services or host streaming server on own server (on raspberry for example).
 
 Displays incoming data from your sensors or Virtual Pins. Level Display is very similar to progress bar, it is very nice 
 and fancy view for indication of "filled" events, like "level of battery". 
-Works in PUSH mode only. You can update value display from hardware side with code : 
+You can update value display from hardware side with code : 
  
 ```cpp
 Blynk.virtualWrite(V1, val); 
