@@ -113,6 +113,11 @@ Similar to potentiometer. Allows to send values between MIN and MAX.
 ### Timer
 Timer triggers actions at a specific time. Even if smartphone is offline. Start time sends 1 (HIGH). Stop time sends 0 (LOW).
 
+Recent Android version also has improved Timer within Eventor widget.
+With Eventor Time Event you can assign multiple timers on same pin, send any string/number, select days and timezone. 
+It is recommended to use Eventor over Timer widget.
+However Timer widget is still suitable for simple timer events.
+
 <img src="images/timer.png" style="width: 77px; height:80px"/>
 
 <img src="images/timer_edit.png" style="width: 200px; height:360px"/>
@@ -898,6 +903,7 @@ Now configure new **Event** in Eventor widget:
 Eventor comes handy when you need to change conditions on the fly without re-uploading new sketch on 
 the hardware. You can create as many **events** as you need.
 Eventor also supports Timer events. For example, you can set pin ```V1``` ON/HIGH at 21:00:00 every Friday.
+With Eventor Time Event you can assign multiple timers on same pin, send any string/number, select days and timezone. 
 
 In order to remove created **event** please use swipe. You can also swipe out last element in the Event itself. 
 
