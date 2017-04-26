@@ -248,7 +248,7 @@ Blynk.setProperty(V0, "labels", "Menu Item 1", "Menu Item 2", "Menu Item 3");
 
 **NOTE : ** Changing these parameters work **only** for widgets attached to Virtual pins (analog/digital pins won't work).
 
-Two widget properties are supported - ```color```, ```label``` for all widgets : 
+Four widget properties are supported - ```color```, ```label```, ```min```, ```max``` for all widgets : 
 
 ```label``` is string for label of all widgets.
 
