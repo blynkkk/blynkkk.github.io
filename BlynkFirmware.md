@@ -16,6 +16,9 @@ It has various parameters for different hardware, depending on the type of conne
 2. Calls ```Blynk.config(...)``` - sets auth token, server address
 3. Tries to connects to the server once (can block for more than 30s)
 
+If your shield/connection type is not supported yet - you can craft it yourself easily! 
+[Here are some examples](https://github.com/blynkkk/blynk-library/tree/master/examples/More/ArduinoClient).
+
 ### Blynk.config()
 
 ```config()``` allows you to manage network connection yourself.
@@ -68,9 +71,6 @@ To get the status of connection to Blynk Server use:
 ```cpp
 bool result = Blynk.connected();
 ```
-
-If your shield/connection type is not supported yet - you can craft it yourself easily! 
-[Here is an example](https://github.com/blynkkk/blynk-library/blob/master/examples/Boards_USB_Serial/User_Defined_Connection/User_Defined_Connection.ino).
 
 ### Blynk.run()
 This function should be called frequently to process incoming commands and perform housekeeping of Blynk connection.
