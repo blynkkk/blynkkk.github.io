@@ -25,7 +25,7 @@ Blynk supports more than 400 boards already, including support for Arduino, Part
   - DFRobot Bluno
   - RedBear Duo (WiFi, BLE)
   - RedBearLab Blend Micro
-  - RedBearLab BLE Nano
+  - RedBearLab BLE Nano (v1 and v2)
   - Seeed Tiny BLE
   - Simblee BLE
   - RFduino BLE
