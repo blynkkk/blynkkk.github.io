@@ -209,9 +209,7 @@ Request server to send the most recent values for all widgets. In other words, a
 
 ```cpp
 BLYNK_CONNECTED() {
-  if (isFirstConnect) {
     Blynk.syncAll();
-  }
 }
 ```
 
