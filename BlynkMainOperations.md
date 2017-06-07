@@ -138,9 +138,7 @@ If your hardware looses Internet connection or resets, you can restore all the v
 
 ```cpp
 BLYNK_CONNECTED() {
-  if (isFirstConnect) {
     Blynk.syncAll();
-  }
 }
 
 //here handlers for sync command
