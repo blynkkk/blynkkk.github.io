@@ -8,4 +8,6 @@ With Eventor Time Event you can assign multiple timers on same pin, send any str
 It is recommended to use Eventor over Timer widget.
 However Timer widget is still suitable for simple timer events.
 
+**NOTE:** The timer widget rely on the server time and not your phone time. Sometimes the phone time may not match the server time. 
+
 **Sketch:** [Timer](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Timer/Timer.ino)

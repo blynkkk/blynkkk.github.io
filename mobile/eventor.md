@@ -33,6 +33,7 @@ In order to remove created **event** please use swipe. You can also swipe out la
 **Sketch:** [Eventor](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Eventor/Eventor.ino)
 
 
+**NOTE:** The timer widget rely on the server time and not your phone time. Sometimes the phone time may not match the server time. 
 **NOTE** : Events are triggered only once when the condition is met. 
 However there is one exclusion:
 Let's consider simple event as above ```if (temperature > 40) send notification ```.

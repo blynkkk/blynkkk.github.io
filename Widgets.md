@@ -122,6 +122,8 @@ However Timer widget is still suitable for simple timer events.
 
 <img src="images/timer_edit.png" style="width: 200px; height:360px"/>
 
+**NOTE:** The timer widget rely on the server time and not your phone time. Sometimes the phone time may not match the server time. 
+
 **Sketch:** [Timer](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Timer/Timer.ino)
 
 ### Joystick
@@ -897,6 +899,8 @@ Don't forget that ```virtualWrite``` commands should be wrapped in the timer and
 Now configure new **Event** in Eventor widget: 
 
 <img src="images/eventor/eventor_for_temp_example.png" style="width: 200px; height:360px"/>
+
+**NOTE:** The timer widget rely on the server time and not your phone time. Sometimes the phone time may not match the server time. 
 
 **NOTE** Don't forget to add notification widget.
 
