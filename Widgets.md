@@ -354,8 +354,9 @@ You can also get pin data via [HTTP API](http://docs.blynkapi.apiary.io/#referen
 **Sketch:** [PushData](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino)
 
 ### Terminal
-Display data from your hardware. Also allows to send any string to your hardware. Terminal always stores last 25 messages
-your hardware had send to Blynk Cloud. This limit may be increased on Local Server.
+Displays data from your hardware. Allows to send any string to your hardware. Terminal always stores last 25 messages
+your hardware had send to Blynk Cloud. This limit may be increased on Local Server with ```terminal.strings.pool.size``` 
+property.
 
 You need to use special commands with this widget:
 
