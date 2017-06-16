@@ -618,6 +618,7 @@ Imagine you have 4 devices and every device has a Temperature & Humidity sensor 
 With Device Selector, you can use only 2 Widgets which will display Temperature and Humidity based on the active device chosen in Device Selector.  
 
 All you have to do is:
+
 1. Add Device Selector Widget to the project
 2. Add 2 widgets (for example Value Display Widget) to show Temperature and Humidity
 3. In Widgets Settings you will be able assign them to Device Selector (Source or Target section)
@@ -625,7 +626,7 @@ All you have to do is:
 
 Now you can change the active device in Device Selector and you will see that Temperature and Humidity values are reflecting the data updates for the device you just picked.
 
-**NOTE : ** History Graph Widget and Webhook Widget will not work with Device Selector (yet).
+**NOTE : ** Webhook Widget will not work with Device Selector (yet), not supported on iOS (yet).
 
 ## Sensors 
 
