@@ -242,7 +242,7 @@ led1.on();
 All values between 0 and 255 will change LED brightness :
 
 ```cpp
-WidgetLED led2(2);
+WidgetLED led2(V2);
 led2.setValue(127); //set brightness of LED to 50%.
 ```
 
