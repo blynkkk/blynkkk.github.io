@@ -442,10 +442,10 @@ Limitations :
 by adding ```#define BLYNK_MAX_SENDBYTES XXX``` to you sketch. Where ```XXX``` is desired max length of your email. 
 For example for ESP you can set this to 1200 max length ```#define BLYNK_MAX_SENDBYTES 1200```. The 
 ```#define BLYNK_MAX_SENDBYTES 1200``` must be included before any of the Blynk includes.
-- Only 1 email 15 seconds is allowed
-- In case you are using gmail you are limited with 500 mails per day (by google). Other providers may have similar
+- Only 1 email per 15 seconds is allowed
+- In case you are using gmail on the Local Server you are limited with 500 mails per day (by google). Other providers may have similar
 limitations, so please be careful.
-- User is limited with 100 messages per day;
+- User is limited with 100 messages per day in the Blynk Cloud;
 
 **Sketch:** [Email](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Email/Email.ino)
 
