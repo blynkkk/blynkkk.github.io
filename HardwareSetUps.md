@@ -1,4 +1,4 @@
-#Hardware set-ups
+# Hardware set-ups
 ## Arduino over USB (no shield)
 If you don't have any shield and your hardware doesn't have any connectivity, you can still use Blynk – directly over USB :
 
@@ -177,6 +177,12 @@ Additional materials:
 
 Please follow [this detailed instruction](https://github.com/blynkkk/blynk-library/tree/master/examples/Boards_WiFi/NodeMCU#instruction-for-nodemcu-setup).
 Or watch [this Video tutorial](https://www.youtube.com/watch?v=FhS44hGk1Lc).
+
+## Arduino + ESP8266 WiFi with AT commands
+
+This connection type is nor secommended for beginners.  
+If you would like to try it, please carefully read [this help topic](http://help.blynk.cc/hardware-and-libraries/arduino/esp8266-with-at-firmware)
+**Note:** Some boards like Arduino UNO WiFi from Arduino.org, do not use AT commands (and do not provide relevant libraries), so this renders them unusable with Blynk.
 
 ## Particle
 Blynk works with the whole family of Particle products: Core, Photon and Electron
