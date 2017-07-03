@@ -9,11 +9,13 @@ You can add a row to the table with :
 Blynk.virtualWrite(V1, "add", id, "Name", "Value");
 ```
 
-**Note :** Max number of rows in the table  is 100. When you reach the limit, table will work as 
-FIFO (First In First Out) list.
-This limit can be changed by configuring ```table.rows.pool.size``` property for Local Server.
+You can update a row in the table with :
 
-To highlight any item in a table by using its' index in a table starting from 0 : 
+```
+Blynk.virtualWrite(V1, "update", id, "UpdatedName", "UpdatedValue");
+```
+
+To highlight any item in a table by using it's index in a table starting from 0 : 
 
 ```
 Blynk.virtualWrite(V1, "pick", 0);
@@ -45,6 +47,9 @@ BLYNK_WRITE(V1) {
    }
 }
 ```
+
+**Note :** Max number of rows in the table is 100. When you reach the limit, table will work as FIFO (First In First Out) list.
+This limit can be changed by configuring ```table.rows.pool.size``` property for Local Server.
 
 **Sketch:** [Simple Table usage](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Table/Table_Simple/Table_Simple.ino)
 
