@@ -640,7 +640,7 @@ All you have to do is:
 
 Now you can change the active device in Device Selector and you will see that Temperature and Humidity values are reflecting the data updates for the device you just picked.
 
-**NOTE : ** Webhook Widget will not work with Device Selector (yet), not supported on iOS (yet).
+**NOTE : ** Webhook Widget will not work with Device Selector (yet).
 
 ## Sensors 
 
