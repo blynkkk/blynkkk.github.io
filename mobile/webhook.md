@@ -79,3 +79,6 @@ assigned to ```V0```) - ```BLYNK_WRITE(V0)``` will be triggered.
 **NOTE :** In order to avoid spamming Blynk Webhook has one more limitation - in case your webhook requests were failed 10 times 
 in row your webhook widget will be stopped. In order to resume it you need to open widget and save it again. Failed requests 
 are requests that return status code that are not equal to 200 or 302.
+
+**NOTE :** Webhook widget may affect ```Blynk.syncAll()``` feature. As returned response from server may be big. 
+So, please, be careful with it.
