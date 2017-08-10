@@ -317,21 +317,25 @@ Next formatting options supported:
 ### SuperChart
 SuperChart widget is used to vizualise live and historical data. You can use it for sensor data, for binary events logging and more.
 
-To use SuperChart widget you need to push the data from the hardware within the desired interval by using timed event.  
-[Here is](https://examples.blynk.cc/?board=ESP8266&shield=ESP8266%20WiFi&example=GettingStarted%2FPushData) basic example for data pushing.
+'To use SuperChart widget you need to push the data from the hardware within the desired interval by using timed event.  
+LINK TO PUSH DATA EXAMPLE: http://examples.blynk.cc
 
-####Available Interactions:
-- **Switch between time ranges and Live mode**
-</br>Tap time ranges at the bottom of the widget to change time ranges
+>all_charts.png
+
+####Interactions:
+- **Switch between time ranges and Live mode**</br>Tap time ranges at the bottom of the widget to change time ranges
 
 - **Tap Legend Elements** to show or hide datastreams
 </br>
+> GIF
 
 - **Tap'n'hold to view timestamp and corresponding values**
 </br>
+> tapnhold_charts.png
 
 - **Quick swipe from left to right to reveal previous data** 
 </br>Then you can then scroll data back and forward within the given time range
+> swipe_charts.png
 
 - **Full Screen Mode**</br>
 Press this button to open Full Screen view in landscape orientation.
@@ -339,31 +343,34 @@ Simply rotate the phone back to portrait mode. Chart should rotate automagically
 In full screen view you will see X (time) and multiple Y scales. 
 Full Screen Mode can be disabled from widget Settings
 </br>
-> GIF
+> fullscreen_charts.png
 
 - **Menu Button**</br>
 Menu button will open additional functions:
 	- Export to CSV
 	- Erase Data on the server 
-<br>
+<br> 
+> menu_charts
+
+
 
 <br>
-
 ####SuperChart Settings:
 - **Chart Title**
-
 - **Title Font Size**
 </br>You have a choice of 3 font sizes
-- **Title Alignment**
-<br>Choose chart title alignment. This setting also affects Title and Legend position on the Widget
+- **Title Alignment**<br>choose chart title alignment. This setting also affects Title and Legend position on the Widget
 - **Datastreams** - add datastreams (read below how to configure datastreams)
 - **Show/Hide Title**
 - **Show/Hide Legend**
 
-####Datastream Settings
+
+
+####Datastreams Settings
 
 Widget supports up to 4 Datastreams. 
-Press Datastream Settings Icon to open Datastream Settings.
+Press Datastream Settings Icon to open Datastream Settings
+> datastream_charts.png
 
 
 **Design:**<br>
@@ -393,7 +400,7 @@ To use Tags:
 3. **Choose Tag as a source** in SuperChart Widget and use the pin where the data is coming to (e.g V0)<br>
 
 4. **Device Selector** (LINK to widget)
-<br>If you add Device Selector Widget to your project, you can use it as a source for SuperChart. In this case, when you change the device in Device Selector, chart will be updated accordingly
+<br>If you add Device Selector Widget to your project, you can use it as a source for SuperChart. In this case, when you change the device in Device Selector, chart will be updated accordingly. Use same Virtual Pins on your devices.
 
 	**Functions available:** 
 	
@@ -413,28 +420,39 @@ To use Tags:
 
 1. **Values**<br>
 When this mode is selected, Y scale will be set to the values you choose. 
-For example, if your hardware sends data with values varying from -100 to 100, you can set the chart to this values and data will be rendered correctly. 
+For example, if your hardware sends data with values varying from 15 to 35, you can set the chart to this values and data will be rendered correctly. <br>
+> yScale_manual_charts.png
 
 	You may also want to visualize the data within some specific range. Let's say incoming data has values in the range of 0-55, but you would like to see only values in the range 30-50. You can set it up and if values are out of Y scale you configured, chart will be cropped
 
 2. **% of Height**<br>
-This option allows you to auto-scale incoming data on the widget and position it the way you want. In this mode, you set up the percentage of widget height on the screen, from 0% to 100%. 
+This option allows you to auto-scale incoming data on the widget and position it the way you want. In this mode, you set up the percentage of widget height on the screen, from 0% to 100%.<br>
+> yheight2_charts.png
+
 
 	If you set 0-100%, in fact it's a full auto-scale. No matter in which range the data is coming, it will be always scaled to the whole height of the widget.   
 
-	If you set it to 0-25%, then this is how your chart will look like:
+	If you set it to 0-25%, then values will be also auto-scaled, but chart will occupy only 1/4 of the widgets' height.
+	> yheight3_charts
 
-This setting is very valuable for **Binary Chart**(LINK) or for visualizing a few datastreams on the same chart in a different way.
+This setting is very valuable for **Binary Chart**(LINK) or to visualize a few datastreams on the same chart in a different way.
+<br>	
+>binary_charts.png
+
 
 
 
 **Suffix:**
 <br>Here you can specify a suffix that will be shown during the Tap'n'hold
+> suffix_charts.png
 
 **Connect Missing Data Points**<br>
 If this switch is ON, then SuperChart will connect all the dots even if there was no data
+> datapoints1_charts.png
 
 If it's set to OFF, then you will see gaps in case there was no data.
+
+> datapoints2_charts.png
 
 **Binary Chart Settings**<br>
 This type of chart is useful to plot binary data, for example when unit was ON or OFF, or when motion was detected or when certain threshold was reached.
@@ -449,6 +467,8 @@ Another example, if you send `0 and 1` and set `1` as a **FLIP** point, then `1`
 Here you can specify how `TRUE/FALSE` should be shown in Tap'n'Hold mode (LINK to interactions). 
 
 For example, you can set to `TRUE` to "Equipment ON" label, `FALSE` to "Equipment OFF"
+> binarylabel_charts.png
+
 
 
 ### Graph
