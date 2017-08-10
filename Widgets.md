@@ -317,25 +317,21 @@ Next formatting options supported:
 ### SuperChart
 SuperChart widget is used to vizualise live and historical data. You can use it for sensor data, for binary events logging and more.
 
-'To use SuperChart widget you need to push the data from the hardware within the desired interval by using timed event.  
-LINK TO PUSH DATA EXAMPLE: http://examples.blynk.cc
-
->IMG showing all 4 types of datastreams
+To use SuperChart widget you need to push the data from the hardware within the desired interval by using timed event.  
+[Here is](https://examples.blynk.cc/?board=ESP8266&shield=ESP8266%20WiFi&example=GettingStarted%2FPushData) basic example for data pushing.
 
 ####Available Interactions:
-- **Switch between time ranges and Live mode**</br>Tap time ranges at the bottom of the widget to change time ranges
+- **Switch between time ranges and Live mode**
+</br>Tap time ranges at the bottom of the widget to change time ranges
 
 - **Tap Legend Elements** to show or hide datastreams
 </br>
-> GIF
 
 - **Tap'n'hold to view timestamp and corresponding values**
 </br>
-> GIF
 
 - **Quick swipe from left to right to reveal previous data** 
 </br>Then you can then scroll data back and forward within the given time range
-> GIF
 
 - **Full Screen Mode**</br>
 Press this button to open Full Screen view in landscape orientation.
@@ -349,28 +345,25 @@ Full Screen Mode can be disabled from widget Settings
 Menu button will open additional functions:
 	- Export to CSV
 	- Erase Data on the server 
-<br> > IMG
-
-
+<br>
 
 <br>
+
 ####SuperChart Settings:
 - **Chart Title**
 
 - **Title Font Size**
 </br>You have a choice of 3 font sizes
-- **Title Alignment**<br>choose chart title alignment. This setting also affects Title and Legend position on the Widget
+- **Title Alignment**
+<br>Choose chart title alignment. This setting also affects Title and Legend position on the Widget
 - **Datastreams** - add datastreams (read below how to configure datastreams)
 - **Show/Hide Title**
 - **Show/Hide Legend**
 
-
-
-####Datastreams Settings
+####Datastream Settings
 
 Widget supports up to 4 Datastreams. 
-Press Datastream Settings Icon to open Datastream Settings
-> IMG of the icon
+Press Datastream Settings Icon to open Datastream Settings.
 
 
 **Design:**<br>
@@ -430,7 +423,6 @@ This option allows you to auto-scale incoming data on the widget and position it
 	If you set 0-100%, in fact it's a full auto-scale. No matter in which range the data is coming, it will be always scaled to the whole height of the widget.   
 
 	If you set it to 0-25%, then this is how your chart will look like:
-	> IMG
 
 This setting is very valuable for **Binary Chart**(LINK) or for visualizing a few datastreams on the same chart in a different way.
 
@@ -438,15 +430,11 @@ This setting is very valuable for **Binary Chart**(LINK) or for visualizing a fe
 
 **Suffix:**
 <br>Here you can specify a suffix that will be shown during the Tap'n'hold
-IMG
 
 **Connect Missing Data Points**<br>
 If this switch is ON, then SuperChart will connect all the dots even if there was no data
-> IMG
 
 If it's set to OFF, then you will see gaps in case there was no data.
-
-> IMG
 
 **Binary Chart Settings**<br>
 This type of chart is useful to plot binary data, for example when unit was ON or OFF, or when motion was detected or when certain threshold was reached.
@@ -461,7 +449,6 @@ Another example, if you send `0 and 1` and set `1` as a **FLIP** point, then `1`
 Here you can specify how `TRUE/FALSE` should be shown in Tap'n'Hold mode (LINK to interactions). 
 
 For example, you can set to `TRUE` to "Equipment ON" label, `FALSE` to "Equipment OFF"
-> IMG  
 
 
 ### Graph
