@@ -334,16 +334,15 @@ To use SuperChart widget you need to push the data from the hardware within the 
 - **Quick swipe from left to right to reveal previous data** 
 
 <img src="images/chart/swipe_charts.png" style="width: 300px; height:280px"/>
-
-</br>Then you can then scroll data back and forward within the given time range.
+Then you can then scroll data back and forward within the given time range.
 
 - **Full Screen Mode**</br>
-Press this button to open Full Screen view in landscape orientation.
-Simply rotate the phone back to portrait mode. Chart should rotate automagically 
-In full screen view you will see X (time) and multiple Y scales. 
-Full Screen Mode can be disabled from widget Settings
+Press this button to open Full Screen view in landscape orientation:
 
 <img src="images/chart/fullscreen_charts.png" style="width: 300px; height:280px"/>
+Simply rotate the phone back to portrait mode. Chart should rotate automagically. 
+In full screen view you will see X (time) and multiple Y scales. 
+Full Screen Mode can be disabled from widget Settings.
 
 - **Menu Button**</br>
 Menu button will open additional functions:
@@ -356,9 +355,10 @@ Menu button will open additional functions:
 - **Chart Title**
 
 - **Title Font Size**
-</br>You have a choice of 3 font sizes
+You have a choice of 3 font sizes
 - **Title Alignment**
-<br>Choose chart title alignment. This setting also affects Title and Legend position on the Widget
+Choose chart title alignment. This setting also affects Title and Legend position on the Widget.
+
 - **Datastreams** - add datastreams (read below how to configure datastreams)
 - **Show/Hide Title**
 - **Show/Hide Legend**
@@ -371,7 +371,7 @@ Press Datastream Settings Icon to open Datastream Settings.
 <img src="images/chart/datastream_charts.png" style="width: 300px; height:280px"/>
 
 
-**Design:**<br>
+**Design:**
 Choose available types of Chart:
 
 - Line
@@ -380,25 +380,25 @@ Choose available types of Chart:
 - Binary (anchor LINK to binary)
 
 **Color:**
-<br>Choose solid colors or gradients
+Choose solid colors or gradients
 
 **Source and input:**
-<br>You can use 3 types of Data source: 
+You can use 3 types of Data source: 
 
 **1. Virtual Pin**
-<br>Choose the desired Device and Virtual Pin to read the data from. 
+Choose the desired Device and Virtual Pin to read the data from. 
 
 **2. Tags**
-<br>SuperChart can aggregate data from multiple devices using built-in aggregation functions. For example, if you have 10 Temperature sensors sending temperature with the given period, you can plot average value on the widget.
+SuperChart can aggregate data from multiple devices using built-in aggregation functions. 
+For example, if you have 10 Temperature sensors sending temperature with the given period, 
+you can plot average value from 10 sensors on the widget.
 
 To use Tags:
 
-1. **Add Tag** (LINK to tags documentation) to every device you want to aggregate data from. 
-2. **Push data to the same Virtual Pin** on every device. <br>(e.g. ```Blynk.virtualWrite (V0, temperature);```)
-3. **Choose Tag as a source** in SuperChart Widget and use the pin where the data is coming to (e.g V0)<br>
-
-4. **Device Selector** (LINK to widget)
-<br>If you add Device Selector Widget to your project, you can use it as a source for SuperChart. In this case, when you change the device in Device Selector, chart will be updated accordingly
+a. **[Add Tag](http://docs.blynk.cc/#blynk-main-operations-control-of-multiple-devices-tags)** to every device you want to aggregate data from. 
+b. **Push data to the same Virtual Pin** on every device.
+(e.g. ```Blynk.virtualWrite (V0, temperature);```)
+c. **Choose Tag as a source** in SuperChart Widget and use the pin where the data is coming to (e.g V0)<br>
 
 	**Functions available:** 
 	
@@ -411,7 +411,9 @@ To use Tags:
 
 **☝️ IMPORTANT: Tags are not working in Live Mode.**
 
-
+3. **[Device Selector](http://docs.blynk.cc/#widgets-time-input-device-selector)**
+If you add Device Selector Widget to your project, you can use it as a source for SuperChart. 
+In this case, when you change the device in Device Selector, chart will be updated accordingly
 
 **Y-Axis Settings**
 <br>There are two modes of how to scale data along the Y axis
@@ -420,22 +422,19 @@ To use Tags:
 When this mode is selected, Y scale will be set to the values you choose. 
 For example, if your hardware sends data with values varying from -100 to 100, you can set the chart 
 to this values and data will be rendered correctly.
-
 <img src="images/chart/yScale_manual_charts.png" style="width: 300px; height:280px"/>
-
 You may also want to visualize the data within some specific range. Let's say incoming data has values in the range of 0-55, but you would like to see only values in the range 30-50. You can set it up and if values are out of Y scale you configured, chart will be cropped
 
 2. **% of Height**<br>
-This option allows you to auto-scale incoming data on the widget and position it the way you want. In this mode, you set up the percentage of widget height on the screen, from 0% to 100%. 
+This option allows you to auto-scale incoming data on the widget and position it the way you want. 
+In this mode, you set up the percentage of widget height on the screen, from 0% to 100%. 
 
 <img src="images/chart/yheight2_charts.png" style="width: 300px; height:280px"/>
 
-If you set 0-100%, in fact it's a full auto-scale. No matter in which range the data is coming, it will be always scaled to the whole height of the widget.   
-If you set it to 0-25%, then this is how your chart will look like:
+If you set 0-100%, in fact it's a full auto-scale. No matter in which range the data is coming,  
+it will be always scaled to the whole height of the widget.
 
-<img src="images/chart/yheight3_charts.png" style="width: 300px; height:280px"/>
-
-This setting is very valuable for **Binary Chart**(LINK) or for visualizing a few datastreams on the same chart in a different way.
+This setting is very valuable for **Binary Chart** or for visualizing a few datastreams on the same chart in a different way.
 
 <img src="images/chart/binary_charts.png" style="width: 300px; height:280px"/>
 
@@ -462,7 +461,7 @@ For example, you send the data in the range of `0 to 1023`. If you set `512` as 
 Another example, if you send `0 and 1` and set `1` as a **FLIP** point, then `1` will be `TRUE`, `0` will be `FALSE`
 
 **State Labels:**<br>
-Here you can specify how `TRUE/FALSE` should be shown in Tap'n'Hold mode (LINK to interactions). 
+Here you can specify how `TRUE/FALSE` should be shown in Tap'n'Hold mode. 
 
 For example, you can set to `TRUE` to "Equipment ON" label, `FALSE` to "Equipment OFF".
 
