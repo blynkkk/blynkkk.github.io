@@ -397,18 +397,18 @@ you can plot average value from 10 sensors on the widget.
 
 To use Tags:
 
-a. **[Add Tag](http://docs.blynk.cc/#blynk-main-operations-control-of-multiple-devices-tags)** to every device you want to aggregate data from. 
-b. **Push data to the same Virtual Pin** on every device.
-(e.g. ```Blynk.virtualWrite (V0, temperature);```)
-c. **Choose Tag as a source** in SuperChart Widget and use the pin where the data is coming to (e.g V0)<br>
+    1. **[Add Tag](http://docs.blynk.cc/#blynk-main-operations-control-of-multiple-devices-tags)** to every device you want to aggregate data from. 
+    2. **Push data to the same Virtual Pin** on every device. 
+    (e.g. ```Blynk.virtualWrite (V0, temperature);```)
+    3. **Choose Tag as a source** in SuperChart Widget and use the pin where the data is coming to (e.g V0)<br>
 
-	**Functions available:** 
+**Functions available:** 
 	
-	- **SUM**, will summarize all incoming values to the specified Virtual Pin across all devices tagged with the chosen tag
-	- **AVG**, will plot average value 
-	- **MED**, will find a median value
-	- **MIN**, will plot minimum value 
-	- **MAX** will plot minimum value 
+- **SUM**, will summarize all incoming values to the specified Virtual Pin across all devices tagged with the chosen tag
+- **AVG**, will plot average value 
+- **MED**, will find a median value
+- **MIN**, will plot minimum value 
+- **MAX** will plot minimum value 
 	
 
 **☝️ IMPORTANT: Tags are not working in Live Mode.**
