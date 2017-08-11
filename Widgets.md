@@ -397,10 +397,9 @@ you can plot average value from 10 sensors on the widget.
 
 To use Tags:
 
-    1. **[Add Tag](http://docs.blynk.cc/#blynk-main-operations-control-of-multiple-devices-tags)** to every device you want to aggregate data from. 
-    2. **Push data to the same Virtual Pin** on every device. 
-    (e.g. ```Blynk.virtualWrite (V0, temperature);```)
-    3. **Choose Tag as a source** in SuperChart Widget and use the pin where the data is coming to (e.g V0)<br>
+- **[Add Tag](http://docs.blynk.cc/#blynk-main-operations-control-of-multiple-devices-tags)** to every device you want to aggregate data from. 
+- **Push data to the same Virtual Pin** on every device. (e.g. ```Blynk.virtualWrite (V0, temperature);```)
+- **Choose Tag as a source** in SuperChart Widget and use the pin where the data is coming to (e.g V0)<br>
 
 **Functions available:** 
 	
@@ -424,6 +423,7 @@ In this case, when you change the device in Device Selector, chart will be updat
 When this mode is selected, Y scale will be set to the values you choose. 
 For example, if your hardware sends data with values varying from -100 to 100, you can set the chart 
 to this values and data will be rendered correctly.
+
 <img src="images/chart/yScale_manual_charts.png" style="width: 300px; height:280px"/>
 
 You may also want to visualize the data within some specific range. 
