@@ -334,12 +334,14 @@ To use SuperChart widget you need to push the data from the hardware within the 
 - **Quick swipe from left to right to reveal previous data** 
 
 <img src="images/chart/swipe_charts.png" style="width: 300px; height:280px"/>
+
 Then you can then scroll data back and forward within the given time range.
 
 - **Full Screen Mode**</br>
 Press this button to open Full Screen view in landscape orientation:
 
 <img src="images/chart/fullscreen_charts.png" style="width: 300px; height:280px"/>
+
 Simply rotate the phone back to portrait mode. Chart should rotate automagically. 
 In full screen view you will see X (time) and multiple Y scales. 
 Full Screen Mode can be disabled from widget Settings.
@@ -368,7 +370,7 @@ Choose chart title alignment. This setting also affects Title and Legend positio
 Widget supports up to 4 Datastreams. 
 Press Datastream Settings Icon to open Datastream Settings.
 
-<img src="images/chart/datastream_charts.png" style="width: 300px; height:280px"/>
+<img src="images/chart/datastream_charts.png"/>
 
 
 **Design:**
