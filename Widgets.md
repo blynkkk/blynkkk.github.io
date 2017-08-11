@@ -320,7 +320,7 @@ SuperChart widget is used to vizualise live and historical data. You can use it 
 To use SuperChart widget you need to push the data from the hardware within the desired interval by using timed event.  
 [Here is](https://examples.blynk.cc/?board=ESP8266&shield=ESP8266%20WiFi&example=GettingStarted%2FPushData) basic example for data pushing.
 
-####Available Interactions:
+####Interactions:
 - **Switch between time ranges and Live mode**
 </br>Tap time ranges at the bottom of the widget to change time ranges
 
@@ -328,26 +328,29 @@ To use SuperChart widget you need to push the data from the hardware within the 
 </br>
 
 - **Tap'n'hold to view timestamp and corresponding values**
-</br>
+
+<img src="images/chart/tapnhold_charts.png" style="width: 300px; height:280px"/>
 
 - **Quick swipe from left to right to reveal previous data** 
-</br>Then you can then scroll data back and forward within the given time range
+
+<img src="images/chart/swipe_charts.png" style="width: 300px; height:280px"/>
+
+</br>Then you can then scroll data back and forward within the given time range.
 
 - **Full Screen Mode**</br>
 Press this button to open Full Screen view in landscape orientation.
 Simply rotate the phone back to portrait mode. Chart should rotate automagically 
 In full screen view you will see X (time) and multiple Y scales. 
 Full Screen Mode can be disabled from widget Settings
-</br>
-> GIF
+
+<img src="images/chart/fullscreen_charts.png" style="width: 300px; height:280px"/>
 
 - **Menu Button**</br>
 Menu button will open additional functions:
 	- Export to CSV
 	- Erase Data on the server 
-<br>
 
-<br>
+<img src="images/chart/menu_charts.png" style="width: 300px; height:280px"/>
 
 ####SuperChart Settings:
 - **Chart Title**
@@ -364,6 +367,8 @@ Menu button will open additional functions:
 
 Widget supports up to 4 Datastreams. 
 Press Datastream Settings Icon to open Datastream Settings.
+
+<img src="images/chart/datastream_charts.png" style="width: 300px; height:280px"/>
 
 
 **Design:**<br>
@@ -413,28 +418,39 @@ To use Tags:
 
 1. **Values**<br>
 When this mode is selected, Y scale will be set to the values you choose. 
-For example, if your hardware sends data with values varying from -100 to 100, you can set the chart to this values and data will be rendered correctly. 
+For example, if your hardware sends data with values varying from -100 to 100, you can set the chart 
+to this values and data will be rendered correctly.
 
-	You may also want to visualize the data within some specific range. Let's say incoming data has values in the range of 0-55, but you would like to see only values in the range 30-50. You can set it up and if values are out of Y scale you configured, chart will be cropped
+<img src="images/chart/yScale_manual_charts.png" style="width: 300px; height:280px"/>
+
+You may also want to visualize the data within some specific range. Let's say incoming data has values in the range of 0-55, but you would like to see only values in the range 30-50. You can set it up and if values are out of Y scale you configured, chart will be cropped
 
 2. **% of Height**<br>
 This option allows you to auto-scale incoming data on the widget and position it the way you want. In this mode, you set up the percentage of widget height on the screen, from 0% to 100%. 
 
-	If you set 0-100%, in fact it's a full auto-scale. No matter in which range the data is coming, it will be always scaled to the whole height of the widget.   
+<img src="images/chart/yheight2_charts.png" style="width: 300px; height:280px"/>
 
-	If you set it to 0-25%, then this is how your chart will look like:
+If you set 0-100%, in fact it's a full auto-scale. No matter in which range the data is coming, it will be always scaled to the whole height of the widget.   
+If you set it to 0-25%, then this is how your chart will look like:
+
+<img src="images/chart/yheight3_charts.png" style="width: 300px; height:280px"/>
 
 This setting is very valuable for **Binary Chart**(LINK) or for visualizing a few datastreams on the same chart in a different way.
 
+<img src="images/chart/binary_charts.png" style="width: 300px; height:280px"/>
 
+**Suffix:** Here you can specify a suffix that will be shown during the Tap'n'hold
 
-**Suffix:**
-<br>Here you can specify a suffix that will be shown during the Tap'n'hold
+<img src="images/chart/suffix_charts.png" style="width: 300px; height:280px"/>
 
 **Connect Missing Data Points**<br>
 If this switch is ON, then SuperChart will connect all the dots even if there was no data
 
+<img src="images/chart/datapoints1_charts.png" style="width: 300px; height:280px"/>
+
 If it's set to OFF, then you will see gaps in case there was no data.
+
+<img src="images/chart/datapoints2_charts.png" style="width: 300px; height:280px"/>
 
 **Binary Chart Settings**<br>
 This type of chart is useful to plot binary data, for example when unit was ON or OFF, or when motion was detected or when certain threshold was reached.
@@ -448,7 +464,9 @@ Another example, if you send `0 and 1` and set `1` as a **FLIP** point, then `1`
 **State Labels:**<br>
 Here you can specify how `TRUE/FALSE` should be shown in Tap'n'Hold mode (LINK to interactions). 
 
-For example, you can set to `TRUE` to "Equipment ON" label, `FALSE` to "Equipment OFF"
+For example, you can set to `TRUE` to "Equipment ON" label, `FALSE` to "Equipment OFF".
+
+<img src="images/chart/binarylabel_charts.png" style="width: 300px; height:280px"/>
 
 
 ### Graph
