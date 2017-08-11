@@ -86,9 +86,8 @@ At the moment we provide 2 types of gradients :
 - Warm: Green - Orange - Red;
 - Cold : Green - Blue - Violet;
 
-Gradient changes color of your widget based on min/max properties. For example, you select warm gradient for your level 
-display widget with min 0 and max 100 value. When value 10 comes to widget it will have green color, when value 50 comes you'll 
-see orange color, when value 80 comes you'll see red color.
+Gradient changes color of your widget based on min/max properties. For example, you select warm gradient for your Level 
+Display widget with min 0 and max 100 value. When value 10 comes to widget it will have green color, when value 50 comes you'll see orange color, when value 80 comes you'll see red color.
 
 
 ##Controllers
@@ -315,10 +314,10 @@ Next formatting options supported:
 <img src="images/lcd_format_edit.png" style="width: 200px; height:360px"/>
 
 ### SuperChart
-SuperChart widget is used to vizualise live and historical data. You can use it for sensor data, for binary events logging and more.
+SuperChart is used to vizualise live and historical data. You can use it for sensor data, for binary event logging and more.
 
-To use SuperChart widget you need to push the data from the hardware within the desired interval by using timed event.  
-[Here is](https://examples.blynk.cc/?board=ESP8266&shield=ESP8266%20WiFi&example=GettingStarted%2FPushData) basic example for data pushing.
+To use SuperChart widget you would need to push the data from the hardware with the desired interval by using timers.  
+[Here is](https://examples.blynk.cc/?board=ESP8266&shield=ESP8266%20WiFi&example=GettingStarted%2FPushData) a basic example for data pushing.
 
 ####Interactions:
 - **Switch between time ranges and Live mode**
@@ -424,7 +423,7 @@ When this mode is selected, Y scale will be set to the values you choose.
 For example, if your hardware sends data with values varying from -100 to 100, you can set the chart 
 to this values and data will be rendered correctly.
 
-<img src="images/chart/yScale_manual_charts.png" style="width: 300px; height:280px"/>
+<img src="images/chart/yScale_manual_charts.png" style="width: 300px; height:212"/>
 
 You may also want to visualize the data within some specific range. 
 Let's say incoming data has values in the range of 0-55, but you would like to see only values in the range 30-50. 
@@ -434,16 +433,19 @@ You can set it up and if values are out of Y scale you configured, chart will be
 This option allows you to auto-scale incoming data on the widget and position it the way you want. 
 In this mode, you set up the percentage of widget height on the screen, from 0% to 100%. 
 
-<img src="images/chart/yheight2_charts.png" style="width: 300px; height:280px"/>
+<img src="images/chart/yheight2_charts.png" style="width: 300px; height:212px"/>
 
 If you set 0-100%, in fact it's a full auto-scale. No matter in which range the data is coming,  
 it will be always scaled to the whole height of the widget.
+
+If you set it to 0-25%, then this chart will only be rendered on 1/4 of the widget height:
+<img src="images/chart/yheight2_manual_charts.png" style="width: 300px; height:212px"/>
 
 This setting is very valuable for **Binary Chart** or for visualizing a few datastreams on the same chart in a different way.
 
 <img src="images/chart/binary_charts.png" style="width: 300px; height:280px"/>
 
-**Suffix:** Here you can specify a suffix that will be shown during the Tap'n'hold
+**Suffix:** <br>Here you can specify a suffix that will be shown during the Tap'n'hold
 
 <img src="images/chart/suffix_charts.png" style="width: 300px; height:280px"/>
 
