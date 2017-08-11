@@ -425,7 +425,10 @@ When this mode is selected, Y scale will be set to the values you choose.
 For example, if your hardware sends data with values varying from -100 to 100, you can set the chart 
 to this values and data will be rendered correctly.
 <img src="images/chart/yScale_manual_charts.png" style="width: 300px; height:280px"/>
-You may also want to visualize the data within some specific range. Let's say incoming data has values in the range of 0-55, but you would like to see only values in the range 30-50. You can set it up and if values are out of Y scale you configured, chart will be cropped
+
+You may also want to visualize the data within some specific range. 
+Let's say incoming data has values in the range of 0-55, but you would like to see only values in the range 30-50. 
+You can set it up and if values are out of Y scale you configured, chart will be cropped
 
 2. **% of Height**<br>
 This option allows you to auto-scale incoming data on the widget and position it the way you want. 
