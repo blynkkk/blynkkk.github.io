@@ -113,7 +113,7 @@ Similar to potentiometer. Allows to send values between MIN and MAX.
 Timer triggers actions at a specific time. Even if smartphone is offline. Start time sends 1 (HIGH). Stop time sends 0 (LOW).
 
 Recent Android version also has improved Timer within Eventor widget.
-With Eventor Time Event you can assign multiple timers on same pin, send any string/number, select days and timezone. 
+With Eventor Time Event you can assign multiple timers on same pin, send any string/value, select days and timezone. 
 It is recommended to use Eventor over Timer widget.
 However Timer widget is still suitable for simple timer events.
 
@@ -215,12 +215,12 @@ string, so you could format incoming value to any string you want.
 
 #### Formatting options
 
-Let's assume, your sensor sends number 12.6789 to Blynk application.
+For example: your sensor sends vaule of 12.6789 to Blynk application.
 Next formatting options are supported:
 
 ```/pin/``` - displays the value without formatting (12.6789)
 
-```/pin./``` - displays the value without decimal part (13)
+```/pin./``` - displays the rounded value without decimal part (13)
 
 ```/pin.#/``` - displays the value with 1 decimal digit (12.7)
 
@@ -262,13 +262,12 @@ A great visual way to display incoming numeric values.
 
 #### Formatting options
 
-Gauge also has "Label" field which allows use to use formatting.
-Let's assume, your sensor sends number 12.6789 to Blynk application.
+For example: your sensor sends vaule of 12.6789 to Blynk application.
 Next formatting options are supported:
 
 ```/pin/``` - displays the value without formatting (12.6789)
 
-```/pin./``` - displays the value without decimal part (13)
+```/pin./``` - displays the rounded value without decimal part (13)
 
 ```/pin.#/``` - displays the value with 1 decimal digit (12.7)
 
@@ -284,7 +283,7 @@ You need to use special commands with this widget:
 ```
 lcd.print(x, y, "Your Message");
 ```
-Where x is a symbol position (0-15), y is a line number (0 or 1), 
+Where x is a symbol position (0-15), y is a line id (0 or 1), 
 
 ```
 lcd.clear();
@@ -300,12 +299,12 @@ lcd.clear();
 
 #### Formatting options
 
-Let's assume, your sensor sends number 12.6789 to Blynk application.
-Next formatting options supported:
+For example: your sensor sends vaule of 12.6789 to Blynk application.
+Next formatting options are supported:
 
 ```/pin/``` - displays the value without formatting (12.6789)
 
-```/pin./``` - displays the value without decimal part (13)
+```/pin./``` - displays the rounded value without decimal part (13)
 
 ```/pin.#/``` - displays the value with 1 decimal digit (12.7)
 
