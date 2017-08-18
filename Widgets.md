@@ -462,9 +462,9 @@ This type of chart is useful to plot binary data, for example when unit was ON o
 
 You need to specify a **FLIP** point, which is the point where incoming data will be turned into TRUE or FALSE state.
 
-For example, you send the data in the range of `0 to 1023`. If you set `512` as a **FLIP** point, then everything above `512` (including 512) will be recorded as `TRUE`, any value below `512` (excluding 512) will be `FALSE`.
+For example, you send the data in the range of `0 to 1023`. If you set `512` as a **FLIP** point, then everything above `512` (excluding 512) will be recorded as `TRUE`, any value below `512` (including 512) will be `FALSE`.
 
-Another example, if you send `0 and 1` and set `1` as a **FLIP** point, then `1` will be `TRUE`, `0` will be `FALSE`
+Another example, if you send `0 and 1` and set `0` as a **FLIP** point, then `1` will be `TRUE`, `0` will be `FALSE`
 
 **State Labels:**<br>
 Here you can specify how `TRUE/FALSE` should be shown in Tap'n'Hold mode. 
