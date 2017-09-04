@@ -1206,7 +1206,7 @@ or for body
 ["/pin/"]
 ```
 
-You can also refer to specific index of multi value pin (multi pin supports up to 5 values) : 
+You can also refer to specific index of multi value pin (multi pin supports up to 10 values) : 
 
 ```/pin[0]/```,```/pin[1]/```, ```/pin[2]/```
 
