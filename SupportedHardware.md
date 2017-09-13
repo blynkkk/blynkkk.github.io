@@ -16,8 +16,7 @@ Blynk supports more than 400 boards already, including support for Arduino, Part
   - Blynk Board
   - ESP8266 (Generic, NodeMCU, Witty Cloud, Huzzah, WeMos D1, Seeed Wio Link, etc.)
   - ESP32 Dev Board
-  - Intel Edison
-  - Intel Galileo
+  - nRF51/nRF52 - based boards
   - Teensy 3.2/3.1
   - Blue Pill (STM32F103C)
   - BBC micro:bit
@@ -32,6 +31,8 @@ Blynk supports more than 400 boards already, including support for Arduino, Part
   - The AirBoard (BLE-Link, RN-XV)
   - Feather M0 WiFi
   - Feather 32u4 BLE
+  - Intel Edison
+  - Intel Galileo
   - Fishino Guppy, Uno, Mega
   - TinyCircuits TinyDuino (CC3000)
   - Microduino/mCookie Core, Core+, CoreUSB
@@ -78,16 +79,19 @@ Blynk supports more than 400 boards already, including support for Arduino, Part
   - VoCore (OpenWRT + [Espruino package](https://github.com/vshymanskyy/OpenWRT-Espruino-packages))
   - Espruino Pico
   - ...
-  
-- **Python** (MicroPython) (https://github.com/wipy/wipy/tree/master/lib/blynk)
-  - WiPy
+
+- **Python** (https://github.com/vshymanskyy/blynk-library-python)
+  - MicroPython
+  - Python 2
+  - Python 3
+
 - **Lua** (https://github.com/blezek/blynk-esp)
   - NodeMCU
 
 ## Arduino connection types
 
 - USB (Serial), connected to your laptop or desktop
- 
+
 - **Ethernet:**
   - Arduino Ethernet Shield (W5100)
   - Arduino Ethernet Shield 2 (W5500)
@@ -114,8 +118,8 @@ Blynk supports more than 400 boards already, including support for Arduino, Part
 - **GSM/3G:**
   - SIMCom SIM800 series (SIM800A, SIM800C, SIM800L, SIM800H, SIM808, SIM868)
   - SIMCom SIM900 series (SIM900A, SIM900D, SIM908, SIM968)
-  - M590
-  - A6/A7 *(alpha)*
+  - A6/A7
+  - M590 *(beta)*
   - GPRSbee
   - Microduino GSM
   - Adafruit FONA (Mini Cellular GSM Breakout)
