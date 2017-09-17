@@ -203,6 +203,30 @@ BLYNK_CONNECTED() {
 }
 ```
 
+### BLYNK_APP_CONNECTED()
+
+This function is called every time the Blynk app gets connected to the server.
+
+```cpp
+BLYNK_APP_CONNECTED() {
+// Your code here
+}
+```
+
+[Example](https://github.com/blynkkk/blynk-library/blob/master/examples/More/AppConnectedEvents/AppConnectedEvents.ino)
+
+### BLYNK_APP_DISCONNECTED()
+
+This function is called every time the Blynk app gets connected to the server.
+
+```cpp
+BLYNK_APP_DISCONNECTED() {
+// Your code here
+}
+```
+
+[Example](https://github.com/blynkkk/blynk-library/blob/master/examples/More/AppConnectedEvents/AppConnectedEvents.ino)
+
 ### Blynk.syncAll()
 
 Request server to send the most recent values for all widgets. In other words, all analog/digital pin states will be restored and every virtual pin will generate BLYNK_WRITE event.
