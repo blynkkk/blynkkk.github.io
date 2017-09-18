@@ -1,6 +1,6 @@
 #OTA
 
-Blynk also supports on the air updates for - ESP8266, NodeMCU and SparkFun Blynk boards. OTA supported only 
+Blynk also supports over the air updates for - ESP8266, NodeMCU and SparkFun Blynk boards. OTA supported only 
 for the private servers and for the paid customers for now.
 
 ## How does it work?
@@ -15,7 +15,7 @@ for the private servers and for the paid customers for now.
  2. User provides within HTTPS request admin credentials and firmware binary file to update hardware with;
  3. When hardware connects to server - server checks it firmware. In case, hardware firmware build date differs from 
  uploaded firmware, than server sends special command to hardware with url for the new firmware;
- 4. Hardware processes utl with below [handler](https://github.com/blynkkk/blynk-library/blob/master/examples/Export_Demo/Template_ESP8266/OTA.h#L28): 
+ 4. Hardware processes url with below [handler](https://github.com/blynkkk/blynk-library/blob/master/examples/Export_Demo/Template_ESP8266/OTA.h#L28): 
     ```
       BLYNK_WRITE(InternalPinOTA) {
         //url to get firmware from. This is HTTP url
