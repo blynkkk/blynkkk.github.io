@@ -31,6 +31,21 @@ curl -v -F file=@Template_ESP8266.ino.nodemcu.bin --insecure -u admin@blynk.cc:a
 In that case, OTA will be triggered right after device connected to the server. In case device is online firmware update 
 will be initiated only when device will be connected again.
 
+## Trigger OTA for the specific user
+
+In that case firmware update will be triggered for all devices of specified user. 
+
+```
+curl -v -F file=@Template_ESP8266.ino.nodemcu.bin --insecure -u admin@blynk.cc:admin https://localhost:9443/admin/ota/start?user=pupkin@gmail.com
+```
+
+## Trigger OTA for specific user and project
+
+In that case firmware update will be triggered for all devices of specified user within specified project. 
+
+```
+curl -v -F file=@Template_ESP8266.ino.nodemcu.bin --insecure -u admin@blynk.cc:admin https://localhost:9443/admin/ota/start?user=pupkin@gmail.com&project=123
+```
 
 ## Stop OTA
 
