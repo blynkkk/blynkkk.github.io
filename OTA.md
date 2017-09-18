@@ -24,6 +24,7 @@ for the private servers and for the paid customers for now.
         ...
       }
     ```
+    
   5. Hardware downloads new firmware and starts flashing firmware;  
 
 ## Trigger update for the specific hardware
