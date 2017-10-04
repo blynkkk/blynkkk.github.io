@@ -131,8 +131,10 @@ Blynk supports more than 400 boards already, including support for Arduino, Part
 - [LabVIEW](https://github.com/juncaofish/NI-LabVIEWInterfaceforBlynk)
 - [Node-RED](https://github.com/tzapu/node-red-contrib-blynk) (can be used as bridge to HTTP, TCP, UDP, MQTT, XMPP, IRC, OSC...)
 
-## Boards known to have problems
+## Problematic Boards
 
-These boards are not supported and seem not work out of the box:
+These boards are not supported and do not work out of the box:
 - [Arduino UNO WiFi](http://www.arduino.org/products/boards/arduino-uno-wifi)
 - [Arduino Tian](http://www.arduino.org/products/boards/arduino-tian)
+
+Here is a list of [**known library issues**](https://github.com/blynkkk/blynk-library/issues?q=is%3Aissue+is%3Aopen+label%3A%22for+reference%22)
