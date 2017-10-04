@@ -313,7 +313,7 @@ Next formatting options are supported:
 <img src="images/lcd_format_edit.png" style="width: 200px; height:360px"/>
 
 ### SuperChart
-SuperChart is used to vizualise live and historical data. You can use it for sensor data, for binary event logging and more.
+SuperChart is used to visualise live and historical data. You can use it for sensor data, for binary event logging and more.
 
 To use SuperChart widget you would need to push the data from the hardware with the desired interval by using timers.  
 [Here is](https://examples.blynk.cc/?board=ESP8266&shield=ESP8266%20WiFi&example=GettingStarted%2FPushData) a basic example for data pushing.
