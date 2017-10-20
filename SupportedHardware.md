@@ -69,6 +69,7 @@ Blynk supports more than 400 boards already, including support for Arduino, Part
   - Raspberry Pi (Banana Pi, Orange Pi, ...)
   - BeagleBone Black
   - Onion Omega
+  - Onion Omega 2
   - Intel Galileo
   - Intel Edison
   - Intel Joule
