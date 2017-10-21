@@ -1,7 +1,8 @@
 
 ### Device Selector
 
-Device selector is a powerful widget which allows you to update widgets based on one active device. This widget is particlularly helpful when you have a fleet of devices with similar functionality.
+Device selector is a powerful widget which allows you to update widgets based on one active device. 
+This widget is particularly helpful when you have a fleet of devices with similar functionality.
 
 Imagine you have 4 devices and every device has a Temperature & Humidity sensor connected to it. To display the data for all 4 devices you would need to add 8 widgets.
 
