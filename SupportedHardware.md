@@ -11,12 +11,13 @@ Blynk supports more than 400 boards already, including support for Arduino, Part
   - Arduino MKR1000
   - Arduino Zero
   - Arduino Yún (onboard WiFi and Ethernet, via Bridge)
+  - Arduino.org UNO WiFi
   
 - **Arduino-like**
   - Blynk Board
   - ESP8266 (Generic, NodeMCU, Witty Cloud, Huzzah, WeMos D1, Seeed Wio Link, etc.)
   - ESP32 Dev Board
-  - nRF51/nRF52 - based boards
+  - Nordic nRF51/nRF52 - based boards
   - Teensy 3.2/3.1
   - Blue Pill (STM32F103C)
   - BBC micro:bit
@@ -103,6 +104,7 @@ Blynk supports more than 400 boards already, including support for Arduino, Part
   - ESP8266 as WiFi modem (running original firmware)
   - Arduino WiFi 101 Shield
   - Arduino WiFi Shield
+  - WIZnet WizFi310
   - Adafruit CC3000 WiFi Breakout / Shield
   - RN-XV WiFly
  
@@ -135,7 +137,6 @@ Blynk supports more than 400 boards already, including support for Arduino, Part
 ## Problematic Boards
 
 These boards are not supported and do not work out of the box:
-- [Arduino UNO WiFi](http://www.arduino.org/products/boards/arduino-uno-wifi)
 - [Arduino Tian](http://www.arduino.org/products/boards/arduino-tian)
 
 Here is a list of [**known library issues**](https://github.com/blynkkk/blynk-library/issues?q=is%3Aissue+is%3Aopen+label%3A%22for+reference%22)
