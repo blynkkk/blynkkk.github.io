@@ -1138,7 +1138,7 @@ No pin required for RTC widget.
 
 ### BLE
 
-Widget for enabling Bluetooth Low Energy support. At the moment BLE widget supported only for Android and requires 
+Widget for enabling Bluetooth Low Energy support. At the moment BLE widget requires 
 internet connection in order to login and load your profile. However this will be fixed soon. Also some Blynk 
 widget not allowed with BLE widget.
 
