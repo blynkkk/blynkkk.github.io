@@ -284,6 +284,12 @@ Blynk.setProperty(V0, "isOnPlay", "true");
 Blynk.setProperty(V0, "labels", "label 1", "label 2", "label 3");
 ``` 
 
+**Video Streaming**
+
+```cpp
+Blynk.setProperty(V1, "url", "http://my_new_video_url");
+```
+
 You can also change widget properties via [HTTP API](http://docs.blynkapi.apiary.io/#).
 
 ## Limitations and Recommendations

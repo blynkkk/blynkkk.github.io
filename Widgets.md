@@ -540,6 +540,12 @@ HTTP/S live streaming. For more info please follow [official Android documentati
 At the moment Blynk doesn't provide streaming servers. So you can either stream directly from camera, use 3-d party 
 services or host streaming server on own server (on raspberry for example).
 
+You can also change video url from hardware with : 
+
+```cpp
+Blynk.setProperty(V1, "url", "http://my_new_video_url");
+```
+
 ### Level Display
 
 Displays incoming data from your sensors or Virtual Pins. Level Display is very similar to progress bar, it is very nice 

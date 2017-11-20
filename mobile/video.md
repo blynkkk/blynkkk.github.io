@@ -8,3 +8,9 @@ At the moment Blynk doesn't provide streaming servers. So you can either stream 
 services or host streaming server on own server (on raspberry for example).
 
 You can also stop/start video stream with click on widget.
+
+You can also change video url from hardware with : 
+
+```cpp
+Blynk.setProperty(V1, "url", "http://my_new_video_url");
+```
