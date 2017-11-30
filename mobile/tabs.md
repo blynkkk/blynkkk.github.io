@@ -9,4 +9,4 @@ Only the last tab can be removed: to remove it swipe left on its name in Setting
 The maximum number of tabs on iOS is 4
 The maximum number of tabs on Android is 10
 
-Stay tunes for an upcoming Tabs widget redesign!
+Stay tuned for an upcoming Tabs widget redesign!
