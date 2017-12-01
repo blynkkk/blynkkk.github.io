@@ -35,3 +35,6 @@
 
 - Does Blynk server store sensor data when app goes offline?
 > Yes, every command that hardware sends to server is stored. You could use [History Graph](http://docs.blynk.cc/#widgets-displays-history-graph) widget in order to view it.
+
+- Why app requires all this permissions?
+> http://help.blynk.cc/faq/blynk-android-permissions-explained
