@@ -42,3 +42,8 @@ For example, when you move joystick widget, commands are continuously streamed t
 you can send dozens of commands. There are use-cases where it's needed, however creating such a load may cause hardware reset. 
 We recommend enabling **Send On Release** feature for most of the cases, unless you really need instant feedback.
 This option is enabled by default.
+
+### Write interval
+Similar to above option. However, allows you to stream values to your hardware within certain interval. For example, 
+setting write interval to 100 ms - means, that while you move slider only 1 value will be send to hardware within 100 ms.
+This option also used to decrease data traffic on your hardware.

@@ -39,4 +39,9 @@ BLYNK_WRITE(V1) {
 }
 ```
 
+### Write interval
+Similar to above option. However, allows you to stream values to your hardware within certain interval. For example, 
+setting write interval to 100 ms - means, that while you move slider only 1 value will be send to hardware within 100 ms.
+This option also used to decrease data traffic on your hardware.
+
 **Sketch:** [Basic Sketch](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino)
