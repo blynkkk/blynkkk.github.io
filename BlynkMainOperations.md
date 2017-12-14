@@ -224,6 +224,22 @@ actually happened.
 You can also change ```HEARTBEAT``` interval from hardware side via ```Blynk.config```. In that case ```newHeartbeatInterval * 2.3``` formula will be applied. So in case you you decided to set ```HEARTBEAT``` interval to 
 5 seconds. You'll get notification regarding connection with 11 sec delay in worst case.
 
+## Project Settings
+
+Every project has it's own settings:
+
+<img src="images/project_settings.png" style="width: 200px; height:360px"/>
+
+- **Theme** - switch between the Light and Black Blynk Theme (Business accounts have wider choice);
+- **Keep screen always on** - allows you to use the Blynk app without going to the sleep mode (usually all mobile devices do that);
+- **Send app connected command** - with this option enabled the server will send "App Connected" and "App Disconnected" commands 
+to your hardware when your Blynk app goes online/offline. [Usage example](https://github.com/blynkkk/blynk-library/blob/master/examples/More/AppConnectedEvents/AppConnectedEvents.ino);
+- **Do not show offline notifications** - right now, for debugging purposes, every time your hardware goes offline - the Blynk 
+Server will notify you with popup in the app about that. However, when debugging is not needed or the Blynk app is used only 
+via HTTP/S this notifications are meaningless. So this switch allows you to turn off this popups. Also this switch turns off 
+the Push notification "Notify when offline" option.
+
+
 ## Change Widget properties
 Changing some of the widget properties from hardware side is also supported.  
 For example, you can change the color of LED widget based on a condition:
