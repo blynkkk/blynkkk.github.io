@@ -20,7 +20,7 @@
 > Yes, surely! [Here is instruction](http://docs.blynk.cc/#blynk-server-how-to-run-local-blynk-server-launch-blynk-server-on-raspberry-pi).
 
 - Does Blynk app work over Bluetooth?
-> No. But it's planned for next releases.
+> Yes. It is in beta right now.
 
 - Does Blynk support Ethernet / Wi-FI / UART?
 > Yes, all of them. See full list of [supported hardware](http://docs.blynk.cc/#supported-hardware) and shields.
@@ -29,12 +29,17 @@
 > Yes, you can use Blynk just with a USB cable. There is a step-by-step [instruction](http://docs.blynk.cc/#other-hardware-connect-over-usb) on how to do it.
 
 - Can Blynk handle multiple Arduinos?
-> Yes. There 2 ways right now :
+> Yes. There 3 ways right now :
+> - add multiple devices to your project.
 > - you may use same [Auth Token](http://docs.blynk.cc/#getting-started-getting-started-with-application-auth-token) for different hardware. In that case you can control few hardwares from 1 dashboard.
 > - you can do it using [Bridge functionality](http://docs.blynk.cc/#widgets-other-bridge) which allows you to send messages from one hardware to another.
 
 - Does Blynk server store sensor data when app goes offline?
 > Yes, every command that hardware sends to server is stored. You could use [History Graph](http://docs.blynk.cc/#widgets-displays-history-graph) widget in order to view it.
+
+- How many Virtual Pins I can use?
+> It depends mostly on your hardware. Low-end hardware may use up to 32 Virtual Pins. More powerful (like ESP8266) can 
+> use up to 128 but it requires also BLYNK_USE_128_VPINS property in your sketch. [Example](https://github.com/blynkkk/blynk-library/blob/master/src/Blynk/BlynkConfig.h#L64).
 
 - Why app requires all this permissions?
 > http://help.blynk.cc/faq/blynk-android-permissions-explained
