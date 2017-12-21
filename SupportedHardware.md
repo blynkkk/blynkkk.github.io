@@ -16,10 +16,11 @@ Blynk supports more than 400 boards already, including support for Arduino, Part
 - **Arduino-like**
   - Blynk Board
   - ESP8266 (Generic, NodeMCU, Witty Cloud, Huzzah, WeMos D1, Seeed Wio Link, etc.)
-  - ESP32 Dev Board
+  - ESP32 (WiFi, BLE)
   - Nordic nRF51/nRF52 - based boards
   - Teensy 3.2/3.1
   - Blue Pill (STM32F103C)
+  - Realtek RTL8710 / Ameba via [RTLduino](https://github.com/pvvx/RtlDuino)
   - BBC micro:bit
   - LightBlue Bean *, soon*
   - DFRobot Bluno
