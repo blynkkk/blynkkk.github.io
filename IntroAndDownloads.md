@@ -1,5 +1,5 @@
 #Intro
-This guide will help you to understand how to get started using Blynk and give a comprehensive overview of all the features.
+This guide will help you understand how to get started using Blynk and give a comprehensive overview of all the features.
  
 If you want to jump straight into playing with Blynk, check out Getting Started.
 <br>
@@ -30,10 +30,11 @@ everything happens in a blynk of an eye.
 ##Features
 * Similar API & UI for all supported hardware & devices
 * Connection to the cloud using:
-  * Ethernet
   * WiFi
   * Bluetooth and BLE
+  * Ethernet
   * USB (Serial)
+  * GSM
   * ...
 * Set of easy-to-use Widgets
 * Direct pin manipulation with no code writing
