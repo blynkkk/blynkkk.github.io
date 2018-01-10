@@ -6,7 +6,7 @@ SuperChart is used to visualise live and historical data. You can use it for sen
 To use SuperChart widget you would need to push the data from the hardware with the desired interval by using timers.  
 [Here is](https://examples.blynk.cc/?board=ESP8266&shield=ESP8266%20WiFi&example=GettingStarted%2FPushData) a basic example for data pushing.
 
-####Interactions:
+#### Interactions:
 - **Switch between time ranges and Live mode**
 </br>Tap time ranges at the bottom of the widget to change time ranges
 
@@ -31,7 +31,7 @@ Menu button will open additional functions:
 	- Export to CSV
 	- Erase Data on the server 
 
-####SuperChart Settings:
+#### SuperChart Settings:
 - **Chart Title**
 
 - **Title Font Size**
@@ -43,7 +43,7 @@ Choose chart title alignment. This setting also affects Title and Legend positio
 - **Show/Hide Title**
 - **Show/Hide Legend**
 
-####Datastream Settings
+#### Datastream Settings
 
 Widget supports up to 4 Datastreams. 
 Press Datastream Settings Icon to open Datastream Settings.
