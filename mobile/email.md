@@ -15,6 +15,9 @@ In that case you don't need to specify receiver on hardware :
  Blynk.email("Subject", "Your message goes here");
  ```
 
+You can send either ```text/html``` or ```text/plain``` (some clients don't support ```text/html```) email.
+You can change this content type of email in widget settings.
+
 Limitations :
 
 - Maximum allowed email + subject + message length is 120 symbols. However you can increase this limit if necessary 
