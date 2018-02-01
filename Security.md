@@ -4,7 +4,7 @@ Blynk server has 3 ports open for different security levels.
 
 * **8441** - SSL/TLS connection for hardware
 * **8442** - plain TCP connection for hardware (no security)
-* **8443** - mutual authentication (mutual SSL) connection for Mobile Apps
+* **443** - mutual authentication (mutual SSL) connection for Mobile Apps
 
 Hardware may select to connect to 8441 or 8442, depending on it's capabilities.
 
