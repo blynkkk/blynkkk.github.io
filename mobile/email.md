@@ -16,7 +16,7 @@ In that case you don't need to specify receiver on hardware :
  ```
 
 You can send either ```text/html``` or ```text/plain``` (some clients don't support ```text/html```) email.
-You can change this content type of email in widget settings.
+You can change this content type of email in the widget settings.
 
 Limitations :
 
