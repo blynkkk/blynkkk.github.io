@@ -355,7 +355,7 @@ Menu button will open additional functions:
 
 <img src="images/chart/menu_charts.png" style="width: 300px; height:280px"/>
 
-#### SuperChart Settings:
+#### SuperChart (History Graph) Settings:
 - **Chart Title**
 
 - **Title Font Size**
@@ -477,31 +477,19 @@ For example, you can set to `TRUE` to "Equipment ON" label, `FALSE` to "Equipmen
 
 <img src="images/chart/binarylabel_charts.png" style="width: 300px; height:280px"/>
 
+Superchart supports currently 2 types of granularity:
 
-### Graph
-Easily plot incoming data from your project in various designs.
+- Minute granularity - ```1h```, ```6h```, ```1d```;
+- Hour granularity - ```1w```, ```1m```, ```3m```;
 
-<img src="images/graph.png" style="width: 77px; height:80px"/>
-
-<img src="images/graph_edit.png" style="width: 200px; height:360px"/>
-
-**Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino)
-
-### History Graph
-Allows you to see any data your hardware had sent to server previously. History graph has 3 granularities :
-
-- Minute granularity - ```1h```, ```6h```;
-- Hour granularity - ```1d```, ```1w```;
-- Day granularity - ```1m```, ```3m```;
-
-This means that minimum graph update interval is 1 minute for ```1h``` and ```6h``` periods. 
-1 hour for ```1d``` and ```1w``` periods. 1 day for ```1m``` and ```3m``` periods.
+This means that minimum chart update interval is 1 minute for ```1h```, ```6h```, ```1d``` periods. 
+1 hour for ```1w```, ```1m``` and ```3m``` periods.
 As Blynk Cloud is free to use we have a limit on how many data you can store. At the moment Blynk Cloud accepts 
 1 message per minute per pin. In case you send your data more frequently your values will be averaged. For example, 
-in case you send value ```10``` at 12:12:05 and than again ```12``` at  12:12:45 as result in history graph you'll see
+in case you send value ```10``` at 12:12:05 and than again ```12``` at  12:12:45 as result in chart you'll see
 value ```11``` for 12:12.
 
-In order to see data in history graph you need to use either widgets with "Frequency reading" interval (in 
+In order to see data in chart you need to use either widgets with "Frequency reading" interval (in 
 that case your app should be open and running) or you can use ```Blynk.virtualWrite``` on hardware side. Every 
 ```Blynk.virtualWrite``` command is stored on server automatically. In that case you don't need application to be up and running.
 
@@ -510,10 +498,6 @@ You can also easily clear data for selected pins or get all data for pins via em
 <img src="images/erase_history_graph.png" style="width: 525px; height:263px"/>
 
 You can also get pin data via [HTTP API](http://docs.blynkapi.apiary.io/#reference/0/pin-history-data/get-all-history-data-for-specific-pin).
-
-<img src="images/history_graph.png" style="width: 77px; height:80px"/>
-
-<img src="images/history_graph_edit.png" style="width: 200px; height:360px"/>
 
 **Sketch:** [PushData](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino)
 
