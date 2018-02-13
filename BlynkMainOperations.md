@@ -276,6 +276,9 @@ where RR (red), GG (green) and BB (blue) are hexadecimal values between 00 and F
 #define BLYNK_DARK_BLUE "#5F7CD8"
 ``` 
 
+```min```, ```max``` - minimum and maximum values for the widget (for example range for the Slider).
+This numbers may be float.
+
 On firmware side, widget objects also support ```setLabel()``` and ```setColor()``` functions.
 
 Widget specific properties: 
