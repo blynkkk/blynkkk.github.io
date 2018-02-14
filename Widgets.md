@@ -493,14 +493,6 @@ In order to see data in chart you need to use either widgets with "Frequency rea
 that case your app should be open and running) or you can use ```Blynk.virtualWrite``` on hardware side. Every 
 ```Blynk.virtualWrite``` command is stored on server automatically. In that case you don't need application to be up and running.
 
-You can also easily clear data for selected pins or get all data for pins via email - just swipe left history graph and click "Erase data".
-
-<img src="images/erase_history_graph.png" style="width: 525px; height:263px"/>
-
-You can also get pin data via [HTTP API](http://docs.blynkapi.apiary.io/#reference/0/pin-history-data/get-all-history-data-for-specific-pin).
-
-**Sketch:** [PushData](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino)
-
 ### Terminal
 Displays data from your hardware. Allows to send any string to your hardware. Terminal always stores last 25 messages
 your hardware had send to Blynk Cloud. This limit may be increased on Local Server with ```terminal.strings.pool.size``` 
