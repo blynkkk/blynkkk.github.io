@@ -8,7 +8,7 @@ If you experience connection problems, follow these steps:
    Use high power USB cables and USB ports.
 2. Check your wiring using the examples (TCP/HTTP Client or similar) **provided with your shield and hardware**.
    * Once you understand how to manage connection, it's much easier to use Blynk.
-3. Try running command ```telnet blynk-cloud.com 8442``` from your PC, connected to the same network as your hardware.
+3. Try running command ```telnet blynk-cloud.com 80``` from your PC, connected to the same network as your hardware.
    You should see something like: ```Connected to blynk-cloud.com.```.
 4. Try running Blynk default examples for your platform **without modifications** to see if it is working.
    * Double-check that you have selected **the right example** for your connection type and hardware model.
@@ -25,7 +25,8 @@ If you encounter WiFi connection problems, please check these pitfalls:
 * You're trying to connect to "WPA & WPA2 Enterprise" network (often used in offices), and your shield does not support this security method
 * Your WiFi network has a login page that requests entering an access token (often used in restaurants)
 * Your WiFi network security disallows connecting alien devices completely (MAC filtering, etc)
-* There is a firewall running. Default port for hardware connections is 8442. Make sure it's open.
+* There is a firewall running. Default port for hardware connections is 80 (8080 on the Local Server).
+Make sure it's open.
 
 ## Delay
 

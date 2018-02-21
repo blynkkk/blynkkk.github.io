@@ -2,15 +2,17 @@
 
 Blynk server has 3 ports open for different security levels.
 
-* **8441** - SSL/TLS connection for hardware
-* **8442** - plain TCP connection for hardware (no security)
-* **443** - mutual authentication (mutual SSL) connection for Mobile Apps
+* **8441** - SSL/TLS connection for the hardware
+* **80** - plain TCP connection for the hardware (no security)
+* **443** - SSL/TLS connection for the Mobile Apps
+* **8080** - plain TCP connection for hardware on the Local Server (no security)
+* **9443** - SSL/TLS connection for the Mobile Apps on the Local Server
 
-Hardware may select to connect to 8441 or 8442, depending on it's capabilities.
+Hardware may select to connect to 8441 or 80, depending on it's capabilities.
 
 #### Use SSL gateway
 
-Most platforms are not capable to handle SSL, so they connect to 8442.
+Most platforms are not capable to handle SSL, so they connect to 80.
 However, our [gateway script](https://github.com/blynkkk/blynk-library/blob/master/scripts/blynk-ser.sh) can be used to add SSL security layer to communication.
 
 ```bash
