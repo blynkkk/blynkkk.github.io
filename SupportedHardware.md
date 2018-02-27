@@ -45,6 +45,7 @@ Blynk supports more than 400 boards already, including support for Arduino, Part
   - LinkIt ONE (WiFi only)
 - **Energia**
   - Texas Instruments
+    - CC3220SF-LaunchXL
     - CC3200-LaunchXL
     - Tiva C Connected LaunchPad
     - Stellaris LM4F120 LaunchPad
