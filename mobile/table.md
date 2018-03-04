@@ -15,7 +15,7 @@ You can update a row in the table with :
 Blynk.virtualWrite(V1, "update", id, "UpdatedName", "UpdatedValue");
 ```
 
-To highlight any item in a table by using it's index in a table starting from 0 : 
+To highlight any item in a table by using it's id in a table : 
 
 ```
 Blynk.virtualWrite(V1, "pick", 0);
