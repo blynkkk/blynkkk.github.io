@@ -69,8 +69,12 @@ When MERGE mode is selected, you are sending just 1 message, consisting of array
 	}
 ```
 
-### Send On Release 
+### Fraction
+Defines how many digits after the point you would like to see when moving slider.
+When you have "No Fraction" that means slider will send only integer values without decimal point.
+"1 digit" means that values will look like 1.1, 1.2, ..., 2.0, etc.
 
+### Send On Release 
 This option is available for most controller widgets and allows you to decrease data traffic on your hardware. 
 For example, when you move joystick widget, commands are continuously streamed to the hardware, during a single joystick move 
 you can send dozens of commands. There are use-cases where it's needed, however creating such a load may cause hardware reset. 

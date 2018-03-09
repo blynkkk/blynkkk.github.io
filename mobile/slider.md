@@ -21,6 +21,11 @@ or change color :
 //#D3435C - Blynk RED
 Blynk.setProperty(V1, "color", "#D3435C");
 ```
+
+### Fraction
+Defines how many digits after the point you would like to see when moving slider.
+When you have "No Fraction" that means slider will send only integer values without decimal point.
+"1 digit" means that values will look like 1.1, 1.2, ..., 2.0, etc.
  
 ### Send On Release
 **Send On Release** is available for most controller widgets and allows you to decrease data traffic on your hardware. 

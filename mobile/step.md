@@ -20,6 +20,12 @@ You can change step labels from hardware with :
 Blynk.setProperty(V1, "label", "My Stepper");
 ```
 
+You can change the step of the step widget from hardware with : 
+
+```cpp
+Blynk.setProperty(V1, "step", 10);
+```
+
 or change color : 
 
 ```cpp

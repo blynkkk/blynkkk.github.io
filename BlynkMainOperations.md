@@ -309,6 +309,12 @@ Blynk.setProperty(V0, "labels", "label 1", "label 2", "label 3");
 Blynk.setProperty(V1, "url", "http://my_new_video_url");
 ```
 
+**Step**
+
+```cpp
+Blynk.setProperty(V1, "step", 10);
+```
+
 You can also change widget properties via [HTTP API](http://docs.blynkapi.apiary.io/#).
 
 ## Limitations and Recommendations
