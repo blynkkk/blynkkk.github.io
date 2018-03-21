@@ -38,9 +38,6 @@ With data mapping enabled, incoming value 1023 will be mapped to 100.
 ### SPLIT/MERGE
 Some of the Widgets can send more than one value. And with this switch you can control how to send them.
 
-<img src="images/split_merge.gif" style="width: 300px; height:280px"/>
-
-
 - **SPLIT**:
 Each of the parameters is sent directly to the Pin on your hardware (e.g D7). You don't need to write any code.
 
