@@ -17,7 +17,7 @@ Some of the Widgets (e.g. Bridge Widget) are used to enable some functionality a
 ### Pin Selector
 This is one of the main parameters you need to set. It defines which pin to control or to read from. 
 
-<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/pin_selection.png" style="width: 200px; height:360px"/>
+<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/pin_selection.png" style="width: 200px; height:360px"/>
 
 **Digital Pins** - represent physical Digital IO pins on your hardware. PWM-enabled pins are marked with the ```~``` symbol
 
@@ -30,7 +30,7 @@ Read more about Virtual Pins [here](http://docs.blynk.cc/#blynk-main-operations-
 
 In case you want to map incoming values to specific range you may use mapping button : 
 
-<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/display_edit_mapping.png" style="width: 200px; height:360px"/>
+<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/display_edit_mapping.png" style="width: 200px; height:360px"/>
 
 Let's say your sensor sends values from 0 to 1023. But you want to display values in a range 0 to 100 in the application. 
 With data mapping enabled, incoming value 1023 will be mapped to 100.
@@ -99,18 +99,18 @@ Display widget with min 0 and max 100 value. When value 10 comes to widget it wi
 ### Button
 Works in push or switch modes. Allows to send 0/1 (LOW/HIGH) values. Button sends 1 (HIGH) on press and sends 0 (LOW) on release.
 
-<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/button.png" style="width: 77px; height:80px"/>
+<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/button.png" style="width: 77px; height:80px"/>
 
-<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/button_edit.png" style="width: 200px; height:360px"/>
+<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/button_edit.png" style="width: 200px; height:360px"/>
 
 **Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino)
 
 ### Slider
 Similar to potentiometer. Allows to send values between MIN and MAX.
 
-<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/slider.png" style="width: 77px; height:80px"/>
+<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/slider.png" style="width: 77px; height:80px"/>
 
-<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/slider_edit.png" style="width: 200px; height:360px"/>
+<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/slider_edit.png" style="width: 200px; height:360px"/>
 
 **Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino)
 
@@ -122,9 +122,9 @@ With Eventor Time Event you can assign multiple timers on same pin, send any str
 It is recommended to use Eventor over Timer widget.
 However Timer widget is still suitable for simple timer events.
 
-<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/timer.png" style="width: 77px; height:80px"/>
+<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/timer.png" style="width: 77px; height:80px"/>
 
-<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/timer_edit.png" style="width: 200px; height:360px"/>
+<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/timer_edit.png" style="width: 200px; height:360px"/>
 
 **NOTE:** The timer widget rely on the server time and not your phone time. Sometimes the phone time may not match the server time. 
 
@@ -143,9 +143,9 @@ When it's ON, Joystck will automatically rotate if you use your smartphone in la
 - 
 When it's OFF, Joystick handle will not return back to center position. It will stay where you left it. 
 
-<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/joystick.png" style="width: 77px; height:80px"/>
+<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/joystick.png" style="width: 77px; height:80px"/>
 
-<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/joystick_edit.png" style="width: 200px; height:360px"/>
+<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/joystick_edit.png" style="width: 200px; height:360px"/>
 
 **Sketch:** [JoystickTwoAxis](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/JoystickTwoAxis/JoystickTwoAxis.ino)
 
@@ -202,9 +202,9 @@ achieve this precision with slider widget.
 ### Value Display
 Displays incoming data from your sensors or Virtual Pins.
 
-<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/display.png" style="width: 77px; height:80px"/> 
+<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/display.png" style="width: 77px; height:80px"/> 
 
-<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/display_edit.png" style="width: 200px; height:360px"/>
+<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/display_edit.png" style="width: 200px; height:360px"/>
 
 **Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino)
 
@@ -212,9 +212,9 @@ Displays incoming data from your sensors or Virtual Pins.
 Displays incoming data from your sensors or Virtual Pins. It is a better version of 'Value Display' as it has a formatting 
 string, so you could format incoming value to any string you want.
 
-<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/display.png" style="width: 77px; height:80px"/> 
+<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/display.png" style="width: 77px; height:80px"/> 
 
-<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/labeled_value_edit.png" style="width: 200px; height:360px"/>
+<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/labeled_value_edit.png" style="width: 200px; height:360px"/>
 
 **Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino)
 
@@ -231,7 +231,7 @@ Next formatting options are supported:
 
 ```/pin.##/``` - displays the value with two decimal places (12.68)
 
-<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/labeled_value_format_edit.png" style="width: 200px; height:360px"/>
+<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/labeled_value_format_edit.png" style="width: 200px; height:360px"/>
 
 ### LED
 A simple LED for indication. You need to send 0 in order to turn LED off. And 255 in order to turn LED on. Or just use
@@ -250,18 +250,18 @@ WidgetLED led2(V2);
 led2.setValue(127); //set brightness of LED to 50%.
 ```
 
-<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/led.png" style="width: 77px; height:80px"/>
+<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/led.png" style="width: 77px; height:80px"/>
 
-<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/led_edit.png" style="width: 200px; height:360px"/>
+<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/led_edit.png" style="width: 200px; height:360px"/>
 
 **Sketch:** [LED](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/LED/LED_Blink/LED_Blink.ino)
 
 ### Gauge
 A great visual way to display incoming numeric values.
 
-<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/gauge.png" style="width: 77px; height:80px"/>
+<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/gauge.png" style="width: 77px; height:80px"/>
 
-<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/gauge_edit.png" style="width: 200px; height:360px"/>
+<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/gauge_edit.png" style="width: 200px; height:360px"/>
 
 **Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino)
 
@@ -294,9 +294,9 @@ Where x is a symbol position (0-15), y is a line id (0 or 1),
 lcd.clear();
 ```
 
-<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/lcd.png" style="width: 77px; height:80px"/>
+<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/lcd.png" style="width: 77px; height:80px"/>
 
-<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/lcd_edit.png" style="width: 200px; height:360px"/>
+<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/lcd_edit.png" style="width: 200px; height:360px"/>
 
 **Sketch:** [LCD Advanced Mode](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/LCD/LCD_AdvancedMode/LCD_AdvancedMode.ino)
 **Sketch:** [LCD Simple Mode Pushing](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/LCD/LCD_SimpleModePushing/LCD_SimpleModePushing.ino)
@@ -315,7 +315,7 @@ Next formatting options are supported:
 
 ```/pin.##/``` - displays the value with two decimal places (12.68)
 
-<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/lcd_format_edit.png" style="width: 200px; height:360px"/>
+<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/lcd_format_edit.png" style="width: 200px; height:360px"/>
 
 ### SuperChart
 SuperChart is used to visualise live and historical data. You can use it for sensor data, for binary event logging and more.
@@ -332,18 +332,18 @@ To use SuperChart widget you would need to push the data from the hardware with 
 
 - **Tap'n'hold to view timestamp and corresponding values**
 
-<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/chart/tapnhold_charts.png" style="width: 300px; height:280px"/>
+<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/chart/tapnhold_charts.png" style="width: 300px; height:280px"/>
 
 - **Quick swipe from left to right to reveal previous data** 
 
-<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/chart/swipe_charts.png" style="width: 300px; height:280px"/>
+<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/chart/swipe_charts.png" style="width: 300px; height:280px"/>
 
 Then you can then scroll data back and forward within the given time range.
 
 - **Full Screen Mode**</br>
 Press this button to open Full Screen view in landscape orientation:
 
-<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/chart/fullscreen_charts.png" style="width: 300px; height:280px"/>
+<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/chart/fullscreen_charts.png" style="width: 300px; height:280px"/>
 
 Simply rotate the phone back to portrait mode. Chart should rotate automagically. 
 In full screen view you will see X (time) and multiple Y scales. 
@@ -354,7 +354,7 @@ Menu button will open additional functions:
 	- Export to CSV
 	- Erase Data on the server 
 
-<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/chart/menu_charts.png" style="width: 300px; height:280px"/>
+<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/chart/menu_charts.png" style="width: 300px; height:280px"/>
 
 #### SuperChart (History Graph) Settings:
 - **Chart Title**
@@ -373,7 +373,7 @@ Choose chart title alignment. This setting also affects Title and Legend positio
 Widget supports up to 4 Datastreams. 
 Press Datastream Settings Icon to open Datastream Settings.
 
-<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/chart/datastream_charts.png"/>
+<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/chart/datastream_charts.png"/>
 
 
 **Design:**
@@ -427,7 +427,7 @@ When this mode is selected, Y scale will be set to the values you choose.
 For example, if your hardware sends data with values varying from -100 to 100, you can set the chart 
 to this values and data will be rendered correctly.
 
-<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/chart/yScale_manual_charts.png" style="width: 300px; height:212"/>
+<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/chart/yScale_manual_charts.png" style="width: 300px; height:212"/>
 
 You may also want to visualize the data within some specific range. 
 Let's say incoming data has values in the range of 0-55, but you would like to see only values in the range 30-50. 
@@ -437,30 +437,30 @@ You can set it up and if values are out of Y scale you configured, chart will be
 This option allows you to auto-scale incoming data on the widget and position it the way you want. 
 In this mode, you set up the percentage of widget height on the screen, from 0% to 100%. 
 
-<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/chart/yheight2_charts.png" style="width: 300px; height:212px"/>
+<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/chart/yheight2_charts.png" style="width: 300px; height:212px"/>
 
 If you set 0-100%, in fact it's a full auto-scale. No matter in which range the data is coming,  
 it will be always scaled to the whole height of the widget.
 
 If you set it to 0-25%, then this chart will only be rendered on 1/4 of the widget height:
-<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/chart/yheight2_manual_charts.png" style="width: 300px; height:212px"/>
+<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/chart/yheight2_manual_charts.png" style="width: 300px; height:212px"/>
 
 This setting is very valuable for **Binary Chart** or for visualizing a few datastreams on the same chart in a different way.
 
-<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/chart/binary_charts.png" style="width: 300px; height:280px"/>
+<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/chart/binary_charts.png" style="width: 300px; height:280px"/>
 
 **Suffix:** <br>Here you can specify a suffix that will be shown during the Tap'n'hold
 
-<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/chart/suffix_charts.png" style="width: 300px; height:280px"/>
+<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/chart/suffix_charts.png" style="width: 300px; height:280px"/>
 
 **Connect Missing Data Points**<br>
 If this switch is ON, then SuperChart will connect all the dots even if there was no data
 
-<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/chart/datapoints1_charts.png" style="width: 300px; height:280px"/>
+<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/chart/datapoints1_charts.png" style="width: 300px; height:280px"/>
 
 If it's set to OFF, then you will see gaps in case there was no data.
 
-<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/chart/datapoints2_charts.png" style="width: 300px; height:280px"/>
+<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/chart/datapoints2_charts.png" style="width: 300px; height:280px"/>
 
 **Binary Chart Settings**<br>
 This type of chart is useful to plot binary data, for example when unit was ON or OFF, or when motion was detected or when certain threshold was reached.
@@ -476,7 +476,7 @@ Here you can specify how `TRUE/FALSE` should be shown in Tap'n'Hold mode.
 
 For example, you can set to `TRUE` to "Equipment ON" label, `FALSE` to "Equipment OFF".
 
-<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/chart/binarylabel_charts.png" style="width: 300px; height:280px"/>
+<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/chart/binarylabel_charts.png" style="width: 300px; height:280px"/>
 
 Superchart supports currently 2 types of granularity:
 
@@ -508,9 +508,9 @@ terminal.write();   // Write a raw data buffer
 terminal.flush();   // Ensure that data was sent out of device
 ```
 
-<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/terminal.png" style="width: 77px; height:80px"/>
+<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/terminal.png" style="width: 77px; height:80px"/>
 
-<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/terminal_edit.png" style="width: 200px; height:360px"/>
+<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/terminal_edit.png" style="width: 200px; height:360px"/>
 
 **Sketch:** [Terminal](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Terminal/Terminal.ino)
 
@@ -549,7 +549,7 @@ Twitter widget connects your Twitter account to Blynk and allows you to send Twe
 
 <img src="http://static1.squarespace.com/static/54765ba7e4b0d055ee0b47a6/54e92d39e4b0c31341b33a9a/55813d09e4b0ba8aa77ab230/1434533129525/TwitterON.png" style="width: 77px; height:80px"/>
 
-<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/twitter_edit.png" style="width: 200px; height:360px"/>
+<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/twitter_edit.png" style="width: 200px; height:360px"/>
 
 Example code:
 ```cpp
@@ -579,9 +579,9 @@ In that case you don't need to specify receiver on hardware :
  Blynk.email("Subject", "Your message goes here");
  ```
 
-<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/mail.png" style="width: 77px; height:80px"/>
+<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/mail.png" style="width: 77px; height:80px"/>
 
-<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/mail_edit.png" style="width: 200px; height:360px"/>
+<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/mail_edit.png" style="width: 200px; height:360px"/>
 
 Limitations :
 
@@ -610,9 +610,9 @@ See detailed explanation [here](https://developers.google.com/cloud-messaging/co
 
 **WARNING** : high priority contributes more to battery drain compared to normal priority messages.
 
-<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/push.png" style="width: 77px; height:80px"/>
+<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/push.png" style="width: 77px; height:80px"/>
 
-<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/push_edit.png" style="width: 200px; height:360px"/>
+<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/push_edit.png" style="width: 200px; height:360px"/>
 
 Example code:
 ```cpp
@@ -644,7 +644,7 @@ You can increase maximum message length by putting on the top of your sketch (be
 The only purpose of Tabs widget is to extend your project space. You can have up to 4 tabs. 
 Also you can drag widgets between tabs. Just drag widget on the label of required tab of tabs widget.
 
-<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/tabs_settings.png" style="width: 200px; height:360px"/>
+<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/tabs_settings.png" style="width: 200px; height:360px"/>
 
 
 ### Menu
@@ -653,7 +653,7 @@ sends index of element you selected and not label string. Sending index is start
 It works same way as usual ComboBox element. You can also set Menu items 
 [from hardware side](http://docs.blynk.cc/#blynk-main-operations-change-widget-properties).
 
-<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/menu_edit.png" style="width: 200px; height:360px"/>
+<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/menu_edit.png" style="width: 200px; height:360px"/>
 
 Example code:
 ```
@@ -1032,9 +1032,9 @@ Bridge can be used for Device-to-Device communication (no app. involved). You ca
 At the moment Bridge widget is not required on application side (it is mostly used for indication that we have such feature).  
 **You can use multiple bridges to control multiple devices.**
 
-<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/bridge.png" style="width: 77px; height:80px"/>
+<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/bridge.png" style="width: 77px; height:80px"/>
 
-<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/bridge_edit.png" style="width: 200px; height:360px"/>
+<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/bridge_edit.png" style="width: 200px; height:360px"/>
 
 Bridge widget takes a virtual pin, and turns it into a channel to control another device. It means you can control any virtual, digital or analog pins of the target device.
 Be careful not to use pins like ```A0, A1, A2 ...``` when communicating between different device types, as Arduino Core may refer to wrong pins in such cases.
@@ -1097,7 +1097,7 @@ Don't forget that ```virtualWrite``` commands should be wrapped in the timer and
 
 Now configure new **Event** in Eventor widget: 
 
-<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/eventor/eventor_for_temp_example.png" style="width: 200px; height:360px"/>
+<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/eventor/eventor_for_temp_example.png" style="width: 200px; height:360px"/>
 
 **NOTE** Don't forget to add notification widget.
 
@@ -1119,7 +1119,7 @@ In order to remove created **event** please use swipe. You can also swipe out la
 **NOTE** : Events are triggered only once when the condition is met. That's mean 
 [chaining of events](https://community.blynk.cc/t/eventor-behavior-bug-feature/20962) is not possible (however, could be enabled for commercials).
 
-<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/eventor/eventor_edit.png" style="width: 200px; height:360px"/>
+<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/eventor/eventor_edit.png" style="width: 200px; height:360px"/>
 
 **Sketch:** [Eventor](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Eventor/Eventor.ino)
 
@@ -1135,7 +1135,7 @@ notification will be sent again (there is no 15 sec limit on Eventor notificatio
 Real-time clock allows you to get time from server. You can preselect any timezone on UI to get time on hardware in required locale. 
 No pin required for RTC widget.
 
-<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/rtc_edit.png" style="width: 200px; height:360px"/>
+<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/rtc_edit.png" style="width: 200px; height:360px"/>
 
 **Sketch:** [RTC](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/RTC/RTC.ino)
 
@@ -1147,7 +1147,7 @@ widget not allowed with BLE widget.
 
 Blynk currently support bunch of different modules. Please check sketches below.
 
-<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/ble_settings.png" style="width: 200px; height:360px"/>
+<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/ble_settings.png" style="width: 200px; height:360px"/>
  
 **Sketches:** [BLE](https://github.com/blynkkk/blynk-library/tree/master/examples/Boards_Bluetooth)
 
@@ -1159,7 +1159,7 @@ widget not allowed with Bluetooth widget.
                                                                                               
 Blynk currently support bunch of different modules. Please check sketches below.
 
-<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/ble_settings.png" style="width: 200px; height:360px"/>
+<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/ble_settings.png" style="width: 200px; height:360px"/>
  
 **Sketches:** [Bluetooth](https://github.com/blynkkk/blynk-library/tree/master/examples/Boards_Bluetooth)
 
@@ -1210,7 +1210,7 @@ if (client.connect("api.thingspeak.com", 80)) {
  
 With webhook widget this is not necessary anymore. All you need just fill below fields : 
 
-<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/webhook_settings.png" style="width: 200px; height:360px"/>
+<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/webhook_settings.png" style="width: 200px; height:360px"/>
 
 And do usual :  
 

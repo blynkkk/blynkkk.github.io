@@ -194,7 +194,7 @@ Blynk works with the whole family of Particle products: Core, Photon and Electro
 6. Put your Auth Token here: ``` char auth[] = "YourAuthToken";``` and flash the Particle!
 
 You can scan this QR code from the Blynk App and you'll get a ready-to-test project for **Particle Photon**. Just put your Auth Token into the ```01_PARTICLE.INO``` example.
-<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/Particle Demo1530733075.png" style="width: 300px; height:300px"/>
+<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/Particle Demo1530733075.png" style="width: 300px; height:300px"/>
 
 Additional materials:
 
