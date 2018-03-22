@@ -25,7 +25,7 @@ Now imagine: every time you press a Button in the Blynk app, the message travels
 where it magically finds its way to your hardware. It works the same in the opposite direction and 
 everything happens in a blynk of an eye.
 
-<img src="images/architecture.png" style="width: 640px; height:478px"/>
+<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/architecture.png" style="width: 640px; height:478px"/>
 
 ##Features
 * Similar API & UI for all supported hardware & devices

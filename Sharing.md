@@ -18,21 +18,21 @@ How it works:
 
 Go to your Project's Settings:
 
-<img src="images/dash_settings_sharing.png" style="width: 200px; height:360px"/>
+<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/dash_settings_sharing.png" style="width: 200px; height:360px"/>
 
 Click on "Generate Link" button :
 
-<img src="images/dash_settings_sharing_generate.png" style="width: 200px; height:360px"/>
+<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/dash_settings_sharing_generate.png" style="width: 200px; height:360px"/>
 
 It will generate QR code you can share with others:
 
-<img src="images/dash_public_sharing.png" style="width: 200px; height:360px"/>
+<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/dash_public_sharing.png" style="width: 200px; height:360px"/>
 
 That's it! Now **Exit the settings and press PLAY button.**
 
 Another person would need to install Blynk app and scan QR code from the login screen (scanning from existing profile is not yet supported) ;
 
-<img src="images/scan_qr.png" style="width: 200px; height:360px"/>
+<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/scan_qr.png" style="width: 200px; height:360px"/>
 
 **NOTE:** Your Project should be active, don't forget to press Play button.
 
@@ -44,15 +44,15 @@ In case you want to share your Project's set up without giving access to your ha
 
 In Project's Settings go to **Clone** button.
 
-<img src="images/clone.png" style="width: 200px; height:360px"/>
+<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/clone.png" style="width: 200px; height:360px"/>
 
 It will generate QR code you can share with anyone.
 
-<img src="images/QR.png" style="width: 200px; height:360px"/>
+<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/QR.png" style="width: 200px; height:360px"/>
 
 Another person **should Log In to Blynk app** and press QR button in Projects gallery
 
-<img src="images/QR_button_edit.png" style="width: 200px; height:360px"/>
+<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/QR_button_edit.png" style="width: 200px; height:360px"/>
 
 After the scan, a new Project will be created, all the widgets, settings, layout will be cloned. Another person would need enough Energy Balance to clone your Project.
 

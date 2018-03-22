@@ -111,7 +111,7 @@ There are 2 ways to resolve this issue:
 - Use [Local Blynk Server](http://docs.blynk.cc/#blynk-server)
 - ```ping blynk-cloud.com``` from the network your hardware is connected to. Use the IP address that you get during this ping and put it in mobile app like that:
 
- <img src="images/login.png" style="width: 200px; height:360px"/>  <img src="images/custom.png" style="width: 200px; height:360px"/>
+ <img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/login.png" style="width: 200px; height:360px"/>  <img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/custom.png" style="width: 200px; height:360px"/>
 
 ## Reset password
 

@@ -215,7 +215,7 @@ BLYNK_APP_CONNECTED() {
 
 **Note: you need to enable this feature within project settings:**
 
-<img src="images/app_connected_setting.png" style="width: 200px; height:360px"/>
+<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/app_connected_setting.png" style="width: 200px; height:360px"/>
 
 [Example](https://github.com/blynkkk/blynk-library/blob/master/examples/More/AppConnectedEvents/AppConnectedEvents.ino)
 
@@ -231,7 +231,7 @@ BLYNK_APP_DISCONNECTED() {
 
 **Note: you need to enable this feature within project settings:**
 
-<img src="images/app_connected_setting.png" style="width: 200px; height:360px"/>
+<img src="http://d1bhbfzxsgnz1o.cloudfront.net/images/app_connected_setting.png" style="width: 200px; height:360px"/>
 
 [Example](https://github.com/blynkkk/blynk-library/blob/master/examples/More/AppConnectedEvents/AppConnectedEvents.ino)
 
