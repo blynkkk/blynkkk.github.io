@@ -252,8 +252,6 @@ led2.setValue(127); //set brightness of LED to 50%.
 
 <img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/led.png" style="width: 77px; height:80px"/>
 
-<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/led_edit.png" style="width: 200px; height:360px"/>
-
 **Sketch:** [LED](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/LED/LED_Blink/LED_Blink.ino)
 
 ### Gauge
@@ -549,8 +547,6 @@ Twitter widget connects your Twitter account to Blynk and allows you to send Twe
 
 <img src="http://static1.squarespace.com/static/54765ba7e4b0d055ee0b47a6/54e92d39e4b0c31341b33a9a/55813d09e4b0ba8aa77ab230/1434533129525/TwitterON.png" style="width: 77px; height:80px"/>
 
-<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/twitter_edit.png" style="width: 200px; height:360px"/>
-
 Example code:
 ```cpp
 Blynk.tweet("Hey, Blynkers! My Arduino can tweet now!");
@@ -581,8 +577,6 @@ In that case you don't need to specify receiver on hardware :
 
 <img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/mail.png" style="width: 77px; height:80px"/>
 
-<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/mail_edit.png" style="width: 200px; height:360px"/>
-
 Limitations :
 
 - Maximum allowed email + subject + message length is 120 symbols. However you can increase this limit if necessary 
@@ -611,8 +605,6 @@ See detailed explanation [here](https://developers.google.com/cloud-messaging/co
 **WARNING** : high priority contributes more to battery drain compared to normal priority messages.
 
 <img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/push.png" style="width: 77px; height:80px"/>
-
-<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/push_edit.png" style="width: 200px; height:360px"/>
 
 Example code:
 ```cpp
@@ -1034,8 +1026,6 @@ At the moment Bridge widget is not required on application side (it is mostly us
 
 <img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/bridge.png" style="width: 77px; height:80px"/>
 
-<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/bridge_edit.png" style="width: 200px; height:360px"/>
-
 Bridge widget takes a virtual pin, and turns it into a channel to control another device. It means you can control any virtual, digital or analog pins of the target device.
 Be careful not to use pins like ```A0, A1, A2 ...``` when communicating between different device types, as Arduino Core may refer to wrong pins in such cases.
 
@@ -1146,8 +1136,6 @@ internet connection in order to login and load your profile. However this will b
 widget not allowed with BLE widget.
 
 Blynk currently support bunch of different modules. Please check sketches below.
-
-<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/ble_settings.png" style="width: 200px; height:360px"/>
  
 **Sketches:** [BLE](https://github.com/blynkkk/blynk-library/tree/master/examples/Boards_Bluetooth)
 
@@ -1158,8 +1146,6 @@ internet connection in order to login and load your profile. However this will b
 widget not allowed with Bluetooth widget.
                                                                                               
 Blynk currently support bunch of different modules. Please check sketches below.
-
-<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/ble_settings.png" style="width: 200px; height:360px"/>
  
 **Sketches:** [Bluetooth](https://github.com/blynkkk/blynk-library/tree/master/examples/Boards_Bluetooth)
 

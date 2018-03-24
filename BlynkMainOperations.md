@@ -228,8 +228,6 @@ You can also change ```HEARTBEAT``` interval from hardware side via ```Blynk.con
 
 Every project has it's own settings:
 
-<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/project_settings.png" style="width: 200px; height:360px"/>
-
 - **Theme** - switch between the Light and Black Blynk Theme (Business accounts have wider choice);
 - **Keep screen always on** - allows you to use the Blynk app without going to the sleep mode (usually all mobile devices do that);
 - **Send app connected command** - with this option enabled the server will send "App Connected" and "App Disconnected" commands 

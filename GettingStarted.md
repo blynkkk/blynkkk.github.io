@@ -25,10 +25,6 @@ After you've successfully logged into your account, start by creating a new proj
 
 <img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/getting_started/create_project_button.png" style="width: 200px; height:360px"/>
  
-Give it a name.
-
-<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/getting_started/give_project_name.png" style="width: 200px; height:360px"/>
-
 ###3. Choose Your Hardware
 Select the hardware model you will use. Check out the [list of supported hardware](http://docs.blynk.cc/#supported-hardware)!
 
@@ -38,13 +34,9 @@ Select the hardware model you will use. Check out the [list of supported hardwar
 
 **Auth Token** is a unique identifier which is needed to connect your hardware to your smartphone. 
 Every new project you create will have its own Auth Token. You'll get Auth Token automatically on your email after 
-project creation. You can also copy it manually. Click on devices section : 
+project creation. You can also copy it manually. Click on devices section and selected required device : 
 
 <img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/getting_started/token_1.png" style="width: 200px; height:360px"/>
-
-Click on device : 
-
-<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/getting_started/list_of_devices.png" style="width: 200px; height:360px"/>
 
 And you'll see token : 
 
@@ -68,8 +60,6 @@ Tap anywhere on the canvas to open the widget box. All the available widgets are
 **Widget Box**
 
 <img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/widgets_box.png" style="width: 200px; height:360px"/>
-
-<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/project_with_button.png" style="width: 200px; height:360px"/>
 
 **Drag-n-Drop** - Tap and hold the Widget to drag it to the new position.
 
