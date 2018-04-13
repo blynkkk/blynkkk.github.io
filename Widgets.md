@@ -28,7 +28,7 @@ Read more about Virtual Pins [here](http://docs.blynk.cc/#blynk-main-operations-
 
 ### Data Mapping
 
-In case you want to map incoming values to specific range you may use mapping button : 
+In case you want to map incoming values to specific range you may use mapping button: 
 
 <img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/display_edit_mapping.png" style="width: 200px; height:360px"/>
 
@@ -50,7 +50,7 @@ Each of the parameters is sent directly to the Pin on your hardware (e.g D7). Yo
 	digitalWrite(4, value);
 ```
 
-- **MERGE**:
+- **MERGE:**
 When MERGE mode is selected, you are sending just 1 message, consisting of array of values. But you'll need to parse it on the hardware. 
 
 	This mode can be used with Virtual Pins only.
@@ -67,29 +67,28 @@ When MERGE mode is selected, you are sending just 1 message, consisting of array
 ```
 
 ### Fraction
-Defines how many digits after the point you would like to see when moving slider.
-When you have "No Fraction" that means slider will send only integer values without decimal point.
+Defines how many decimals you would like to see when moving a Slider.
+When "No Fraction" is chosen, slider will only send integer values with no decimals.
 "1 digit" means that values will look like 1.1, 1.2, ..., 2.0, etc.
 
 ### Send On Release 
-This option is available for most controller widgets and allows you to decrease data traffic on your hardware. 
-For example, when you move joystick widget, commands are continuously streamed to the hardware, during a single joystick move 
-you can send dozens of commands. There are use-cases where it's needed, however creating such a load may cause hardware reset. 
-We recommend enabling **Send On Release** feature for most of the cases, unless you really need instant feedback.
-This option is enabled by default.
+This option allows you to optimize data traffic on your hardware. 
+
+For example, when you move joystick widget, commands are streamed to the hardware, during a single joystick move 
+you can send dozens of commands. There are use-cases where it's needed, however creating such a load may lead to hardware overload and reset. 
+**Send On Release** is a recommended setting for majority of applications. This is also a default setting.
 
 ### Write interval
-Similar to above option. However, allows you to stream values to your hardware within certain interval. For example, 
-setting write interval to 100 ms - means, that while you move slider only 1 value will be send to hardware within 100 ms.
-This option also used to decrease data traffic on your hardware.
+Similar to "Send on Release" option. However, it allows you to stream values to your hardware within certain interval. For example, setting **write interval** to 100 ms means that while you move the slider, only 1 value will be sent to hardware within 100 ms period.
+This option is also used to optimize data traffic flow to your hardware.
 
 ### Color gradient
 
 Some display widgets have ability to select gradient. Gradient allows you to colorize your widgets without any coding. 
-At the moment we provide 2 types of gradients :
+At the moment we provide 2 types of gradients:
 
 - Warm: Green - Orange - Red;
-- Cold : Green - Blue - Violet;
+- Cold: Green - Blue - Violet;
 
 Gradient changes color of your widget based on min/max properties. For example, you select warm gradient for your Level 
 Display widget with min 0 and max 100 value. When value 10 comes to widget it will have green color, when value 50 comes you'll see orange color, when value 80 comes you'll see red color.
@@ -106,7 +105,7 @@ Works in push or switch modes. Allows to send 0/1 (LOW/HIGH) values. Button send
 **Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino)
 
 ### Slider
-Similar to potentiometer. Allows to send values between MIN and MAX.
+Similar to potentiometer. Allows to send values between in a given MIN/MAX range.
 
 <img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/slider.png" style="width: 77px; height:80px"/>
 
@@ -115,7 +114,7 @@ Similar to potentiometer. Allows to send values between MIN and MAX.
 **Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino)
 
 ### Timer
-Timer triggers actions at a specific time. Even if smartphone is offline. Start time sends 1 (HIGH). Stop time sends 0 (LOW).
+Timer triggers actions at a specified time. Even if smartphone and app is offline. Start time sends 1 (HIGH). Stop time sends 0 (LOW).
 
 Recent Android version also has improved Timer within Eventor widget.
 With Eventor Time Event you can assign multiple timers on same pin, send any string/value, select days and timezone. 
@@ -151,7 +150,7 @@ When it's OFF, Joystick handle will not return back to center position. It will 
 
 ### zeRGBa
 
-zeRGBa is usual RGB controller (color picker).
+zeRGBa is a usual RGB color picker + brightness picker
 
 #### Settings:
 
@@ -169,7 +168,7 @@ digitalWrite(3, b);
 ```
 
 - **MERGE**:
-When MERGE mode is selected, you are sending just 1 message, consisting of array of values. But you'll need to parse it on the hardware. 
+When MERGE mode is selected, you send 1 message with an array of values inside. You would need to parse the message on the hardware. 
 
 This mode can be used with Virtual Pins only.
 	
@@ -188,19 +187,18 @@ BLYNK_WRITE(V1) // zeRGBa assigned to V1
 ```
 
 ### Step Control
+Step Control is used to set granular values with a given step
 
-Step control is like 2 buttons assigned to 1 pin. One button increments your value by desired step and another 
-one decrements it. It is very useful for use cases where you need to change your values very precisely and you can't 
-achieve this precision with slider widget.
+2 buttons are assigned to 1 pin. One button increments the value, another one decrements it. 
 
-**Send Step** option allows you to send step to hardware instead of actual value of step widget.
+**Send Step** option allows you to send step value to hardware instead of actual value of step widget.
 **Loop value** option allows you to reset step widget to start value when maximum value is reached.
 
 **Sketch:** [Basic Sketch](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino)
 
 ##Displays
 ### Value Display
-Displays incoming data from your sensors or Virtual Pins.
+Displays incoming data.
 
 <img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/display.png" style="width: 77px; height:80px"/> 
 
@@ -209,8 +207,7 @@ Displays incoming data from your sensors or Virtual Pins.
 **Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino)
 
 ### Labeled Value
-Displays incoming data from your sensors or Virtual Pins. It is a better version of 'Value Display' as it has a formatting 
-string, so you could format incoming value to any string you want.
+Displays incoming data in a formatted wayt. It is a better version of 'Value Display' where you can add suffixes and prefixes on the app side, with no coding on the hardware.
 
 <img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/display.png" style="width: 77px; height:80px"/> 
 
@@ -235,7 +232,7 @@ Next formatting options are supported:
 
 ### LED
 A simple LED for indication. You need to send 0 in order to turn LED off. And 255 in order to turn LED on. Or just use
-Blynk API as described below :
+Blynk API as described below:
 
 ```cpp
 WidgetLED led1(V1); //register to virtual pin 1
@@ -243,7 +240,7 @@ led1.off();
 led1.on();
 ```
     
-All values between 0 and 255 will change LED brightness :
+All values between 0 and 255 will change LED brightness:
 
 ```cpp
 WidgetLED led2(V2);
@@ -255,7 +252,7 @@ led2.setValue(127); //set brightness of LED to 50%.
 **Sketch:** [LED](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/LED/LED_Blink/LED_Blink.ino)
 
 ### Gauge
-A great visual way to display incoming numeric values.
+Visual display of numeric values.
 
 <img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/gauge.png" style="width: 77px; height:80px"/>
 
@@ -519,17 +516,15 @@ HTTP/S live streaming. For more info please follow [official Android documentati
 At the moment Blynk doesn't provide streaming servers. So you can either stream directly from camera, use 3-d party 
 services or host streaming server on own server (on raspberry for example).
 
-You can also change video url from hardware with : 
+You can also change video url from hardware with: 
 
 ```cpp
 Blynk.setProperty(V1, "url", "http://my_new_video_url");
 ```
 
 ### Level Display
-
-Displays incoming data from your sensors or Virtual Pins. Level Display is very similar to progress bar, it is very nice 
-and fancy view for indication of "filled" events, like "level of battery". 
-You can update value display from hardware side with code : 
+Level Display is very similar to progress bar, when you need to visualize a level betwen min/max value
+To update Level Display from hardware side with code: 
  
 ```cpp
 Blynk.virtualWrite(V1, val); 
@@ -552,7 +547,7 @@ Example code:
 Blynk.tweet("Hey, Blynkers! My Arduino can tweet now!");
 ```
 
-Limitations :
+Limitations:
 
 - you cant' send 2 tweets with same message (it's Twitter policy)
 - only 1 tweet per 15 seconds is allowed
@@ -569,7 +564,7 @@ Blynk.email("my_email@example.com", "Subject", "Your message goes here");
 ```
   
 It also contains ```to``` field. With this field you may define receiver of email in the app. 
-In that case you don't need to specify receiver on hardware :
+In that case you don't need to specify receiver on hardware:
  
  ```cpp
  Blynk.email("Subject", "Your message goes here");
@@ -577,7 +572,7 @@ In that case you don't need to specify receiver on hardware :
 
 <img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/mail.png" style="width: 77px; height:80px"/>
 
-Limitations :
+Limitations:
 
 - Maximum allowed email + subject + message length is 120 symbols. However you can increase this limit if necessary 
 by adding ```#define BLYNK_MAX_SENDBYTES XXX``` to you sketch. Where ```XXX``` is desired max length of your email. 
@@ -593,7 +588,7 @@ limitations, so please be careful.
 ###Push Notifications
 
 Push Notification widget allows you to send push notification from your hardware to your device. Currently it also 
-contains 2 additional options :
+contains 2 additional options:
 
 - **Notify when hardware offline** - you will get push notification in case your hardware went offline.
 - **Offline Ignore Period** - defines how long hardware could be offline (after it went offline) before sending notification. 
@@ -602,7 +597,7 @@ was reconnected within specified period.
 - **Priority** high priority gives more chances that your message will be delivered without any delays. 
 See detailed explanation [here](https://developers.google.com/cloud-messaging/concept-options#setting-the-priority-of-a-message). 
 
-**WARNING** : high priority contributes more to battery drain compared to normal priority messages.
+**WARNING**: high priority contributes more to battery drain compared to normal priority messages.
 
 <img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/push.png" style="width: 77px; height:80px"/>
 
@@ -611,7 +606,7 @@ Example code:
 Blynk.notify("Hey, Blynkers! My hardware can push now!");
 ```
 
-Limitations :
+Limitations:
 
 - Maximum allowed body length is 120 symbols.
 - Only 1 notification per 15 seconds is allowed
@@ -672,7 +667,7 @@ and send them to your hardware. Supported formats for time now are ```HH:MM``` a
 
 Hardware will get selected on UI time as seconds of day (```3600 * hours + 60 * minutes```) for start/stop time.
 Time that widget sends to hardware is user local time.
-Selected days indexes : 
+Selected days indexes: 
 
 ```
 Monday - 1
@@ -695,15 +690,15 @@ You can also change state of widget on UI. See below sketches.
 Map widget allows you set points/pins on map from hardware side. This is very useful widget in case you have 
 multiple devices and you want track their values on map.
 
-You can send a point to map with regular virtual wrtei command :  
+You can send a point to map with regular virtual wrtei command:  
 
 ```cpp
 Blynk.virtualWrite(V1, pointIndex, lat, lon, "value");
 ```
 
-We also created wrapper for you to make suage of map simpler : 
+We also created wrapper for you to make suage of map simpler: 
 
-You can change button labels from hardware with : 
+You can change button labels from hardware with: 
 
 ```cpp
 WidgetMap myMap(V1);
@@ -723,13 +718,13 @@ Using save ```index``` allows you to override existing point value.
 
 Table widget comes handy when you need to structure similar data within 1 graphical element. It works as a usual table.
 
-You can add a row to the table with : 
+You can add a row to the table with: 
 
 ```
 Blynk.virtualWrite(V1, "add", id, "Name", "Value");
 ```
 
-You can update a row in the table with :
+You can update a row in the table with:
 
 ```
 Blynk.virtualWrite(V1, "update", id, "UpdatedName", "UpdatedValue");
@@ -741,7 +736,7 @@ To highlight any item in a table by using it's id in a table:
 Blynk.virtualWrite(V1, "pick", 0);
 ```
 
-To select/deselect (make icon green/grey) item in a table by using it's row id in a table : 
+To select/deselect (make icon green/grey) item in a table by using it's row id in a table: 
 
 ```
 Blynk.virtualWrite(V1, "select", 0);
@@ -784,7 +779,7 @@ BLYNK_WRITE(V1) {
 }
 ```
 
-**Note :** Max number of rows in the table is 100. When you reach the limit, table will work as FIFO (First In First Out) list.
+**Note:** Max number of rows in the table is 100. When you reach the limit, table will work as FIFO (First In First Out) list.
 This limit can be changed by configuring ```table.rows.pool.size``` property for Local Server.
 
 **Sketch:** [Simple Table usage](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Table/Table_Simple/Table_Simple.ino)
@@ -808,7 +803,7 @@ All you have to do is:
 
 Now you can change the active device in Device Selector and you will see that Temperature and Humidity values are reflecting the data updates for the device you just picked.
 
-**NOTE : ** Webhook Widget will not work with Device Selector (yet).
+**NOTE:** Webhook Widget will not work with Device Selector (yet).
 
 ### Device Tiles
 
@@ -827,7 +822,7 @@ Useful for monitoring device movement, such as tilt, shake, rotation, or swing.
 Conceptually, an acceleration sensor determines the acceleration that is applied to a device by measuring the forces 
 that are applied to the sensor. Measured in ```m/s^2``` applied to ```x```, ```y```, ```z``` axis.
 
-In order to accept data from it you need to : 
+In order to accept data from it you need to: 
 
 ```cpp
 BLYNK_WRITE(V1) {
@@ -849,7 +844,7 @@ that allows you to measure the ambient air pressure.
 
 Measured in in ```hPa``` or ```mbar```.
 
-In oder to accept data from it you need to : 
+In oder to accept data from it you need to: 
 
 ```cpp
 BLYNK_WRITE(V1) {
@@ -869,7 +864,7 @@ Useful for monitoring device movement, such as tilt, shake, rotation, or swing.
 The gravity sensor provides a three dimensional vector indicating the direction and magnitude of gravity. 
 Measured in ```m/s^2``` of gravity force applied to ```x```, ```y```, ```z``` axis.
 
-In oder to accept data from it you need to : 
+In oder to accept data from it you need to: 
 
 ```cpp
 BLYNK_WRITE(V1) {
@@ -891,7 +886,7 @@ that allows you to measure ambient relative humidity.
 
 Measured in ```%``` - actual relative humidity in percent.
 
-In oder to accept data from it you need to : 
+In oder to accept data from it you need to: 
 
 ```cpp
 BLYNK_WRITE(V1) {
@@ -908,7 +903,7 @@ Light is kind of [environment sensors](https://developer.android.com/guide/topic
 that allows you to measure level of light (measures the ambient light level (illumination) in lx).
 In phones it is used to control screen brightness.
 
-In order to accept data from it you need to : 
+In order to accept data from it you need to: 
 
 ```cpp
 BLYNK_WRITE(V1) {
@@ -926,7 +921,7 @@ that allows you to determine how close the face of a smartphone is to an object.
 Measured in ```cm``` - distance from phone face to object. However most of this sensors returns only FAR / NEAR information.
 So return value will be ```0/1```. Where 0/LOW  is ```FAR``` and 1/HIGH is ```NEAR```.
 
-In order to accept data from it you need to : 
+In order to accept data from it you need to: 
 
 ```cpp
 BLYNK_WRITE(V1) {
@@ -948,7 +943,7 @@ Temperature is kind of [environment sensors](https://developer.android.com/guide
 that allows you to measure ambient air temperature.
 Measured in ```°C``` - celcius.
 
-In order to accept data from it you need to : 
+In order to accept data from it you need to: 
 
 ```cpp
 BLYNK_WRITE(V1) {
@@ -987,7 +982,7 @@ GPS trigger widget works in background.
 Useful for monitoring smartphone location data such as latitude, longitude, altitude and speed (speed could be often 0  
 in case smartphone doesn't support it).
 
-In order to accept data from this widget you need to : 
+In order to accept data from this widget you need to: 
 
 ```cpp
 BLYNK_WRITE(V1) {
@@ -998,7 +993,7 @@ BLYNK_WRITE(V1) {
 }
 ```
 
-or you can use prepared wrapper ```GpsParam``` :
+or you can use prepared wrapper ```GpsParam```:
 
 ```cpp
 BLYNK_WRITE(V1) {
@@ -1030,7 +1025,7 @@ Bridge widget takes a virtual pin, and turns it into a channel to control anothe
 Be careful not to use pins like ```A0, A1, A2 ...``` when communicating between different device types, as Arduino Core may refer to wrong pins in such cases.
 
 
-Example code for device A which will send values to device B :
+Example code for device A which will send values to device B:
 ```cpp
 WidgetBridge bridge1(V1); //Initiating Bridge Widget on V1 of Device A
 ...
@@ -1050,7 +1045,7 @@ BLYNK_CONNECTED() {
 }
 ```
 
-IMPORTANT: when performing ```virtualWrite()``` with Bridge Widget, Device B will need to process the incoming data from Device A. 
+**IMPORTANT:** when performing ```virtualWrite()``` with Bridge Widget, Device B would need to process the incoming data from Device A. 
 For example, if you are sending value from Device A to Device B using ```bridge.virtualWrite(V5)``` you would need to use this handler on Device B:
 
 ```cpp
@@ -1065,7 +1060,7 @@ Keep in mind that ```bridge.virtualWrite``` doesn't send any value to mobile app
 
 ### Eventor
 Eventor widget allows you to create simple behaviour rules or **events**. 
-Let's look at a typical use case: read temperature from DHT sensor and send push notification when the temperature is over a certain limit :  
+Let's look at a typical use case: read temperature from DHT sensor and send push notification when the temperature is over a certain limit:  
  
 ```cpp
   float t = dht.readTemperature();
@@ -1073,11 +1068,11 @@ Let's look at a typical use case: read temperature from DHT sensor and send push
     return;
   }
   if (t > 40) {
-    Blynk.notify(String("Temperature is too high : ") + t);
+    Blynk.notify(String("Temperature is too high: ") + t);
   }
 ```
 
-With Eventor you don't need to write this code. All you need is to send the value from the sensor to the server :
+With Eventor you don't need to write this code. All you need is to send the value from the sensor to the server:
 
 ```cpp
   float t = dht.readTemperature();
@@ -1106,7 +1101,7 @@ With Eventor Time Event you can assign multiple timers on same pin, send any str
 In order to remove created **event** please use swipe. You can also swipe out last element in the Event itself. 
 
 **NOTE:** The timer widget rely on the server time and not your phone time. Sometimes the phone time may not match the server time. 
-**NOTE** : Events are triggered only once when the condition is met. That's mean 
+**NOTE:** Events are triggered only once when the condition is met. That's mean 
 [chaining of events](https://community.blynk.cc/t/eventor-behavior-bug-feature/20962) is not possible (however, could be enabled for commercials).
 
 <img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/eventor/eventor_edit.png" style="width: 200px; height:360px"/>
@@ -1114,8 +1109,8 @@ In order to remove created **event** please use swipe. You can also swipe out la
 **Sketch:** [Eventor](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Eventor/Eventor.ino)
 
 
-**NOTE** : Events are triggered only once when the condition is met. 
-However there is one exclusion:
+**NOTE:**: Events are triggered only once when the condition is met. 
+Exception:
 Let's consider simple event as above ```if (temperature > 40) send notification ```.
 When temperature goes beyond 40 threshold - notification action is triggered. If temperature continues to stay above the 40 threshold no actions will be triggered. But if ```temperature``` goes below threshold and then passes it again -
 notification will be sent again (there is no 15 sec limit on Eventor notifications).
@@ -1131,27 +1126,27 @@ No pin required for RTC widget.
 
 ### BLE
 
-Widget for enabling Bluetooth Low Energy support. At the moment BLE widget requires 
+Widget to enable Bluetooth Low Energy support. At the moment BLE widget requires 
 internet connection in order to login and load your profile. However this will be fixed soon. Also some Blynk 
-widget not allowed with BLE widget.
+widgets are not supported within the BLE connection.
 
-Blynk currently support bunch of different modules. Please check sketches below.
+Blynk currently supports a handful of different BLE modules. Please check sketches below.
  
 **Sketches:** [BLE](https://github.com/blynkkk/blynk-library/tree/master/examples/Boards_Bluetooth)
 
 ### Bluetooth
 
-Widget for enabling Bluetooth support. At the moment Bluetooth widget supported only for Android and requires 
-internet connection in order to login and load your profile. However this will be fixed soon. Also some Blynk 
-widget not allowed with Bluetooth widget.
+Widget to enable Bluetooth support. At the moment Bluetooth widget is supported only on Android and requires 
+internet connection to login and to load your profile. This will be fixed soon. Alsom some Blynk 
+widgets do not work within the Bluetooth connection.
                                                                                               
-Blynk currently support bunch of different modules. Please check sketches below.
+Blynk currently supports bunch of different modules. Please check sketches below.
  
 **Sketches:** [Bluetooth](https://github.com/blynkkk/blynk-library/tree/master/examples/Boards_Bluetooth)
 
 ### Music Player
 
-Simple UI element with 3 buttons - simulates music player interface. Every button sends it's own command to hardware : 
+Simple UI element with 3 buttons with common music player controls. Every button sends it's own command to hardware: 
 ```play```, ```stop```, ```prev```, ```next```.
 
 You can change widget state within the app from hardware side with next commands:
@@ -1161,7 +1156,7 @@ Blynk.virtualWrite(Vx, “play”);
 Blynk.virtualWrite(Vx, “stop”);
 ```
 
-You can also change widget play/stop state with next code (equivalent to above commands) : 
+You can also change widget play/stop state with next code (equivalent to above commands): 
 
 ```Blynk.setProperty(V1, "isOnPlay", "false");```
 
@@ -1169,15 +1164,12 @@ You can also change widget play/stop state with next code (equivalent to above c
 
 ### Webhook
 
-Webhook is a widget for 3-d party integrations. With webhook widget you can send HTTP/S requests to any 3-d party server 
-or device that has HTTP/S API (Philips Hue for instance).
+Webhook is a widget designed to communicate with 3rd party services. With webhook widget you can send HTTP/S requests to any 3rd party service or device that has HTTP(S) API (e.g. Philips Hue bulb).
 
-Any write operation from hardware side will trigger webhook widget (same way as for eventor). You can also trigger 
-webhook from application side in case control widget assigned to same pin as webhook. You can trigger 3-d party service 
-with single button click.
+Any `write` operation from hardware side will trigger Webhook Widget. You can also trigger webhook from Blynk app when a control widget is assigned to the same pin as webhook. You can trigger 3-d party service with a single click of a button.
 
-For example, imagine a case when you want to send data from your hardware not only to Blynk but also to Thingspeak server.
-In typical, classic use case you'll need to write code like this (this is minimal and not full sketch) : 
+For example, if you want to send data from your hardware not only to Blynk, but also to Thingspeak.
+Usually, you would need to write a code like this (this is just an extract, not a full sketch): 
 
 ```
 WiFiClient client;
@@ -1194,11 +1186,11 @@ if (client.connect("api.thingspeak.com", 80)) {
 }
 ```
  
-With webhook widget this is not necessary anymore. All you need just fill below fields : 
+With webhook widget you would just need to fill in these fields: 
 
 <img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/webhook_settings.png" style="width: 200px; height:360px"/>
 
-And do usual :  
+And add this line to your code:  
 
 ```
 Blynk.virtualWrite(V0, value);
@@ -1206,27 +1198,29 @@ Blynk.virtualWrite(V0, value);
 
 where V0 is pin assigned to webhook widget.
 
-Also you can use usual Blynk placeholders for pin value in body or url, for example : 
+Also you can use usual Blynk placeholders for pin value in body or url, for example: 
 
 ```
 https://api.thingspeak.com/update?api_key=xxxxxx&field1=/pin/
 ```
 
-or for body
+or for the body
 
 ```
 ["/pin/"]
 ```
 
-You can also refer to specific index of multi value pin (multi pin supports up to 10 values) : 
+You can also refer to a specific index of a multiple-values pin (such pins support can hold up to 10 values): 
 
 ```/pin[0]/```,```/pin[1]/```, ```/pin[2]/```
 
-Another cool thing about webhook is that you can make GET requests from Blynk Server side and return response directly to
-your hardware. The beauty here is that you don't need to code request to 3-d party service. Imagine a case when you want to get 
-weather from some 3-d party service. For example, you have an url 
+You can also perform GET requests from Blynk Server and get responses directly to
+your hardware. For that you don't need to write code for request to 3rd party service. 
+
+For example, if you would like to get current weather from a 3rd party Weather service. Let's say you have a url: 
 ```http://api.sunrise-sunset.org/json?lat=33.3823&lng=35.1856&date=2016-10-01```, you can put it in widget, select ```V0``` pin,
-and do usual :  
+
+and code:  
 
 ```
 BLYNK_WRITE(V0){
@@ -1235,20 +1229,18 @@ BLYNK_WRITE(V0){
 }
 ```
 
-Now, every time you'll trigger ```V0``` pin (with ```Blynk.virtualWrite(V0, 1)``` from hardware side or with control widget
+Now, every time you write to ```V0``` pin (with ```Blynk.virtualWrite(V0, 1)``` from hardware or from control widget
 assigned to ```V0```) - ```BLYNK_WRITE(V0)``` will be triggered.
 
-**NOTE :** usually 3-d party servers returns big responses, so you have to increase hardware maximum allowed message size with 
+**NOTE:** Usually, 3rd party servers return long responses. You have to increase the maximum allowed message size your hardware can handle. Modify this line in firmware:
+
 ```#define BLYNK_MAX_READBYTES 1024```. Where ```1024``` - is maximum allowed message size.
 
-**NOTE :** Blynk cloud has limitation for webhook widget - you are allowed to send only 1 request per second. You can
- change this on local server with ```webhooks.frequency.user.quota.limit```. Please be very careful using webhooks, 
- as many resources not capable to handle even 1 req/sec, so you may be banned on some of them. For example thingspeak 
- allows to send 1 request per 15 seconds.
+**NOTE:** Blynk Cloud has limitation for Webhook Widget - you can only send 1 request per second. This can be 
+ changed on a Local Server by changing ```webhooks.frequency.user.quota.limit```. You should be careful with webhooks, 
+ as many 3rd party services can't handle 1 req/sec, and you can be banned on some of them. 
+ For example, Thingspeak only allows 1 request per 15 seconds.
  
- **NOTE :** In order to avoid spamming Blynk Webhook has one more limitation - in case your webhook requests were failed 10 times 
- in row your webhook widget will be stopped. In order to resume it you need to open widget and save it again. Failed requests 
- are requests that return status code that are not equal to 200 or 302.
+ **NOTE:** To avoid spamming,  Blynk Webhook has another limitation - if your webhook requests fail 10 times in row, Webhook Widget will be stopped. To resume it, you would need to open Widget Settings and re-save it. Failed request is a request that  doesn't return `200` or `302`.
  
- **NOTE :** Webhook widget may affect ```Blynk.syncAll()``` feature. As returned response from server may be big. 
- So, please, be careful with it.
+ **NOTE:** Webhook widget may affect ```Blynk.syncAll()``` function when a returned response is large.  
