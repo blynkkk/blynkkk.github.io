@@ -28,14 +28,6 @@ Blynk.virtualWrite(V1, "select", 0);
 Blynk.virtualWrite(V1, "deselect", 0);
 ```
 
-Move row to another position in the table by it index 
-(row is removed and after that is added, have that in mind when sending second index):
-
-```
-//1 is old row index, 2 is new row index
-Blynk.virtualWrite(V1, "order", 1, 2);
-```
-
 
 To clear the table at any time with: 
 
