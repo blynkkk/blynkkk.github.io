@@ -30,7 +30,7 @@ Eventor also could be triggered from the application side. You just need to assi
 Eventor doesn't constantly sends events. Let's consider simple event as above ```if (temperature > 40) send notification ```.
 When temperature goes beyond 40 threshold - notification action is triggered. If temperature continues to stay above the 
 40 threshold no actions will be triggered. But if ```temperature``` goes below threshold and then passes it again -
-notification will be sent again (there is no 15 sec limit on Eventor notifications).
+notification will be sent again (there is no 5 sec limit on Eventor notifications).
  
 Eventor also supports Timer events. For example, you can set a pin ```V1``` ON/HIGH at 21:00:00 every Friday.
 With Eventor Time Event you can assign multiple timers on same pin, send any string/number, select days and timezone.

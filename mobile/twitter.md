@@ -11,7 +11,7 @@ Blynk.tweet("Hey, Blynkers! My Arduino can tweet now!");
 Limitations :
 
 - you can't send 2 tweets with same message (it's Twitter policy)
-- only 1 tweet per 15 seconds is allowed
+- only 1 tweet per 5 seconds is allowed
 
 ### Unicode in Twitter
 

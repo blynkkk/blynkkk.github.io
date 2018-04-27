@@ -550,7 +550,7 @@ Blynk.tweet("Hey, Blynkers! My Arduino can tweet now!");
 Limitations:
 
 - you cant' send 2 tweets with same message (it's Twitter policy)
-- only 1 tweet per 15 seconds is allowed
+- only 1 tweet per 5 seconds is allowed
 
 **Sketch:** [Twitter](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Twitter/Twitter.ino)
 
@@ -578,7 +578,7 @@ Limitations:
 by adding ```#define BLYNK_MAX_SENDBYTES XXX``` to you sketch. Where ```XXX``` is desired max length of your email. 
 For example for ESP you can set this to 1200 max length ```#define BLYNK_MAX_SENDBYTES 1200```. The 
 ```#define BLYNK_MAX_SENDBYTES 1200``` must be included before any of the Blynk includes.
-- Only 1 email per 15 seconds is allowed
+- Only 1 email per 5 seconds is allowed
 - In case you are using gmail on the Local Server you are limited with 500 mails per day (by google). Other providers may have similar
 limitations, so please be careful.
 - User is limited with 100 messages per day in the Blynk Cloud;
@@ -614,7 +614,7 @@ Blynk.notify("Hey, Blynkers! My {DEVICE_NAME} can push now!");
 Limitations:
 
 - Maximum allowed body length is 120 symbols.
-- Only 1 notification per 15 seconds is allowed
+- Only 1 notification per 5 seconds is allowed
 
 **Sketch:** [PushNotification](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/PushNotification/PushNotification_Button/PushNotification_Button.ino)
 
@@ -1090,7 +1090,7 @@ You just need to assign the widget to the same pin as your Event within Eventor.
 Eventor doesn't constantly sends events. Let's consider simple event as above ```if (temperature > 40) send notification ```.
 When temperature goes beyond 40 threshold - notification action is triggered. If temperature continues to stay above the 
 40 threshold no actions will be triggered. But if ```temperature``` goes below threshold and then passes it again -
-notification will be sent again (there is no 15 sec limit on Eventor notifications).
+notification will be sent again (there is no 5 sec limit on Eventor notifications).
  
 Eventor also supports Timer events. For example, you can set a pin ```V1``` ON/HIGH at 21:00:00 every Friday.
 With Eventor Time Event you can assign multiple timers on same pin, send any string/number, select days and timezone. 
@@ -1110,7 +1110,7 @@ In order to remove created **event** please use swipe. You can also swipe out la
 Exception:
 Let's consider simple event as above ```if (temperature > 40) send notification ```.
 When temperature goes beyond 40 threshold - notification action is triggered. If temperature continues to stay above the 40 threshold no actions will be triggered. But if ```temperature``` goes below threshold and then passes it again -
-notification will be sent again (there is no 15 sec limit on Eventor notifications).
+notification will be sent again (there is no 5 sec limit on Eventor notifications).
 
 ### RTC
 
