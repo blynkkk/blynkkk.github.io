@@ -606,6 +606,11 @@ Example code:
 Blynk.notify("Hey, Blynkers! My hardware can push now!");
 ```
 
+You can also use placeholder for device name, that will be replaced on the server with your device name:
+```cpp
+Blynk.notify("Hey, Blynkers! My {DEVICE_NAME} can push now!");
+```
+
 Limitations:
 
 - Maximum allowed body length is 120 symbols.
