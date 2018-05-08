@@ -7,11 +7,9 @@ There are 4 types of Widgets:
 - **Displays** - used for various visualizations of data that comes from hardware to the smartphone;
 - **Notifications** - are various widgets to send messages and notifications;
 - **Interface** - are various widgets to make your UI look better;
-- **Others** - widgets that don't belong to any category;
+- **Other** - widgets that don't belong to any category;
 
-Each Widget has it's own settings. 
-
-Some of the Widgets (e.g. Bridge Widget) are used to enable some functionality and they don't have any settings.
+Each Widget has it's own settings. Some of the Widgets (e.g. Bridge) just enable functionality and they don't have any settings.
  
 ## Common Widget Settings
 ### Pin Selector
