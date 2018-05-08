@@ -3,10 +3,10 @@ Widgets are interface modules. Each of them performs a specific input/ output fu
 
 There are 4 types of Widgets: 
 
-- **Controllers** - they send commands to hardware. Use them to control your stuff;
-- **Displays** - used for various visualizations of data that comes from hardware to the smartphone;
-- **Notifications** - are various widgets to send messages and notifications;
-- **Interface** - are various widgets to make your UI look better;
+- **Controllers** - used to send commands that control your hardware
+- **Displays** - used for data visualization from sensors and other sources;
+- **Notifications** - send messages and notifications;
+- **Interface** - widgets to perform certain GUI functions;
 - **Other** - widgets that don't belong to any category;
 
 Each Widget has it's own settings. Some of the Widgets (e.g. Bridge) just enable functionality and they don't have any settings.
@@ -21,7 +21,7 @@ This is one of the main parameters you need to set. It defines which pin to cont
 
 **Analog Pins** - represent physical Analog IO pins on your hardware
 
-**Virtual Pins** - have no physical representation. They are used for any data transfer between Blynk App and your hardware.
+**Virtual Pins** - have no physical representation. They are used to transfer any data between Blynk App and your hardware.
 Read more about Virtual Pins [here](http://docs.blynk.cc/#blynk-main-operations-virtual-pins).
 
 ### Data Mapping
@@ -30,8 +30,8 @@ In case you want to map incoming values to specific range you may use mapping bu
 
 <img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/display_edit_mapping.png" style="width: 200px; height:360px"/>
 
-Let's say your sensor sends values from 0 to 1023. But you want to display values in a range 0 to 100 in the application. 
-With data mapping enabled, incoming value 1023 will be mapped to 100.
+Let's say your sensor sends values from 0 to 1023. But you want to display values in a range 0 to 100 in the app. 
+When Data Mapping enabled, incoming value 1023 will be mapped to 100.
 
 ### SPLIT/MERGE
 Some of the Widgets can send more than one value. And with this switch you can control how to send them.
@@ -64,7 +64,7 @@ When MERGE mode is selected, you are sending just 1 message, consisting of array
 	}
 ```
 
-### Fraction
+### Decimals
 Defines how many decimals you would like to see when moving a Slider.
 When "No Fraction" is chosen, slider will only send integer values with no decimals.
 "1 digit" means that values will look like 1.1, 1.2, ..., 2.0, etc.
@@ -82,19 +82,21 @@ This option is also used to optimize data traffic flow to your hardware.
 
 ### Color gradient
 
-Some display widgets have ability to select gradient. Gradient allows you to colorize your widgets without any coding. 
-At the moment we provide 2 types of gradients:
+When you choose gradient, it affects the color of widget elements based on invoming values. 
+For example: You set Gauge Widget with Min and Max parameters of 0-100, and choose green-yellow-red gradient. When hardware sends: 
+- `10`, Gauge will change it's color to green color
+- `50` will change Gauge to yellow color
+- `80` will change Gauge to red color
 
+There are 2 types of gradients you can choose from:
 - Warm: Green - Orange - Red;
 - Cold: Green - Blue - Violet;
 
-Gradient changes color of your widget based on min/max properties. For example, you select warm gradient for your Level 
-Display widget with min 0 and max 100 value. When value 10 comes to widget it will have green color, when value 50 comes you'll see orange color, when value 80 comes you'll see red color.
 
 
 ##Controllers
 ### Button
-Works in push or switch modes. Allows to send 0/1 (LOW/HIGH) values. Button sends 1 (HIGH) on press and sends 0 (LOW) on release.
+Works in push or switch modes. Allows to send ON and OFF (LOW/HIGH) values. Button sends 1 (HIGH) on press and sends 0 (LOW) on release.
 
 <img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/button.png" style="width: 77px; height:80px"/>
 
