@@ -1161,12 +1161,11 @@ You can also change widget play/stop state with next code (equivalent to above c
 
 ### Webhook
 
-Webhook is a widget designed to communicate with 3rd party services. With webhook widget you can send HTTP/S requests to any 3rd party service or device that has HTTP(S) API (e.g. Philips Hue bulb).
+Webhook is a widget designed to communicate with 3rd party services. With Webhook widget you can send HTTP(S) requests to any 3rd party service or device that has HTTP(S) API (e.g. Philips Hue bulb). You can trigger 3-d party service with a single click of a button.
 
-Any `write` operation from hardware side will trigger Webhook Widget. You can also trigger webhook from Blynk app when a control widget is assigned to the same pin as webhook. You can trigger 3-d party service with a single click of a button.
+Any `write` operation from hardware side will trigger Webhook Widget. You can also trigger webhook from Blynk app when a app widget is assigned to the same pin as Webhook. 
 
-For example, if you want to send data from your hardware not only to Blynk, but also to Thingspeak.
-Usually, you would need to write a code like this (this is just an extract, not a full sketch): 
+For example, when you need to send data from your hardware not only to Blynk, but also to Thingspeak, you would need to write a long http request code like this (this is just an example, not a full sketch): 
 
 ```
 WiFiClient client;
@@ -1183,19 +1182,19 @@ if (client.connect("api.thingspeak.com", 80)) {
 }
 ```
  
-With webhook widget you would just need to fill in these fields: 
+Instead, with Webhook widget you would only need to fill in these fields: 
 
 <img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/webhook_settings.png" style="width: 200px; height:360px"/>
 
-And add this line to your code:  
+And add this code on hardware side:  
 
 ```
 Blynk.virtualWrite(V0, value);
 ```
 
-where V0 is pin assigned to webhook widget.
+where `V0` is pin assigned to the Webhook widget.
 
-Also you can use usual Blynk placeholders for pin value in body or url, for example: 
+Use standard Blynk placeholders for Pin Value in the body or URL, for example: 
 
 ```
 https://api.thingspeak.com/update?api_key=xxxxxx&field1=/pin/
@@ -1207,17 +1206,16 @@ or for the body
 ["/pin/"]
 ```
 
-You can also refer to a specific index of a multiple-values pin (such pins support can hold up to 10 values): 
+When you need to send an array of values, you can refer to a specific index of the array value. Blynk Pin can hold an array of max 10 values: 
 
 ```/pin[0]/```,```/pin[1]/```, ```/pin[2]/```
 
-You can also perform GET requests from Blynk Server and get responses directly to
-your hardware. For that you don't need to write code for request to 3rd party service. 
+You can also make GET requests from Blynk Server and get responses directly to your hardware.
 
-For example, if you would like to get current weather from a 3rd party Weather service. Let's say you have a url: 
-```http://api.sunrise-sunset.org/json?lat=33.3823&lng=35.1856&date=2016-10-01```, you can put it in widget, select ```V0``` pin,
+For example, to get current weather from a 3rd party Weather service that uses an URL similar to this: 
+```http://api.sunrise-sunset.org/json?lat=33.3823&lng=35.1856&date=2016-10-01```, you would need to put this URL in Webhook widget and assign it to ```V0``` pin.
 
-and code:  
+To parse the response on the hardware side:  
 
 ```
 BLYNK_WRITE(V0){
@@ -1226,18 +1224,17 @@ BLYNK_WRITE(V0){
 }
 ```
 
-Now, every time you write to ```V0``` pin (with ```Blynk.virtualWrite(V0, 1)``` from hardware or from control widget
-assigned to ```V0```) - ```BLYNK_WRITE(V0)``` will be triggered.
+Now, every time there is a "write" command to ```V0``` pin (e.g. with ```Blynk.virtualWrite(V0, 1)``` from hardware or from app widget assigned to ```V0```),  ```BLYNK_WRITE(V0)``` construction will be triggered and processed.
 
-**NOTE:** Usually, 3rd party servers return long responses. You have to increase the maximum allowed message size your hardware can handle. Modify this line in firmware:
+**NOTE:** Usually, 3rd party servers return long responses. You have to increase the maximum allowed message size your hardware can process. Modify this line in your firmware code:
 
 ```#define BLYNK_MAX_READBYTES 1024```. Where ```1024``` - is maximum allowed message size.
 
 **NOTE:** Blynk Cloud has limitation for Webhook Widget - you can only send 1 request per second. This can be 
- changed on a Local Server by changing ```webhooks.frequency.user.quota.limit```. You should be careful with webhooks, 
+ changed on a Local Server by changing ```webhooks.frequency.user.quota.limit```. Be careful with Webhooks, 
  as many 3rd party services can't handle 1 req/sec, and you can be banned on some of them. 
- For example, Thingspeak only allows 1 request per 15 seconds.
+ For example, Thingspeak allows only 1 request per 15 seconds.
  
- **NOTE:** To avoid spamming,  Blynk Webhook has another limitation - if your webhook requests fail 10 times in row, Webhook Widget will be stopped. To resume it, you would need to open Widget Settings and re-save it. Failed request is a request that  doesn't return `200` or `302`.
+ **NOTE:** To avoid spamming,  Blynk Webhook feature has another limitation - if your Webhook requests fail 10 times in a row, Webhook Widget will be stopped. To resume it, you would need to open Widget Settings and re-save it. Failed request is a request that  doesn't return `200` or `302`.
  
  **NOTE:** Webhook widget may affect ```Blynk.syncAll()``` function when a returned response is large.  
