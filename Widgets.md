@@ -564,11 +564,21 @@ Blynk.email("my_email@example.com", "Subject", "Your message goes here");
 ```
   
 It also contains ```to``` field. With this field you may define receiver of email in the app. 
-In that case you don't need to specify receiver on hardware:
- 
+You may skip ```to``` field when you want to send email to your Blynk app login email:
+
  ```cpp
  Blynk.email("Subject", "Your message goes here");
  ```
+
+You can send either ```text/html``` or ```text/plain``` (some clients don't support ```text/html```) email.
+You can change this content type of email in the Mail widget settings.
+
+Additionally you may use ```{DEVICE_NAME}``` placeholder in the mail subject and body in order to identify device name of
+hardware that sends email:
+
+```cpp
+Blynk.email("my_email@example.com", "{DEVICE_NAME} : Alarm", "Your {DEVICE_NAME} has critical error!");
+```
 
 <img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/mail.png" style="width: 77px; height:80px"/>
 
