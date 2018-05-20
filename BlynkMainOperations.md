@@ -283,9 +283,15 @@ Widget specific properties:
 
 **Button**
 
-```onLabel``` is string for ON label of button;
+```onLabel``` / ```offLabel``` is string for ON/OFF label of button;
 
-```offLabel``` is string for OFF label of button;
+**Styled Button**
+
+```onLabel``` / ```offLabel``` is string for ON/OFF label of button;
+
+```onColor``` / ```offColor``` is string in HEX format for ON/OFF colors of the button;
+
+```onBackColor``` / ```offBackColor``` is string in HEX format for ON/OFF colors of the button background.
 
 **Music Player**
 
