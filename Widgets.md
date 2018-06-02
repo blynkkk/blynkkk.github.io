@@ -623,8 +623,8 @@ Blynk.notify("Hey, Blynkers! My {DEVICE_NAME} can push now!");
 
 Limitations:
 
-- Maximum allowed body length is 120 symbols.
-- Only 1 notification per 5 seconds is allowed
+- Maximum allowed body length is 120 symbols;
+- Every device can send only 1 notification every 5 seconds;
 
 **Sketch:** [PushNotification](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/PushNotification/PushNotification_Button/PushNotification_Button.ino)
 
