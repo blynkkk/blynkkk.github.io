@@ -25,7 +25,7 @@ Now imagine: every time you press a Button in the Blynk app, the message travels
 where it magically finds its way to your hardware. It works the same in the opposite direction and 
 everything happens in a blynk of an eye.
 
-<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/architecture.png" style="width: 640px; height:478px"/>
+<img src="images/architecture.png" style="width: 640px; height:478px"/>
 
 ##Features
 * Similar API & UI for all supported hardware & devices
@@ -64,7 +64,7 @@ The Blynk App is a well designed interface builder. It works on both iOS and And
 
 #Downloads
 ##**Blynk Apps for iOS or Android** <br> 
-[<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/appstore-lrg.svg" alt="Drawing" style=" width: 158px; height:42"/>](https://itunes.apple.com/us/app/blynk-control-arduino-raspberry/id808760481?ls=1&mt=8)  &nbsp; &nbsp; &nbsp; &nbsp;[<img src="https://play.google.com/intl/en_us/badges/images/apps/en-play-badge.png" alt="Drawing" style=" width: 158px; height:42px"/>](https://play.google.com/store/apps/details?id=cc.blynk)
+[<img src="images/appstore-lrg.svg" alt="Drawing" style=" width: 158px; height:42"/>](https://itunes.apple.com/us/app/blynk-control-arduino-raspberry/id808760481?ls=1&mt=8)  &nbsp; &nbsp; &nbsp; &nbsp;[<img src="https://play.google.com/intl/en_us/badges/images/apps/en-play-badge.png" alt="Drawing" style=" width: 158px; height:42px"/>](https://play.google.com/store/apps/details?id=cc.blynk)
 
 ##**Blynk Library** <br>
 [Download The Blynk Library >](https://github.com/blynkkk/blynk-library/releases/latest)

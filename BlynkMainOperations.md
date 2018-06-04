@@ -38,7 +38,7 @@ When you press a Button, Blynk App sends ```1``` On the second click - it sends 
 
 This is how Button Widget is set up:
 
-<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/button_virtual_1.png" style="width: 200px; height:360px"/>
+<img src="images/button_virtual_1.png" style="width: 200px; height:360px"/>
 
 
 Full example sketch: [Get Data](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/GetData/GetData.ino#L24)
@@ -46,7 +46,7 @@ Full example sketch: [Get Data](https://github.com/blynkkk/blynk-library/blob/ma
 ### Sending array from Widget 
 Some Widgets (e.g Joystick, zeRGBa) have more than one output. 
 
-<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/joystick_merge_mode.png" style="width: 200px; height:360px"/>
+<img src="images/joystick_merge_mode.png" style="width: 200px; height:360px"/>
 
 This output can be written to Virtual Pin as an array of values. 
 On the hardware side - you can get any element of the array [0,1,2...] by using: 
@@ -68,7 +68,7 @@ There are two ways of pushing data from your hardware to the Widgets in the app 
 ### Perform requests by Widget
 - Using Blynk built-in reading frequency while App is active by setting 'Reading Frequency' parameter to some interval:
 
-<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/frequency_reading_pull.png" style="width: 200px; height:360px"/>
+<img src="images/frequency_reading_pull.png" style="width: 200px; height:360px"/>
 
 ```cpp
 BLYNK_READ(V5) // Widget in the app READs Virtal Pin V5 with the certain frequency
@@ -87,7 +87,7 @@ Just set the frequency to PUSH mode. Any command that hardware sends to Blynk Cl
 and you get this info either with [History Graph](http://docs.blynk.cc/#widgets-displays-history-graph) widget 
 or with [HTTP API](http://docs.blynkapi.apiary.io/#reference/0/pin-history-data/get-all-history-data-for-specific-pin).
 
-<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/frequency_reading_push.png" style="width: 200px; height:360px"/>
+<img src="images/frequency_reading_push.png" style="width: 200px; height:360px"/>
 
 We recommend sending data in intervals and avoiding [Flood Error](http://docs.blynk.cc/#troubleshooting-flood-error).  
 You can use timers like [BlynkTimer](http://docs.blynk.cc/#blynk-firmware-blynktimer).  
@@ -179,19 +179,19 @@ Blynk app has support of multiple devices. That means you can assign any widget 
 For example - you may have button on V1 that controls wi-fi bulb A and another button on V1 that controls wi-fi bulb B. In order 
 to do this you need more than 1 device within your project. To achieve this please go to project settings and click on "Devices" section : 
 
-<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/new_project_settings.png" style="width: 200px; height:360px"/>
+<img src="images/new_project_settings.png" style="width: 200px; height:360px"/>
 
 You'll see list of devices :
  
-<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/list_of_devices.png" style="width: 200px; height:360px"/>
+<img src="images/list_of_devices.png" style="width: 200px; height:360px"/>
 
 So you can add new device : 
 
-<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/new_device.png" style="width: 200px; height:360px"/>
+<img src="images/new_device.png" style="width: 200px; height:360px"/>
 
 After above steps, every widget will have one more field "Target" : 
 
-<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/widget_settings_devices.png" style="width: 200px; height:360px"/>
+<img src="images/widget_settings_devices.png" style="width: 200px; height:360px"/>
 
 Now you need to assign widget to device and after that widget will control only this specific device.
 
@@ -209,7 +209,7 @@ state of such widgets from hardware.
 ## Devices online status
 Blynk app has support for online statuses for multiple devices.
  
-<img src="https://d1bhbfzxsgnz1o.cloudfront.net/images/online_status.png" style="width: 200px; height:360px"/>
+<img src="images/online_status.png" style="width: 200px; height:360px"/>
 
 In ideal world when device closes tcp connection with some ```connection.close()``` - connected server will get notification 
 regarding closed connection. So you can get instant status update on UI. However in real world this mostly exceptional situation. 
