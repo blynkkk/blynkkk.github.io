@@ -573,11 +573,11 @@ You may skip ```to``` field when you want to send email to your Blynk app login 
 You can send either ```text/html``` or ```text/plain``` (some clients don't support ```text/html```) email.
 You can change this content type of email in the Mail widget settings.
 
-Additionally you may use ```{DEVICE_NAME}``` placeholder in the mail subject and body in order to identify device name of
-hardware that sends email:
+Additionally you may use ```{DEVICE_NAME}```, ```{DEVICE_OWNER_EMAIL}``` and ```{VENDOR_EMAIL}``` (for the local server)
+placeholders in the mail for the ```to```, ```subject``` and ```body``` fields:
 
 ```cpp
-Blynk.email("my_email@example.com", "{DEVICE_NAME} : Alarm", "Your {DEVICE_NAME} has critical error!");
+Blynk.email("{DEVICE_OWNER_EMAIL}", "{DEVICE_NAME} : Alarm", "Your {DEVICE_NAME} has critical error!");
 ```
 
 <img src="images/mail.png" style="width: 77px; height:80px"/>
