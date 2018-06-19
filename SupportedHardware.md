@@ -80,7 +80,7 @@ Blynk supports more than 400 boards already, including support for Arduino, Part
   - LeMaker Banana Pro
   - Samsung ARTIK 5
   - PandaBoard, CubieBoard, pcDuino, Tessel 2
-  - VoCore (OpenWRT + [Espruino package](https://github.com/vshymanskyy/OpenWRT-Espruino-packages))
+  - VoCore, VoCore2 (OpenWRT + [Espruino package](https://github.com/vshymanskyy/OpenWRT-Espruino-packages))
   - Espruino Pico
   - ...
 
