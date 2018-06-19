@@ -142,4 +142,4 @@ Blynk supports more than 400 boards already, including support for Arduino, Part
 These boards are not supported and do not work out of the box:
 - [Arduino Tian](http://www.arduino.org/products/boards/arduino-tian)
 
-Here is a list of [**known library issues**](https://github.com/blynkkk/blynk-library/issues?q=is%3Aissue+is%3Aopen+label%3A%22for+reference%22)
+Here is a list of [**known library issues**](https://github.com/blynkkk/blynk-library/issues?q=is%3Aissue+label%3A"for+reference"+)
