@@ -42,20 +42,20 @@ points in your daily report for every selected datastream.
 option you will receive one file for the every selected datastream. So if you have 10 devices with 2 datastreams you'll get 20
 csv files as output of the report. With ```By Device``` option you'll get 2 files, 1 for the every device.
 
-```Timezone correction``` - allows you select the specific timezone for your data so you'll always get data in relative to you timezone.
+```Timezone correction``` - allows you select the specific timezone for your data so you'll always get the data time relative to your timezone.
 
-```Date and time format``` - defines format of timestamp field of your data. You can select ```2018-06-21 20:16:48```,
-```2018-06-21T20:16:48+03:00``` or other supported formats. There is one specific ```Timestamp``` format - that is the difference,
+```Date and time format``` - defines the format of the timestamp field of your data. You can select ```2018-06-21 20:16:48```,
+```2018-06-21T20:16:48+03:00``` or other supported formats. There is one specific ```Timestamp``` format - it is the difference,
 measured in milliseconds, between the current time and midnight, January 1, 1970 UTC.
 
-After your report is done - click on "OK" button at the right upper corner. Your report is ready!
+After the report is done - click on "OK" button at the right upper corner. Your first report is ready!
 
-Now, if everything was fine - you'll see ```Next``` label under your report that identifies exactly trigger time of your report.
-After the report is executed you'll see ```Last``` label under the report that identifies the last execution time of your report.
+Now, if everything was fine - you'll see the ```Next``` label under your report that identifies the exactly trigger time of the report.
+After the report is executed you'll see the ```Last``` label under the report that identifies the last execution time of the report.
 
-The ```Last``` label also contains the status regarding your report. It could be ```OK``` (the report is generated and sent to the Recipients),
+The ```Last``` label also contains the status regarding the report. It could be ```OK``` (the report is generated and sent to the Recipients),
 ```No Data``` (the report doesn't have any data for the selected period) or ```Error``` (something went wrong,
-in that case please contact the Blynk Team support).
+in that case please contact the Blynk Team support. It should never happen, but you know :) ).
 
 Reports don't require the project to be active in order to be executed. However, have in mind that non-active project do not generate any data.
 
