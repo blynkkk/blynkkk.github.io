@@ -47,13 +47,13 @@ csv files as output of the report. With ```By Device``` option you'll get 2 file
 ```2018-06-21T20:16:48+03:00``` or other supported formats. There is one specific ```Timestamp``` format - that is the difference,
 measured in milliseconds, between the current time and midnight, January 1, 1970 UTC.
 
-After your report is done click on "OK" button at the right upper corner. Your report is ready!
+After your report is done - click on "OK" button at the right upper corner. Your report is ready!
 
-Now if everything was fine - you'll see ```Next``` label under your report that identified exactly trigger time of your report.
-After report is executed you'll see ```Last``` label under the report that identifies the last execution time of your report.
+Now, if everything was fine - you'll see ```Next``` label under your report that identifies exactly trigger time of your report.
+After the report is executed you'll see ```Last``` label under the report that identifies the last execution time of your report.
 
 The ```Last``` label also contains the status regarding your report. It could be ```OK``` (the report is generated and sent to the Recipients),
-```No Data``` (the report doesn't have any data for selected period) or ```Error``` (something went wrong,
+```No Data``` (the report doesn't have any data for the selected period) or ```Error``` (something went wrong,
 in that case please contact the Blynk Team support).
 
 Reports don't require the project to be active in order to be executed. However, have in mind that non-active project do not generate any data.
