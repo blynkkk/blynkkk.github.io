@@ -39,7 +39,7 @@ For example, when you generate daily report with 1 minute granularity you'll get
 points in your daily report for every selected datastream.
 
 ```Group data in reports``` - field allows you to specify the output format of the CSV files. For example, with ```By Datastream```
-option you will receive one file for the every selected datastream. So if you have 10 devices with 2 datastreams you'll get 20
+option you will receive one file for the every selected datastream. So if you have 2 devices with 10 datastreams you'll get 20
 csv files as output of the report. With ```By Device``` option you'll get 2 files, 1 for the every device.
 
 ```Timezone correction``` - allows you select the specific timezone for your data so you'll always get the data time relative to your timezone.
