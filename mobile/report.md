@@ -28,14 +28,14 @@ Every report has a bunch of the settings:
 
 ```Report Frequency``` - This field defines a period of your report. It could ```one-time``` report (sends data right away when you
 click on the report icon). It could be periodic ```daily```/```weekly```/```monthly``` report.
-Every periodic report has a specific trigger time in a field called ```At Time``` and ```Start```/```End``` date for your report.
+Every periodic report has a specific trigger time in a field called ```At Time``` and ```Start```/```End``` dates for your report.
 In addition, for weekly report you can select required day of the week (```SUN```, ```MON```, etc) and for the monthly report you
 can select either the first day of the month or the last day of the month.
 
 ```Recipients``` - field allows you to specify report receivers. Up to 5 recipients.
 
 ```Data resolution``` - defines granularity of your reports. Right now we support ```minute```, ```hourly``` and ```daily``` granularity.
-For example, when you generate daily report with 1 minute granularity you'll get 24 * 60 * 60 points in your daily report.
+For example, when you generate daily report with 1 minute granularity you'll get ```24 * 60 * 60``` points in your daily report.
 
 ```Group data in reports``` - field allows you to specify the output format of the CSV files. For example, with ```By Datastream```
 option you will receive one file for the every selected datastream. So if you have 10 devices with 2 datastreams you'll get 20
