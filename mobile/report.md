@@ -35,7 +35,8 @@ can select either the first day of the month or the last day of the month.
 ```Recipients``` - field allows you to specify report receivers. Up to 5 recipients.
 
 ```Data resolution``` - defines granularity of your reports. Right now we support ```minute```, ```hourly``` and ```daily``` granularity.
-For example, when you generate daily report with 1 minute granularity you'll get ```24 * 60 * 60``` points in your daily report.
+For example, when you generate daily report with 1 minute granularity you'll get ```24 * 60 * 60```
+points in your daily report for every selected datastream.
 
 ```Group data in reports``` - field allows you to specify the output format of the CSV files. For example, with ```By Datastream```
 option you will receive one file for the every selected datastream. So if you have 10 devices with 2 datastreams you'll get 20
