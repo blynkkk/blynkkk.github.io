@@ -44,17 +44,18 @@ For example, when you generate daily report with 1 minute granularity you'll get
 points in your daily report for every selected Datastream.
 
 ```Group data in reports``` -  specify the output format of the CSV file(s).
-```By Datastream``` you will get 1 CSV file for each Datastream. 
+
+```By Datastream``` you will get 1 CSV file for each Datastream.
+
 ```By Device``` you will get 1 CSV file per each device. Each file will contain all of the included Datastreams.
-
-
 
 ```Timezone correction``` - specify the time zone adjustment if you need to get report date and time adjusted to a specific time zone
 
 ```Date and time format``` - defines the format of the timestamp field of your data. You can select ```2018-06-21 20:16:48```,
+
 ```2018-06-21T20:16:48+03:00``` or other supported formats. 
 
-There is one specific ```Timestamp``` format - it is the difference, measured in milliseconds, between the current time and midnight, January 1, 1970 UTC.
+There is one specific ```Timestamp``` format - which reflects the difference between the current time and midnight, January 1, 1970 UTC meaasured in milliseconds, 
 
 After the report is set up - click on "OK" button at the right upper corner. Your report is ready
 
