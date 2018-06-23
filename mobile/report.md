@@ -22,7 +22,7 @@ After you added source devices and their Datastreams click Play button and click
 
 Every Report option supposes it's own settings:
 
-```Report name``` - give your report a meaningful name
+```Report name``` - give your report a meaningful name.
 
 ```Data source``` - select the Datastreams you would like to be included in reports.
 
@@ -37,7 +37,7 @@ Scheduled reports can be sent ```daily```/```weekly```/```monthly```.
 For Weekly Report you can select a day of the week when report should be sent.
 For Monthly report you can choose whether to send report on the first or last day of the month.
 
-```Recipients``` - specify up to 5 email addresses. Use comma as a separator.
+```Recipients``` - specify up to 5 email addresses.
 
 ```Data resolution``` defines granularity of your reports. Supported granularities are: ```minute```, ```hourly``` and ```daily```.
 For example, when you generate daily report with 1 minute granularity you'll get ```24 * 60 * 60```
@@ -52,12 +52,11 @@ points in your daily report for every selected Datastream.
 ```Timezone correction``` - specify the time zone adjustment if you need to get report date and time adjusted to a specific time zone
 
 ```Date and time format``` - defines the format of the timestamp field of your data. You can select ```2018-06-21 20:16:48```,
+```2018-06-21T20:16:48+03:00``` or other supported formats.
 
-```2018-06-21T20:16:48+03:00``` or other supported formats. 
+There is one specific ```Timestamp``` format - which reflects the difference between the current time and midnight, January 1, 1970 UTC measured in milliseconds.
 
-There is one specific ```Timestamp``` format - which reflects the difference between the current time and midnight, January 1, 1970 UTC meaasured in milliseconds, 
-
-After the report is set up - click on "OK" button at the right upper corner. Your report is ready
+After the report is set up - click on "OK" button at the right upper corner. Your report is ready.
 
 
 Once you configured the report you will see when is the ```Next``` report scheduled and also a schedule for this report.
@@ -65,9 +64,9 @@ Once you configured the report you will see when is the ```Next``` report schedu
 After the report was sent at least once, you can see when the ```Last``` report was sent.
 
 ```Last``` label also contains the status regarding the report. 
-- ```OK```: the report was generated and sent to the Recipients successfully
-- ```No Data```: the report doesn't contain any data for the configured period
-- ```Error```: something went wrong. Please contact the Blynk Team support.
+- ```OK```: the report was generated and sent to the Recipients successfully;
+- ```No Data```: the report doesn't contain any data for the configured period;
+- ```Error```: something went wrong. Please contact the Blynk Team support;
 
 Reports will be generated even if your project is not in active (Play) mode. However, inactive projects don't generate any data.
 
