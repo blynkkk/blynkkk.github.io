@@ -1294,11 +1294,13 @@ For Monthly report you can choose whether to send report on the first or last da
 For example, when you generate daily report with 1 minute granularity you'll get ```24 * 60 * 60```
 points in your daily report for every selected Datastream.
 
-```Group data in reports``` -  specify the output format of the CSV file(s).
+```Group data in reports by``` -  specify the output format of the CSV file(s).
 
-```By Datastream``` you will get 1 CSV file for each Datastream.
+```Datastream``` you will get 1 CSV file for each Datastream.
 
-```By Device``` you will get 1 CSV file per each device. Each file will contain all of the included Datastreams.
+```Device``` you will get 1 CSV file per each device. Each file will contain all of the included Datastreams.
+
+```Report``` you will get 1 CSV file for all your devices and all your Datastreams.
 
 ```Timezone correction``` - specify the time zone adjustment if you need to get report date and time adjusted to a specific time zone
 
@@ -1314,7 +1316,8 @@ Once you configured the report you will see when is the ```Next``` report schedu
 
 After the report was sent at least once, you can see when the ```Last``` report was sent.
 
-```Last``` label also contains the status regarding the report.
+```Last``` label also contains the status regarding the report:
+
 - ```OK```: the report was generated and sent to the Recipients successfully;
 - ```No Data```: the report doesn't contain any data for the configured period;
 - ```Error```: something went wrong. Please contact the Blynk Team support;
