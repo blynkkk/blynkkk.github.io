@@ -1,7 +1,7 @@
 
 ### Reports
 
-Function of Reports is to configure and customize data reports in CSV format. You can choose between one-time or continuous scheduled reports.
+Function of Reports widget is to configure and customize data reports in CSV format. You can choose between one-time or continuous scheduled reports.
 
 Also, within the Reports you can clear all the data collected by your devices. 
 
