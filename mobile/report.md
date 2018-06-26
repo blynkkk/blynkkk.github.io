@@ -1,5 +1,5 @@
 
-### Reports Widget
+### Reports
 
 Function of Reports is to configure and customize data reports in CSV format. You can choose between one-time or continuous scheduled reports.
 
