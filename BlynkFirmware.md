@@ -3,26 +3,24 @@
 
 ### Blynk.begin()
 
-The simplest way to configure Blynk is to call ```Blynk.begin()```:
+The easiest way to configure Blynk is to use ```Blynk.begin()```:
 
 ```cpp
 Blynk.begin(auth, ...);
 ```
-It has various parameters for different hardware, depending on the type of connection you use. Follow the example sketches for your board.
+It has multiple parameters for different hardware models and it also depends on the type of connection. Follow the example sketches for your specific hardware model.
 
-```begin()``` is basically doing these steps:
+What happens inside of ```Blynk.begin()``` function:
 
-1. Connects to network (WiFi, Ethernet, ...)
-2. Calls ```Blynk.config(...)``` - sets auth token, server address
-3. Tries to connects to the server once (can block for more than 30s)
+1. Connection to the network (WiFi, Ethernet, ...)
+2. Call of ```Blynk.config(...)``` to set Auth Token, Server Address, etc.
+3. Attempts to connect to the server once (can block for more than 30s)
 
-If your shield/connection type is not supported yet - you can craft it yourself easily! 
-[Here are some examples](https://github.com/blynkkk/blynk-library/tree/master/examples/More/ArduinoClient).
+If your shield/connection type is not supported yet - you can implement it by yourself. [Here are some examples](https://github.com/blynkkk/blynk-library/tree/master/examples/More/ArduinoClient).
 
 ### Blynk.config()
 
-```config()``` allows you to manage network connection yourself.
-You can set up your shield (WiFi, Ethernet, ...) manually, and then call:
+```config()``` allows you to manage network connection. You can set up your connection type (WiFi, Ethernet, ...) by yourself, and then call:
 
 ```cpp
 Blynk.config(auth, server, port);
@@ -32,11 +30,11 @@ or just
 Blynk.config(auth);
 ```
 
-**Note:** Just after ``` Blynk.config(...) ```, Blynk is not yet connected to the server.  
-It will try to connect when it reaches first ``` Blynk.run() ``` or ``` Blynk.connect() ```call.  
-If you want to skip connecting to the server, just call ``` Blynk.disconnect() ``` right after configuration.
+**NOTE: After ``` Blynk.config(...) ``` is called, your hardware is not yet connected to the server.** 
+It will try to connect while until it hits first instance of ``` Blynk.run() ``` or ``` Blynk.connect() ```routine.  
+To skip connecting to the server or to disconnect manually, call ``` Blynk.disconnect() ``` after configuration.
 
-For setting-up WiFi connection, you can use a ```connectWiFi``` (just for convenience):
+Use ```connectWiFi``` to conveniently set up WiFi connection:
 
 ```cpp
 Blynk.connectWiFi(ssid, pass);
@@ -49,24 +47,25 @@ There are several functions to help with connection management:
 
 ### Blynk.connect()
 
+This functions will continue trying to connect to Blynk server. 
+Returns `true` when connected, `false` if timeout have been reached.
+Default timeout is 30 seconds.
+
 ```cpp
-# This functions will try connecting to Blynk server.
-# Returns true when connected, false if timeout reached.
-# Default timeout is 30 seconds.
 bool result = Blynk.connect();
 bool result = Blynk.connect(timeout);
 ```
 
 ### Blynk.disconnect()
 
-To disconnect from Blynk server, use:
+Disconnects hardware from Blynk server:
 
 ```cpp
 Blynk.disconnect();
 ```
 
 ### Blynk.connected()
-To get the status of connection to Blynk Server use:
+Returns `true` when hardware is connected to Blynk Server, `false` if there is no active connection to Blynk server.
 
 ```cpp
 bool result = Blynk.connected();
@@ -76,32 +75,35 @@ bool result = Blynk.connected();
 This function should be called frequently to process incoming commands and perform housekeeping of Blynk connection.
 It is usually called in ``` void loop() {} ```.
 
-You can initiate it in other places, unless you run out of heap memory (in the cascaded functions with local memory).
+This command can be initiated it in other places of your code unless you run out of heap memory (in the cascaded functions with local memory).
+
 For example, it is not recommended to call ``` Blynk.run() ``` inside of the  ```BLYNK_READ ``` and ``` BLYNK_WRITE ``` functions on low-RAM devices.
 
 ## Digital & Analog pins control
-The library can perform basic pin IO (input-output) operations out-of-the-box:
+Blynk library can perform basic pin IO (input-output) operations out-of-the-box:
 
     digitalRead
     digitalWrite
     analogRead
     analogWrite (PWM or Analog signal depending on the platform)
 
-No need to write code for simple things like LED, Relay control and analog sensors.
+No need to write code for simple things like LED, Relay control and analog sensors. Just choose a corresponding Pin in Blynk app and control it directly with no additional code
 
 ## Virtual pins control
-Virtual Pins are designed to send any data from your microcontroller to the Blynk App and back. 
-Think about Virtual Pins as channels for sending any data. Make sure you differentiate Virtual Pins from physical 
+Virtual Pins is a way to exchange any data between your hardware and Blynk app. 
+Think about Virtual Pins as channels for sending any data. Make sure you differentiate Virtual Pins from physical GPIO
 pins on your hardware. Virtual Pins have no physical representation.
 
-Virtual Pins can be used to interface with libraries (Servo, LCD and others) and implement custom functionality. 
-The device may send data to the App using  ```Blynk.virtualWrite(pin, value)``` and receive data from the App using ```BLYNK_WRITE(vPIN)```.
+Virtual Pins are commonly used to interface with other libraries (Servo, LCD and others) and implement custom logic. 
+The device can send data to the App using  ```Blynk.virtualWrite(pin, value)``` and receive data from the App using ```BLYNK_WRITE(vPIN)```. Read below
 
 #### Virtual Pin data types
-The actual values are sent as strings, so there are no practical limits on the data that can be sent.  
-However, remember the limitations of the platform when dealing with numbers. For example the integer on Arduino 
+All Virtual Pin values are always sent as Strings and there are no practical limits on the data that can be sent.  
+However, there are certian limitations on the hardware side when dealing with numbers. For example, the integer on Arduino 
 is 16-bit, allowing range -32768 to 32767.
-You can interpret incoming data as Integers, Floats, Doubles and Strings:
+
+To interpret incoming data as Integers, Floats, Doubles and Strings use:
+
 ```cpp
 param.asInt();
 param.asFloat();
@@ -118,7 +120,9 @@ param.getLength()
 
 ### Blynk.virtualWrite(vPin, value)
 
-You can send all the formats of data to Virtual Pins
+**NOTE: Use BlynkTimer when you use this command to send data. Otherwise your hardware will be disconnected from the server**
+
+Send data in various formats to Virtual Pins.
 
 ```cpp
 // Send string
@@ -137,15 +141,30 @@ Blynk.virtualWrite(pin, "hello", 123, 12.34);
 Blynk.virtualWriteBinary(pin, buffer, length);
 ```
 
-**Note:** Calling ```virtualWrite``` attempts to send the value to the network immediately.
+Calling ```virtualWrite``` attempts to send the value to the network immediately.
 
-### Blynk.setProperty(vPin, "property", value)
+## BlynkTimer
+It's important to send data in intervals and keep the void loop() as clean as possible. 
 
-This allows [changing widget properties](#blynk-main-operations-change-widget-properties)
+`BlynkTimer` allows you to send data periodically with given intervals not interfering with Blynk library routines 
+`Blynk Timer` inherits [SimpleTimer Library](http://playground.arduino.cc/Code/SimpleTimer), a well known and widely used library to time multiple events on hardware.
+`BlynkTimer` is included in Blynk library by default and there is no need to install SimpleTimer separately or include `SimpleTimer.h`   
+
+- A single `BlynkTimer` object allows to schedule up to 16 timers
+- Improved compatibility with boards like `Arduino 101`, `Intel Galileo`, etc.
+- When a timer struggles to run multiple times (due to a blocked `loop`), it just skips all the missed intervals, and calls your function only once. This differs from `SimpleTimer`, which could call your function multiple times in this scenario.
+
+For more information on timer usage, please see: http://playground.arduino.cc/Code/SimpleTimer  
+And here is a BlynkTimer [example sketch](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino#L30).
+
+Please also remember that a single ```BlynkTimer``` can schedule many timers, so most probably you need only one instance of BlynkTimer in your sketch.
+
 
 ### BLYNK_WRITE(vPIN)
 
-```BLYNK_WRITE``` defines a function that is called when device receives an update of Virtual Pin value from the server:
+```BLYNK_WRITE``` is a function called every time device gets an update of Virtual Pin value from the server (or app):
+
+To read the received data use:
 
 ```cpp
 BLYNK_WRITE(V0)
@@ -158,9 +177,12 @@ BLYNK_WRITE(V0)
 }
 ```
 
+**`BLYNK_WRITE` can't be used inside of any loop or function. It's a standalone function.**
+
+
 ### BLYNK_READ(vPIN)
 
-```BLYNK_READ``` defines a function that is called when device is requested to send it's current value of Virtual Pin to the server. Normally, this function should contain some ```Blynk.virtualWrite``` calls.
+```BLYNK_READ``` is function called when device is requested to send it's current value of Virtual Pin to the server. Normally, this function should contain ```Blynk.virtualWrite``` call(s).
 
 ```cpp
 BLYNK_READ(V0)
@@ -171,7 +193,7 @@ BLYNK_READ(V0)
 
 ### BLYNK_WRITE_DEFAULT()
 
-This redefines the handler for all pins that are not covered by custom ```BLYNK_WRITE``` functions.
+Redefines the handler for all pins that are not covered by custom ```BLYNK_WRITE``` functions.
 
 ```cpp
 BLYNK_WRITE_DEFAULT()
@@ -183,7 +205,7 @@ BLYNK_WRITE_DEFAULT()
 
 ### BLYNK_READ_DEFAULT()
 
-This redefines the handler for all pins that are not covered by custom ```BLYNK_READ``` functions.
+Redefines the handler for all pins that are not covered by custom ```BLYNK_READ``` functions.
 
 ```cpp
 BLYNK_READ_DEFAULT()
@@ -195,7 +217,7 @@ BLYNK_READ_DEFAULT()
 
 ### BLYNK_CONNECTED()
 
-This function is called every time Blynk gets connected to the server. It's convenient to call sync functions here.
+Use this function when you need to run certain routine when hardware connects to Blynk Cloud or private server. It's common to call sync functions inside of this function.
 
 ```cpp
 BLYNK_CONNECTED() {
@@ -205,15 +227,15 @@ BLYNK_CONNECTED() {
 
 ### BLYNK_APP_CONNECTED()
 
-This function is called every time the Blynk app gets connected to the server.
+This function is called every time Blynk app client connects to Blynk server.
 
 ```cpp
 BLYNK_APP_CONNECTED() {
-// Your code here
+// Your code goes here
 }
 ```
 
-**Note: you need to enable this feature within project settings:**
+**Note: Ennable this feature in Project Settings first:**
 
 <img src="images/app_connected_setting.png" style="width: 200px; height:360px"/>
 
@@ -221,7 +243,7 @@ BLYNK_APP_CONNECTED() {
 
 ### BLYNK_APP_DISCONNECTED()
 
-This function is called every time the Blynk app gets connected to the server.
+This function is called every time the Blynk app disconnects from Blynk Cloud or private server.
 
 ```cpp
 BLYNK_APP_DISCONNECTED() {
@@ -229,7 +251,7 @@ BLYNK_APP_DISCONNECTED() {
 }
 ```
 
-**Note: you need to enable this feature within project settings:**
+**Note: Enable this feature in Project Settings first:**
 
 <img src="images/app_connected_setting.png" style="width: 200px; height:360px"/>
 
@@ -237,7 +259,7 @@ BLYNK_APP_DISCONNECTED() {
 
 ### Blynk.syncAll()
 
-Request server to send the most recent values for all widgets. In other words, all analog/digital pin states will be restored and every virtual pin will generate BLYNK_WRITE event.
+Requests all stored on the server latest values for all widgets. All analog/digital/virtual pin values and states will be set to the latest stored value. Every virtual pin will generate BLYNK_WRITE() event.
 
 ```cpp
 BLYNK_CONNECTED() {
@@ -247,41 +269,37 @@ BLYNK_CONNECTED() {
 
 ### Blynk.syncVirtual(vPin)
 
-Requests virtual pins value update. The corresponding ```BLYNK_WRITE``` handler is called as the result.
+This command updates individual Virtual Pin to the latest stored value on the server. When it's used, a corresponding ```BLYNK_WRITE``` handler is called.
 
 ```cpp
 Blynk.syncVirtual(V0);
-# Requesting multiple pins is also supported:
+```
+
+To update multiple pins, use:
+
+```
 Blynk.syncVirtual(V0, V1, V6, V9, V16);
 ```
 
-## BlynkTimer
+### Blynk.setProperty(vPin, "property", value)
 
-```BlynkTimer``` enables you to perform periodic actions in the main ```loop()``` context.  
-It is the same as widely used SimpleTimer, but fixes several issues:
+This command allows [changing widget properties](#blynk-main-operations-change-widget-properties)
 
-- A single `BlynkTimer` object allows to schedule up to 16 timers
-- Improved compatibility with boards like `Arduino 101`, `Intel Galileo`, etc.
-- When a timer struggles to run multiple times (due to a blocked `loop`), it just skips all the missed intervals, and calls your function only once. This differs from `SimpleTimer`, which could call your function multiple times in this scenario.
-
-`BlynkTimer` is included in Blynk library by default, so no need to install SimpleTimer separately or include SimpleTimer.h   
-
-For more information on timer usage, please see: http://playground.arduino.cc/Code/SimpleTimer  
-And here is a BlynkTimer [example sketch](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino#L30).
 
 ## Debugging
 
 ### #define BLYNK_PRINT
 ### #define BLYNK_DEBUG
 
-To enable debug prints on the default Serial, add on the top of your sketch **(should be the first line)**:
+To enable debug prints on the default Serial port add on the top of your sketch 
+**IMPORTANT: This should be the first line in your code**:
 
 ```cpp
 #define BLYNK_PRINT Serial // Defines the object that is used for printing
 #define BLYNK_DEBUG        // Optional, this enables more detailed prints
 ```
 
-And enable Serial Output in setup():
+Then enable Serial Output in setup():
 
 ```cpp
 Serial.begin(9600);
@@ -304,7 +322,7 @@ On some platforms (like Arduino 101) the ```BLYNK_LOG``` may be unavailable, or 
 In this case you can use a set of simpler log functions:
 
 ```cpp
-BLYNK_LOG1("Heeey"); // Print a string
+BLYNK_LOG1("Hello World"); // Print a string
 BLYNK_LOG1(10);      // Print a number
 BLYNK_LOG2("This is my value: ", 10); // Print 2 values
 BLYNK_LOG4("Temperature: ", 24, " Humidity: ", 55); // Print 4 values
@@ -321,8 +339,6 @@ To minimize the program Flash/RAM, you can disable some of the built-in function
 #define BLYNK_NO_BUILTIN   // Disable built-in analog & digital pin operations
 #define BLYNK_NO_FLOAT     // Disable float operations
 ```
-
-Please also remember that a single ```BlynkTimer``` can schedule many timers, so most probably you need only one instance of BlynkTimer in your sketch.
 
 ## Porting, hacking
 
