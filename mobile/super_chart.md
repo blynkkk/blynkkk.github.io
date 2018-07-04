@@ -15,8 +15,7 @@ To use SuperChart widget you would need to push the data from the hardware with 
 
 - **Tap'n'hold to view timestamp and corresponding values**
 
-- **Quick swipe from left to right to reveal previous data** 
-
+- **Quick swipe from left to right to reveal previous data**
 Then you can then scroll data back and forward within the given time range.
 
 - **Full Screen Mode**</br>
