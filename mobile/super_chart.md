@@ -15,7 +15,7 @@ To use SuperChart widget you would need to push the data from the hardware with 
 
 - **Tap'n'hold to view timestamp and corresponding values**
 
-- **Quick swipe from left to right to reveal previous data**
+- **Quick swipe from left to right to reveal previous data**</br>
 Then you can then scroll data back and forward within the given time range.
 
 - **Full Screen Mode**</br>
@@ -32,19 +32,19 @@ Menu button will open additional functions:
 
 #### SuperChart Settings:
 - **Chart Title**
-- **Title Font Size**
+- **Title Font Size**</br>
 You have a choice of 3 font sizes
-- **Title Alignment**
+- **Title Alignment**</br>
 Choose chart title alignment. This setting also affects Title and Legend position on the Widget.
-- **Show x-axis (time)**
+- **Show x-axis (time)**</br>
 Select it if you want to show the time label at the bottom of your chart.
-- **Time ranges picker**
+- **Time ranges picker**</br>
 Allows you to select required periods (`15m`, `30m`, `1h`, `3h`, ...) and resolution for your chart. Resolution
 defines how precise your data is. Right now chart supports 2 types of resolution `standard` and `high`. Resolution also
 depends on the selected period. For example, `standard` resolution for `1d` means you'll get 24 points per day (1 per hour),
 with `high` resolution you'll get for `1d` 1440 points per day (1 per minute).
-
-- **Datastreams** - add datastreams (read below how to configure datastreams)
+- **Datastreams**</br>
+Add datastreams (read below how to configure datastreams)
 
 #### Datastream Settings
 
