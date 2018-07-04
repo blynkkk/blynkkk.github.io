@@ -32,16 +32,20 @@ Menu button will open additional functions:
 	- Erase Data on the server 
 
 #### SuperChart Settings:
-- **Chart Title**
-
-- **Title Font Size**
+- Chart Title
+- Title Font Size
 You have a choice of 3 font sizes
-- **Title Alignment**
+- Title Alignment
 Choose chart title alignment. This setting also affects Title and Legend position on the Widget.
+- Show x-axis (time)
+Select it if you want to show the time label at the bottom of your chart.
+- Time ranges picker
+Allows you to select required periods (`15m`, `30m`, `1h`, `3h`, ...) and resolution for your chart. Resolution
+defines how precise your data is. Right now chart supports 2 types of resolution `standard` and `high`. Resolution also
+depends on the selected period. For example, `standard` resolution for `1d` means you'll get 24 points per day (1 per hour),
+with `high` resolution you'll get for `1d` 1440 points per day (1 per minute).
 
-- **Datastreams** - add datastreams (read below how to configure datastreams)
-- **Show/Hide Title**
-- **Show/Hide Legend**
+- Datastreams - add datastreams (read below how to configure datastreams)
 
 #### Datastream Settings
 
@@ -79,11 +83,11 @@ To use Tags:
 
 **Functions available:** 
 	
-- **SUM**, will summarize all incoming values to the specified Virtual Pin across all devices tagged with the chosen tag
-- **AVG**, will plot average value 
-- **MED**, will find a median value
-- **MIN**, will plot minimum value 
-- **MAX** will plot minimum value 
+- `SUM` will summarize all incoming values to the specified Virtual Pin across all devices tagged with the chosen tag
+- `AVG` will plot average value
+- `MED` will find a median value
+- `MIN` will plot minimum value
+- `MAX` will plot minimum value
 	
 
 **☝️ IMPORTANT: Tags are not working in Live Mode.**
