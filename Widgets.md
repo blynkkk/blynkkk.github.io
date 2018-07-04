@@ -505,6 +505,7 @@ terminal.print();   // Print values, like Serial.print
 terminal.println(); // Print values, like Serial.println()
 terminal.write();   // Write a raw data buffer
 terminal.flush();   // Ensure that data was sent out of device
+terminal.clear();   // Erase all values in the terminal
 ```
 
 <img src="images/terminal.png" style="width: 77px; height:80px"/>

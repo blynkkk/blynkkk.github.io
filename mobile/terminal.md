@@ -5,7 +5,7 @@ Displays data from your hardware. Allows to send any string to your hardware. Te
 your hardware had send to Blynk Cloud. This limit may be increased on Local Server with ```terminal.strings.pool.size``` 
 property.
 
-You need to use special commands with this widget:
+You can use special commands with this widget:
 
 ```cpp
 // Print values, like Serial.print
@@ -16,6 +16,8 @@ terminal.println();
 terminal.write();
 // Ensure that data was sent out of device
 terminal.flush();
+// Erase all values in the terminal
+terminal.clear();
 ```
 
 **Sketch:** [Terminal](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Terminal/Terminal.ino)
