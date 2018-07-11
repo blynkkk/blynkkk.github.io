@@ -106,4 +106,12 @@ Geo DNS issue is no longer a problem. It was solved in 2017.
 
 ## Reset password
 
-On login screen click on "Problems signing in?" label and than "Reset Password" button. You'll get instruction on your email.
+On login screen click on "Forgot password?" label and than type your email and ```Send``` button.
+You'll get instruction on your email.
+
+### Android reset password flow
+
+1. Open instruction email **from your smartphone or tablet**;
+2. Click on Blynk icon in below popup:
+<img src="images/reset.png" style="width: 200px; height:360px"/>
+3. Reset your password within Blynk app;
