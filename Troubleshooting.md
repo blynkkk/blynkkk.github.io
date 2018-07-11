@@ -113,5 +113,6 @@ You'll get instruction on your email.
 
 1. Open instruction email **from your smartphone or tablet**;
 2. Click on Blynk icon in below popup:
-<img src="images/reset.png" style="width: 200px; height:360px"/>
+
+<img src="images/reset.png"/>
 3. Reset your password within Blynk app;
