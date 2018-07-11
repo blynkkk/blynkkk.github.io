@@ -115,4 +115,5 @@ You'll get instruction on your email.
 2. Click on Blynk icon in below popup:
 
 <img src="images/reset.png"/>
+
 3. Reset your password within Blynk app;
