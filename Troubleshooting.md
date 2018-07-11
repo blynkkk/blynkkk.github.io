@@ -112,6 +112,7 @@ You'll get instruction on your email.
 ### Android reset password flow
 
 1. Open instruction email **from your smartphone or tablet**;
-2. Click on Blynk icon in below popup and reset the pass:
+2. Click on "Reset now" button in your email;
+3. Click on Blynk icon in below popup and reset the pass:
 
 <img src="images/reset.png"/>
