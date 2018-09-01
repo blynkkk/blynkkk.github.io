@@ -5,6 +5,8 @@ Blynk supports more than 400 boards already, including support for Arduino, Part
 ## Platforms
 
 - **Arduino** (https://github.com/blynkkk/blynk-library)
+  - Arduino MKR WiFi 1010
+  - Arduino MKR GSM 1400
   - Arduino Uno, Duemilanove
   - Arduino Nano, Mini, Pro Mini, Pro Micro, Due, Mega
   - Arduino 101 (Intel Curie, with BLE)
@@ -97,6 +99,7 @@ Blynk supports more than 400 boards already, including support for Arduino, Part
 - USB (Serial), connected to your laptop or desktop
 
 - **Ethernet:**
+  - Arduino MKR ETH
   - Arduino Ethernet Shield (W5100)
   - Arduino Ethernet Shield 2 (W5500)
   - SeeedStudio Ethernet Shield V2.0 (W5200)
