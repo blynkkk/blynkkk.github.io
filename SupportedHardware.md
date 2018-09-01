@@ -14,6 +14,8 @@ Blynk supports more than 400 boards already, including support for Arduino, Part
   - Arduino Zero
   - Arduino Yún (onboard WiFi and Ethernet, via Bridge)
   - Arduino.org UNO WiFi
+  - Arduino MKR VIDOR 4000 (use the example for MKR WiFi 1010)
+  - Arduino UNO WiFi Rev.2 (use the example for MKR WiFi 1010)
   
 - **Arduino-like**
   - Blynk Board
