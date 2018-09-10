@@ -419,9 +419,12 @@ If you add Device Selector Widget to your project, you can use it as a source fo
 In this case, when you change the device in Device Selector, chart will be updated accordingly
 
 **Y-Axis Settings**
-<br>There are two modes of how to scale data along the Y axis
+<br>There are 4 modes of how to scale data along the Y axis
 
-1. **Values**<br>
+1. *Auto*<br>
+Data will be auto-scaled based on min and max values of the given time period. This is nice option to start with.
+
+2. **Values**<br>
 When this mode is selected, Y scale will be set to the values you choose. 
 For example, if your hardware sends data with values varying from -100 to 100, you can set the chart 
 to this values and data will be rendered correctly.
@@ -432,7 +435,7 @@ You may also want to visualize the data within some specific range.
 Let's say incoming data has values in the range of 0-55, but you would like to see only values in the range 30-50. 
 You can set it up and if values are out of Y scale you configured, chart will be cropped
 
-2. **% of Height**<br>
+3. **% of Height**<br>
 This option allows you to auto-scale incoming data on the widget and position it the way you want. 
 In this mode, you set up the percentage of widget height on the screen, from 0% to 100%. 
 
@@ -448,9 +451,15 @@ This setting is very valuable for **Binary Chart** or for visualizing a few data
 
 <img src="images/chart/binary_charts.png" style="width: 300px; height:280px"/>
 
-**Suffix:** <br>Here you can specify a suffix that will be shown during the Tap'n'hold
+4. *Delta*<br>
+While data stays within the given Delta value, chart will be auto-scaled within this range.
+If delta exceeds the range, chart will be auto-scaled to min/max values of the given period.
 
-<img src="images/chart/suffix_charts.png" style="width: 300px; height:280px"/>
+**Suffix:**<br>
+Here you can specify a suffix that will be shown during the Tap'n'hold
+
+**Decimals**<br>
+Defines the formatting of the graph value when you Tap'n'hold the graph. Possible options are: #, #.#, #.##, etc.
 
 **Connect Missing Data Points**<br>
 If this switch is ON, then SuperChart will connect all the dots even if there was no data
