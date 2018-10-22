@@ -2,13 +2,12 @@
 
 Blynk server has 5 ports open for different security levels.
 
-* **8441** - SSL/TLS connection for the hardware
 * **80** - plain TCP connection for the hardware (no security)
-* **443** - SSL/TLS connection for the Mobile Apps
 * **8080** - plain TCP connection for hardware on the Local Server (no security)
-* **9443** - SSL/TLS connection for the Mobile Apps on the Local Server
+* **443** - SSL/TLS connection for the Mobile Apps and hardware with SSL
+* **9443** - SSL/TLS connection for the Mobile Apps on the Local Server and hardware with SSL
 
-Hardware may select to connect to 8441 or 80, depending on it's capabilities.
+Hardware may select to connect to 443 (9443) or 80 (8080), depending on it's capabilities.
 Connection between the app and the server is always is done through SSL/TLS, so it is always secured.
 Connection between the hardware and server depends on your hardware capabilities. With the Local Blynk server
 connection type between the hardware and server is not that important for the security as the Local server is
@@ -36,13 +35,13 @@ However, our [gateway script](https://github.com/blynkkk/blynk-library/blob/mast
 ```bash
 ./blynk-ser.sh -f SSL
 ```
-This will forward all hardware connections from 8441 port to the server via SSL gateway.
+This will forward all hardware connections from 9443 port to the server via SSL gateway.
 You can run this script on your Raspberry Pi, desktop computer, or even directly on your router!
 
 **Note:** when using your own server, you should overwrite the bundled server.crt certificate, or specify it to the script using ```--cert``` switch:
 
 ```bash
-./blynk-ser.sh -f SSL -s <server ip> -p 8441 --cert=<certificate>.crt
+./blynk-ser.sh -f SSL -s <server ip> -p 9443 --cert=<certificate>.crt
 ```
 
 Flag ```-f SSL``` is enabled by default for USB communication so you don't have to explicit declare it.
