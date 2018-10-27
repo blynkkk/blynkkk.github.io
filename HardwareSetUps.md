@@ -154,7 +154,7 @@ Additional materials:
 
 **Note:** Instead of using Node.js, you can also build a C++ libarry version (same as Arduino, WiringPi-based) installation:
 - [Library README for Linux](https://github.com/blynkkk/blynk-library/blob/master/linux/README.md)
-- [Blynk Community Topic: How-To Raspberry Pi](http://community.blynk.cc/t/howto-for-raspberry-pi/332)
+- [Blynk Community Topic: How-To Raspberry Pi](https://community.blynk.cc/t/howto-for-raspberry-pi/332)
 - [Video tutorial - Setting up Blynk and Raspberry Pi:](https://www.youtube.com/watch?v=iSG_8g6KyGE)
 
 ## ESP8266 Standalone

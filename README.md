@@ -1,2 +1,2 @@
 
-### http://docs.blynk.cc/
+### https://docs.blynk.cc/

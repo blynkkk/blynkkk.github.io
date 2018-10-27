@@ -5,7 +5,7 @@
 > Current Blynk release has a limited amount of widgets. We decided to make them free for everyone until we implement store. After that, every widget will be paid. However every backer will get them for free (according to their pledge).
   
 - What is Blynk Cloud?
-> Blynk Cloud is a open-source software written on Java using plain TCP/IP and secured TCP/IP (for hardware that supports it) sockets and running on our server. Blynk iOS and Android apps connect to Blynk Cloud by default. Access is free for every Blynk user. We also provide a Private Server distribution for those who want to [install it locally](http://docs.blynk.cc/#blynk-server).
+> Blynk Cloud is a open-source software written on Java using plain TCP/IP and secured TCP/IP (for hardware that supports it) sockets and running on our server. Blynk iOS and Android apps connect to Blynk Cloud by default. Access is free for every Blynk user. We also provide a Private Server distribution for those who want to [install it locally](/#blynk-server).
 
 - How much access to Cloud Blynk Server cost?
 > It is free for every Blynk user.
@@ -31,7 +31,7 @@
 - Can Blynk handle multiple Arduinos?
 > Yes. There 3 ways right now :
 > - add multiple devices to your project.
-> - you may use same [Auth Token](http://docs.blynk.cc/#getting-started-getting-started-with-application-auth-token) for different hardware. In that case you can control few hardwares from 1 dashboard.
+> - you may use same [Auth Token](/#getting-started-getting-started-with-application-auth-token) for different hardware. In that case you can control few hardwares from 1 dashboard.
 > - you can do it using [Bridge functionality](/#widgets-other-bridge) which allows you to send messages from one hardware to another.
 
 - Does Blynk server store sensor data when app goes offline?

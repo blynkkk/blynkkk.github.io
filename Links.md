@@ -1,9 +1,9 @@
 #Links
 
-* [Blynk site](http://www.blynk.cc)
-* [Blynk community](http://community.blynk.cc)
-* [Facebook](http://www.fb.com/blynkapp)
-* [Twitter](http://twitter.com/blynk_app)
+* [Blynk site](https://www.blynk.cc)
+* [Blynk community](https://community.blynk.cc)
+* [Facebook](https://www.fb.com/blynkapp)
+* [Twitter](https://twitter.com/blynk_app)
 * [Blynk Library](https://github.com/blynkkk/blynk-library)
 * [Blynk Examples](https://github.com/blynkkk/blynk-library/tree/master/examples)
 * [Blynk Server](https://github.com/blynkkk/blynk-server)
