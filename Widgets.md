@@ -554,7 +554,7 @@ application to be online or opened.
 
 Twitter widget connects your Twitter account to Blynk and allows you to send Tweets from your hardware.
 
-<img src="http://static1.squarespace.com/static/54765ba7e4b0d055ee0b47a6/54e92d39e4b0c31341b33a9a/55813d09e4b0ba8aa77ab230/1434533129525/TwitterON.png" style="width: 77px; height:80px"/>
+<img src="images/TwitterON.png" style="width: 77px; height:80px"/>
 
 Example code:
 ```cpp
