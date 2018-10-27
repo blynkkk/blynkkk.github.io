@@ -76,7 +76,7 @@ you can plot average value from 10 sensors on the widget.
 
 To use Tags:
 
-- **[Add Tag](http://docs.blynk.cc/#blynk-main-operations-control-of-multiple-devices-tags)** to every device you want to aggregate data from. 
+- **[Add Tag](/#blynk-main-operations-control-of-multiple-devices-tags)** to every device you want to aggregate data from.
 - **Push data to the same Virtual Pin** on every device. (e.g. ```Blynk.virtualWrite (V0, temperature);```)
 - **Choose Tag as a source** in SuperChart Widget and use the pin where the data is coming to (e.g V0)<br>
 
@@ -91,7 +91,7 @@ To use Tags:
 
 **☝️ IMPORTANT: Tags are not working in Live Mode.**
 
-3. **[Device Selector](http://docs.blynk.cc/#widgets-time-input-device-selector)**
+3. **[Device Selector](/#widgets-time-input-device-selector)**
 If you add Device Selector Widget to your project, you can use it as a source for SuperChart. 
 In this case, when you change the device in Device Selector, chart will be updated accordingly
 

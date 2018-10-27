@@ -22,7 +22,7 @@ This is one of the main parameters you need to set. It defines which pin to cont
 **Analog Pins** - represent physical Analog IO pins on your hardware
 
 **Virtual Pins** - have no physical representation. They are used to transfer any data between Blynk App and your hardware.
-Read more about Virtual Pins [here](http://docs.blynk.cc/#blynk-main-operations-virtual-pins).
+Read more about Virtual Pins [here](/#blynk-main-operations-virtual-pins).
 
 ### Data Mapping
 
@@ -133,7 +133,7 @@ However Timer widget is still suitable for simple timer events.
 Control servo movements in 4 directions
 
 ####Settings:
-- SPLIT/MERGE modes - read [here](http://docs.blynk.cc/#widgets-common-widget-settings-splitmerge)
+- SPLIT/MERGE modes - read [here](/#widgets-common-widget-settings-splitmerge)
 
 - **Rotate on Tilt**
 
@@ -399,7 +399,7 @@ you can plot average value from 10 sensors on the widget.
 
 To use Tags:
 
-- **[Add Tag](http://docs.blynk.cc/#blynk-main-operations-control-of-multiple-devices-tags)** to every device you want to aggregate data from. 
+- **[Add Tag](/#blynk-main-operations-control-of-multiple-devices-tags)** to every device you want to aggregate data from.
 - **Push data to the same Virtual Pin** on every device. (e.g. ```Blynk.virtualWrite (V0, temperature);```)
 - **Choose Tag as a source** in SuperChart Widget and use the pin where the data is coming to (e.g V0)<br>
 
@@ -414,7 +414,7 @@ To use Tags:
 
 **☝️ IMPORTANT: Tags are not working in Live Mode.**
 
-3. **[Device Selector](http://docs.blynk.cc/#widgets-time-input-device-selector)**
+3. **[Device Selector](/#widgets-time-input-device-selector)**
 If you add Device Selector Widget to your project, you can use it as a source for SuperChart. 
 In this case, when you change the device in Device Selector, chart will be updated accordingly
 
@@ -667,7 +667,7 @@ Also you can drag widgets between tabs. Just drag widget on the label of require
 Menu widget allows you to send command to your hardware based on selection you made on UI. Menu
 sends index of element you selected and not label string. Sending index is starts from 1.
 It works same way as usual ComboBox element. You can also set Menu items 
-[from hardware side](http://docs.blynk.cc/#blynk-main-operations-change-widget-properties).
+[from hardware side](/#blynk-main-operations-change-widget-properties).
 
 <img src="images/menu_edit.png" style="width: 200px; height:360px"/>
 

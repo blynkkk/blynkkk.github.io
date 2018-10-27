@@ -15,7 +15,7 @@ usually placed within the local network, so attacker can't intercept traffic bet
 
 ## Use Local Blynk Server
 
-In order to gain maximum security you could [install Blynk server locally](http://docs.blynk.cc/#blynk-server) and 
+In order to gain maximum security you could [install Blynk server locally](/#blynk-server) and
 restrict access to your network, so nobody except you could access it. In this case all data is stored locally within
 your network and not send via Internet.
 

@@ -84,8 +84,8 @@ BLYNK_READ(V5) // Widget in the app READs Virtal Pin V5 with the certain frequen
 ### Pushing data from hardware
 If you need to PUSH sensor or other data from your hardware to Widget, you can write any logic you want. 
 Just set the frequency to PUSH mode. Any command that hardware sends to Blynk Cloud is automatically stored on server
-and you get this info either with [History Graph](https://docs.blynk.cc/#widgets-displays-history-graph) widget
-or with [HTTP API](/#reference/0/pin-history-data/get-all-history-data-for-specific-pin).
+and you get this info either with [History Graph](/#widgets-displays-superchart) widget
+or with [HTTP API](http://docs.blynkapi.apiary.io/#reference/0/pin-history-data/get-all-history-data-for-specific-pin).
 
 <img src="images/frequency_reading_push.png" style="width: 200px; height:360px"/>
 

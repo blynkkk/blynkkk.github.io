@@ -18,7 +18,7 @@ We recommend using a **real** email address because it will simplify things late
 
 An account is needed to save your projects and have access to them from multiple devices from anywhere. It's also a security measure. 
 
-You can always set up your own [Private Blynk Server](http://docs.blynk.cc/#blynk-server) and have full control.   
+You can always set up your own [Private Blynk Server](/#blynk-server) and have full control.
 
 ###2. Create a New Project
 After you've successfully logged into your account, start by creating a new project.
@@ -26,7 +26,7 @@ After you've successfully logged into your account, start by creating a new proj
 <img src="images/getting_started/create_project_button.png" style="width: 200px; height:360px"/>
  
 ###3. Choose Your Hardware
-Select the hardware model you will use. Check out the [list of supported hardware](http://docs.blynk.cc/#supported-hardware)!
+Select the hardware model you will use. Check out the [list of supported hardware](/#supported-hardware)!
 
 <img src="images/getting_started/select_hardware.png" style="width: 200px; height:360px"/>
 
@@ -80,7 +80,7 @@ You will get a message saying "Arduino UNO is offline". We'll deal with that in 
 
 ##Getting Started With Hardware
 ###How To Use an Example Sketch
-You should by now have the Blynk Library installed on your computer. If not - [click here](http://docs.blynk.cc/#downloads-blynk-library).
+You should by now have the Blynk Library installed on your computer. If not - [click here](/#downloads-blynk-library).
 
 Example sketches will help you get your hardware online quickly and major Blynk features. 
 
@@ -117,7 +117,7 @@ In this example sketch, find this line:
 ```cpp
 char auth[] = "YourAuthToken";
 ```
-This is the [Auth Token](http://docs.blynk.cc/#getting-started-getting-started-with-application-4-auth-token) that you emailed yourself. 
+This is the [Auth Token](/#getting-started-getting-started-with-application-4-auth-token) that you emailed yourself.
 Please check your email and copy it, then paste it inside the quotation marks.
 
 It should look similar to this:
