@@ -20,12 +20,12 @@ Blynk.virtualWrite(pin, 12.34);
 Blynk.virtualWrite(pin, "hello", 123, 12.34);
 ```
 
-For more information about virtual pins, [read this](http://docs.blynk.cc/#blynk-firmware-virtual-pins-control)
+For more information about virtual pins, [read this](/#blynk-firmware-virtual-pins-control)
 
 ## Send data from app to hardware
 You can send any data from Widgets in the app to your hardware.
 
-All [Controller Widgets](http://docs.blynk.cc/#widgets-controllers) can send data to Virtual Pins on your hardware. 
+All [Controller Widgets](/#widgets-controllers) can send data to Virtual Pins on your hardware.
 For example, code below shows how to get values from the Button Widget in the App
 
 ```cpp
@@ -84,13 +84,13 @@ BLYNK_READ(V5) // Widget in the app READs Virtal Pin V5 with the certain frequen
 ### Pushing data from hardware
 If you need to PUSH sensor or other data from your hardware to Widget, you can write any logic you want. 
 Just set the frequency to PUSH mode. Any command that hardware sends to Blynk Cloud is automatically stored on server
-and you get this info either with [History Graph](http://docs.blynk.cc/#widgets-displays-history-graph) widget 
-or with [HTTP API](http://docs.blynkapi.apiary.io/#reference/0/pin-history-data/get-all-history-data-for-specific-pin).
+and you get this info either with [History Graph](https://docs.blynk.cc/#widgets-displays-history-graph) widget
+or with [HTTP API](/#reference/0/pin-history-data/get-all-history-data-for-specific-pin).
 
 <img src="images/frequency_reading_push.png" style="width: 200px; height:360px"/>
 
-We recommend sending data in intervals and avoiding [Flood Error](http://docs.blynk.cc/#troubleshooting-flood-error).  
-You can use timers like [BlynkTimer](http://docs.blynk.cc/#blynk-firmware-blynktimer).  
+We recommend sending data in intervals and avoiding [Flood Error](https://docs.blynk.cc/#troubleshooting-flood-error).
+You can use timers like [BlynkTimer](/#blynk-firmware-blynktimer).
 Please read instructions inside this [example sketch](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino) for more details.
 
 Here is how it can work:
@@ -325,12 +325,12 @@ You can also change widget properties via [HTTP API](http://docs.blynkapi.apiary
 - Don't put ```Blynk.virtualWrite``` and any other ```Blynk.*``` command inside ```void loop()```- it will cause 
 lot's of outgoing messages to our server and your connection will be terminated; 
 
-- We recommend calling functions with intervals. For example, use [BlynkTimer](http://docs.blynk.cc/#blynk-firmware-blynktimer)
+- We recommend calling functions with intervals. For example, use [BlynkTimer](/#blynk-firmware-blynktimer)
 
 - Avoid using long delays with ```delay()``` – it may cause connection breaks;
 
 - If you send more than 100 values per second - you may cause 
-[Flood Error](http://docs.blynk.cc/#troubleshooting-flood-error) and your hardware will be automatically disconnected from the server;
+[Flood Error](/#troubleshooting-flood-error) and your hardware will be automatically disconnected from the server;
 
 - Be careful sending a lot of ```Blynk.virtualWrite``` commands as most hardware is not very powerful (like ESP8266) 
 so it may not handle many requests. 
