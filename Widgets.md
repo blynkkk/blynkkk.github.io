@@ -1337,4 +1337,5 @@ After the report was sent at least once, you can see when the ```Last``` report 
 - ```Error```: something went wrong. Please contact the Blynk Team support;
 
 Reports will be generated even if your project is not in active (Play) mode. However, inactive projects don't generate any data.
+
 **NOTE:** all reports are encoded in UTF-16. Please, make sure you selected UTF-16 as required "Character set" for your csv reader.
