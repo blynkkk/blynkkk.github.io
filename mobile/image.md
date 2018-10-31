@@ -2,7 +2,7 @@
 ### Image
 
 Image widget allows you to display any image within your project. You need to provide http/s url to it.
-Url should be valid endpoint to the binary data of the image.
+Url should be valid endpoint to the binary data of the image. Url shortener will not work.
 
 Right now image widget supports 2 display options:
  - **Fit**: Image will be scaled to fit height or width of the widget size;
