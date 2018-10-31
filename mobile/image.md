@@ -31,7 +31,7 @@ Blynk.setProperty(V1, "scale", 30); // 0-100%
 Blynk.setProperty(V1, "rotation", 10); //0-360 degrees
 ```
 
-also, you can fully replace the list of image from the hardware:
+also, you can fully replace the list of images from the hardware:
 
 ```cpp
 Blynk.setProperty(V1, "urls", "https://image1.jpg", "https://image2.jpg");
