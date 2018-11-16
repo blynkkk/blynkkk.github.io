@@ -151,6 +151,8 @@ BLYNK_WRITE(V0) {
 The ```Blynk.syncAll()``` command restores all the Widget's values based on the last saved values on the server. 
 All analog and digital pin states will be restored. Every Virtual Pin will perform ```BLYNK_WRITE``` event.
 
+**WARNING**: if pin is empty and wasn't initialized - hardware will not get any response for those pin during sync.
+
 [Sync Hardware with App state](https://github.com/blynkkk/blynk-library/blob/master/examples/More/Sync/HardwareSyncStateFromApp/HardwareSyncStateFromApp.ino)
 
 You can also update a single Virtual Pin value by calling ```Blynk.syncVirtual(V0)``` or you can update several pins with ```Blynk.syncVirtual(V0, V1, V2, ...)```.
