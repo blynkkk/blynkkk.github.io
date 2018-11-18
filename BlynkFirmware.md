@@ -143,6 +143,12 @@ Blynk.virtualWriteBinary(pin, buffer, length);
 
 Calling ```virtualWrite``` attempts to send the value to the network immediately.
 
+**Note:** For virtual pins with numbers > 127, the `V128` syntax is not available.  
+Please use plain virtual pin number, for example:
+```cpp
+Blynk.virtualWrite(128, "abc");
+```
+
 ## BlynkTimer
 It's important to send data in intervals and keep the void loop() as clean as possible. 
 
@@ -179,6 +185,8 @@ BLYNK_WRITE(V0)
 
 **`BLYNK_WRITE` can't be used inside of any loop or function. It's a standalone function.**
 
+**Note:** For virtual pins with numbers > 127, please use `BLYNK_WRITE_DEFAULT()` API
+
 
 ### BLYNK_READ(vPIN)
 
@@ -190,6 +198,8 @@ BLYNK_READ(V0)
   Blynk.virtualWrite(V0, newValue);
 }
 ```
+
+**Note:** For virtual pins with numbers > 127, please use `BLYNK_READ_DEFAULT()` API
 
 ### BLYNK_WRITE_DEFAULT()
 
