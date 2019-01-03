@@ -5,7 +5,7 @@ for the private servers and for the paid customers for now.
 
 ## How does it work?
 
- - You need to use [regular sketch for exported apps](https://github.com/blynkkk/blynk-library/tree/master/examples/Export_Demo/Template_ESP8266);
+ - You need to use [regular sketch for exported apps](https://github.com/blynkkk/blynk-library/tree/master/examples/Blynk.Inject/Template_ESP8266);
  - After you launched your hardware you are ready for OTA;
  - You can trigger the firmware update for the specific hardware via it's token or for all hardware.
  
@@ -15,7 +15,7 @@ for the private servers and for the paid customers for now.
  2. User provides within HTTPS request admin credentials and firmware binary file to update hardware with;
  3. When hardware connects to server - server checks it firmware. In case, hardware firmware build date differs from 
  uploaded firmware, than server sends special command to hardware with url for the new firmware;
- 4. Hardware processes url with below [handler](https://github.com/blynkkk/blynk-library/blob/master/examples/Export_Demo/Template_ESP8266/OTA.h#L28): 
+ 4. Hardware processes url with below [handler](https://github.com/blynkkk/blynk-library/blob/master/examples/Blynk.Inject/Template_ESP8266/OTA.h#L31): 
     ```
       BLYNK_WRITE(InternalPinOTA) {
         //url to get firmware from. This is HTTP url
