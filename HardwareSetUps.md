@@ -128,7 +128,7 @@ Additional materials:
 	```
 	sudo apt-get update && sudo apt-get upgrade
 	sudo apt-get install build-essential
-	sudo npm install -g npm
+	sudo apt-get install -g npm 
 	sudo npm install -g onoff
 	sudo npm install -g blynk-library
 	```
