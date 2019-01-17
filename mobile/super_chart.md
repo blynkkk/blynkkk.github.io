@@ -86,7 +86,7 @@ To use Tags:
 - `AVG` will plot average value
 - `MED` will find a median value
 - `MIN` will plot minimum value
-- `MAX` will plot minimum value
+- `MAX` will plot maximum value
 	
 
 **☝️ IMPORTANT: Tags are not working in Live Mode.**
