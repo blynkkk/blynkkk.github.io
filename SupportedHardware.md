@@ -7,6 +7,7 @@ Blynk supports more than 400 boards already, including support for Arduino, Part
 - **Arduino** (https://github.com/blynkkk/blynk-library)
   - Arduino MKR WiFi 1010
   - Arduino MKR GSM 1400
+  - Arduino MKR NB 1500
   - Arduino Uno, Duemilanove
   - Arduino Nano, Mini, Pro Mini, Pro Micro, Due, Mega
   - Arduino 101 (Intel Curie, with BLE)
@@ -100,14 +101,14 @@ Blynk supports more than 400 boards already, including support for Arduino, Part
 
 - USB (Serial), connected to your laptop or desktop
 
-- **Ethernet:**
+- **Ethernet**
   - Arduino MKR ETH
   - Arduino Ethernet Shield (W5100)
   - Arduino Ethernet Shield 2 (W5500)
   - SeeedStudio Ethernet Shield V2.0 (W5200)
   - ENC28J60-based modules
  
-- **WiFi:**
+- **WiFi**
   - ESP8266 as WiFi modem (running original firmware)
   - Arduino WiFi 101 Shield
   - Arduino WiFi Shield
@@ -115,7 +116,7 @@ Blynk supports more than 400 boards already, including support for Arduino, Part
   - Adafruit CC3000 WiFi Breakout / Shield
   - RN-XV WiFly
  
-- **Bluetooth Smart (BLE 4.0):**
+- **Bluetooth Smart (BLE 4.0)**
   - HM-10, HC-08
   - DFRobot BLE-Link module
   - Microduino/mCookie BLE
@@ -125,11 +126,12 @@ Blynk supports more than 400 boards already, including support for Arduino, Part
 - **Bluetooth 2.0 Serial Port Profile (SPP)**
   - HC-05, HC-06, ...
  
-- **GSM/3G:**
+- **Cellular (GSM/3G/LTE)**
   - SIMCom SIM800 series (SIM800A, SIM800C, SIM800L, SIM800H, SIM808, SIM868)
   - SIMCom SIM900 series (SIM900A, SIM900D, SIM908, SIM968)
   - A6/A7
-  - M590 *(beta)*
+  - M590
+  - BG96
   - GPRSbee
   - Microduino GSM
   - Adafruit FONA (Mini Cellular GSM Breakout)
