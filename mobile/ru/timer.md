@@ -28,7 +28,7 @@
 
   <meta name="viewport" content="width=device-width">
   
-  <title>blynkkk.github.io/bridge.md at master · blynkkk/blynkkk.github.io</title>
+  <title>blynkkk.github.io/timer.md at master · blynkkk/blynkkk.github.io</title>
     <meta name="description" content="GitHub pages. Contribute to blynkkk/blynkkk.github.io development by creating an account on GitHub.">
     <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub">
   <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
@@ -38,10 +38,10 @@
     <meta property="og:image" content="https://avatars1.githubusercontent.com/u/11541426?s=400&amp;v=4" /><meta property="og:site_name" content="GitHub" /><meta property="og:type" content="object" /><meta property="og:title" content="blynkkk/blynkkk.github.io" /><meta property="og:url" content="https://github.com/blynkkk/blynkkk.github.io" /><meta property="og:description" content="GitHub pages. Contribute to blynkkk/blynkkk.github.io development by creating an account on GitHub." />
 
   <link rel="assets" href="https://github.githubassets.com/">
-  <link rel="web-socket" href="wss://live.github.com/_sockets/VjI6Mzg1MDIzMTcyOjE1OTJlMDkxYjAxOTFmMTE5NDIxYmJlZGY2YjYwY2Q1Y2JmZTIxZjkwOGNkZTY1NWM3NWQ5NzFlNDQ3ZjhmZmU=--3f1c6ee3a33bb765a8619e805112ebd78c5a89dc">
+  <link rel="web-socket" href="wss://live.github.com/_sockets/VjI6Mzg1MDIzMTcyOjJjMDMyMzVlZjBmZTA1ZDU5OGQ4YWEzMjJhMDY5ZWUzYTRlMzQ5ZGYwOTBjNzA4NTMwODgxMTJhOTlmNzFhZDY=--97485bcfbc423261bd9449a9d17f599f125b7505">
   <meta name="pjax-timeout" content="1000">
   <link rel="sudo-modal" href="/sessions/sudo_modal">
-  <meta name="request-id" content="D306:468BE:79640C:B2282E:5C92462C" data-pjax-transient>
+  <meta name="request-id" content="D306:468BE:7A5DAE:B38D21:5C92472D" data-pjax-transient>
 
 
   
@@ -52,7 +52,7 @@
     <meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA">
     <meta name="google-site-verification" content="GXs5KoUUkNCoaAZn7wPN-t01Pywp9M3sEjnt_3_ZWPc">
 
-  <meta name="octolytics-host" content="collector.githubapp.com" /><meta name="octolytics-app-id" content="github" /><meta name="octolytics-event-url" content="https://collector.githubapp.com/github-external/browser_event" /><meta name="octolytics-dimension-request_id" content="D306:468BE:79640C:B2282E:5C92462C" /><meta name="octolytics-dimension-region_edge" content="ams" /><meta name="octolytics-dimension-region_render" content="iad" /><meta name="octolytics-actor-id" content="48761297" /><meta name="octolytics-actor-login" content="AlexArGC" /><meta name="octolytics-actor-hash" content="b8fb878f31e2d46039e95894c3759c864f4484f628ac4eba69e83a5602ffdb5f" />
+  <meta name="octolytics-host" content="collector.githubapp.com" /><meta name="octolytics-app-id" content="github" /><meta name="octolytics-event-url" content="https://collector.githubapp.com/github-external/browser_event" /><meta name="octolytics-dimension-request_id" content="D306:468BE:7A5DAE:B38D21:5C92472D" /><meta name="octolytics-dimension-region_edge" content="ams" /><meta name="octolytics-dimension-region_render" content="iad" /><meta name="octolytics-actor-id" content="48761297" /><meta name="octolytics-actor-login" content="AlexArGC" /><meta name="octolytics-actor-hash" content="b8fb878f31e2d46039e95894c3759c864f4484f628ac4eba69e83a5602ffdb5f" />
 <meta name="analytics-location" content="/&lt;user-name&gt;/&lt;repo-name&gt;/blob/show" data-pjax-transient="true" />
 
 
@@ -71,7 +71,7 @@
     <meta name="user-login" content="AlexArGC">
 
       <meta name="expected-hostname" content="github.com">
-    <meta name="js-proxy-site-detection-payload" content="N2NlYWYyNzg1MDgyZWMyY2U4ZDBlMjBlOTM0YWQ3NzI1ODI3ZDU5MzMwMjZkMzgzODJiMWY5NmI4MjFhNmU5NXx7InJlbW90ZV9hZGRyZXNzIjoiODMuMjE3LjEyLjE3NiIsInJlcXVlc3RfaWQiOiJEMzA2OjQ2OEJFOjc5NjQwQzpCMjI4MkU6NUM5MjQ2MkMiLCJ0aW1lc3RhbXAiOjE1NTMwOTAwOTcsImhvc3QiOiJnaXRodWIuY29tIn0=">
+    <meta name="js-proxy-site-detection-payload" content="ZmMyMzk4ZjY5N2QwZGJmZDAyNGVkYmY3MzM3ZWQyZGRlNDFiYzJlMDc2MzRkMmRlMzhkYmE2ZTA5MWQyNGRkMXx7InJlbW90ZV9hZGRyZXNzIjoiODMuMjE3LjEyLjE3NiIsInJlcXVlc3RfaWQiOiJEMzA2OjQ2OEJFOjdBNURBRTpCMzhEMjE6NUM5MjQ3MkQiLCJ0aW1lc3RhbXAiOjE1NTMwOTAzNTgsImhvc3QiOiJnaXRodWIuY29tIn0=">
 
     <meta name="enabled-features" content="UNIVERSE_BANNER,MARKETPLACE_SOCIAL_PROOF,MARKETPLACE_PLAN_RESTRICTION_EDITOR,NOTIFY_ON_BLOCK,RELATED_ISSUES">
 
@@ -87,7 +87,7 @@
   <meta name="octolytics-dimension-user_id" content="11541426" /><meta name="octolytics-dimension-user_login" content="blynkkk" /><meta name="octolytics-dimension-repository_id" content="36590479" /><meta name="octolytics-dimension-repository_nwo" content="blynkkk/blynkkk.github.io" /><meta name="octolytics-dimension-repository_public" content="true" /><meta name="octolytics-dimension-repository_is_fork" content="false" /><meta name="octolytics-dimension-repository_network_root_id" content="36590479" /><meta name="octolytics-dimension-repository_network_root_nwo" content="blynkkk/blynkkk.github.io" /><meta name="octolytics-dimension-repository_explore_github_marketplace_ci_cta_shown" content="false" />
 
 
-    <link rel="canonical" href="https://github.com/blynkkk/blynkkk.github.io/blob/master/mobile/bridge.md" data-pjax-transient>
+    <link rel="canonical" href="https://github.com/blynkkk/blynkkk.github.io/blob/master/mobile/timer.md" data-pjax-transient>
 
 
   <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
@@ -158,7 +158,7 @@
           aria-autocomplete="list"
           aria-controls="jump-to-results"
           aria-label="Search or jump to…"
-          data-jump-to-suggestions-path="/_graphql/GetSuggestedNavigationDestinations#csrf-token=qokzsYN6xmeQD7xt+i9NrpsQQ2cRXi9gnHsdLKgKqa9zGgsZoUZcX1rcZ7qNn3L28qD70+z3blP0pVleMkhgsA=="
+          data-jump-to-suggestions-path="/_graphql/GetSuggestedNavigationDestinations#csrf-token=HF9H0D4Wav0Dn3BJuMhSYpalEwA3sUJpGme1QXXIaxLFzH94HCrwxclMq57PeG06/xWrtMoYA1pyufEz74qiDQ=="
           spellcheck="false"
           autocomplete="off"
           >
@@ -377,7 +377,7 @@
           
 <div class="js-user-status-container user-status-compact" data-team-hovercards-enabled>
   <details class="js-user-status-details details-reset details-overlay details-overlay-dark">
-    <summary class="btn-link no-underline js-toggle-user-status-edit toggle-user-status-edit width-full" aria-haspopup="dialog" role="menuitem" data-hydro-click="{&quot;event_type&quot;:&quot;user_profile.click&quot;,&quot;payload&quot;:{&quot;profile_user_id&quot;:11541426,&quot;target&quot;:&quot;EDIT_USER_STATUS&quot;,&quot;user_id&quot;:48761297,&quot;client_id&quot;:&quot;11496845.1550734522&quot;,&quot;originating_request_id&quot;:&quot;D306:468BE:79640C:B2282E:5C92462C&quot;,&quot;originating_url&quot;:&quot;https://github.com/blynkkk/blynkkk.github.io/blob/master/mobile/bridge.md&quot;}}" data-hydro-click-hmac="15d09344c796e51406eb9e40703feeed4b711298474d506c51b4b0f69dc66115">
+    <summary class="btn-link no-underline js-toggle-user-status-edit toggle-user-status-edit width-full" aria-haspopup="dialog" role="menuitem" data-hydro-click="{&quot;event_type&quot;:&quot;user_profile.click&quot;,&quot;payload&quot;:{&quot;profile_user_id&quot;:11541426,&quot;target&quot;:&quot;EDIT_USER_STATUS&quot;,&quot;user_id&quot;:48761297,&quot;client_id&quot;:&quot;11496845.1550734522&quot;,&quot;originating_request_id&quot;:&quot;D306:468BE:7A5DAE:B38D21:5C92472D&quot;,&quot;originating_url&quot;:&quot;https://github.com/blynkkk/blynkkk.github.io/blob/master/mobile/timer.md&quot;}}" data-hydro-click-hmac="0b3800c662bdbea2e4d118c5f8ee797d6b8cb7fba4d902ce8ac8086fb4a0830c">
       <div class="f6 d-inline-block v-align-middle  user-status-emoji-only-header pl-0 circle lh-condensed user-status-header " style="max-width: 29px">
         <div class="user-status-emoji-container flex-shrink-0 mr-1">
           <svg class="octicon octicon-smiley" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm4.81 12.81a6.72 6.72 0 0 1-2.17 1.45c-.83.36-1.72.53-2.64.53-.92 0-1.81-.17-2.64-.53-.81-.34-1.55-.83-2.17-1.45a6.773 6.773 0 0 1-1.45-2.17A6.59 6.59 0 0 1 1.21 8c0-.92.17-1.81.53-2.64.34-.81.83-1.55 1.45-2.17.62-.62 1.36-1.11 2.17-1.45A6.59 6.59 0 0 1 8 1.21c.92 0 1.81.17 2.64.53.81.34 1.55.83 2.17 1.45.62.62 1.11 1.36 1.45 2.17.36.83.53 1.72.53 2.64 0 .92-.17 1.81-.53 2.64-.34.81-.83 1.55-1.45 2.17zM4 6.8v-.59c0-.66.53-1.19 1.2-1.19h.59c.66 0 1.19.53 1.19 1.19v.59c0 .67-.53 1.2-1.19 1.2H5.2C4.53 8 4 7.47 4 6.8zm5 0v-.59c0-.66.53-1.19 1.2-1.19h.59c.66 0 1.19.53 1.19 1.19v.59c0 .67-.53 1.2-1.19 1.2h-.59C9.53 8 9 7.47 9 6.8zm4 3.2c-.72 1.88-2.91 3-5 3s-4.28-1.13-5-3c-.14-.39.23-1 .66-1h8.59c.41 0 .89.61.75 1z"/></svg>
@@ -387,7 +387,7 @@
           <span class="link-gray">Set your status</span>
       </div>
 </summary>    <details-dialog class="details-dialog rounded-1 anim-fade-in fast Box Box--overlay" role="dialog" tabindex="-1">
-      <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="position-relative flex-auto js-user-status-form" action="/users/status?compact=1&amp;link_mentions=0&amp;truncate=1" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="_method" value="put" /><input type="hidden" name="authenticity_token" value="AJV99mIcbdhyz3z320a+i/GxUwcXt93gqrlMrAcDAs1MsOe4NgschIjCnpNy17jLPAegQeFO4Lvtjm41MH4kGQ==" />
+      <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="position-relative flex-auto js-user-status-form" action="/users/status?compact=1&amp;link_mentions=0&amp;truncate=1" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="_method" value="put" /><input type="hidden" name="authenticity_token" value="cpc8mkYL9YsQEYpqsqZAxrtjP19hBYwQybWnSu06TsA+sqbUEhyE1+ocaA4bN0aGdtXMGZf8sUuOgoXT2kdoFA==" />
         <div class="Box-header bg-gray border-bottom p-3">
           <button class="Box-btn-octicon js-toggle-user-status-edit btn-octicon float-right" type="reset" aria-label="Close dialog" data-close-dialog>
             <svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"/></svg>
@@ -503,7 +503,7 @@
         <div role="none" class="dropdown-divider"></div>
         <a role="menuitem" class="dropdown-item" href="https://help.github.com" data-ga-click="Header, go to help, text:help">Help</a>
         <a role="menuitem" class="dropdown-item" href="/settings/profile" data-ga-click="Header, go to settings, icon:settings">Settings</a>
-        <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="logout-form" action="/logout" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="qxJHX2jkTBwmNmxt83QBvwcVusocS7aJPXILQsD2xlCLYb9f5cNRjUKxwNUy/xBZSALcdEwvufjKiVqA8h+gqw==" />
+        <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="logout-form" action="/logout" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="fhxVnlsvWRlDXh7FqKTAMp9xKuG1QmDmyVl0ZdyTqt5eb62e1ghEiCfZsn1pL9HU0GZMX+Umb5c+oiWn7nrMJQ==" />
           
           <button type="submit" class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout" role="menuitem">
             Sign out
@@ -515,7 +515,7 @@
 
 
 
-        <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="sr-only right-0" action="/logout" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="ywupcJkOtJK87DW6YZGHCO9KrX4UuBghYJh/inaMnYzreFFwFCmpA9hrmQKgGpbuoF3LwETcF1CXYy5IRGX7dw==" />
+        <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="sr-only right-0" action="/logout" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="UMIJwIYhV3TnfveRuawAFbjL3tQ5pAsIVp2Fs2nEMvJwsfHACwZK5YP5Wyl4JxHz99y4amnABHmhZtRxWy1UCQ==" />
           <button type="submit" class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout">
             Sign out
           </button>
@@ -557,10 +557,10 @@
 
 
   <li>
-        <!-- '"` --><!-- </textarea></xmp> --></option></form><form data-remote="true" class="js-social-form js-social-container" action="/notifications/subscribe" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="G9v3RwPdGp2ou26Zzq8BwoyuDtiFFgqlPyvGXa81klIDAuoq+4cvR5tdPXuPjdMtMcWzReuScVndadV8VAHWlQ==" />      <input type="hidden" name="repository_id" id="repository_id" value="36590479" class="form-control" />
+        <!-- '"` --><!-- </textarea></xmp> --></option></form><form data-remote="true" class="js-social-form js-social-container" action="/notifications/subscribe" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="PhQLR0Yipe/8UQq0/VD5FkOiH9bPeui5H9L7NfvZPTMmzRYqvniQNc+3WVa8civ5/smiS6H+k0X9kOgUAO159A==" />      <input type="hidden" name="repository_id" id="repository_id" value="36590479" class="form-control" />
 
       <details class="details-reset details-overlay select-menu float-left">
-        <summary class="btn btn-sm btn-with-count select-menu-button" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;WATCH_BUTTON&quot;,&quot;repository_id&quot;:36590479,&quot;client_id&quot;:&quot;11496845.1550734522&quot;,&quot;originating_request_id&quot;:&quot;D306:468BE:79640C:B2282E:5C92462C&quot;,&quot;originating_url&quot;:&quot;https://github.com/blynkkk/blynkkk.github.io/blob/master/mobile/bridge.md&quot;,&quot;user_id&quot;:48761297}}" data-hydro-click-hmac="d239239b9e869cfb97b7f0e4bd05a13fc184224664f12ba58a29c712a58b0b7c" data-ga-click="Repository, click Watch settings, action:blob#show">          <span data-menu-button>
+        <summary class="btn btn-sm btn-with-count select-menu-button" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;WATCH_BUTTON&quot;,&quot;repository_id&quot;:36590479,&quot;client_id&quot;:&quot;11496845.1550734522&quot;,&quot;originating_request_id&quot;:&quot;D306:468BE:7A5DAE:B38D21:5C92472D&quot;,&quot;originating_url&quot;:&quot;https://github.com/blynkkk/blynkkk.github.io/blob/master/mobile/timer.md&quot;,&quot;user_id&quot;:48761297}}" data-hydro-click-hmac="5c0d5d4671624d477ab96686b60b8ae39bb844819d92516cd1a567854a737143" data-ga-click="Repository, click Watch settings, action:blob#show">          <span data-menu-button>
               <svg class="octicon octicon-eye v-align-text-bottom" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"/></svg>
               Watch
           </span>
@@ -642,8 +642,8 @@
   </li>
 
   <li>
-          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="btn-with-count" action="/blynkkk/blynkkk.github.io/fork" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="BdT1AqNAwFErzf60UFlfqelEVv/rdvKdf7FWLqePISN2n4uff78YkMfZMP0C/EgTKtdpdxWUlO8WFhOT3rc+tg==" />
-            <button class="btn btn-sm btn-with-count" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;FORK_BUTTON&quot;,&quot;repository_id&quot;:36590479,&quot;client_id&quot;:&quot;11496845.1550734522&quot;,&quot;originating_request_id&quot;:&quot;D306:468BE:79640C:B2282E:5C92462C&quot;,&quot;originating_url&quot;:&quot;https://github.com/blynkkk/blynkkk.github.io/blob/master/mobile/bridge.md&quot;,&quot;user_id&quot;:48761297}}" data-hydro-click-hmac="a29b218d9ac33b8852a7078e8e05b16913e713860ba2a33a411a43fd6c0e9e62" data-ga-click="Repository, show fork modal, action:blob#show; text:Fork" type="submit" title="Fork your own copy of blynkkk/blynkkk.github.io to your account" aria-label="Fork your own copy of blynkkk/blynkkk.github.io to your account">              <svg class="octicon octicon-repo-forked v-align-text-bottom" viewBox="0 0 10 16" version="1.1" width="10" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1a1.993 1.993 0 0 0-1 3.72V6L5 8 3 6V4.72A1.993 1.993 0 0 0 2 1a1.993 1.993 0 0 0-1 3.72V6.5l3 3v1.78A1.993 1.993 0 0 0 5 15a1.993 1.993 0 0 0 1-3.72V9.5l3-3V4.72A1.993 1.993 0 0 0 8 1zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3 10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3-10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"/></svg>
+          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="btn-with-count" action="/blynkkk/blynkkk.github.io/fork" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="T+3f8TPT3eRWNW8pXIk++MpKd0ZYCc3RjLalgpRAZPQ8pqFs7ywFJbohoWAOLClCCdlIzqbrq6PlEeA/7Xh7YQ==" />
+            <button class="btn btn-sm btn-with-count" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;FORK_BUTTON&quot;,&quot;repository_id&quot;:36590479,&quot;client_id&quot;:&quot;11496845.1550734522&quot;,&quot;originating_request_id&quot;:&quot;D306:468BE:7A5DAE:B38D21:5C92472D&quot;,&quot;originating_url&quot;:&quot;https://github.com/blynkkk/blynkkk.github.io/blob/master/mobile/timer.md&quot;,&quot;user_id&quot;:48761297}}" data-hydro-click-hmac="7137cac7315313265541c2a25135a89cb72cda0cae712a0da10109c70f8db27b" data-ga-click="Repository, show fork modal, action:blob#show; text:Fork" type="submit" title="Fork your own copy of blynkkk/blynkkk.github.io to your account" aria-label="Fork your own copy of blynkkk/blynkkk.github.io to your account">              <svg class="octicon octicon-repo-forked v-align-text-bottom" viewBox="0 0 10 16" version="1.1" width="10" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1a1.993 1.993 0 0 0-1 3.72V6L5 8 3 6V4.72A1.993 1.993 0 0 0 2 1a1.993 1.993 0 0 0-1 3.72V6.5l3 3v1.78A1.993 1.993 0 0 0 5 15a1.993 1.993 0 0 0 1-3.72V9.5l3-3V4.72A1.993 1.993 0 0 0 8 1zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3 10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3-10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"/></svg>
               Fork
 </button></form>
     <a href="/blynkkk/blynkkk.github.io/network/members" class="social-count"
@@ -721,9 +721,9 @@
 
 
   
-    <a class="d-none js-permalink-shortcut" data-hotkey="y" href="/blynkkk/blynkkk.github.io/blob/7a55e419bc9893460de62a84ac3ecfba748c9545/mobile/bridge.md">Permalink</a>
+    <a class="d-none js-permalink-shortcut" data-hotkey="y" href="/blynkkk/blynkkk.github.io/blob/7a55e419bc9893460de62a84ac3ecfba748c9545/mobile/timer.md">Permalink</a>
 
-    <!-- blob contrib key: blob_contributors:v21:a06a2ea56513265e8bcd10e14c359d6e -->
+    <!-- blob contrib key: blob_contributors:v21:ee7874d70e7295fc08eb9403cdc550f7 -->
 
     
 
@@ -738,7 +738,7 @@
     <span class="css-truncate-target">master</span>
   </summary>
 
-  <details-menu class="select-menu-modal position-absolute" style="z-index: 99;" src="/blynkkk/blynkkk.github.io/ref-list/master/mobile/bridge.md?source_action=show&amp;source_controller=blob" preload>
+  <details-menu class="select-menu-modal position-absolute" style="z-index: 99;" src="/blynkkk/blynkkk.github.io/ref-list/master/mobile/timer.md?source_action=show&amp;source_controller=blob" preload>
     <include-fragment class="select-menu-loading-overlay anim-pulse">
       <svg height="32" class="octicon octicon-octoface" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true"><path fill-rule="evenodd" d="M14.7 5.34c.13-.32.55-1.59-.13-3.31 0 0-1.05-.33-3.44 1.3-1-.28-2.07-.32-3.13-.32s-2.13.04-3.13.32c-2.39-1.64-3.44-1.3-3.44-1.3-.68 1.72-.26 2.99-.13 3.31C.49 6.21 0 7.33 0 8.69 0 13.84 3.33 15 7.98 15S16 13.84 16 8.69c0-1.36-.49-2.48-1.3-3.35zM8 14.02c-3.3 0-5.98-.15-5.98-3.35 0-.76.38-1.48 1.02-2.07 1.07-.98 2.9-.46 4.96-.46 2.07 0 3.88-.52 4.96.46.65.59 1.02 1.3 1.02 2.07 0 3.19-2.68 3.35-5.98 3.35zM5.49 9.01c-.66 0-1.2.8-1.2 1.78s.54 1.79 1.2 1.79c.66 0 1.2-.8 1.2-1.79s-.54-1.78-1.2-1.78zm5.02 0c-.66 0-1.2.79-1.2 1.78s.54 1.79 1.2 1.79c.66 0 1.2-.8 1.2-1.79s-.53-1.78-1.2-1.78z"/></svg>
     </include-fragment>
@@ -746,7 +746,7 @@
 </details>
 
       <div id="blob-path" class="breadcrumb flex-auto ml-2">
-        <span class="js-repo-root text-bold"><span class="js-path-segment"><a data-pjax="true" href="/blynkkk/blynkkk.github.io"><span>blynkkk.github.io</span></a></span></span><span class="separator">/</span><span class="js-path-segment"><a data-pjax="true" href="/blynkkk/blynkkk.github.io/tree/master/mobile"><span>mobile</span></a></span><span class="separator">/</span><strong class="final-path">bridge.md</strong>
+        <span class="js-repo-root text-bold"><span class="js-path-segment"><a data-pjax="true" href="/blynkkk/blynkkk.github.io"><span>blynkkk.github.io</span></a></span></span><span class="separator">/</span><span class="js-path-segment"><a data-pjax="true" href="/blynkkk/blynkkk.github.io/tree/master/mobile"><span>mobile</span></a></span><span class="separator">/</span><strong class="final-path">timer.md</strong>
       </div>
       <div class="BtnGroup">
         <a href="/blynkkk/blynkkk.github.io/find/master"
@@ -763,7 +763,7 @@
 
 
 
-    <include-fragment src="/blynkkk/blynkkk.github.io/contributors/master/mobile/bridge.md" class="Box Box--condensed commit-loader">
+    <include-fragment src="/blynkkk/blynkkk.github.io/contributors/master/mobile/timer.md" class="Box Box--condensed commit-loader">
       <div class="Box-body bg-blue-light f6">
         Fetching contributors&hellip;
       </div>
@@ -782,17 +782,17 @@
 <div class="Box-header py-2 d-flex flex-justify-between flex-items-center">
 
   <div class="text-mono f6">
-      47 lines (37 sloc)
+      14 lines (10 sloc)
       <span class="file-info-divider"></span>
-    2 KB
+    784 Bytes
   </div>
 
   <div class="d-flex">
 
     <div class="BtnGroup">
-      <a id="raw-url" class="btn btn-sm BtnGroup-item" href="/blynkkk/blynkkk.github.io/raw/master/mobile/bridge.md">Raw</a>
-        <a class="btn btn-sm js-update-url-with-hash BtnGroup-item" data-hotkey="b" href="/blynkkk/blynkkk.github.io/blame/master/mobile/bridge.md">Blame</a>
-      <a rel="nofollow" class="btn btn-sm BtnGroup-item" href="/blynkkk/blynkkk.github.io/commits/master/mobile/bridge.md">History</a>
+      <a id="raw-url" class="btn btn-sm BtnGroup-item" href="/blynkkk/blynkkk.github.io/raw/master/mobile/timer.md">Raw</a>
+        <a class="btn btn-sm js-update-url-with-hash BtnGroup-item" data-hotkey="b" href="/blynkkk/blynkkk.github.io/blame/master/mobile/timer.md">Blame</a>
+      <a rel="nofollow" class="btn btn-sm BtnGroup-item" href="/blynkkk/blynkkk.github.io/commits/master/mobile/timer.md">History</a>
     </div>
 
 
@@ -818,40 +818,16 @@
 
       
   <div id="readme" class="Box-body readme blob instapaper_body js-code-block-container">
-    <article class="markdown-body entry-content p-5" itemprop="text"><h3><a id="user-content-bridge" class="anchor" aria-hidden="true" href="#bridge"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Bridge</h3>
-<p>Bridge can be used for Device-to-Device communication (no app. involved). You can send digital/analog/virtual write commands
-from one device to another, knowing it's auth token.
-At the moment Bridge widget is not required on application side (it is mostly used for indication that we have such feature).<br>
-<strong>You can use multiple bridges to control multiple devices.</strong></p>
-<p>Bridge widget takes a virtual pin, and turns it into a channel to control another device. It means you can control any
-virtual, digital or analog pins of the target device.
-Be careful not to use pins like <code>A0, A1, A2 ...</code> when communicating between different device types, as
-Arduino Core may refer to wrong pins in such cases.</p>
-<p>Example code for device A which will send values to device B :</p>
-<div class="highlight highlight-source-c++"><pre><span class="pl-c"><span class="pl-c">//</span>Initiating Bridge Widget on V1 of Device A</span>
-WidgetBridge <span class="pl-en">bridge1</span>(V1);
-...
-<span class="pl-k">void</span> <span class="pl-en">setup</span>() {
-    Blynk.<span class="pl-c1">begin</span>(...);
-    <span class="pl-k">while</span> (Blynk.<span class="pl-c1">connect</span>() == <span class="pl-c1">false</span>) {
-        <span class="pl-c"><span class="pl-c">//</span> Wait until Blynk is connected</span>
-    }
-    bridge1.<span class="pl-c1">digitalWrite</span>(<span class="pl-c1">9</span>, HIGH); <span class="pl-c"><span class="pl-c">//</span> will trigger D9 HIGH on Device B. No code on Device B required</span>
-    bridge1.<span class="pl-c1">analogWrite</span>(<span class="pl-c1">10</span>, <span class="pl-c1">123</span>);
-    bridge1.<span class="pl-c1">virtualWrite</span>(V1, <span class="pl-s"><span class="pl-pds">"</span>hello<span class="pl-pds">"</span></span>); <span class="pl-c"><span class="pl-c">//</span> you need to write code on Device B in order to receive this value. See below</span>
-    bridge1.<span class="pl-c1">virtualWrite</span>(V2, <span class="pl-s"><span class="pl-pds">"</span>value1<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>value2<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>value3<span class="pl-pds">"</span></span>);
-}
-
-<span class="pl-en">BLYNK_CONNECTED</span>() {
-  bridge1.<span class="pl-c1">setAuthToken</span>(<span class="pl-s"><span class="pl-pds">"</span>OtherAuthToken<span class="pl-pds">"</span></span>); <span class="pl-c"><span class="pl-c">//</span> Token of the hardware B</span>
-}</pre></div>
-<p>IMPORTANT: when performing <code>virtualWrite()</code> with Bridge Widget, Device B will need to process the incoming data from Device A.
-For example, if you are sending value from Device A to Device B using <code>bridge.virtualWrite(V5)</code> you would need to use this handler on Device B:</p>
-<div class="highlight highlight-source-c++"><pre><span class="pl-en">BLYNK_WRITE</span>(V5){
-    <span class="pl-k">int</span> pinData = param.<span class="pl-c1">asInt</span>(); <span class="pl-c"><span class="pl-c">//</span>pinData variable will store value that came via Bridge</span>
-}</pre></div>
-<p>Keep in mind that <code>bridge.virtualWrite</code> doesn't send any value to mobile app. You need to call <code>Blynk.virtualWrite</code> for that.</p>
-<p><strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Bridge/Bridge.ino">Bridge</a></p>
+    <article class="markdown-body entry-content p-5" itemprop="text"><h3><a id="user-content-timer" class="anchor" aria-hidden="true" href="#timer"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Timer</h3>
+<p>Timer triggers actions at a specific time. Even if smartphone is offline. By default start time sends 1 (HIGH),
+stop time sends 0 (LOW). You can change this with any other values.
+You can change timer settings in "run" mode.
+Recent Android version also has improved Timer within Eventor widget.
+With Eventor Time Event you can assign multiple timers on same pin, send any string/number, select days and timezone.
+It is recommended to use Eventor over Timer widget.
+However Timer widget is still suitable for simple timer events.</p>
+<p><strong>NOTE:</strong> The timer widget rely on the server time and not your phone time. Sometimes the phone time may not match the server time.</p>
+<p><strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Timer/Timer.ino">Timer</a></p>
 </article>
   </div>
 
@@ -884,7 +860,7 @@ For example, if you are sending value from Device A to Device B using <code>brid
 <div class="footer container-lg width-full px-3" role="contentinfo">
   <div class="position-relative d-flex flex-justify-between pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light ">
     <ul class="list-style-none d-flex flex-wrap ">
-      <li class="mr-3">&copy; 2019 <span title="0.30501s from unicorn-8595f6d58c-5v5g2">GitHub</span>, Inc.</li>
+      <li class="mr-3">&copy; 2019 <span title="0.36288s from unicorn-8595f6d58c-67nhw">GitHub</span>, Inc.</li>
         <li class="mr-3"><a data-ga-click="Footer, go to terms, text:terms" href="https://github.com/site/terms">Terms</a></li>
         <li class="mr-3"><a data-ga-click="Footer, go to privacy, text:privacy" href="https://github.com/site/privacy">Privacy</a></li>
         <li class="mr-3"><a data-ga-click="Footer, go to security, text:security" href="https://github.com/security">Security</a></li>
