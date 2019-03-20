@@ -1,40 +1,34 @@
 
-### Bridge
+### Мост (Bridge)
 
-Bridge can be used for Device-to-Device communication (no app. involved). You can send digital/analog/virtual write commands 
-from one device to another, knowing it's auth token.
-At the moment Bridge widget is not required on application side (it is mostly used for indication that we have such feature).  
-**You can use multiple bridges to control multiple devices.**
+Мост может быть использован для связи между устройствами (без участия приложения). Вы можете отправлять цифровые / аналоговые / виртуальные команды записи с одного устройства на другое, зная только токен авторизации. На данный момент виджет Мост не обязательно использовать в приложении (здесь он используется для указания того, что у нас есть такая функция).  
+**Вы можете использовать несколько мостов для управления несколькими устройствами.**
 
-Bridge widget takes a virtual pin, and turns it into a channel to control another device. It means you can control any 
-virtual, digital or analog pins of the target device.
-Be careful not to use pins like ```A0, A1, A2 ...``` when communicating between different device types, as 
-Arduino Core may refer to wrong pins in such cases.
+Виджет Мост использует виртуальный пин и превращает его в канал для управления другим устройством. Это означает, что вы можете контролировать любые виртуальные, цифровые или аналоговые пины целевого устройства. Будьте осторожны, не используйте пины типа ```A0, A1, A2 ...``` при обмене данными между различными типами устройств, так как в таких случаях Arduino Core может ссылаться на неверные пины.
 
-
-Example code for device A which will send values to device B :
+Пример кода для устройства A, которое будет отправлять значения на устройство B:
 ```cpp
-//Initiating Bridge Widget on V1 of Device A
+//Инициирует виджет Моста на V1 устройства A
 WidgetBridge bridge1(V1);
 ...
 void setup() {
     Blynk.begin(...);
     while (Blynk.connect() == false) {
-        // Wait until Blynk is connected
+        // Ждем пока Blynk подключится
     }
-    bridge1.digitalWrite(9, HIGH); // will trigger D9 HIGH on Device B. No code on Device B required
+    bridge1.digitalWrite(9, HIGH); // выставим триггер HIGH на D9 устройства B. Код на устройстве B не требуется
     bridge1.analogWrite(10, 123);
-    bridge1.virtualWrite(V1, "hello"); // you need to write code on Device B in order to receive this value. See below
+    bridge1.virtualWrite(V1, "hello"); // вам нужно написать код на устройстве B, чтобы получить это значение. См. ниже
     bridge1.virtualWrite(V2, "value1", "value2", "value3");
 }
 
 BLYNK_CONNECTED() {
-  bridge1.setAuthToken("OtherAuthToken"); // Token of the hardware B
+  bridge1.setAuthToken("OtherAuthToken"); // токен с устройства B
 }
 ```
 
-IMPORTANT: when performing ```virtualWrite()``` with Bridge Widget, Device B will need to process the incoming data from Device A. 
-For example, if you are sending value from Device A to Device B using ```bridge.virtualWrite(V5)``` you would need to use this handler on Device B:
+**ВАЖНО:** при выполнении ```virtualWrite()``` с виджета Мост, устройство B должно обрабатывать входящие данные с устройства A. 
+Например, если вы отправляете значение с устройства A на устройство B, используя ```bridge.virtualWrite (V5)```, вам необходимо использовать свой обработчик на устройстве B:
 
 ```cpp
 BLYNK_WRITE(V5){
@@ -42,6 +36,6 @@ BLYNK_WRITE(V5){
 }
 ```
 
-Keep in mind that ```bridge.virtualWrite``` doesn't send any value to mobile app. You need to call ```Blynk.virtualWrite``` for that.
+Имейте в виду, что ```bridge.virtualWrite``` не отправляет никаких значений в мобильное приложение. Для этого вам нужно вызвать `` `Blynk.virtualWrite```.
 
-**Sketch:** [Bridge](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Bridge/Bridge.ino)
+**Пример кода:** [Мост](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Bridge/Bridge.ino)
