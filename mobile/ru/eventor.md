@@ -1,5 +1,5 @@
 
-### Eventor
+### Обработчик событий (Eventor)
 
 Eventor widget allows you to create simple behaviour rules or **events**. 
 Let's look at a typical use case: read temperature from DHT sensor and send push notification when the temperature is over a certain limit :  
