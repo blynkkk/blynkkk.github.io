@@ -1,20 +1,20 @@
 
-### Device Selector
+### Селектор устройств (Device Selector)
 
-Device selector is a powerful widget which allows you to update widgets based on one active device. 
-This widget is particularly helpful when you have a fleet of devices with similar functionality.
+Селектор устройств - это мощный виджет, который позволяет обновлять виджеты на основе одного активного устройства. 
+Этот виджет особенно полезен, когда у вас есть несколько устройств с аналогичной функциональностью.
 
-Imagine you have 4 devices and every device has a Temperature & Humidity sensor connected to it. To display the data for all 4 devices you would need to add 8 widgets.
+Представьте, что у вас есть 4 устройства, и к каждому устройству подключен датчик температуры и влажности. Для отображения данных по всем 4 устройствам вам необходимо добавить 8 виджетов.
 
-With Device Selector, you can use only 2 Widgets which will display Temperature and Humidity based on the active device chosen in Device Selector.  
+С помощью Селектора устройств вы можете использовать только 2 виджета, которые будут отображать температуру и влажность в зависимости от активного устройства, выбранного в Селекторе.  
 
-All you have to do is:
+Все, что вам нужно сделать, это:
 
-1. Add Device Selector Widget to the project
-2. Add 2 widgets (for example Value Display Widget) to show Temperature and Humidity
-3. In Widgets Settings you will be able assign them to Device Selector (Source or Target section)
-4. Exit settings, Run the project. 
+1. Добавить виджет Селектора устройств в проект
+2. Добавить 2 виджета (например виджет отображения значений (Value Display Widget)), чтобы отобразить температуру и влажность
+3. В настройках виджетов вы сможете назначить их на Селектор устройств (в разделе источника или цели)
+4. Выйти из настроек, запустить проект
 
-Now you can change the active device in Device Selector and you will see that Temperature and Humidity values are reflecting the data updates for the device you just picked.
+Теперь вы можете изменить активное устройство в Селекторе устройств и увидите, что значения температуры и влажности отражают обновленные данные для только что выбранного вами устройства.
 
-**NOTE : ** Webhook Widget will not work with Device Selector (yet).
+**ПРИМЕЧАНИЕ:** Виджет вебхук ([Webhook](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/WebHook/WebHook_GET/WebHook_GET.ino)) пока не работает с Селектором устройств.
