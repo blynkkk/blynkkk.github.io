@@ -36,6 +36,6 @@ BLYNK_WRITE(V5){
 }
 ```
 
-Имейте в виду, что ```bridge.virtualWrite``` не отправляет никаких значений в мобильное приложение. Для этого вам нужно вызвать ```Blynk.virtualWrite```.
+Имейте в виду, что ```bridge.virtualWrite``` не отправляет никаких значений в мобильное приложение. Для этого вам нужно вызвать ```Blynk.virtualWrite```. 
 
 **Пример кода:** [Мост](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Bridge/Bridge.ino)
