@@ -1,54 +1,48 @@
 
-### Email
+### Электронная почта (Email)
 
-Email widget allows you to send email from your hardware to any address.
+Виджет электронной почты позволяет отправлять электронные письма с вашего оборудования на любой адрес.
 
-Example code:
+Пример кода:
 ```cpp
-Blynk.email("my_email@example.com", "Subject", "Your message goes here");
+Blynk.email("my_email@example.com", "Тема", "Текст вашего сообщения");
 ```
-  
-It also contains ```to``` field. With this field you may define receiver of email in the app. 
-You may skip ```to``` field when you want to send email to your Blynk app login email:
- 
+
+Код содержит первое поле ```to```. С помощью этого поля вы можете определить получателей электронной почты в приложении.
+Вы можете пропустить поле ```to```, если хотите отправить электронное письмо на адрес электронной почты используемый для входа в приложение Blynk:
+
  ```cpp
- Blynk.email("Subject", "Your message goes here");
+ Blynk.email("Тема", "Текст вашего сообщения");
  ```
 
-You can send either ```text/html``` or ```text/plain``` (some clients don't support ```text/html```) email.
-You can change this content type of email in the Mail widget settings.
+Вы можете отправить электронное писбом в форматах либо ```text/html```, либо ```text/plain``` (помните что некоторые клиенты не поддерживают ```text/html```).
+Вы можете изменить формат содержимого электронного письма в настройках виджета.
 
-Additionally you may use ```{DEVICE_NAME}```, ```{DEVICE_OWNER_EMAIL}``` and ```{VENDOR_EMAIL}``` (for the local server)
-placeholders in the mail for the ```to```, ```subject``` and ```body``` fields:
+Дополнительно в письме вы можете использовать заполнители/переменные ```{DEVICE_NAME}```, ```{DEVICE_OWNER_EMAIL}``` и ```{VENDOR_EMAIL}``` (для локального сервера) в полях ```to``` (кому),``` subject``` (тема) и ```body``` (текст сообщения):
 
 ```cpp
-Blynk.email("{DEVICE_OWNER_EMAIL}", "{DEVICE_NAME} : Alarm", "Your {DEVICE_NAME} has critical error!");
+Blynk.email("{DEVICE_OWNER_EMAIL}", "{DEVICE_NAME} : Тревога", "Ваше устройство {DEVICE_NAME} имеет критическую ошибку!");
 ```
 
-Limitations :
+**Недостатки:**
 
-- Maximum allowed email + subject + message length is 120 symbols. However you can increase this limit if necessary 
-by adding ```#define BLYNK_MAX_SENDBYTES XXX``` to you sketch. Where ```XXX``` is desired max length of your email. 
-For example for ESP you can set this to 1200 max length ```#define BLYNK_MAX_SENDBYTES 1200```. The 
-```#define BLYNK_MAX_SENDBYTES 1200``` must be included before any of the Blynk includes.
-- Only 1 email per 5 seconds is allowed;
-- In case you are using gmail you are limited with 500 mails per day (by google). Other providers may have similar
-limitations, so please be careful;
-- User is limited with 100 messages per day;
+- Максимально допустимые ограничения (почта + тема + длина сообщения) = 120 символов. Однако вы можете увеличить этот лимит при необходимости добавив ```#define BLYNK_MAX_SENDBYTES XXX``` к вашему коду. Где ```XXX``` - это максимальная длина вашего письма в символах.
+Например, для ESP вы можете установить максимальную длину 1200 символов ```#define BLYNK_MAX_SENDBYTES 1200```. Параметр  ```#define BLYNK_MAX_SENDBYTES 1200``` должен быть опредлен в коде до включения Blynk.
+- Разрешено отправлять 1 электронное письмо в течение 5 секунд;
+- Если вы используете Gmail сервис (Google), вы ограничены 500 письмами в день. Другие провайдеры могут иметь аналогичные ограничения, поэтому, пожалуйста, будьте внимательны;
+- Пользователи Blynk сервера ограничены 100 сообщениями в день;
 
-### Unicode in email
+### Кодировка в электронной почте
 
-The library handles all strings as UTF8 Unicode. If you're facing problems, try to print your message to the Serial 
-and see if it works (the terminal should be set to UTF-8 encoding). If it doesn't work, probably you should read 
-about unicode support of your compiler. 
-If it works, but your message is truncated - you need to increase message length limit 
-(all Unicode symbols consume at least twice the size of Latin symbols).
+Библиотека обрабатывает все строки в кодировке UTF8. Если у вас возникли проблемы, попробуйте напечатать ваше сообщение в терминал COM порта и посмотрите, работает ли он (терминал должен быть настроен на кодировку UTF-8). Если не работает, возможно, вам следует прочитать о поддержке кодировок вашего компилятора. 
+Если работает, но ваше сообщение обрезано - вам нужно увеличить ограничение длины сообщения (т.к. все символы кодировки UTF-8 потребляют как минимум вдвое больше байт информации).
 
-### Increasing message length limit
+### Увеличение лимита длины сообщения
 
 You can increase maximum message length by putting on the top of your sketch (before Blynk includes):
+Вы можете увеличить максимальную длину сообщения, поместив в верхнюю часть своего кода строку (до опредления Blynk):
 ```cpp
 #define BLYNK_MAX_SENDBYTES 256 // Default is 128
 ```
 
-**Sketch:** [Email](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Email/Email.ino)
+**Пример кода** [Электронная почта](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Email/Email.ino) 
