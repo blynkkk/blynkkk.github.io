@@ -1,55 +1,49 @@
 
-### Joystick
+### Джойстик (Joystick)
 
-Control servo movements in 4 directions.
+Управление сервоприводом в 4 направлениях.
 
-#### Settings:
+#### Параметры:
 
-- **SPLIT**:
-Each of the parameters is sent directly to the Pin on your hardware (e.g D7). You don't need to write any code.
+- **SPLIT** (Раздельный):
+Каждый из параметров отправляется непосредственно на пин вашего оборудования (например, D7 и D8). Вам не нужно писать код.
 
-**NOTE:** In this mode you send multiple commands from one widget, which can reduce performance of your hardware.
+**ПРИМЕЧАНИЕ:** В этом режиме вы отправляете несколько команд из одного виджета, что может снизить производительность вашего оборудования.
 
-Example: If you have a Joystick Widget and it's set to D3 and D4, it will send 2 commands over the Internet:
+**Пример:** Если у вас есть виджет джойстика и он настроен на D3 и D4, он отправит две команды через Интернет:
 
 ```cpp
 digitalWrite(3, x);
 digitalWrite(4, y);
 ```
 
-- **MERGE**:
-When MERGE mode is selected, you are sending just 1 message, consisting of array of values. But you'll need to parse it on the hardware. 
+- **MERGE** (Совмещенный):
+Когда выбран режим MERGE, вы отправляете только 1 сообщение, состоящее из массива значений. Но вам нужно разобрать его на оборудовании устройтсва.
 
-This mode can be used with Virtual Pins only.
+Этот режим можно использовать только с виртуальными пинами.
 	
-Example: Add a Joystick Widget and set it to MERGE mode. Choose Virtual Pin V1
+**Пример:** добавьте виджет Джойстика и установите его в режим "MERGE". Выберите виртуальный пин V1
 	
 ```cpp
 BLYNK_WRITE(V1) // Joystick assigned to V1 
 {
-  // get x 
+  // получить x 
   int x = param[0].asInt(); 
-  // get y
+  // получить y
   int y = param[1].asInt();
 }
 ```
 
-- **Rotate on Tilt**
-When it's ON, Joystick will automatically rotate if you use your smartphone in landscape orientation. 
+- **Rotate on Tilt** (Поворт/Наклон)
+Когда это параметр включен, Джойстик будет автоматически вращаться, если вы будете использовать смартфон в горизонтальной положении.
 
-- **Auto-Return**
-When it's OFF, Joystick handle will not return back to center position. It will stay where you left it.
+- **Auto-Return** (Автовозврат)
+Когда это парамтер выключен, ручка джойстика не вернется в центральное положение. Она останется там, где вы ее оставили.
  
-### Send On Release
-**Send On Release** is available for most controller widgets and allows you to decrease data traffic on your hardware. 
-For example, when you move joystick widget, commands are continuously streamed to the hardware, during a single joystick move 
-you can send dozens of commands. There are use-cases where it's needed, however creating such a load may cause hardware reset. 
-We recommend enabling **Send On Release** feature for most of the cases, unless you really need instant feedback.
-This option is enabled by default.
+### Send On Release (Отправлять по доступности)
+**Send On Release** доступно для большинства виджетов контроллеров и позволяет уменьшить трафик данных на вашем оборудовании. Например, когда вы перемещаете виджет джойстика, команды непрерывно передаются на аппаратное устройство, во время одного движения джойстика вы можете отправлять десятки команд. Есть случаи, когда это необходимо, однако создание такой нагрузки может привести к сбросу оборудования. Мы рекомендуем включить функцию **Send On Release** для большинства случаев, если вам не требуется мгновенная обратная связь. Эта опция включена по умолчанию.
 
-### Write interval
-Similar to above option. However, allows you to stream values to your hardware within certain interval. For example, 
-setting write interval to 100 ms - means, that while you move slider only 1 value will be send to hardware within 100 ms.
-This option also used to decrease data traffic on your hardware.
+### Write interval (Интервал записи)
+Похоже на вышеуказанный вариант. Однако, позволяет вам передавать значения на ваше оборудование в через определенные интервалы времени. Например, установка интервала записи на 100 мс означает, что при перемещении ползунка на аппаратное обеспечение будет отправлено только 1 значение в течение 100 мс. Эта опция также используется для уменьшения трафика данных на ваше оборудовании.
 
-**Sketch:** [JoystickTwoAxis](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/JoystickTwoAxis/JoystickTwoAxis.ino)
+**Пример кода:** [Джойстик две оси](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/JoystickTwoAxis/JoystickTwoAxis.ino)
