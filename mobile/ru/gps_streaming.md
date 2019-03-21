@@ -1,10 +1,9 @@
 
-### GPS Streaming
+### Поток GPS (GPS Streaming)
 
-Useful for monitoring smartphone location data such as latitude, longitude, altitude and speed (speed could be often 0  
-in case smartphone doesn't support it).
+Полезно для мониторинга местонахождения смартфона получать данные о широте, долготе, высоте и скорости (скорость часто может быть 0, если смартфон не поддерживает ее измерение).
 
-In order to accept data from this widget you need to : 
+Чтобы принимать данные из этого виджета, вам необходимо:
 
 ```cpp
 BLYNK_WRITE(V1) {
@@ -15,12 +14,12 @@ BLYNK_WRITE(V1) {
 }
 ```
 
-or you can use prepared wrapper ```GpsParam``` :
+или вы можете использовать подготовленную оболочку ```GpsParam``` :
 
 ```cpp
 BLYNK_WRITE(V1) {
   GpsParam gps(param);
-  // Print 6 decimal places for Lat
+  //Печать лат/лон с 6 десятичными знаками
   Serial.println(gps.getLat(), 7);
   Serial.println(gps.getLon(), 7);
   
@@ -29,6 +28,6 @@ BLYNK_WRITE(V1) {
 }
 ```
 
-GPS Streaming works in background.
+Поток GPS работает в фоновом режиме.
 
-**Sketch:** [GPS Stream](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/GPS_Stream/GPS_Stream.ino)
+**Пример кода:** [Поток GPS](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/GPS_Stream/GPS_Stream.ino)
