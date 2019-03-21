@@ -1,23 +1,19 @@
 
-### GPS Trigger
+### Триггер GPS (GPS Trigger)
 
-GPS trigger widget allows easily trigger events when you arrive to or leave from some destination. This widget 
-will work in background and periodically will check your coordinates. In case your location is within/out required 
-radius (selected on widget map) widget will send ```HIGH```/```LOW``` command to hardware. For example, let's assume you have 
-GPS Trigger widget assigned to pin ```V1``` and option ```Trigger When Enter```. In that case when you'll arrive to destination 
-point widget will trigger ```HIGH``` event.
+Виджет Триггер GPS позволяет легко инициировать события, когда вы входите или выходите из географической зоны. Этот виджет будет работать в фоновом режиме и периодически будет проверять ваши координаты. Если ваше местоположение находится в пределах или вне указанной зоны (географическая зона выбирается на карте виджета), виджет отправит команду ```HIGH```/``` LOW``` на аппаратное устройство. Например, Триггер GPS назначен для пина ```V1```, и включена опция ```Trigger When Enter```. В этом случае, когда вы окажитесь в указанной географической зоне виджет вызовет событие ```HIGH```.
 
 ```cpp
 BLYNK_WRITE(V1) {
   int state = param.asInt();
   if (state) {
-      //You enter destination
+      //Вы вошли в зону
   } else {
-      //You leave destination
+      //Вы вышли из зоны
   }
 }
 ```
 
-More details on how GPS widget works you can read [here](https://developer.android.com/guide/topics/location/strategies.html).
+Подробнее о том, как работает GPS-виджет, вы можете прочитать [здесь](https://developer.android.com/guide/topics/location/strategies.html).
 
-GPS trigger widget works in background.
+**ВНИМАНИЕ:** Виджет Триггер GPS работает в фоновом режиме.
