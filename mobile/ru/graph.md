@@ -1,33 +1,31 @@
 
-### Graph
+### График (Graph)
 
-Easily plot incoming data from your project in various designs. You can also scroll and zoom graph.
+Легко отображать входящие данные из вашего проекта в графическом варинате. Вы также можете прокручивать и масштабировать график.
 
-Can work in 2 modes : 
+Виджет может работать в двух режимах: 
 
-- PUSH mode (select if from Frequency Reading picker);
-- Frequency Reading mode;
+- режим PUSH (выберите из режима выбора частоты чтения);
+- режим частоты считывания;
 
-In PUSH mode you update gauge from hardware side with code : 
- 
+В режиме PUSH вы обновляете датчик со стороны оборудования с помощью кода:
+
 ```cpp
 Blynk.virtualWrite(V1, val); 
 ```
 
-In this mode every message that hardware sends to server is stored automatically on server. PUSH mode doesn't require 
-application to be online or opened.
+В этом режиме каждое сообщение, которое аппаратное устройство отправляет на сервер, автоматически сохраняется на сервере. Режим PUSH не требует, чтобы приложение было онлайн или запущенно.
 
-With Frequency Reading mode you need to select update interval and application will trigger events with required timing. 
-Your application should be open and running in order to make requests to hardware. You don't need any code for Analog and 
-Digital pins in that case. However for virtual pins you need to use next code : 
+В режиме частоты считывания вам нужно выбрать интервал обновления, и приложение будет запускать события с требуемым интервалом.
+Ваше приложение должно быть открыто и запущено для отправки запросов на оборудование. В данном случае вам не нужен код для аналоговых и цифровых пинов. Однако для виртуальных пинов вам необходимо использовать следующий код:
 
 ```cpp
-//triggered from app
+//вызываем из приложения
 BLYNK_READ(V1)
 {
-  //send to app
+  //отправляем в приложение
   Blynk.virtualWrite(V1, val);
 }
 ```
 
-**Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino)
+**Пример кода:** [Светодиод](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino)
