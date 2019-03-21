@@ -1,43 +1,42 @@
 
-### Image
+### Изображение (Image)
 
-Image widget allows you to display any image within your project. You need to provide http/s url to it.
-Url should be valid endpoint to the binary data of the image. Url shortener will not work.
+Виджет изображений позволяет отображать любое изображение в вашем проекте. Вы должны предоставить http/s URL адрес. 
+URL должен быть действительной конечной точкой для бинарных данных изображения. Укороченный URL робать не будет.
 
-Right now image widget supports 2 display options:
- - **Fit**: Image will be scaled to fit height or width of the widget size;
- - **Fill**: Image will be scaled to fill widget area. Cropping may occur;
+Сейчас виджет изображения поддерживает два варианта отображения:
+- **Fit** (Вписать): изображение будет масштабировано, в соответствовии с высотой или шириной виджета;
+- **Fill** (Заполнить): изображение будет масштабировано для заполнения области виджета. Может произойти обрезка изображения;
 
-You can make image widget interactive by providing multiple links to different images
-with different states and change displayed image index from your hardware or via Eventor widget.
+Вы можете сделать виджет изображения интерактивным, предоставив несколько ссылок на разные изображения с разными состояниями и менять индекс отображаемого изображения с вашего оборудования или с помощью виджета Обработчкий событий (Eventor).
 
-For example, select the first icon from the list :
+Например, выберите первый значок из списка:
 
 ```cpp
-Blynk.virtualWrite(V1, 1); //image indexing starts from 1
+Blynk.virtualWrite(V1, 1); //индексация изображения начинается с 1
 ```
 
-You can also change opacity, scale or rotation of the displayed the image :
+Вы также можете изменить прозрачность, масштаб или поворот изображения:
 
 ```cpp
-Blynk.setProperty(V1, "opacity", 50); // 0-100%
-```
-
-```cpp
-Blynk.setProperty(V1, "scale", 30); // 0-100%
+Blynk.setProperty(V1, "opacity", 50); // прозраочность 0-100%
 ```
 
 ```cpp
-Blynk.setProperty(V1, "rotation", 10); //0-360 degrees
+Blynk.setProperty(V1, "scale", 30); // масштаб 0-100%
 ```
 
-also, you can fully replace the list of images from the hardware:
+```cpp
+Blynk.setProperty(V1, "rotation", 10); // 0-360 градусы
+```
+
+также вы можете полностью заменить список изображений с аппаратного устройства:
 
 ```cpp
 Blynk.setProperty(V1, "urls", "https://image1.jpg", "https://image2.jpg");
 ```
 
-or you can change individual image by it index:
+или вы можете изменить индивидуальное изображение по его индексу:
 
 ```cpp
 Blynk.setProperty(V1, "url", 1, "https://image1.jpg");
