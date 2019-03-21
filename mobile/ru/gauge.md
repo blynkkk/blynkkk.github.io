@@ -1,25 +1,23 @@
 
-### Gauge
+### Указатель (Gauge)
 
-A great visual way to display incoming numeric values.
+Отличный визуальный способ отображения входящих числовых значений.
 
-Can work in 2 modes : 
+Может работать в 2 режимах:
 
-- PUSH mode (select if from Frequency Reading picker);
-- Frequency Reading mode;
+- режим PUSH (выберается в списке выбора частоты считывания);
+- режим частоты считываний;
 
-In PUSH mode you update gauge from hardware side with code : 
+В режиме PUSH вы обновляете значения указателя со стороны оборудования с помощью кода:
  
 ```cpp
 Blynk.virtualWrite(V1, val); 
 ```
 
-In this mode every message that hardware sends to server is stored automatically on server. PUSH mode doesn't require 
-application to be online or opened.
+В этом режиме каждое сообщение, которое отправляет аппаратное устройство автоматически сохраняется на сервере. Режим PUSH не требует, чтобы приложение было онлайн или открыто.
 
-With Frequency Reading mode you need to select update interval and application will trigger events with required timing. 
-Your application should be open and running in order to make requests to hardware. You don't need any code for Analog and 
-Digital pins in that case. However for virtual pins you need to use next code : 
+В режиме частоты считывния вам необходимо выбрать интервал обновления данных, и приложение будет запускать события считывния с требуемым периодичностью.
+Ваше приложение должно быть открыто и запущено для отправки запросов на оборудование. Вам не нужен код для аналоговых и цифровых выводов в даном случае. Однако для виртуальных выводов вам необходимо использовать следующий код:
 
 ```cpp
 //triggered from app
@@ -30,33 +28,33 @@ BLYNK_READ(V1)
 }
 ```
 
-#### Formatting options
+#### Параметры форматирования
 
-Gauge also has "Label" field which allows use to use formatting.
-Let's assume, your sensor sends number 12.6789 to Blynk application.
-Next formatting options are supported:
+Указатель также имеет поле «Label» (Метка), которое позволяет использовать форматирование.
+Предположим, ваш датчик отправляет число 12.6789 в приложение Blynk.
+Поддерживаются следующие параметры форматирования:
 
-```/pin/``` - displays the value without formatting (12.6789)
+```/pin/``` - отображает значение без форматирования (12.6789)
 
-```/pin./``` - displays the value without decimal part (13)
+```/pin./``` - отображает значение без десятичной части (13)
 
-```/pin.#/``` - displays the value with 1 decimal digit (12.7)
+```/pin.#/``` - отображает значение с одним десятичным знаком (12.7)
 
-```/pin.##/``` - displays the value with two decimal places (12.68)
+```/pin.##/``` - отображает значение с двумя десятичными знаками (12.68)
 
-#### Other options
+#### Другие опции
 
-You can also change gauge label from hardware with : 
+Вы также можете изменить метку прибора с помощью:
 
 ```cpp
-Blynk.setProperty(V1, "label", "My Gauge Label");
+Blynk.setProperty(V1, "label", "Мое значение метки");
 ```
 
-or change color : 
+или изменить цвет (кодировка RGB): 
 
 ```cpp
-//#D3435C - Blynk RED
+//#D3435C - Красный цвет
 Blynk.setProperty(V1, "color", "#D3435C");
 ```
 
-**Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino)
+**Пример кода:** [Светодиод](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino)
