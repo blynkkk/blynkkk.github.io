@@ -1,70 +1,69 @@
 
-### LCD
+### ЖК дисплей (LCD)
 
-This is a regular 16x2 LCD display made in our secret facility in China. It can work in 2 modes : 
+Это обычный ЖК-дисплей 16x2, "сделанный" на нашем секретном предприятии в Китае. Может работать в 2 режимах:
 
-- Simple
-- Advanced
+- Простой
+- Расширенный
 
-#### Simple mode
+#### Простой режим
 
-In simple mode your LCD widget performs as regular widget with Frequency reading.
+В простом режиме ваш ЖК-виджет работает как обычный виджет с частотой чтения.
 
-With Frequency Reading mode you need to select update interval and application will trigger events with required timing. 
-Your application should be open and running in order to make requests to hardware. You don't need any code for Analog and 
-Digital pins in that case. However for virtual pins you need to use next code : 
+В режиме частоты считывания вам нужно выбрать интервал обновления данных, и приложение будет запускать события с требуемым интервалом. Ваше приложение должно быть открыто и запущено для отправки запросов на оборудование. В данном случае вам не нужен код для аналоговых и цифровых пин-ов. Однако для виртуальных пин-ов вам необходимо использовать следующий код:
 
 ```cpp
-//triggered from app
+//вызываем из приложения
 BLYNK_READ(V1)
 {
-  //send to app
+  //отправляем в приложение
   Blynk.virtualWrite(V1, val);
 }
 ```
 
-In Simple mode LCD also supports formatting options.
+В простом режиме ЖК-дисплей также поддерживает параметры форматирования.
 
-##### Formatting options
+#### Параметры форматирования
 
-Let's assume, your sensor sends number 12.6789 to Blynk application.
-Next formatting options supported:
+Предположим, ваш датчик отправляет число 12.6789 в приложение Blynk.
+Поддерживаются следующие параметры форматирования:
 
-```/pin/``` - displays the value without formatting (12.6789)
+```/pin/``` -  отображает значение без форматирования (12.6789)
 
-```/pin./``` - displays the value without decimal part (13)
+```/pin./``` -  отображает значение без десятичной части (13)
 
-```/pin.#/``` - displays the value with 1 decimal digit (12.7)
+```/pin.#/``` -  отображает значение с одним десятичным знаком (12.7)
 
-```/pin.##/``` - displays the value with two decimal places (12.68)
+```/pin.##/``` - отображает значение с двумя десятичными знаками (12.68)
 
-**Sketch:** [LCD Simple Mode Pushing](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/LCD/LCD_SimpleModePushing/LCD_SimpleModePushing.ino)
+**Пример кода:** [ЖК дисплей простой режим PUSH](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/LCD/LCD_SimpleModePushing/LCD_SimpleModePushing.ino)
 
-**Sketch:** [LCD Simple Mode Reading](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/LCD/LCD_SimpleModeReading/LCD_SimpleModeReading.ino)
+**Пример кода:** [ЖК дисплей простой режим считывания](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/LCD/LCD_SimpleModeReading/LCD_SimpleModeReading.ino)
 
-#### Advanced mode
+#### Расширенный режим
 
-Advanced mode is for experienced users. Allows you to use special commands to control LCD.
+Расширенный режим предназначен для опытных пользователей. Позволяет использовать специальные команды для управления ЖК-дисплеем.
 
-#### Commands
+#### Команды
 
-Init LCD variable : 
+Инициируем переменную ЖК-дисплея: 
 
 ```cpp
 WidgetLCD lcd(V1);
 ```
 
-Send message : 
+Отправим сообщение: 
 
 ```cpp
-lcd.print(x, y, "Your Message");
+lcd.print(x, y, "Ваше сообщение");
 ```
-Where ```x``` is a symbol position (0-15), ```y``` is a line number (0 or 1), 
 
-Clear LCD : 
+Где ```x``` - позиция символа (0-15), ``` y``` - номер строки (0 или 1),
+
+Очистка ЖК-дисплея:
 
 ```cpp
 lcd.clear();
 ```
 
-**Sketch:** [LCD Advanced Mode](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/LCD/LCD_AdvancedMode/LCD_AdvancedMode.ino)
+**Пример кода:** [ЖК-дисплей расширенный режим](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/LCD/LCD_AdvancedMode/LCD_AdvancedMode.ino)
