@@ -1,57 +1,50 @@
 
-### Labeled Value
+### Значение переменной
 
-Displays incoming data from your sensors or Virtual Pins. It is a better version of 'Value Display' as it has a formatting 
-string, so you could format incoming value to any string you want.
+Отображает входящие данные с ваших датчиков или виртуальных пин-ов. Это лучшая версия «Отображения значений», так как в этом виджете есть строка форматирования, поэтому вы можете форматировать входящее значение в любую нужную вам строку.
 
-Can work in 2 modes : 
+Может работать в 2 режимах:
 
-- PUSH mode (select if from Frequency Reading picker);
-- Frequency Reading mode;
+- режим PUSH ( выберитается из списка частоты считывания);
+- режим частоты считывания;
 
-In PUSH mode you update value display from hardware side with code : 
+В режиме PUSH вы должны обновлять отображение значений на аппаратной устройстве с помощью кода:
  
 ```cpp
 Blynk.virtualWrite(V1, val); 
 ```
 
-In this mode every message that hardware sends to server is stored automatically on server. PUSH mode doesn't require 
-application to be online or opened.
+В этом режиме каждое сообщение, которое аппаратное устройств отправляет на сервер, автоматически сохраняется на сервере. Режим PUSH не требует, чтобы приложение было онлайн или запущено.
 
-With Frequency Reading mode you need to select update interval and application will trigger events with required timing. 
-Your application should be open and running in order to make requests to hardware. You don't need any code for Analog and 
-digital pins in that case. However for virtual pins you need to use next code : 
+В режиме частоты считывания вам нужно выбрать интервал обновления, и приложение будет запускать события с требуемым интервалом. Ваше приложение должно быть открыто и запущено для отправки запросов на оборудование. В данном случае вам не нужен код для аналоговых и цифровых пин-ов. Однако для виртуальных пин-ов вам необходимо использовать следующий код:
 
 ```cpp
-//triggered from app
+//вызываем из приложения
 BLYNK_READ(V1)
 {
-  //send to app
+  //отправляем в приложение
   Blynk.virtualWrite(V1, val);
 }
 ```
 
-#### Formatting options
+#### Параметры форматирования
 
-Let's assume, your sensor sends number 12.6789 to Blynk application.
-Next formatting options are supported:
+Предположим, ваш датчик отправляет число 12.6789 в приложение Blynk.
+Поддерживаются следующие параметры форматирования:
 
-```/pin/``` - displays the value without formatting (12.6789)
+```/pin/``` -  отображает значение без форматирования (12.6789)
 
-```/pin./``` - displays the value without decimal part (13)
+```/pin./``` -  отображает значение без десятичной части (13)
 
-```/pin.#/``` - displays the value with 1 decimal digit (12.7)
+```/pin.#/``` -  отображает значение с одним десятичным знаком (12.7)
 
-```/pin.##/``` - displays the value with two decimal places (12.68)
+```/pin.##/``` - отображает значение с двумя десятичными знаками (12.68)
 
-#### Home Screen Labeled Value
+#### Значение переменной на главном экране
 
-You can also add Labeled Value to your Android Home Screen. Labeled Value works via HTTPS in that case. 
-Have in mind that in "Home Screen" mode Labeled Value has few limitations. Labeled Value will update it's state only 
-once per 15 min. You can change this via Widget Settings. However update interval less than 15 minutes is not guaranteed. 
-You can also resize Labeled Value on Home Screen - just do long click on widget and resize it as you need.
+Вы также можете добавить значение переменной на домашний экран Android. В этом случае значение переменной работает через HTTPS протокол. Имейте в виду, что в режиме «Домашний экран» (Home Screen) значение переменной имеет некторые ограничения. Значение переменной будет обновлять состояние только один раз в 15 минут. Вы можете изменить этот параметр через настройки виджета. Однако интервал обновления менее 15 минут не гарантируется. Вы также можете изменить размер виджета значение переменной на главном экране - просто сделайте длинный тап на виджете и измените его размер на необходимый.
 
-**Note :** Adding home screen widget costs 100 energy. This energy not rechargeable.
-**Note :** Home Screen Widgets for Local Blynk servers requires port 8080 to be opened.
+**Примечание:** Добавление виджета на домашний экран стоит 100 энергии. Эта энергия не восстанавливается.
+**Примечание:** Виджеты главного экрана для локальных серверов Blynk требуют открытия порта 8080.
 
-**Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino)
+**Пример кода:** [Светодиод](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino)
