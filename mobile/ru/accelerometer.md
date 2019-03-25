@@ -10,11 +10,11 @@
 
 ```cpp
 BLYNK_WRITE(V1) {
-  //acceleration force applied to axis x
+  //сила ускорения, приложенная к оси x
   int x = param[0].asFloat(); 
-  //acceleration force applied to axis y
+  //сила ускорения, приложенная к оси y
   int y = param[1].asFloat();
-  //acceleration force applied to axis y
+  //сила ускорения, приложенная к оси z
   int z = param[2].asFloat();
 }
 ```
