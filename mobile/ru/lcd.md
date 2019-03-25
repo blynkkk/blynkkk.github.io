@@ -1,7 +1,7 @@
 
 ### ЖК дисплей (LCD)
 
-Это обычный ЖК-дисплей 16x2, "сделанный" на нашем секретном предприятии в Китае. Может работать в 2 режимах:
+Это обычный ЖК-дисплей 16x2, "сделанный" на нашем секретном предприятии в Китае. Виджет может работать в 2 режимах:
 
 - Простой (Simple)
 - Расширенный (Advanced)
@@ -36,9 +36,9 @@ BLYNK_READ(V1)
 
 ```/pin.##/``` - отображает значение с двумя десятичными знаками (12.68)
 
-**Пример кода:** [ЖК дисплей простой режим PUSH](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/LCD/LCD_SimpleModePushing/LCD_SimpleModePushing.ino)
+**Пример кода:** [ЖК дисплей простой режим - PUSH](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/LCD/LCD_SimpleModePushing/LCD_SimpleModePushing.ino)
 
-**Пример кода:** [ЖК дисплей простой режим считывания](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/LCD/LCD_SimpleModeReading/LCD_SimpleModeReading.ino)
+**Пример кода:** [ЖК дисплей простой режим - 1 сек](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/LCD/LCD_SimpleModeReading/LCD_SimpleModeReading.ino)
 
 #### Расширенный режим (Advanced)
 
