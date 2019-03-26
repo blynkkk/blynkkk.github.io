@@ -1,18 +1,17 @@
 
-### Music Player
+### Музыкальный проигрыватель (Music Player)
 
-Simple UI element with 3 buttons - simulates music player interface. Every button sends it's own command to hardware : 
-```play```, ```stop```, ```prev```, ```next```.
+Простой элемент интерфейса с 3 кнопками - имитирует интерфейс музыкального проигрывателя. Каждая кнопка отправляет свою команду на аппаратное устройство: ```play``` (воспроизвести),``` stop``` (стоп), ```prev``` (предыдущий),``` next``` (следующий).
 
-You can change widget state within the app from hardware side with next commands:
+Вы можете изменить состояние виджета в приложении с аппаратной стороны с помощью следующих команд:
 
 ```
 Blynk.virtualWrite(Vx, “play”);
 Blynk.virtualWrite(Vx, “stop”);
 ```
 
-You can also change widget play/stop state with next code (equivalent to above commands) : 
+Вы также можете изменить состояние воспроизведение/остановка виджета с помощью следующего кода (эквивалент вышеупомянутых команд):
 
 ```Blynk.setProperty(V1, "isOnPlay", "false");```
 
-**Sketch:** [Music Player](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Player/Player.ino)
+**Пример кода:** [Музыкальный проигрыватель](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Player/Player.ino)
