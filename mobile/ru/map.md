@@ -1,18 +1,17 @@
 
-### Map
+### Карта (Map)
 
-Map widget allows you set points/pins on map from hardware side. This is very useful widget in case you have 
-multiple devices and you want track their values on map.
+Виджет Карты позволяет устанавливать точки/флажки на карте со стороны оборудования. Это очень полезный виджет, если у вас есть несколько устройств, и вы хотите отслеживать их позиции на карте.
 
-You can send a point to map with regular virtual write command :  
+Вы можете отправить точку на карту с помощью обычной команды виртуальной записи:
 
 ```cpp
-Blynk.virtualWrite(V1, pointIndex, lat, lon, "value");
+Blynk.virtualWrite(V1, pointIndex, lat, lon, "Название");
 ```
 
-We also created a wrapper for you to make usage of map simpler : 
+Мы также создали оболочку, чтобы вы могли упростить использование карты:
 
-You can change button labels from hardware with : 
+Вы можете изменить метки кнопок на оборудовании с помощью:
 
 ```cpp
 WidgetMap myMap(V1);
@@ -20,9 +19,9 @@ WidgetMap myMap(V1);
 int index = 1;
 float lat = 51.5074;
 float lon = 0.1278;
-myMap.location(index, lat, lon, "value");
+myMap.location(index, lat, lon, "Название");
 ```
 
-Using save ```index``` allows you to override existing point value.
+Использование уникальных ```index``` позволяет вам переопределить существующее значение точки.
 
-**Sketch:** [Basic Sketch](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Map/Map.ino)
+**Пример кода:** [Базовый пример Карты](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Map/Map.ino)
