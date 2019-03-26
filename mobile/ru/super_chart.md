@@ -1,151 +1,132 @@
 
-### SuperChart
+### Диаграмма (SuperChart)
 
-SuperChart is used to visualise live and historical data. You can use it for sensor data, for binary event logging and more.
+Диаграмма используется для живой визуализации и хранения данных. Вы можете использовать виджет для логирования данных датчиков,  бинарных событий и многого другого.
 
-To use SuperChart widget you would need to push the data from the hardware with the desired interval by using timers.
-[Here is](https://examples.blynk.cc/?board=ESP8266&shield=ESP8266%20WiFi&example=GettingStarted%2FPushData) a basic example for data pushing.
+Чтобы использовать виджет Диаграмма, вам нужно будет передать данные с оборудования с желаемым интервалом, используя таймеры.
+[Здесь приведен](https://examples.blynk.cc/?board=ESP8266&shield=ESP8266%20WiFi&example=GettingStarted%2FPushData) базовый пример передачи данных.
 
-#### Interactions:
-- **Switch between time ranges and Live mode**
-</br>Tap time ranges at the bottom of the widget to change time ranges
+#### Взаимодействие:
+- **Переключение между режимами текущий и временной** Нажмите диапазоны времени в нижней части виджета, чтобы изменить масштаб Диаграммы по времени.
 
-- **Tap Legend Elements** to show or hide datastreams
-</br>
+- **Тап по легенде графиков**  показать или скрыть поток данных.
 
-- **Tap'n'hold to view timestamp and corresponding values**
+- **Долги тап на графике** покажет метку времени и соответствующие значения.
 
-- **Quick swipe from left to right to reveal previous data**</br>
-Then you can then scroll data back and forward within the given time range.
+- **Быстро проведите пальцем влево или вправо, чтобы увидеть предыдущие данные** впоследствии вы можете прокручивать данные назад и вперед в пределах заданного временного диапазона.
 
-- **Full Screen Mode**</br>
-Press this button to open Full Screen view in landscape orientation.
+- **Полноэкранный режим** нажмите эту кнопку, чтобы открыть полноэкранный режим в альбомной ориентации.
 
-Simply rotate the phone back to portrait mode. Chart should rotate automagically. 
-In full screen view you will see X (time) and multiple Y scales. 
-Full Screen Mode can be disabled from widget Settings.
+Чтобы выйти из режима полного экрана, просто поверните телефон обратно в портретный режим. График должен вращаться автоматически. В полноэкранном режиме вы увидите X (время) и несколько шкал Y.
+Полноэкранный режим можно отключить в настройках виджета.
 
-- **Menu Button**</br>
-Menu button will open additional functions:
-	- Export to CSV
-	- Erase Data on the server 
+- **Кнопка меню**
+ Кнопка меню откроет дополнительные функции:
+  - Экспорт в CSV
+  - Стереть данные на сервере
 
-#### SuperChart Settings:
-- **Chart Title**
-- **Title Font Size**</br>
-You have a choice of 3 font sizes
-- **Title Alignment**</br>
-Choose chart title alignment. This setting also affects Title and Legend position on the Widget.
-- **Show x-axis (time)**</br>
-Select it if you want to show the time label at the bottom of your chart.
-- **Time ranges picker**</br>
-Allows you to select required periods (`15m`, `30m`, `1h`, `3h`, ...) and resolution for your chart. Resolution
-defines how precise your data is. Right now chart supports 2 types of resolution `standard` and `high`. Resolution also
-depends on the selected period. For example, `standard` resolution for `1d` means you'll get 24 points per day (1 per hour),
-with `high` resolution you'll get for `1d` 1440 points per day (1 per minute).
-- **Datastreams**</br>
-Add datastreams (read below how to configure datastreams)
+#### Настройки диаграммы:
 
-#### Datastream Settings
+- **Заголовок диаграммы (Chart Title)** общее наименование диаграммы.
 
-Widget supports up to 4 Datastreams. 
-Press Datastream Settings Icon to open Datastream Settings.
+- **Размер шрифта заголовка (Title Font Size)** выберите из 3 размеров шрифта.
 
+- **Выравнивание заголовка (Title Alignment)** выберите выравнивание заголовка диаграммы. Этот параметр влияет на положение заголовка и легенды в виджете.
 
-**Design:**
-Choose available types of Chart:
+- **Показать ось X (время) (Show x-axis (time))** выберите настройку, если хотите показать шкалу времени внизу графика.
 
-- Line
-- Area
-- Bar
-- Binary (anchor LINK to binary)
+- **Автоматическое масштабирование для всех потоков данных (Override Auto Scaling for All Datastreams)** отключение этой опции позволит выполнить ручную настройку для оси Y (см. ниже).
 
-**Color:**
-Choose solid colors or gradients
+- **Выбор масштаба времени (Time ranges picker)** Позволяет выбрать необходимые периоды (`15m`,` 30m`, `1h`,` 3h`, ...) и разрешение для вашего графика. Разрешение определяет, насколько подробные ваши данные. Прямо сейчас график поддерживает два типа разрешения: `standard` и `high`. Разрешение также зависит от выбранного периода. Например, `standard` разрешение для `1d` означает, что вы будете получать 24 значения в день (одно в час), а при `high` разрешении вы будете получать за` 1d` 1440 значений в день (одно в минуту).
 
-**Source and input:**
-You can use 3 types of Data source: 
+- **Потоки данных (Datastreams)** добавить потоки данных (см. ниже, как настроить потоки данных).
 
-**1. Virtual Pin**
-Choose the desired Device and Virtual Pin to read the data from. 
+#### Настройки потоков данных
 
-**2. Tags**
-SuperChart can aggregate data from multiple devices using built-in aggregation functions. 
-For example, if you have 10 Temperature sensors sending temperature with the given period, 
-you can plot average value from 10 sensors on the widget.
+Виджет поддерживает до 4 потоков данных.
+Нажмите значок настроек потоков данных, чтобы открыть настройки.
 
-To use Tags:
+**Дизайн (Design)** выберите доступные типы диаграмм:
+ - Линейная (Line)
+ - С областями (Area)
+ - Гистограмма (Bar)
+ - Бинарная (Binary) (приведение данных к двоичному виду)
 
-- **[Add Tag](/#blynk-main-operations-control-of-multiple-devices-tags)** to every device you want to aggregate data from.
-- **Push data to the same Virtual Pin** on every device. (e.g. ```Blynk.virtualWrite (V0, temperature);```)
-- **Choose Tag as a source** in SuperChart Widget and use the pin where the data is coming to (e.g V0)<br>
+**Цвет (Color)** выберите сплошные цвета или градиенты.
 
-**Functions available:** 
-	
-- `SUM` will summarize all incoming values to the specified Virtual Pin across all devices tagged with the chosen tag
-- `AVG` will plot average value
-- `MED` will find a median value
-- `MIN` will plot minimum value
-- `MAX` will plot maximum value
-	
+**Источник и ввод (Source and input)** - Вы можете использовать три типа источника данных:
 
-**☝️ IMPORTANT: Tags are not working in Live Mode.**
+**1. Виртуальный пин (Virtual Pin)** - выберите желаемое устройство и виртуальный пин для получения данных.
 
-3. **[Device Selector](/#widgets-time-input-device-selector)**
+**2. Теги (Tags)** - диаграмма может агрегировать данные с нескольких устройств, используя встроенные функции агрегирования.
+Например, если у вас есть 10 датчиков температуры, посылающих температуру с заданным интервалом, Вы можете отобразить среднее значение от 10 датчиков в виджете.
+
+Использование тегов:
+
+- **[Добавить Тэг](http://docs.blynk.cc/#blynk-main-operations-control-of-multiple-devices-tags)** на каждое устройство, с которого вы хотите агрегировать данные. Это можно сделать в настройках проекта Blynk.
+- **Отправить данные в виртуальный пин (Push data to the same Virtual Pin)** на каждое устройство. (т.е. ```Blynk.virtualWrite (V0, temperature);```)
+- **Выберите тег в качестве источника (Choose Tag as a source)** в виджете Диаграмма и используйте пин, куда поступают данные (т.е. V0)
+
+**Добступные функции:** 
+- `SUM` будет суммировать все входящие значения в указанный виртуальный пин со всех устройств, помеченные выбранным тегом
+- `AVG` будет вычислять среднее значение
+- `MED` найдет среднее значение
+- `MIN` будет вычислять минимальное значение
+- `MAX` будет вычислять максимальное значение
+
+**ВАЖНО: Теги не работают в режиме реального времени.**
+
+**3. [Выбор устройства (Device Selector)](http://docs.blynk.cc/#widgets-time-input-device-selector)**
 If you add Device Selector Widget to your project, you can use it as a source for SuperChart. 
 In this case, when you change the device in Device Selector, chart will be updated accordingly
 
-**Y-Axis Settings**
-<br>There are 4 modes of how to scale data along the Y axis
+Если вы добавите виджет Выбор устройства в свой проект, вы можете использовать его в качестве источника данных для Диаграммы.
+В том случае, когда вы меняете устройство, диаграмма будет автоматически обновляться.
 
-1. *Auto*<br>
-Data will be auto-scaled based on min and max values of the given time period. This is nice option to start with.
+**Настройки оси Y (Y-Axis Settings)** - существует 4 режима масштабирования данных вдоль оси Y, активируется после отключения общей настройки виджета "Автоматическое масштабирование для всех потоков данных (Override Auto Scaling for All Datastreams)".
 
-2. **Min/Max**<br>
-When this mode is selected, Y scale will be set to the values you choose. 
-For example, if your hardware sends data with values varying from -100 to 100, you can set the chart 
-to this values and data will be rendered correctly.
+**1. Авто (Auto)**
+Данные будут автоматически масштабироваться на основе минимальных и максимальных значений заданного периода времени. Это лучший вариант для начинающих.
 
-You may also want to visualize the data within some specific range. 
-Let's say incoming data has values in the range of 0-55, but you would like to see only values in the range 30-50. 
-You can set it up and if values are out of Y scale you configured, chart will be cropped
+**2. Минимальный/Максимальный (Min/Max)**
+Когда выбран этот режим, шкала Y будет установлена на выбранные вами границы значений.
+Например, если ваше оборудование отправляет данные со значениями от -100 до 100, вы можете установить эти границы и данные графика будут отображены полностью.
 
-3. **% of Height**<br>
-This option allows you to auto-scale incoming data on the widget and position it the way you want. 
-In this mode, you set up the percentage of widget height on the screen, from 0% to 100%. 
+Вы также можете визуализировать данные в другом диапазоне. Допустим, входящие данные имеют значения в диапазоне 0-55, но вы хотели бы видеть только значения в диапазоне 30-50. Вы можете настроить  диапазон, но если значения не соответствуют заданному масштабу оси Y, диаграмма будет обрезана.
 
-If you set 0-100%, in fact it's a full auto-scale. No matter in which range the data is coming,  
-it will be always scaled to the whole height of the widget.
+**3. Процент от высоты (% of Height)**
+Эта опция позволяет автоматически масштабировать входящие данные на виджете и размещать их так, как вы хотите. 
+В этом режиме вы устанавливаете процент высоты виджета на экране от 0% до 100%.
 
-If you set it to 0-25%, then this chart will only be rendered on 1/4 of the widget height.
+Если вы установите диапазон 0-100%, это будет полная автоматическая шкала. Независимо от того, в каком диапазоне поступают данные, он всегда будет масштабирован по всей высоте виджета.
 
-This setting is very valuable for **Binary Chart** or for visualizing a few datastreams on the same chart in a different way.
+Если вы установите его на 0-25%, то график будет отображаться только на 1/4 высоты виджета.
 
-4. *Delta*<br>
-While data stays within the given Delta value, chart will be auto-scaled within this range.
-If delta exceeds the range, chart will be auto-scaled to min/max values of the given period.
+Этот параметр очень полезен для **Бинарной диаграммы** или для визуализации нескольких потоков данных на одной и той же диаграмме разными способами.
 
-**Suffix**<br>
-Here you can specify a suffix that will be shown during the Tap'n'hold.
+**4. Дельта (Delta)**
+Пока данные остаются в пределах заданного значения дельты, график будет автоматически масштабироваться в этом диапазоне.
+Если дельта превышает диапазон, график автоматически масштабируется до минимальных/максимальных значений указанного периода.
 
-**Decimals**<br>
-Defines the formatting of the graph value when you Tap'n'hold the graph. Possible options are: #, #.#, #.##, etc.
+**Суффикс (Suffix)**
+Здесь вы можете указать суффикс, который будет отображаться со значениями во время длительного тап на графике.
 
-**Connect Missing Data Points**<br>
-If this switch is ON, then SuperChart will connect all the dots even if there was no data.
+**Разрядность (Decimals)**
+Определяет формат числовых значений, когда вы нажимаете и удерживаете палец на графике. Возможные варианты: #, #.#, #.##, и т.д.
 
-If it's set to OFF, then you will see gaps in case there was no data.
+**Соединиить отсуствующие точки графика (Connect Missing Data Points)**
+Если этот переключатель включен, то Диаграмма соединит все точки, даже если данные частично отсуствуют.
+Если для него установлено значение «ВЫКЛ», то вы увидите пропуски в случае отсутствия данных.
 
-**Binary Chart Settings**<br>
-This type of chart is useful to plot binary data, for example when unit was ON or OFF, or when motion was detected or when certain threshold was reached.
+**Настройки Бинарной диаграммы (Binary Chart Settings)**
+Этот тип диаграммы полезен для построения двоичных данных, например, когда устройство было включено или выключено, или когда было обнаружено движение или когда был достигнут определенный порог значений.
 
-You need to specify a **FLIP** point, which is the point where incoming data will be turned into TRUE or FALSE state.
+Вам необходимо указать точку **Перехода (FLIP)**, которая будет точкой, в которой входящие данные будут принимать состояние `ИСТИНА` или `ЛОЖЬ`.
 
-For example, you send the data in the range of `0 to 1023`. If you set `512` as a **FLIP** point, then everything above `512` (excluding 512) will be recorded as `TRUE`, any value below `512` (including 512) will be `FALSE`.
+Например, вы отправляете данные в диапазоне от 0 до 1023. Если вы установите `512` в качестве точки **Перехода (FLIP)**, то все, что выше `512` (исключая 512), будет записано как `ИСТИНА (TRUE)`, любое значение ниже `512` (включая 512) будет `ЛОЖЬ (FALSE)`.
 
-Another example, if you send `0 and 1` and set `0` as a **FLIP** point, then `1` will be `TRUE`, `0` will be `FALSE`
+Другой пример: если вы отправляете `0 и 1` и устанавливаете `0` в качестве точки **Перехода FLIP**, то `1` будет `ИСТИНА`, а `0` будет `ЛОЖЬ`.
 
-**State Labels:**<br>
-Here you can specify how `TRUE/FALSE` should be shown in Tap'n'Hold mode. 
-
-For example, you can set to `TRUE` to "Equipment ON" label, `FALSE` to "Equipment OFF".
+**Маркеры состояния (State Labels):**
+Здесь вы можете указать, как `ИСТИНА/ЛОЖЬ` должны отображаться на графике когда вы нажимаете и удерживаете палец.
+Например, вы можете установить значение `ИСТИНА` как `Оборудование ВКЛ`, `ЛОЖЬ` как `Оборудование ВЫКЛ`.
