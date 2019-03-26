@@ -9,11 +9,6 @@
 
 #### Режим редактирования. Конфигурация ввода данных
 
-In edit mode (when your project is stopped) you define the Datastreams you would like to later be included in reports.
-Reports widget is  designed to work with the Device Tiles widget. If you don't use Device Tiles you can still select a single device or a group of devices as a source of data for reports.
-
-You have to choose either Device Tiles or single / group of the devices for the report. You can't combine these 2 options.
-
 В режиме редактирования (когда ваш проект остановлен) вы определяете потоки данных, которые вы хотели бы позже включить в отчет.
 Виджет «Отчеты» предназначен для работы с виджетом «Плитка устройств» (Device Tiles). Если вы не используете плитки устройств, вы все равно можете выбрать одно устройство или группу устройств в качестве источника данных для отчетов.
 
@@ -59,25 +54,22 @@ You have to choose either Device Tiles or single / group of the devices for the 
 ```Timezone correction``` (Времненная зона) -  укажите корректировку часового пояса, если вам нужно настроить дату и время отчета на определенный часовой пояс.
 
 ```Date and time format``` (Формат даты и времени) -  определяет формат поля временной метки ваших данных.
-Вы можете выбрать ```2018-06-21 20:16:48```, ```2018-06-21T20:16:48+03:00``` или другой поддерживаемы формат.
+Вы можете выбрать ```2018-06-21 20:16:48```, ```2018-06-21T20:16:48+03:00``` или другой поддерживаемый формат.
 
-There is one specific ```Timestamp``` format - which reflects the difference between the current time and midnight, January 1, 1970 UTC measured in milliseconds.
+Существует особый формат ```Timestamp``` (Временная метка), которая отражает разницу между текущим временем и полуночью 1 января 1970 года UTC, измеряемую в миллисекундах.
 
-After the report is set up - click on "OK" button at the right upper corner. Your report is ready.
+После настройки отчета нажмите кнопку «ОК» в правом верхнем углу. Ваш отчет готов.
 
+После настройки отчета вы увидите, когда запланирован следущий отчет ```Next```, а также увидите расписание для этого отчета.
 
-Once you configured the report you will see when is the ```Next``` report scheduled and also a schedule for this report.
+После отправки отчета хотя бы один раз, вы можете увидеть дату его последней отправки ```Last```.
 
-After the report was sent at least once, you can see when the ```Last``` report was sent.
+```Last``` (последний) метка также содержит статус отправки отчета:
 
-```Last``` label also contains the status regarding the report:
+  - ```OK```:  отчет был сгенерирован и успешно отправлен Получателям;
+  - ```No Data```: отчет не содержит данных за указанный период;
+  - ```Error```:  что-то пошло не так. Пожалуйста, свяжитесь со службой поддержки Blynk.
 
-- ```OK```: the report was generated and sent to the Recipients successfully;
-- ```No Data```: the report doesn't contain any data for the configured period;
-- ```Error```: something went wrong. Please contact the Blynk Team support;
+Отчеты будут генерироваться, даже если ваш проект не находится в активном (Play) режиме. Однако помните, неактивные проекты небудут генерировать данные.
 
-Reports will be generated even if your project is not in active (Play) mode. However, inactive projects don't generate any data.
-
-**NOTE:** all reports are encoded in UTF-16. Please, make sure you selected UTF-16 as required "Character set" for your csv reader.
-
-
+**ПРИМЕЧАНИЕ:** все отчеты формируются в кодировке UTF-16. Пожалуйста, убедитесь, что при открытии файла отчета вы выбрали кодировку UTF-16 в вашем CSV-редакторе.
