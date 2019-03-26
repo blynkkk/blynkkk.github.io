@@ -1,15 +1,13 @@
 
-### Level Display
+### Индикатор уровня (Level Display)
 
-Displays incoming data from your sensors or Virtual Pins. Level Display is very similar to progress bar, it is very nice 
-and fancy view for indication of "filled" events, like "level of battery". 
-You can update value display from hardware side with code : 
+Отображает входящие данные с ваших датчиков или виртуальных выводов. Отображение уровня очень похоже на индикатор выполнения процесса, это очень красивый и причудливый вид для индикации «выполненных» событий, например «уровня заряда батареи». Вы можете обновить отображение значения с аппаратной стороны с помощью кода:
  
 ```cpp
 Blynk.virtualWrite(V1, val); 
 ```
 
-Every message that hardware sends to server is stored automatically on server. PUSH mode doesn't require 
-application to be online or opened.
+Каждое сообщение, которое аппаратное устройство отправляет на сервер, автоматически сохраняется на сервере.
+Режим PUSH не требует, чтобы приложение было онлайн или запущено.
 
-**Sketch:** [Push Example](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino)
+**Пример кода:** [Пример PUSH](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino)
