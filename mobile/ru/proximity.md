@@ -1,23 +1,22 @@
 
-### Proximity
+### Близость (Proximity)
 
-Proximity is kind of [position sensors](https://developer.android.com/guide/topics/sensors/sensors_position.html) 
-that allows you to determine how close the face of a smartphone is to an object.
-Measured in ```cm``` - distance from phone face to object. However most of this sensors returns only FAR / NEAR information.
-So return value will be ```0/1```. Where 0/LOW  is ```FAR``` and 1/HIGH is ```NEAR```.
-
-In order to accept data from it you need to : 
+Близость - это своего рода [датчики положения](https://developer.android.com/guide/topics/sensors/sensors_position.html)
+это позволяет определить, насколько близко смартфон к лицу. Измеряется в ```cm``` (см) - расстояние от телефона до лица. Однако большинство этих датчиков возвращает только информацию FAR / NEAR.
+Поэтому, возвращаемое значение будет ```0 / 1```. Где 0 / LOW = ```FAR``` (далеко), а 1 / HIGH = ``` NEAR``` (рядом).
+ 
+Для того, чтобы принять данные из виджета, вам необходимо:
 
 ```cpp
 BLYNK_WRITE(V1) {
-  // distance to object
+  //  расстояние до объекта
   int proximity = param.asInt();
   if (proximity) {
-     //NEAR
+     // РЯДОМ
   } else {
-     //FAR
+     // ДАЛЕКО
   }
 }
 ```
 
-Proximity doesn't work in background.
+Виджет близость не работает в фоновом режиме.
