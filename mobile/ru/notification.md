@@ -1,47 +1,46 @@
 
-### Push Notifications
+### Всплывающие уведомления (Push Notifications)
 
-Push Notification widget allows you to send push notification from your hardware to your device. Currently it also 
-contains 2 additional options :
+Виджет Push-уведомлений позволяет отправлять уведомления с вашего оборудования на ваше Android/iOS устройство. В настоящее время он также содержит три дополнительные опции:
 
-- **Notify when hardware offline** - you will get push notification in case your hardware went offline.
-- **Offline Ignore Period** - defines how long hardware could be offline (after it went offline) before sending notification. 
-In case period is exceeded - "hardware offline" notification will be send. You will get no notification in case hardware 
-was reconnected within specified period.
-- **Priority** high priority gives more chances that your message will be delivered without any delays. 
-See detailed explanation [here](https://developers.google.com/cloud-messaging/concept-options#setting-the-priority-of-a-message). 
+- **Уведомлять, когда оборудование отключено** (Notify when hardware offline) - вы получите push-уведомление, если ваше оборудование отключилось.
+- **Автономный период игнорирования** (Offline Ignore Period) - определяет, как долго оборудование может находиться в режиме ожидания (после того, как оно отключилось) перед отправкой уведомления.
 
-**WARNING** : high priority contributes more to battery drain compared to normal priority messages.
+В случае превышения периода ожидания будет отправлено уведомление «Аппаратное отключение». Вы не получите уведомление, если оборудование переподключится в течение указанного периода.
 
-Example code:
+- **Приоритет** (Priority) высокий (high) приоритет дает больше шансов, что ваше сообщение будет доставлено без задержек. См. более подробное объяснение [здесь](https://developers.google.com/cloud-messaging/concept-options#setting-the-priority-of-a-message).
+
+**ПРЕДУПРЕЖДЕНИЕ**: высокий приоритет способствует большей разрядке батареи, по сравнению с обычными приоритетом уведомлений.
+
+Пример кода:
+
 ```cpp
-Blynk.notify("Hey, Blynkers! My hardware can push now!");
+Blynk.notify("Привет, Blynk-еры! Мое оборудование может отправлять уведомления!");
 ```
 
-You can also use placeholder for device name, that will be replaced on the server with your device name:
+Вы также можете использовать переменные/заполнители для имени устройства, который будет заменен с сервера именем вашего устройства:
+
 ```cpp
-Blynk.notify("Hey, Blynkers! My {DEVICE_NAME} can push now!");
+Blynk.notify("Привет, Blynk-еры! Мой {DEVICE_NAME} может отправлять уведомления!");
 ```
 
+Ограничения:
 
-Limitations :
+- Максимально допустимая длина уведомления составляет 120 символов;
+- Каждое устройство может отправлять только 1 уведомление каждые 5 секунд;
 
-- Maximum allowed body length is 120 symbols;
-- Every device can send only 1 notification every 5 seconds;
+### Кодировка всплывающих уведомлений
 
-### Unicode in push notifications
+Библиотека обрабатывает все строки как в кодировке UTF-8. Если вы столкнулись с проблемами, попробуйте отправить ваше сообщение на последовательный порт и посмотреть, работает ли оно (терминал должен быть настроен на кодировку UTF-8). Если так не работает, возможно, вам следует прочитать о поддержке кодировки UTF-8 вашего компилятора.
+Если работает, но ваше сообщение урезано - вам необходимо увеличить ограничение длины сообщения (все символы UTF-8 потребляют как минимум вдвое больше байт информации).
 
-The library handles all strings as UTF8 Unicode. If you're facing problems, try to print your message to the Serial 
-and see if it works (the terminal should be set to UTF-8 encoding). If it doesn't work, probably you should read 
-about unicode support of your compiler. 
-If it works, but your message is truncated - you need to increase message length limit 
-(all Unicode symbols consume at least twice the size of Latin symbols).
-
-### Increasing message length limit
+### Увеличение лимита длины уведомления
 
 You can increase maximum message length by putting on the top of your sketch (before Blynk includes):
+Вы можете увеличить максимальную длину сообщения, поместив строку (до включения Blynk) в верхнюю часть своего кода:
+
 ```cpp
-#define BLYNK_MAX_SENDBYTES 256 // Default is 128
+#define BLYNK_MAX_SENDBYTES 256 // По умолчанию 128
 ```
 
-**Sketch:** [PushNotification](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/PushNotification/PushNotification_Button/PushNotification_Button.ino)
+**Пример кода:** [Всплывающие уведомления](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/PushNotification/PushNotification_Button/PushNotification_Button.ino)
