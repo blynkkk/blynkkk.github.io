@@ -1,6 +1,6 @@
 
-### RTC
+### Часы реального времени (RTC)
 
-Real-time clock allows you to get time from server. You can preselect any timezone on UI to get time on hardware in required locale.
+Часы реального времени позволяют получать время с сервера. Вы можете предварительно выбрать любой часовой пояс в пользовательском интерфейсе, чтобы получить время на оборудование из нужной локали.
 
-**Sketch:** [RTC](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/RTC/RTC.ino)
+**Пример кода:** [Часы реального времени](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/RTC/RTC.ino)
