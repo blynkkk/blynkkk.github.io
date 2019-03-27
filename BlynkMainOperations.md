@@ -321,6 +321,32 @@ Blynk.setProperty(V1, "url", "http://my_new_video_url");
 Blynk.setProperty(V1, "step", 10);
 ```
 
+**Image**
+
+```cpp
+Blynk.setProperty(V1, "opacity", 50); // 0-100%
+```
+
+```cpp
+Blynk.setProperty(V1, "scale", 30); // 0-100%
+```
+
+```cpp
+Blynk.setProperty(V1, "rotation", 10); //0-360 degrees
+```
+
+also, you can fully replace the list of images from the hardware:
+
+```cpp
+Blynk.setProperty(V1, "urls", "https://image1.jpg", "https://image2.jpg");
+```
+
+or you can change individual image by it index:
+
+```cpp
+Blynk.setProperty(V1, "url", 1, "https://image1.jpg");
+```
+
 You can also change widget properties via [HTTP API](http://docs.blynkapi.apiary.io/#).
 
 ## Limitations and Recommendations
