@@ -1,15 +1,13 @@
 
-## Video Streaming
+## Видео трансляция (Video Streaming)
 
-Simple widget that allows you to display any live or video stream. Widget supports RTSP (RP, SDP), HTTP/S progressive streaming, 
-HTTP/S live streaming. For more info please follow [official Android documentation](https://developer.android.com/guide/appendix/media-formats.html). 
+Простой виджет, который позволяет отображать прямой эфир и потокове видео. Виджет поддерживает протоколы RTSP (RP, SDP), HTTP/S прогрессивной потоковой передачи, HTTP/S прямого эфира. Для получения дополнительной информации, пожалуйста ознакомтесь с [официальной документацией Android](https://developer.android.com/guide/appendix/media-formats.html).
 
-At the moment Blynk doesn't provide streaming servers. So you can either stream directly from camera, use 3-d party 
-services or host streaming server on own server (on raspberry for example).
+На данный момент команда Blynk не предоставляет потоковые серверы. Таким образом, вы можете осуществлять потоковую передачу непосредственно с ваше камеры или использовать сторонние сервисы, а также запустить собственны потоковый сервер (например, на оборудовании Raspberry).
 
-You can also stop/start video stream with click on widget.
+Вы можете остановить/запустить видео поток, нажав на сам виджет.
 
-You can also change video url from hardware with : 
+Вы можете изменить URL-адрес видео потока с аппаратного устройства при помощи кода:
 
 ```cpp
 Blynk.setProperty(V1, "url", "http://my_new_video_url");
