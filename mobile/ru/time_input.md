@@ -1,25 +1,24 @@
 
-## Time Input
+## Ввод времени (Time Input)
 
-Time input widget allows you to select start/stop time, day of week, timezone, sunrise/sunset formatted values
-and send them to your hardware. Supported formats for time now are ```HH:MM``` and ```HH:MM AM/PM```.
+Виджет Ввода времени позволяет вам выбрать время начала/окончания, день недели, часовой пояс, значения в формате до полудня/после полудня и отправить их на ваше оборудование. В настоящее время поддерживаются следующие форматы: ```ЧЧ:ММ``` и ```ЧЧ:ММ AM/PM```.
 
-Hardware will get selected on UI time as seconds of day (```3600 * hours + 60 * minutes```) for start/stop time.
-Time that widget sends to hardware is user local time.
-Selected days indexes : 
+Аппаратное устройстов будет отсчитывать время пользовательского интерфейса в виде секунд дня (```3600 * часов + 60 * минут```) для запуска/остановки времения. Время, которое виджет отправляет оборудованию, является локальным временем пользователя.
+Индексы по выбранных дней:
 
 ```
-Monday - 1
-Tuesday - 2
+Понедельник - 1
+Вторник - 2
 ...
-Saturday - 6
-Sundays - 7
+Суббота - 6
+Воскресенье - 7
 ```
 
 You can also change state of widget on UI. See below sketches.
+Вы также можете изменить состояние виджета в интерфейсе пользователя. Смотрите ниже примеры кода.
 
-**Sketch:** [Simple Time Input for start time](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/TimeInput/SimpleTimeInput/SimpleTimeInput.ino)
+**Пример кода:** [Простой Ввод времени для времени начала](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/TimeInput/SimpleTimeInput/SimpleTimeInput.ino)
 
-**Sketch:** [Advanced Time Input](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/TimeInput/AdvancedTimeInput/AdvancedTimeInput.ino)
+**Пример кода:** [Расширенный Ввод времени](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/TimeInput/AdvancedTimeInput/AdvancedTimeInput.ino)
 
-**Sketch:** [Update Time Input State on UI](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/TimeInput/UpdateTimeInputState/UpdateTimeInputState.ino)
+**Пример кода:** [Обновление Ввода времени в пользовательском интерфейсе](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/TimeInput/UpdateTimeInputState/UpdateTimeInputState.ino)
