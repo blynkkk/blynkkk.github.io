@@ -39,10 +39,9 @@ Blynk.email("{DEVICE_OWNER_EMAIL}", "{DEVICE_NAME} : Тревога", "Ваше 
 
 ### Увеличение лимита длины сообщения
 
-You can increase maximum message length by putting on the top of your sketch (before Blynk includes):
 Вы можете увеличить максимальную длину сообщения, поместив в верхнюю часть своего кода строку (до опредления Blynk):
 ```cpp
-#define BLYNK_MAX_SENDBYTES 256 // Default is 128
+#define BLYNK_MAX_SENDBYTES 256 // По умолчанию 128 байт
 ```
 
 **Пример кода:** [Электронная почта](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Email/Email.ino) 
