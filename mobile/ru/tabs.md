@@ -1,12 +1,12 @@
 
-### Tabs
+### Вкладки (Tabs)
 
-The only purpose of Tabs widget is to extend your project space. 
-In order to edit tabs widget - just tap on the selected tab. 
-You can drag widgets between tabs. 
-Only the last tab can be removed: to remove it swipe left on its name in Settings screen.
+Единственная цель виджета Вкладки - расширить пространство вашего проекта.
+Чтобы редактировать виджет Вкладок - просто нажмите на выбранную вкладку.
+Вы можете перетаскивать виджеты между вкладками. 
+Из списка можно удалить только последнюю вкладку: чтобы удалить ее, проведите пальцем влево по ее названию в экране настроек виджета.
 
-The maximum number of tabs on iOS is 4
-The maximum number of tabs on Android is 10
+Максимальное количество вкладок на iOS составляет 4.
+Максимальное количество вкладок на Android - 10.
 
-Stay tuned for an upcoming Tabs widget redesign!
+Оставайтесь с нами для предстоящего редизайна виджета вкладок!
