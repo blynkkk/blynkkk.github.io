@@ -1,64 +1,63 @@
 
-### Table
+### Таблица (Table)
 
-Table widget comes handy when you need to structure similar data within 1 graphical element. It works as a usual table.
+Табличный виджет удобен, когда вам нужно структурировать аналогичные данные в пределах одного графического элемента. Работает как обычная таблица.
 
-You can add a row to the table with : 
-
-```
-Blynk.virtualWrite(V1, "add", id, "Name", "Value");
-```
-
-You can update a row in the table with :
+Вы можете добавить строку в таблицу с помощью кода:
 
 ```
-Blynk.virtualWrite(V1, "update", id, "UpdatedName", "UpdatedValue");
+Blynk.virtualWrite(V1, "add", id, "Имя", "Значение");
 ```
 
-To highlight any item in a table by using it's id in a table : 
+Вы можете обновить строку в таблице с помощью кода:
+
+```
+Blynk.virtualWrite(V1, "update", id, "Новое имя", "Новое значение");
+```
+
+Чтобы выделить любой элемент в таблице, используйте его идентификатор:
 
 ```
 Blynk.virtualWrite(V1, "pick", 0);
 ```
 
-To select/deselect (make icon green/grey) item in a table by using it's row id in a table : 
+Чтобы выбрать/отменить выбор (сделать значок зеленым/серым) элемент в таблице, используйте его идентификатор:
 
 ```
 Blynk.virtualWrite(V1, "select", 0);
 Blynk.virtualWrite(V1, "deselect", 0);
 ```
 
-
-To clear the table at any time with: 
+ Чтобы очистить таблицу используйте код:
 
 ```
 Blynk.virtualWrite(V1, "clr");
 ```
 
-You can also handle other actions coming from table. For example, use row as a switch button. 
+Вы также можете обрабатывать другие действия из таблицы. Например, использовать строку таблицы в качестве кнопки переключения.
 
 ```
 BLYNK_WRITE(V1) {
    String cmd = param[0].asStr();
    if (cmd == "select") {
-       //row in table was selected. 
+       // строка в таблице была выбрана.
        int rowId = param[1].asInt();
    }
    if (cmd == "deselect") {
-       //row in table was deselected. 
+       // строка в таблице была отменена.
        int rowId = param[1].asInt();
    }
    if (cmd == "order") {
-       //rows in table where reodered
+       // когда строки в таблице переупорядочиваются
        int oldRowIndex = param[1].asInt();
        int newRowIndex = param[2].asInt();
    }
 }
 ```
 
-**Note :** Max number of rows in the table is 100. When you reach the limit, table will work as FIFO (First In First Out) list.
-This limit can be changed by configuring ```table.rows.pool.size``` property for Local Server.
+**Примечание:** Максимальное количество строк в таблице равно 100. Когда вы достигнете предела, таблица будет работать как список FIFO (Первый пришел - первый ушел).
+Это ограничение можно изменить, настроив свойство ```table.rows.pool.size``` в параметрах локального сервера.
 
-**Sketch:** [Simple Table usage](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Table/Table_Simple/Table_Simple.ino)
+**Пример кода:** [Простое использование таблицы](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Table/Table_Simple/Table_Simple.ino)
 
-**Sketch:** [Advanced Table usage](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Table/Table_Advanced/Table_Advanced.ino)
+**Пример кода:** [Расширенное использование таблицы](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Table/Table_Advanced/Table_Advanced.ino)
