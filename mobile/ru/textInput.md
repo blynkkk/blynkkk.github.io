@@ -1,4 +1,4 @@
 
-### Text Input
+### Текстовый ввод (Text Input)
 
-Text Input displays and let's you directly alter a string value. You can limit a maximum number of characters in widget settings.
+Отображается как строка текстового ввода, где вы можете напрямую изменять строковое значение. Также вы можете ограничить максимальное количество вводимых символов в настройках виджета.
