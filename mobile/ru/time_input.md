@@ -13,8 +13,6 @@
 Суббота - 6
 Воскресенье - 7
 ```
-
-You can also change state of widget on UI. See below sketches.
 Вы также можете изменить состояние виджета в интерфейсе пользователя. Смотрите ниже примеры кода.
 
 **Пример кода:** [Простой Ввод времени для времени начала](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/TimeInput/SimpleTimeInput/SimpleTimeInput.ino)
