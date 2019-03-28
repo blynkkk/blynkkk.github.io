@@ -1,42 +1,39 @@
 
-### Value Display
+### Отображений значений (Value Display)
 
-Displays incoming data from your sensors or Virtual Pins.
-Can work in 2 modes : 
+Отображает входящие данные с ваших датчиков или виртуальных пин-ов.
+Может работать в двух режимах:
 
-- PUSH mode (select it from Frequency Reading picker);
-- Frequency Reading mode;
+- режим PUSH (выберается в списке выбора частоты считывания);
+- режим частоты считываний;
 
-In PUSH mode you update value display from hardware side with code : 
+В режиме PUSH вы обновляете значения указателя со стороны оборудования с помощью кода:
  
 ```cpp
 Blynk.virtualWrite(V1, val); 
 ```
 
-In this mode every message that hardware sends to server is stored automatically on server. PUSH mode doesn't require 
-application to be online or opened.
+В этом режиме каждое сообщение, которое отправляет аппаратное устройство автоматически сохраняется на сервере. Режим PUSH не требует, чтобы приложение было онлайн или открыто.
 
-With Frequency Reading mode you need to select update interval and application will trigger events with required timing. 
-Your application should be open and running in order to make requests to hardware. You don't need any code for Analog and 
-Digital pins in that case. However for virtual pins you need to use next code : 
+В режиме частоты считывния вам необходимо выбрать интервал обновления данных, и приложение будет запускать события считывния с требуемой периодичностью.
+Ваше приложение должно быть открыто и запущено для отправки запросов на оборудование. Вам не нужен код для аналоговых и цифровых выводов в даном случае. Однако для виртуальных выводов вам необходимо использовать следующий код:
 
 ```cpp
-//triggered from app
+//вызывать из приложения
 BLYNK_READ(V1)
 {
-  //send to app
+  //отправить в приложение
   Blynk.virtualWrite(V1, val);
 }
 ```
 
-#### Home Screen Value Display
+#### Отображение значений на рабочем столе
 
-You can also add Value Display to your Android Home Screen. Value Display works via HTTPS in that case. 
-Have in mind that in "Home Screen" mode Value Display has few limitations. Value Display will update it's state only 
-once per 15 min. You can change this via Widget Settings. However update interval less than 15 minutes is not guaranteed.  
-You can also resize Value Display on Home Screen - just do long click on widget and resize it as you need.
+Вы также можете добавить виджет отображение значения на рабочий стол Android. В этом случае отображение значений работает по протоколу HTTPS.
+Имейте в виду, что в режиме «Рабочий стол» отображение значений имеет несколько ограничений. Виджет будет обновлять свое состояние только один раз в 15 минут. Вы можете изменить это органичение через настройки виджета. Однако интервал обновления менее 15 минут не гарантируется.
+Вы также можете изменить размер отображаемого значения на рабочем столе - просто сделайте длинный тап на виджете и измените его размер на необходимый.
 
-**Note :** Adding home screen widget costs 100 energy. This energy not rechargeable.
-**Note :** Home Screen Widgets for Local Blynk servers requires port 8080 to be opened.
+**Примечание:** Добавление виджета на главный экран стоит 100 энергии. Эта энергия не возвращяется при удалении виджета.
+**Примечание:** Виджеты рабочего стола для локальных серверов Blynk требуют открытия порта 8080.
 
-**Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino)
+**Пример кода:** [Базовый пример](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino)
