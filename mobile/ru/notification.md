@@ -8,7 +8,7 @@
 
 В случае превышения периода ожидания будет отправлено уведомление «Аппаратное отключение». Вы не получите уведомление, если оборудование переподключится в течение указанного периода.
 
-- **Приоритет** (Priority) высокий (high) приоритет дает больше шансов, что ваше сообщение будет доставлено без задержек. См. более подробное объяснение [здесь](https://developers.google.com/cloud-messaging/concept-options#setting-the-priority-of-a-message).
+- **Приоритет** (Priority) - высокий (high) приоритет дает больше шансов, что ваше сообщение будет доставлено без задержек. См. более подробное объяснение [здесь](https://developers.google.com/cloud-messaging/concept-options#setting-the-priority-of-a-message).
 
 **ПРЕДУПРЕЖДЕНИЕ**: высокий приоритет способствует большей разрядке батареи, по сравнению с обычными приоритетом уведомлений.
 
@@ -36,11 +36,10 @@ Blynk.notify("Привет, Blynk-еры! Мой {DEVICE_NAME} может отп
 
 ### Увеличение лимита длины уведомления
 
-You can increase maximum message length by putting on the top of your sketch (before Blynk includes):
 Вы можете увеличить максимальную длину сообщения, поместив строку (до включения Blynk) в верхнюю часть своего кода:
 
 ```cpp
-#define BLYNK_MAX_SENDBYTES 256 // По умолчанию 128
+#define BLYNK_MAX_SENDBYTES 256 // По умолчанию 128 байт
 ```
 
 **Пример кода:** [Всплывающие уведомления](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/PushNotification/PushNotification_Button/PushNotification_Button.ino)
