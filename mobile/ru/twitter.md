@@ -1,31 +1,28 @@
 
-### Twitter
+### Твиттер (Twitter)
 
-Twitter widget connects your Twitter account to Blynk and allows you to send Tweets from your hardware.
+Виджет Твиттер соединяет вашу учетную запись сети Twitter с Blynk и позволяет отправлять "твиты" с вашего оборудования.
 
-Example code:
+Пример кода:
 ```cpp
-Blynk.tweet("Hey, Blynkers! My Arduino can tweet now!");
+Blynk.tweet("Привет, Blynk-еры! Мой Arduino может слать твиты!");
 ```
 
-Limitations :
+Ограничения :
 
-- you can't send 2 tweets with same message (it's Twitter policy)
-- only 1 tweet per 5 seconds is allowed
+- нельзя отправлять 2 твита с одним и тем же сообщением (это политика Твиттера)
+- разрешен только 1 твит за 5 секунд
 
-### Unicode in Twitter
+### Кодировка в Твиттере
 
-The library handles all strings as UTF8 Unicode. If you're facing problems, try to print your message to the Serial 
-and see if it works (the terminal should be set to UTF-8 encoding). If it doesn't work, probably you should read 
-about unicode support of your compiler. 
-If it works, but your message is truncated - you need to increase message length limit 
-(all Unicode symbols consume at least twice the size of Latin symbols).
+Библиотека обрабатывает все строки в кодировке UTF-8. Если вы столкнулись с проблемами, попробуйте напечатать ваше сообщение на последовательный порт и проверить, работает ли оно (COM терминал должен быть настроен на кодировку UTF-8). Если не работает, вам следует проверить поддержку UTF-8 вашего компилятора.
+Если работает, но ваше сообщение обрезано - вам нужно увеличить длины сообщения (все символы UTF-8 потребляют как минимум вдвое больше байт информации).
 
-### Increasing message length limit
+### Увеличение лимита длины сообщения
 
-You can increase maximum message length by putting on the top of your sketch (before Blynk includes):
+ Вы можете увеличить максимальную длину сообщения, поместив (до включения Blynk) в верхнюю часть своего кода строку:
 ```cpp
-#define BLYNK_MAX_SENDBYTES 256 // Default is 128
+#define BLYNK_MAX_SENDBYTES 256 // По умолчанию 128 байт
 ```
 
-**Sketch:** [Twitter](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Twitter/Twitter.ino)
+**Пример кода:** [Твиттер](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Twitter/Twitter.ino)
