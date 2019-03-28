@@ -1,14 +1,14 @@
 
-### Timer
+### Таймер (Timer)
 
-Timer triggers actions at a specific time. Even if smartphone is offline. By default start time sends 1 (HIGH), 
-stop time sends 0 (LOW). You can change this with any other values.
-You can change timer settings in "run" mode.
-Recent Android version also has improved Timer within Eventor widget.
-With Eventor Time Event you can assign multiple timers on same pin, send any string/number, select days and timezone. 
-It is recommended to use Eventor over Timer widget.
-However Timer widget is still suitable for simple timer events.
+Таймер запускает действия в определенное время. Даже если смартфон не в сети. По умолчанию время начала отправляет 1 (HIGH), время остановки отправляет 0 (LOW). Вы можете изменить это поведение на любые другие значения.
+Вы можете изменить настройки таймера в режиме «Запуска».
+В последней версии Android также есть улучшенный таймер в виджете ["Обработчик событи"](https://github.com/blynkkk/blynkkk.github.io/blob/master/mobile/ru/eventor.md).
 
-**NOTE:** The timer widget rely on the server time and not your phone time. Sometimes the phone time may not match the server time. 
+C Обработчиком событий вы можете назначить несколько таймеров на один и тот же пин, отправить любую строку/число, выбирать дни и часовой пояс.
+Рекомендуется использовать виджет Обработчик событий поверх виджета Таймер.
+Однако виджет Таймер по-прежнему подходит и для простых событий таймера.
 
-**Sketch:** [Timer](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Timer/Timer.ino)
+**ПРИМЕЧАНИЕ:** Виджет таймера зависит от времени сервера, а не вашего телефона. Иногда время телефона может не соответствовать времени сервера.
+
+**Пример кода:** [Таймер](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Timer/Timer.ino)
