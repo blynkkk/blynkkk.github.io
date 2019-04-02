@@ -13,8 +13,13 @@
 
   <!-- Initializer -->
   <script>
-      Flatdoc.run({
-          fetcher: Flatdoc.file([
+    var lang = 'en';
+    var setLang = function(newLang){
+      lang = newLang;
+      switch (lang) {
+        case('en'):
+          Flatdoc.run({
+            fetcher: Flatdoc.file([
               'IntroAndDownloads.md',
               'GettingStarted.md',
               'HardwareSetUps.md',
@@ -31,8 +36,19 @@
               'FAQ.md',
               'Links.md',
               'License.md'
-          ])
-      });
+            ])
+          });
+          break;
+        case('ru'):
+          Flatdoc.run({
+            fetcher: Flatdoc.file([
+              'Widgets-RU.md'
+            ])
+          });
+      }
+    };
+    setLang('en');
+
   </script>
 
 </head>
@@ -41,6 +57,10 @@
   <div class='header'>
     <div class='left'>
       <h1><a href='https://blynk.io'>Blynk</a></h1>
+      <ul>
+        <li onclick={setLang(event,'en')}><p class="lang active">EN</p></li>
+        <li onclick={setLang(event,'ru')}><p class="lang">RU</p></li>
+      </ul>
     </div>
     <div class='right'>
       <!-- GitHub buttons: see http://ghbtns.com -->

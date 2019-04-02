@@ -7,6 +7,7 @@ Instead, edit the stylus (.styl) files and compile it to CSS on your machine.
 /* ----------------------------------------------------------------------------
  * Fonts
  */
+
 @import url("//fonts.googleapis.com/css?family=Montserrat:700|Open+Sans:400");
 @import url(https://fonts.googleapis.com/css?family=Oxygen);
 
@@ -979,4 +980,10 @@ code .comment {
   position: relative;
   z-index: 1;
 }
+.lang{
+  color: white;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
 
