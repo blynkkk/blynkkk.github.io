@@ -1,69 +1,68 @@
-#Getting Started  
-Let's get you started in 5 minutes (reading doesn't count!). 
-We will switch on an LED connected to your Arduino using the Blynk App on your smartphone.
+# Начало работы 
+Давайте начнем уже через 5 минут (чтение не считается!).
+Мы включим светодиод, подключенный к вашему Arduino, с помощью приложения Blynk на вашем смартфоне.
 
-Connect an LED as shown here:
+Подключите светодиод, как показано на рисунке:
 
 <img src="images/Arduino_LED.jpg" style="width: 250px; height:350px"/>
 
-##Getting Started With The Blynk App
-###1. Create a Blynk Account
-After you download the Blynk App, you'll need to create a New Blynk account. This account is separate from the accounts used for the Blynk Forums, in case you already have one.
+## Начало работы с приложением Blynk
+### 1. Создать учетную запись Blynk
+После загрузки приложения Blynk вам необходимо создать новую учетную запись Blynk. Если она у вас уже есть, помните: эта учетная запись отделена от учетных записей, используемых для форума Blynk.
 
-We recommend using a **real** email address because it will simplify things later.
+Мы рекомендуем использовать **реальный** адрес электронной почты, потому что это упростит ситуацию с настройкой.
 
 <img src="images/register_account.png" style="width: 200px; height:360px"/>
 
-####Why do I need to create an account?
+#### Зачем я должен создавать аккаунт?
 
-An account is needed to save your projects and have access to them from multiple devices from anywhere. It's also a security measure. 
+Учетная запись необходима для хранения ваших проектов и доступа к ним с нескольких устройств из любого места. Также это мера безопасности.
 
-You can always set up your own [Private Blynk Server](/#blynk-server) and have full control.
+Вы всегда можете настроить свой собственный [локальный Blynk сервер](/#blynk-server) и иметь полный контроль.
 
-###2. Create a New Project
-After you've successfully logged into your account, start by creating a new project.
+### 2. Создать новый проект
+ После того, как вы успешно вошли в свой аккаунт, начните с создания нового проекта.
 
 <img src="images/getting_started/create_project_button.png" style="width: 200px; height:360px"/>
  
-###3. Choose Your Hardware
-Select the hardware model you will use. Check out the [list of supported hardware](/#supported-hardware)!
+### 3. Выберите ваше оборудование
+Выберите модель оборудования, которую вы будете использовать. Проверьте [список поддерживаемого оборудования](/#support-hardware)!
 
 <img src="images/getting_started/select_hardware.png" style="width: 200px; height:360px"/>
 
-###4. Auth Token
+### 4. Ключ авторизации (Auth Token)
 
-**Auth Token** is a unique identifier which is needed to connect your hardware to your smartphone. 
-Every new project you create will have its own Auth Token. You'll get Auth Token automatically on your email after 
-project creation. You can also copy it manually. Click on devices section and selected required device : 
+**Ключ авторизации** - это уникальный идентификатор, необходимый для подключения вашего оборудования к вашему смартфону.
+Каждый новый проект, который вы создаете, будет иметь свой собственный Ключ авторизации. Вы получите Ключ авторизации автоматически на вашу электронную почту после создания проекта. Вы также можете скопировать его вручную. Нажмите на раздел устройств и выберите необходимое устройство:
 
 <img src="images/getting_started/token_1.png" style="width: 200px; height:360px"/>
 
-And you'll see token : 
+ И вы увидите ключ:
 
 <img src="images/getting_started/new_device.png" style="width: 200px; height:360px"/>
 
-<span style="color:#D3435C;">**NOTE:** Don't share your Auth Token with anyone, unless you want someone to have access to your hardware. </span>
+<span style="color:#D3435C;">**ПРИМЕЧАНИЕ:** Не передавайте свой Ключ авторизации кому-либо, если только вы не хотите, чтобы кто-то имел доступ к вашему оборудованию.</span>
 
-It's very convenient to send it over e-mail. Press the e-mail button and the token will be sent to the e-mail address you used for registration. 
-You can also tap on the Token line and it will be copied to the clipboard.
+Отправлять ключ по электронной почте очень удобно. Нажмите кнопку `e-mail`, и токен будет отправлен на адрес электронной почты, который вы использовали для регистрации.
+Вы также можете нажать на строку Ключа, и она будет скопирована в буфер обмена.
 
-Now press the **"Create"** button.  
+Теперь нажмите кнопку **"Создать"**.
 
 <img src="images/new_project.png" style="width: 200px; height:360px"/>
 
-###5. Add a Widget
+### 5. Добавить виджет
 
-Your project canvas is empty, let's add a button to control our LED.
+Ваш рабочий стол проекта пуст, давайте добавим кнопку для управления нашим светодиодом.
 
-Tap anywhere on the canvas to open the widget box. All the available widgets are located here. Now pick a button.
+Нажмите в любом месте на рабочем столе, чтобы открыть окно виджета. Все доступные виджеты расположены здесь. Теперь выберите виджет кнопку (Button).
 
-**Widget Box**
+**Окно виджетов (Widget Box)**
 
 <img src="images/widgets_box.png" style="width: 200px; height:360px"/>
 
-**Drag-n-Drop** - Tap and hold the Widget to drag it to the new position.
+**Схвати-И-Брось (Drag-n-Drop)** - Нажмите и удерживайте виджет, чтобы перетащить его на новое место.
 
-**Widget Settings** - Each Widget has it's own settings. Tap on the widget to get to them.
+**Настройки виджета (Widget Settings)** - Each Widget has it's own settings. Tap on the widget to get to them.
 
 <img src="images/button_settings.png" style="width: 200px; height:360px"/>
 
@@ -71,7 +70,7 @@ The most important parameter to set is **PIN** . The list of pins reflects physi
 
 <img src="images/pin_selection.png" style="width: 200px; height:360px"/>
 
-###6. Run The Project
+### 6. Run The Project
 When you are done with the Settings - press the **PLAY** button. This will switch you from EDIT mode to PLAY mode where you can interact with the hardware. While in PLAY mode, you won't be able to drag or set up new widgets, press **STOP** and get back to EDIT mode.
 
 You will get a message saying "Arduino UNO is offline". We'll deal with that in the next section.
