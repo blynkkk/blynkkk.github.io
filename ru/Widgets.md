@@ -1,4 +1,4 @@
-#Widgets
+# Widgets
 Widgets are interface modules. Each of them performs a specific input/ output function when communicating with the hardware.
 
 There are 4 types of Widgets: 
@@ -28,7 +28,7 @@ Read more about Virtual Pins [here](/#blynk-main-operations-virtual-pins).
 
 In case you want to map incoming values to specific range you may use mapping button: 
 
-<img src="images/display_edit_mapping.png" style="width: 200px; height:360px"/>
+<img src="../images/display_edit_mapping.png" style="width: 200px; height:360px"/>
 
 Let's say your sensor sends values from 0 to 1023. But you want to display values in a range 0 to 100 in the app. 
 When Data Mapping enabled, incoming value 1023 will be mapped to 100.
