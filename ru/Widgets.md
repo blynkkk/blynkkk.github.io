@@ -1,139 +1,139 @@
-# Widgets
-Widgets are interface modules. Each of them performs a specific input/ output function when communicating with the hardware.
+# Виджеты
+Виджеты являются интерфейсными модулями. Каждый из них выполняет определенную функцию ввода / вывода при взаимодействии с оборудованием.
 
-There are 4 types of Widgets: 
+ Есть 4 типа виджетов:
 
-- **Controllers** - used to send commands that control your hardware
-- **Displays** - used for data visualization from sensors and other sources;
-- **Notifications** - send messages and notifications;
-- **Interface** - widgets to perform certain GUI functions;
-- **Other** - widgets that don't belong to any category;
+- **Контроллеры** - используется для отправки команд, которые контролируют/управляют вашим оборудованием;
+- **Дисплеи** - используется для визуализации данных с датчиков и других источников;
+- **Уведомления** - отправляет сообщения и уведомления;
+- **Интерфейс** -  виджеты для выполнения определенных функций графического интерфейса;
+- **Другие** -  виджеты, которые не относятся ни к одной категории;
 
-Each Widget has it's own settings. Some of the Widgets (e.g. Bridge) just enable functionality and they don't have any settings.
+Каждый виджет имеет свои настройки. Некоторые из виджетов (например, Bridge) просто включают функциональность, и у них нет никаких настроек.
  
-## Common Widget Settings
-### Pin Selector
-This is one of the main parameters you need to set. It defines which pin to control or to read from. 
+## Общие настройки виджетов
+### Выбор пина
+Это один из основных параметров, который вам нужно установить. Он определяет, какой пин контролировать или читать.. 
 
-<img src="images/pin_selection.png" style="width: 200px; height:360px"/>
+<img src="../images/pin_selection.png" style="width: 200px; height:360px"/>
 
-**Digital Pins** - represent physical Digital IO pins on your hardware. PWM-enabled pins are marked with the ```~``` symbol
+**Цыфровые Пины (Digital Pins)** -  представляют физические пины цифрового ввода-вывода на вашем оборудовании. Выводы с поддержкой ШИМ помечены символом ```~```
 
-**Analog Pins** - represent physical Analog IO pins on your hardware
+**Аналоговые Пины (Analog Pins)** -  представляют физические пины аналогового ввода-вывода на вашем оборудовании
 
-**Virtual Pins** - have no physical representation. They are used to transfer any data between Blynk App and your hardware.
-Read more about Virtual Pins [here](/#blynk-main-operations-virtual-pins).
+**Виртуальные пины (Virtual Pins)** - не имеют физической реализации. Они используются для передачи любых данных между приложение Blynk и вашим оборудованием.
+Узнайте больше о Виртуальных Пинах [здесь](../#blynk-main-operations-virtual-pins).
 
-### Data Mapping
+### Отображение данных
 
-In case you want to map incoming values to specific range you may use mapping button: 
+Если вы хотите пересчитать входящие значения в определенный диапазон, вы можете использовать кнопку сопоставления значений:
 
 <img src="../images/display_edit_mapping.png" style="width: 200px; height:360px"/>
 
-Let's say your sensor sends values from 0 to 1023. But you want to display values in a range 0 to 100 in the app. 
-When Data Mapping enabled, incoming value 1023 will be mapped to 100.
+Допустим, ваш датчик отправляет значения от 0 до 1023. Но вы хотите в приложении отображать значения в диапазоне от 0 до 100.
+Когда сопоставление данных включено, входящее значение 1023 будет отображено как 100.
 
-### SPLIT/MERGE
-Some of the Widgets can send more than one value. And with this switch you can control how to send them.
+### РАЗДЕЛЬНО/ВМЕСТЕ (SPLIT/MERGE)
+Некоторые виджеты могут отправлять более одного значения. С помощью этого переключателя вы можете контролировать, как их отправлять.
 
-- **SPLIT**:
-Each of the parameters is sent directly to the Pin on your hardware (e.g D7). You don't need to write any code.
+- **РАЗДЕЛЬНО**:
+Каждый из параметров отправляется непосредственно на пин вашего оборудовании (например, D7). Вам не нужно писать дополнительный код.
 
-	**NOTE:** In this mode you send multiple commands from one widget, which can reduce performance of your hardware.
+**ПРИМЕЧАНИЕ:**  В этом режиме вы отправляете несколько команд из одного виджета, это может снизить производительность вашего оборудования.
 
-	Example: If you have a Joystick Widget and it's set to D3 and D4, it will send 2 commands over the Internet:
+**ПРИМЕР:**  Если у вас есть виджет джойстика и он настроен на пины D3 и D4, то он отправит 2 команды через Интернет:
 
-	```cpp
+```
 	digitalWrite(3, value);
 	digitalWrite(4, value);
 ```
 
-- **MERGE:**
-When MERGE mode is selected, you are sending just 1 message, consisting of array of values. But you'll need to parse it on the hardware. 
+- **ВМЕСТЕ:**
+Когда выбран режим ВМЕСТЕ, вы отправляете только 1 сообщение, состоящее из массива значений. Поэтому вам нужно разобрать его на совем оборудовании.
 
-	This mode can be used with Virtual Pins only.
+Этот режим можно использовать только с Виртуальными пинами.
+
+**ПРИМЕР:** Добавьте виджет zeRGBa и установите его в режим ВМЕСТЕ. Выберите виртуальный пин V1
 	
-	Example: Add a zeRGBa Widget and set it to MERGE mode. Choose Virtual Pin V1
-	
-	```cpp
-	BLYNK_WRITE(V1) // There is a Widget that WRITEs data to V1 
+```
+	BLYNK_WRITE(V1) //  Существующий виджет, который записывает данные в V1
 	{
-	  int r = param[0].asInt(); // get a RED channel value
-	  int g = param[1].asInt(); // get a GREEN channel value
-	  int b = param[2].asInt(); // get a BLUE channel value
+	  int r = param[0].asInt(); // получить значение КРАСНОГО канала
+	  int g = param[1].asInt(); // получить значение ЗЕЛЕНОГО канала
+	  int b = param[2].asInt(); // получить значение СИНЕГО канала
 	}
 ```
 
-### Decimals
-Defines how many decimals you would like to see when moving a Slider.
-When "No Fraction" is chosen, slider will only send integer values with no decimals.
-"1 digit" means that values will look like 1.1, 1.2, ..., 2.0, etc.
+### Разрядность (Decimals)
+Определяет, сколько десятичных знаков вы хотели бы видеть при перемещении ползунка.
+Когда выбрано «Без дроби» (No Fraction), ползунок будет отправлять только целочисленные значения без десятичных дробей. 
+"1 знак" означает, что значения будут выглядеть как 1.1, 1.2, ..., 2.0 и т. Д.
 
-### Send On Release 
-This option allows you to optimize data traffic on your hardware. 
+### Отправка при Отжатии (Send On Release)
+Эта опция позволяет оптимизировать трафик данных на ваше оборудование.
 
-For example, when you move joystick widget, commands are streamed to the hardware, during a single joystick move 
-you can send dozens of commands. There are use-cases where it's needed, however creating such a load may lead to hardware overload and reset. 
-**Send On Release** is a recommended setting for majority of applications. This is also a default setting.
+Например, когда вы перемещаете виджет джойстика, команды потоково передаются на ваше оборудование, во момент одного движения джойстика может отправляться десятки команд. Существуют варианты когда, это дейтсвительно необходимо, однако создание такой нагрузки может привести к перегрузке и сбросу оборудования.
 
-### Write interval
-Similar to "Send on Release" option. However, it allows you to stream values to your hardware within certain interval. For example, setting **write interval** to 100 ms means that while you move the slider, only 1 value will be sent to hardware within 100 ms period.
-This option is also used to optimize data traffic flow to your hardware.
+**Отправка при Отжатии** является рекомендуемой настройкой для большинства приложений. Данная настройка влключена по умолчанию.
 
-### Color gradient
+###  Интервал записи (Write interval)
+Аналогична опции «Отправка при Отжатии». Тем не менее, он позволяет вам передавать значения на ваше оборудование в течение определенного интервала. Например, установка **Интервала записи** на 100 мс означает, что при перемещении ползунка только 1 значение будет отправлено оборудованию в течение 100 мсек.
+Эта опция также используется для оптимизации потока трафика данных на ваше оборудование.
 
-When you choose gradient, it affects the color of widget elements based on invoming values. 
-For example: You set Gauge Widget with Min and Max parameters of 0-100, and choose green-yellow-red gradient. When hardware sends: 
-- `10`, Gauge will change it's color to green color
-- `50` will change Gauge to yellow color
-- `80` will change Gauge to red color
+###  Цветовой градиент (Color gradient)
+Когда вы выбираете градиент, он влияет на цвет элементов виджета на основе входящих значений.
+Например: вы устанавливаете виджет Указатель (Gauge) с параметрами Min и Max от 0 до 100 и выбираете зелено-желто-красный градиент. То когда оборудование отправляет данные:
+ 
+- `10`,  Указатель изменит свой цвет на зеленый
+- `50` указатель изменит цвет на желтый
+- `80` указатель изменит цвет на красный
 
-There are 2 types of gradients you can choose from:
-- Warm: Green - Orange - Red;
-- Cold: Green - Blue - Violet;
+Есть два типа градиентов, которые вы можете выбрать:
+- Теплый: Зеленый - Ораньжевый - Красный;
+- Холодный: Зеленый - Синий - Фиолетовый.
 
-
-
-##Controllers
-### Button
+## Контроллеры (Controllers)
+### Кнопка (Button)
 Works in push or switch modes. Allows to send ON and OFF (LOW/HIGH) values. Button sends 1 (HIGH) on press and sends 0 (LOW) on release.
 
-<img src="images/button.png" style="width: 77px; height:80px"/>
+Работает в режиме кнопки или выключателя. Позволяет отправлять значения ВКЛ (ON) и ВЫКЛ (OFF) (НИЗКИЙ / ВЫСОКИЙ) (LOW / HIGH). Кнопка посылает 1 ВЫСОКИЙ (HIGH) при нажатии и 0 НИЗКИЙ (LOW) при отпускании.
 
-<img src="images/button_edit.png" style="width: 200px; height:360px"/>
+<img src="../images/button.png" style="width: 77px; height:80px"/>
 
-**Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino)
+<img src="../images/button_edit.png" style="width: 200px; height:360px"/>
 
-### Slider
-Similar to potentiometer. Allows to send values between in a given MIN/MAX range.
+**Пример кода:** [Базовый пример](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino)
 
-<img src="images/slider.png" style="width: 77px; height:80px"/>
+### Слайдер (Slider)
+Слайдер очень похож на потенциометр. Позволяет отправлять значения в заданном диапазоне MIN / MAX.
 
-<img src="images/slider_edit.png" style="width: 200px; height:360px"/>
+<img src="../images/slider.png" style="width: 77px; height:80px"/>
 
-**Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino)
+<img src="../images/slider_edit.png" style="width: 200px; height:360px"/>
 
-### Timer
-Timer triggers actions at a specified time. Even if smartphone and app is offline. Start time sends 1 (HIGH). Stop time sends 0 (LOW).
+**Пример кода:** [Базовый пример](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino)
 
-Recent Android version also has improved Timer within Eventor widget.
-With Eventor Time Event you can assign multiple timers on same pin, send any string/value, select days and timezone. 
-It is recommended to use Eventor over Timer widget.
-However Timer widget is still suitable for simple timer events.
+### Таймер (Timer)
+Таймер запускает действия в определенное время. Даже если смартфон не в сети. По умолчанию время начала отправляет 1 (HIGH), время остановки отправляет 0 (LOW). Вы можете изменить это поведение на любые другие значения. Вы можете изменить настройки Таймера в режиме «Запуска». В последней версии Android также есть улучшенный таймер в виджете Обработчик событий.
 
-<img src="images/timer.png" style="width: 77px; height:80px"/>
+C [Обработчиком событий (Eventor)](../#widgets-other-obrabotchik-sobytij-eventor) вы можете назначить несколько таймеров на один и тот же пин, отправить любую строку/число, выбирать дни и часовой пояс. Рекомендуется использовать виджет Обработчик событий поверх виджета Таймер. Однако виджет Таймер по-прежнему подходит и для простых событий таймера.
 
-<img src="images/timer_edit.png" style="width: 200px; height:360px"/>
+**ПРИМЕЧАНИЕ:** Виджет таймера зависит от времени сервера, а не вашего телефона. Иногда время телефона может не соответствовать времени сервера.
 
-**NOTE:** The timer widget rely on the server time and not your phone time. Sometimes the phone time may not match the server time. 
+<img src="../images/timer.png" style="width: 77px; height:80px"/>
 
-**Sketch:** [Timer](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Timer/Timer.ino)
+<img src="../images/timer_edit.png" style="width: 200px; height:360px"/>
 
-### Joystick
-Control servo movements in 4 directions
+**ПРИМЕЧАНИЕ:** Виджет таймера зависит от времени сервера, а не вашего телефона. Иногда время телефона может не соответствовать времени сервера.
 
-####Settings:
-- SPLIT/MERGE modes - read [here](/#widgets-common-widget-settings-splitmerge)
+**Пример кода:** [Таймер](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Timer/Timer.ino)
+
+### Джойстик (Joystick)
+Управление сервоприводом в 4 направлениях.
+
+#### Параметры:
+- режим РАЗДЕЛЬНО/ВМЕСТЕ (SPLIT/MERGE) - читаем [здесь](/#vidgety-obschie-nastroyki-vidgetov-razdelno-vmeste-split-merge)
+Виджеты ОБщие настройки виджетов РАЗДЕЛЬНО/ВМЕСТЕ (SPLIT/MERGE)
 
 - **Rotate on Tilt**
 
