@@ -16,9 +16,13 @@ void setup() {
     while (Blynk.connect() == false) {
         // Ждем пока Blynk подключится
     }
-    bridge1.digitalWrite(9, HIGH); // выставим триггер HIGH на D9 устройства B. Код на устройстве B не требуется
+    bridge1.digitalWrite(9, HIGH); // выставим триггер HIGH на D9 
+                                   // устройства B. Код на устройстве
+                                   // B не требуется
     bridge1.analogWrite(10, 123);
-    bridge1.virtualWrite(V1, "hello"); // вам нужно написать код на устройстве B, чтобы получить это значение. См. ниже
+    bridge1.virtualWrite(V1, "hello"); // вам нужно написать код на 
+                                       // устройстве B, чтобы получить
+                                       // это значение. См. ниже
     bridge1.virtualWrite(V2, "value1", "value2", "value3");
 }
 
@@ -32,7 +36,8 @@ BLYNK_CONNECTED() {
 
 ```cpp
 BLYNK_WRITE(V5){
-    int pinData = param.asInt(); //pinData variable will store value that came via Bridge
+    int pinData = param.asInt(); // переменная pinData будет хранить значение,
+                                 // полученное через Bridge
 }
 ```
 
