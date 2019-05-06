@@ -135,11 +135,12 @@ C [Обработчиком событий (Eventor)](../#widgets-other-obrabotc
 - режим РАЗДЕЛЬНО/ВМЕСТЕ (SPLIT/MERGE) - читаем [здесь](/#vidgety-obschie-nastroyki-vidgetov-razdelno-vmeste-split-merge)
 Виджеты ОБщие настройки виджетов РАЗДЕЛЬНО/ВМЕСТЕ (SPLIT/MERGE)
 
-- **Rotate on Tilt**
+- **Вращать при наклоне (Rotate on Tilt)**
 
-When it's ON, Joystck will automatically rotate if you use your smartphone in landscape orientation  
+Когда он включен, джойстик будет автоматически вращаться, если вы используете смартфон в горизонтальной положении.
+
 - **Auto-Return**
-- 
+
 When it's OFF, Joystick handle will not return back to center position. It will stay where you left it. 
 
 <img src="images/joystick.png" style="width: 77px; height:80px"/>
