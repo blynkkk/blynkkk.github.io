@@ -137,30 +137,30 @@ C [Обработчиком событий (Eventor)](../#widgets-other-obrabotc
 
 - **Вращать при наклоне (Rotate on Tilt)**
 
-Когда он включен, джойстик будет автоматически вращаться, если вы используете смартфон в горизонтальной положении.
+Когда этот параметр включен, Джойстик будет автоматически вращаться, если вы будете использовать смартфон в горизонтальной положении.
 
-- **Auto-Return**
+- **Автовозрат (Auto-Return)**
 
-When it's OFF, Joystick handle will not return back to center position. It will stay where you left it. 
+Когда этот парамтер выключен, ручка джойстика не вернется в центральное положение. Она останется там, где вы ее оставили.
 
-<img src="images/joystick.png" style="width: 77px; height:80px"/>
+<img src="../images/joystick.png" style="width: 77px; height:80px"/>
 
-<img src="images/joystick_edit.png" style="width: 200px; height:360px"/>
+<img src="../images/joystick_edit.png" style="width: 200px; height:360px"/>
 
-**Sketch:** [JoystickTwoAxis](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/JoystickTwoAxis/JoystickTwoAxis.ino)
+**Пример кода:** [Джойстик Две Оси](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/JoystickTwoAxis/JoystickTwoAxis.ino)
 
-### zeRGBa
+### ЗеБРа (zeRGBa)
 
-zeRGBa is a usual RGB color picker + brightness picker
+ЗеБРа - это обычный RGB контроллер (палитры цветов).
 
-#### Settings:
+#### Настройки:
 
-- **SPLIT**:
-Each of the parameters is sent directly to the Pin on your hardware (e.g D7). You don't need to write any code.
+- **Раздельный (SPLIT)**:
+Каждый из параметров отправляется непосредственно на пин вашего оборудования (например, D7). Вам не нужно писать код.
 
-**NOTE:** In this mode you send multiple commands from one widget, which can reduce performance of your hardware.
+**ПРИМЕЧАНИЕ:** В этом режиме вы отправляете одновременно несколько команд из одного виджета, что может снизить производительность вашего оборудования.
 
-Example: If you have a zeRGBa Widget and it's set to D1, D2, D3 it will send 3 commands over the Internet:
+**ПРИМЕР:** у вас есть виджет ЗеБРа и для него было установлено значение D1, D2, D3, он отправит 3 команды через Интернет:
 
 ```cpp
 digitalWrite(1, r);
@@ -168,111 +168,244 @@ digitalWrite(2, g);
 digitalWrite(3, b);
 ```
 
-- **MERGE**:
-When MERGE mode is selected, you send 1 message with an array of values inside. You would need to parse the message on the hardware. 
+- **Объединенный (MERGE)**:
+Когда выбран этот режим, вы отправляете только 1 сообщение, состоящее из массива значений. Но в последствии вам нужно разобрать сообщение на своем оборудовании.
 
-This mode can be used with Virtual Pins only.
-	
-Example: Add a zeRGBa Widget and set it to MERGE mode. Choose Virtual Pin V1.
+Этот режим можно использовать только с виртуальными пин-ами.
+
+**ПРИМЕР:** добавьте виджет ЗеБРа и установите его в Объединенный режим (MERGE). Выберите виртуальный контакт V1.
 	
 ```cpp
-BLYNK_WRITE(V1) // zeRGBa assigned to V1 
+BLYNK_WRITE(V1) // ЗеБРа назначен на V1
 {
-    // get a RED channel value
+    // получим значение КРАСНОГО канала
     int r = param[0].asInt();
-    // get a GREEN channel value
-	int g = param[1].asInt();
-	// get a BLUE channel value
-	int b = param[2].asInt();
+    // получим значение ЗЕЛЕНОГО канала
+    int g = param[1].asInt();
+    // получим значение СИНЕГО канала
+    int b = param[2].asInt();
 }
 ```
 
-### Step Control
-Step Control is used to set granular values with a given step
+- **Отправка при Отжатии (Send On Release)** доступно для большинства виджетов контроллеров и позволяет уменьшить трафик данных на вашем оборудовании. Например, когда вы перемещаете виджет джойстика, команды непрерывно передаются на аппаратное устройство, во время одного движения джойстика вы можете отправлять десятки команд. Есть случаи, когда это необходимо, однако создание такой нагрузки может привести к сбросу оборудования. Мы рекомендуем включить функцию Отправка при Отжатии для большинства случаев, если вам не требуется мгновенная обратная связь. Эта опция включена по умолчанию.
 
-2 buttons are assigned to 1 pin. One button increments the value, another one decrements it. 
+- **Интервал записи (Write interval)**
 
-**Send Step** option allows you to send step value to hardware instead of actual value of step widget.
-**Loop value** option allows you to reset step widget to start value when maximum value is reached.
+Похоже на вышеуказанный вариант. Однако, позволяет вам передавать значения на ваше оборудование в через определенные интервалы времени. Например, установка интервала записи на 100 мс означает, что при перемещении ползунка на аппаратное обеспечение будет отправлено только 1 значение в течение 100 мс. Эта опция также используется для уменьшения трафика данных на ваше оборудовании.
 
-**Sketch:** [Basic Sketch](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino)
+### Шаговое управление (Step Control)
+Шаговое управление похоже на две кнопки, назначенные одному пин-у. Одна кнопка увеличивает ваше значение на установленный шаг, а другая уменьшает его. 
+Это очень полезно для случаев использования, когда вам нужно точно изменять ваши значения, но вы не можете достичь такой точности с помощью виджета Cлайдера.
 
-##Displays
-### Value Display
-Displays incoming data.
+**Отправить шаг (Send Step)** опция позволяет вам отправлять на оборудование каждый шаг нвместо фактического значения виджета.
 
-<img src="images/display.png" style="width: 77px; height:80px"/> 
+**Зациклить значения (Loop value)** опция позволяет сбросить Шаговый виджет на начальное значение при достижении максимального.
 
-<img src="images/display_edit.png" style="width: 200px; height:360px"/>
+**Пример кода:** [Базовый пример](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino)
 
-**Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino)
+## Дисплеи 
+### Отображение значений (Value Display)
+Отображает входящие данные с ваших датчиков или виртуальных пин-ов.
 
-### Labeled Value
-Displays incoming data in a formatted wayt. It is a better version of 'Value Display' where you can add suffixes and prefixes on the app side, with no coding on the hardware.
+<img src="../images/display.png" style="width: 77px; height:80px"/> 
 
-<img src="images/display.png" style="width: 77px; height:80px"/> 
+<img src="../images/display_edit.png" style="width: 200px; height:360px"/>
 
-<img src="images/labeled_value_edit.png" style="width: 200px; height:360px"/>
+Может работать в двух режимах:
 
-**Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino)
+- режим PUSH (выберается в списке выбора частоты считывания);
+- режим частоты считываний;
 
-#### Formatting options
+В режиме PUSH вы обновляете значения виджета со стороны оборудования с помощью кода:
+ 
+```cpp
+Blynk.virtualWrite(V1, val); 
+```
 
-For example: your sensor sends vaule of 12.6789 to Blynk application.
-Next formatting options are supported:
+В этом режиме каждое сообщение, которое отправляет аппаратное устройство автоматически сохраняется на сервере. Режим PUSH не требует, чтобы приложение было онлайн или открыто.
 
-```/pin/``` - displays the value without formatting (12.6789)
-
-```/pin./``` - displays the rounded value without decimal part (13)
-
-```/pin.#/``` - displays the value with 1 decimal digit (12.7)
-
-```/pin.##/``` - displays the value with two decimal places (12.68)
-
-<img src="images/labeled_value_format_edit.png" style="width: 200px; height:360px"/>
-
-### LED
-A simple LED for indication. You need to send 0 in order to turn LED off. And 255 in order to turn LED on. Or just use
-Blynk API as described below:
+В режиме частоты считывния вам необходимо выбрать интервал обновления данных, и приложение будет запускать события считывния с требуемой периодичностью.
+Ваше приложение должно быть открыто и запущено для отправки запросов на оборудование. Вам не нужен код для аналоговых и цифровых выводов в даном случае. Однако для виртуальных выводов вам необходимо использовать следующий код:
 
 ```cpp
-WidgetLED led1(V1); //register to virtual pin 1
+//вызывать из приложения
+BLYNK_READ(V1)
+{
+  //отправить в приложение
+  Blynk.virtualWrite(V1, val);
+}
+```
+
+#### Отображение значений на рабочем столе
+
+Вы также можете добавить виджет отображение значения на рабочий стол Android. В этом случае отображение значений работает по протоколу HTTPS.
+Имейте в виду, что в режиме «Рабочий стол» отображение значений имеет несколько ограничений. Виджет будет обновлять свое состояние только один раз в 15 минут. Вы можете изменить это органичение через настройки виджета. Однако интервал обновления менее 15 минут не гарантируется.
+Вы также можете изменить размер отображаемого значения на рабочем столе - просто сделайте длинный тап на виджете и измените его размер на необходимый.
+
+**Примечание:** Добавление виджета на главный экран стоит 100 энергии. Эта энергия не возвращяется при удалении виджета.
+
+**Примечание:** Виджеты рабочего стола для локальных серверов Blynk требуют открытия порта 8080.
+
+**Пример кода:** [Базовый пример](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino)
+
+### Значение переменной (Labeled Value)
+Отображает входящие данные с ваших датчиков или виртуальных пин-ов. Это лучшая версия «Отображения значений», так как в этом виджете есть строка форматирования, поэтому вы можете форматировать входящее значение в любую нужную вам строку.
+
+<img src="../images/display.png" style="width: 77px; height:80px"/> 
+
+<img src="../images/labeled_value_edit.png" style="width: 200px; height:360px"/>
+
+Может работать в 2 режимах:
+
+- режим PUSH ( выберитается из списка частоты считывания);
+- режим частоты считывания;
+
+В режиме PUSH вы должны обновлять отображение значений на аппаратной устройстве с помощью кода:
+ 
+```cpp
+Blynk.virtualWrite(V1, val); 
+```
+
+В этом режиме каждое сообщение, которое аппаратное устройств отправляет на сервер, автоматически сохраняется на сервере. Режим PUSH не требует, чтобы приложение было онлайн или запущено.
+
+В режиме частоты считывания вам нужно выбрать интервал обновления, и приложение будет запускать события с требуемым интервалом. Ваше приложение должно быть открыто и запущено для отправки запросов на оборудование. В данном случае вам не нужен код для аналоговых и цифровых пин-ов. Однако для виртуальных пин-ов вам необходимо использовать следующий код:
+
+```cpp
+//вызываем из приложения
+BLYNK_READ(V1)
+{
+  //отправляем в приложение
+  Blynk.virtualWrite(V1, val);
+}
+```
+
+#### Параметры форматирования
+
+Предположим, ваш датчик отправляет число 12.6789 в приложение Blynk.
+Поддерживаются следующие параметры форматирования:
+
+```/pin/``` -  отображает значение без форматирования (12.6789)
+
+```/pin./``` -  отображает значение без десятичной части (13)
+
+```/pin.#/``` -  отображает значение с одним десятичным знаком (12.7)
+
+```/pin.##/``` - отображает значение с двумя десятичными знаками (12.68)
+
+<img src="../images/labeled_value_format_edit.png" style="width: 200px; height:360px"/>
+
+#### Значение переменной на главном экране
+
+Вы также можете добавить значение переменной на рабочий стол Android. В этом случае значение переменной работает через HTTPS протокол. Имейте в виду, что в режиме «Рабочий стол» значение переменной имеет некторые ограничения. Значение переменной будет обновлять свое состояние только один раз в 15 минут. Вы можете изменить этот параметр через настройки виджета. Однако интервал обновления менее 15 минут не гарантируется. Вы также можете изменить размер виджета Значение переменной на рабочем столе - просто сделайте длинный тап на виджете и измените его размер на необходимый.
+
+**Примечание:** Добавление виджета на домашний экран стоит 100 энергии. Эта энергия не восстанавливается.
+
+**Примечание:** Виджеты главного экрана для локальных серверов Blynk требуют открытия порта 8080.
+
+**Пример кода:** [Светодиод](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino)
+
+### Светодиод (LED)
+
+Простой светодиод для индикации. Вам нужно отправить 0, чтобы выключить светодиод. И 255 для того, чтобы включить светодиод.
+Или просто используйте Blynk API, как описано ниже:
+
+```cpp
+//регистрируемся на виртуальном пине 1
+WidgetLED led1(V1);
 led1.off();
 led1.on();
 ```
     
-All values between 0 and 255 will change LED brightness:
+Все значения от 0 до 255 изменяют яркость светодиода:
 
 ```cpp
 WidgetLED led2(V2);
-led2.setValue(127); //set brightness of LED to 50%.
+//установить яркость светодиода на 50%.
+led2.setValue(127); 
+```
+
+ Вы также можете изменить цвет светодиода с помощью кода:
+
+```cpp
+//#D3435C - Красный в RGB формате
+Blynk.setProperty(V1, "color", "#D3435C"); 
 ```
 
 <img src="images/led.png" style="width: 77px; height:80px"/>
 
-**Sketch:** [LED](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/LED/LED_Blink/LED_Blink.ino)
+#### Светодиод на рабочем столе
 
-### Gauge
-Visual display of numeric values.
+Вы можете добавить виджет светодиод на рабочий стол Android. В этом случае светодиод работает через протокол HTTPS. Имейте в виду, что в режиме «Рабочий стол» виджет светодиода имеет некоторые ограничения. Светодиод будет обновлять свое состояние только один раз в 15 минут. Вы можете изменить этот интервал через настройки виджета. Однако интервал обновления менее 15 минут не гарантируется.
 
-<img src="images/gauge.png" style="width: 77px; height:80px"/>
+**Примечание:** Добавление виджета на рабочий стол стоит 100 энергии. Эта энергия не возвращается при удалении виджета.
 
-<img src="images/gauge_edit.png" style="width: 200px; height:360px"/>
+**Примечание:** Виджеты рабочего стола для локальных серверов Blynk требуют открыть порт 8080.
 
-**Sketch:** [BlynkBlink](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino)
+**Пример кода:** [Диод](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/LED/LED_Blink/LED_Blink.ino)
 
-#### Formatting options
+### Указатель (Gauge)
 
-For example: your sensor sends vaule of 12.6789 to Blynk application.
-Next formatting options are supported:
+Отличный визуальный способ отображения входящих числовых значений.
 
-```/pin/``` - displays the value without formatting (12.6789)
+<img src="../images/gauge.png" style="width: 77px; height:80px"/>
 
-```/pin./``` - displays the rounded value without decimal part (13)
+<img src="../images/gauge_edit.png" style="width: 200px; height:360px"/>
 
-```/pin.#/``` - displays the value with 1 decimal digit (12.7)
+Может работать в 2 режимах:
 
-```/pin.##/``` - displays the value with two decimal places (12.68)
+- режим PUSH (выберается в списке выбора частоты считывания);
+- режим частоты считываний;
+
+В режиме PUSH вы обновляете значения указателя со стороны оборудования с помощью кода:
+ 
+```cpp
+Blynk.virtualWrite(V1, val); 
+```
+
+В этом режиме каждое сообщение, которое отправляет аппаратное устройство автоматически сохраняется на сервере. Режим PUSH не требует, чтобы приложение было онлайн или открыто.
+
+В режиме частоты считывния вам необходимо выбрать интервал обновления данных, и приложение будет запускать события считывния с требуемым периодичностью.
+Ваше приложение должно быть открыто и запущено для отправки запросов на оборудование. Вам не нужен код для аналоговых и цифровых выводов в даном случае. Однако для виртуальных выводов вам необходимо использовать следующий код:
+
+```cpp
+//вызывать из приложения
+BLYNK_READ(V1)
+{
+  //отправить в приложение
+  Blynk.virtualWrite(V1, val);
+}
+```
+
+#### Параметры форматирования
+
+Указатель также имеет поле «Label» (Метка), которое позволяет использовать форматирование.
+Предположим, ваш датчик отправляет число 12.6789 в приложение Blynk.
+Поддерживаются следующие параметры форматирования:
+
+```/pin/``` - отображает значение без форматирования (12.6789)
+
+```/pin./``` - отображает значение без десятичной части (13)
+
+```/pin.#/``` - отображает значение с одним десятичным знаком (12.7)
+
+```/pin.##/``` - отображает значение с двумя десятичными знаками (12.68)
+
+#### Другие опции
+
+Вы также можете изменить метку прибора с помощью:
+
+```cpp
+Blynk.setProperty(V1, "label", "Мое значение метки");
+```
+
+или изменить цвет (кодировка RGB): 
+
+```cpp
+//#D3435C - Красный цвет
+Blynk.setProperty(V1, "color", "#D3435C");
+```
+
+**Пример кода:** [Базовый пример](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino)
 
 ### LCD
 This is a regular 16x2 LCD display made in our secret facility in China.
