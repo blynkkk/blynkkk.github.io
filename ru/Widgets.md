@@ -331,7 +331,7 @@ led2.setValue(127);
 Blynk.setProperty(V1, "color", "#D3435C"); 
 ```
 
-<img src="images/led.png" style="width: 77px; height:80px"/>
+<img src="../images/led.png" style="width: 77px; height:80px"/>
 
 #### Светодиод на рабочем столе
 
@@ -423,9 +423,9 @@ Where x is a symbol position (0-15), y is a line id (0 or 1),
 lcd.clear();
 ```
 
-<img src="images/lcd.png" style="width: 77px; height:80px"/>
+<img src="../images/lcd.png" style="width: 77px; height:80px"/>
 
-<img src="images/lcd_edit.png" style="width: 200px; height:360px"/>
+<img src="../images/lcd_edit.png" style="width: 200px; height:360px"/>
 
 **Sketch:** [LCD Advanced Mode](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/LCD/LCD_AdvancedMode/LCD_AdvancedMode.ino)
 **Sketch:** [LCD Simple Mode Pushing](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/LCD/LCD_SimpleModePushing/LCD_SimpleModePushing.ino)
@@ -444,7 +444,7 @@ Next formatting options are supported:
 
 ```/pin.##/``` - displays the value with two decimal places (12.68)
 
-<img src="images/lcd_format_edit.png" style="width: 200px; height:360px"/>
+<img src="../images/lcd_format_edit.png" style="width: 200px; height:360px"/>
 
 ### SuperChart
 SuperChart is used to visualise live and historical data. You can use it for sensor data, for binary event logging and more.
@@ -461,18 +461,18 @@ To use SuperChart widget you would need to push the data from the hardware with 
 
 - **Tap'n'hold to view timestamp and corresponding values**
 
-<img src="images/chart/tapnhold_charts.png" style="width: 300px; height:280px"/>
+<img src="../images/chart/tapnhold_charts.png" style="width: 300px; height:280px"/>
 
 - **Quick swipe from left to right to reveal previous data** 
 
-<img src="images/chart/swipe_charts.png" style="width: 300px; height:280px"/>
+<img src="../images/chart/swipe_charts.png" style="width: 300px; height:280px"/>
 
 Then you can then scroll data back and forward within the given time range.
 
 - **Full Screen Mode**</br>
 Press this button to open Full Screen view in landscape orientation:
 
-<img src="images/chart/fullscreen_charts.png" style="width: 300px; height:280px"/>
+<img src="../images/chart/fullscreen_charts.png" style="width: 300px; height:280px"/>
 
 Simply rotate the phone back to portrait mode. Chart should rotate automagically. 
 In full screen view you will see X (time) and multiple Y scales. 
@@ -483,7 +483,7 @@ Menu button will open additional functions:
 	- Export to CSV
 	- Erase Data on the server 
 
-<img src="images/chart/menu_charts.png" style="width: 300px; height:280px"/>
+<img src="../images/chart/menu_charts.png" style="width: 300px; height:280px"/>
 
 #### SuperChart Settings:
 - Chart Title
@@ -506,7 +506,7 @@ with `high` resolution you'll get for `1d` 1440 points per day (1 per minute).
 Widget supports up to 4 Datastreams. 
 Press Datastream Settings Icon to open Datastream Settings.
 
-<img src="images/chart/datastream_charts.png"/>
+<img src="../images/chart/datastream_charts.png"/>
 
 
 **Design:**
@@ -563,7 +563,7 @@ When this mode is selected, Y scale will be set to the values you choose.
 For example, if your hardware sends data with values varying from -100 to 100, you can set the chart 
 to this values and data will be rendered correctly.
 
-<img src="images/chart/yScale_manual_charts.png" style="width: 300px; height:212"/>
+<img src="../images/chart/yScale_manual_charts.png" style="width: 300px; height:212"/>
 
 You may also want to visualize the data within some specific range. 
 Let's say incoming data has values in the range of 0-55, but you would like to see only values in the range 30-50. 
@@ -573,17 +573,17 @@ You can set it up and if values are out of Y scale you configured, chart will be
 This option allows you to auto-scale incoming data on the widget and position it the way you want. 
 In this mode, you set up the percentage of widget height on the screen, from 0% to 100%. 
 
-<img src="images/chart/yheight2_charts.png" style="width: 300px; height:212px"/>
+<img src="../images/chart/yheight2_charts.png" style="width: 300px; height:212px"/>
 
 If you set 0-100%, in fact it's a full auto-scale. No matter in which range the data is coming,  
 it will be always scaled to the whole height of the widget.
 
 If you set it to 0-25%, then this chart will only be rendered on 1/4 of the widget height:
-<img src="images/chart/yheight2_manual_charts.png" style="width: 300px; height:212px"/>
+<img src="../images/chart/yheight2_manual_charts.png" style="width: 300px; height:212px"/>
 
 This setting is very valuable for **Binary Chart** or for visualizing a few datastreams on the same chart in a different way.
 
-<img src="images/chart/binary_charts.png" style="width: 300px; height:280px"/>
+<img src="../images/chart/binary_charts.png" style="width: 300px; height:280px"/>
 
 4. *Delta*<br>
 While data stays within the given Delta value, chart will be auto-scaled within this range.
@@ -598,11 +598,11 @@ Defines the formatting of the graph value when you Tap'n'hold the graph. Possibl
 **Connect Missing Data Points**<br>
 If this switch is ON, then SuperChart will connect all the dots even if there was no data
 
-<img src="images/chart/datapoints1_charts.png" style="width: 300px; height:280px"/>
+<img src="../images/chart/datapoints1_charts.png" style="width: 300px; height:280px"/>
 
 If it's set to OFF, then you will see gaps in case there was no data.
 
-<img src="images/chart/datapoints2_charts.png" style="width: 300px; height:280px"/>
+<img src="../images/chart/datapoints2_charts.png" style="width: 300px; height:280px"/>
 
 **Binary Chart Settings**<br>
 This type of chart is useful to plot binary data, for example when unit was ON or OFF, or when motion was detected or when certain threshold was reached.
@@ -618,7 +618,7 @@ Here you can specify how `TRUE/FALSE` should be shown in Tap'n'Hold mode.
 
 For example, you can set to `TRUE` to "Equipment ON" label, `FALSE` to "Equipment OFF".
 
-<img src="images/chart/binarylabel_charts.png" style="width: 300px; height:280px"/>
+<img src="../images/chart/binarylabel_charts.png" style="width: 300px; height:280px"/>
 
 Superchart supports currently 2 types of granularity:
 
@@ -651,9 +651,9 @@ terminal.flush();   // Ensure that data was sent out of device
 terminal.clear();   // Erase all values in the terminal
 ```
 
-<img src="images/terminal.png" style="width: 77px; height:80px"/>
+<img src="../images/terminal.png" style="width: 77px; height:80px"/>
 
-<img src="images/terminal_edit.png" style="width: 200px; height:360px"/>
+<img src="../images/terminal_edit.png" style="width: 200px; height:360px"/>
 
 **Sketch:** [Terminal](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Terminal/Terminal.ino)
 
@@ -688,7 +688,7 @@ application to be online or opened.
 
 Twitter widget connects your Twitter account to Blynk and allows you to send Tweets from your hardware.
 
-<img src="images/TwitterON.png" style="width: 77px; height:80px"/>
+<img src="../images/TwitterON.png" style="width: 77px; height:80px"/>
 
 Example code:
 ```cpp
@@ -728,7 +728,7 @@ placeholders in the mail for the ```to```, ```subject``` and ```body``` fields:
 Blynk.email("{DEVICE_OWNER_EMAIL}", "{DEVICE_NAME} : Alarm", "Your {DEVICE_NAME} has critical error!");
 ```
 
-<img src="images/mail.png" style="width: 77px; height:80px"/>
+<img src="../images/mail.png" style="width: 77px; height:80px"/>
 
 Limitations:
 
@@ -757,7 +757,7 @@ See detailed explanation [here](https://developers.google.com/cloud-messaging/co
 
 **WARNING**: high priority contributes more to battery drain compared to normal priority messages.
 
-<img src="images/push.png" style="width: 77px; height:80px"/>
+<img src="../images/push.png" style="width: 77px; height:80px"/>
 
 Example code:
 ```cpp
@@ -794,7 +794,7 @@ You can increase maximum message length by putting on the top of your sketch (be
 The only purpose of Tabs widget is to extend your project space. You can have up to 4 tabs. 
 Also you can drag widgets between tabs. Just drag widget on the label of required tab of tabs widget.
 
-<img src="images/tabs_settings.png" style="width: 200px; height:360px"/>
+<img src="../images/tabs_settings.png" style="width: 200px; height:360px"/>
 
 
 ### Menu
@@ -803,7 +803,7 @@ sends index of element you selected and not label string. Sending index is start
 It works same way as usual ComboBox element. You can also set Menu items 
 [from hardware side](/#blynk-main-operations-change-widget-properties).
 
-<img src="images/menu_edit.png" style="width: 200px; height:360px"/>
+<img src="../images/menu_edit.png" style="width: 200px; height:360px"/>
 
 Example code:
 ```
@@ -1174,7 +1174,7 @@ Bridge can be used for Device-to-Device communication (no app. involved). You ca
 At the moment Bridge widget is not required on application side (it is mostly used for indication that we have such feature).  
 **You can use multiple bridges to control multiple devices.**
 
-<img src="images/bridge.png" style="width: 77px; height:80px"/>
+<img src="../images/bridge.png" style="width: 77px; height:80px"/>
 
 Bridge widget takes a virtual pin, and turns it into a channel to control another device. It means you can control any virtual, digital or analog pins of the target device.
 Be careful not to use pins like ```A0, A1, A2 ...``` when communicating between different device types, as Arduino Core may refer to wrong pins in such cases.
@@ -1237,7 +1237,7 @@ Don't forget that ```virtualWrite``` commands should be wrapped in the timer and
 
 Now configure new **Event** in Eventor widget: 
 
-<img src="images/eventor/eventor_for_temp_example.png" style="width: 200px; height:360px"/>
+<img src="../images/eventor/eventor_for_temp_example.png" style="width: 200px; height:360px"/>
 
 **NOTE** Don't forget to add notification widget.
 
@@ -1259,7 +1259,7 @@ In order to remove created **event** please use swipe. You can also swipe out la
 **NOTE:** Events are triggered only once when the condition is met. That's mean 
 [chaining of events](https://community.blynk.cc/t/eventor-behavior-bug-feature/20962) is not possible (however, could be enabled for commercials).
 
-<img src="images/eventor/eventor_edit.png" style="width: 200px; height:360px"/>
+<img src="../images/eventor/eventor_edit.png" style="width: 200px; height:360px"/>
 
 **Sketch:** [Eventor](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Eventor/Eventor.ino)
 
@@ -1275,7 +1275,7 @@ notification will be sent again (there is no 5 sec limit on Eventor notification
 Real-time clock allows you to get time from server. You can preselect any timezone on UI to get time on hardware in required locale. 
 No pin required for RTC widget.
 
-<img src="images/rtc_edit.png" style="width: 200px; height:360px"/>
+<img src="../images/rtc_edit.png" style="width: 200px; height:360px"/>
 
 **Sketch:** [RTC](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/RTC/RTC.ino)
 
@@ -1342,7 +1342,7 @@ if (client.connect("api.thingspeak.com", 80)) {
  
 Instead, with Webhook widget you would only need to fill in these fields: 
 
-<img src="images/webhook_settings.png" style="width: 200px; height:360px"/>
+<img src="../images/webhook_settings.png" style="width: 200px; height:360px"/>
 
 And add this code on hardware side:  
 
