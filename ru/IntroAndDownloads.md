@@ -22,7 +22,7 @@
 
 А теперь представьте: каждый раз, когда вы нажимаете кнопку в приложении Blynk, сообщение отправляется в ~~пространство~~ Облако Blynk, где оно "волшебным" образом попадает на ваше оборудование. Передача работает и в противоположном направлении, а все происходит в "мгновение ока".
 
-<img src="images/architecture.png" style="width: 640px; height:478px"/>
+<img src="../images/architecture.png" style="width: 640px; height:478px"/>
 
 ## Характеристики
 * Типовой API и пользовательский интерфейс для всех поддерживаемых устройств и оборудования
@@ -58,7 +58,7 @@ Arduino, Raspberry Pi или аналогичный набор для разра
 
 # Загрузки
 ## **Приложения Blynk для iOS или Android** <br> 
-[<img src="images/appstore-lrg.svg" alt="Drawing" style=" width: 158px; height:42"/>](https://itunes.apple.com/us/app/blynk-control-arduino-raspberry/id808760481?ls=1&mt=8)  &nbsp; &nbsp; &nbsp; &nbsp;[<img src="https://play.google.com/intl/en_us/badges/images/apps/en-play-badge.png" alt="Drawing" style=" width: 158px; height:42px"/>](https://play.google.com/store/apps/details?id=cc.blynk)
+[<img src="../images/appstore-lrg.svg" alt="Drawing" style=" width: 158px; height:42"/>](https://itunes.apple.com/us/app/blynk-control-arduino-raspberry/id808760481?ls=1&mt=8)  &nbsp; &nbsp; &nbsp; &nbsp;[<img src="https://play.google.com/intl/en_us/badges/images/apps/en-play-badge.png" alt="Drawing" style=" width: 158px; height:42px"/>](https://play.google.com/store/apps/details?id=cc.blynk)
 
 ## **Blynk библиотека** <br>
 [Скачать библиотеку Blynk >](https://github.com/blynkkk/blynk-library/releases/latest)
