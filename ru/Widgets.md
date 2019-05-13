@@ -407,19 +407,73 @@ Blynk.setProperty(V1, "color", "#D3435C");
 
 **Пример кода:** [Базовый пример](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino)
 
-### LCD
-This is a regular 16x2 LCD display made in our secret facility in China.
-#### SIMPLE / ADVANCED MODE
+### ЖК дисплей (LCD)
 
-#### Commands
-You need to use special commands with this widget:
+Это обычный ЖК-дисплей 16x2, "сделанный" на нашем секретном предприятии в Китае.
+Виджет может работать в двух режимах:
 
-```
-lcd.print(x, y, "Your Message");
-```
-Where x is a symbol position (0-15), y is a line id (0 or 1), 
+- Простой (Simple)
+- Расширенный (Advanced)
 
+#### Простой режим (Simple)
+
+В простом режиме ваш ЖК-виджет работает как обычный виджет с частотой чтения.
+
+В режиме частоты считывания вам нужно выбрать интервал обновления данных, и приложение будет запускать события с требуемым интервалом. Ваше приложение должно быть открыто и запущено для отправки запросов на оборудование. В данном случае вам не нужен код для аналоговых и цифровых пин-ов. Однако для виртуальных пин-ов вам необходимо использовать следующий код:
+
+```cpp
+//вызываем из приложения
+BLYNK_READ(V1)
+{
+  //отправляем в приложение
+  Blynk.virtualWrite(V1, val);
+}
 ```
+
+В простом режиме ЖК-дисплей также поддерживает параметры форматирования.
+
+#### Параметры форматирования
+
+Предположим, ваш датчик отправляет число 12.6789 в приложение Blynk.
+Поддерживаются следующие параметры форматирования:
+
+```/pin/``` -  отображает значение без форматирования (12.6789)
+
+```/pin./``` -  отображает значение без десятичной части (13)
+
+```/pin.#/``` -  отображает значение с одним десятичным знаком (12.7)
+
+```/pin.##/``` - отображает значение с двумя десятичными знаками (12.68)
+
+<img src="../images/lcd_format_edit.png" style="width: 200px; height:360px"/>
+
+**Пример кода:** [ЖК дисплей простой режим - PUSH](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/LCD/LCD_SimpleModePushing/LCD_SimpleModePushing.ino)
+
+**Пример кода:** [ЖК дисплей простой режим - 1 сек](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/LCD/LCD_SimpleModeReading/LCD_SimpleModeReading.ino)
+
+#### Расширенный режим (Advanced)
+
+Расширенный режим предназначен для опытных пользователей. Позволяет использовать специальные команды для управления ЖК-дисплеем.
+
+#### Команды
+
+Инициируем переменную ЖК-дисплея: 
+
+```cpp
+WidgetLCD lcd(V1);
+```
+
+Отправим сообщение: 
+
+```cpp
+lcd.print(x, y, "Ваше сообщение");
+```
+
+Где ```x``` - позиция символа (0-15), ``` y``` - номер строки (0 или 1),
+
+Очистка ЖК-дисплея:
+
+```cpp
 lcd.clear();
 ```
 
@@ -427,441 +481,426 @@ lcd.clear();
 
 <img src="../images/lcd_edit.png" style="width: 200px; height:360px"/>
 
-**Sketch:** [LCD Advanced Mode](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/LCD/LCD_AdvancedMode/LCD_AdvancedMode.ino)
-**Sketch:** [LCD Simple Mode Pushing](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/LCD/LCD_SimpleModePushing/LCD_SimpleModePushing.ino)
-**Sketch:** [LCD Simple Mode Reading](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/LCD/LCD_SimpleModeReading/LCD_SimpleModeReading.ino)
+**Пример кода:** [ЖК-дисплей расширенный режим](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/LCD/LCD_AdvancedMode/LCD_AdvancedMode.ino)
 
-#### Formatting options
+### Диаграмма (SuperChart)
 
-For example: your sensor sends vaule of 12.6789 to Blynk application.
-Next formatting options are supported:
+Диаграмма используется для живой визуализации и хранения данных. Вы можете использовать виджет для логирования данных датчиков,  бинарных событий и многого другого.
 
-```/pin/``` - displays the value without formatting (12.6789)
+Чтобы использовать виджет Диаграмма, вам нужно будет передать данные с оборудования с желаемым интервалом, используя таймеры.
+[Здесь приведен](https://examples.blynk.cc/?board=ESP8266&shield=ESP8266%20WiFi&example=GettingStarted%2FPushData) базовый пример передачи данных.
 
-```/pin./``` - displays the rounded value without decimal part (13)
+#### Взаимодействие:
+- **Переключение между режимами текущий и временной** Нажмите диапазоны времени в нижней части виджета, чтобы изменить масштаб Диаграммы по времени.
 
-```/pin.#/``` - displays the value with 1 decimal digit (12.7)
+- **Тап по легенде графиков**  показать или скрыть поток данных.
 
-```/pin.##/``` - displays the value with two decimal places (12.68)
-
-<img src="../images/lcd_format_edit.png" style="width: 200px; height:360px"/>
-
-### SuperChart
-SuperChart is used to visualise live and historical data. You can use it for sensor data, for binary event logging and more.
-
-To use SuperChart widget you would need to push the data from the hardware with the desired interval by using timers.  
-[Here is](https://examples.blynk.cc/?board=ESP8266&shield=ESP8266%20WiFi&example=GettingStarted%2FPushData) a basic example for data pushing.
-
-#### Interactions:
-- **Switch between time ranges and Live mode**
-</br>Tap time ranges at the bottom of the widget to change time ranges
-
-- **Tap Legend Elements** to show or hide datastreams
-</br>
-
-- **Tap'n'hold to view timestamp and corresponding values**
+- **Долгий тап на графике** покажет метку времени и соответствующие значения.
 
 <img src="../images/chart/tapnhold_charts.png" style="width: 300px; height:280px"/>
 
-- **Quick swipe from left to right to reveal previous data** 
+- **Быстро проведите пальцем влево или вправо, чтобы увидеть предыдущие данные** впоследствии вы можете прокручивать данные назад и вперед в пределах заданного временного диапазона.
 
 <img src="../images/chart/swipe_charts.png" style="width: 300px; height:280px"/>
 
-Then you can then scroll data back and forward within the given time range.
-
-- **Full Screen Mode**</br>
-Press this button to open Full Screen view in landscape orientation:
+- **Полноэкранный режим** нажмите эту кнопку, чтобы открыть полноэкранный режим в альбомной ориентации.
 
 <img src="../images/chart/fullscreen_charts.png" style="width: 300px; height:280px"/>
 
-Simply rotate the phone back to portrait mode. Chart should rotate automagically. 
-In full screen view you will see X (time) and multiple Y scales. 
-Full Screen Mode can be disabled from widget Settings.
+Чтобы выйти из режима полного экрана, просто поверните телефон обратно в портретный режим. График должен вращаться автоматически. В полноэкранном режиме вы увидите X (время) и несколько шкал Y.
+Полноэкранный режим можно отключить в настройках виджета.
 
-- **Menu Button**</br>
-Menu button will open additional functions:
-	- Export to CSV
-	- Erase Data on the server 
+- **Кнопка меню**
+ Кнопка меню откроет дополнительные функции:
+  - Экспорт в CSV
+  - Стереть данные на сервере
 
 <img src="../images/chart/menu_charts.png" style="width: 300px; height:280px"/>
 
-#### SuperChart Settings:
-- Chart Title
-- Title Font Size
-You have a choice of 3 font sizes
-- Title Alignment
-Choose chart title alignment. This setting also affects Title and Legend position on the Widget.
-- Show x-axis (time)
-Select it if you want to show the time label at the bottom of your chart.
-- Time ranges picker
-Allows you to select required periods (`15m`, `30m`, `1h`, `3h`, ...) and resolution for your chart. Resolution
-defines how precise your data is. Right now chart supports 2 types of resolution `standard` and `high`. Resolution also
-depends on the selected period. For example, `standard` resolution for `1d` means you'll get 24 points per day (1 per hour),
-with `high` resolution you'll get for `1d` 1440 points per day (1 per minute).
+#### Настройки диаграммы:
 
-- Datastreams - add datastreams (read below how to configure datastreams)
+- **Заголовок диаграммы (Chart Title)** общее наименование диаграммы.
 
-#### Datastream Settings
+- **Размер шрифта заголовка (Title Font Size)** выберите из 3 размеров шрифта.
 
-Widget supports up to 4 Datastreams. 
-Press Datastream Settings Icon to open Datastream Settings.
+- **Выравнивание заголовка (Title Alignment)** выберите выравнивание заголовка диаграммы. Этот параметр влияет на положение заголовка и легенды в виджете.
+
+- **Показать ось X (время) (Show x-axis (time))** выберите настройку, если хотите показать шкалу времени внизу графика.
+
+- **Автоматическое масштабирование для всех потоков данных (Override Auto Scaling for All Datastreams)** отключение этой опции позволит выполнить ручную настройку для оси Y (см. ниже).
+
+- **Выбор масштаба времени (Time ranges picker)** Позволяет выбрать необходимые периоды (`15m`,` 30m`, `1h`,` 3h`, ...) и разрешение для вашего графика. Разрешение определяет, насколько подробные ваши данные. Прямо сейчас график поддерживает два типа разрешения: `standard` и `high`. Разрешение также зависит от выбранного периода. Например, `standard` разрешение для `1d` означает, что вы будете получать 24 значения в день (одно в час), а при `high` разрешении вы будете получать за` 1d` 1440 значений в день (одно в минуту).
+
+- **Потоки данных (Datastreams)** добавить потоки данных (см. ниже, как настроить потоки данных).
+
+#### Настройки потоков данных
+
+Виджет поддерживает до 4 потоков данных.
+Нажмите значок настроек потоков данных, чтобы открыть настройки.
 
 <img src="../images/chart/datastream_charts.png"/>
 
+**Дизайн (Design)** выберите доступные типы диаграмм:
+ - Линейная (Line)
+ - С областями (Area)
+ - Гистограмма (Bar)
+ - Бинарная (Binary) (приведение данных к двоичному виду)
 
-**Design:**
-Choose available types of Chart:
+**Цвет (Color)** выберите сплошные цвета или градиенты.
 
-- Line
-- Area
-- Bar
-- Binary (anchor LINK to binary)
+**Источник и ввод (Source and input)** - Вы можете использовать три типа источника данных:
 
-**Color:**
-Choose solid colors or gradients
+**1. Виртуальный пин (Virtual Pin)** - выберите желаемое устройство и виртуальный пин для получения данных.
 
-**Source and input:**
-You can use 3 types of Data source: 
+**2. Теги (Tags)** - диаграмма может агрегировать данные с нескольких устройств, используя встроенные функции агрегирования.
+Например, если у вас есть 10 датчиков температуры, посылающих температуру с заданным интервалом, Вы можете отобразить среднее значение от 10 датчиков в виджете.
 
-**1. Virtual Pin**
-Choose the desired Device and Virtual Pin to read the data from. 
+Использование тегов:
 
-**2. Tags**
-SuperChart can aggregate data from multiple devices using built-in aggregation functions. 
-For example, if you have 10 Temperature sensors sending temperature with the given period, 
-you can plot average value from 10 sensors on the widget.
+- **[Добавить Тэг](http://docs.blynk.cc/#blynk-main-operations-control-of-multiple-devices-tags)** на каждое устройство, с которого вы хотите агрегировать данные. Это можно сделать в настройках проекта Blynk.
+- **Отправить данные в виртуальный пин (Push data to the same Virtual Pin)** на каждое устройство. (т.е. ```Blynk.virtualWrite (V0, temperature);```)
+- **Выберите тег в качестве источника (Choose Tag as a source)** в виджете Диаграмма и используйте пин, куда поступают данные (т.е. V0)
 
-To use Tags:
+**Добступные функции:** 
+- `SUM` будет суммировать все входящие значения в указанный виртуальный пин со всех устройств, помеченные выбранным тегом
+- `AVG` будет вычислять среднее значение
+- `MED` найдет среднее значение
+- `MIN` будет вычислять минимальное значение
+- `MAX` будет вычислять максимальное значение
 
-- **[Add Tag](/#blynk-main-operations-control-of-multiple-devices-tags)** to every device you want to aggregate data from.
-- **Push data to the same Virtual Pin** on every device. (e.g. ```Blynk.virtualWrite (V0, temperature);```)
-- **Choose Tag as a source** in SuperChart Widget and use the pin where the data is coming to (e.g V0)<br>
+**ВАЖНО: Теги не работают в режиме реального времени.**
 
-**Functions available:** 
-	
-- **SUM**, will summarize all incoming values to the specified Virtual Pin across all devices tagged with the chosen tag
-- **AVG**, will plot average value 
-- **MED**, will find a median value
-- **MIN**, will plot minimum value 
-- **MAX** will plot maximum value 
-	
+**3. [Выбор устройства (Device Selector)](https://github.com/blynkkk/blynkkk.github.io/tree/master/mobile/ru/ 	device_selector.md)**
+Если вы добавите виджет Выбор устройства в свой проект, вы можете использовать его в качестве источника данных для Диаграммы.
+В том случае, когда вы меняете устройство, диаграмма будет автоматически обновляться.
 
-**☝️ IMPORTANT: Tags are not working in Live Mode.**
+#### Настройки оси Y (Y-Axis Settings)
+Cуществует 4 режима масштабирования данных вдоль оси Y, активируется после отключения общей настройки виджета "Автоматическое масштабирование для всех потоков данных (Override Auto Scaling for All Datastreams)".
 
-3. **[Device Selector](/#widgets-time-input-device-selector)**
-If you add Device Selector Widget to your project, you can use it as a source for SuperChart. 
-In this case, when you change the device in Device Selector, chart will be updated accordingly
+**1. Авто (Auto)**
+Данные будут автоматически масштабироваться на основе минимальных и максимальных значений заданного периода времени. Это лучший вариант для начинающих.
 
-**Y-Axis Settings**
-<br>There are 4 modes of how to scale data along the Y axis
-
-1. *Auto*<br>
-Data will be auto-scaled based on min and max values of the given time period. This is nice option to start with.
-
-2. **Values**<br>
-When this mode is selected, Y scale will be set to the values you choose. 
-For example, if your hardware sends data with values varying from -100 to 100, you can set the chart 
-to this values and data will be rendered correctly.
+**2. Минимальный/Максимальный (Min/Max)**
+Когда выбран этот режим, шкала Y будет установлена на выбранные вами границы значений.
+Например, если ваше оборудование отправляет данные со значениями от -100 до 100, вы можете установить эти границы и данные графика будут отображены полностью.
 
 <img src="../images/chart/yScale_manual_charts.png" style="width: 300px; height:212"/>
 
-You may also want to visualize the data within some specific range. 
-Let's say incoming data has values in the range of 0-55, but you would like to see only values in the range 30-50. 
-You can set it up and if values are out of Y scale you configured, chart will be cropped
+Вы также можете визуализировать данные в другом диапазоне. Допустим, входящие данные имеют значения в диапазоне 0-55, но вы хотели бы видеть только значения в диапазоне 30-50. Вы можете настроить  диапазон, но если значения не соответствуют заданному масштабу оси Y, диаграмма будет обрезана.
 
-3. **% of Height**<br>
-This option allows you to auto-scale incoming data on the widget and position it the way you want. 
-In this mode, you set up the percentage of widget height on the screen, from 0% to 100%. 
+**3. Процент от высоты (% of Height)**
+Эта опция позволяет автоматически масштабировать входящие данные на виджете и размещать их так, как вы хотите. 
+В этом режиме вы устанавливаете процент высоты виджета на экране от 0% до 100%.
 
 <img src="../images/chart/yheight2_charts.png" style="width: 300px; height:212px"/>
 
-If you set 0-100%, in fact it's a full auto-scale. No matter in which range the data is coming,  
-it will be always scaled to the whole height of the widget.
+Если вы установите диапазон 0-100%, это будет полная автоматическая шкала. Независимо от того, в каком диапазоне поступают данные, он всегда будет масштабирован по всей высоте виджета.
 
-If you set it to 0-25%, then this chart will only be rendered on 1/4 of the widget height:
+Если вы установите его на 0-25%, то график будет отображаться только на 1/4 высоты виджета.
+
 <img src="../images/chart/yheight2_manual_charts.png" style="width: 300px; height:212px"/>
 
-This setting is very valuable for **Binary Chart** or for visualizing a few datastreams on the same chart in a different way.
+Этот параметр очень полезен для **Бинарной диаграммы** или для визуализации нескольких потоков данных на одной и той же диаграмме разными способами.
 
 <img src="../images/chart/binary_charts.png" style="width: 300px; height:280px"/>
 
-4. *Delta*<br>
-While data stays within the given Delta value, chart will be auto-scaled within this range.
-If delta exceeds the range, chart will be auto-scaled to min/max values of the given period.
+**4. Дельта (Delta)**
+Пока данные остаются в пределах заданного значения дельты, график будет автоматически масштабироваться в этом диапазоне.
+Если дельта превышает диапазон, график автоматически масштабируется до минимальных/максимальных значений указанного периода.
 
-**Suffix:**<br>
-Here you can specify a suffix that will be shown during the Tap'n'hold
+**Суффикс (Suffix)**
+Здесь вы можете указать суффикс, который будет отображаться со значениями во время длительного тап на графике.
 
-**Decimals**<br>
-Defines the formatting of the graph value when you Tap'n'hold the graph. Possible options are: #, #.#, #.##, etc.
+**Разрядность (Decimals)**
+Определяет формат числовых значений, когда вы нажимаете и удерживаете палец на графике. Возможные варианты: #, #.#, #.##, и т.д.
 
-**Connect Missing Data Points**<br>
-If this switch is ON, then SuperChart will connect all the dots even if there was no data
+**Соединиить отсуствующие точки графика (Connect Missing Data Points)**
+Если этот переключатель включен, то Диаграмма соединит все точки, даже если данные частично отсуствуют.
 
 <img src="../images/chart/datapoints1_charts.png" style="width: 300px; height:280px"/>
 
-If it's set to OFF, then you will see gaps in case there was no data.
+Если для него установлено значение «ВЫКЛ», то вы увидите пропуски в случае отсутствия данных.
 
 <img src="../images/chart/datapoints2_charts.png" style="width: 300px; height:280px"/>
 
-**Binary Chart Settings**<br>
-This type of chart is useful to plot binary data, for example when unit was ON or OFF, or when motion was detected or when certain threshold was reached.
+**Настройки Бинарной диаграммы (Binary Chart Settings)**
+Этот тип диаграммы полезен для построения двоичных данных, например, когда устройство было включено или выключено, или когда было обнаружено движение или когда был достигнут определенный порог значений.
 
-You need to specify a **FLIP** point, which is the point where incoming data will be turned into TRUE or FALSE state.
+Вам необходимо указать точку **Перехода (FLIP)**, которая будет точкой, в которой входящие данные будут принимать состояние `ИСТИНА (TRUE)` или `ЛОЖЬ (FALSE)`.
 
-For example, you send the data in the range of `0 to 1023`. If you set `512` as a **FLIP** point, then everything above `512` (excluding 512) will be recorded as `TRUE`, any value below `512` (including 512) will be `FALSE`.
+Например, вы отправляете данные в диапазоне от 0 до 1023. Если вы установите `512` в качестве точки **Перехода (FLIP)**, то все, что выше `512` (исключая 512), будет записано как `ИСТИНА (TRUE)`, любое значение ниже `512` (включая 512) будет `ЛОЖЬ (FALSE)`.
 
-Another example, if you send `0 and 1` and set `0` as a **FLIP** point, then `1` will be `TRUE`, `0` will be `FALSE`
+Другой пример: если вы отправляете `0 и 1` и устанавливаете `0` в качестве точки **Перехода FLIP**, то `1` будет `ИСТИНА`, а `0` будет `ЛОЖЬ`.
 
-**State Labels:**<br>
-Here you can specify how `TRUE/FALSE` should be shown in Tap'n'Hold mode. 
+**Маркеры состояния (State Labels):**
+Здесь вы можете указать, как `ИСТИНА/ЛОЖЬ` должны отображаться на графике когда вы нажимаете и удерживаете палец.
+Например, вы можете установить значение `ИСТИНА` как `Оборудование ВКЛ`, `ЛОЖЬ` как `Оборудование ВЫКЛ`.
 
-For example, you can set to `TRUE` to "Equipment ON" label, `FALSE` to "Equipment OFF".
+### Терминал (Terminal)
 
-<img src="../images/chart/binarylabel_charts.png" style="width: 300px; height:280px"/>
+Отображает данные с вашего оборудования. Позволяет отправить любую строку с вашего оборудования. Терминал всегда хранит последние 25 сообщений, которые ваше оборудование отправило в Blynk. Этот ограничение может быть увеличено в настройках локального сервера с помощью параметра ```terminal.strings.pool.size```.
 
-Superchart supports currently 2 types of granularity:
-
-- Minute granularity - ```1h```, ```6h```, ```1d```;
-- Hour granularity - ```1w```, ```1m```, ```3m```;
-
-This means that minimum chart update interval is 1 minute for ```1h```, ```6h```, ```1d``` periods. 
-1 hour for ```1w```, ```1m``` and ```3m``` periods.
-As Blynk Cloud is free to use we have a limit on how many data you can store. At the moment Blynk Cloud accepts 
-1 message per minute per pin. In case you send your data more frequently your values will be averaged. For example, 
-in case you send value ```10``` at 12:12:05 and than again ```12``` at  12:12:45 as result in chart you'll see
-value ```11``` for 12:12.
-
-In order to see data in chart you need to use either widgets with "Frequency reading" interval (in 
-that case your app should be open and running) or you can use ```Blynk.virtualWrite``` on hardware side. Every 
-```Blynk.virtualWrite``` command is stored on server automatically. In that case you don't need application to be up and running.
-
-### Terminal
-Displays data from your hardware. Allows to send any string to your hardware. Terminal always stores last 25 messages
-your hardware had send to Blynk Cloud. This limit may be increased on Local Server with ```terminal.strings.pool.size``` 
-property.
-
-You need to use special commands with this widget:
+С этим виджетом Вы можете использовать специальные команды:
 
 ```cpp
-terminal.print();   // Print values, like Serial.print
-terminal.println(); // Print values, like Serial.println()
-terminal.write();   // Write a raw data buffer
-terminal.flush();   // Ensure that data was sent out of device
-terminal.clear();   // Erase all values in the terminal
+// Печатает значения, как Serial.print
+terminal.print();   
+// Печатает значения, как Serial.println()
+terminal.println();
+// Записать необработанные данные в буффер
+terminal.write();
+// Убедится, что все данные были отправлены с устройства в терминал
+terminal.flush();
+// Стереть все данные в терминале
+terminal.clear();
 ```
 
 <img src="../images/terminal.png" style="width: 77px; height:80px"/>
 
 <img src="../images/terminal_edit.png" style="width: 200px; height:360px"/>
 
-**Sketch:** [Terminal](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Terminal/Terminal.ino)
+**Пример кода:** [Терминал](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Terminal/Terminal.ino)
 
-### Video Streaming
-Simple widget that allows you to display any live stream. Widget supports RTSP (RP, SDP), HTTP/S progressive streaming, 
-HTTP/S live streaming. For more info please follow [official Android documentation](https://developer.android.com/guide/appendix/media-formats.html). 
 
-At the moment Blynk doesn't provide streaming servers. So you can either stream directly from camera, use 3-d party 
-services or host streaming server on own server (on raspberry for example).
+### Видео трансляция (Video Streaming)
 
-You can also change video url from hardware with: 
+Простой виджет, который позволяет отображать прямой эфир и потокове видео. Виджет поддерживает протоколы RTSP (RP, SDP), HTTP/S прогрессивной потоковой передачи, HTTP/S прямого эфира. Для получения дополнительной информации, пожалуйста ознакомтесь с [официальной документацией Android](https://developer.android.com/guide/appendix/media-formats.html).
+
+На данный момент команда Blynk не предоставляет потоковые серверы. Таким образом, вы можете осуществлять потоковую передачу непосредственно с ваше камеры или использовать сторонние сервисы, а также запустить собственны потоковый сервер (например, на оборудовании Raspberry).
+
+Вы можете остановить/запустить видео поток, нажав на сам виджет.
+
+Вы можете изменить URL-адрес видео потока с аппаратного устройства при помощи кода:
 
 ```cpp
 Blynk.setProperty(V1, "url", "http://my_new_video_url");
 ```
 
-### Level Display
-Level Display is very similar to progress bar, when you need to visualize a level betwen min/max value
-To update Level Display from hardware side with code: 
+### Индикатор уровня (Level Display)
+
+Отображает входящие данные с ваших датчиков или виртуальных пин-ов. Отображение уровня очень похоже на индикатор выполнения процесса, это очень красивый и причудливый вид для индикации «выполненных» событий, например «уровня заряда батареи».
+Вы можете обновить отображение значения с аппаратной стороны с помощью кода:
  
 ```cpp
 Blynk.virtualWrite(V1, val); 
 ```
 
-Every message that hardware sends to server is stored automatically on server. PUSH mode doesn't require 
-application to be online or opened.
+Каждое сообщение, которое аппаратное устройство отправляет на сервер, автоматически сохраняется на сервере.
+Режим PUSH не требует, чтобы приложение было онлайн или запущено.
 
-**Sketch:** [Push Example](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino)
+**Пример кода:** [Пример PUSH](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino)
 
-##Notifications
-###Twitter
+## Уведомления (Notifications)
+### Твиттер (Twitter)
 
-Twitter widget connects your Twitter account to Blynk and allows you to send Tweets from your hardware.
+Виджет Твиттер соединяет вашу учетную запись сети Twitter с Blynk и позволяет отправлять "твиты" с вашего оборудования.
 
 <img src="../images/TwitterON.png" style="width: 77px; height:80px"/>
 
-Example code:
+Пример кода:
 ```cpp
-Blynk.tweet("Hey, Blynkers! My Arduino can tweet now!");
+Blynk.tweet("Привет, Blynk-еры! Мой Arduino может слать твиты!");
 ```
 
-Limitations:
+Ограничения :
 
-- you cant' send 2 tweets with same message (it's Twitter policy)
-- only 1 tweet per 5 seconds is allowed
+- нельзя отправлять 2 твита с одним и тем же сообщением (это политика Твиттера)
+- разрешен только 1 твит за 5 секунд
 
-**Sketch:** [Twitter](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Twitter/Twitter.ino)
+### Кодировка в Твиттере
 
-###Email
+Библиотека обрабатывает все строки в кодировке UTF-8. Если вы столкнулись с проблемами, попробуйте напечатать ваше сообщение на последовательный порт и проверить, работает ли оно (COM терминал должен быть настроен на кодировку UTF-8). Если не работает, вам следует проверить поддержку UTF-8 вашего компилятора.
+Если работает, но ваше сообщение обрезано - вам нужно увеличить длины сообщения (все символы UTF-8 потребляют как минимум вдвое больше байт информации).
 
-Email widget allows you to send email from your hardware to any address.
+### Увеличение лимита длины сообщения
 
-Example code:
+ Вы можете увеличить максимальную длину сообщения, поместив (до включения Blynk) в верхнюю часть своего кода строку:
 ```cpp
-Blynk.email("my_email@example.com", "Subject", "Your message goes here");
+#define BLYNK_MAX_SENDBYTES 256 // По умолчанию 128 байт
 ```
-  
-It also contains ```to``` field. With this field you may define receiver of email in the app. 
-You may skip ```to``` field when you want to send email to your Blynk app login email:
+
+**Пример кода:** [Твиттер](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Twitter/Twitter.ino)
+
+
+### Электронная почта (Email)
+
+Виджет электронной почты позволяет отправлять электронные письма с вашего оборудования на любой адрес.
+
+Пример кода:
+```cpp
+Blynk.email("my_email@example.com", "Тема", "Текст вашего сообщения");
+```
+
+Код содержит первое поле ```to```. С помощью этого поля вы можете определить получателей электронной почты в приложении.
+Вы можете пропустить поле ```to```, если хотите отправить электронное письмо на адрес электронной почты используемый для входа в приложение Blynk:
 
  ```cpp
- Blynk.email("Subject", "Your message goes here");
+ Blynk.email("Тема", "Текст вашего сообщения");
  ```
 
-You can send either ```text/html``` or ```text/plain``` (some clients don't support ```text/html```) email.
-You can change this content type of email in the Mail widget settings.
+Вы можете отправить электронное писбом в форматах либо ```text/html```, либо ```text/plain``` (помните что некоторые клиенты не поддерживают ```text/html```).
+Вы можете изменить формат содержимого электронного письма в настройках виджета.
 
-Additionally you may use ```{DEVICE_NAME}```, ```{DEVICE_OWNER_EMAIL}``` and ```{VENDOR_EMAIL}``` (for the local server)
-placeholders in the mail for the ```to```, ```subject``` and ```body``` fields:
+Дополнительно в письме вы можете использовать заполнители/переменные ```{DEVICE_NAME}```, ```{DEVICE_OWNER_EMAIL}``` и ```{VENDOR_EMAIL}``` (для локального сервера) в полях ```to``` (кому),``` subject``` (тема) и ```body``` (текст сообщения):
 
 ```cpp
-Blynk.email("{DEVICE_OWNER_EMAIL}", "{DEVICE_NAME} : Alarm", "Your {DEVICE_NAME} has critical error!");
+Blynk.email("{DEVICE_OWNER_EMAIL}", "{DEVICE_NAME} : Тревога", "Ваше устройство {DEVICE_NAME} имеет критическую ошибку!");
 ```
 
 <img src="../images/mail.png" style="width: 77px; height:80px"/>
 
-Limitations:
+**Недостатки:**
 
-- Maximum allowed email + subject + message length is 120 symbols. However you can increase this limit if necessary 
-by adding ```#define BLYNK_MAX_SENDBYTES XXX``` to you sketch. Where ```XXX``` is desired max length of your email. 
-For example for ESP you can set this to 1200 max length ```#define BLYNK_MAX_SENDBYTES 1200```. The 
-```#define BLYNK_MAX_SENDBYTES 1200``` must be included before any of the Blynk includes.
-- Only 1 email per 5 seconds is allowed
-- In case you are using gmail on the Local Server you are limited with 500 mails per day (by google). Other providers may have similar
-limitations, so please be careful.
-- User is limited with 100 messages per day in the Blynk Cloud;
+- Максимально допустимые ограничения (почта + тема + длина сообщения) = 120 символов. Однако вы можете увеличить этот лимит при необходимости добавив ```#define BLYNK_MAX_SENDBYTES XXX``` к вашему коду. Где ```XXX``` - это максимальная длина вашего письма в символах.
+Например, для ESP вы можете установить максимальную длину 1200 символов ```#define BLYNK_MAX_SENDBYTES 1200```. Параметр  ```#define BLYNK_MAX_SENDBYTES 1200``` должен быть опредлен в коде до включения Blynk.
+- Разрешено отправлять 1 электронное письмо в течение 5 секунд;
+- Если вы используете Gmail сервис (Google), вы ограничены 500 письмами в день. Другие провайдеры могут иметь аналогичные ограничения, поэтому, пожалуйста, будьте внимательны;
+- Пользователи Blynk сервера ограничены 100 сообщениями в день;
 
-**Sketch:** [Email](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Email/Email.ino)
+### Кодировка в электронной почте
 
-###Push Notifications
+Библиотека обрабатывает все строки в кодировке UTF-8. Если у вас возникли проблемы, попробуйте напечатать ваше сообщение в терминал COM порта и посмотрите на результат (терминал должен быть настроен на кодировку UTF-8). Если не работает, возможно, вам следует также прочитать о поддержке кодировок вашего компилятора. 
+Если работает, но ваше сообщение обрезано - вам нужно увеличить ограничение длины сообщения (т.к. все символы кодировки UTF-8 потребляют как минимум вдвое больше байт информации если символы не Латинские).
 
-Push Notification widget allows you to send push notification from your hardware to your device. Currently it also 
-contains 2 additional options:
+### Увеличение лимита длины сообщения
 
-- **Notify when hardware offline** - you will get push notification in case your hardware went offline.
-- **Offline Ignore Period** - defines how long hardware could be offline (after it went offline) before sending notification. 
-In case period is exceeded - "hardware offline" notification will be send. You will get no notification in case hardware 
-was reconnected within specified period.
-- **Priority** high priority gives more chances that your message will be delivered without any delays. 
-See detailed explanation [here](https://developers.google.com/cloud-messaging/concept-options#setting-the-priority-of-a-message). 
+Вы можете увеличить максимальную длину сообщения, поместив в верхнюю часть своего кода строку (до опредления Blynk):
+```cpp
+#define BLYNK_MAX_SENDBYTES 256 // По умолчанию 128 байт
+```
 
-**WARNING**: high priority contributes more to battery drain compared to normal priority messages.
+**Пример кода:** [Электронная почта](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Email/Email.ino) 
+
+
+### Всплывающие уведомления (Push Notifications)
+
+Виджет Push-уведомлений позволяет отправлять уведомления с вашего оборудования на ваше Android/iOS устройство. В настоящее время он также содержит три дополнительные опции:
+
+- **Уведомлять, когда оборудование отключено** (Notify when hardware offline) - вы получите push-уведомление, если ваше оборудование отключилось.
+- **Автономный период игнорирования** (Offline Ignore Period) - определяет, как долго оборудование может находиться в режиме ожидания (после того, как оно отключилось) перед отправкой уведомления.
+
+В случае превышения периода ожидания будет отправлено уведомление «Аппаратное отключение». Вы не получите уведомление, если оборудование переподключится в течение указанного периода.
+
+- **Приоритет** (Priority) - высокий (high) приоритет дает больше шансов, что ваше сообщение будет доставлено без задержек. См. более подробное объяснение [здесь](https://developers.google.com/cloud-messaging/concept-options#setting-the-priority-of-a-message).
+
+**ПРЕДУПРЕЖДЕНИЕ**: высокий приоритет способствует большей разрядке батареи, по сравнению с обычными приоритетом уведомлений.
 
 <img src="../images/push.png" style="width: 77px; height:80px"/>
 
-Example code:
+Пример кода:
+
 ```cpp
-Blynk.notify("Hey, Blynkers! My hardware can push now!");
+Blynk.notify("Привет, Blynk-еры! Мое оборудование может отправлять уведомления!");
 ```
 
-You can also use placeholder for device name, that will be replaced on the server with your device name:
+Вы также можете использовать переменные/заполнители для имени устройства, который будет заменен с сервера именем вашего устройства:
+
 ```cpp
-Blynk.notify("Hey, Blynkers! My {DEVICE_NAME} can push now!");
+Blynk.notify("Привет, Blynk-еры! Мой {DEVICE_NAME} может отправлять уведомления!");
 ```
 
-Limitations:
+Ограничения:
 
-- Maximum allowed body length is 120 symbols;
-- Every device can send only 1 notification every 5 seconds;
+- Максимально допустимая длина уведомления составляет 120 символов;
+- Каждое устройство может отправлять только 1 уведомление каждые 5 секунд;
 
-**Sketch:** [PushNotification](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/PushNotification/PushNotification_Button/PushNotification_Button.ino)
+### Кодировка всплывающих уведомлений
 
-###Unicode in notify, email, push, ...
+Библиотека обрабатывает все строки как в кодировке UTF-8. Если вы столкнулись с проблемами, попробуйте отправить ваше сообщение на последовательный порт и посмотреть, работает ли оно (терминал должен быть настроен на кодировку UTF-8). Если так не работает, возможно, вам следует прочитать о поддержке кодировки UTF-8 вашего компилятора.
+Если работает, но ваше сообщение урезано - вам необходимо увеличить ограничение длины сообщения (все символы UTF-8 потребляют как минимум вдвое больше байт информации).
 
-The library handles all strings as UTF8 Unicode. If you're facing problems, try to print your message to the Serial and see if it works (the terminal should be set to UTF-8 encoding). If it doesn't work, probably you should read about unicode support of your compiler.  
-If it works, but your message is truncated - you need to increase message length limit (all Unicode symbols consume at least twice the size of Latin symbols).
+### Увеличение лимита длины уведомления
 
-###Increasing message length limit
+Вы можете увеличить максимальную длину сообщения, поместив строку (до включения Blynk) в верхнюю часть своего кода:
 
-You can increase maximum message length by putting on the top of your sketch (before Blynk includes):
 ```cpp
-#define BLYNK_MAX_SENDBYTES 256 // Default is 128
+#define BLYNK_MAX_SENDBYTES 256 // По умолчанию 128 байт
 ```
 
-## Interface
+**Пример кода:** [Всплывающие уведомления](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/PushNotification/PushNotification_Button/PushNotification_Button.ino)
 
-### Tabs
-The only purpose of Tabs widget is to extend your project space. You can have up to 4 tabs. 
-Also you can drag widgets between tabs. Just drag widget on the label of required tab of tabs widget.
+## Интерфейсы
+### Вкладки (Tabs)
+
+Единственная цель виджета Вкладки - расширить пространство вашего проекта.
+Чтобы редактировать виджет Вкладок - просто нажмите на выбранную вкладку.
+Вы можете перетаскивать виджеты между вкладками. 
+Из списка можно удалить только последнюю вкладку: чтобы удалить ее, проведите пальцем влево по ее названию в экране настроек виджета.
+ 
+Максимальное количество вкладок на iOS составляет 4. 
+
+Максимальное количество вкладок на Android - 10. 
+ 
+Оставайтесь с нами для предстоящего редизайна виджета вкладок! 
 
 <img src="../images/tabs_settings.png" style="width: 200px; height:360px"/>
 
+### Меню (Menu)
 
-### Menu
-Menu widget allows you to send command to your hardware based on selection you made on UI. Menu
-sends index of element you selected and not label string. Sending index is starts from 1.
-It works same way as usual ComboBox element. You can also set Menu items 
-[from hardware side](/#blynk-main-operations-change-widget-properties).
+Виджет Меню позволяет отправлять команды на ваше оборудование на основе выборного списка, сделанного вами в пользовательском интерфейсе. Меню отправляет индекс выбранного элемента спика, а не саму строку. Отправляемый индекс начинается с 1. Он работает так же, как типовой элемент "Комбинированный список" ([ComboBox](https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BC%D0%B1%D0%B8%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA)).
 
 <img src="../images/menu_edit.png" style="width: 200px; height:360px"/>
 
-Example code:
-```
-switch (param.asInt())
-  {
-    case 1: { // Item 1
-      Serial.println("Item 1 selected");
+Пример кода:
+
+```cpp
+BLYNK_WRITE {
+  switch (param.asInt()) {
+    case 1: { // Пункт 1
+      Serial.println("Выбран Пункт 1");
       break;
     }
-    case 2: { // Item 2
-      Serial.println("Item 2 selected");
+    case 2: { // Пункт 2
+      Serial.println("Выбран Пункт 2");
       break;
     }    
   }
+}
 ```
 
-**Sketch:** [Menu](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Menu/Menu.ino)
+Вы также можете назначить пункты меню со стороны оборудования с помощью кода:
+ 
+```cpp
+Blynk.setProperty(V1, "labels", "label 1", "label 2", "label 3");
+```
 
+**Пример кода:** [Меню](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Menu/Menu.ino)
 
-### Time Input
+## Ввод времени (Time Input)
 
-Time input widget allows you to select start/stop time, day of week, timezone, sunrise/sunset formatted values
-and send them to your hardware. Supported formats for time now are ```HH:MM``` and ```HH:MM AM/PM```.
+Виджет Ввода времени позволяет вам выбрать время начала/окончания, день недели, часовой пояс, значения в формате до полудня/после полудня и отправить их на ваше оборудование. В настоящее время поддерживаются следующие форматы: ```ЧЧ:ММ``` и ```ЧЧ:ММ AM/PM```.
 
-Hardware will get selected on UI time as seconds of day (```3600 * hours + 60 * minutes```) for start/stop time.
-Time that widget sends to hardware is user local time.
-Selected days indexes: 
+Аппаратное устройстов будет отсчитывать время пользовательского интерфейса в виде секунд дня (```3600 * часов + 60 * минут```) для запуска/остановки времения. Время, которое виджет отправляет оборудованию, является локальным временем пользователя.
+Индексы по выбранных дней:
 
 ```
-Monday - 1
-Tuesday - 2
+Понедельник - 1
+Вторник - 2
 ...
-Saturday - 6
-Sundays - 7
+Суббота - 6
+Воскресенье - 7
 ```
+Вы также можете изменить состояние виджета в интерфейсе пользователя. Смотрите ниже примеры кода.
 
-You can also change state of widget on UI. See below sketches.
+**Пример кода:** [Простой Ввод времени для времени начала](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/TimeInput/SimpleTimeInput/SimpleTimeInput.ino)
 
-**Sketch:** [Simple Time Input for start time](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/TimeInput/SimpleTimeInput/SimpleTimeInput.ino)
+**Пример кода:** [Расширенный Ввод времени](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/TimeInput/AdvancedTimeInput/AdvancedTimeInput.ino)
 
-**Sketch:** [Advanced Time Input](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/TimeInput/AdvancedTimeInput/AdvancedTimeInput.ino)
+**Пример кода:** [Обновление Ввода времени в пользовательском интерфейсе](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/TimeInput/UpdateTimeInputState/UpdateTimeInputState.ino)
 
-**Sketch:** [Update Time Input State on UI](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/TimeInput/UpdateTimeInputState/UpdateTimeInputState.ino)
 
-### Map
+### Карта (Map)
 
-Map widget allows you set points/pins on map from hardware side. This is very useful widget in case you have 
-multiple devices and you want track their values on map.
+Виджет Карты позволяет устанавливать точки/флажки на карте со стороны оборудования. Это очень полезный виджет, если у вас есть несколько устройств, и вы хотите отслеживать их позиции на карте.
 
-You can send a point to map with regular virtual wrtei command:  
+Вы можете отправить точку на карту с помощью обычной команды виртуальной записи:
 
 ```cpp
-Blynk.virtualWrite(V1, pointIndex, lat, lon, "value");
+Blynk.virtualWrite(V1, pointIndex, lat, lon, "Название");
 ```
 
-We also created wrapper for you to make suage of map simpler: 
-
-You can change button labels from hardware with: 
+Мы также создали оболочку, чтобы вы могли упростить использование виджета Карты.
+Вы можете изменить метки флажков на оборудовании с помощью кода:
 
 ```cpp
 WidgetMap myMap(V1);
@@ -869,275 +908,260 @@ WidgetMap myMap(V1);
 int index = 1;
 float lat = 51.5074;
 float lon = 0.1278;
-myMap.location(index, lat, lon, "value");
+myMap.location(index, lat, lon, "Название");
 ```
 
-Using save ```index``` allows you to override existing point value.
+Использование уникальных ```index``` позволяет вам переопределить существующее значение точки.
 
-**Sketch:** [Basic Sketch](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Map/Map.ino)
+**Пример кода:** [Базовый пример Карты](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Map/Map.ino)
 
 
-### Table
+### Таблица (Table)
 
-Table widget comes handy when you need to structure similar data within 1 graphical element. It works as a usual table.
+Табличный виджет удобен, когда вам нужно структурировать аналогичные данные в пределах одного графического элемента. Работает как обычная таблица.
 
-You can add a row to the table with: 
-
-```
-Blynk.virtualWrite(V1, "add", id, "Name", "Value");
-```
-
-You can update a row in the table with:
+Вы можете добавить строку в таблицу с помощью кода:
 
 ```
-Blynk.virtualWrite(V1, "update", id, "UpdatedName", "UpdatedValue");
+Blynk.virtualWrite(V1, "add", id, "Имя", "Значение");
 ```
 
-To highlight any item in a table by using it's id in a table: 
+Вы можете обновить строку в таблице с помощью кода:
+
+```
+Blynk.virtualWrite(V1, "update", id, "Новое имя", "Новое значение");
+```
+
+Чтобы выделить любой элемент в таблице, используйте его идентификатор:
 
 ```
 Blynk.virtualWrite(V1, "pick", 0);
 ```
 
-To select/deselect (make icon green/grey) item in a table by using it's row id in a table: 
+Чтобы выбрать/отменить выбор (сделать значок зеленым/серым) элемент в таблице, используйте его идентификатор:
 
 ```
 Blynk.virtualWrite(V1, "select", 0);
 Blynk.virtualWrite(V1, "deselect", 0);
 ```
 
-
-To clear the table at any time with: 
+ Чтобы очистить таблицу используйте код:
 
 ```
 Blynk.virtualWrite(V1, "clr");
 ```
 
-You can also handle other actions coming from table. For example, use row as a switch button. 
+Вы также можете обрабатывать другие действия из таблицы. Например, использовать строку таблицы в качестве кнопки переключения.
 
 ```
 BLYNK_WRITE(V1) {
    String cmd = param[0].asStr();
    if (cmd == "select") {
-       //row in table was selected. 
+       // строка в таблице была выбрана.
        int rowId = param[1].asInt();
    }
    if (cmd == "deselect") {
-       //row in table was deselected. 
+       // строка в таблице была отменена.
        int rowId = param[1].asInt();
    }
    if (cmd == "order") {
-       //rows in table where reodered
+       // когда строки в таблице переупорядочиваются
        int oldRowIndex = param[1].asInt();
        int newRowIndex = param[2].asInt();
    }
 }
 ```
 
-**Note:** Max number of rows in the table is 100. When you reach the limit, table will work as FIFO (First In First Out) list.
-This limit can be changed by configuring ```table.rows.pool.size``` property for Local Server.
+**Примечание:** Максимальное количество строк в таблице равно 100. Когда вы достигнете предела, таблица будет работать как список FIFO (Первый пришел - первый ушел).
+Это ограничение можно изменить, настроив свойство ```table.rows.pool.size``` в параметрах локального сервера.
 
-**Sketch:** [Simple Table usage](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Table/Table_Simple/Table_Simple.ino)
+**Пример кода:** [Простое использование таблицы](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Table/Table_Simple/Table_Simple.ino)
 
-**Sketch:** [Advanced Table usage](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Table/Table_Advanced/Table_Advanced.ino)
+**Пример кода:** [Расширенное использование таблицы](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Table/Table_Advanced/Table_Advanced.ino)
 
-### Device Selector
 
-Device selector is a powerful widget which allows you to update widgets based on one active device. This widget is particlularly helpful when you have a fleet of devices with similar functionality.
+### Селектор устройств (Device Selector)
 
-Imagine you have 4 devices and every device has a Temperature & Humidity sensor connected to it. To display the data for all 4 devices you would need to add 8 widgets.
+Селектор устройств - это мощный виджет, который позволяет обновлять виджеты на основе одного активного устройства. 
+Этот виджет особенно полезен, когда у вас есть несколько устройств с аналогичной функциональностью.
 
-With Device Selector, you can use only 2 Widgets which will display Temperature and Humidity based on the active device chosen in Device Selector.  
+Представьте, что у вас есть 4 устройства, и к каждому устройству подключен датчик температуры и влажности. Для отображения данных по всем 4 устройствам вам необходимо добавить 8 виджетов.
 
-All you have to do is:
+С помощью Селектора устройств вы можете использовать только 2 виджета, которые будут отображать температуру и влажность в зависимости от активного устройства, выбранного в Селекторе.  
 
-1. Add Device Selector Widget to the project
-2. Add 2 widgets (for example Value Display Widget) to show Temperature and Humidity
-3. In Widgets Settings you will be able assign them to Device Selector (Source or Target section)
-4. Exit settings, Run the project. 
+Все, что вам нужно сделать, это:
 
-Now you can change the active device in Device Selector and you will see that Temperature and Humidity values are reflecting the data updates for the device you just picked.
+1. Добавить виджет Селектора устройств в проект
+2. Добавить 2 виджета (например виджет отображения значений (Value Display Widget)), чтобы отобразить температуру и влажность
+3. В настройках виджетов вы сможете назначить их на Селектор устройств (в разделе источника или цели)
+4. Выйти из настроек, запустить проект 
 
-**NOTE:** Webhook Widget will not work with Device Selector (yet).
+Теперь вы можете изменить активное устройство в Селекторе устройств и увидите, что значения температуры и влажности отражают обновленные данные для только что выбранного вами устройства.
 
-### Device Tiles
+**ПРИМЕЧАНИЕ:** Виджет вебхук ([Webhook](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/WebHook/WebHook_GET/WebHook_GET.ino)) пока не работает с Селектором устройств.
 
-Device tiles is a powerful widget and very similar to the device selector widget, but with UI.
-It allows you to display 1 pin per device per tile. 
-This widget is particularly helpful when you have a fleet of devices with similar functionality. So you can 
-group similar devices within one layout (template).
+### Плитка устройств (Device Tiles)
 
-## Sensors 
+Плитка устройств - это мощный виджет, очень похожий на виджет Селектора устройств (Device Selector), но с пользовательским интерфейсом. Позволяет отображать один пин с устройства на одну плитку.
+Этот виджет особенно полезен, когда у вас есть несколько устройств с аналогичной функциональностью. Теперь вы можете группировать похожие устройства на одном макете (шаблоне).
 
-### Accelerometer
+## Сенсоры 
+### Акселерометр (Accelerometer)
 
-Accelerometer is kind of [motion sensors](https://developer.android.com/guide/topics/sensors/sensors_motion.html) 
-that allows you to detect motion of your smartphone. 
-Useful for monitoring device movement, such as tilt, shake, rotation, or swing. 
-Conceptually, an acceleration sensor determines the acceleration that is applied to a device by measuring the forces 
-that are applied to the sensor. Measured in ```m/s^2``` applied to ```x```, ```y```, ```z``` axis.
+Акселерометр один из [сенсоров движения](https://developer.android.com/guide/topics/sensors/sensors_motion.html), 
+который позволяет определить движение Вашего телефона в пространстве.
+Он может пригодится для отслеживания таких событий как тряска, удар, поворот или наклон телефона. Концептуально, акселерометр определяет силу ускорения приложенную к вашему телефону. 
+Единица измерения - м/c^2 приложенная к каждой из осей ```x```, ```y```, ```z```.
 
-In order to accept data from it you need to: 
+Чтобы получить данные с сенсора нужно использовать следующий код :
 
 ```cpp
 BLYNK_WRITE(V1) {
-  //acceleration force applied to axis x
+  //сила ускорения, приложенная к оси x
   int x = param[0].asFloat(); 
-  //acceleration force applied to axis y
+  //сила ускорения, приложенная к оси y
   int y = param[1].asFloat();
-  //acceleration force applied to axis y
+  //сила ускорения, приложенная к оси z
   int z = param[2].asFloat();
 }
 ```
 
-Accelerometer doesn't work in background.
+Акселерометр не работает при свернутом приложении.
 
-### Barometer/pressure
+### Барометр/Давление (Barometer/pressure)
 
-Barometer/pressure is kind of [environment sensors](https://developer.android.com/guide/topics/sensors/sensors_environment.html) 
-that allows you to measure the ambient air pressure.
+Барометр один из сенсоров [окружающей среды](https://developer.android.com/guide/topics/sensors/sensors_environment.html) 
+и позволяет измерять атмосферное давление.
 
-Measured in in ```hPa``` or ```mbar```.
+Измеряется в ```hPa``` (гПа) или ```mbar``` (мБар).
 
-In oder to accept data from it you need to: 
+Чтобы получить данные с сенсора нужно использовать следующий код :
 
 ```cpp
 BLYNK_WRITE(V1) {
-  //pressure in mbar
+  //Давление в мБар
   int pressure = param[0].asInt(); 
 }
 ```
 
-Barometer doesn't work in background.
+Барометр не работает при свернутом приложении.
 
-### Gravity
+### Гравитация (Gravity)
 
-Gravity is kind of [motion sensors](https://developer.android.com/guide/topics/sensors/sensors_motion.html) 
-that allows you to detect motion of your smartphone. 
-Useful for monitoring device movement, such as tilt, shake, rotation, or swing. 
+Гравитация - это своего рода [датчики движения](https://developer.android.com/guide/topics/sensors/sensors_motion.html), который позволяет обнаруживать движение вашего смартфона.
+Полезно для мониторинга движения устройства, таких как наклон, встряхивание, вращение или качание.
 
-The gravity sensor provides a three dimensional vector indicating the direction and magnitude of gravity. 
-Measured in ```m/s^2``` of gravity force applied to ```x```, ```y```, ```z``` axis.
-
-In oder to accept data from it you need to: 
+Датчик силы притяжения выдает трехмерный вектор, указывающий направление и величину силы притяжения. 
+Измеряется в ```m/s^2``` силы притяжения, приложенной к оси ```x```, ```y```, ```z```.
+Для того, чтобы принять данные от него, вам необходимо:
 
 ```cpp
 BLYNK_WRITE(V1) {
-  //force of gravity applied to axis x
+  //сила притяжения, приложенная к оси x
   int x = param[0].asFloat(); 
-  //force of gravity applied to axis y
+  //сила притяжения, приложенная к оси y
   int y = param[1].asFloat();
-  //force of gravity applied to axis y
+  //сила притяжения, приложенная к оси y
   int z = param[2].asFloat();
 }
 ```
 
-Gravity doesn't work in background.
+**ВНИМАНИЕ:** Виджет гравитации не работает в фоновом режиме.
 
-### Humidity
+### Влажность (Humidity)
 
-Humidity is kind of [environment sensors](https://developer.android.com/guide/topics/sensors/sensors_environment.html) 
-that allows you to measure ambient relative humidity.
+Влажность является своего рода [датчиком среды](https://developer.android.com/guide/topics/sensors/sensors_environment.html),
+который позволяет измерять относительную влажность окружающей среды.
 
-Measured in ```%``` - actual relative humidity in percent.
+Измеряется в ```%``` - фактически это относительная влажность в процентах.
 
-In oder to accept data from it you need to: 
+Для того, чтобы принять данные от датчика, вам необходимо:
 
 ```cpp
 BLYNK_WRITE(V1) {
-  // humidity in %
+  //Влажность в %
   int humidity = param.asInt();
 }
 ```
 
-Humidity doesn't work in background.
+**ВНИМАНИЕ:** Влажность не работает в фоновом режиме.
 
-### Light
+### Свет (Light)
 
-Light is kind of [environment sensors](https://developer.android.com/guide/topics/sensors/sensors_environment.html) 
-that allows you to measure level of light (measures the ambient light level (illumination) in lx).
-In phones it is used to control screen brightness.
+Свет - это своего рода [датчики окружающей среды](https://developer.android.com/guide/topics/sensors/sensors_environment.html), который позволяет измерять уровень освещенности (уровень внешней освещенности измеряется в люксах). В телефонах чаще всего используется для управления яркостью экрана.
 
-In order to accept data from it you need to: 
+Для того, чтобы принять данные этого виджета, вам необходимо:
 
 ```cpp
 BLYNK_WRITE(V1) {
-  //light value
+  //уровень освещенности
   int lx = param.asInt(); 
 }
 ```
 
-Light doesn't work in background.
+Виджет Свет не работает в фоновом режиме.
 
-### Proximity
+### Близость (Proximity)
 
-Proximity is kind of [position sensors](https://developer.android.com/guide/topics/sensors/sensors_position.html) 
-that allows you to determine how close the face of a smartphone is to an object.
-Measured in ```cm``` - distance from phone face to object. However most of this sensors returns only FAR / NEAR information.
-So return value will be ```0/1```. Where 0/LOW  is ```FAR``` and 1/HIGH is ```NEAR```.
-
-In order to accept data from it you need to: 
+Близость - это своего рода [датчики положения](https://developer.android.com/guide/topics/sensors/sensors_position.html)
+это позволяет определить, насколько близко смартфон к лицу. Измеряется в ```cm``` (см) - расстояние от телефона до лица. Однако большинство этих датчиков возвращает только информацию FAR / NEAR.
+Поэтому, возвращаемое значение будет ```0 / 1```. Где 0 / LOW = ```FAR``` (далеко), а 1 / HIGH = ``` NEAR``` (рядом).
+ 
+Для того, чтобы принять данные из виджета, вам необходимо:
 
 ```cpp
 BLYNK_WRITE(V1) {
-  // distance to object
+  //  расстояние до объекта
   int proximity = param.asInt();
   if (proximity) {
-     //NEAR
+     // РЯДОМ
   } else {
-     //FAR
+     // ДАЛЕКО
   }
 }
 ```
 
-Proximity doesn't work in background.
+Виджет близость не работает в фоновом режиме.
 
-### Temperature
+### Температура (Temperature)
 
-Temperature is kind of [environment sensors](https://developer.android.com/guide/topics/sensors/sensors_environment.html) 
-that allows you to measure ambient air temperature.
-Measured in ```°C``` - celcius.
+Температура является своего рода [датчиком окружающей среды](https://developer.android.com/guide/topics/sensors/sensors_environment.html) который позволяет измерять температуру окружающего воздуха. Измеряется в ```°C``` - градусах Цельсия.
 
-In order to accept data from it you need to: 
+Для приема данных из виджета, необходимо использовать код:
 
 ```cpp
 BLYNK_WRITE(V1) {
-  // temperature in celcius
+  // температура в градусах цельсия
   int celcius = param.asInt();
 }
 ```
 
-Temperature doesn't work in background.
+Виджет Температуры не работает в фоновом режиме.
 
-### GPS Trigger
+### Триггер GPS (GPS Trigger)
 
-GPS trigger widget allows easily trigger events when you arrive to or leave from some destination. This widget 
-will work in background and periodically will check your coordinates. In case your location is within/out required 
-radius (selected on widget map) widget will send ```HIGH```/```LOW``` command to hardware. For example, let's assume you have 
-GPS Trigger widget assigned to pin ```V1``` and option ```Trigger When Enter```. In that case when you'll arrive to destination 
-point widget will trigger ```HIGH``` event.
+Виджет Триггер GPS позволяет легко инициировать события, когда вы входите или выходите из географической зоны. Этот виджет будет работать в фоновом режиме и периодически будет проверять ваши координаты. Если ваше местоположение находится в пределах или вне указанной зоны (географическая зона выбирается на карте виджета), виджет отправит команду ```HIGH```/``` LOW``` на аппаратное устройство. Например, Триггер GPS назначен для пина ```V1```, и включена опция ```Trigger When Enter```. В этом случае, когда вы окажитесь в указанной географической зоне виджет вызовет событие ```HIGH```.
 
 ```cpp
 BLYNK_WRITE(V1) {
   int state = param.asInt();
   if (state) {
-      //You enter destination
+      //Вы вошли в зону
   } else {
-      //You leave destination
+      //Вы вышли из зоны
   }
 }
 ```
 
-More details on how GPS widget works you can read [here](https://developer.android.com/guide/topics/location/strategies.html).
+Подробнее о том, как работает GPS-виджет, вы можете прочитать [здесь](https://developer.android.com/guide/topics/location/strategies.html).
 
-GPS trigger widget works in background.
+**ВНИМАНИЕ:** Виджет Триггер GPS работает в фоновом режиме.
 
-### GPS Streaming
+### Поток GPS (GPS Streaming)
 
-Useful for monitoring smartphone location data such as latitude, longitude, altitude and speed (speed could be often 0  
-in case smartphone doesn't support it).
+Полезно для мониторинга местонахождения смартфона получать данные о широте, долготе, высоте и скорости (скорость часто может быть 0, если смартфон не поддерживает ее измерение).
 
-In order to accept data from this widget you need to: 
+Чтобы принимать данные из этого виджета, вам необходимо:
 
 ```cpp
 BLYNK_WRITE(V1) {
@@ -1148,12 +1172,12 @@ BLYNK_WRITE(V1) {
 }
 ```
 
-or you can use prepared wrapper ```GpsParam```:
+или вы можете использовать подготовленную оболочку ```GpsParam``` :
 
 ```cpp
 BLYNK_WRITE(V1) {
   GpsParam gps(param);
-  // Print 6 decimal places for Lat
+  //Печать лат/лон с 6 десятичными знаками
   Serial.println(gps.getLat(), 7);
   Serial.println(gps.getLon(), 7);
   
@@ -1162,170 +1186,159 @@ BLYNK_WRITE(V1) {
 }
 ```
 
-GPS Streaming works in background.
+Поток GPS работает в фоновом режиме.
 
-**Sketch:** [GPS Stream](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/GPS_Stream/GPS_Stream.ino)
+**Пример кода:** [Поток GPS](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/GPS_Stream/GPS_Stream.ino)
 
-## Other
+## Другие
+### Мост (Bridge)
 
-### Bridge
-
-Bridge can be used for Device-to-Device communication (no app. involved). You can send digital/analog/virtual write commands from one device to another, knowing it's auth token.
-At the moment Bridge widget is not required on application side (it is mostly used for indication that we have such feature).  
-**You can use multiple bridges to control multiple devices.**
+Мост может быть использован для связи между устройствами (без участия приложения). Вы можете отправлять цифровые / аналоговые / виртуальные команды записи с одного устройства на другое, зная только токен авторизации. На данный момент виджет Мост не обязательно использовать в приложении (здесь он используется для указания того, что у нас есть такая функция). 
+**Вы можете использовать несколько мостов для управления несколькими устройствами.**
 
 <img src="../images/bridge.png" style="width: 77px; height:80px"/>
 
-Bridge widget takes a virtual pin, and turns it into a channel to control another device. It means you can control any virtual, digital or analog pins of the target device.
-Be careful not to use pins like ```A0, A1, A2 ...``` when communicating between different device types, as Arduino Core may refer to wrong pins in such cases.
+Виджет Мост использует виртуальный пин и превращает его в канал для управления другим устройством. Это означает, что вы можете контролировать любые виртуальные, цифровые или аналоговые пины целевого устройства. Будьте осторожны, не используйте пины типа ```A0, A1, A2 ...``` при обмене данными между различными типами устройств, так как в таких случаях Arduino Core может ссылаться на неверные пины.
 
-
-Example code for device A which will send values to device B:
+Пример кода для устройства A, которое будет отправлять значения на устройство B:
 ```cpp
-WidgetBridge bridge1(V1); //Initiating Bridge Widget on V1 of Device A
+//Инициирует виджет Моста на V1 устройства A
+WidgetBridge bridge1(V1);
 ...
 void setup() {
     Blynk.begin(...);
     while (Blynk.connect() == false) {
-        // Wait until Blynk is connected
+        // Ждем пока Blynk подключится
     }
-    bridge1.digitalWrite(9, HIGH); // will trigger D9 HIGH on Device B. No code on Device B required
+    bridge1.digitalWrite(9, HIGH); // выставим триггер HIGH на D9 
+                                   // устройства B. Код на устройстве
+                                   // B не требуется
     bridge1.analogWrite(10, 123);
-    bridge1.virtualWrite(V1, "hello"); // you need to write code on Device B in order to receive this value. See below
+    bridge1.virtualWrite(V1, "hello"); // вам нужно написать код на 
+                                       // устройстве B, чтобы получить
+                                       // это значение. См. ниже
     bridge1.virtualWrite(V2, "value1", "value2", "value3");
 }
 
 BLYNK_CONNECTED() {
-  bridge1.setAuthToken("OtherAuthToken"); // Token of the hardware B
+  bridge1.setAuthToken("OtherAuthToken"); // токен с устройства B
 }
 ```
 
-**IMPORTANT:** when performing ```virtualWrite()``` with Bridge Widget, Device B would need to process the incoming data from Device A. 
-For example, if you are sending value from Device A to Device B using ```bridge.virtualWrite(V5)``` you would need to use this handler on Device B:
+**ВАЖНО:** при выполнении ```virtualWrite()``` с виджета Мост, устройство B должно обрабатывать входящие данные с устройства A. 
+Например, если вы отправляете значение с устройства A на устройство B, используя ```bridge.virtualWrite (V5)```, вам необходимо использовать свой обработчик на устройстве B:
 
 ```cpp
 BLYNK_WRITE(V5){
-    int pinData = param.asInt(); //pinData variable will store value that came via Bridge
+    int pinData = param.asInt(); // переменная pinData будет хранить значение,
+                                 // полученное через Bridge
 }
 ```
 
-Keep in mind that ```bridge.virtualWrite``` doesn't send any value to mobile app. You need to call ```Blynk.virtualWrite``` for that.
+Имейте в виду, что ```bridge.virtualWrite``` не отправляет никаких значений в мобильное приложение. Для этого вам нужно вызвать ```Blynk.virtualWrite```. 
 
-**Sketch:** [Bridge](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Bridge/Bridge.ino)
+**Пример кода:** [Мост](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Bridge/Bridge.ino)
 
-### Eventor
-Eventor widget allows you to create simple behaviour rules or **events**. 
-Let's look at a typical use case: read temperature from DHT sensor and send push notification when the temperature is over a certain limit:  
- 
+### Обработчик событий (Eventor)
+
+Виджет Обработчик событий позволяет создавать простые правила поведения или **события**. 
+Давайте рассмотрим типичный вариант использования: считывание температуры с датчика DHT и отправка push-уведомления, когда температура превышает определенный предел:
+
 ```cpp
   float t = dht.readTemperature();
   if (isnan(t)) {
     return;
   }
   if (t > 40) {
-    Blynk.notify(String("Temperature is too high: ") + t);
+    Blynk.notify(String("Температура слишком высокая: ") + t);
   }
 ```
 
-With Eventor you don't need to write this code. All you need is to send the value from the sensor to the server:
+С Обработчиком событий вам не нужно писать этот код. Все, что вам нужно, это отправить значение с датчика на сервер Blynk:
 
 ```cpp
   float t = dht.readTemperature();
   Blynk.virtualWrite(V0, t);
 ```
-Don't forget that ```virtualWrite``` commands should be wrapped in the timer and can't be used in the main loop.
 
-Now configure new **Event** in Eventor widget: 
+Не забывайте, что команды ```virtualWrite``` должны быть заключены в таймер и не должны использоваться в основном цикле ```loop```.
 
 <img src="../images/eventor/eventor_for_temp_example.png" style="width: 200px; height:360px"/>
 
-**NOTE** Don't forget to add notification widget.
+**ПРИМЕЧАНИЕ:** Не забудьте добавить виджет уведомлений в приложении.
 
-Eventor comes handy when you need to change conditions on the fly without re-uploading new sketch on 
-the hardware. You can create as many **events** as you need.
-Eventor also could be triggered from the application side.
-You just need to assign the widget to the same pin as your Event within Eventor.
-Eventor doesn't constantly sends events. Let's consider simple event as above ```if (temperature > 40) send notification ```.
-When temperature goes beyond 40 threshold - notification action is triggered. If temperature continues to stay above the 
-40 threshold no actions will be triggered. But if ```temperature``` goes below threshold and then passes it again -
-notification will be sent again (there is no 5 sec limit on Eventor notifications).
+Обработчик событий пригодится вам, когда нужно изменить условия на лету без повторной загрузки нового скетча на аппаратное обеспечение. Вы можете создать столько **событий**, сколько вам нужно. Обработчик событий также может быть запущен со стороны приложения. Вам просто нужно назначить виджет на тот же контакт, что и ваше событие в Обработчике событий. 
+Обработчик событий не постоянно отправляет события. Давайте рассмотрим простой пример, как показано выше ```if (temperature > 40) send notification```. Когда температура превышает 40 пороговых значений - отправляется уведомление. Если температура продолжает оставаться выше 40 никакие повторные действия не будут инициированы. Но если ```temperature``` опускается ниже порогового значения, а затем проходит его снова уведомление будет отправлено повторно (для уведомлений Обработчика событий нет ограничения отправки в течение 5 секунд).
+
+
+Обработчик событий также поддерживает события таймера (Timer). Например, вы можете установить пин ```V1``` ON/HIGH в 21:00:00 каждую пятницу.
+В Обработчике событий вы можете назначить несколько таймеров на один и тот же пин, отправить любую строку/число, выбрать день и часовой пояс.
  
-Eventor also supports Timer events. For example, you can set a pin ```V1``` ON/HIGH at 21:00:00 every Friday.
-With Eventor Time Event you can assign multiple timers on same pin, send any string/number, select days and timezone. 
+Чтобы удалить созданное **событие**, пожалуйста, используйте сдвиг пальцем по экрану. Вы также можете перенести последний элемент самого события.
 
-In order to remove created **event** please use swipe. You can also swipe out last element in the Event itself. 
+**Пример кода:** [Обработчик событий](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Eventor/Eventor.ino)
 
-**NOTE:** The timer widget rely on the server time and not your phone time. Sometimes the phone time may not match the server time. 
-**NOTE:** Events are triggered only once when the condition is met. That's mean 
-[chaining of events](https://community.blynk.cc/t/eventor-behavior-bug-feature/20962) is not possible (however, could be enabled for commercials).
+**ПРИМЕЧАНИЕ:** Виджет таймера зависит от времени сервера, а не вашего телефона. Иногда время телефона может не соответствовать времени сервера.
+
+**ПРИМЕЧАНИЕ:** события запускаются только один раз при выполнении условия. Это означитает что [цепочка событий] (https://community.blynk.cc/t/eventor-behavior-bug-feature/20962) невозможна (однако она может быть включена в коммерческой версии).
 
 <img src="../images/eventor/eventor_edit.png" style="width: 200px; height:360px"/>
 
-**Sketch:** [Eventor](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Eventor/Eventor.ino)
+### Часы реального времени (RTC)
 
-
-**NOTE:**: Events are triggered only once when the condition is met. 
-Exception:
-Let's consider simple event as above ```if (temperature > 40) send notification ```.
-When temperature goes beyond 40 threshold - notification action is triggered. If temperature continues to stay above the 40 threshold no actions will be triggered. But if ```temperature``` goes below threshold and then passes it again -
-notification will be sent again (there is no 5 sec limit on Eventor notifications).
-
-### RTC
-
-Real-time clock allows you to get time from server. You can preselect any timezone on UI to get time on hardware in required locale. 
-No pin required for RTC widget.
+Часы реального времени позволяют получать время с сервера. Вы можете предварительно выбрать любой часовой пояс в пользовательском интерфейсе, чтобы получить время на оборудование из нужной локали.
 
 <img src="../images/rtc_edit.png" style="width: 200px; height:360px"/>
 
-**Sketch:** [RTC](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/RTC/RTC.ino)
+**Пример кода:** [Часы реального времени](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/RTC/RTC.ino)
 
-### BLE
+### Bluetooth с низким энергопотреблением
 
-Widget to enable Bluetooth Low Energy support. At the moment BLE widget requires 
-internet connection in order to login and load your profile. However this will be fixed soon. Also some Blynk 
-widgets are not supported within the BLE connection.
-
-Blynk currently supports a handful of different BLE modules. Please check sketches below.
+Этот виджет позволяет включить блутзуз с низким энергопотреблением на вашем телефоне. На текущий момент виджет также 
+требует наличия интернет соединения (постараемся пофиксить в ближайшем будущем). Некоторые типы виджетов нельзя 
+использовать вместе с блутузом, например исторический граф, так как он требует чтобы данные отправлялись на сервер, чего 
+блутуз виджет не делает.
  
-**Sketches:** [BLE](https://github.com/blynkkk/blynk-library/tree/master/examples/Boards_Bluetooth)
+**Список поддерживаемых чипов и контроллеров:** [BLE](https://github.com/blynkkk/blynk-library/tree/master/examples/Boards_Bluetooth)
 
-### Bluetooth
+### Блютуз (Bluetooth)
 
-Widget to enable Bluetooth support. At the moment Bluetooth widget is supported only on Android and requires 
-internet connection to login and to load your profile. This will be fixed soon. Alsom some Blynk 
-widgets do not work within the Bluetooth connection.
-                                                                                              
-Blynk currently supports bunch of different modules. Please check sketches below.
+Этот виджет позволяет включить блютуз на вашем телефоне. На текущий момент виджет также требует наличия интернет соединения (постараемся пофиксить в ближайшем будущем) и поддерживается только на Android. 
+Некоторые типы виджетов нельзя использовать вместе с блютузом, например исторический граф, так как он требует чтобы 
+данные отправлялись на сервер, чего блютуз виджет не делает.
  
-**Sketches:** [Bluetooth](https://github.com/blynkkk/blynk-library/tree/master/examples/Boards_Bluetooth)
+**Список поддерживаемых чипов и контроллеров:** [BLE](https://github.com/blynkkk/blynk-library/tree/master/examples/Boards_Bluetooth)
 
-### Music Player
+### Музыкальный проигрыватель (Music Player)
 
-Simple UI element with 3 buttons with common music player controls. Every button sends it's own command to hardware: 
-```play```, ```stop```, ```prev```, ```next```.
+Простой элемент интерфейса с 3 кнопками - имитирует интерфейс музыкального проигрывателя. Каждая кнопка отправляет свою команду на аппаратное устройство: ```play``` (воспроизвести), ```stop``` (стоп), ```prev``` (предыдущий), ```next``` (следующий).
 
-You can change widget state within the app from hardware side with next commands:
+Вы можете изменить состояние виджета в приложении с аппаратной стороны с помощью следующих команд:
 
 ```
-Blynk.virtualWrite(Vx, “play”);
-Blynk.virtualWrite(Vx, “stop”);
+Blynk.virtualWrite(Vx, "play");
+Blynk.virtualWrite(Vx, "stop");
 ```
 
-You can also change widget play/stop state with next code (equivalent to above commands): 
+Вы также можете изменить состояние воспроизведение/остановка виджета с помощью следующего кода (эквивалент вышеупомянутых команд):
 
 ```Blynk.setProperty(V1, "isOnPlay", "false");```
 
-**Sketch:** [Music Player](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Player/Player.ino)
+**Пример кода:** [Музыкальный проигрыватель](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Player/Player.ino)
 
-### Webhook
+### Вебхук (Webhook)
 
-Webhook is a widget designed to communicate with 3rd party services. With Webhook widget you can send HTTP(S) requests to any 3rd party service or device that has HTTP(S) API (e.g. Philips Hue bulb). You can trigger 3-d party service with a single click of a button.
+Вебхук очень мощный виджет, который позволяет Вам легко интегрироватся с любыми сторонними сервисами. С его помощью 
+Вы можете слать любые HTTP/S запросы на любой сервер или устройство, которое имеет HTTP/S API (например, лампы Philips Hue).
 
-Any `write` operation from hardware side will trigger Webhook Widget. You can also trigger webhook from Blynk app when a app widget is assigned to the same pin as Webhook. 
+Вебхук вешается на вирутальный пин и любая команда, которая приходит на этот пин будет вызывать срабатывание HTTP/S 
+запроса. Команды на такой виртуальный пин могут приходить как со стороны железа, так и со стороны приложения. То есть, 
+Вы можете слать любой HTTP запрос при нажатии кнопки в приложении, если эта кнопка на том же пине что и вебхук.
 
-For example, when you need to send data from your hardware not only to Blynk, but also to Thingspeak, you would need to write a long http request code like this (this is just an example, not a full sketch): 
+Вот простой пример, представьте, что Вы хотите слать данные с микроконтроллера не только в Blynk, но и в какой-то другой сервис, 
+например - Google Docs или в thingspeak.com. Раньше Вам для этого пришлось бы писать что-то вроде :
 
-```
+```cpp
 WiFiClient client;
 if (client.connect("api.thingspeak.com", 80)) {
     client.print("POST /update HTTP/1.1\n");
@@ -1340,136 +1353,134 @@ if (client.connect("api.thingspeak.com", 80)) {
 }
 ```
  
-Instead, with Webhook widget you would only need to fill in these fields: 
+С вебхуком этого больше делать не нужно.
 
 <img src="../images/webhook_settings.png" style="width: 200px; height:360px"/>
 
-And add this code on hardware side:  
+Достаточно лишь заполнить поля виджета в приложении и выполнить привычное:
 
-```
+```cpp
 Blynk.virtualWrite(V0, value);
 ```
 
-where `V0` is pin assigned to the Webhook widget.
+Где V0 - пин вебхук виджета.
 
-Use standard Blynk placeholders for Pin Value in the body or URL, for example: 
+В дополнение, Вы можете подставлять значение пина в URL:
 
-```
+```cpp
 https://api.thingspeak.com/update?api_key=xxxxxx&field1=/pin/
 ```
 
-or for the body
+или тело запроса :
 
-```
+```cpp
 ["/pin/"]
 ```
 
-When you need to send an array of values, you can refer to a specific index of the array value. Blynk Pin can hold an array of max 10 values: 
+Так же можно отправлять несколько значений внутри одного пина (до 5) :
 
 ```/pin[0]/```,```/pin[1]/```, ```/pin[2]/```
 
-You can also make GET requests from Blynk Server and get responses directly to your hardware.
+Еще одна крутая штука - это возможность делать HTTP GET запросы на сервере и слать их результат на микроконтроллер. 
+Прелесть тут в том, что Вам не нужно для этого писать сложный код на микроконтроллере. Представьте, что Вам нужно  
+получить информацию о погоде от какого-то метио сервиса. Например, по такому запросу :
 
-For example, to get current weather from a 3rd party Weather service that uses an URL similar to this: 
-```http://api.sunrise-sunset.org/json?lat=33.3823&lng=35.1856&date=2016-10-01```, you would need to put this URL in Webhook widget and assign it to ```V0``` pin.
-
-To parse the response on the hardware side:  
-
-```
+```http://api.sunrise-sunset.org/json?lat=33.3823&lng=35.1856&date=2016-10-01```
+ 
+Вы можете вставить этот запрос в вебхук виджет, выбрать пин ```V0``` и написать :
+ 
+```cpp
 BLYNK_WRITE(V0){
   String webhookdata = param.asStr();
   Serial.println(webhookdata);
 }
 ```
 
-Now, every time there is a "write" command to ```V0``` pin (e.g. with ```Blynk.virtualWrite(V0, 1)``` from hardware or from app widget assigned to ```V0```),  ```BLYNK_WRITE(V0)``` construction will be triggered and processed.
+Теперь, каждый раз когда вы дергаете ```V0``` с помощью ```Blynk.virtualWrite(V0, 1)``` будет вызвана функция ```BLYNK_WRITE(V0)```.
 
-**NOTE:** Usually, 3rd party servers return long responses. You have to increase the maximum allowed message size your hardware can process. Modify this line in your firmware code:
+**Замечание:** обычно HTTP запросы довольно большие, поэтому Вам, вероятно, нужно будет увеличить лимит на максимальную 
+ длину сообщения на микроконтроллере ```#define BLYNK_MAX_READBYTES 1024```. 
 
-```#define BLYNK_MAX_READBYTES 1024```. Where ```1024``` - is maximum allowed message size.
-
-**NOTE:** Blynk Cloud has limitation for Webhook Widget - you can only send 1 request per second. This can be 
- changed on a Local Server by changing ```webhooks.frequency.user.quota.limit```. Be careful with Webhooks, 
- as many 3rd party services can't handle 1 req/sec, and you can be banned on some of them. 
- For example, Thingspeak allows only 1 request per 15 seconds.
+**Замечание:** наше облако так же имеет определенные лимиты для вебхука. Мы разрешаем слать только 1 запрос в секунду. 
+Это поведение можно изменить на локальном сервер через свойство ```webhooks.frequency.user.quota.limit```. Пожалуйста, 
+используйте вебхуки с умом. Многие веб ресурсы не способны обрабатывать даже 1 запрос в секунду. 
  
- **NOTE:** To avoid spamming,  Blynk Webhook feature has another limitation - if your Webhook requests fail 10 times in a row, Webhook Widget will be stopped. To resume it, you would need to open Widget Settings and re-save it. Failed request is a request that  doesn't return `200` or `302`.
- 
- **NOTE:** Webhook widget may affect ```Blynk.syncAll()``` function when a returned response is large.  
+**Замечание :** в случае если Ваш вебхук не выполнился 10 раз подряд - вебхук виджет будет остановлен. Чтобы восстановить 
+его работу - нужно открыть и закрыть виджет в режиме редактирования. Не выполненными считаются запросы у которых код ответа 
+не равен 200 или 302.
 
 
-### Reports Widget
+### Отчеты (Reports)
 
-Function of Reports is to configure and customize data reports in CSV format. You can choose between one-time or continuous scheduled reports.
+Функция виджета Отчеты заключается в настройке и разметке отчетов данных в формате CSV. Вы можете выбрать разовые или переодически запланированные отчеты.
 
-Also, within the Reports you can clear all the data collected by your devices.
+Кроме того, в отчетах вы можете очистить все пользовательсике данные, собранные с ваших устройств.
 
-You need to configure initial inputs in Edit mode, and then, in Play mode you will be able to customize reports.
+Вам необходимо настроить начальные параметры в режиме редактирования, а затем уже в режиме воспроизведения вы сможете настроить сами отчеты.
 
-#### Edit mode. Data inputs configuration
+#### Режим редактирования. Конфигурация ввода данных
 
-In edit mode (when your project is stopped) you define the Datastreams you would like to later be included in reports.
-Reports widget is  designed to work with the Device Tiles widget. If you don't use Device Tiles you can still select a single device or a group of devices as a source of data for reports.
+В режиме редактирования (когда ваш проект остановлен) вы определяете потоки данных, которые вы хотели бы позже включить в отчет.
+Виджет Отчеты предназначен для работы с виджетом [Плитка устройств (Device Tiles)](https://github.com/blynkkk/blynkkk.github.io/blob/master/mobile/ru/device_tiles.md). Если вы не используете плитки устройств, вы все равно можете выбрать одно устройство или группу устройств в качестве источника данных для отчетов.
 
-You have to choose either Device Tiles or single / group of the devices for the report. You can't combine these 2 options.
+Вы должны выбрать либо [Плитку устройств](https://github.com/blynkkk/blynkkk.github.io/blob/master/mobile/ru/device_tiles.md), либо одино устройство, либо группу устройств для отчета. Вы не можете объединить эти оба варианта.
 
-#### Play mode.
+#### Режим воспроизведения 
 
-After you added source devices and their Datastreams click Play button and click on the Reports button.
+После добавления исходных устройств и их потоков данных нажмите кнопку «Воспроизвести» и нажмите кнопку «Отчеты».
 
-### Customizing Reports.
+### Настройка отчетов
 
-Every Report option supposes it's own settings:
+Каждый параметр отчета предполагает свои собственные настройки:
 
-```Report name``` - give your report a meaningful name.
+```Report name``` (Имя отчета) -  дайте вашему отчету осмысленное имя.
 
-```Data source``` - select the Datastreams you would like to be included in reports.
+```Data source``` (Источники данных) - выберите потоки данных, которые вы хотели бы включить в отчеты.
 
-```Report Frequency``` - Defines how often reports will be sent. They can be one-time and scheduled.
-```one-time``` - will instantly generate report and send it to the email addresses specified. Click on the right icon to send it.
+```Report Frequency``` (периодичность отчетов) -  Определяет, как часто будут отправляться отчеты. Они могут быть разовыми и запланированными.
 
-Scheduled reports can be sent ```daily```/```weekly```/```monthly```.
+```one-time``` (Сейчас) -  мгновенно сформирует отчет и отправит его на указанные адреса электронной почты. Нажмите на значок справа, чтобы отправить отчет.
 
- ```At Time``` will set up a time of the day the report will be sent.
- ```Start```/```End``` specifies start and end date the reports will continue to be sent.
+Запланированные отчеты могут быть отправлены ```daily```/```weekly```/```monthly``` (ежедневно/еженедельно/ежемесячно).
 
-For Weekly Report you can select a day of the week when report should be sent.
-For Monthly report you can choose whether to send report on the first or last day of the month.
+ ```At Time``` (Время)  установите время дня, когда отчет будет отправлен.
+ ```Start```/```End``` (Качало/Конец) указывает дату начала и окончания оправки отчетов.
 
-```Recipients``` - specify up to 5 email addresses.
+Для еженедельного отчета вы можете выбрать день недели, когда отчет должен быть отправлен.
+Для ежемесячного отчета вы можете выбрать, отправку отчета в первый или последний день месяца.
 
-```Data resolution``` defines granularity of your reports. Supported granularities are: ```minute```, ```hourly``` and ```daily```.
-For example, when you generate daily report with 1 minute granularity you'll get ```24 * 60 * 60```
-points in your daily report for every selected Datastream.
+```Recipients``` (Получатели) -  укажите до 5 адресов электронной почты..
 
-```Group data in reports by``` -  specify the output format of the CSV file(s).
+```Data resolution``` (Разрешение данных) определяет детализацию ваших отчетов.  Поддерживаемые детализации: ```minute``` (ежеминутно), ```hourly``` (ежечасно) и ```daily``` (ежедневно).
+Например, когда вы генерируете ежедневный отчет с детализацией в 1 минуту, вы получаете ```24 * 60 * 60``` единиц данных в вашем ежедневном отчете за каждый выбранный поток.
 
-```Datastream``` you will get 1 CSV file for each Datastream.
+```Group data in reports by``` (Группировка данных в отчетах) -  укажите выходной формат файла-(ов) CSV:
 
-```Device``` you will get 1 CSV file per each device. Each file will contain all of the included Datastreams.
+```Datastream``` (Поток) - вы получите один CSV файл для каждого потока данных.
 
-```Report``` you will get 1 CSV file for all your devices and all your Datastreams.
+```Device``` (Устройство) - вы получите один CSV-файл на каждое устройство. Каждый файл будет содержать все включенные потоки данных.
 
-```Timezone correction``` - specify the time zone adjustment if you need to get report date and time adjusted to a specific time zone
+```Report``` (Отчет) - вы получите один CSV-файл для всех ваших устройств и всех ваших потоков данных.
 
-```Date and time format``` - defines the format of the timestamp field of your data. You can select ```2018-06-21 20:16:48```,
-```2018-06-21T20:16:48+03:00``` or other supported formats.
+```Timezone correction``` (Времненная зона) -  укажите корректировку часового пояса, если вам нужно настроить дату и время отчета на определенный часовой пояс.
 
-There is one specific ```Timestamp``` format - which reflects the difference between the current time and midnight, January 1, 1970 UTC measured in milliseconds.
+```Date and time format``` (Формат даты и времени) -  определяет формат поля временной метки ваших данных.
+Вы можете выбрать ```2018-06-21 20:16:48```, ```2018-06-21T20:16:48+03:00``` или другой поддерживаемый формат.
 
-After the report is set up - click on "OK" button at the right upper corner. Your report is ready.
+Существует особый формат ```Timestamp``` (Временная метка), которая отражает разницу между текущим временем и полуночью 1 января 1970 года UTC, измеряемую в миллисекундах.
 
+После настройки отчета нажмите кнопку «ОК» в правом верхнем углу. Ваш отчет готов.
 
-Once you configured the report you will see when is the ```Next``` report scheduled and also a schedule for this report.
+После настройки отчета вы увидите, когда запланирован следущий отчет ```Next```, а также увидите расписание для этого отчета.
 
-After the report was sent at least once, you can see when the ```Last``` report was sent.
+После отправки отчета хотя бы один раз, вы можете увидеть дату его последней отправки ```Last```.
 
-```Last``` label also contains the status regarding the report:
+```Last``` (Последний) метка также содержит статус отправки отчета:
 
-- ```OK```: the report was generated and sent to the Recipients successfully;
-- ```No Data```: the report doesn't contain any data for the configured period;
-- ```Error```: something went wrong. Please contact the Blynk Team support;
+  - ```OK``` (Успешно):  отчет был сгенерирован и успешно отправлен Получателям;
+  - ```No Data``` (Нет данных): отчет не содержит данных за указанный период;
+  - ```Error``` (Ошибка):  что-то пошло не так. Пожалуйста, свяжитесь со службой поддержки Blynk.
 
-Reports will be generated even if your project is not in active (Play) mode. However, inactive projects don't generate any data.
+Отчеты будут генерироваться, даже если ваш проект не находится в активном (Play) режиме. Однако помните, неактивные проекты небудут генерировать данные.
 
-**NOTE:** all reports are encoded in UTF-16. Please, make sure you selected UTF-16 as required "Character set" for your csv reader.
+**ПРИМЕЧАНИЕ:** все отчеты формируются в кодировке UTF-16. Пожалуйста, убедитесь, что при открытии файла отчета вы выбрали кодировку UTF-16 в вашем CSV-редакторе.
