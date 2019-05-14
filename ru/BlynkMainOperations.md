@@ -1,69 +1,70 @@
-# Blynk main operations
+# Blynk основные операции
 
-## Virtual Pins
-Blynk can control Digital and Analog I/O Pins on you hardware directly. You don't even need to write code for it. 
-It's great for blinking LEDs, but often it's just not enough...
+## Виртуальные Пины (Pins)
+Blynk может напрямую управлять цифровыми и аналоговыми выводами ввода/вывода на вашем оборудовании. Вам даже не нужно писать для этого код. Отлично подходит для мигающих светодиодов, но частенько этого не достаточно...
 
-We designed Virtual Pins to send **any** data from your microcontroller to the Blynk App and back. 
+Мы разработали Виртуальные Пины для отправки **любых** данных с вашего микроконтроллера в приложение Blynk и обратно.
 
-Anything you connect to your hardware will be able to talk to Blynk.
-With Virtual Pins you can send something from the App, process it on microcontroller and then send it back to the smartphone. You can trigger functions, read I2C devices, convert values, control servo and DC motors etc.
+Все, что вы подключите к своему оборудованию, сможет общаться с Blynk. С помощью Виртуальных Пинов вы можете отправить что-то из приложения, обработать его на микроконтроллере, а затем отправить обратно на смартфон. Вы можете запускать функции, считывать устройства I2C, преобразовывать значения, управлять сервоприводами и двигателями постоянного тока и т. д.
 
-Virtual Pins can be used to interface with external libraries (Servo, LCD and others) and implement custom functionality. 
+Виртуальные Пины могут быть использованы для взаимодействия с внешними библиотеками (Servo, LCD и другие), а также реализовать пользовательские функции.
 
-Hardware may send data to the Widgets over the Virtual Pin like this:
+Оборудование может передавать данные в виджеты через Виртуальные Пины, как здесь:
 
 ```cpp
 Blynk.virtualWrite(pin, "abc");
 Blynk.virtualWrite(pin, 123);
 Blynk.virtualWrite(pin, 12.34);
-Blynk.virtualWrite(pin, "hello", 123, 12.34);
+Blynk.virtualWrite(pin, "Привет", 123, 12.34);
 ```
 
-For more information about virtual pins, [read this](/#blynk-firmware-virtual-pins-control)
+Для получения дополнительной информации о виртуальных пинах, [прочитайте здесь](/#blynk-firmware-virtual-pins-control)
 
-## Send data from app to hardware
-You can send any data from Widgets in the app to your hardware.
+## Отправить данные из приложения на оборудование
+Вы можете отправлять любые данные из виджетов в приложении на ваше оборудование.
 
 All [Controller Widgets](/#widgets-controllers) can send data to Virtual Pins on your hardware.
 For example, code below shows how to get values from the Button Widget in the App
 
+Все [Виджеты Контроллеры](/#widgets-controllers) могут отправлять данные в Виртуальные Пины на вашем оборудовании.
+Например, приведенный ниже код показывает, как получить значения из виджета Кнопки (Button) в приложении.
+
 ```cpp
-BLYNK_WRITE(V1) //Button Widget is writing to pin V1
+BLYNK_WRITE(V1) //Виджет кнопки пишет данные в пин V1
 {
   int pinData = param.asInt(); 
 }
 ```
-When you press a Button, Blynk App sends ```1``` On the second click - it sends ```0``` 
+Когда вы нажимаете кнопку, приложение Blynk отправляет ```1``` На втором клике - отправляет ```0```
 
-This is how Button Widget is set up:
+Вот как настроен виджет кнопки (Button):
 
-<img src="images/button_virtual_1.png" style="width: 200px; height:360px"/>
+<img src="../images/button_virtual_1.png" style="width: 200px; height:360px"/>
 
 
-Full example sketch: [Get Data](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/GetData/GetData.ino#L24)
+Полный пример кода: [Получение данных](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/GetData/GetData.ino#L24)
 
-### Sending array from Widget 
-Some Widgets (e.g Joystick, zeRGBa) have more than one output. 
+### Отправка массива из виджета
+Некоторые виджеты (например, джойстик, zeRGBa) имеют более одной единицы данных.
 
-<img src="images/joystick_merge_mode.png" style="width: 200px; height:360px"/>
+<img src="../images/joystick_merge_mode.png" style="width: 200px; height:360px"/>
 
-This output can be written to Virtual Pin as an array of values. 
-On the hardware side - you can get any element of the array [0,1,2...] by using: 
+Этот вывод может быть записан в Virtual Pin в виде массива значений.
+С аппаратной стороны - вы можете получить любой элемент массива [0,1,2 ...], используя код:
 
 ```cpp
-BLYNK_WRITE(V1) // Widget WRITEs to Virtual Pin V1
+BLYNK_WRITE(V1) // Виджет ЗАПИСЫВАЕТ в Виртуальный Пин V1
 {   
-  int x = param[0].asInt(); // getting first value
-  int y = param[1].asInt(); // getting second value
-  int z = param[N].asInt(); // getting N value
+  int x = param[0].asInt(); // получить первое значение
+  int y = param[1].asInt(); // получить второе значение
+  int z = param[N].asInt(); // получить N-ое значение
 }
 ```
 
- **Sketch:** [JoystickTwoAxis](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/JoystickTwoAxis/JoystickTwoAxis.ino#L24)
+ **Пример кода:** [Джойстик две оси](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/JoystickTwoAxis/JoystickTwoAxis.ino#L24)
 
-## Get data from hardware
-There are two ways of pushing data from your hardware to the Widgets in the app over Virtual Pins.
+## Получить данные с аппаратного обеспечения
+Существует два способа передачи данных с вашего оборудования на виджеты в приложении через виртуальные контакты.
 
 ### Perform requests by Widget
 - Using Blynk built-in reading frequency while App is active by setting 'Reading Frequency' parameter to some interval:
