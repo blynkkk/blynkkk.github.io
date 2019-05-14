@@ -147,6 +147,4 @@ Blynk connected!
 
 Не стесняйтесь экспериментировать и комбинировать различные примеры вместе, чтобы создавать свои собственные удивительные проекты.
 
-For example, to attach an LED to a [PWM](http://www.arduino.cc/en/Tutorial/Fading)-enabled Pin on your Arduino, set the slider widget to control the brightness of an LED. Just use the same steps described above.
-
 Например, подключите светодиод к выводу, с активным [ШИМ](http://www.arduino.cc/en/Tutorial/Fading) на Arduino и установите виджет - Слайдер (Slider) для управления яркостью светодиода. Используя те же шаги, что описанны выше.
