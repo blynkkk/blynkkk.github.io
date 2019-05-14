@@ -62,33 +62,33 @@
 
 **Схвати-И-Брось (Drag-n-Drop)** - Нажмите и удерживайте виджет, чтобы перетащить его на новое место.
 
-**Настройки виджета (Widget Settings)** - Each Widget has it's own settings. Tap on the widget to get to them.
+**Настройки виджета (Widget Settings)** - Каждый виджет имеет свои настройки. Нажмите на виджет, чтобы добраться до них.
 
 <img src="../images/button_settings.png" style="width: 200px; height:360px"/>
 
-The most important parameter to set is **PIN** . The list of pins reflects physical pins defined by your hardware. If your LED is connected to Digital Pin 8 - then select **D8** (**D** - stands for **D**igital).    
+Наиболее важным параметром для установки является **PIN** (контакт). Список контактов отражает физические контакты, определенные вашим оборудованием. Если ваш светодиод подключен к цифровому выводу 8 - выберите **D8** (**D** - означает digital - цифровой).
 
 <img src="../images/pin_selection.png" style="width: 200px; height:360px"/>
 
-### 6. Run The Project
-When you are done with the Settings - press the **PLAY** button. This will switch you from EDIT mode to PLAY mode where you can interact with the hardware. While in PLAY mode, you won't be able to drag or set up new widgets, press **STOP** and get back to EDIT mode.
+### 6. Запустить проект
 
-You will get a message saying "Arduino UNO is offline". We'll deal with that in the next section.
+Когда вы закончите с настройками - нажмите кнопку **PLAY**. Это переключит вас из режима EDIT в режим PLAY, где вы можете взаимодействовать с оборудованием. В режиме воспроизведения вы не сможете перетаскивать или настраивать новые виджеты, нажав **STOP** вы вернетесь в режим редактирования.
+
+Вы получите сообщение "Arduino UNO is offline" (Arduino UNO не в сет). Мы рассмотрим это в следующем разделе.
 
 <img src="../images/play_button.png" style="width: 200px; height:360px"/>
 
-## Getting Started With Hardware
-### How To Use an Example Sketch
-You should by now have the Blynk Library installed on your computer. If not - [click here](/#downloads-blynk-library).
+## Начало работы с оборудованием
+### Как использовать пример кода
+У вас должна быть установлена библиотека Blynk на вашем компьютере. Если нет - [нажмите здесь](/#downloads-blynk-library).
 
-Example sketches will help you get your hardware online quickly and major Blynk features. 
+Примеры скетчей (кода) помогут вам быстро подключить ваше оборудование и основные функции Blynk.
 
-Open the example sketch according to the hardware model or shield you are using.
+Откройте пример эскиза в соответствии с используемой моделью оборудования или платой.
 
 <img src="../images/connection_type_sketch.png" style="width: 500px; height:217px"/>
 
-
-Let's take a look at the example sketch for an [Arduino UNO + Ethernet shield](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino)
+Давайте рассмотрим пример кода для [Arduino UNO + Ethernet-плата](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino)
 
 ```cpp
 #define BLYNK_PRINT Serial
@@ -100,18 +100,18 @@ char auth[] = "YourAuthToken";
 
 void setup()
 {
-  Serial.begin(9600); // See the connection status in Serial Monitor
-  Blynk.begin(auth);  // Here your Arduino connects to the Blynk Cloud.
+  Serial.begin(9600); // Наблюдайет за состоянием подключения в терминале.
+  Blynk.begin(auth);  // Здесь ваше Arduino подключается к облаку Blynk.
 }
 
 void loop()
 {
-  Blynk.run(); // All the Blynk Magic happens here...
+  Blynk.run(); // Все чудеса Blynk происходят здесь...
 }
 ```
 
-### Auth Token
-In this example sketch, find this line:
+### Ключ авторизации (Auth Token)
+В этом примере скейтча найдите такую строку:
 
 ```cpp
 char auth[] = "YourAuthToken";
@@ -119,13 +119,15 @@ char auth[] = "YourAuthToken";
 This is the [Auth Token](/#getting-started-getting-started-with-application-4-auth-token) that you emailed yourself.
 Please check your email and copy it, then paste it inside the quotation marks.
 
-It should look similar to this:
+Это [Ключ авторизации](/#getting-started-getting-started-with-application-4-auth-token), который вы должны отправить себе по электронной почте из приложения Blynk. Проверьте свою электронную почту, скопируйте его и вставьте в кавычки.
+
+Должно выглядеть примерно так:
 
 ``` 
 char auth[] = "f45626c103a94983b469637978b0c78a";
 ``` 
 
-Upload the sketch to the board and open Serial Terminal.  Wait until you see something like this: 
+Загрузите скейтч в плату и откройте последовательный терминал. Подождите, пока не увидите что-то вроде этого:
 
 ``` 
 Blynk v.X.X.X
@@ -134,15 +136,17 @@ Connecting...
 Blynk connected!
 ```
 
-<span style="color:#24C48C" >**Congrats! You are all set! Now your hardware is connected to the Blynk Cloud!**</span>
+<span style="color:#24C48C">**Великолепно! У вас все настроено! Теперь ваше оборудование подключено к Blynk Cloud!**</span>
 
-## Blynking
-Go back to the Blynk App, push the button and turn the LED on and off! It should be Blynking.
+## Используем Blynk
+Вернитесь в приложение Blynk, нажмите кнопку и включите и выключите светодиод! Это должен быть наш Blynk.
 
 <img src="../images/button_pressed.png" style="width: 200px; height:360px"/>
 
-Check out [other example sketches](https://github.com/blynkkk/blynk-library/tree/master/examples). 
+Изучайте [другие примеры скетчей](https://github.com/blynkkk/blynk-library/tree/master/examples). 
 
-Feel free to experiment and combine different examples together to create your own amazing projects. 
+Не стесняйтесь экспериментировать и комбинировать различные примеры вместе, чтобы создавать свои собственные удивительные проекты.
 
 For example, to attach an LED to a [PWM](http://www.arduino.cc/en/Tutorial/Fading)-enabled Pin on your Arduino, set the slider widget to control the brightness of an LED. Just use the same steps described above.
+
+Например, подключите светодиод к выводу, с активным [ШИМ](http://www.arduino.cc/en/Tutorial/Fading) на Arduino и установите виджет - Слайдер (Slider) для управления яркостью светодиода. Используя те же шаги, что описанны выше.
