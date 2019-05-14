@@ -23,9 +23,6 @@ Blynk.virtualWrite(pin, "Привет", 123, 12.34);
 ## Отправить данные из приложения на оборудование
 Вы можете отправлять любые данные из виджетов в приложении на ваше оборудование.
 
-All [Controller Widgets](/#widgets-controllers) can send data to Virtual Pins on your hardware.
-For example, code below shows how to get values from the Button Widget in the App
-
 Все [Виджеты Контроллеры](/#widgets-controllers) могут отправлять данные в Виртуальные Пины на вашем оборудовании.
 Например, приведенный ниже код показывает, как получить значения из виджета Кнопки (Button) в приложении.
 
@@ -69,7 +66,7 @@ BLYNK_WRITE(V1) // Виджет ЗАПИСЫВАЕТ в Виртуальный �
 ### Perform requests by Widget
 - Using Blynk built-in reading frequency while App is active by setting 'Reading Frequency' parameter to some interval:
 
-<img src="images/frequency_reading_pull.png" style="width: 200px; height:360px"/>
+<img src="../images/frequency_reading_pull.png" style="width: 200px; height:360px"/>
 
 ```cpp
 BLYNK_READ(V5) // Widget in the app READs Virtal Pin V5 with the certain frequency
