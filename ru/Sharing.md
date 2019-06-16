@@ -1,59 +1,64 @@
-#Sharing
-Blynk offers two types of sharing your projects with other people:
+# Обмен проектами
+Blynk предлагает два типа обмена вашими проектами с другими людьми:
 
-- **Share access to your hardware.** Think about giving someone an App for your Project. They can't modify, but can control and see what's there.
+- **Поделитесь доступом к вашему оборудованию.** Задумайтесь о том, чтобы дать кому-то использовать приложение от вашего проекта. Они не могут изменить интерфейс, но могут контролировать и наблюдать, что там происходит.
 
-- **Share your Project configuration.** Others will get a clone of your project by scanning a given QR link, but they won't be able to control your hardware. It's great for tutorials, instructables, etc.
+- **Поделитесь конфигурацией вашего проекта.** Другие пользователи получат клон вашего проекта в Blynk, отсканировав QR-ссылку, но не смогут управлять вашим оборудованием. Это отлично подходит для обучения, учебных пособий и т.д.
 
-## Shared access to your hardware
-Imagine giving someone an App to control your Project.
+## Общий доступ к вашему оборудованию
+Представьте, что вы даете кому-то приложение для управления вашим проектом.
 
-- people you’ve shared your project with can’t modify anything. They can only use it
-- you can update your app, change the layout, add widgets and it’s immediately synced to everyone
-- you can revoke access at any moment
+- люди, с которыми вы поделились своим проектом, не могут ничего изменить. Они могут только использовать его 
+- вы можете обновить свое приложение, изменить макет, добавить виджеты, и оно сразу синхронизируется со всеми устройствами
+- вы можете отозвать доступ в любой момент
 
 How it works:
 - you send the QR code to your users (you can email, print, post to social media, do whatever you want)
 - others download Blynk app, scan the QR code and your app opens for them ready to use. They don’t even need to login or create an account.
 
-Go to your Project's Settings:
+Как это работает:
+- вы отправляете QR-код своим пользователям (любым способом по электронной почте, распечатываете, публикуете в социальных сетях, и т.п.)
+- другие скачивают приложение Blynk, сканируют ваш QR-код, и ваше приложение открывается у них готовыми к использованию. Им даже не нужно входить в систему или создавать учетную запись.
 
-<img src="images/dash_settings_sharing.png" style="width: 200px; height:360px"/>
+Зайдите в настройки вашего проекта:
 
-Click on "Generate Link" button :
+<img src="../images/dash_settings_sharing.png" style="width: 200px; height:360px"/>
 
-<img src="images/dash_settings_sharing_generate.png" style="width: 200px; height:360px"/>
+Нажмите на кнопку «Generate Link» (Создать ссылку):
 
-It will generate QR code you can share with others:
+<img src="../images/dash_settings_sharing_generate.png" style="width: 200px; height:360px"/>
 
-<img src="images/dash_public_sharing.png" style="width: 200px; height:360px"/>
+Будет сгенеририрован QR-код, которым вы можете поделиться с другими:
 
-That's it! Now **Exit the settings and press PLAY button.**
+<img src="../images/dash_public_sharing.png" style="width: 200px; height:360px"/>
 
-Another person would need to install Blynk app and scan QR code from the login screen (scanning from existing profile is not yet supported) ;
+Это оно! Теперь **Выйдите из настроек и нажмите кнопку PLAY.**
 
-<img src="images/scan_qr.png" style="width: 200px; height:360px"/>
+Другой человек должен будет установить приложение Blynk и отсканировать QR-код с экрана для входа в систему (сканирование из существующего профиля пока не поддерживается);
 
-**NOTE:** Your Project should be active, don't forget to press Play button.
+<img src="../images/scan_qr.png" style="width: 200px; height:360px"/>
 
-**WARNING:** Sharing costs 1000 energy and this energy is not recoverable even you didn't use sharing at all.
+**ПРИМЕЧАНИЕ:** Ваш проект должен быть активным, не забудьте нажать кнопку воспроизведения.
+
+**ПРЕДУПРЕЖДЕНИЕ:** Обмен QR-кодом стоит 1000 энергии, и эта энергия не подлежит восстановлению, даже если вы вообще не использовали обмен.
 
 
-## Share your Project configuration
-In case you want to share your Project's set up without giving access to your hardware (for example to make a tutorial or instructable)- follow the steps: 
+## Поделится своей конфигурацией проекта
+In case you want to share your Project's set up without giving access to your hardware (for example to make a tutorial or instructable)- follow the steps:
+Если вы хотите поделиться настройками своего Проекта, не предоставляя доступ к вашему оборудованию (например, чтобы создать учебный материал или инструкцию) - выполните следующие действия:
 
-In Project's Settings go to **Clone** button.
+В настройках проекта перейдите к кнопке **Clone**.
 
-<img src="images/clone.png" style="width: 200px; height:360px"/>
+<img src="../images/clone.png" style="width: 200px; height:360px"/>
 
-It will generate QR code you can share with anyone.
+Она сгенерирует QR-код, которым вы можете поделиться с кем угодно.
 
-<img src="images/QR.png" style="width: 200px; height:360px"/>
+<img src="../images/QR.png" style="width: 200px; height:360px"/>
 
-Another person **should Log In to Blynk app** and press QR button in Projects gallery
+Другой человек **должен войти в приложение Blynk** и нажать кнопку QR в галерее проектов
 
-<img src="images/QR_button_edit.png" style="width: 200px; height:360px"/>
+<img src="../images/QR_button_edit.png" style="width: 200px; height:360px"/>
 
-After the scan, a new Project will be created, all the widgets, settings, layout will be cloned. Another person would need enough Energy Balance to clone your Project.
+После проверки будет создан новый проект, все виджеты, настройки, макет будут клонированы. Другому человеку понадобится достаточно энергии, чтобы клонировать ваш проект.
 
-**Auth Token will be different!**. Nobody will get access to your hardware. They just get a copy of the layout and settings.
+**Ключ аутентификации будет другим!**. Никто не получит доступ к вашему оборудованию. Они просто получают копию интейрфейса и настроек.
