@@ -21,12 +21,6 @@
 ## Подключение к сети WiFi
 Если у вас возникли проблемы с подключением по WiFi, пожалуйста, проверьте следующие ошибки:
 
-* You're trying to connect to "WPA & WPA2 Enterprise" network (often used in offices), and your shield does not support this security method
-* Your WiFi network has a login page that requests entering an access token (often used in restaurants)
-* Your WiFi network security disallows connecting alien devices completely (MAC filtering, etc)
-* There is a firewall running. Default port for hardware connections is 80 (8080 on the Local Server).
-Make sure it's open.
-
 * Вы пытаетесь подключиться к сети 'WPA & WPA2 Enterprise' (часто используется в офисах), а ваш шилд не поддерживает этот метод шифрования
 * В вашей WiFi-сети есть страница входа, которая запрашивает ввод ключа доступа (часто используется в ресторанах)
 * Безопасность вашей сети Wi-Fi запрещает полное подключение чужих устройств (фильтрация MAC-адресов и т.п.)
@@ -34,89 +28,88 @@ Make sure it's open.
 
 ## Задержки (Delay)
 
-If you use long ```delay()``` or send your hardware to sleep inside of the ```loop()``` expect connection drops and downgraded performance.
+Если вы используете длительный ```delay ()``` или отправляете свое оборудование в спящий режим внутри ```loop ()```, ждите обрыва соединения и снижение производительности.
 
-***DON'T DO THAT:***
+***НЕ ДЕЛАЙТЕ ЭТОГО:***
 ```cpp
 void loop()
 {
   ...
-  delay(1000); // this is long delay, that should be avoided
-  other_long_operation();
+  delay(1000); // это длительная задержка, которую следует избегать
+  other_long_operation();  // другие длинные операторы
   ...
   Blynk.run();
 }
 ```
 
-***Note:*** This also applies to the BLYNK_READ & BLYNK_WRITE handlers!
+**Примечание:** Это также относится к обработчикам BLYNK_READ & BLYNK_WRITE!
+   
+**РЕШЕНИЕ:**
+Если вам нужно выполнять действия в определенные промежутки времени - используйте таймеры, например [BlynkTimer](/#blynk-firmware-blynktimer).
 
-***SOLUTION:***
-If you need to perform actions in time intervals - use timers, for example [BlynkTimer](/#blynk-firmware-blynktimer).
+## Ошибки из-за флуда
 
-## Flood Error
+Если ваш код часто отправляет много запросов на наш сервер, ваше оборудование будет отключено. Приложение Blynk может показывать "Your hardware is offline" (Ваше оборудование отключено).
 
-If your code frequently sends a lot of requests to our server, your hardware will be disconnected. Blynk App may show "Your hardware is offline"
+Когда ```Blynk.virtualWrite``` находится в  ```void loop```, он генерирует сотни «запросов» в секунду.
 
-When ```Blynk.virtualWrite``` is in the ```void loop```, it generates hundreds of "writes" per second 
+Вот пример того, что может вызвать флуд. **НЕ ДЕЛАЙТЕ ЭТОГО:**
 
-Here is an example of what may cause flood. ***DON'T DO THAT:***
 ```cpp
 void loop()
 {
-  Blynk.virtualWrite(1, value); // This line sends hundreds of messages to Blynk server
+  Blynk.virtualWrite(1, value); // Эта строка отправляет сотни сообщений на сервер Blynk
   Blynk.run();
 }
 ```
 
-***SOLUTION:***
-If you need to perform actions in time intervals - use timers, for example [BlynkTimer](/#blynk-firmware-blynktimer).
+**РЕШЕНИЕ:**
+Если вам нужно выполнять действия в определенные промежутки времени - используйте таймеры, например [BlynkTimer](/#blynk-firmware-blynktimer).
 
-Using ```delay()``` will not solve the problem either. It may cause [another issue](/#delay). Use timers!
+Использование ```delay ()``` также не решит проблему. Это может вызвать [другую проблему](/#delay). Используйте таймеры!
 
-If sending hundreds of requests is what you need for your product you may increase flood limit on local server 
-and within Blynk library.
-For local server you need to change ```user.message.quota.limit``` property within ```server.properties``` file :
+Если отправка сотен запросов - это то, что вам необходимо для вашего продукта, вы можете увеличить лимит на локальном сервере и в библиотеке Blynk.
+Для локального сервера вам необходимо изменить свойство ```user.message.quota.limit``` в файле ``` server.properties```:   
 
-        #100 Req/sec rate limit per user.
+        #100 запросов в секунду на одного пользователя.
         user.message.quota.limit=100
         
-For library you need to change ```BLYNK_MSG_LIMIT``` property within ```BlynkConfig.h``` file :
+Для библиотеки вам нужно изменить свойство ```BLYNK_MSG_LIMIT``` в файле ``` BlynkConfig.h```:
  
-        //Limit the amount of outgoing commands.
+        //Ограничьте количество исходящих команд.
         #define BLYNK_MSG_LIMIT 20
 
-## Enable debug
+## Включить отладку
 
-To enable debug prints on the default Serial, add this on the top of your sketch **(it should be the first line
-in your sketch)**:
+Чтобы включить отправку отладочной информации в серийный порт по умолчанию, добавьте код в верхней части скейтча **(это должна быть первая строка в скейтче)**:
 
 ```cpp
-#define BLYNK_DEBUG // Optional, this enables lots of prints
+#define BLYNK_DEBUG // Необязательно, запускает отладку
 #define BLYNK_PRINT Serial
 ```
-And enable serial in ```void setup()```:
+И не забудьте включить серийный порт в ```void setup()```:
 
 ```cpp
 Serial.begin(9600);
 ```
 
-You can also use spare Hardware serial ports or SoftwareSerial for debug output (you will need an adapter to connect to it with your PC).
+Вы также можете использовать запасные аппаратные последовательные порты или SoftwareSerial для вывода отладочной информации (вам понадобится адаптер для подключения к ПК).
 
-***Note:*** enabling debug mode will slow down your hardware processing speed up to 10 times.
+**Примечание:** включение режима отладки замедлит аппаратную производительность в 10 раз.
 
-## Geo DNS problem
+## Проблема с Geo DNS
 
-Geo DNS issue is no longer a problem. It was solved in 2017.
+Проблема с Geo DNS больше не является проблемой. Она была решена в 2017 году.
 
-## Reset password
+## Сброс пароля
 
-On login screen click on "Forgot password?" label and than type your email and ```Send``` button.
-You'll get instruction on your email.
+На экране входа нажмите "Forgot password?" (Забыли пароль?) а затем введите адрес электронной почты и кнопку ```Send```.
+Вы получите инструкции по электронной почте.
 
-### Android reset password flow
+### Android сброс пароля
 
-1. Open instruction email **from your smartphone or tablet**;
-2. Click on "Reset now" button in your email;
-3. Click on Blynk icon in below popup and reset the pass:
+1. Откройте инструкцию в электронной почте **со своего смартфона или планшета**;
+2. Нажмите кнопку «Reset now» в своем электронном письме;
+3. Нажмите на значок Blynk в всплывающем окне и сбросьте пароль:
 
-<img src="images/reset.png"/>
+<img src="../images/reset.png"/>
