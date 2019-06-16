@@ -1,26 +1,25 @@
-# Troubleshooting
+# Решение проблем
 
-## Connection
+## Соединение
 
-If you experience connection problems, follow these steps:
+Если у вас возникли проблемы с подключением, выполните следующие действия:
 
-1. Check that your hardware, wires, cables and power supply are good quality, not harmed or damaged, etc.  
-   Use high power USB cables and USB ports.
-2. Check your wiring using the examples (TCP/HTTP Client or similar) **provided with your shield and hardware**.
-   * Once you understand how to manage connection, it's much easier to use Blynk.
-3. Try running command ```telnet blynk-cloud.com 80``` from your PC, connected to the same network as your hardware.
-   You should see something like: ```Connected to blynk-cloud.com.```.
-4. Try running Blynk default examples for your platform **without modifications** to see if it is working.
-   * Double-check that you have selected **the right example** for your connection type and hardware model.
-   * Our examples come with **comments and explanations**. **Read them carefully.**
-   * Check that your Auth Token is valid (copied from the App and **doesn't contain spaces, etc.**)
-   * If it doesn't work, try looking into [serial debug prints](/#enable-debug).
-5. Done! Add your modifications and functionality. Enjoy Blynk!
+1. Убедитесь, что ваше оборудование, провода, кабели и блок питания находятся в исправном состоянии, не повреждены и т.д.      
+   Используйте качественные USB-кабели и USB-порты.
+2. Проверьте проводку, используя примеры (клиент TCP/HTTP или аналогичный), **прилагаемые к вашему оборудованию**.
+   * Как только вы поймете, как управлять соединением, использовать Blynk станет намного проще.
+3. Попробуйте запустить команду ```telnet blynk-cloud.com 80``` со своего ПК, подключенного к той же сети, что и ваше оборудование. Вы должны увидеть что-то вроде: ```Подключено к blynk-cloud.com```.
+4. Попробуйте запустить примеры Blynk по умолчанию для вашей платформы **без изменений**, чтобы увидеть, работают ли они.
+   * Дважды проверьте, что вы выбрали **правильный пример** для вашего типа подключения и модели оборудования.
+   * Наши примеры содержат **комментарии и объяснения**. **Читайте их внимательно.**
+   * Убедитесь, что ваш токен авторизации действителен (скопирован из приложения и **не содержит пробелов и т.п.**)
+   * Если это не работает, попробуйте заглянуть в [печать отладочной информации в порт](/#enable-debug).
+5. Готово! Добавьте свои модификации и функциональность. Наслаждайтесь Blynk!
 
-***Note:*** when you have multiple devices connected to your network, they should all have different MAC and IP addresses. For example, when using 2 Arduino UNO with Ethernet shields, flashing default example to both of them will cause connection problems. You should use [manual ethernet configuration](https://github.com/blynkkk/blynk-library/blob/master/examples/Boards_Ethernet/Arduino_Ethernet_Manual/Arduino_Ethernet_Manual.ino) example.
+**Примечание:** Если к вашей сети подключено несколько устройств, все они должны иметь разные MAC и IP-адреса. Например, при использовании двух Arduino UNO с Ethernet расширениями, пример по умолчанию для обоих из них вызовет проблемы с подключением. Вам следует использовать пример [ручная настройка Ethernet](https://github.com/blynkkk/blynk-library/blob/master/examples/Boards_Ethernet/Arduino_Ethernet_Manual/Arduino_Ethernet_Manual.ino).
 
-## WiFi network connection
-If you encounter WiFi connection problems, please check these pitfalls:
+## Подключение к сети WiFi
+Если у вас возникли проблемы с подключением по WiFi, пожалуйста, проверьте следующие ошибки:
 
 * You're trying to connect to "WPA & WPA2 Enterprise" network (often used in offices), and your shield does not support this security method
 * Your WiFi network has a login page that requests entering an access token (often used in restaurants)
@@ -28,7 +27,12 @@ If you encounter WiFi connection problems, please check these pitfalls:
 * There is a firewall running. Default port for hardware connections is 80 (8080 on the Local Server).
 Make sure it's open.
 
-## Delay
+* Вы пытаетесь подключиться к сети 'WPA & WPA2 Enterprise' (часто используется в офисах), а ваш шилд не поддерживает этот метод шифрования
+* В вашей WiFi-сети есть страница входа, которая запрашивает ввод ключа доступа (часто используется в ресторанах)
+* Безопасность вашей сети Wi-Fi запрещает полное подключение чужих устройств (фильтрация MAC-адресов и т.п.)
+* Работает Брандмауэр. Порт по умолчанию для аппаратных подключений - 80 (8080 на локальном сервере). Убедитесь, что он открыт.  
+
+## Задержки (Delay)
 
 If you use long ```delay()``` or send your hardware to sleep inside of the ```loop()``` expect connection drops and downgraded performance.
 
