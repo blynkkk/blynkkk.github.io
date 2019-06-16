@@ -1,8 +1,8 @@
-# Supported Hardware
+# Поддерживаемое оборудование
 
-Blynk supports more than 400 boards already, including support for Arduino, Particle, ARM mbed, TI Energia, MicroPython, Node.js, OpenWRT and many Single Board Computers. You can add your own connection types easily (see [these](https://github.com/blynkkk/blynk-library/tree/master/examples/More/ArduinoClient) examples for Arduino)!
+Blynk уже поддерживает более 400 плат, включая поддержку Arduino, Particle, ARM mbed, TI Energia, MicroPython, Node.js, OpenWRT и многих одноплатных компьютеров. Вы можете легко добавить свои собственные типы подключения (см. [здесь](https://github.com/blynkkk/blynk-library/tree/master/examples/More/ArduinoClient) примеры для Arduino)!
 
-## Platforms
+## Платформы
 
 - **Arduino** (https://github.com/blynkkk/blynk-library)
   - Arduino MKR WiFi 1010
@@ -10,19 +10,19 @@ Blynk supports more than 400 boards already, including support for Arduino, Part
   - Arduino MKR NB 1500
   - Arduino Uno, Duemilanove
   - Arduino Nano, Mini, Pro Mini, Pro Micro, Due, Mega
-  - Arduino 101 (Intel Curie, with BLE)
+  - Arduino 101 (Intel Curie, с BLE)
   - Arduino MKR1000
   - Arduino Zero
-  - Arduino Yún (onboard WiFi and Ethernet, via Bridge)
+  - Arduino Yún (включая WiFi и Ethernet, через Bridge)
   - Arduino.org UNO WiFi
-  - Arduino MKR VIDOR 4000 (use the example for MKR WiFi 1010)
-  - Arduino UNO WiFi Rev.2 (use the example for MKR WiFi 1010)
+  - Arduino MKR VIDOR 4000 (используйте пример для MKR WiFi 1010)
+  - Arduino UNO WiFi Rev.2 (используйте пример для MKR WiFi 1010)
   
-- **Arduino-like**
+- **Arduino-подобные**
   - Blynk Board
   - ESP8266 (Generic, NodeMCU, Witty Cloud, Huzzah, WeMos D1, Seeed Wio Link, etc.)
   - ESP32 (WiFi, BLE)
-  - Nordic nRF51/nRF52 - based boards
+  - Nordic nRF51/nRF52 - базовые платы
   - Teensy 3.2/3.1
   - Blue Pill (STM32F103C)
   - Realtek RTL8710 / Ameba via [RTLduino](https://github.com/pvvx/RtlDuino)
@@ -48,7 +48,7 @@ Blynk supports more than 400 boards already, including support for Arduino, Part
   - chipKIT Uno32
   - Alorium XLR8 (FPGA)
   - LinkIt ONE (WiFi only)
-- **Energia**
+- **Энергеия**
   - Texas Instruments
     - CC3220SF-LaunchXL
     - CC3200-LaunchXL
@@ -58,7 +58,7 @@ Blynk supports more than 400 boards already, including support for Arduino, Part
     - LaunchPad MSP432
   - RedBearLab (CC3200, WiFi Mini)
 
-- **Particle** https://github.com/vshymanskyy/blynk-library-spark)
+- **Particle** (https://github.com/vshymanskyy/blynk-library-spark)
   - Core
   - Photon
   - Electron
@@ -97,9 +97,9 @@ Blynk supports more than 400 boards already, including support for Arduino, Part
 - **Lua** (https://github.com/blezek/blynk-esp)
   - NodeMCU
 
-## Arduino connection types
+## Типы подключения Arduino
 
-- USB (Serial), connected to your laptop or desktop
+- USB (Serial), подключенный к ноутбуку или компьютеру
 
 - **Ethernet**
   - Arduino MKR ETH
@@ -109,7 +109,7 @@ Blynk supports more than 400 boards already, including support for Arduino, Part
   - ENC28J60-based modules
  
 - **WiFi**
-  - ESP8266 as WiFi modem (running original firmware)
+  - ESP8266 as WiFi modem (работает с оригинальной прошивкой)
   - Arduino WiFi 101 Shield
   - Arduino WiFi Shield
   - WIZnet WizFi310
@@ -137,16 +137,16 @@ Blynk supports more than 400 boards already, including support for Arduino, Part
   - Adafruit FONA (Mini Cellular GSM Breakout)
   - Adafruit FONA 800/808 Shield
 
-## Made by Community
+## Сделано сообществом
 
 - [Marvell® EZ-Connect™ MW300/MW302](https://github.com/vshymanskyy/blynk-library-ez-connect)
 - [WIZnet-W5500-EVB](http://instructables.com/id/WIZnet-W5500-EVB-and-Blynk-App-communication)
 - [LabVIEW](https://github.com/juncaofish/NI-LabVIEWInterfaceforBlynk)
 - [Node-RED](https://github.com/gablau/node-red-contrib-blynk-ws) (can be used as bridge to HTTP, TCP, UDP, MQTT, XMPP, IRC, OSC...)
 
-## Problematic Boards
+## Проблемные платы
 
-These boards are not supported and do not work out of the box:
+Эти платы не поддерживаются и не работают из коробки:
 - [Arduino Tian](http://www.arduino.org/products/boards/arduino-tian)
 
-Here is a list of [**known library issues**](https://github.com/blynkkk/blynk-library/issues?q=is%3Aissue+label%3A"for+reference"+)
+Здесь список [**известных проблем с библиотекой Blynk**](https://github.com/blynkkk/blynk-library/issues?q=is%3Aissue+label%3A"for+reference"+)
