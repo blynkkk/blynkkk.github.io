@@ -1,5 +1,5 @@
 # HTTP RESTful API
-Blynk HTTP RESTful API allows to easily read and write values of Pins in Blynk apps and Hardware.  
-API description can be found [here](http://docs.blynkapi.apiary.io).
-**Warning**: Blynk HTTP API still has GEO DNS issue. This means, for now you need to use direct server IP instead of
-hostname in order to make it work with 3-d party services like IFTTT.
+
+Blynk HTTP RESTful API позволяет легко считывать и записывать значения Pins в приложениях Blynk и Hardware.
+Описание API можно найти [здесь](http://docs.blynkapi.apiary.io).
+**Предупреждение**: Blynk HTTP API все еще имеет проблему с GEO DNS. Это означает, что сейчас вам нужно использовать прямой IP-адрес сервера вместо WEB-имени, чтобы заставить его работать с такими сторонними сервисами, как IFTTT.
