@@ -1,18 +1,23 @@
-# Blynk server
-Blynk Server is an Open Source Java server, responsible for forwarding messages between Blynk mobile application and 
-various microcontroller boards (i.e. Arduino, Raspberry Pi. etc).
+# Сервер Blynk
 
-Download latest server build:
+Сервер Blynk - это Java-сервер с открытым исходным кодом, отвечающий за пересылку сообщений между мобильным приложением Blynk и различными платами микроконтроллеров (например, Arduino, Raspberry Pi и т. д.).
 
-[Download Blynk Server >](https://github.com/blynkkk/blynk-server/releases)
+Загрузите последнюю сборку сервера:
 
-## Why do I need Local Blynk Server?
+[Сервер Blynk >](https://github.com/blynkkk/blynk-server/releases)
+
+## Зачем мне нужен локальный сервер Blynk?
 
 - Better security. You are the only one who knows about the server. You can setup security policies tied to your specific needs (MAC, IPs, login names, etc). You can also make it accessible only within your private network.
 - Better stability. No need to rely on 3rd party Cloud solution. You have the full control.
 - Lower latency. Server is as close to you as it could be. 
 - Maximum privacy. All data is stored locally and is not shared with anyone.
 
-## Installing your own Local Blynk Server
+- Лучшая безопасность. Вы единственный, кто знает о сервере. Вы можете настроить политики безопасности в соответствии с вашими потребностями (MAC, IP-адреса, имена входа и т. Д.). Вы также можете сделать его доступным только в вашей частной сети.
+- Лучшая стабильность. Не нужно полагаться на стороннее облачное решение. У вас есть полный контроль.
+- Меньшая задержка обработки команд. Сервер как можно ближе к вам.
+- Максимальная конфиденциальность. Все данные хранятся локально и не передаются никому.
 
-For detailed instruction please follow [github page](https://github.com/blynkkk/blynk-server#blynk-server).
+## Установка вашего собственного локального сервера Blynk
+
+Для получения подробных инструкций, пожалуйста прочитайте [страницу GitHub](https://github.com/blynkkk/blynk-server#blynk-server).
