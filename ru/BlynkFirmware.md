@@ -1,55 +1,54 @@
-#Blynk Firmware
-## Configuration
+# Прошивка Blynk
+## Конфигурация
 
 ### Blynk.begin()
 
-The easiest way to configure Blynk is to use ```Blynk.begin()```:
+Самый простой способ настроить Blynk - это использовать функцию ```Blynk.begin()```:
 
 ```cpp
 Blynk.begin(auth, ...);
 ```
-It has multiple parameters for different hardware models and it also depends on the type of connection. Follow the example sketches for your specific hardware model.
 
-What happens inside of ```Blynk.begin()``` function:
+Она имеет несколько параметров для разных моделей оборудования, а также зависит от типа подключения. Следуйте примеру скетча для вашей конкретной аппаратной модели.
 
-1. Connection to the network (WiFi, Ethernet, ...)
-2. Call of ```Blynk.config(...)``` to set Auth Token, Server Address, etc.
-3. Attempts to connect to the server once (can block for more than 30s)
+Что происходит внутри функции ```Blynk.begin()```:
 
-If your shield/connection type is not supported yet - you can implement it by yourself. [Here are some examples](https://github.com/blynkkk/blynk-library/tree/master/examples/More/ArduinoClient).
+1. Подключение к сети (WiFi, Ethernet, ...)
+2. Вызов ```Blynk.config (...)``` для установки токена авторизации, адреса сервера и т.д.
+3. Пытается сразу подключиться к серверу (может продлится в течении 30 сек)
+
+Если ваш тип платы/подключения пока не поддерживается - вы можете реализовать его самостоятельно. [Вот несколько примеров]https://github.com/blynkkk/blynk-library/tree/master/examples/More/ArduinoClient).
 
 ### Blynk.config()
 
-```config()``` allows you to manage network connection. You can set up your connection type (WiFi, Ethernet, ...) by yourself, and then call:
+```config()``` позволяет управлять сетевым подключением. Вы можете настроить тип подключения (WiFi, Ethernet, ...) самостоятельно, а затем соединиться:
 
 ```cpp
 Blynk.config(auth, server, port);
 ```
-or just
+или так
 ```cpp
 Blynk.config(auth);
 ```
 
-**NOTE: After ``` Blynk.config(...) ``` is called, your hardware is not yet connected to the server.** 
-It will try to connect while until it hits first instance of ``` Blynk.run() ``` or ``` Blynk.connect() ```routine.  
-To skip connecting to the server or to disconnect manually, call ``` Blynk.disconnect() ``` after configuration.
+**ПРИМЕЧАНИЕ. После вызова ```Blynk.config (...)``` ваше оборудование еще не подключено к серверу.**
+Попытка покдлючение произойдет при выполнении программой первой функции ```Blynk.run ()``` или ```Blynk.connect()```. Чтобы пропустить подключение к серверу или отключить его вручную, вызовите ```Blynk.disconnect()``` после функции конфигурации.
 
-Use ```connectWiFi``` to conveniently set up WiFi connection:
+Используйте `connectWiFi` чтобы удобно настроить WiFi соединение:
 
 ```cpp
 Blynk.connectWiFi(ssid, pass);
 ```
-To connect to open WiFi networks, set pass to an empty string (```""```).
+Чтобы подключиться к открытой сети WiFi, укажите пустую строку (``""``).
 
-## Connection management
+## Управление соединением
 
-There are several functions to help with connection management:
+Есть несколько функций, которые помогут с управлением соединением:
 
 ### Blynk.connect()
-
-This functions will continue trying to connect to Blynk server. 
-Returns `true` when connected, `false` if timeout have been reached.
-Default timeout is 30 seconds.
+Эта функция будет продолжать попытки подключиться к серверу Blynk.
+Возвращает `true` при подключении, `false`, если истекло время ожидания.
+Время ожидания по умолчанию составляет 30 секунд.
 
 ```cpp
 bool result = Blynk.connect();
@@ -57,52 +56,47 @@ bool result = Blynk.connect(timeout);
 ```
 
 ### Blynk.disconnect()
-
-Disconnects hardware from Blynk server:
+Отключает оборудование от сервера Blynk:
 
 ```cpp
 Blynk.disconnect();
 ```
 
 ### Blynk.connected()
-Returns `true` when hardware is connected to Blynk Server, `false` if there is no active connection to Blynk server.
+Возвращает `true`, когда оборудование подключено к Серверу Blynk,` false`, если нет активного подключения к серверу Blynk.
 
 ```cpp
 bool result = Blynk.connected();
 ```
 
 ### Blynk.run()
-This function should be called frequently to process incoming commands and perform housekeeping of Blynk connection.
-It is usually called in ``` void loop() {} ```.
+Эта функция должна вызываться часто, чтобы обрабатывать входящие команды и выполнять поддреживать соединения с Сервером Blynk.
+Обычно вызывается в цикле ```void loop () {}```.
 
-This command can be initiated it in other places of your code unless you run out of heap memory (in the cascaded functions with local memory).
+Эта команда может быть инициирована в других местах вашего кода, если только у вас не заканчивается памяти (в каскадных функциях с локальной памятью).
+Например, не рекомендуется вызывать ```Blynk.run ()``` внутри ```BLYNK_READ``` и ```BLYNK_WRITE``` на устройствах с маленькой оперативной памятью.
 
-For example, it is not recommended to call ``` Blynk.run() ``` inside of the  ```BLYNK_READ ``` and ``` BLYNK_WRITE ``` functions on low-RAM devices.
-
-## Digital & Analog pins control
-Blynk library can perform basic pin IO (input-output) operations out-of-the-box:
+## Управление цифровыми и аналоговыми пинами
+Библиотека Blynk может выполнять основные операции ввода-вывода "из коробки":
 
     digitalRead
     digitalWrite
     analogRead
-    analogWrite (PWM or Analog signal depending on the platform)
+    analogWrite (ШИМ или Аналоговый сигнал в зависимости от платформы)
 
-No need to write code for simple things like LED, Relay control and analog sensors. Just choose a corresponding Pin in Blynk app and control it directly with no additional code
+Нет необходимости писать код для простых вещей, таких как светодиод, реле управления и аналоговые датчики. Просто выберите соответствующий пин в приложении Blynk и управляйте им напрямую без дополнительного кода
 
-## Virtual pins control
-Virtual Pins is a way to exchange any data between your hardware and Blynk app. 
-Think about Virtual Pins as channels for sending any data. Make sure you differentiate Virtual Pins from physical GPIO
-pins on your hardware. Virtual Pins have no physical representation.
+## Управление виртуальными пинами
+Виртуальные пины (Virtual Pins) - это способ обмена любыми данными между вашим оборудованием и приложением Blynk.
+Думайте о виртуальных пинах как о каналах для приема/передачи любых данных. Убедитесь, что вы различаете виртуальные контакты от физических GPIO пинов на вашем оборудовании. Виртуальные контакты не имеют физического представления.
 
-Virtual Pins are commonly used to interface with other libraries (Servo, LCD and others) and implement custom logic. 
-The device can send data to the App using  ```Blynk.virtualWrite(pin, value)``` and receive data from the App using ```BLYNK_WRITE(vPIN)```. Read below
+Виртуальные пины обычно используются для взаимодействия с другими библиотеками (Servo, LCD и др.) и реализации пользовательской логики.
+Устройство может отправлять данные в приложение, используя ```Blynk.virtualWrite (pin, value)```, и получать данные из приложения, используя ```BLYNK_WRITE (vPIN)```. Читайте ниже...
 
-#### Virtual Pin data types
-All Virtual Pin values are always sent as Strings and there are no practical limits on the data that can be sent.  
-However, there are certian limitations on the hardware side when dealing with numbers. For example, the integer on Arduino 
-is 16-bit, allowing range -32768 to 32767.
+#### Типы данных Виртуальных пинов
+Все значения виртуальных пинов всегда отправляются в виде строк, и нет никаких практических ограничений на данные, которые могут быть отправлены. Однако при работе с числами существуют определенные ограничения на аппаратную часть. Например, целое число на Arduino - 16-бит, допустимый диапазон значений от -32768 до 32767.
 
-To interpret incoming data as Integers, Floats, Doubles and Strings use:
+Чтобы интерпретировать входящие данные как целые числа, числа с плавающей запятой, двойные числа и строки, используйте:
 
 ```cpp
 param.asInt();
@@ -111,7 +105,7 @@ param.asDouble();
 param.asStr();
 ```
 
-You can also get the RAW data from the param buffer:
+Вы также можете получить RAW данные из буфера параметров:
 
 ```cpp
 param.getBuffer()
@@ -120,77 +114,75 @@ param.getLength()
 
 ### Blynk.virtualWrite(vPin, value)
 
-**NOTE: Use BlynkTimer when you use this command to send data. Otherwise your hardware will be disconnected from the server**
+**ПРИМЕЧАНИЕ. Используйте BlynkTimer при использовании этой команды для отправки данных. В противном случае ваше оборудование будет терять связь с сервером**
 
-Send data in various formats to Virtual Pins.
+Отправка данных в различных форматах на виртуальные пины.
 
 ```cpp
-// Send string
+// ОТправка строки
 Blynk.virtualWrite(pin, "abc");
 
-// Send integer
+// Отправка числа
 Blynk.virtualWrite(pin, 123);
 
-// Send float
+// Отправка дробного числа
 Blynk.virtualWrite(pin, 12.34);
 
-// Send multiple values as an array
+// ОТправка массива значений
 Blynk.virtualWrite(pin, "hello", 123, 12.34);
 
-// Send RAW data
+// ОТправка RAW данных
 Blynk.virtualWriteBinary(pin, buffer, length);
 ```
 
-Calling ```virtualWrite``` attempts to send the value to the network immediately.
+Вызов ```virtualWrite``` пытается немедленно отправить значение в сеть.
 
-**Note:** For virtual pins with numbers > 127, the `V128` syntax is not available.  
-Please use plain virtual pin number, for example:
+**Примечание:** Для виртуальных контактов с номерами больше 127 синтаксис `V128` недоступен.
+
+Пожалуйста, используйте простой виртуальный пин-код, например:
 ```cpp
 Blynk.virtualWrite(128, "abc");
 ```
 
 ## BlynkTimer
-It's important to send data in intervals and keep the void loop() as clean as possible. 
+Важно посылать данные с интервалами и сохранять цикл void () как можно более свободным.
 
-`BlynkTimer` allows you to send data periodically with given intervals not interfering with Blynk library routines 
-`Blynk Timer` inherits [SimpleTimer Library](http://playground.arduino.cc/Code/SimpleTimer), a well known and widely used library to time multiple events on hardware.
-`BlynkTimer` is included in Blynk library by default and there is no need to install SimpleTimer separately or include `SimpleTimer.h`   
+`BlynkTimer` позволяет периодически отправлять данные с заданными интервалами, не мешая работе библиотеки Blynk
+`BlynkTimer` наследует [SimpleTimer Library](http://playground.arduino.cc/Code/SimpleTimer), хорошо известную и широко используемую библиотеку для обработки нескольких событий на оборудовании.
+`BlynkTimer` включен в библиотеку Blynk по умолчанию и нет необходимости устанавливать SimpleTimer отдельно или включать `SimpleTimer.h`   
 
-- A single `BlynkTimer` object allows to schedule up to 16 timers
-- Improved compatibility with boards like `Arduino 101`, `Intel Galileo`, etc.
-- When a timer struggles to run multiple times (due to a blocked `loop`), it just skips all the missed intervals, and calls your function only once. This differs from `SimpleTimer`, which could call your function multiple times in this scenario.
+- Один объект `BlynkTimer` позволяет планировать до 16 таймеров.
+- Улучшена совместимость с такими платами, как `Arduino 101`, `Intel Galileo` и т.д.
+- Когда таймер пытается запуститься несколько раз (из-за заблокированного цикла), он просто пропускает все пропущенные интервалы запуска и вызывает вашу функцию только один раз. Это отличается от `SimpleTimer`, который может вызывать вашу функцию несколько раз в этом сценарии.
 
-For more information on timer usage, please see: http://playground.arduino.cc/Code/SimpleTimer  
-And here is a BlynkTimer [example sketch](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino#L30).
+Для получения дополнительной информации об использовании таймера, пожалуйста [посмотрите](http://playground.arduino.cc/Code/SimpleTimer).
+А вот и BlynkTimer [пример скетча](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino#L30).
 
-Please also remember that a single ```BlynkTimer``` can schedule many timers, so most probably you need only one instance of BlynkTimer in your sketch.
-
+Также помните, что один экземпляр ```BlynkTimer``` может запланировать до 16 таймеров, поэтому, скорее всего, вам понадобится только один экземпляр BlynkTimer в вашем скетче.
 
 ### BLYNK_WRITE(vPIN)
+```BLYNK_WRITE``` это функция, вызывается каждый раз, когда устройство получает обновление значения виртуального пина от сервера (или приложения):
 
-```BLYNK_WRITE``` is a function called every time device gets an update of Virtual Pin value from the server (or app):
-
-To read the received data use:
+Для чтения полученных данных используйте код:
 
 ```cpp
 BLYNK_WRITE(V0)
 {   
-  int value = param.asInt(); // Get value as integer
+  int value = param.asInt(); // Получить значение как целое число
   
-  // The param can contain multiple values, in such case:
+  // Параметр может содержать несколько значений, в таком случае:
   int x = param[0].asInt();
   int y = param[1].asInt();
 }
 ```
 
-**`BLYNK_WRITE` can't be used inside of any loop or function. It's a standalone function.**
+**`BLYNK_WRITE` нельзя использовать внутри какого-либо цикла или функции. Это отдельная функция.**
 
-**Note:** For virtual pins with numbers > 127, please use `BLYNK_WRITE_DEFAULT()` API
-
+**Примечание:** Для виртуальных контактов с номерами > 127 используйте API `BLYNK_WRITE_DEFAULT()`
 
 ### BLYNK_READ(vPIN)
 
-```BLYNK_READ``` is function called when device is requested to send it's current value of Virtual Pin to the server. Normally, this function should contain ```Blynk.virtualWrite``` call(s).
+```BLYNK_READ``` - это функция, вызывается, когда от устройства требуется отправить текущее значение Виртуального пина на сервер. Обычно эта функция содержит вызов ```Blynk.virtualWrite```.
 
 ```cpp
 BLYNK_READ(V0)
@@ -199,77 +191,76 @@ BLYNK_READ(V0)
 }
 ```
 
-**Note:** For virtual pins with numbers > 127, please use `BLYNK_READ_DEFAULT()` API
+**Примечание:** Для виртуальных пинов с номерами более 127 используйте API `BLYNK_READ_DEFAULT()`
 
 ### BLYNK_WRITE_DEFAULT()
 
-Redefines the handler for all pins that are not covered by custom ```BLYNK_WRITE``` functions.
+Переопределяет обработчик для всех выводов, которые не покрыты пользовательскими функциями ```BLYNK_WRITE```.
 
 ```cpp
 BLYNK_WRITE_DEFAULT()
 {
-  int pin = request.pin;      // Which exactly pin is handled?
-  int value = param.asInt();  // Use param as usual.
+  int pin = request.pin;      // Какой именно пин обрабатывается?
+  int value = param.asInt();  // Используйте param как обычно.
 }
 ```
 
 ### BLYNK_READ_DEFAULT()
 
-Redefines the handler for all pins that are not covered by custom ```BLYNK_READ``` functions.
+Переопределяет обработчик для всех выводов, которые не покрыты пользовательскими функциями ```BLYNK_READ```.
 
 ```cpp
 BLYNK_READ_DEFAULT()
 {
-  int pin = request.pin;      // Which exactly pin is handled?
+  int pin = request.pin;      // Какой именно пин обрабатывается?
   Blynk.virtualWrite(pin, newValue);
 }
 ```
 
 ### BLYNK_CONNECTED()
 
-Use this function when you need to run certain routine when hardware connects to Blynk Cloud or private server. It's common to call sync functions inside of this function.
+Используйте эту функцию, когда вам нужно запустить определенную процедуру, когда оборудование подключается к Blynk Cloud или локльному серверу. Чаще всего вызывают эту функцию для синхронизации значений Сервер-Приложение-Оборудование.
 
 ```cpp
 BLYNK_CONNECTED() {
-// Your code here
+// Здесь Ваш код
 }
 ```
 
 ### BLYNK_APP_CONNECTED()
 
-This function is called every time Blynk app client connects to Blynk server.
+Эта функция вызывается каждый раз, когда клиент приложения Blynk подключается к серверу Blynk.
 
 ```cpp
 BLYNK_APP_CONNECTED() {
-// Your code goes here
+// Здесь Ваш код
 }
 ```
+**Примечание:** Сначала включите эту функцию в настройках проекта:
 
-**Note: Ennable this feature in Project Settings first:**
+<img src="../images/app_connected_setting.png" style="width: 200px; height:360px"/>
 
-<img src="images/app_connected_setting.png" style="width: 200px; height:360px"/>
-
-[Example](https://github.com/blynkkk/blynk-library/blob/master/examples/More/AppConnectedEvents/AppConnectedEvents.ino)
+[Пример](https://github.com/blynkkk/blynk-library/blob/master/examples/More/AppConnectedEvents/AppConnectedEvents.ino)
 
 ### BLYNK_APP_DISCONNECTED()
 
-This function is called every time the Blynk app disconnects from Blynk Cloud or private server.
+Эта функция вызывается каждый раз, когда приложение Blynk отключается от Blynk Cloud или локального сервера.
 
 ```cpp
 BLYNK_APP_DISCONNECTED() {
-// Your code here
+// Здесь Ваш код
 }
 ```
 
-**Note: Enable this feature in Project Settings first:**
+**Примечание.** Сначала включите эту функцию в настройках проекта:
 
-<img src="images/app_connected_setting.png" style="width: 200px; height:360px"/>
+<img src="../images/app_connected_setting.png" style="width: 200px; height:360px"/>
 
-[Example](https://github.com/blynkkk/blynk-library/blob/master/examples/More/AppConnectedEvents/AppConnectedEvents.ino)
+[Пример](https://github.com/blynkkk/blynk-library/blob/master/examples/More/AppConnectedEvents/AppConnectedEvents.ino)
 
 ### Blynk.syncAll()
 
-Requests all stored on the server latest values for all widgets. All analog/digital/virtual pin values and states will be set to the latest stored value. Every virtual pin will generate BLYNK_WRITE() event.
+Запрашивает все сохраненные на сервере последние значения для всех виджетов. Все аналоговые/цифровые/виртуальные значения и состояния выводов будут установлены на последнее сохраненное значение. Каждый виртуальный вывод генерирует событие BLYNK_WRITE ().
 
 ```cpp
 BLYNK_CONNECTED() {
@@ -277,15 +268,17 @@ BLYNK_CONNECTED() {
 }
 ```
 
+**Примечание:** Рекомендиуется использовать только на стадии написания кода (иногда возникают ошибки). Для надежности следует применять выборочную синхронзацию ``syncVirtual``.
+
 ### Blynk.syncVirtual(vPin)
 
-This command updates individual Virtual Pin to the latest stored value on the server. When it's used, a corresponding ```BLYNK_WRITE``` handler is called.
+Эта команда обновляет отдельный виртуальный пин до последнего сохраненного значения на сервере. Когда он используется, вызывается соответствующий обработчик ```BLYNK_WRITE```.
 
 ```cpp
 Blynk.syncVirtual(V0);
 ```
 
-To update multiple pins, use:
+Чтобы обновить несколько контактов, используйте код:
 
 ```
 Blynk.syncVirtual(V0, V1, V6, V9, V16);
@@ -293,23 +286,22 @@ Blynk.syncVirtual(V0, V1, V6, V9, V16);
 
 ### Blynk.setProperty(vPin, "property", value)
 
-This command allows [changing widget properties](#blynk-main-operations-change-widget-properties)
+Эта команда позволяет [изменить свойства виджета](#blynk-main-operations-change-widget-properties)
 
-
-## Debugging
+## Отладка
 
 ### #define BLYNK_PRINT
 ### #define BLYNK_DEBUG
 
-To enable debug prints on the default Serial port add on the top of your sketch 
-**IMPORTANT: This should be the first line in your code**:
+Чтобы включить отладочную информацию на последовательном порту по умолчанию, добавьте в начало скетча.
+**ВАЖНО: это должна быть первая строка в вашем коде**:
 
 ```cpp
-#define BLYNK_PRINT Serial // Defines the object that is used for printing
-#define BLYNK_DEBUG        // Optional, this enables more detailed prints
+#define BLYNK_PRINT Serial // Определяет объект/порт, который используется для вывода
+#define BLYNK_DEBUG        // Опционально, включает детализированный вывод
 ```
 
-Then enable Serial Output in setup():
+Обязательно включите последовательный вывод в ``setup()``:
 
 ```cpp
 Serial.begin(9600);
