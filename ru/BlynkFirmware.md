@@ -306,15 +306,15 @@ Blynk.syncVirtual(V0, V1, V6, V9, V16);
 ```cpp
 Serial.begin(9600);
 ```
-Open Serial Monitor and you'll see the debug prints.
+Откройте Serial Monitor, и вы увидите отладочные данные.
 
-You can also use spare Hardware serial ports or SoftwareSerial for debug output (you will need an adapter to connect to it with your PC).
+Вы также можете использовать запасные аппаратные последовательные порты или SoftwareSerial для вывода отладочной информации (вам понадобится адаптер для подключения к ПК).
 
-<span style="color:#D3435C;">**WARNING:** Enabling ```BLYNK_DEBUG``` will slowdown your hardware processing speed up to 10 times!</span>
+<span style="color:#D3435C;">**ПРЕДУПРЕЖДЕНИЕ:** Включение ```BLYNK_DEBUG```' замедлит вашу аппаратную производительность в 10 раз!</span>
 
 ### BLYNK_LOG()
 
-When ```BLYNK_PRINT``` is defined, you can use ```BLYNK_LOG``` to print your logs. The usage is similar to ```printf```:
+Когда параметр ```BLYNK_PRINT``` определен, вы можете использовать ```BLYNK_LOG``` для записи ваших LOG журналов. Используется похоже на ```printf```:
 
 ```cpp
 BLYNK_LOG("This is my value: %d", 10);
@@ -322,6 +322,8 @@ BLYNK_LOG("This is my value: %d", 10);
 
 On some platforms (like Arduino 101) the ```BLYNK_LOG``` may be unavailable, or may just use too much resources.  
 In this case you can use a set of simpler log functions:
+
+На некоторых платформах (например, Arduino 101) ```BLYNK_LOG``` может быть недоступен или просто использовать слишком много ресурсов. В этом случае вы можете использовать набор более простых функций журнала:
 
 ```cpp
 BLYNK_LOG1("Hello World"); // Print a string
@@ -331,17 +333,21 @@ BLYNK_LOG4("Temperature: ", 24, " Humidity: ", 55); // Print 4 values
 ...
 ```
 
-## Minimizing footprint
+## Минимизация объема кода
 
-To minimize the program Flash/RAM, you can disable some of the built-in functionality:
+Чтобы свести к минимуму объем программы Flash/RAM памяти, вы можете отключить некоторые встроенные функции:
 
 1. Comment-out ```#define BLYNK_PRINT``` to remove prints
 2. Put on the top of your sketch:
+
+1. Закомментируйте ```#define BLYNK_PRINT``` для отмены печати порт
+2. Поместите верхнюю часть вашего скетча:
+
 ```
-#define BLYNK_NO_BUILTIN   // Disable built-in analog & digital pin operations
-#define BLYNK_NO_FLOAT     // Disable float operations
+#define BLYNK_NO_BUILTIN   // Отключить встроенные аналоговые и цифровые контакты
+#define BLYNK_NO_FLOAT     // Отключить операции с плавающей точкой
 ```
 
-## Porting, hacking
+## Портирование, взлом
 
-If you want to dive into crafting/hacking/porting Blynk library implementation, please also check [this documentation](https://github.com/blynkkk/blynk-library/tree/master/extras/docs).
+Если вы хотите погрузиться в создание/взлом/портирование реализации библиотеки Blynk, пожалуйста, также ознакомтесь [с этой документацией](https://github.com/blynkkk/blynk-library/tree/master/extras/docs).
