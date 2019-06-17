@@ -1,4 +1,4 @@
-#Links
+# Ссылочная информация
 
 * [Blynk site](https://www.blynk.cc)
 * [Blynk community](https://community.blynk.cc)
