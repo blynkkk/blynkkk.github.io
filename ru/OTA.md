@@ -1,79 +1,76 @@
-#OTA
+# Обновление "по воздуху" (OTA)
 
-Blynk also supports over the air updates for - ESP8266, NodeMCU and SparkFun Blynk boards. OTA supported only 
-for the private servers and for the paid customers for now.
+Blynk также поддерживает беспроводное обновления для плат ESP8266, NodeMCU и SparkFun Blynk. На данный момент ОТА поддерживается только для частных серверов и для платных клиентов.
 
-## How does it work?
+## Как это работает?
 
- - You need to use [regular sketch for exported apps](https://github.com/blynkkk/blynk-library/tree/master/examples/Blynk.Inject/Template_ESP8266);
- - After you launched your hardware you are ready for OTA;
- - You can trigger the firmware update for the specific hardware via it's token or for all hardware.
+ - Вам нужно использовать [обычный скетч для экспортируемых приложений](https://github.com/blynkkk/blynk-library/tree/master/examples/Blynk.Inject/Template_ESP8266);
+ - После того, как вы запустили свое оборудование, все готово к обвнолению "по воздуху";
+ - Вы можете запустить обновление прошивки для конкретного оборудования через его токен или для всего оборудования в сети.
  
-### Flow 
+### Заливка прошивки
   
- 1. User triggers OTA with one of below HTTPS request;
- 2. User provides within HTTPS request admin credentials and firmware binary file to update hardware with;
- 3. When hardware connects to server - server checks it firmware. In case, hardware firmware build date differs from 
- uploaded firmware, than server sends special command to hardware with url for the new firmware;
- 4. Hardware processes url with below [handler](https://github.com/blynkkk/blynk-library/blob/master/examples/Blynk.Inject/Template_ESP8266/OTA.h#L31): 
+1. Пользователь запускает OTA одним из нижеуказанных HTTPS-запросов;
+2. Пользователь предоставляет в HTTPS-запросе учетные данные администратора и двоичный файл прошивки для обновления оборудования;
+3. Когда оборудование подключается к серверу - сервер проверяет его прошивку. В случае, если дата сборки аппаратной прошивки старше загруженной прошивки, сервер отправляет на аппаратное обеспечение специальную команду с URL для новой прошивки;
+4. Оборудование обработает указанный URL-адрес таким [обработчиком](https://github.com/blynkkk/blynk-library/blob/master/examples/Blynk.Inject/Template_ESP8266/OTA.h#L31):
+ 
     ```
       BLYNK_WRITE(InternalPinOTA) {
-        //url to get firmware from. This is HTTP url
+        //URL адрес с прошивкой. Возможен только HTTP адрес
         //http://localhost:8080/static/ota/FUp_2441873656843727242_upload.bin
         overTheAirURL = param.asString();
         ...
       }
     ```
-    
-  5. Hardware downloads new firmware and starts flashing firmware;  
 
-## Trigger update for the specific hardware
+5. Обрудование самостоятельно загружает новую прошивку и начинает обновление;
+
+## Выборочное обновление для конкретного оборудования
 
 ```
 curl -v -F file=@Template_ESP8266.ino.nodemcu.bin --insecure -u admin@blynk.cc:admin https://localhost:9443/admin/ota/start?token=123
 ```
 
- - ```Template_ESP8266.ino.nodemcu.bin``` - is relative (or full) path to your firmware;
- - ```--insecure``` flag for servers with self-generated certificates. You don't need this flag if you used Let's Encrypt or other trusted certificates;
- - ```admin@blynk.cc:admin``` admin credentials to your server. This is default ones. Format is ```username:password```. You can change it in ```server.properties``` file;
- - ```token``` is token of your hardware you want apply the firmware update to. The firmware update will be initiated only in case device is online;
+ - ```Template_ESP8266.ino.nodemcu.bin``` - относительный (или полный) путь к вашей прошивке;
+ - ```--insecure``` флаг для серверов с самостоятельно созданными сертификатами. Вам не нужен этот флаг, если вы использовали Let's Encrypt или другие доверенные сертификаты;
+ - ```admin@blynk.cc:admin``` учетные данные администратора на вашем сервере. Указаны значения по умлочанию. Формат: ```username:password```. Вы можете изменить имя пользователя и пароль в файле ```server.properties```;
+ - ```token``` ключь является признаком вашего оборудования, к которому вы хотите применить обновление прошивки. Обновление прошивки будет начато только в том случае, если устройство подключено к сети;
 
-## Trigger OTA for all devices
+## Обновление "по воздуху" для всех устройств
  
-Update for all devices will be triggered only when they are connected to the cloud. You need to remove the token part for that.
+Обновление для всех устройств будет запускаться только тогда, когда они подключены к облаку. Для этого вам нужно удалить часть с токен ключом.
 
 ```
 curl -v -F file=@Template_ESP8266.ino.nodemcu.bin --insecure -u admin@blynk.cc:admin https://localhost:9443/admin/ota/start
 ```
 
-In that case, OTA will be triggered right after device connected to the server. In case device is online firmware update 
-will be initiated only when device will be connected again.
+В этом случае OTA будет срабатывать сразу после подключения устройства к серверу. Если устройство подключено к сети, обновление встроенного ПО будет начато только после повторного подключения устройства.
 
-## Trigger OTA for the specific user
+## Обновление "по воздуху" от конкретного пользователя
 
-In that case firmware update will be triggered for all devices of specified user. 
+В этом случае обновление прошивки будет срабатывать для всех устройств, указанных пользователем.
 
 ```
 curl -v -F file=@Template_ESP8266.ino.nodemcu.bin --insecure -u admin@blynk.cc:admin https://localhost:9443/admin/ota/start?user=pupkin@gmail.com
 ```
 
-## Trigger OTA for specific user and project
+## Обновление "по воздуху" для конкретного пользователя и проекта
 
-In that case firmware update will be triggered for all devices of specified user within specified project. 
+В этом случае обновление прошивки будет срабатывать для всех устройств указанного пользователя в указанном проекте.
 
 ```
 curl -v -F file=@Template_ESP8266.ino.nodemcu.bin --insecure -u admin@blynk.cc:admin https://localhost:9443/admin/ota/start?user=pupkin@gmail.com&project=123
 ```
 
-## Stop OTA
+## Остановка OTA
 
 ```
 curl -v --insecure -u admin@blynk.cc:admin https://localhost:9443/admin/ota/stop
 ```
 
-## How to make firmware
+## Как сделать бинарную прошивку 
 
-In order to make firmware in Arduino IDE - go to menu: Sketch -> Export compiled Binary.
+Чтобы сделать прошивку в Arduino IDE - зайдите в меню: Скетч -> Экспорт бинарного файла.
 
-
-*NOTE:* ESP8266 right now takes firmware only via HTTP. And not HTTPS.
+**ПРИМЕЧАНИЕ:** ESP8266 принимает прошивку только по протоколу HTTP, а не HTTPS.
