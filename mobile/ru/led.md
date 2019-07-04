@@ -34,4 +34,4 @@ Blynk.setProperty(V1, "color", "#D3435C");
 
 **Примечание:** Виджеты рабочего стола для локальных серверов Blynk требуют открыть порт 8080.
 
-**Пример кода:** [Базовый пример](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/LED/LED_Blink/LED_Blink.ino)
+**Пример кода:** [Диод](https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/LED/LED_Blink/LED_Blink.ino)
