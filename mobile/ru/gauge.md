@@ -57,4 +57,4 @@ Blynk.setProperty(V1, "label", "Мое значение метки");
 Blynk.setProperty(V1, "color", "#D3435C");
 ```
 
-**Пример кода:** [Базовый пример](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino)
+**Пример кода:** [Светодиод](https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino)

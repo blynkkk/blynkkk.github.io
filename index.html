@@ -9,12 +9,31 @@
 
   <!-- Meta -->
   <meta content="Blynk" property="og:title">
-  <meta content="Blynk - build an app for your Arduino project in 5 minutes" name="description">
+  <meta content="Blynk - The most popular IoT platform to connect your devices to the cloud, design apps to control them, and manage your deployed products at scale" name="description">
+  <meta property="og:image" content="https://static.tildacdn.com/tild3134-3266-4130-a530-623337623131/blynk-iot-badge2x_2.jpg" />
+  <meta property="fb:app_id" content="257953674358265" />
+  <meta name="twitter:card" content="summary"/>
+  <meta name="twitter:site" content="@blynk_app"/>
+  <meta name="twitter:title" content="Blynk" />
+  <meta name="twitter:description" content="Join the most popular IoT platform to connect your devices to the cloud, design apps to control them, and manage your deployed products at scale" />
+  <meta name="twitter:image" content="https://static.tildacdn.com/tild3134-3266-4130-a530-623337623131/blynk-iot-badge2x_2.jpg" />
+  <meta name="keywords" content="iot, blynk, documentation, platform, app, mobile, hardware, connect, wifi, ios, android, sensor, relay, actuator, dht11,dht21, esp32, esp8266, raspberry pi, tutorial" />
+  <link rel="shortcut icon" href="https://static.tildacdn.com/tild3635-3036-4035-a165-303666303662/favicon-2.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="https://static.tildacdn.com/tild6162-3338-4066-b133-336663656335/Blynk_Diamond_Shape2.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://static.tildacdn.com/tild6162-3338-4066-b133-336663656335/Blynk_Diamond_Shape2.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="https://static.tildacdn.com/tild6162-3338-4066-b133-336663656335/Blynk_Diamond_Shape2.png">
+  <link rel="apple-touch-startup-image" href="https://static.tildacdn.com/tild6162-3338-4066-b133-336663656335/Blynk_Diamond_Shape2.png">
+ 
 
   <!-- Initializer -->
   <script>
-      Flatdoc.run({
-          fetcher: Flatdoc.file([
+    var lang = 'en';
+    var setLang = function(newLang){
+      lang = newLang;
+      switch (lang) {
+        case('en'):
+          Flatdoc.run({
+            fetcher: Flatdoc.file([
               'IntroAndDownloads.md',
               'GettingStarted.md',
               'HardwareSetUps.md',
@@ -31,8 +50,19 @@
               'FAQ.md',
               'Links.md',
               'License.md'
-          ])
-      });
+            ])
+          });
+          break;
+        case('ru'):
+          Flatdoc.run({
+            fetcher: Flatdoc.file([
+              'Widgets-RU.md'
+            ])
+          });
+      }
+    };
+    setLang('en');
+
   </script>
 
 </head>
@@ -40,14 +70,18 @@
 
   <div class='header'>
     <div class='left'>
-      <h1><a href='https://blynk.cc'>Blynk</a></h1>
+      <h1><a href='https://blynk.io'>Blynk</a></h1>
+      <ul>
+        <li onclick={setLang('en')}><p class="lang active">EN</p></li>
+        <li onclick={setLang('ru')}><p class="lang">RU</p></li>
+      </ul>
     </div>
     <div class='right'>
       <!-- GitHub buttons: see http://ghbtns.com -->
 
             <ul>
-        <li><a href='https://blynk.cc'>Home</a></li>
-        <li><a href='https://www.blynk.cc/getting-started'>Getting Started</a></li>
+        <li><a href='https://blynk.io'>Home</a></li>
+        <li><a href='https://blynk.io/en/getting-started'>Getting Started</a></li>
         <li><a href='https://docs.blynk.cc/'>docs </a></li>
         <li><a href='https://community.blynk.cc/'>Community</a></li>
 </ul>

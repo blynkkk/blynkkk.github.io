@@ -16,6 +16,7 @@ void setup() {
     while (Blynk.connect() == false) {
         // Ждем пока Blynk подключится
     }
+
     bridge1.digitalWrite(9, HIGH); // выставим триггер HIGH на D9 
                                    // устройства B. Код на устройстве
                                    // B не требуется
