@@ -9,7 +9,7 @@ contains 2 additional options :
 In case period is exceeded - "hardware offline" notification will be send. You will get no notification in case hardware 
 was reconnected within specified period.
 - **Priority** high priority gives more chances that your message will be delivered without any delays. 
-See detailed explanation [here](https://developers.google.com/cloud-messaging/concept-options#setting-the-priority-of-a-message). 
+See detailed explanation [here](https://firebase.google.com/docs/cloud-messaging/concept-options#setting-the-priority-of-a-message). 
 
 **WARNING** : high priority contributes more to battery drain compared to normal priority messages.
 
