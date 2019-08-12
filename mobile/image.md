@@ -14,7 +14,7 @@ with different states and change displayed image index from your hardware or via
 For example, select the first icon from the list :
 
 ```cpp
-Blynk.virtualWrite(V1, 1); //image indexing starts from 1
+Blynk.virtualWrite(V1, 0); //image indexing starts from 0
 ```
 
 You can also change opacity, scale or rotation of the displayed the image :
@@ -34,12 +34,12 @@ Blynk.setProperty(V1, "rotation", 10); //0-360 degrees
 also, you can fully replace the list of images from the hardware:
 
 ```cpp
-Blynk.setProperty(V1, "urls", "https://image1.jpg", "https://image2.jpg");
+Blynk.setProperty(V1, "urls", "https://image0.jpg", "https://image1.jpg");
 ```
 
 or you can change individual image by it index:
 
 ```cpp
-Blynk.setProperty(V1, "url", 1, "https://image1.jpg");
+Blynk.setProperty(V1, "url", 0, "https://image0.jpg");
 ```
 
