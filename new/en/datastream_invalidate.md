@@ -1,21 +1,25 @@
-### Data Stream value invalidation
+### Datastream: Invalidate Value
 
-Some data streams have meaningful value only when it is fresh (updated recently). 
-For such data streams you can setup the invalidation period and invalidate the value according to the selected policy. 
+Use this setting to manage the *freshness* of the data. When enabled, server will automatically check the timestamp of the latest value and act accordingly to settings.
 
-For example, you made an thermometer and interested in the current temperature outside the window. 
-Thermometer wakes up hourly and sends the current temperature to the display widget on the web or mobile. 
-Let's assume you made a setup with the 2 hours invalidation period and selected ```No Data``` policy.
 
-Due to any malfunction your device could stop sending the updates. 
-Without the invalidation period you will always see the latest value on the screen. 
-However, with invalidation period after 2 hours since the last update - value will be invalidated 
-with ```No Data``` label. So end users will not be confused with the "freezed latest value".
+**Invalidate in:** 
+Specifies the time period in seconds, minutes or hours when data is considered fresh.
 
-Currently you can select one of the following invalidation policies:
+**then set:** 
+Specifies what to do when data is no longer fresh. You have such options: 
 
-- Nothing - widget will be empty and will show nothing
-- Default - widget will be filled with the default value of the data stream if it is present
-- No Data - text ```No Data``` will be showed
-- Empty - text ```Empty``` will be showed
-- -- - text ```--``` will be showed
+| Option  | How it works                                            |
+|---------|--------------------------------------------------------|
+| Nothing | The latest value will be shown in the apps             |
+| Default | Will show `Default` value (check Settings) in the apps |
+| No Data | Will show "No Data" placeholder in the apps            |
+| Empty   | Will show nothing in the apps                          |
+| --      | Will show dashes `--` in the apps                      |
+
+
+
+Example: 
+1. A temperature datastream is set to `Invalidate in 1 hour, then set to "--"`
+2. It's 4:00 PM now and the latest value of `3.14ºC` was received at 3:30 PM. Data is considered to be fresh and any widget will display it. 
+3. It's 5:00 PM, and there was no new data since 3:30 PM (maybe device is no longer working). A temperature widget in the app will show `--` because data is no longer fresh.
