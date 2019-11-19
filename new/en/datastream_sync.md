@@ -1,6 +1,6 @@
 ### Datastream: Sync with latest server value
 
-This setting enables the device to sync with to the latest known value on the server.
+This setting enables the device to sync with the latest known value on the server.
 
 For example, user owns a wi-fi connected dimmer light
 1. Device goes offline
