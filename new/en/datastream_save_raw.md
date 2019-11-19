@@ -1,7 +1,5 @@
-### Data Stream save raw data
+### Datastream: Save Raw Data
 
-By default server stores only 1 data point per data stream per minute. 
-In case you want to send more than 1 point within 1 minute interval - 
-value for that data stream will be averaged.
+This settings allows storage of raw (uncompressed, non-aggreagted) data
 
-Raw data allows you to store every value that hardware sends.
+By default, data on the platform is averaged to 1 value per minute. Which means that if hardware sent 60 values during 1 minute, only the average of these 60 values will be stored in database.
