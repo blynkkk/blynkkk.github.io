@@ -10,13 +10,12 @@ Specifies the time period in seconds, minutes or hours when data is considered f
 Specifies what to do when data is no longer fresh. You have such options: 
 
 | Option  | How it works                                            |
-|---------|--------------------------------------------------------|
-| Nothing | The latest value will be shown in the apps             |
-| Default | Will show `Default` value (check Settings) in the apps |
-| No Data | Will show "No Data" placeholder in the apps            |
-| Empty   | Will show nothing in the apps                          |
-| --      | Will show dashes `--` in the apps                      |
-
+|---------|---------------------------------------------------------|
+| Nothing | Erases the previous value and shows nothing/empty space |
+| Default | Will show `Default` datastream value is exists          |
+| No Data | Will show "No Data" placeholder                         |
+| Empty   | Will show "Empty" placeholder                           |
+| --      | Will show dashes "--" placeholder                       |
 
 
 Example: 

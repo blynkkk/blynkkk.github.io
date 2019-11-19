@@ -7,7 +7,7 @@ Currently 3 Data Types are supported. Check guide below to make sure you choose 
 |      Type      |             Min             |              Max             |
 |:--------------:|:---------------------------:|:----------------------------:|
 | ```Integer```  |       -2,147,483,648        |         2,147,483,647        |
-|   ```Float```  | 1.7976931348623157 x 10^308 | 4.9406564584124654 x 10^-324 |
+|   ```Float```  |       -1.8 x 10^300         |         4.9 x 10^-324        |
 |  ```String```  | any value is accepted                                      |
 
 
