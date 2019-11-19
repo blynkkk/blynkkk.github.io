@@ -1,4 +1,4 @@
-#### Data Stream: Automation
+#### Data Stream: Expose to Automation
 
 This setting makes current Datastream available for Automation(link). Once enabled, end-users will be able to choose this Datastream when creating Automation(link) scenarios. 
 
