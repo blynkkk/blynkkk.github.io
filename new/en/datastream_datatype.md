@@ -1,8 +1,8 @@
 ### Data Stream: Data Type
 
-Every data stream has a data type. Data type is used to optimize the data storage and calculations.
+Every datastream has a Data Type setting. Data Type is used to specify the type and format of the data, and optimize data storage and further calculations.
 
-Currently there are 3 supported data types. Check guide below to make sure you choose a correct Data Type for your data. 
+Currently 3 Data Types are supported. Check guide below to make sure you choose a correct Data Type for your data. 
 
 |      Type      |             Min             |              Max             |
 |:--------------:|:---------------------------:|:----------------------------:|
