@@ -1,8 +1,23 @@
-### Data Stream max value
+### Datastream: Min/Max values
 
-```max``` field is used in order to avoid unexpected values within the data stream.
-For every value that matches the data stream type and larger than ```max``` - ```max``` will value be used.
+```Min / Max``` fields are used to specify the range of incoming values.
+This setting is applied everywhere where this datastream is used. For example, if you use Chart widget, it will use min/max values by default. Some vizualization widgets allow overriding min/max setting.
 
-For example, you set the ```max``` value as ```10``` for your ```Integer``` data stream and 
-hardware sends  ```11```. In that case ```10``` value will be used instead of ```11```.
-The same rule applies for HTTPS API and any user input on the web or mobile application.
+**IMPORTANT:** If incoming value falls out of the specified min/max range, the value will be *cropped*. 
+
+For example: Datastream `MIN-MAX` is set to `0-100`
+
+| Datastream | Min | Max |
+|----------------|--------|--------|
+| Humidity             | `0`     | `100`|
+
+Here is how incoming values will be processed:
+
+| Incoming value | Result |
+|----------------|--------|
+| `50`             | `50`     |
+| `314`            | `100`    |
+|`-2`             | `0`      |
+
+
+Min /Max settging will only be applied for values that matches the Data Type. Otherwise, the value will be ignored. Check Data Type Settings reference (link)
