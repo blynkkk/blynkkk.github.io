@@ -1,4 +1,5 @@
-### Data Stream name
+### Datastream: Name
 
-Alias for your data stream. You'll use this name as reference during the product setup.
-Please, pick the name carefully as it is heavily used all over the application.  
+Always try to give a meaningful name to the datastream as it's extensively used acrosss the platform. 
+
+Duplicate names are not allowed.
