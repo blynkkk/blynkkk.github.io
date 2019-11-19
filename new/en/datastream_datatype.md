@@ -4,9 +4,12 @@ Every data stream has a data type. Data type is used to optimize the data storag
 
 Currently there are 3 supported data types. Check guide below to make sure you choose a correct Data Type for your data. 
 
-- ```Integer``` (-2,147,483,648 to 2,147,483,647)
-- ```Float``` (1.7976931348623157 x 10^308 to 4.9406564584124654 x 10^-324)
-- ```String``` (any value is accepted)
+|      Type      |             Min             |              Max             |
+|:--------------:|:---------------------------:|:----------------------------:|
+| ```Integer```  |       -2,147,483,648        |         2,147,483,647        |
+|   ```Float```  | 1.7976931348623157 x 10^308 | 4.9406564584124654 x 10^-324 |
+|  ```String```  | any value is accepted                                      |
+
 
 **IMPORTANT:**
 
