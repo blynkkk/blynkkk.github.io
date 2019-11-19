@@ -1,17 +1,19 @@
-### Data Stream sync
+### Datastream: Sync with latest server value
 
-Marking Data Stream as ```sync``` - allows you to get the Data Stream value from that Data Stream via 
-```Blynk.sync()``` or ```Blynk.syncAll()``` api.
+This setting enables the device to sync with to the latest known value on the server.
 
+For example, user owns a wi-fi connected dimmer light
+1. Device goes offline
+2. User sets brightness of the light to 100
+3. When device comes online, it will request the latest value from the server and set brightness to 100
+
+To sync device to the latest state, use the firmware API commands: ```Blynk.sync()``` or ```Blynk.syncAll()```.
+
+Example: 
 ```cpp
-BLYNK_CONNECTED() {
-  // request the values for all data streams
-  // that marked as sync data streams
-  Blynk.syncAll();
+BLYNK_CONNECTED() { // when device is conneceted to Blynk Cloud...
+  Blynk.syncAll(); // request the values for all datastreams that has "sync" setting enabled
 }
 ```
 
-In the example above server will return the values only for Data Streams that were marked as ```sync```.
-
-This was done in done in order to minimize the traffic between server and hardware so you can sure 
-that only requested stream values are sent back.
+**IMPORTANT:** When this setting is disabled, neither ```Blynk.sync()``` nor ```Blynk.syncAll()```
