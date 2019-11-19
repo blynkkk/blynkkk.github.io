@@ -1,8 +1,7 @@
 ### Data Stream virtual pin
 
-Virtual Pin is a concept invented to provide exchange of any data between hardware, web and mobile app. 
-Virtual pins allow you to interface with any sensor, any library, any actuator. 
+Virtual Pin is a way to exchanga data between hardware, web and mobile apps. Think about Virtual Pins as a variable where you can store and retrieve data from sensors, actuators, etc.
 
-Think about Virtual Pins as a box where you can put any value, and everyone who has access to this box can see this value.
+For example, you can read a value in Celsius from a temperature sensor like DHT11 using some pin on your hardware, then convert this temperature to Farenheit and save the processed value to a Virtual Pin 01
 
-It's a very powerful feature to display and send any data from your hardware to the application. 
+Or you can send a command from the app to a Virtual Pin, and run a function inside a Virtual Pin handler.
