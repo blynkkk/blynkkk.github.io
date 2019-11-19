@@ -1,13 +1,14 @@
-### Data Stream default value
+### Datastream: Default Value
 
-Default value is a data stream property that allows you to set the initial value for the data stream.
-Those value later could be used by hardware, via HTTPS API or by Rule Engine.
-It is most useful on the first device connection to the server.
+Default value is a datastream setting that allows you to set the initial value for the datastream.
+This value later can be used in hardware API, HTTPS API or within Rule Engine.
+Usually, this setting is used to set the initial value when hardware boots up for the first time.
 
-Let's consider the next use case - you have a light bulb and right after the first device connection 
-to the server you want it to be turned on. 
-For that you need to set the default value for the Data Stream, let's say on pin ```V1``` to ```1```. 
-And you'll need the next code on the hardware:
+Example: 
+You are working on a smart light bulb and would like to turn it on when it first connects to the server after provisioning.
+
+Set the default value for the Datastream ```V1``` to ```1```. 
+Then use this code on the hardware:
 
 ```cpp
 BLYNK_CONNECTED() {
@@ -24,5 +25,4 @@ BLYNK_WRITE(V1)
 }
 ```
 
-The beauty of this method is that you can change the default value of the product at any time,
-even hardware was already shipped to your clients, without need in OTA.
+You can change the default value of the product at any time. There is no need to update firmware over-the-air even when product was already shipped to your clients.
