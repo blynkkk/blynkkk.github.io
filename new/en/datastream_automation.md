@@ -1,4 +1,4 @@
-#### Data Stream: Expose to Automation
+#### Datastream: Expose to Automation
 
 This setting makes current Datastream available for Automation(link). Once enabled, end-users will be able to choose this Datastream when creating Automation(link) scenarios. 
 
@@ -24,7 +24,7 @@ GIF IMAGE on how it's shown in Autoamation
 
 GIF IMAGE on how it's shown in Autoamation
 
-#### 3. Set if this datastream is as a trigger, an action, or both.
+#### 3. Configure if this datastream is as a trigger, an action, or both.
 
 **Trigger:** makes this datastream available only as an Automation Triggers
 
