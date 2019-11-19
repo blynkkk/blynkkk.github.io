@@ -1,21 +1,15 @@
-### Data Stream value confirmation
+### Datastream: Wait for confirmation from device
 
-For some critical actions it is very important to know that hardware actually received the command 
-and applied the received value from the user input.
+In some cases it's important to know get a confirmation that hardware have received the command or value.
 
-For such use cases Data Stream has confirmation property. It allows you to setup the interval 
-during which user can wait for the response from the device, 
-while the widget used to send the value will be disabled.
+**Wait for confirmation from device** property allows you to set the interval for how long the mobile or web app will wait for the confirmation from hardware.
 
-For example, let's assume you have a garage door and which you can open by sending the ```1``` value 
-via the button that is assigned to the Virtual Data Stream on ```V1``` and 
-you have set the ```Wait for confirmation``` period for 5 seconds. 
+Example: 
+1. You set Datastream for garage door status to wait for confirmation for 5 sec. 
+2. User pressed the switch in the mobile app that should close the garage door.
+3. If hardware confirms that command was processed and applied - the switch in the app will remail in ON state
+4. If there is no confirmation from device that command the door was closed within 5 seconds, the switch will go back to initial OFF state
 
-When you click on the button - it sends `1` value to the hardware. 
-In case hardware is online and accepts the value - it can send back the applied value 
-(telling us that door was successfully opened). If hardware wasn't online or haven't 
-send any confirmation due to error or non acceptable value - 
-data stream value will be reverted to the previous value. 
 
 Here is a simplest code example that shows how you can make it work:
 
