@@ -11,7 +11,7 @@ For example, let's assume you have a garage door and which you can open by sendi
 via the button that is assigned to the Virtual Data Stream on ```V1``` and 
 you have set the ```Wait for confirmation``` period for 5 seconds. 
 
-When you click on the button - it sends ```1``` value to the hardware. 
+When you click on the button - it sends `1` value to the hardware. 
 In case hardware is online and accepts the value - it can send back the applied value 
 (telling us that door was successfully opened). If hardware wasn't online or haven't 
 send any confirmation sue to error or non acceptable value - 
