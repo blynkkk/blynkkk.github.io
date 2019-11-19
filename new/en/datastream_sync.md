@@ -3,9 +3,9 @@
 This setting enables the device to sync with the latest known value on the server.
 
 For example, user owns a wi-fi connected dimmer light
-1. Device goes offline
-2. User sets brightness of the light to 100
-3. When device comes online, it will request the latest value from the server and set brightness to 100
+1. Device goes offline.
+2. User sets brightness of the light to 100 in the mobile app 
+3. When device comes back online, it will request the latest value from the server and set brightness to 100
 
 To sync device to the latest state, use the firmware API commands: ```Blynk.sync()``` or ```Blynk.syncAll()```.
 
