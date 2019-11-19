@@ -4,19 +4,22 @@ Default value is a data stream property that allows you to set the initial value
 Those value later could be used by hardware, via HTTPS API or by Rule Engine.
 It is most useful on the first device connection to the server.
 
-Let's consider the next use case - You have a light bulb and right after the first device connection  
+Let's consider the next use case - you have a light bulb and right after the first device connection 
 to the server you want it to be turned on. 
 For that you need to set the default value for the Data Stream, let's say on pin ```V1``` to ```1```. 
 And you'll need the next code on the hardware:
 
 ```cpp
 BLYNK_CONNECTED() {
+  // request the V1 value on connect
+  // for initial connect it will be default value 1
   Blynk.sync(V1);
 }
 
 BLYNK_WRITE(V1)
 {
-    int bulbValue = param.asInt(); // here you get default value 1
+    // here you get default value 1
+    int bulbValue = param.asInt();
     handle(bulbValue);
 }
 ```

@@ -14,7 +14,7 @@ you have set the ```Wait for confirmation``` period for 5 seconds.
 When you click on the button - it sends `1` value to the hardware. 
 In case hardware is online and accepts the value - it can send back the applied value 
 (telling us that door was successfully opened). If hardware wasn't online or haven't 
-send any confirmation sue to error or non acceptable value - 
+send any confirmation due to error or non acceptable value - 
 data stream value will be reverted to the previous value. 
 
 Here is a simplest code example that shows how you can make it work:
@@ -25,11 +25,13 @@ BLYNK_WRITE(V1)
   int value = param.asInt();
   if (value == 1) {
      if (openDoor()) {
-       Blynk.virtualWrite(V1, "1"); // confirm the value, ui will enable the button
+       // confirm the value, ui will enable the button
+       Blynk.virtualWrite(V1, "1");
      } else {
-       Blynk.virtualWrite(V1, "0"); // you can send back any other value, 
-                                    // saying that change was unsuccessful
-                                    // ui will enable the button
+       // you can send back any other value, 
+       // saying that change was unsuccessful
+       // ui will enable the button
+       Blynk.virtualWrite(V1, "0");
      }
   }
 }

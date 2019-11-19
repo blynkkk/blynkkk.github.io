@@ -7,6 +7,7 @@ Currently there are 3 supported data types:
 - ```Float``` (1.7976931348623157 x 10^308 to 4.9406564584124654 x 10^-324)
 - ```String``` (any value is accepted)
 
+
 It is very important to select the correct type for your data stream. 
 As values that doesn't match the data type are ignored.
 
