@@ -25,4 +25,5 @@ BLYNK_WRITE(V1)
 }
 ```
 
-You can change the default value of the product at any time. There is no need to update firmware over-the-air even when product was already shipped to your clients.
+You can change the default value of the product at any time. 
+There is no need to update firmware over-the-air even when product was already shipped to your clients.

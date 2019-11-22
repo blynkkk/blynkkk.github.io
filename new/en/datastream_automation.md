@@ -1,6 +1,7 @@
 #### Datastream: Expose to Automation
 
-This setting makes current Datastream available for Automation(link). Once enabled, end-users will be able to choose this Datastream when creating Automation(link) scenarios. 
+This setting makes current Datastream available for Automation. 
+Once enabled, end-users will be able to choose this datastream when creating Automation scenarios. 
  
 #### 1. Turn on the switch to expose this Datastream for Automation
 #### 2. Choose the Type of Automation

@@ -17,4 +17,4 @@ Values that doesn't match the Data Type will be ignored by server.
 
 Example: if Datastream has Data Type set to ```Integer```, but Hardware sends ```123.45```, this value will be skipped because it is ```Float```, not ```Integer```.
 
-If incoming value goes out of range of Min or Max setting, this value will be "cropped" to match this setting. Read more here(link to min/max setting).
+If incoming value goes out of range of Min or Max setting, this value will be "cropped" to match this setting.
