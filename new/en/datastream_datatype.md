@@ -1,8 +1,8 @@
 ### Datastream: Data Type
 
-Every datastream has a Data Type setting. Data Type is used to specify the type and format of the data, and optimize data storage and further calculations.
+Every Datastream has a Data Type setting. Data Type is used to specify the type and format of the data and optimize data storage and further calculations.
 
-Currently 3 Data Types are supported. Check guide below to make sure you choose a correct Data Type for your data. 
+Make sure you choose a correct Data Type for your data. Currently, these Data Types are supported: 
 
 |      Type      |             Min             |              Max             |
 |:--------------:|:---------------------------:|:----------------------------:|
@@ -13,8 +13,8 @@ Currently 3 Data Types are supported. Check guide below to make sure you choose 
 
 **IMPORTANT:**
 
-Values that doesn't match the Data Type will be ignored by server.
+Blynk server will ignore values that don't match the Data Type
 
 Example: if Datastream has Data Type set to ```Integer```, but Hardware sends ```123.45```, this value will be skipped because it is ```Float```, not ```Integer```.
 
-If incoming value goes out of range of Min or Max setting, this value will be "cropped" to match this setting.
+If the incoming value goes out of range of Min or Max setting, this value will be "cropped" to match this setting.
