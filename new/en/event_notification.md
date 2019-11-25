@@ -3,9 +3,9 @@
 Every event can additionally trigger notifications.
 
 You can:
-- Email
-- Push Notification on a smartphone/tablet.
-- SMS (additional charges apply) 
+- Send Emails
+- Send Push Notification on a smartphone/tablet.
+- Send SMS (additional charges apply) 
 
 #### Recipients
 You can assign different recipients to each event. 
