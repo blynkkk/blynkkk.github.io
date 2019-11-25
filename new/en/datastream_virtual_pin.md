@@ -8,14 +8,30 @@ then convert this temperature to Fahrenheit and save the processed value to a Vi
 
 ```cpp
 
-void temperatureSend() // a function that is called by some time
+void temperatureSend()                          // a function that is called by some timer
 {
-   temperatureCelsius = analogRead(A0);       // Reading sensor data in Celsius
-   toFarenheit = temperatureCelsius*1.8 + 32; // Converting Celsius to Farenheit
+   temperatureCelsius = analogRead(A0);         // Reading sensor data in Celsius
+   toFarenheit = temperatureCelsius*1.8 + 32;   // Converting Celsius to Farenheit
    
-   Blynk.virtualWrite(V0, toFarenheit);       // Writing temperature in Farenheit to Virtual Pin V0
-                                              // Now it can be used by widgets in the apps
+   Blynk.virtualWrite(V0, toFarenheit);         // Writing temperature in Farenheit to Virtual Pin V0
+                                                // Now it can be used by widgets in the apps
 }
 ```
 
 Or you can send a command from the app to a Virtual Pin, and run a function inside a Virtual Pin handler.
+
+```cpp
+
+BLYNK_WRITE(V1)                                 // Device is waiting for incoming value on Virtual Pin V1. 
+{
+   pinValue = param.asInt();                    // creating a variable that will store incoming value
+   
+   if (pinValue == 1)                           // checking if incoming value is 1
+   {
+      doThis();                                 // trigger some function in your code
+      doThat();                                 // trigger another function in your code
+   }
+}
+```
+
+Check examples in different languages on how to read and write data to Virtual Pins
