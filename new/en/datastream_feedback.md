@@ -13,7 +13,7 @@ Example:
 
 Here is a code example that shows how you can make it work:
 
-```
+```cpp
 BLYNK_WRITE(V1)
 {   
   int value = param.asInt();
