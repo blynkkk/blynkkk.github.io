@@ -1,6 +1,6 @@
 ### Events: Notification Period
 
-Notification Period defines how often notifications are sent for this particular even.
+Notification Period defines how often notifications are sent for this particular event.
 
 For example, a 1 minute period means end-users won't get more than one notification per 1 minute, even if hardware or API sends more. After 1 minute since the last posted notification expires, new notifications will get in.
 
