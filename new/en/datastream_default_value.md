@@ -1,7 +1,7 @@
 ### Datastream: Default Value
 
-Default value is a datastream setting that allows you to set the initial value for the datastream.
-This value later can be used in hardware API, HTTPS API or within Rule Engine.
+Default Value is a setting that allows you to set the initial value for the Datastream.
+This value later can be used in hardware API, HTTPS API, or within Rule Engine.
 Usually, this setting is used to set the initial value when hardware boots up for the first time.
 
 Example: 
@@ -26,4 +26,4 @@ BLYNK_WRITE(V1)
 ```
 
 You can change the default value of the product at any time. 
-There is no need to update firmware over-the-air even when product was already shipped to your clients.
+There is no need to update firmware over-the-air even when the product was already shipped to your clients.
