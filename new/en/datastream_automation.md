@@ -8,7 +8,7 @@ Once enabled, end-users will be able to choose this Datastream when creating Aut
 
 The type defines what kind of Action or Trigger is it and how it will be presented for the user when using Automation
 
-| Type                  | Description                                                                                                                                                                                              | UI representation | Condition | Action | Additional settings |
+| Type of control                  | Description                                                                                                                                                                                              | GUI  | Condition | Action | Settings |
 |-------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|:-----------------:|:---------:|:------:|:-------------------:|
 | **Main Power Switch** | Control that turn device ON/OFF. You can have **only one** Main Power Switch per Product                                                                                                                 |       Switch      |     •     |    •   |          –          |
 | **Switch**            | Controls property that has on/off state. **Don't use this property for Main Power Switch**                                                                                                               |       Switch      |     •     |    •   |          –          |
