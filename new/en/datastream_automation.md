@@ -21,3 +21,8 @@ The type defines what kind of Action or Trigger is it and how it will be present
 **Condition:** makes this Datastream available as a Condition. 
 
 **Action:** makes this Datastream available as an Action. Some of the Automation Types can be only a condition.
+
+
+
+
+
