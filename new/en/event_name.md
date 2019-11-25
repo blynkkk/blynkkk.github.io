@@ -1,5 +1,7 @@
 ### Events: Name
 
-Always try to give a meaningful name to the event. You will see it device timeline. 
+Give your event a meaningful name because it will be shown to end-users
 
-Duplicate names are not allowed.
+>IMAGE of Timeline
+
+**IMPORTANT:** Event name should be unique.
