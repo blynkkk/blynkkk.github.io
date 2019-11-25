@@ -1,8 +1,9 @@
 ### Events: Online, Offline
 
-Online/Offline events are system event that are handled by the server. 
-You can't have much control over it. Those events are always displayed in the device timeline and 
-in device status field (green dot near the device name in case device is online, grey dot for offline device).
+Online and Offline events are system events handled by the server.
 
-When device goes offline and you are logged to the web or mobile - you'll 
-get a notification that device is offline.
+These events tell the current status of the device on the list of devices, device page itself, and also shows the history of states change in the timeline section.
+
+You can set up your devices to ignore offline state period in Product -> General - > Offline Ignore Period
+
+User should be logged in to account to get these notifications.
