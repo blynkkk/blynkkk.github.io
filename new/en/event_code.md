@@ -1,12 +1,12 @@
 ### Events: Code
 
-Event code is used in firmware API to trigger and render events from device to applications. 
+Event code is used in firmware API to trigger and render events from the device. 
 
 #### How to trigger events:
 
-If you need to create a warning when sensor detects temperature over certain threshold. 
+If you need to create a warning when the sensor detects temperature over a certain threshold. 
 1. Create a new Warning event named ```High temperature``` with code ```high_temp```.
-2. Use the ```Blynk.logEvent(event_code)```  to trigger new event occurence.
+2. Use the ```Blynk.logEvent(event_code)```  to trigger new event occurrence.
 
 
 A simple example could look like
@@ -17,7 +17,7 @@ if (temperatureSensor > 35)
 }
 ```
 
-3. When event is triggered by device, it will be rendered on the Timeline.
+3. When the device triggers the event, it will be rendered on the Timeline.
 
 >IMAGE
 
