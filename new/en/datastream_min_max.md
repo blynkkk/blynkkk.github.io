@@ -1,10 +1,11 @@
 ### Datastream: Min/Max values
 
 **Min / Max** fields are used to specify the range of incoming values.
-This setting is applied everywhere where this datastream is used. For example, if you use Chart widget, 
-it will use min/max values by default. Some vizualization widgets allow overriding min/max setting.
+This setting is applied everywhere, where this Datastream is used. 
 
-**IMPORTANT:** If incoming value falls out of the specified min/max range, the value will be *cropped*. 
+For example, if you use a Chart widget, it will use min/max values by default. Some visualization widgets allow overriding min/max values.
+
+**IMPORTANT:** If the incoming value falls out of the specified min/max range, the value will be *cropped*. 
 
 Example: Datastream `Min-Max` fields are set to `0-100`
 
@@ -21,5 +22,5 @@ Here is how incoming values will be processed:
 |`-2`             | `0`      |
 
 
-Min /Max setting will only be applied for values that matches the Data Type. 
+Min /Max setting is applied if the value matches the Data Type. 
 Otherwise, the value will be ignored. Check Data Type Settings reference.
