@@ -34,4 +34,4 @@ BLYNK_WRITE(V1)                                 // Device is waiting for incomin
 }
 ```
 
-Check examples in different languages on how to read and write data to Virtual Pins
+Check examples in different languages on how to read and write data to Virtual Pins.

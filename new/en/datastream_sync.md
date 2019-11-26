@@ -3,7 +3,7 @@
 This setting enables the device to sync with the latest known value on the server.
 
 For example, a user owns a wi-fi connected dimmer light
-1. The device goes offline.
+1. The device goes offline
 2. User sets the brightness of the light to 100% in the mobile app 
 3. When the device comes back online, it will request the latest value from the server and set brightness to 100
 

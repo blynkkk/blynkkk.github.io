@@ -3,7 +3,8 @@
 **Min / Max** fields are used to specify the range of incoming values.
 This setting is applied everywhere, where this Datastream is used. 
 
-For example, if you use a Chart widget, it will use min/max values by default. Some visualization widgets allow overriding min/max values.
+For example, if you use a Chart widget, it will use min/max values by default. 
+Some visualization widgets allow overriding min/max values.
 
 **IMPORTANT:** If the incoming value falls out of the specified min/max range, the value will be *cropped*. 
 
