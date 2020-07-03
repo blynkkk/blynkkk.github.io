@@ -1,8 +1,6 @@
 # Table of contents
 
-* 
-* [Blynk 2.0 Documentation](new/README.md)
-  * [en](new/en/README.md)
+* [Blynk 2.0 Documentation - EN](new/en/README.md)
     * [Datastream: Save Raw Data](new/en/datastream_save_raw.md)
     * [Datastream: Wait for confirmation from the device](new/en/datastream_feedback.md)
     * [Datastream: Virtual Pin](new/en/datastream_virtual_pin.md)
