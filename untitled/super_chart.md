@@ -1,0 +1,147 @@
+# SuperChart
+
+SuperChart is used to visualise live and historical data. You can use it for sensor data, for binary event logging and more.
+
+To use SuperChart widget you would need to push the data from the hardware with the desired interval by using timers. [Here is](https://examples.blynk.cc/?board=ESP8266&shield=ESP8266%20WiFi&example=GettingStarted%2FPushData) a basic example for data pushing.
+
+## Interactions:
+
+* **Switch between time ranges and Live mode** &lt;/br&gt;Tap time ranges at the bottom of the widget to change time ranges
+* **Tap Legend Elements** to show or hide datastreams &lt;/br&gt;
+* **Tap'n'hold to view timestamp and corresponding values**
+* **Quick swipe from left to right to reveal previous data**&lt;/br&gt; Then you can then scroll data back and forward within the given time range.
+* **Full Screen Mode**&lt;/br&gt; Press this button to open Full Screen view in landscape orientation.
+
+Simply rotate the phone back to portrait mode. Chart should rotate automagically. In full screen view you will see X \(time\) and multiple Y scales. Full Screen Mode can be disabled from widget Settings.
+
+* **Menu Button**&lt;/br&gt;
+
+  Menu button will open additional functions:
+
+  * Export to CSV
+  * Erase Data on the server 
+
+## SuperChart Settings:
+
+* **Chart Title**
+* **Title Font Size**&lt;/br&gt;
+
+  You have a choice of 3 font sizes
+
+* **Title Alignment**&lt;/br&gt;
+
+  Choose chart title alignment. This setting also affects Title and Legend position on the Widget.
+
+* **Show x-axis \(time\)**&lt;/br&gt;
+
+  Select it if you want to show the time label at the bottom of your chart.
+
+* **Time ranges picker**&lt;/br&gt;
+
+  Allows you to select required periods \(`15m`, `30m`, `1h`, `3h`, ...\) and resolution for your chart. Resolution
+
+  defines how precise your data is. Right now chart supports 2 types of resolution `standard` and `high`. Resolution also
+
+  depends on the selected period. For example, `standard` resolution for `1d` means you'll get 24 points per day \(1 per hour\),
+
+  with `high` resolution you'll get for `1d` 1440 points per day \(1 per minute\).
+
+* **Datastreams**&lt;/br&gt;
+
+  Add datastreams \(read below how to configure datastreams\)
+
+## Datastream Settings
+
+Widget supports up to 4 Datastreams. Press Datastream Settings Icon to open Datastream Settings.
+
+**Design:** Choose available types of Chart:
+
+* Line
+* Area
+* Bar
+* Binary \(anchor LINK to binary\)
+
+**Color:** Choose solid colors or gradients
+
+**Source and input:** You can use 3 types of Data source:
+
+**1. Virtual Pin** Choose the desired Device and Virtual Pin to read the data from.
+
+**2. Tags** SuperChart can aggregate data from multiple devices using built-in aggregation functions. For example, if you have 10 Temperature sensors sending temperature with the given period, you can plot average value from 10 sensors on the widget.
+
+To use Tags:
+
+* [**Add Tag**](../#blynk-main-operations-control-of-multiple-devices-tags) to every device you want to aggregate data from.
+* **Push data to the same Virtual Pin** on every device. \(e.g. `Blynk.virtualWrite (V0, temperature);`\)
+* **Choose Tag as a source** in SuperChart Widget and use the pin where the data is coming to \(e.g V0\) 
+
+**Functions available:**
+
+* `SUM` will summarize all incoming values to the specified Virtual Pin across all devices tagged with the chosen tag
+* `AVG` will plot average value
+* `MED` will find a median value
+* `MIN` will plot minimum value
+* `MAX` will plot maximum value
+
+**☝️ IMPORTANT: Tags are not working in Live Mode.**
+
+1. [**Device Selector**](../#widgets-time-input-device-selector)
+
+   If you add Device Selector Widget to your project, you can use it as a source for SuperChart. 
+
+   In this case, when you change the device in Device Selector, chart will be updated accordingly
+
+**Y-Axis Settings**   
+There are 4 modes of how to scale data along the Y axis
+
+1. _Auto_  Data will be auto-scaled based on min and max values of the given time period. This is nice option to start with.
+2. **Min/Max**  When this mode is selected, Y scale will be set to the values you choose. For example, if your hardware sends data with values varying from -100 to 100, you can set the chart to this values and data will be rendered correctly.
+
+You may also want to visualize the data within some specific range. Let's say incoming data has values in the range of 0-55, but you would like to see only values in the range 30-50. You can set it up and if values are out of Y scale you configured, chart will be cropped
+
+1. **% of Height**  
+
+
+   This option allows you to auto-scale incoming data on the widget and position it the way you want. 
+
+   In this mode, you set up the percentage of widget height on the screen, from 0% to 100%. 
+
+If you set 0-100%, in fact it's a full auto-scale. No matter in which range the data is coming,  
+it will be always scaled to the whole height of the widget.
+
+If you set it to 0-25%, then this chart will only be rendered on 1/4 of the widget height.
+
+This setting is very valuable for **Binary Chart** or for visualizing a few datastreams on the same chart in a different way.
+
+1. _Delta_  
+
+
+   While data stays within the given Delta value, chart will be auto-scaled within this range.
+
+   If delta exceeds the range, chart will be auto-scaled to min/max values of the given period.
+
+**Suffix**  
+ Here you can specify a suffix that will be shown during the Tap'n'hold.
+
+**Decimals**  
+ Defines the formatting of the graph value when you Tap'n'hold the graph. Possible options are: \#, \#.\#, \#.\#\#, etc.
+
+**Connect Missing Data Points**  
+ If this switch is ON, then SuperChart will connect all the dots even if there was no data.
+
+If it's set to OFF, then you will see gaps in case there was no data.
+
+**Binary Chart Settings**  
+ This type of chart is useful to plot binary data, for example when unit was ON or OFF, or when motion was detected or when certain threshold was reached.
+
+You need to specify a **FLIP** point, which is the point where incoming data will be turned into TRUE or FALSE state.
+
+For example, you send the data in the range of `0 to 1023`. If you set `512` as a **FLIP** point, then everything above `512` \(excluding 512\) will be recorded as `TRUE`, any value below `512` \(including 512\) will be `FALSE`.
+
+Another example, if you send `0 and 1` and set `0` as a **FLIP** point, then `1` will be `TRUE`, `0` will be `FALSE`
+
+**State Labels:**  
+ Here you can specify how `TRUE/FALSE` should be shown in Tap'n'Hold mode.
+
+For example, you can set to `TRUE` to "Equipment ON" label, `FALSE` to "Equipment OFF".
+
