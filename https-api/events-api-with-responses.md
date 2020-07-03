@@ -1,6 +1,6 @@
 # Events API \(with responses\)
 
-{% api-method method="post" host="https://blynk.cc/external/api/" path="logEvent?token={token}&code={event\_name}&description={event\_desciption}" %}
+{% api-method method="post" host="/external/api/" path="logEvent?token={token}&code={event\_name}&description={event\_desciption}" %}
 {% api-method-summary %}
 Create Event
 {% endapi-method-summary %}
