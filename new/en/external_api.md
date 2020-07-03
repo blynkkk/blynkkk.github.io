@@ -1,10 +1,10 @@
 #### Hardware
 
-Get Virtual datastream value (via HTTP GET):
+Get datastream value (via HTTP GET):
 - ```/external/api/get?token={token}&pin={pin}```
 - ```/external/api/get?token={token}&dataStreamId={id}```
 
-Update Virtual datastream value (via HTTP GET):
+Update datastream value (via HTTP GET):
 - ```/external/api/update?token={token}&pin={pin}&value={value}```
 - ```/external/api/update?token={token}&dataStreamId={id}&value={value}```
 - ```/external/api/update/property?token={token}&pin={pin}&{property}={value}```
