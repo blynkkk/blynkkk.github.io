@@ -1,4 +1,4 @@
-# Product: Manufacturer
+# Manufacturer
 
 Is the name of a Manufacturer that makes your product. This field used in multiple places on the UI and is required to work with Voice Assistance \(Alexa, Google Home\).
 
