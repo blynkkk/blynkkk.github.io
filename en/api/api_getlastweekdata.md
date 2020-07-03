@@ -1,6 +1,6 @@
-# API\_getLastWeekData
+# Download Datastream Data
 
-To get the devivce data for last week, use this API call:
+To get the device data for last week, use this API call:
 
 **API call:**
 

@@ -1,4 +1,4 @@
-# external\_api
+# Datastreams API
 
 ## Hardware
 

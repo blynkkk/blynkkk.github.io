@@ -30,6 +30,7 @@
         * [Events: Notification Period](en/product/product-template-settings/events/event_notification_period.md)
       * [Dashboard](en/product/product-template-settings/dashboard.md)
   * [API](en/api/README.md)
-    * [external\_api](en/api/external_api.md)
-    * [API\_getLastWeekData](en/api/api_getlastweekdata.md)
+    * [Datastreams API](en/api/external_api.md)
+    * [Events API](en/api/events-api.md)
+    * [Download Datastream Data](en/api/api_getlastweekdata.md)
 
