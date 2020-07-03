@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Introduction](README.md)
+* [About](README.md)
 * [EN](en/README.md)
   * [Product](en/product/README.md)
     * [Create New Product](en/product/create-new-product.md)
