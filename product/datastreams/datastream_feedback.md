@@ -20,19 +20,15 @@ BLYNK_WRITE(V1) // reading the button in the app
 {   
   int value = param.asInt();  // processing incoming button value as integer
   
-  // checking if button was pressed
+  // checking if button in tha app was pressed
   if (value == 1) { 
-  
-  // in external function you create confirmation  
-  // that door was actually opened     
-     if (openDoor()) {
-       // confirm the value, UI will enable the button
-       Blynk.virtualWrite(V1, "1");
+  // somewhere in the code, hardware confirms that door was actually opened     
+     if (doorOpened()) {
+       // enable the button in the app
+       Blynk.setProperty(V1, "isDisabled", false)
      } else {
-       // you can send back any other value, 
-       // saying that change was unsuccessful
-       // UI will enable the button
-       Blynk.virtualWrite(V1, "0");
+       // disable the button in the app
+       Blynk.setProperty(V1, "isDisabled", true)
      }
   }
 }
