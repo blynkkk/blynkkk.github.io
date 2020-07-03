@@ -1,6 +1,6 @@
 # Table of contents
 
-* [https://docs.blynk.cc/](README.md)
+* [Intro page](README.md)
 * [mobile](mobile/README.md)
   * [Datastreams](mobile/datastreams.md)
   * [Time Input](mobile/time_input/README.md)

@@ -1,4 +1,4 @@
-# https://docs.blynk.cc/
+# Intro page
 
 ## Getting Super Powers
 
