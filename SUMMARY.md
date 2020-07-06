@@ -2,38 +2,38 @@
 
 * [What is Blynk](README.md)
 
-## Overview
+## overview
 
 * [Blynk Components](overview/blynk-components.md)
 
-## Product <a id="product-1"></a>
+## Product <a id="en/product"></a>
 
-* [What is a Product](product-1/create-new-product.md)
-* [General Settings](product-1/general-settings/README.md)
-  * [Manufacturer](product-1/general-settings/product_manufacturer.md)
-  * [Offline Ignore Period](product-1/general-settings/product_offline_ignore_period.md)
-* [Metadata](product-1/metadata.md)
-* [Datastreams](product-1/datastreams/README.md)
-  * [Datastream Name](product-1/datastreams/datastream_name.md)
-  * [Decimals Formatting](product-1/datastreams/datastream_deicmals.md)
-  * [Wait for confirmation from the device](product-1/datastreams/datastream_feedback.md)
-  * [Default Value](product-1/datastreams/datastream_default_value.md)
-  * [Expose to Automation](product-1/datastreams/datastream_automation.md)
-  * [Sync with the latest server value](product-1/datastreams/datastream_sync.md)
-  * [Datastream: Alias](product-1/datastreams/datastream_alias.md)
-  * [Datastream: Invalidate Value](product-1/datastreams/datastream_invalidate.md)
-  * [Datastream: Min/Max values](product-1/datastreams/datastream_min_max.md)
-  * [Datastream: Data Type](product-1/datastreams/datastream_datatype.md)
-  * [Datastream: Virtual Pin](product-1/datastreams/datastream_virtual_pin.md)
-  * [Datastream: Save Raw Data](product-1/datastreams/datastream_save_raw.md)
-* [Events](product-1/events/README.md)
-  * [Events: Notification](product-1/events/event_notification.md)
-  * [Events: Code](product-1/events/event_code.md)
-  * [Events: Name](product-1/events/event_name.md)
-  * [Events: Online, Offline](product-1/events/event_online_offline.md)
-  * [Events: Notification Period](product-1/events/event_notification_period.md)
-* [Web Dashboard](product-1/dashboard.md)
-* [Mobile app UI](product-1/product-template-settings.md)
+* [What is a Product](en/product/create-new-product.md)
+* [General Settings](en/product/general-settings/README.md)
+  * [Manufacturer](en/product/general-settings/product_manufacturer.md)
+  * [Offline Ignore Period](en/product/general-settings/product_offline_ignore_period.md)
+* [Metadata](en/product/metadata.md)
+* [Datastreams](en/product/datastreams/README.md)
+  * [Datastream Name](en/product/datastreams/datastream_name.md)
+  * [Decimals Formatting](en/product/datastreams/datastream_deicmals.md)
+  * [Wait for confirmation from the device](en/product/datastreams/datastream_feedback.md)
+  * [Default Value](en/product/datastreams/datastream_default_value.md)
+  * [Expose to Automation](en/product/datastreams/datastream_automation.md)
+  * [Sync with the latest server value](en/product/datastreams/datastream_sync.md)
+  * [Datastream: Alias](en/product/datastreams/datastream_alias.md)
+  * [Datastream: Invalidate Value](en/product/datastreams/datastream_invalidate.md)
+  * [Datastream: Min/Max values](en/product/datastreams/datastream_min_max.md)
+  * [Datastream: Data Type](en/product/datastreams/datastream_datatype.md)
+  * [Datastream: Virtual Pin](en/product/datastreams/datastream_virtual_pin.md)
+  * [Datastream: Save Raw Data](en/product/datastreams/datastream_save_raw.md)
+* [Events](en/product/events/README.md)
+  * [Events: Notification](en/product/events/event_notification.md)
+  * [Events: Code](en/product/events/event_code.md)
+  * [Events: Name](en/product/events/event_name.md)
+  * [Events: Online, Offline](en/product/events/event_online_offline.md)
+  * [Events: Notification Period](en/product/events/event_notification_period.md)
+* [Web Dashboard](en/product/dashboard.md)
+* [Mobile app UI](en/product/product-template-settings.md)
 
 ## Firmware API <a id="firmware-api-1"></a>
 
@@ -41,8 +41,9 @@
 
 ## REST API <a id="https-api"></a>
 
-* [Devices](api/external_api.md)
-* [Events](api/events-api.md)
+* [Devices](en/api/external_api.md)
+* [Events](en/api/events-api.md)
+
 
 ## Mobile App
 
