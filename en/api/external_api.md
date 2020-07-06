@@ -13,6 +13,10 @@ Update datastream value \(via HTTP GET\):
 * `/external/api/update?token={token}&dataStreamId={id}&value={value}`
 * `/external/api/update/property?token={token}&pin={pin}&{property}={value}`
 
+Get device json \(via HTTP GET\):
+
+* `/external/api/device?token={token}`
+
 ## Log event
 
 * `/external/api/logEvent?token={token}&code={event_name}`
