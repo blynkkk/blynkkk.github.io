@@ -2,7 +2,7 @@
 
 * [What is Blynk](README.md)
 
-## overview
+## Overview
 
 * [Blynk Components](overview/blynk-components.md)
 
@@ -41,10 +41,8 @@
 
 ## REST API <a id="https-api"></a>
 
-* [Devices](https-api/external_api.md)
-* [Download Datastream Data](https-api/api_getlastweekdata.md)
-* [Events API \(with responses\)](https-api/events-api-with-responses.md)
-* [Events API](https-api/events-api.md)
+* [Devices](api/external_api.md)
+* [Events API](api/events-api.md)
 
 ## Mobile App
 
