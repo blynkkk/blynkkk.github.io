@@ -2,10 +2,9 @@
 
 * [What is Blynk](README.md)
 
-## Getting Started
+## overview
 
-* [What Is Blynk](getting-started/what-is-blynk.md)
-* [Blynk Components](getting-started/blynk-components.md)
+* [Blynk Components](overview/blynk-components.md)
 
 ## Product <a id="product-1"></a>
 
