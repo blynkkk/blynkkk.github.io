@@ -41,10 +41,9 @@
 
 ## REST API <a id="https-api"></a>
 
-* [Devices](https-api/external_api.md)
-* [Download Datastream Data](https-api/api_getlastweekdata.md)
+* [Devices](en/api/external_api.md)
 * [Events API \(with responses\)](https-api/events-api-with-responses.md)
-* [Events API](https-api/events-api.md)
+* [Events API](en/api/events-api.md)
 
 ## Mobile App
 
