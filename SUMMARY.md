@@ -43,7 +43,9 @@
 
 * [Devices](en/api/external_api.md)
 * [Events API \(with responses\)](https-api/events-api-with-responses.md)
+* [Devices 2](https-api/external_api.md)
 * [Events API](en/api/events-api.md)
+* [Events 2](https-api/events_api.md)
 
 ## Mobile App
 
