@@ -42,7 +42,7 @@
 ## REST API <a id="https-api"></a>
 
 * [Devices](api/external_api.md)
-* [Events API](api/events-api.md)
+* [Events](api/events-api.md)
 
 ## Mobile App
 
