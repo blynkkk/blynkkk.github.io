@@ -30,5 +30,8 @@ Sure. In fact, we restoring the backups once in few months for the random client
 
 No. All data is backuped.
 
+**- Do I have to pay for the backup?**
+
+No, this price is included to your subscription plan.
 
 
