@@ -8,7 +8,7 @@ Blynk IoT Platform is a white-label, multi-tenant software solution that allows 
 
 With Blynk you can start with building a prototype or personal project and then scale it up to millions of commercial connected devices.
 
-Blynk platform allows you to connect almost any electronics hardware to the Internet, start collectind data from devices, monitor and control them remotely from anywhere in the world 
+Blynk platform allows you to connect almost any electronics hardware to the Internet, start collecting data from devices, monitor and control them remotely from anywhere in the world 
 
 Data from devices can be stored, aggregated, and visualized in easy-to-build mobile and web applications.  
 

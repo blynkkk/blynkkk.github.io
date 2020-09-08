@@ -1,6 +1,8 @@
 # Devices
 
-## Devices
+## Datastreams API
+
+### Hardware
 
 Get datastream value \(via HTTP GET\):
 
@@ -13,152 +15,122 @@ Update datastream value \(via HTTP GET\):
 * `/external/api/update?token={token}&dataStreamId={id}&value={value}`
 * `/external/api/update/property?token={token}&pin={pin}&{property}={value}`
 
-## Log event
+Get device json \(via HTTP GET\):
+
+* `/external/api/device?token={token}`
+
+### Log event
 
 * `/external/api/logEvent?token={token}&code={event_name}`
 * `/external/api/logEvent?token={token}&code={event_name}&description={event_desciption}`
 
+## Devices
 
+### Devices
 
+#### Get datastream value
 
+Use HTTP **GET** method to get value of a Datastream or Virtual Pin
 
-{% api-method method="get" host="/external/api/" path="update?token={token}&pin={pin}&value={value}" %}
-{% api-method-summary %}
-Update Datastream value
-{% endapi-method-summary %}
+Using Datastream ID:
 
-{% api-method-description %}
-
-{% endapi-method-description %}
-
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="" type="string" required=false %}
-
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-{% endapi-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+```text
+/external/api/get?token={token}&dataStreamId={id}
 ```
 
-```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+Using Virtual Pin:
 
-{% api-method method="get" host="/external/api/" path="get?token={token}&pin={pin}" %}
-{% api-method-summary %}
-Get Virtual Pin value
-{% endapi-method-summary %}
-
-{% api-method-description %}
-
-{% endapi-method-description %}
-
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="token" type="string" required=false %}
-
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="pin" type="string" required=false %}
-
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-{% endapi-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+```text
+/external/api/get?token={token}&pin={pin}
 ```
 
-```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+**Parameters:**
 
-{% api-method method="get" host="/external/api/" path="update?token={token}&pin={pin}&value={value}" %}
-{% api-method-summary %}
-Update Virtual Pin value
-{% endapi-method-summary %}
+* `token`: AuthToken of the device
+* `pin`: Virtual Pin number. e.g. V0
+* `dataStreamId`: can be found in Product Settings &gt; Datastreams
 
-{% api-method-description %}
+Example:
 
-{% endapi-method-description %}
-
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="token" type="string" required=true %}
-AuthToken of device
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="pin" type="string" required=true %}
-Virtual Pin number. e.g. V1
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="value" type="string" required=true %}
-value to update
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-{% endapi-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+```text
+curl --get 'https://blynk.io/external/api/get?token=123&pin=V0'
 ```
 
-```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+#### Update Datastream value \(using GET\):
 
-{% api-method method="get" host="/external/api/" path="get?token={token}&pin={pin}" %}
-{% api-method-summary %}
+You can use HTTP **GET** method to update value of a Datastream or Virtual Pin
 
-{% endapi-method-summary %}
+Using Datastream ID:
 
-{% api-method-description %}
-
-{% endapi-method-description %}
-
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="" type="string" required=false %}
-
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-{% endapi-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+```text
+/external/api/update?token={token}&dataStreamId={id}&value={value}
 ```
 
+Using Virtual Pin number:
+
+```text
+/external/api/update?token={token}&pin={pin}&value={value}
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+
+**Path parameters:**
+
+* `token`: AuthToken of the device
+* `dataStreamId`: can be found in Product Settings &gt; Datastreams
+* `pin`: Virtual Pin number. e.g. V0
+
+Example:
+
+```text
+curl --get 'https://blynk.io/external/api/update?token=123&dataStreamId=1&value=100'
+```
+
+#### Update Widget parameters
+
+You can update variuous properties of a widget \(in the mobile app\) which is using a specified Virtual Pin. Full list of properties here\(LINK\)
+
+```text
+/external/api/update/property?token={token}&pin={pin}&{property}={value}
+```
+
+**Path parameters:**
+
+* `token`: AuthToken of the device
+* `property`: property name. Full list of properties is here \(LINK\)
+* `pin`: Virtual Pin number. e.g. V0
+
+Example:
+
+```text
+curl --get 'https://blynk.io/external/api/update/property?token=123&pin=V0&isDisabled=true'
+```
+
+### Events
+
+#### Create Event
+
+Use HTTP **GET** method to create a new Event on Device Timeline
+
+```text
+/external/api/logEvent?token={token}&code={event_name}&description={event_desciption}
+```
+
+**Parameters:**
+
+* `token`: AuthToken of the device
+* `code`: code of the event. Can be found in Product Template - [Events](https://github.com/blynkkk/blynkkk.github.io/tree/ba877e83fafb998294c9504da8a7bba02318caf5/en/product-1/events/README.md)
+* `description`: optionally you can add custom description to the event and it will be rendered on Device Timeline in mobile apps and on the web
+
+Example:
+
+```text
+curl --get 'https://blynk.io/external/api/logEvent?token=123&code=critical_error&description="custom description"'
+```
+
+Create Event on Device Timeline
+
+* `/external/api/logEvent?token={token}&code={event_name}`
+
+\`\`
+
+* `/external/api/logEvent?token={token}&code={event_name}&description={event_desciption}`
 
