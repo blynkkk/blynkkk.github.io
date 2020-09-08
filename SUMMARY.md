@@ -52,3 +52,7 @@
 
 * [Untitled](mobile-app/untitled.md)
 
+## Blynk.Air \(OTA\)
+
+* [Blynk.Air - Firmware Over the Air](blynk.air-ota/blynk.air-firmware-over-the-air.md)
+
