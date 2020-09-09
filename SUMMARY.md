@@ -21,9 +21,10 @@
 ## Product <a id="en-product"></a>
 
 * [What is a Product](en-product/create-new-product.md)
-* [General Settings](en-product/general-settings/README.md)
-  * [Manufacturer](en-product/general-settings/manufacturer.md)
-  * [Offline Ignore Period](en-product/general-settings/offline-ignore-period.md)
+* [Info](en-product/info/README.md)
+  * [Info: Template ID](en-product/info/info-template-id.md)
+  * [Info:Manufacturer](en-product/info/info-manufacturer.md)
+  * [Offline Ignore Period](en-product/info/offline-ignore-period.md)
 * [Metadata](en-product/metadata.md)
 * [Datastreams](en-product/datastreams/README.md)
   * [Datastream Name](en-product/datastreams/datastream-name.md)
