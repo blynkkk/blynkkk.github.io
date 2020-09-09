@@ -8,6 +8,14 @@
 
 ## Device
 
+* [Dashboard](device/web-dashboard/README.md)
+  * [Date Picker](device/web-dashboard/date-picker.md)
+  * [Widgets](device/web-dashboard/widgets.md)
+* [Info](device/info.md)
+* [Metadata](device/metadata.md)
+* [Timeline](device/timeline.md)
+* [Actions Log](device/actions-log.md)
+* [Service](device/service.md)
 * [Tags](device/tags.md)
 
 ## Product <a id="en-product"></a>
