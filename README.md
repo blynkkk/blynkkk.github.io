@@ -1,8 +1,8 @@
 ---
-description: Full documentation on Blynk 2.0
+description: Full documentation on Blynk²
 ---
 
-# What is Blynk
+# What is Blynk²
 
 Blynk IoT Platform is a white-label, multi-tenant software solution that allows you to build personal and commercial IoT projects connected products. 
 

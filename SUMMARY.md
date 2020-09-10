@@ -1,6 +1,6 @@
 # Table of contents
 
-* [What is Blynk](README.md)
+* [What is Blynk²](README.md)
 
 ## overview
 
