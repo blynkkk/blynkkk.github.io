@@ -9,7 +9,7 @@
 ## Device
 
 * [Dashboard](device/web-dashboard/README.md)
-  * [Date Picker](device/web-dashboard/date-picker.md)
+  * [Time-period selection](device/web-dashboard/date-picker.md)
   * [Widgets](device/web-dashboard/widgets.md)
 * [Info](device/info.md)
 * [Metadata](device/metadata.md)
