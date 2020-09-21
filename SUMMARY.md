@@ -1,6 +1,6 @@
 # Table of contents
 
-* [What is Blynk²](README.md)
+* [What is Blynk](README.md)
 
 ## overview
 
@@ -27,6 +27,7 @@
   * [Offline Ignore Period](en-product/info/offline-ignore-period.md)
 * [Metadata](en-product/metadata.md)
 * [Datastreams](en-product/datastreams/README.md)
+  * [Datastream ID](en-product/datastreams/datastream-id.md)
   * [Datastream Name](en-product/datastreams/datastream-name.md)
   * [Decimals Formatting](en-product/datastreams/decimals-formatting.md)
   * [Wait for confirmation from the device](en-product/datastreams/wait-for-confirmation-from-the-device.md)

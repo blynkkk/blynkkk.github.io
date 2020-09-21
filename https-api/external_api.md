@@ -42,7 +42,7 @@ Using Virtual Pin:
 
 * `token`: AuthToken of the device
 * `pin`: Virtual Pin number. e.g. V0
-* `dataStreamId`: can be found in Product Settings &gt; Datastreams
+* `dataStreamId`: can be found in Product Settings &gt; [Datastreams](../en-product/datastreams/)
 
 Example:
 
