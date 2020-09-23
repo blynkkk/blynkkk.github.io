@@ -7,7 +7,7 @@ Tags ****can be used to give a short note to selected unit. They can be applied 
 ![Tags management panel](../.gitbook/assets/tags-management.png)
 
   
-Here you can create Tags with length _up to 16 characters \(only letters, digits, and spaces\)_ and pick the colors, edit and remove them.
+Here you can create Tags with length _up to 24 characters \(only letters, digits, and spaces\)_ and pick the colors, edit and remove them.
 
 ![Name and pick a color](../.gitbook/assets/tagcolname.png)
 
