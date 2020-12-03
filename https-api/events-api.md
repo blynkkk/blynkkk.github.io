@@ -1,26 +1,20 @@
 # Events
 
-**Create Event**
-
-Use HTTP **GET** method to create a new Event on Device Timeline
+To trigger [Events](https://github.com/blynkkk/blynkkk.github.io/tree/831614e30e8c03a227832d3bc2d90041f8ca8608/en/product/product-template-settings/events/README.md) creation from hardware \(or other sources\) and render them on Timeline in Device profile pages on the web and in the mobile apps, use this API call:
 
 ```text
-/external/api/logEvent?token={token}&code={event_name}&description={event_desciption}
+/external/api/logEvent?token={token}&code={event_name}
 ```
 
-**Parameters:**
+`event_name` should be taken from [Product Template Settings](https://github.com/blynkkk/blynkkk.github.io/tree/831614e30e8c03a227832d3bc2d90041f8ca8608/en/product/product-template-settings/README.md) &gt; [Events](https://github.com/blynkkk/blynkkk.github.io/tree/831614e30e8c03a227832d3bc2d90041f8ca8608/en/product/product-template-settings/events/README.md)
 
-* `token`: AuthToken of the device
-* `code`: code of the event. Can be found in Product Template - [Events](https://github.com/blynkkk/blynkkk.github.io/tree/ba877e83fafb998294c9504da8a7bba02318caf5/en/product-1/events/README.md)
-* `description`: optionally you can add custom description to the event and it will be rendered on Device Timeline in mobile apps and on the web
+\*\*\*\*
 
-Example:
+**Options:**
 
-```text
-curl --get 'https://blynk.io/external/api/logEvent?token=123&code=critical_error&description="custom description"'
-```
+To render custom description of the event on the Timeline, use `event_description` parameter
 
-Result: 
+`/external/api/logEvent?token={token}&code={event_name}&description={event_desciption}`
 
 &gt;&gt;IMAGE OF TIMELINE WITH EVENT DESCRIPTION \(MOBILE AND WEB\)
 

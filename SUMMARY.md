@@ -6,28 +6,14 @@
 
 * [Blynk Components](overview/blynk-components.md)
 
-## Device
-
-* [Dashboard](device/web-dashboard/README.md)
-  * [Time-period selection](device/web-dashboard/date-picker.md)
-  * [Widgets](device/web-dashboard/widgets.md)
-* [Info](device/info.md)
-* [Metadata](device/metadata.md)
-* [Timeline](device/timeline.md)
-* [Actions Log](device/actions-log.md)
-* [Service](device/service.md)
-* [Tags](device/tags.md)
-
 ## Product <a id="en-product"></a>
 
 * [What is a Product](en-product/create-new-product.md)
-* [Info](en-product/info/README.md)
-  * [Info: Template ID](en-product/info/info-template-id.md)
-  * [Info:Manufacturer](en-product/info/info-manufacturer.md)
-  * [Offline Ignore Period](en-product/info/offline-ignore-period.md)
+* [General Settings](en-product/general-settings/README.md)
+  * [Manufacturer](en-product/general-settings/manufacturer.md)
+  * [Offline Ignore Period](en-product/general-settings/offline-ignore-period.md)
 * [Metadata](en-product/metadata.md)
 * [Datastreams](en-product/datastreams/README.md)
-  * [Datastream ID](en-product/datastreams/datastream-id.md)
   * [Datastream Name](en-product/datastreams/datastream-name.md)
   * [Decimals Formatting](en-product/datastreams/decimals-formatting.md)
   * [Wait for confirmation from the device](en-product/datastreams/wait-for-confirmation-from-the-device.md)
@@ -45,7 +31,7 @@
   * [Events: Code](en-product/events/events-code.md)
   * [Events: Name](en-product/events/events-name.md)
   * [Events: Online, Offline](en-product/events/events-online-offline.md)
-  * [Events: Notification Period](en-product/events/events-notification-period.md)
+  * [Events: Notifications Limit](en-product/events/events-notification-period.md)
 * [Web Dashboard](en-product/web-dashboard.md)
 * [Mobile app UI](en-product/mobile-app-ui.md)
 
@@ -61,8 +47,4 @@
 ## Mobile App
 
 * [Untitled](mobile-app/untitled.md)
-
-## Blynk.Air \(OTA\)
-
-* [Blynk.Air - Firmware Over the Air](blynk.air-ota/blynk.air-firmware-over-the-air.md)
 

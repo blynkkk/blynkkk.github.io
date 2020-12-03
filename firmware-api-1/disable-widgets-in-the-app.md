@@ -6,9 +6,7 @@ This command disables and enables widget in the app
 Blynk.setProperty(V0,"isDisabled", true);
 ```
 
-
-
-TESTING TABS: 
+TESTING TABS:
 
 {% tabs %}
 {% tab title="C++" %}
