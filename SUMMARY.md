@@ -30,8 +30,8 @@
   * [Events: Notification](en-product/events/events-notification.md)
   * [Events: Code](en-product/events/events-code.md)
   * [Events: Name](en-product/events/events-name.md)
-  * [Events: Online, Offline](en-product/events/events-online-offline.md)
-  * [Events: Notification Period](en-product/events/events-notification-period.md)
+  * [System Events](en-product/events/events-online-offline.md)
+  * [Events: Notifications Limit](en-product/events/events-notification-period.md)
 * [Web Dashboard](en-product/web-dashboard.md)
 * [Mobile app UI](en-product/mobile-app-ui.md)
 
