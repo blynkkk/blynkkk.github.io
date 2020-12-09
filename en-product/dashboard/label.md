@@ -12,6 +12,8 @@
        **MIN of** will plot minimum value per minute;  
        **MAX of** will plot maximum value per minute;  
        **COUNT of** will plot the number of times data was sent by device per minute;  
+- **SUFFIX** – inches, lbs, oz, minutes, °F, etc., that will be shown after the value;
+- **TEXT ALIGNMENT** – 3 options are available: Left, Center, Right;
 - **Background** 
     - disabled **Change color based on value**:
       - **Background** – pick a color for Label widget background from palette or define it by color number input
