@@ -24,4 +24,4 @@
       - default set is of 3 options and it can be changed in range from 1 to as much as you need:
         - click **+** button under the last MIN field to ***increase*** set;
         - hover to the right from CUSTOM TEXT field, ***Delete*** button will appear;
-- **Level** – enable it by turn on **Show level** switch to visualize accordingly to values set in **MIN and MAX Value** fields below.
+- **Level** – enable it by switching **Show level** on to visualize accordingly to values set in **MIN and MAX Value** fields below.
