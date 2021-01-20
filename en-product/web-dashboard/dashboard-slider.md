@@ -1,5 +1,5 @@
-    Slider widget allows to send values to Virtual Pin of the selected Device.  
-    Usage examples: volume, brightness, RPM, flap position control, etc.  
+   Slider widget allows to send values to Virtual Pin of the selected Device.  
+   Usage examples: volume, brightness, RPM, flap position control, etc.  
  
   
  SETUP:  
