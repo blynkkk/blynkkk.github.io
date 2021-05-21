@@ -22,7 +22,7 @@
 
 * Can I run Blynk server on Raspberry Pi?
 
-  > Yes, surely! [Here is instruction](./#blynk-server-how-to-run-local-blynk-server-launch-blynk-server-on-raspberry-pi).
+  > Yes, surely! [Here are the instructions](./#blynk-server-how-to-run-local-blynk-server-launch-blynk-server-on-raspberry-pi).
 
 * Does Blynk app work over Bluetooth?
 
@@ -38,7 +38,7 @@
 
 * Can Blynk handle multiple Arduinos?
 
-  > Yes. There 3 ways right now :
+  > Yes. There are 3 ways right now:
   >
   > * add multiple devices to your project.
   > * you may use same [Auth Token](./#getting-started-getting-started-with-application-auth-token) for different hardware. In that case you can control few hardwares from 1 dashboard.
@@ -52,7 +52,7 @@
 
   > It depends mostly on your hardware. Low-end hardware may use up to 32 Virtual Pins. More powerful \(like ESP8266\) can use up to 128 but it requires also BLYNK\_USE\_128\_VPINS property in your sketch. [Example](https://github.com/blynkkk/blynk-library/blob/master/src/Blynk/BlynkConfig.h#L64).
 
-* Why app requires all this permissions?
+* Why does the app require all these permissions?
 
   > [http://help.blynk.cc/faq/blynk-android-permissions-explained](http://help.blynk.cc/faq/blynk-android-permissions-explained)
 
