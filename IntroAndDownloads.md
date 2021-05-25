@@ -1,7 +1,11 @@
 #Intro
-This guide will help you understand how to get started using Blynk and give a comprehensive overview of all the features.
+
+## 🚨🚨🚨 **IMPORTANT:** 
+
+## This documentation for a LEGACY version of Blynk platform which is no longer developed and supported. Latest documentation is [here](https://docs.blynk.io).
+
  
-If you want to jump straight into playing with Blynk, check out Getting Started.
+If you want to continue with using unsupported verion of Blynk, check out Getting Started.
 <br>
 
 [Getting Started >](/#getting-started)
