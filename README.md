@@ -1,3 +1,5 @@
+# This documentation is no longer maintained and supported. Latest documentation is available here: https://docs.blynk.io
+
 ---
 description: Full documentation on Blynk 2.0
 ---
