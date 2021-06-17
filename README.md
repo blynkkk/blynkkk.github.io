@@ -1,10 +1,5 @@
 # This documentation is no longer maintained and supported. Latest documentation is available here: https://docs.blynk.io
 
----
-description: Full documentation on Blynk 2.0
----
-
-# What is Blynk
 
 Blynk IoT Platform is a white-label, multi-tenant software solution that allows you to build personal and commercial IoT projects connected products.
 
@@ -21,5 +16,5 @@ The four major components of the Blynk IoT Platform are:
 * **Blynk.Cloud**
 * **Blynk.Edgent**
 * **Blynk.app**
-* **Blynk.360**
+* **Blynk.Console**
 
