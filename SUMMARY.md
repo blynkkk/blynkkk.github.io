@@ -33,6 +33,11 @@
   * [System Events](en-product/events/events-online-offline.md)
   * [Events: Notifications Limit](en-product/events/events-notification-period.md)
 * [Web Dashboard](en-product/web-dashboard.md)
+  * [Web Dashboard: Slider](en-product/web-dashboard/dashboard-slider.md)
+  * [Web Dashboard: Switch](en-product/web-dashboard/dashboard-switch.md)
+  * [Web Dashboard: Label](en-product/web-dashboard/dashboard-label.md)
+  * [Web Dashboard: Chart](en-product/web-dashboard/dashboard-chart.md)
+  * [Web Dashboard: Map](en-product/web-dashboard/dashboard-map.md)
 * [Mobile app UI](en-product/mobile-app-ui.md)
 
 ## Firmware API <a id="firmware-api-1"></a>
