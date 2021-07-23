@@ -30,7 +30,7 @@ If you encounter WiFi connection problems, please check these pitfalls:
 * You're trying to connect to "WPA & WPA2 Enterprise" network \(often used in offices\), and your shield does not support this security method
 * Your WiFi network has a login page that requests entering an access token \(often used in restaurants\)
 * Your WiFi network security disallows connecting alien devices completely \(MAC filtering, etc\)
-* There is a firewall running. Default port for hardware connections is 80 \(8080 on the Local Server\).
+* There is a firewall running. Default port for hardware connections is 80.
 
   Make sure it's open.
 
