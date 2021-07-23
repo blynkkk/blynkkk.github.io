@@ -1,2 +1,0 @@
-# Mobile app UI
-
