@@ -985,14 +985,15 @@ code .comment {
   margin: 0 5px;
   cursor: pointer;
 }
-.banner-header,
-.banner {
+.content h2.banner-header,
+.content p.banner {
   position: sticky;
   background-color: white;
   border-left: 1px solid #ED9D00;
   border-right: 1px solid #ED9D00;
+  padding: 10px;
 }
-.banner-header {
+.content h2.banner-header {
   top: 80px;
   z-index: 2;
   margin-top: 20px;
@@ -1001,7 +1002,7 @@ code .comment {
   border-top-right-radius: 8px;
   padding: 10px;
 }
-.banner {
+.content p.banner {
   top: 130px;
   z-index: 1;
   margin-top: 0;
@@ -1009,7 +1010,4 @@ code .comment {
   border-bottom: 1px solid #ED9D00;
   border-bottom-right-radius: 8px;
   border-bottom-left-radius: 8px;
-}
-.content p.banner {
-  padding: 10px;
 }
