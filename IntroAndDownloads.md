@@ -1,6 +1,6 @@
 # Intro
 
-## 🚨🚨🚨 **IMPORTANT:** 
+<h2 class="banner-header>🚨🚨🚨 IMPORTANT:</h2> 
 
 <p class="banner">
   This documentation is for the LEGACY version of Blynk platform which is no longer supported and will be shut down.<br/>
