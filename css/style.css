@@ -985,14 +985,14 @@ code .comment {
   margin: 0 5px;
   cursor: pointer;
 }
-.banner-heade,
+.banner-header,
 .banner {
   position: sticky;
   background-color: white;
   border-left: 1px solid #ED9D00;
   border-right: 1px solid #ED9D00;
 }
-.banner-heade {
+.banner-header {
   top: 80px;
   z-index: 2;
   margin-top: 20px;
