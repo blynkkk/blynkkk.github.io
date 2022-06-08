@@ -1,3 +1,12 @@
+<h2 id="intro-important"> 🚨🚨🚨 ВАЖНО:</h2> 
+
+<p class="banner">
+  Эта документация предназначена для УСТАРЕВШЕЙ версии платформы Blynk, которая больше не поддерживается и будет закрыта.<br/>
+  Вы можете зарегестрироваться на текущей версии платформы Blynk <a href="http://blynk.cloud/dashboard/register">здесь</a>.<br/>
+  Новые мобильные приложения можно скачать с <a href="https://apps.apple.com/us/app/blynk-iot/id1559317868">App Store</a> и <a href="https://play.google.com/store/apps/details?id=cloud.blynk&hl=en&gl=US">Google Play</a>.<br/>
+  Текущая документация Blynk <a href="https://docs.blynk.io/">здесь</a>.
+</p>
+
 # Widgets
 
 Widgets are interface modules. Each of them performs a specific input/ output function when communicating with the hardware.
