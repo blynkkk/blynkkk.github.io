@@ -652,7 +652,7 @@ body.no-literate .content pre > code:hover::-webkit-scrollbar-thumb {
   padding: 17px 20px 15px 20px;
   zoom: 1;
   width: 99%;
-  z-index: 1;
+  z-index: 3;
   /*line-height: 20px;*/
 }
 .header:before,
@@ -985,5 +985,28 @@ code .comment {
   margin: 0 5px;
   cursor: pointer;
 }
-
-
+#intro-important,
+.banner {
+  position: sticky;
+  background-color: white;
+  padding: 10px;
+  border-left: 1px solid #ED9D00;
+  border-right: 1px solid #ED9D00;
+}
+#intro-important {
+  top: 80px;
+  z-index: 2;
+  margin-top: 20px;
+  border-top: 1px solid #ED9D00;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+.banner {
+  top: 130px;
+  z-index: 1;
+  margin-top: 0;
+  font-weight: bold;
+  border-bottom: 1px solid #ED9D00;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
