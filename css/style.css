@@ -989,7 +989,6 @@ code .comment {
 .banner {
   position: sticky;
   background-color: white;
-  padding: 10px;
   border-left: 1px solid #ED9D00;
   border-right: 1px solid #ED9D00;
 }
@@ -1000,6 +999,7 @@ code .comment {
   border-top: 1px solid #ED9D00;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
+  padding: 10px;
 }
 .banner {
   top: 130px;
@@ -1009,4 +1009,7 @@ code .comment {
   border-bottom: 1px solid #ED9D00;
   border-bottom-right-radius: 8px;
   border-bottom-left-radius: 8px;
+}
+.content p.banner {
+  padding: 10px;
 }
