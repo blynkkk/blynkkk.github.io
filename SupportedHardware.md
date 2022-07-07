@@ -1,7 +1,7 @@
 # Supported Hardware
 
 **Attention!** This documentation is for the LEGACY version of Blynk platform which is no longer supported.  
-Please check out the [new documentation](https://docs.blynk.io)
+Please check out the [**new documentation**](https://docs.blynk.io)
 
 
 Blynk supports more than 400 boards already, including support for Arduino, Particle, ARM mbed, TI Energia, MicroPython, Node.js, OpenWRT and many Single Board Computers. You can add your own connection types easily (see [these](https://github.com/blynkkk/blynk-library/tree/master/examples/More/ArduinoClient) examples for Arduino)!
